@@ -30,7 +30,7 @@ Partial Class frmMain
     Me.mnuSettings = New System.Windows.Forms.ToolStripMenuItem()
     Me.ConfigurtionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
     Me.DatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-    Me.RVTpeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+    Me.mnuConfigurationDatabaseRVTypes = New System.Windows.Forms.ToolStripMenuItem()
     Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
     Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
     Me.mnuMain.SuspendLayout()
@@ -58,18 +58,18 @@ Partial Class frmMain
     'mnuFileNew
     '
     Me.mnuFileNew.Name = "mnuFileNew"
-    Me.mnuFileNew.Size = New System.Drawing.Size(152, 26)
+    Me.mnuFileNew.Size = New System.Drawing.Size(112, 26)
     Me.mnuFileNew.Text = "&New"
     '
     'ToolStripSeparator1
     '
     Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-    Me.ToolStripSeparator1.Size = New System.Drawing.Size(149, 6)
+    Me.ToolStripSeparator1.Size = New System.Drawing.Size(109, 6)
     '
     'mnuFileExit
     '
     Me.mnuFileExit.Name = "mnuFileExit"
-    Me.mnuFileExit.Size = New System.Drawing.Size(152, 26)
+    Me.mnuFileExit.Size = New System.Drawing.Size(112, 26)
     Me.mnuFileExit.Text = "E&xit"
     '
     'mnuSettings
@@ -87,16 +87,16 @@ Partial Class frmMain
     '
     'DatabaseToolStripMenuItem
     '
-    Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RVTpeToolStripMenuItem})
+    Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConfigurationDatabaseRVTypes})
     Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
-    Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
+    Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
     Me.DatabaseToolStripMenuItem.Text = "Database"
     '
-    'RVTpeToolStripMenuItem
+    'mnuConfigurationDatabaseRVTypes
     '
-    Me.RVTpeToolStripMenuItem.Name = "RVTpeToolStripMenuItem"
-    Me.RVTpeToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
-    Me.RVTpeToolStripMenuItem.Text = "RVTpe"
+    Me.mnuConfigurationDatabaseRVTypes.Name = "mnuConfigurationDatabaseRVTypes"
+    Me.mnuConfigurationDatabaseRVTypes.Size = New System.Drawing.Size(152, 22)
+    Me.mnuConfigurationDatabaseRVTypes.Text = "RVTypes"
     '
     'ToolStrip1
     '
@@ -148,5 +148,5 @@ Partial Class frmMain
   Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ConfigurtionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DatabaseToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RVTpeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents mnuConfigurationDatabaseRVTypes As ToolStripMenuItem
 End Class

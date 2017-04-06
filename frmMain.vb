@@ -52,6 +52,11 @@
     Application.Exit()
   End Sub 'Private Sub mnuFileExit_Click
 
+  '=======================================================================================
+  Private Sub mnuConfigurationDatabaseRVTypes_Click(sender As Object, e As EventArgs) Handles mnuConfigurationDatabaseRVTypes.Click
+    frmRVTypesDB.ShowDialog()
+  End Sub ' Private Sub mnuConfigurationDatabaseRVTypes_Click
+
   '========================================================================================
   Private Sub mnuSettings_Click(sender As Object, e As EventArgs) Handles mnuSettings.Click
     frmAppSettings.Show()
