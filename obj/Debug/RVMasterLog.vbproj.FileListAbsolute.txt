@@ -62,7 +62,6 @@ C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Worki
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.xml
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmAppSettings.resources
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmMain.resources
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.Resources.resources
@@ -71,3 +70,5 @@ C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Worki
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.xml
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.pdb
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmRVTypesDB.resources
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.exe.CodeAnalysisLog.xml
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.exe.lastcodeanalysissucceeded

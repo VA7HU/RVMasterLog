@@ -17,7 +17,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 6 Apr 2017
+  '   Date: 7 Apr 2017
   '
   '===========================================================================================
 
@@ -25,7 +25,7 @@ Public Class frmAppSettings
   '          PRIVATE CONSTANTS
   '========================================================================================
   Private cstrSetupFileName As String = "RVMSetup"
-  Private cstrSettingsFileName As String = "RVMSetting"
+  'Private cstrSettingsFileName As String = "RVMSetting"
 
   '========================================================================================
   '          PUBLIC CONSTANTS
@@ -37,7 +37,7 @@ Public Class frmAppSettings
   '========================================================================================
   Private fApplicationPath As String
   Private fSetupFileName As String
-  Private fSettingsFileName As String
+  'Private fSettingsFileName As String
   Private fRVMPath As String
   Private fRVMDataPath As String
   Private fRVMLogsPath As String
@@ -84,17 +84,17 @@ Public Class frmAppSettings
   End Property 'Public Property SetupFileName() As String
 
   '----------------------------------------------------------------------------------------
-  Public Property SettingsFileName() As String
+  ' Public Property SettingsFileName() As String
 
-    Get
-      Return fSettingsFileName
-    End Get
+  'Get
+  'Return fSettingsFileName
+  '  End Get
 
-    Set(ByVal FileName As String)
-      fSettingsFileName = FileName
-    End Set
+  'Set(ByVal FileName As String)
+  '   fSettingsFileName = FileName
+  'End Set
 
-  End Property 'Public Property SetupFileName() As String
+  'End Property 'Public Property SetupFileName() As String
 
   '----------------------------------------------------------------------------------------
   Public Property RVMPath() As String
@@ -215,59 +215,59 @@ Public Class frmAppSettings
   End Sub 'Public Sub ReadSetupFile
 
   '========================================================================================
-  Public Function SettingsFileExists() As Boolean
+  ' Public Function SettingsFileExists() As Boolean
 
-    SettingsFileName = ApplicationPath + "\" + cstrSettingsFileName + CStrSettingsFileExt
-    If My.Computer.FileSystem.FileExists(SettingsFileName) Then
-      Return True
-    Else
-      Return False
-    End If 'If My.Computer.FileSystem.FileExists
+  '  SettingsFileName = ApplicationPath + "\" + cstrSettingsFileName + CStrSettingsFileExt
+  'If My.Computer.FileSystem.FileExists(SettingsFileName) Then
+  'Return True
+  'Else
+  'Return False
+  'End If 'If My.Computer.FileSystem.FileExists
 
-  End Function 'Public Function SettingsFileExist
-
-  '----------------------------------------------------------------------------------------
-  Public Sub ReadSettingsFile()
-
-    Try
-      ' Create an instance of Stream Reader to read from a file.
-      ' The using statement also closes the Stream Reader.
-      Using sr As StreamReader = New StreamReader(SettingsFileName)
-        Dim line As String
-        ' Read lines from the file until the end of
-        ' the file is reached.
-        'line = sr.ReadLine()        'File Version number
-        RVMPath = sr.ReadLine()
-        RVMDataPath = sr.ReadLine()
-        RVMLogsPath = sr.ReadLine()
-      End Using
-    Catch e As Exception
-      'Let the user know what went wrong.
-      MessageBox.Show(e.Message)
-    End Try
-
-  End Sub 'Public Sub ReadSettingsFile
+  'End Function 'Public Function SettingsFileExist
 
   '----------------------------------------------------------------------------------------
-  Public Sub WriteSettingsFile()
+  'Public Sub ReadSettingsFile()
 
-    Try
-      ' Create an instance of Stream Reader to read from a file.
-      ' The using statement also closes the Stream Reader.
-      Using SW As StreamWriter = New StreamWriter(SettingsFileName)
-        'Dim line As String
-        ' Read lines from the file until the end of
-        ' the file is reached.
-        SW.WriteLine(RVMPath)
-        SW.WriteLine(RVMDataPath)
-        SW.WriteLine(RVMLogsPath)
-      End Using
-    Catch e As Exception
-      'Let the user know what went wrong.
-      MessageBox.Show(e.Message)
-    End Try
+  'Try
+  ' Create an instance of Stream Reader to read from a file.
+  ' The using statement also closes the Stream Reader.
+  'Using sr As StreamReader = New StreamReader(SettingsFileName)
+  'Dim line As String
+  ' Read lines from the file until the end of
+  ' the file is reached.
+  'line = sr.ReadLine()        'File Version number
+  '     RVMPath = sr.ReadLine()
+  '    RVMDataPath = sr.ReadLine()
+  '   RVMLogsPath = sr.ReadLine()
+  'End Using
+  'Catch e As Exception
+  'Let the user know what went wrong.
+  '   MessageBox.Show(e.Message)
+  'End Try
 
-  End Sub 'Public Sub WriteSettingsFile
+  'End Sub 'Public Sub ReadSettingsFile
+
+  '----------------------------------------------------------------------------------------
+  'Public Sub WriteSettingsFile()
+
+  'Try
+  ' Create an instance of Stream Reader to read from a file.
+  ' The using statement also closes the Stream Reader.
+  'Using SW As StreamWriter = New StreamWriter(SettingsFileName)
+  'Dim line As String
+  ' Read lines from the file until the end of
+  ' the file is reached.
+  'SW.WriteLine(RVMPath)
+  'SW.WriteLine(RVMDataPath)
+  'SW.WriteLine(RVMLogsPath)
+  '   End Using
+  'Catch e As Exception
+  'Let the user know what went wrong.
+  ' MessageBox.Show(e.Message)
+  'End Try
+
+  'End Sub 'Public Sub WriteSettingsFile
 
   '========================================================================================
   '          FORM ROUTINES
