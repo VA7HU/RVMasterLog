@@ -1,8 +1,8 @@
-﻿Public Class frmRVTypesDB
+﻿Public Class frmApplicationDB
 
   '========================================================================================
   '
-  '   Filename : frmRVTypesDB.vb
+  '   Filename : frmApplicationDB.vb
   '
   '   Description:
   '

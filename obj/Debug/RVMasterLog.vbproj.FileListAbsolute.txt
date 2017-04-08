@@ -72,3 +72,4 @@ C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Worki
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmRVTypesDB.resources
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.exe.CodeAnalysisLog.xml
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.exe.lastcodeanalysissucceeded
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache

@@ -97,6 +97,12 @@
   <ItemGroup>
     <Compile Include="AppFinal.vb" />
     <Compile Include="AppInit.vb" />
+    <Compile Include="frmApplicationDB.Designer.vb">
+      <DependentUpon>frmApplicationDB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmApplicationDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAppSettings.Designer.vb">
       <DependentUpon>frmAppSettings.vb</DependentUpon>
     </Compile>
