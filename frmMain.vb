@@ -13,7 +13,7 @@
   '
   '   Version: 1.0.0
   '
-  '   Date: 29 Mar 2017
+  '   Date: 8 Apr 2017
   '
   '========================================================================================
 
@@ -53,7 +53,7 @@
   End Sub 'Private Sub mnuFileExit_Click
 
   '=======================================================================================
-  Private Sub mnuConfigurationDatabaseRVTypes_Click(sender As Object, e As EventArgs) Handles mnuConfigurationDatabaseRVTypes.Click
+  Private Sub mnuConfigurationDatabaseRVTypes_Click(sender As Object, e As EventArgs)
     frmRVTypesDB.ShowDialog()
   End Sub ' Private Sub mnuConfigurationDatabaseRVTypes_Click
 
@@ -94,6 +94,10 @@
   Private Sub frmMain_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
     MessageBox.Show("Form CLose")
   End Sub ' Private Sub frmMain_FormClosed
+
+  Private Sub ApplicationDBToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ApploicationDBToolStripMenuItem.Click
+    frmApplicationDB.Show()
+  End Sub
 
   '========================================================================================
 End Class ' frmMain

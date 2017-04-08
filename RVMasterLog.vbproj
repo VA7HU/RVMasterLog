@@ -139,6 +139,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmApplicationDB.resx">
+      <DependentUpon>frmApplicationDB.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAppSettings.resx">
       <DependentUpon>frmAppSettings.vb</DependentUpon>
     </EmbeddedResource>

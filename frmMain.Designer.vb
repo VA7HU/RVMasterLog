@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmMain
   Inherits System.Windows.Forms.Form
 
   'Form overrides dispose to clean up the component list.
-  <System.Diagnostics.DebuggerNonUserCode()> _
+  <System.Diagnostics.DebuggerNonUserCode()>
   Protected Overrides Sub Dispose(ByVal disposing As Boolean)
     Try
       If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmMain
   'NOTE: The following procedure is required by the Windows Form Designer
   'It can be modified using the Windows Form Designer.  
   'Do not modify it using the code editor.
-  <System.Diagnostics.DebuggerStepThrough()> _
+  <System.Diagnostics.DebuggerStepThrough()>
   Private Sub InitializeComponent()
     Me.mnuMain = New System.Windows.Forms.MenuStrip()
     Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
@@ -29,10 +29,10 @@ Partial Class frmMain
     Me.mnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
     Me.mnuSettings = New System.Windows.Forms.ToolStripMenuItem()
     Me.ConfigurtionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-    Me.DatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-    Me.mnuConfigurationDatabaseRVTypes = New System.Windows.Forms.ToolStripMenuItem()
     Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
     Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+    Me.DataBaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+    Me.ApploicationDBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
     Me.mnuMain.SuspendLayout()
     Me.SuspendLayout()
     '
@@ -80,23 +80,10 @@ Partial Class frmMain
     '
     'ConfigurtionToolStripMenuItem
     '
-    Me.ConfigurtionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatabaseToolStripMenuItem})
+    Me.ConfigurtionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataBaseToolStripMenuItem})
     Me.ConfigurtionToolStripMenuItem.Name = "ConfigurtionToolStripMenuItem"
     Me.ConfigurtionToolStripMenuItem.Size = New System.Drawing.Size(92, 25)
     Me.ConfigurtionToolStripMenuItem.Text = "Configurtion"
-    '
-    'DatabaseToolStripMenuItem
-    '
-    Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConfigurationDatabaseRVTypes})
-    Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
-    Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-    Me.DatabaseToolStripMenuItem.Text = "Database"
-    '
-    'mnuConfigurationDatabaseRVTypes
-    '
-    Me.mnuConfigurationDatabaseRVTypes.Name = "mnuConfigurationDatabaseRVTypes"
-    Me.mnuConfigurationDatabaseRVTypes.Size = New System.Drawing.Size(152, 22)
-    Me.mnuConfigurationDatabaseRVTypes.Text = "RVTypes"
     '
     'ToolStrip1
     '
@@ -115,6 +102,19 @@ Partial Class frmMain
     Me.StatusStrip1.Size = New System.Drawing.Size(697, 22)
     Me.StatusStrip1.TabIndex = 2
     Me.StatusStrip1.Text = "StatusStrip1"
+    '
+    'DataBaseToolStripMenuItem
+    '
+    Me.DataBaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApploicationDBToolStripMenuItem})
+    Me.DataBaseToolStripMenuItem.Name = "DataBaseToolStripMenuItem"
+    Me.DataBaseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+    Me.DataBaseToolStripMenuItem.Text = "DataBase"
+    '
+    'ApploicationDBToolStripMenuItem
+    '
+    Me.ApploicationDBToolStripMenuItem.Name = "ApploicationDBToolStripMenuItem"
+    Me.ApploicationDBToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+    Me.ApploicationDBToolStripMenuItem.Text = "ApploicationDB"
     '
     'frmMain
     '
@@ -146,7 +146,7 @@ Partial Class frmMain
   Friend WithEvents mnuSettings As ToolStripMenuItem
   Friend WithEvents mnuFileNew As ToolStripMenuItem
   Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ConfigurtionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DatabaseToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents mnuConfigurationDatabaseRVTypes As ToolStripMenuItem
+  Friend WithEvents ConfigurtionToolStripMenuItem As ToolStripMenuItem
+  Friend WithEvents DataBaseToolStripMenuItem As ToolStripMenuItem
+  Friend WithEvents ApploicationDBToolStripMenuItem As ToolStripMenuItem
 End Class

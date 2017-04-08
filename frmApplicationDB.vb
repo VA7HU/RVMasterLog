@@ -59,6 +59,16 @@
   '========================================================================================
   '          COMMAND BUTTON ROUTINES
   '========================================================================================
+  Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
+    MessageBox.Show("OK")
+    Me.Close()
+  End Sub ' Private Sub btnOK_Clickbox
+
+  '========================================================================================
+  Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    MessageBox.Show("Cancel")
+    Me.Close()
+  End Sub ' Private Sub btnCancel_Click
 
   '========================================================================================
   '          CONTROL ROUTINES
