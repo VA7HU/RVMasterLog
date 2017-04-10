@@ -27,10 +27,10 @@ Public Class HUSettingsFile
   Dim cstrFileTypeOther As String = "OTHER"
   Dim cstrFileTypeSettings As String = "SETTINGS"
 
-  Dim cstrDefaultConfigFileName = "Config"
-  Dim cstrDefaultDataFileName = "Data"
-  Dim cstrDefaultSettingsFileName = "Settings"
-
+  Dim cstrDefaultConfigFileName As String = "Config"
+  Dim cstrDefaultDataFileName As String = "Data"
+  Dim cstrDefaultSettingsFileName As String = "Settings"
+  Dim cblnDefaultCreateParam As Boolean = False
 
   Dim cstrConfigFileExtension As String = "cfg"
   Dim cstrDataFileExtension As String = "dta"
@@ -96,18 +96,26 @@ Public Class HUSettingsFile
   Public Function OpenHUTextFile() As String
     ' Creates and Opens a default text file based on the default FileType, default FileName
     ' and current Application Path parameters. The default FileName will be "Settings.stg" 
-    ' and will use the ApplicationPath With a Create flag of True. The New FileName is
-    ' returned to the calling routine.
+    ' and will use the ApplicationPath. If the File does not exist or an error is detected
+    ' a message will be displayed and a null FileName will be returned. Otherwise the
+    ' Default FileName will be returned to the calling routine.
 
+    ' Build the complete Filename and Path
     vstrNewFileName = frmAppSettings.ApplicationPath +
                       "/" +
                       cstrDefaultFileName +
                       "." + cstrDefaultFileExtension
 
-    MessageBox.Show(frmAppSettings.ApplicationPath +
-              "/" +
-              cstrDefaultFileName +
-              "." + cstrDefaultFileExtension)
+    ' If the file does not exists we display a message and return a null
+    ' FileName
+    If Not My.Computer.FileSystem.FileExists(vstrNewFileName) Then
+      MessageBox.Show("File does not exist")
+      Return Nothing
+    Else
+      MessageBox.Show(vstrNewFileName)
+    End If ' If Not My.Computer.FileSystem.FileExists
+
+
 
     Return frmAppSettings.ApplicationPath +
               "/" +

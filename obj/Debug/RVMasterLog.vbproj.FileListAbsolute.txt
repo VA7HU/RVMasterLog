@@ -71,3 +71,4 @@ C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Worki
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.pdb
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmRVTypesDB.resources
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmApplicationDB.resources
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
