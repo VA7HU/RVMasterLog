@@ -287,6 +287,9 @@ Public Class frmAppSettings
     tbxRVMLogsPath.Text = RVMLogsPath
     chkUseLastLog.Checked = UseLastLog
 
+    Dim SettingsFile As New HUSettingsFile
+    SettingsFile.OpenHUTextFile()
+
   End Sub 'Private Sub frmAppSettings_Shown
 
   '========================================================================================

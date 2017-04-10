@@ -14,7 +14,7 @@ Public Class HUSettingsFile
   '
   '   Version:  1.0.0
   '
-  '   Date: 9 Apr 2017
+  '   Date: 10 Apr 2017
   '
   '========================================================================================
 
@@ -32,11 +32,11 @@ Public Class HUSettingsFile
   Dim cstrDefaultSettingsFileName = "Settings"
 
 
-  Dim cstrConfigFileExtension As String = ".cfg"
-  Dim cstrDataFileExtension As String = ".dta"
-  Dim cstrSettingsFileExtension As String = ".stg"
+  Dim cstrConfigFileExtension As String = "cfg"
+  Dim cstrDataFileExtension As String = "dta"
+  Dim cstrSettingsFileExtension As String = "stg"
 
-  Dim cstrDefaultFileExtension As String = cstrSettingsFileExtenson
+  Dim cstrDefaultFileExtension As String = cstrSettingsFileExtension
   Dim cstrDefaultFileName As String = cstrDefaultSettingsFileName
 
   '========================================================================================
@@ -48,8 +48,8 @@ Public Class HUSettingsFile
   '========================================================================================
   Dim vstrNewFileExtension As String
   Dim vstrNewFileName As String
-  Dim vstrNewFilePath = As string
-  
+  Dim vstrNewFilePath As String
+
   '========================================================================================
   '          PUBLIC VARIABLES
   '========================================================================================
@@ -93,43 +93,67 @@ Public Class HUSettingsFile
   '========================================================================================
   '          PUBLIC ROUTINES
   '========================================================================================
+  Public Function OpenHUTextFile() As String
+    ' Creates and Opens a default text file based on the default FileType, default FileName
+    ' and current Application Path parameters. The default FileName will be "Settings.stg" 
+    ' and will use the ApplicationPath With a Create flag of True. The New FileName is
+    ' returned to the calling routine.
+
+    vstrNewFileName = frmAppSettings.ApplicationPath +
+                      "/" +
+                      cstrDefaultFileName +
+                      "." + cstrDefaultFileExtension
+
+    MessageBox.Show(frmAppSettings.ApplicationPath +
+              "/" +
+              cstrDefaultFileName +
+              "." + cstrDefaultFileExtension)
+
+    Return frmAppSettings.ApplicationPath +
+              "/" +
+              cstrDefaultFileName +
+              "." + cstrDefaultFileExtension
+
+  End Function ' Public Function OpenHUTextFile
+
+  '----------------------------------------------------------------------------------------
   Public Function OpenHUTextFile(vstrFileType As String) As String
     'Creates and Opens a default text file based on the FileType parameter passed.
     ' The default FileName will be "Settings.stg" using the application path with a
     ' Create flag of True. The New FileName is returned to the calling routine.
 
-    Select Case vstrFileType
-      Case cstrFileTypeConfig
-        vstrNewFileExtension = cstrConfigFileExtension
-        vstrNewFileName = frmAppSettings.ApplicationPath +
-                          "/" +
-                          cstrDefaultConfigFileName +
-                          "." + vstrNewFileExtension
-      Case cstrFileTypeData
-        vstrNewFileExtension = cstrDataFileExtension
-        vstrNewFileName = frmAppSettings.ApplicationPath +
-                          "/" +
-                          cstrDefaultDataFileName +
-                          "." + vstrNewFileExtension
-      Case cstrFileTypeNone
-        vstrNewFileExtension = cstrSettingsFileExtension
-        vstrNewFileName = frmAppSettings.ApplicationPath +
-                          "/" +
-                          cstrDefaultSettingsFileName +
-                          "." + vstrNewFileExtension
-      Case cstrFileTypeOther
-        vstrNewFileExtension = cstrSettingsFileExtension
-        vstrNewFileName = frmAppSettings.ApplicationPath +
-                          "/" +
-                          cstrDefaultSettingsFileName +
-                          "." + vstrNewFileExtension
-      Case cstrFileTypeSettings
-        vstrNewFileExtension = cstrSettingsFileExtension
-        vstrNewFileName = frmAppSettings.ApplicationPath +
-                          "/" +
-                          cstrDefaultSettingsFileName +
-                          "." + vstrNewFileExtension
-    End Select
+    '  Select Case vstrFileType
+    ' Case cstrFileTypeConfig
+    '      vstrNewFileExtension = cstrConfigFileExtension
+    '     vstrNewFileName = frmAppSettings.ApplicationPath +
+    '                      "/" +
+    '                     cstrDefaultConfigFileName +
+    '                    "." + vstrNewFileExtension
+    'Case cstrFileTypeData
+    '     vstrNewFileExtension = cstrDataFileExtension
+    '    vstrNewFileName = frmAppSettings.ApplicationPath +
+    '                     "/" +
+    '                    cstrDefaultDataFileName +
+    '                   "." + vstrNewFileExtension
+    'Case cstrFileTypeNone
+    '     vstrNewFileExtension = cstrSettingsFileExtension
+    '    vstrNewFileName = frmAppSettings.ApplicationPath +
+    '                     "/" +
+    '                    cstrDefaultSettingsFileName +
+    '                   "." + vstrNewFileExtension
+    'Case cstrFileTypeOther
+    '     vstrNewFileExtension = cstrSettingsFileExtension
+    '    vstrNewFileName = frmAppSettings.ApplicationPath +
+    '                     "/" +
+    '                    cstrDefaultSettingsFileName +
+    '                   "." + vstrNewFileExtension
+    'Case cstrFileTypeSettings
+    '     vstrNewFileExtension = cstrSettingsFileExtension
+    '    vstrNewFileName = frmAppSettings.ApplicationPath +
+    '                     "/" +
+    '                    cstrDefaultSettingsFileName +
+    '                   "." + vstrNewFileExtension
+    'End Select
 
     Return vstrNewFileName
 
