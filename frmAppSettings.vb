@@ -17,7 +17,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 8 Apr 2017
+  '   Date: 14 Apr 2017
   '
   '===========================================================================================
 
@@ -234,26 +234,53 @@ Public Class frmAppSettings
   End Sub ' Public Sub InstallDefaultSettings
 
   '----------------------------------------------------------------------------------------
-  'Public Sub ReadSettingsFile()
+  Public Function LoadAppSettings() As Boolean
 
-  'Try
-  ' Create an instance of Stream Reader to read from a file.
-  ' The using statement also closes the Stream Reader.
-  'Using sr As StreamReader = New StreamReader(SettingsFileName)
-  'Dim line As String
-  ' Read lines from the file until the end of
-  ' the file is reached.
-  'line = sr.ReadLine()        'File Version number
-  '     RVMPath = sr.ReadLine()
-  '    RVMDataPath = sr.ReadLine()
-  '   RVMLogsPath = sr.ReadLine()
-  'End Using
-  'Catch e As Exception
-  'Let the user know what went wrong.
-  '   MessageBox.Show(e.Message)
-  'End Try
+    If Not SettingsFileExists() Then
+      MessageBox.Show("No File. loading Default data.")
+      InstallDefaultSettings()
+      Return False
+    End If ' If Not SettingsFileExists
 
-  'End Sub 'Public Sub ReadSettingsFile
+    'MessageBox.Show("loading AppSettings file data.")
+    'MessageBox.Show(SettingsFileName)
+
+
+    'Using AppSettiingsReader As New _
+    'Microsoft.VisualBasic.FileIO.TextFieldParser(SettingsFileName)
+
+
+
+
+
+
+
+
+    End Using ' AppSettiingsReader
+
+
+
+
+
+
+    'Try
+    ' Create an instance of Stream Reader to read from a file.
+    ' The using statement also closes the Stream Reader.
+    'Using sr As StreamReader = New StreamReader(SettingsFileName)
+    'Dim line As String
+    ' Read lines from the file until the end of
+    ' the file is reached.
+    'line = sr.ReadLine()        'File Version number
+    '     RVMPath = sr.ReadLine()
+    '    RVMDataPath = sr.ReadLine()
+    '   RVMLogsPath = sr.ReadLine()
+    'End Using
+    'Catch e As Exception
+    'Let the user know what went wrong.
+    '   MessageBox.Show(e.Message)
+    'End Try
+
+  End Function ' Public Function LoadAppSettings
 
   '----------------------------------------------------------------------------------------
   Public Sub WriteSettingsFile()

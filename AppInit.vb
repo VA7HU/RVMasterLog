@@ -13,10 +13,10 @@ Module AppInit
   '   Calls: AppSettings :  frmAppSettings.ApplicationPath
   '                         frmAppSettings.SetupFileExists
   '                         frmAppSettings.ReadSetupFile
-  '
+  '                         frmAppSettings.LoadAppSettings
   '   Version: 1.0.0
   '
-  '   Date: 29 Mar 2017
+  '   Date: 14 Apr 2017
   '
   '========================================================================================
 
@@ -64,6 +64,9 @@ Module AppInit
       MessageBox.Show("No Setup File")
       Return False
     End If 'If frmAppSettings.SetupFileExists
+
+    ' Now we check for the AppSettings data
+    frmAppSettings.LoadAppSettings()
 
     Return True
 
