@@ -11,26 +11,27 @@ Public Class frmAppSettings
   '                   level data elements that are saved and read automatically on application
   '                   startup and shutdown in the RVMSettings.ini file.
   '
-  '   Called By: AppInit : Initialise
+  '   Called By:  AppInit : Initialise
+  '               AppFinal : Finalise
   '
   '   Calls:
   '
   '   Version: 1.0.0
   '
-  '   Date: 14 Apr 2017
+  '   Date: 15 Apr 2017
   '
   '===========================================================================================
 
   '===========================================================================================
   '          PRIVATE CONSTANTS
   '========================================================================================
-  Private cstrSetupFileName As String = "RVMSetup"
-  Private cstrSettingsFileName As String = "RVMSettings"
 
   '========================================================================================
   '          PUBLIC CONSTANTS
   '========================================================================================
-  Private CStrSettingsFileExt As String = ".stg"
+  Public CStrSettingsFileExt As String = ".stg"
+  Public cstrSetupFileName As String = "RVMSetup"
+  Public cstrSettingsFileName As String = "RVMSettings"
 
   '========================================================================================
   '          PRIVATE VARIABLES
@@ -42,6 +43,7 @@ Public Class frmAppSettings
   Private fRVMDataPath As String
   Private fRVMLogsPath As String
   Private fUseLastLog As Boolean = True
+  Private SettingsFile As New HUSettingsFile
 
   '========================================================================================
   '          PUBLIC VARIABLES
@@ -183,7 +185,6 @@ Public Class frmAppSettings
   '========================================================================================
   Public Function SetupFileExists() As Boolean
 
-    SetupFileName = ApplicationPath + "\" + cstrSetupFileName + CStrSettingsFileExt
     If My.Computer.FileSystem.FileExists(SetupFileName) Then
       Return True
     Else
@@ -217,7 +218,6 @@ Public Class frmAppSettings
   '========================================================================================
   Public Function SettingsFileExists() As Boolean
 
-    SettingsFileName = ApplicationPath + "\" + cstrSettingsFileName + CStrSettingsFileExt
     If My.Computer.FileSystem.FileExists(SettingsFileName) Then
       Return True
     Else
@@ -249,6 +249,7 @@ Public Class frmAppSettings
     'Using AppSettiingsReader As New _
     'Microsoft.VisualBasic.FileIO.TextFieldParser(SettingsFileName)
 
+    Return True
 
 
 
@@ -256,7 +257,7 @@ Public Class frmAppSettings
 
 
 
-    End Using ' AppSettiingsReader
+    'End Using ' AppSettiingsReader
 
 
 
@@ -285,21 +286,32 @@ Public Class frmAppSettings
   '----------------------------------------------------------------------------------------
   Public Sub WriteSettingsFile()
 
-    Try
-      ' Create an instance of Stream Writer to read from a file.
-      ' The using statement also closes the Stream Writer.
-      Using SW As StreamWriter = New StreamWriter(SettingsFileName)
-        Dim line As String
-        ' Read lines from the file until the end of
-        ' the file is reached.
-        SW.WriteLine(RVMPath)
-        SW.WriteLine(RVMDataPath)
-        SW.WriteLine(RVMLogsPath)
-      End Using
-    Catch e As Exception
-      'Let the user know what went wrong.
-      MessageBox.Show(e.Message)
-    End Try
+    SettingsFile.OpenHUTextFile(ApplicationPath)
+
+    ' Dim file = My.Computer.FileSystem.OpenTextFileWriter(
+    '"c:\test.txt", True)
+    'File.WriteLine("Here is the first string.")
+    ' File.Close()
+
+
+
+
+
+    'Try
+    ' Create an instance of Stream Writer to read from a file.
+    ' The using statement also closes the Stream Writer.
+    'Using SW As StreamWriter = New StreamWriter(SettingsFileName)
+    ' Dim line As String
+    ' Read lines from the file until the end of
+    ' the file is reached.
+    'SW.WriteLine(RVMPath)
+    'SW.WriteLine(RVMDataPath)
+    'SW.WriteLine(RVMLogsPath)
+    'End Using
+    'Catch e As Exception
+    'Let the user know what went wrong.
+    'MessageBox.Show(e.Message)
+    'End Try
 
   End Sub 'Public Sub WriteSettingsFile
 
@@ -314,8 +326,8 @@ Public Class frmAppSettings
     tbxRVMLogsPath.Text = RVMLogsPath
     chkUseLastLog.Checked = UseLastLog
 
-    Dim SettingsFile As New HUSettingsFile
-    MessageBox.Show(SettingsFile.OpenHUTextFile())
+    '   Dim SettingsFile As New HUSettingsFile
+    'MessageBox.Show(SettingsFile.OpenHUTextFile())
 
   End Sub 'Private Sub frmAppSettings_Shown
 

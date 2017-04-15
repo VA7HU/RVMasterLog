@@ -16,7 +16,7 @@ Module AppInit
   '                         frmAppSettings.LoadAppSettings
   '   Version: 1.0.0
   '
-  '   Date: 14 Apr 2017
+  '   Date: 15 Apr 2017
   '
   '========================================================================================
 
@@ -55,8 +55,14 @@ Module AppInit
 
     ' Get the Application path
     frmAppSettings.ApplicationPath = My.Application.Info.DirectoryPath
+    frmAppSettings.SetupFileName = frmAppSettings.ApplicationPath + "\" +
+                                    frmAppSettings.cstrSetupFileName +
+                                    frmAppSettings.CStrSettingsFileExt
+    frmAppSettings.SettingsFileName = frmAppSettings.ApplicationPath + "\" +
+                                      frmAppSettings.cstrSettingsFileName +
+                                      frmAppSettings.CStrSettingsFileExt
 
-    ' First we have to check for the InnoSetup file. If it is not there we cannot go any
+    ' First we have to read the InnoSetup file. If it is not there we cannot go any
     ' further
     If frmAppSettings.SetupFileExists Then
       frmAppSettings.ReadSetupFile()
@@ -65,7 +71,7 @@ Module AppInit
       Return False
     End If 'If frmAppSettings.SetupFileExists
 
-    ' Now we check for the AppSettings data
+    ' Now we load the AppSettings data
     frmAppSettings.LoadAppSettings()
 
     Return True

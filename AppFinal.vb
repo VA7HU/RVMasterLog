@@ -8,7 +8,7 @@
   '
   '   Called By:  frmMain : frmMain_FormClosing
   '
-  '   Calls:
+  '   Calls:  frmAppSettings.WriteSettingsFile
   '
   '   Version: 1.0.0
   '
@@ -41,7 +41,7 @@
   '========================================================================================
   Public Sub Finalise()
     MessageBox.Show("Finalise")
-
+    frmAppSettings.WriteSettingsFile()
   End Sub ' Public Sub Finalise()
 
   '========================================================================================
