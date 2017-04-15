@@ -245,7 +245,6 @@ Public Class frmAppSettings
     'MessageBox.Show("loading AppSettings file data.")
     'MessageBox.Show(SettingsFileName)
 
-
     'Using AppSettiingsReader As New _
     'Microsoft.VisualBasic.FileIO.TextFieldParser(SettingsFileName)
 
@@ -286,32 +285,31 @@ Public Class frmAppSettings
   '----------------------------------------------------------------------------------------
   Public Sub WriteSettingsFile()
 
-    SettingsFile.OpenHUTextFile(ApplicationPath)
+    Dim OldSettingsFileName As String
 
-    ' Dim file = My.Computer.FileSystem.OpenTextFileWriter(
-    '"c:\test.txt", True)
-    'File.WriteLine("Here is the first string.")
-    ' File.Close()
+    ' If the file exists then we must rename it before creating a new one
+    If SettingsFileExists() Then
+      MessageBox.Show("Renaming old Settingsfile.")
+      OldSettingsFileName = SetupFileName + "OLD"
+      My.Computer.FileSystem.RenameFile(SettingsFileName, OldSettingsFileName)
+    End If ' If SettingsFileExists
 
+    Try
+      'Create an instance of Stream Writer to read from a file.
+      ' The using statement also closes the Stream Writer.
+      Using SettingsFile As StreamWriter = New StreamWriter(SettingsFileName)
+        Dim line As String
+        ' Write records to the file 
+        SettingsFile.WriteLine(RVMPath)
+        SettingsFile.WriteLine(RVMDataPath)
+        SettingsFile.WriteLine(RVMLogsPath)
+      End Using
+    Catch e As Exception
+      'Let the user know what went wrong.
+      MessageBox.Show(e.Message)
+    End Try
 
-
-
-
-    'Try
-    ' Create an instance of Stream Writer to read from a file.
-    ' The using statement also closes the Stream Writer.
-    'Using SW As StreamWriter = New StreamWriter(SettingsFileName)
-    ' Dim line As String
-    ' Read lines from the file until the end of
-    ' the file is reached.
-    'SW.WriteLine(RVMPath)
-    'SW.WriteLine(RVMDataPath)
-    'SW.WriteLine(RVMLogsPath)
-    'End Using
-    'Catch e As Exception
-    'Let the user know what went wrong.
-    'MessageBox.Show(e.Message)
-    'End Try
+    My.Computer.FileSystem.DeleteFile(OldSettingsFileName)
 
   End Sub 'Public Sub WriteSettingsFile
 

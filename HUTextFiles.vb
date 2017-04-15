@@ -107,6 +107,10 @@ Public Class HUSettingsFile
     If My.Computer.FileSystem.FileExists(vstrNewFileName) Then
       MessageBox.Show("File Exists")
       MessageBox.Show(vstrNewFileName)
+      ' Rename the old file
+
+      ' Open the New File
+
       Return vstrNewFileName
     Else
       MessageBox.Show("File does not Exist")
