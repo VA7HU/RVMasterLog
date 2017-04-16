@@ -268,7 +268,8 @@ Public Class frmAppSettings
         RVMPath = sr.ReadLine()
         RVMDataPath = sr.ReadLine()
         RVMLogsPath = sr.ReadLine()
-
+        SettingsFileName = sr.ReadLine()
+        UseLastLog = sr.ReadLine()
       End Using
 
     Catch e As Exception
@@ -281,12 +282,11 @@ Public Class frmAppSettings
   '----------------------------------------------------------------------------------------
   Public Sub WriteSettingsFile()
 
-    Dim OldSettingsFileName As String
+    Dim OldSettingsFileName As String = SetupFileName + "OLD"
 
     ' If the file exists then we must rename it before creating a new one
     If SettingsFileExists() Then
       MessageBox.Show("Renaming old Settingsfile.")
-      OldSettingsFileName = SetupFileName + "OLD"
       My.Computer.FileSystem.RenameFile(SettingsFileName, OldSettingsFileName)
     End If ' If SettingsFileExists
 
@@ -296,16 +296,24 @@ Public Class frmAppSettings
       Using SettingsFile As StreamWriter = New StreamWriter(SettingsFileName)
         Dim line As String
         ' Write records to the file 
+        SettingsFile.WriteLine("Version Nr")
         SettingsFile.WriteLine(RVMPath)
         SettingsFile.WriteLine(RVMDataPath)
         SettingsFile.WriteLine(RVMLogsPath)
+        SettingsFile.WriteLine(SettingsFileName)
+        SettingsFile.WriteLine(UseLastLog)
       End Using
     Catch e As Exception
       'Let the user know what went wrong.
       MessageBox.Show(e.Message)
+      'Restore the previous file
+      My.Computer.FileSystem.RenameFile(OldSettingsFileName, SettingsFileName)
     End Try
 
-    My.Computer.FileSystem.DeleteFile(OldSettingsFileName)
+    ' Delete the previous file if we were successful
+    If My.Computer.FileSystem.FileExists(OldSettingsFileName) Then
+      My.Computer.FileSystem.DeleteFile(OldSettingsFileName)
+    End If
 
   End Sub 'Public Sub WriteSettingsFile
 
