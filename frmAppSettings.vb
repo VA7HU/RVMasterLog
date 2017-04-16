@@ -18,7 +18,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 15 Apr 2017
+  '   Date: 16 Apr 2017
   '
   '===========================================================================================
 
@@ -236,51 +236,47 @@ Public Class frmAppSettings
   '----------------------------------------------------------------------------------------
   Public Function LoadAppSettings() As Boolean
 
-    If Not SettingsFileExists() Then
+    ' We check to see if there is a Settings.stg file there. If it is, we use that data. If
+    ' it is not, we load the Defaukt data
+
+    If SettingsFileExists() Then
+      ReadSettingsFile()
+      Return True
+    Else
       MessageBox.Show("No File. loading Default data.")
       InstallDefaultSettings()
       Return False
     End If ' If Not SettingsFileExists
 
-    'MessageBox.Show("loading AppSettings file data.")
-    'MessageBox.Show(SettingsFileName)
-
-    'Using AppSettiingsReader As New _
-    'Microsoft.VisualBasic.FileIO.TextFieldParser(SettingsFileName)
-
-    Return True
-
-
-
-
-
-
-
-    'End Using ' AppSettiingsReader
-
-
-
-
-
-
-    'Try
-    ' Create an instance of Stream Reader to read from a file.
-    ' The using statement also closes the Stream Reader.
-    'Using sr As StreamReader = New StreamReader(SettingsFileName)
-    'Dim line As String
-    ' Read lines from the file until the end of
-    ' the file is reached.
-    'line = sr.ReadLine()        'File Version number
-    '     RVMPath = sr.ReadLine()
-    '    RVMDataPath = sr.ReadLine()
-    '   RVMLogsPath = sr.ReadLine()
-    'End Using
-    'Catch e As Exception
-    'Let the user know what went wrong.
-    '   MessageBox.Show(e.Message)
-    'End Try
-
   End Function ' Public Function LoadAppSettings
+
+  '----------------------------------------------------------------------------------------
+  Public Sub ReadSettingsFile()
+
+    Try
+      '  Create an instance of Stream Reader to read from a file.
+      ' The using statement also closes the Stream Reader.
+
+      Using sr As StreamReader = New StreamReader(SettingsFileName)
+
+        Dim line As String
+
+        ' Read lines from the file until the end of
+        ' the file is reached.
+
+        line = sr.ReadLine()        'File Version number
+        RVMPath = sr.ReadLine()
+        RVMDataPath = sr.ReadLine()
+        RVMLogsPath = sr.ReadLine()
+
+      End Using
+
+    Catch e As Exception
+      'Let the user know what went wrong.
+      MessageBox.Show(e.Message)
+    End Try
+
+  End Sub ' Public Sub ReadSettingsFile()
 
   '----------------------------------------------------------------------------------------
   Public Sub WriteSettingsFile()
@@ -323,9 +319,6 @@ Public Class frmAppSettings
     tbxRVMDataPath.Text = RVMDataPath
     tbxRVMLogsPath.Text = RVMLogsPath
     chkUseLastLog.Checked = UseLastLog
-
-    '   Dim SettingsFile As New HUSettingsFile
-    'MessageBox.Show(SettingsFile.OpenHUTextFile())
 
   End Sub 'Private Sub frmAppSettings_Shown
 
