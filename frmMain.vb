@@ -79,7 +79,7 @@
   '========================================================================================
   Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     If Not AppInit.Initialise() Then
-      MessageBox.Show("Setup not there")
+      MessageBox.Show("Initialisation Failed")
       Application.Exit()
     End If 'If Not AppInit.Initialise
   End Sub 'Private Sub frmMain_Load

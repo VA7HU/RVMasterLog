@@ -18,7 +18,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 16 Apr 2017
+  '   Date: 17 Apr 2017
   '
   '===========================================================================================
 
@@ -185,9 +185,13 @@ Public Class frmAppSettings
   '========================================================================================
   Public Function SetupFileExists() As Boolean
 
+    MessageBox.Show(SetupFileName)
+
     If My.Computer.FileSystem.FileExists(SetupFileName) Then
+      MessageBox.Show("Setup File Exists")
       Return True
     Else
+      MessageBox.Show("Setup File Does Not Exist")
       Return False
     End If 'If My.Computer.FileSystem.FileExists
 
@@ -195,6 +199,8 @@ Public Class frmAppSettings
 
   '----------------------------------------------------------------------------------------
   Public Sub ReadSetupFile()
+
+    MessageBox.Show("ReadSetupFile")
 
     Try
       ' Create an instance of Stream Reader to read from a file.
@@ -218,6 +224,8 @@ Public Class frmAppSettings
   '========================================================================================
   Public Function SettingsFileExists() As Boolean
 
+    MessageBox.Show("SettingsFileExists")
+
     If My.Computer.FileSystem.FileExists(SettingsFileName) Then
       Return True
     Else
@@ -229,7 +237,7 @@ Public Class frmAppSettings
   '----------------------------------------------------------------------------------------
   Public Sub InstallDefaultSettings()
 
-    UseLastLog = True
+    MessageBox.Show("InstallDefaultSettings")
 
   End Sub ' Public Sub InstallDefaultSettings
 
@@ -238,6 +246,8 @@ Public Class frmAppSettings
 
     ' We check to see if there is a Settings.stg file there. If it is, we use that data. If
     ' it is not, we load the Defaukt data
+
+    MessageBox.Show("LoadAppSettings")
 
     If SettingsFileExists() Then
       ReadSettingsFile()
@@ -252,6 +262,8 @@ Public Class frmAppSettings
 
   '----------------------------------------------------------------------------------------
   Public Sub ReadSettingsFile()
+
+    MessageBox.Show("ReadSettingsFile")
 
     Try
       '  Create an instance of Stream Reader to read from a file.
@@ -282,7 +294,9 @@ Public Class frmAppSettings
   '----------------------------------------------------------------------------------------
   Public Sub WriteSettingsFile()
 
-    Dim OldSettingsFileName As String = SetupFileName + "OLD"
+    MessageBox.Show("WriteSettingsFile")
+
+    Dim OldSettingsFileName As String = "OLD" + SetupFileName
 
     ' If the file exists then we must rename it before creating a new one
     If SettingsFileExists() Then
@@ -294,7 +308,7 @@ Public Class frmAppSettings
       'Create an instance of Stream Writer to read from a file.
       ' The using statement also closes the Stream Writer.
       Using SettingsFile As StreamWriter = New StreamWriter(SettingsFileName)
-        Dim line As String
+        'Dim line As String
         ' Write records to the file 
         SettingsFile.WriteLine("Version Nr")
         SettingsFile.WriteLine(RVMPath)
@@ -307,6 +321,9 @@ Public Class frmAppSettings
       'Let the user know what went wrong.
       MessageBox.Show(e.Message)
       'Restore the previous file
+      MessageBox.Show("Renaming old Settingsfile.")
+      MessageBox.Show(OldSettingsFileName)
+      MessageBox.Show(SettingsFileName)
       My.Computer.FileSystem.RenameFile(OldSettingsFileName, SettingsFileName)
     End Try
 

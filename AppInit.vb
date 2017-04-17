@@ -67,7 +67,7 @@ Module AppInit
     If frmAppSettings.SetupFileExists Then
       frmAppSettings.ReadSetupFile()
     Else
-      MessageBox.Show("No Setup File")
+      MessageBox.Show("No Setup File Found")
       Return False
     End If 'If frmAppSettings.SetupFileExists
 
