@@ -30,19 +30,37 @@ Public Class frmAppSettings
   '          PUBLIC CONSTANTS
   '========================================================================================
   Public CStrSettingsFileExt As String = ".stg"
-  Public cstrSetupFileName As String = "RVMSetup"
   Public cstrSettingsFileName As String = "RVMSettings"
+  Public cstrSetupFileExt As String = ".ini"
+  Public cstrSetupFileName As String = "RVMSetup"
 
   '========================================================================================
   '          PRIVATE VARIABLES
   '========================================================================================
+  Private fApplicationFileName As String
+  Private fApplicationFileExt As String
+  Private fApplicationFullFileName As String
   Private fApplicationPath As String
+  Private fApplicationFileNamePath As String
+
+  Private fSettingsFileName As String     'Filename
+  Private fSettingsFileExt As String      'File Extension
+  Private fSettingsFullFileName As String 'Filename + Extension
+  Private fSettingsFilePath                'Path to Filename 
+  Private fSettingsFileNamePath           ' Path including Filename
+
   Private fSetupFileName As String
-  Private fSettingsFileName As String
+  Private fSetupFileExt As String
+  Private fSetupFullFileName As String
+  Private fSetupFilePath
+  Private fSetupFileNamePath As String
+
   Private fRVMPath As String
   Private fRVMDataPath As String
   Private fRVMLogsPath As String
+
   Private fUseLastLog As Boolean = True
+
   Private SettingsFile As New HUSettingsFile
 
   '========================================================================================
@@ -83,20 +101,124 @@ Public Class frmAppSettings
       fSetupFileName = FileName
     End Set
 
-  End Property 'Public Property SetupFileName() As String
+  End Property 'Public Property SetupFileName()
+
+  '------------------------------------------------------------------------------------------
+  Public Property SetupFileExt() As String
+
+    Get
+      Return fSetupFileExt
+    End Get
+
+    Set(ByVal FileExt As String)
+      fSetupFileExt = FileExt
+    End Set
+
+  End Property 'Public Property SetupFileExt()
+
+  '----------------------------------------------------------------------------------------
+  Public Property SetupFullFileName() As String
+
+    Get
+      Return fSetupFullFileName
+    End Get
+
+    Set(ByVal SetupFullFileName As String)
+      fSetupFullFileName = SetupFullFileName
+    End Set
+
+  End Property 'Public Property SetupFullFileName() As String
+
+  '------------------------------------------------------------------------------------------
+  Public Property SetupFilePath() As String
+
+    Get
+      Return fSetupFilePath
+    End Get
+
+    Set(ByVal FilePath As String)
+      fSetupFilePath = FilePath
+    End Set
+
+  End Property 'Public Property SetupFilePath() As String
+
+  '------------------------------------------------------------------------------------------
+  Public Property SetupFileNamePath() As String
+
+    Get
+      Return fSetupFileNamePath
+    End Get
+
+    Set(ByVal SetupFileNamePath As String)
+      fSetupFileNamePath = SetupFileNamePath
+    End Set
+
+  End Property 'Public Property SetupFileNamePath() As String
 
   '========================================================================================
   Public Property SettingsFileName() As String
 
     Get
-      Return fSettingsFileName
+      Return SettingsFileName
     End Get
 
     Set(ByVal FileName As String)
       fSettingsFileName = FileName
     End Set
 
-  End Property 'Public Property SetupFileName() As String
+  End Property 'Public Property SettingsFileName()
+
+  '------------------------------------------------------------------------------------------
+  Public Property SettingsFileExt() As String
+
+    Get
+      Return fSettingsFileExt
+    End Get
+
+    Set(ByVal FileExt As String)
+      fSettingsFileExt = FileExt
+    End Set
+
+  End Property 'Public Property SettingsFileExt()
+
+  '----------------------------------------------------------------------------------------
+  Public Property SettingsFullFileName() As String
+
+    Get
+      Return fSettingsFullFileName
+    End Get
+
+    Set(ByVal FullFileName As String)
+      fSettingsFullFileName = FullFileName
+    End Set
+
+  End Property 'Public Property SettingsFileName() As String
+
+  '------------------------------------------------------------------------------------------
+  Public Property SettingsFilePath() As String
+
+    Get
+      Return fSettingsFilePath
+    End Get
+
+    Set(ByVal FilePath As String)
+      fSettingsFilePath = FilePath
+    End Set
+
+  End Property 'Public Property SettingsFilePath() As String
+
+  '----------------------------------------------------------------------------------------
+  Public Property SettingsFileNamePath() As String
+
+    Get
+      Return fSettingsFileNamePath
+    End Get
+
+    Set(ByVal SettingsFileNamePath As String)
+      fSettingsFileNamePath = SettingsFileNamePath
+    End Set
+
+  End Property 'Public Property SettingsFileNamePath() As String
 
   '========================================================================================
   Public Property RVMPath() As String
@@ -183,11 +305,22 @@ Public Class frmAppSettings
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
+  Public Sub InitSetupFileData()
+
+    SetupFileName = cstrSetupFileName
+    SetupFileExt = cstrSetupFileExt
+    SetupFullFileName = cstrSetupFileName + cstrSetupFileExt
+    SetupFilePath = ApplicationPath
+    SetupFileNamePath = ApplicationPath + "\" + SetupFullFileName
+
+  End Sub ' Public Sub InitSetupFileData
+
+  '----------------------------------------------------------------------------------------
   Public Function SetupFileExists() As Boolean
 
-    MessageBox.Show(SetupFileName)
+    MessageBox.Show(SetupFileNamePath)
 
-    If My.Computer.FileSystem.FileExists(SetupFileName) Then
+    If My.Computer.FileSystem.FileExists(SetupFileNamePath) Then
       MessageBox.Show("Setup File Exists")
       Return True
     Else
@@ -205,7 +338,7 @@ Public Class frmAppSettings
     Try
       ' Create an instance of Stream Reader to read from a file.
       ' The using statement also closes the Stream Reader.
-      Using sr As StreamReader = New StreamReader(SetupFileName)
+      Using sr As StreamReader = New StreamReader(SetupFileNamePath)
         Dim line As String
         ' Read lines from the file until the end of
         ' the file is reached.
@@ -222,11 +355,22 @@ Public Class frmAppSettings
   End Sub 'Public Sub ReadSetupFile
 
   '========================================================================================
+  Public Sub InitSettingsFileData()
+
+    SettingsFileName = cstrSettingsFileName
+    SettingsFileExt = CStrSettingsFileExt
+    SettingsFullFileName = cstrSettingsFileName + CStrSettingsFileExt
+    SettingsFilePath = ApplicationPath
+    SettingsFileNamePath = ApplicationPath + "\" + SettingsFullFileName
+
+  End Sub ' Public Sub InitSetttingsFileData
+
+  '----------------------------------------------------------------------------------------
   Public Function SettingsFileExists() As Boolean
 
     MessageBox.Show("SettingsFileExists")
 
-    If My.Computer.FileSystem.FileExists(SettingsFileName) Then
+    If My.Computer.FileSystem.FileExists(SettingsFileNamePath) Then
       Return True
     Else
       Return False
@@ -269,7 +413,7 @@ Public Class frmAppSettings
       '  Create an instance of Stream Reader to read from a file.
       ' The using statement also closes the Stream Reader.
 
-      Using sr As StreamReader = New StreamReader(SettingsFileName)
+      Using sr As StreamReader = New StreamReader(SettingsFileNamePath)
 
         Dim line As String
 
@@ -280,7 +424,7 @@ Public Class frmAppSettings
         RVMPath = sr.ReadLine()
         RVMDataPath = sr.ReadLine()
         RVMLogsPath = sr.ReadLine()
-        SettingsFileName = sr.ReadLine()
+        SettingsFileNamePath = sr.ReadLine()
         UseLastLog = sr.ReadLine()
       End Using
 
@@ -296,25 +440,26 @@ Public Class frmAppSettings
 
     MessageBox.Show("WriteSettingsFile")
 
-    Dim OldSettingsFileName As String = "OLD" + SetupFileName
+    Dim OldSettingsFileName As String = "OLD" + SettingsFullFileName
+    MessageBox.Show(OldSettingsFileName)
 
     ' If the file exists then we must rename it before creating a new one
     If SettingsFileExists() Then
       MessageBox.Show("Renaming old Settingsfile.")
-      My.Computer.FileSystem.RenameFile(SettingsFileName, OldSettingsFileName)
+      My.Computer.FileSystem.RenameFile(SettingsFileNamePath, OldSettingsFileName)
     End If ' If SettingsFileExists
 
     Try
       'Create an instance of Stream Writer to read from a file.
       ' The using statement also closes the Stream Writer.
-      Using SettingsFile As StreamWriter = New StreamWriter(SettingsFileName)
+      Using SettingsFile As StreamWriter = New StreamWriter(SettingsFileNamePath)
         'Dim line As String
         ' Write records to the file 
         SettingsFile.WriteLine("Version Nr")
         SettingsFile.WriteLine(RVMPath)
         SettingsFile.WriteLine(RVMDataPath)
         SettingsFile.WriteLine(RVMLogsPath)
-        SettingsFile.WriteLine(SettingsFileName)
+        SettingsFile.WriteLine(SettingsFileNamePath)
         SettingsFile.WriteLine(UseLastLog)
       End Using
     Catch e As Exception
@@ -323,8 +468,8 @@ Public Class frmAppSettings
       'Restore the previous file
       MessageBox.Show("Renaming old Settingsfile.")
       MessageBox.Show(OldSettingsFileName)
-      MessageBox.Show(SettingsFileName)
-      My.Computer.FileSystem.RenameFile(OldSettingsFileName, SettingsFileName)
+      MessageBox.Show(SettingsFileNamePath)
+      My.Computer.FileSystem.RenameFile(OldSettingsFileName, SettingsFullFileName)
     End Try
 
     ' Delete the previous file if we were successful

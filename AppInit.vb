@@ -16,7 +16,7 @@ Module AppInit
   '                         frmAppSettings.LoadAppSettings
   '   Version: 1.0.0
   '
-  '   Date: 15 Apr 2017
+  '   Date: 17 Apr 2017
   '
   '========================================================================================
 
@@ -55,10 +55,8 @@ Module AppInit
 
     ' Get the Application path
     frmAppSettings.ApplicationPath = My.Application.Info.DirectoryPath
-    frmAppSettings.SetupFileName = frmAppSettings.ApplicationPath + "\" +
-                                    frmAppSettings.cstrSetupFileName +
-                                    frmAppSettings.CStrSettingsFileExt
-    frmAppSettings.SettingsFileName = frmAppSettings.ApplicationPath + "\" +
+    frmAppSettings.InitSetupFileData()
+    frmAppSettings.SettingsFileNamePath = frmAppSettings.ApplicationPath + "\" +
                                       frmAppSettings.cstrSettingsFileName +
                                       frmAppSettings.CStrSettingsFileExt
 
