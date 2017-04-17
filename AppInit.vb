@@ -56,9 +56,7 @@ Module AppInit
     ' Get the Application path
     frmAppSettings.ApplicationPath = My.Application.Info.DirectoryPath
     frmAppSettings.InitSetupFileData()
-    frmAppSettings.SettingsFileNamePath = frmAppSettings.ApplicationPath + "\" +
-                                      frmAppSettings.cstrSettingsFileName +
-                                      frmAppSettings.CStrSettingsFileExt
+    frmAppSettings.InitSettingsFileData()
 
     ' First we have to read the InnoSetup file. If it is not there we cannot go any
     ' further

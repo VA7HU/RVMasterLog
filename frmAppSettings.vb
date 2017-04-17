@@ -441,12 +441,21 @@ Public Class frmAppSettings
     MessageBox.Show("WriteSettingsFile")
 
     Dim OldSettingsFileName As String = "OLD" + SettingsFullFileName
+    MessageBox.Show(SettingsFullFileName)
     MessageBox.Show(OldSettingsFileName)
+
+    ' Delete any previous OLD file
+    If My.Computer.FileSystem.FileExists(OldSettingsFileName) Then
+      My.Computer.FileSystem.DeleteFile(OldSettingsFileName)
+    End If
 
     ' If the file exists then we must rename it before creating a new one
     If SettingsFileExists() Then
       MessageBox.Show("Renaming old Settingsfile.")
+      MessageBox.Show(SettingsFileNamePath)
+      MessageBox.Show(OldSettingsFileName)
       My.Computer.FileSystem.RenameFile(SettingsFileNamePath, OldSettingsFileName)
+      MessageBox.Show(SettingsFileNamePath)
     End If ' If SettingsFileExists
 
     Try
@@ -472,10 +481,12 @@ Public Class frmAppSettings
       My.Computer.FileSystem.RenameFile(OldSettingsFileName, SettingsFullFileName)
     End Try
 
-    ' Delete the previous file if we were successful
+    ' Delete the OLD file if we were successful
     If My.Computer.FileSystem.FileExists(OldSettingsFileName) Then
       My.Computer.FileSystem.DeleteFile(OldSettingsFileName)
     End If
+
+    MessageBox.Show("Write Setings File Complete")
 
   End Sub 'Public Sub WriteSettingsFile
 
