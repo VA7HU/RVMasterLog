@@ -412,8 +412,9 @@ Public Class frmAppSettings
       MessageBox.Show("Renaming old Settingsfile.")
       '   MessageBox.Show(SettingsFileNamePath)
       '   MessageBox.Show(OldSettingsFileName)
-      My.Computer.FileSystem.RenameFile(SettingsFileNamePath, OldSettingsFileName)
-      MessageBox.Show(SettingsFileNamePath)
+      Dim vstrTFileNamePath As String = SettingsFileNamePath
+      My.Computer.FileSystem.RenameFile(vstrTFileNamePath, OldSettingsFileName)
+      MessageBox.Show(vstrTFileNamePath)
     End If ' If SettingsFileExists
 
     Try
