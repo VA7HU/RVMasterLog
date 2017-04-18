@@ -13,7 +13,7 @@
   '
   '   Version: 1.0.0
   '
-  '   Date: 8 Apr 2017
+  '   Date: 18 Apr 2017
   '
   '========================================================================================
 
@@ -80,7 +80,7 @@
   Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     If Not AppInit.Initialise() Then
       MessageBox.Show("Initialisation Failed")
-      Application.Exit()
+      Me.Close()
     End If 'If Not AppInit.Initialise
   End Sub 'Private Sub frmMain_Load
 
