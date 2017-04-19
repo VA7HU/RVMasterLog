@@ -18,7 +18,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 18 Apr 2017
+  '   Date: 19 Apr 2017
   '
   '===========================================================================================
 
@@ -397,24 +397,24 @@ Public Class frmAppSettings
 
     Dim OldSettingsFileName As String = "OLD" + SettingsFullFileName
     Dim OldSettingsFileNamePath As String = SettingsFilePath + OldSettingsFileName
-    MessageBox.Show(SettingsFullFileName)
-    MessageBox.Show(OldSettingsFileName)
-    MessageBox.Show(OldSettingsFileNamePath)
+    '  MessageBox.Show(SettingsFullFileName)
+    '  MessageBox.Show(OldSettingsFileName)
+    ' MessageBox.Show(OldSettingsFileNamePath)
 
     ' Delete any previous OLD file
     If My.Computer.FileSystem.FileExists(OldSettingsFileNamePath) Then
-      MessageBox.Show("Deleting " + OldSettingsFileName)
+      '  MessageBox.Show("Deleting " + OldSettingsFileName)
       My.Computer.FileSystem.DeleteFile(OldSettingsFileNamePath)
     End If
 
     ' If the Settings file exists then we must rename it before creating a new one
     If SettingsFileExists() Then
-      MessageBox.Show("Renaming old Settingsfile.")
+      '  MessageBox.Show("Renaming old Settingsfile.")
       '   MessageBox.Show(SettingsFileNamePath)
       '   MessageBox.Show(OldSettingsFileName)
       Dim vstrTFileNamePath As String = SettingsFileNamePath
       My.Computer.FileSystem.RenameFile(vstrTFileNamePath, OldSettingsFileName)
-      MessageBox.Show(vstrTFileNamePath)
+      '  MessageBox.Show(vstrTFileNamePath)
     End If ' If SettingsFileExists
 
     Try
