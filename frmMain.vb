@@ -9,11 +9,12 @@
   '   Called By:
   '
   '   Calls:  AppFinal  : Finalise
-  '                         AppInit: Initialise 
+  '                       AppInit: Initialise 
+  '           frmRVTypesDB : frmRVTypesDB.Show
   '
   '   Version: 1.0.0
   '
-  '   Date: 18 Apr 2017
+  '   Date: 27 Apr 2017
   '
   '========================================================================================
 
@@ -48,19 +49,32 @@
   '========================================================================================
   '          MENU ROUTINES
   '========================================================================================
+
+  '========================================================================================
+  '         FILE MENU
+  '========================================================================================
   Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles mnuFileExit.Click
     Application.Exit()
   End Sub 'Private Sub mnuFileExit_Click
 
-  '=======================================================================================
-  Private Sub mnuConfigurationDatabaseRVTypes_Click(sender As Object, e As EventArgs)
-    frmRVTypesDB.ShowDialog()
-  End Sub ' Private Sub mnuConfigurationDatabaseRVTypes_Click
-
+  '========================================================================================
+  '         SETTINGS MENU
   '========================================================================================
   Private Sub mnuSettings_Click(sender As Object, e As EventArgs) Handles mnuSettings.Click
     frmAppSettings.Show()
   End Sub 'Private Sub mnuSettings_Click
+
+  '========================================================================================
+  '         CONFIGURATION MENU
+  '========================================================================================
+  Private Sub mnuConfigurationDatabaseRVTypes_Click(sender As Object, e As EventArgs)
+    frmRVTypesDB.ShowDialog()
+  End Sub ' Private Sub mnuConfigurationDatabaseRVTypes_Click
+
+  '----------------------------------------------------------------------------------------
+  Private Sub DefaultRVTypeTableToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DefaultRVTypeTableToolStripMenuItem.Click
+    frmRVTypesDB.Show()
+  End Sub ' Private Sub DefaultRVTypeTableToolStripMenuItem_Click
 
   '========================================================================================
   '          COMMAND BUTTON ROUTINES
@@ -95,9 +109,7 @@
     MessageBox.Show("Form CLose")
   End Sub ' Private Sub frmMain_FormClosed
 
-  Private Sub ApplicationDBToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ApploicationDBToolStripMenuItem.Click
-    frmApplicationDB.Show()
-  End Sub
+  '----------------------------------------------------------------------------------------
 
   '========================================================================================
 End Class ' frmMain

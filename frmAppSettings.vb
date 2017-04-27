@@ -13,12 +13,13 @@ Public Class frmAppSettings
   '
   '   Called By:  AppInit : Initialise
   '               AppFinal : Finalise
+  '               frmRVTypesDB : frmRVTypesDB_Load
   '
   '   Calls:
   '
   '   Version: 1.0.0
   '
-  '   Date: 19 Apr 2017
+  '   Date: 27 Apr 2017
   '
   '===========================================================================================
 

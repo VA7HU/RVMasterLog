@@ -29,10 +29,12 @@ Partial Class frmMain
     Me.mnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
     Me.mnuSettings = New System.Windows.Forms.ToolStripMenuItem()
     Me.ConfigurtionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-    Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-    Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
     Me.DataBaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
     Me.ApploicationDBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+    Me.DefaultToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+    Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+    Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+    Me.DefaultRVTypeTableToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
     Me.mnuMain.SuspendLayout()
     Me.SuspendLayout()
     '
@@ -82,8 +84,28 @@ Partial Class frmMain
     '
     Me.ConfigurtionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataBaseToolStripMenuItem})
     Me.ConfigurtionToolStripMenuItem.Name = "ConfigurtionToolStripMenuItem"
-    Me.ConfigurtionToolStripMenuItem.Size = New System.Drawing.Size(92, 25)
-    Me.ConfigurtionToolStripMenuItem.Text = "Configurtion"
+    Me.ConfigurtionToolStripMenuItem.Size = New System.Drawing.Size(99, 25)
+    Me.ConfigurtionToolStripMenuItem.Text = "Configuration"
+    '
+    'DataBaseToolStripMenuItem
+    '
+    Me.DataBaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApploicationDBToolStripMenuItem, Me.DefaultToolStripMenuItem})
+    Me.DataBaseToolStripMenuItem.Name = "DataBaseToolStripMenuItem"
+    Me.DataBaseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+    Me.DataBaseToolStripMenuItem.Text = "DataBase"
+    '
+    'ApploicationDBToolStripMenuItem
+    '
+    Me.ApploicationDBToolStripMenuItem.Name = "ApploicationDBToolStripMenuItem"
+    Me.ApploicationDBToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+    Me.ApploicationDBToolStripMenuItem.Text = "ApploicationDB"
+    '
+    'DefaultToolStripMenuItem
+    '
+    Me.DefaultToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DefaultRVTypeTableToolStripMenuItem})
+    Me.DefaultToolStripMenuItem.Name = "DefaultToolStripMenuItem"
+    Me.DefaultToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+    Me.DefaultToolStripMenuItem.Text = "Default Tables"
     '
     'ToolStrip1
     '
@@ -103,18 +125,11 @@ Partial Class frmMain
     Me.StatusStrip1.TabIndex = 2
     Me.StatusStrip1.Text = "StatusStrip1"
     '
-    'DataBaseToolStripMenuItem
+    'DefaultRVTypeTableToolStripMenuItem
     '
-    Me.DataBaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApploicationDBToolStripMenuItem})
-    Me.DataBaseToolStripMenuItem.Name = "DataBaseToolStripMenuItem"
-    Me.DataBaseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-    Me.DataBaseToolStripMenuItem.Text = "DataBase"
-    '
-    'ApploicationDBToolStripMenuItem
-    '
-    Me.ApploicationDBToolStripMenuItem.Name = "ApploicationDBToolStripMenuItem"
-    Me.ApploicationDBToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-    Me.ApploicationDBToolStripMenuItem.Text = "ApploicationDB"
+    Me.DefaultRVTypeTableToolStripMenuItem.Name = "DefaultRVTypeTableToolStripMenuItem"
+    Me.DefaultRVTypeTableToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
+    Me.DefaultRVTypeTableToolStripMenuItem.Text = "Default RVTypeTable"
     '
     'frmMain
     '
@@ -149,4 +164,6 @@ Partial Class frmMain
   Friend WithEvents ConfigurtionToolStripMenuItem As ToolStripMenuItem
   Friend WithEvents DataBaseToolStripMenuItem As ToolStripMenuItem
   Friend WithEvents ApploicationDBToolStripMenuItem As ToolStripMenuItem
+  Friend WithEvents DefaultToolStripMenuItem As ToolStripMenuItem
+  Friend WithEvents DefaultRVTypeTableToolStripMenuItem As ToolStripMenuItem
 End Class
