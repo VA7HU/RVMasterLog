@@ -19,19 +19,19 @@ Public Class frmRVMDefaultTablesDB
   '========================================================================================
   '          PRIVATE CONSTANTS
   '========================================================================================
-  Private CStrRMVDefaultTablesDBName As String = "RMVDefaultTables"
-  Private CStrRMVDefaultTablesDBExt As String = ".sl3"
+  Private CStrRVMDefaultTablesDBName As String = "RMVDefaultTables"
+  Private CStrRVMDefaultTablesDBExt As String = ".sl3"
   ' Private cstrSetupFileExt As String = ".ini"
   ' Private cstrSetupFileName As String = "RVMSetup"
 
   '========================================================================================
   '          PRIVATE VARIABLES
   '========================================================================================
-  Private fRMVDefaultTablesDBName As String 'DBname
-  Private fRMVDefaultTablesDBExt As String 'DB Extension
-  Private fRMVDefaultTablesFullFileName As String 'DBName + DBExtension
-  Private fRMVDefaultTablesFilePath 'Path to DBName
-  Private fRMVDefaultTablesNamePath As String 'Path including DBName
+  Private fRVMDefaultTablesDBName As String 'DBname
+  Private fRVMDefaultTablesDBExt As String 'DB Extension
+  Private fRVMDefaultTablesFullFileName As String 'DBName + DBExtension
+  Private fRVMDefaultTablesFilePath 'Path to DBName
+  Private fRVMDefaultTablesNamePath As String 'Path including DBName
 
   '========================================================================================
   '          PRIVATE PROPERTIES
@@ -60,42 +60,42 @@ Public Class frmRVMDefaultTablesDB
   '========================================================================================
   '          PROPERTY ROUTINES
   '========================================================================================
-  Private ReadOnly Property RMVDefaultTablesDBName() As String
+  Private ReadOnly Property RVMDefaultTablesDBName() As String
     Get
-      Return fRMVDefaultTablesDBName
+      Return fRVMDefaultTablesDBName
     End Get
-  End Property 'Private Property RMVDefaultTablesDBName()
+  End Property 'Private Property RVMDefaultTablesDBName()
 
   '------------------------------------------------------------------------------------------
-  Private ReadOnly Property RMVDefaultTablesDBExt() As String
+  Private ReadOnly Property RVMDefaultTablesDBExt() As String
     Get
-      Return fRMVDefaultTablesDBExt
+      Return fRVMDefaultTablesDBExt
     End Get
-  End Property ' Private ReadOnly Property RMVDefaultTablesDBExt
+  End Property ' Private ReadOnly Property RVMDefaultTablesDBExt
 
   '----------------------------------------------------------------------------------------
-  Private ReadOnly Property RMVDefaultTablesFullFileName() As String
+  Private ReadOnly Property RVMDefaultTablesFullFileName() As String
     Get
-      Return fRMVDefaultTablesFullFileName
+      Return fRVMDefaultTablesFullFileName
     End Get
-  End Property 'Private Property SetupFullFileName() As String
+  End Property 'Private ReadOnly Property RVMDefaultTablesFullFileName
 
   '------------------------------------------------------------------------------------------
-  Private ReadOnly Property RMVDefaultTablesFilePath() As String
+  Private ReadOnly Property RVMDefaultTablesFilePath() As String
     Get
-      Return fRMVDefaultTablesFilePath
+      Return fRVMDefaultTablesFilePath
     End Get
-  End Property 'Private Property RMVDefaultTablesFilePath()
+  End Property 'Private Property RVMDefaultTablesFilePath()
 
   '------------------------------------------------------------------------------------------
-  Private ReadOnly Property RMVDefaultTablesNamePath() As String
+  Private ReadOnly Property RVMDefaultTablesNamePath() As String
     Get
-      Return fRMVDefaultTablesNamePath
+      Return fRVMDefaultTablesNamePath
     End Get
     'Set(ByVal DefaultTablesNamePath As String)
     'fRMVDefaultTablesNamePath = DefaultTablesNamePath
     'End Set
-  End Property 'PubPrivatelic Property SetupFileNamePath() As String
+  End Property 'Private ReadOnly Property RVMDefaultTablesNamePath()
 
   '========================================================================================
 
@@ -114,36 +114,43 @@ Public Class frmRVMDefaultTablesDB
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
+  Public Function RVMDefaultTablesDBExists() As Boolean
+    If My.Computer.FileSystem.FileExists(RVMDefaultTablesNamePath) Then
+      Return True
+    Else
+      Return False
+    End If
 
+  End Function ' Public Function RVMDefaultTablesDBExists()
   '========================================================================================
   '          FORM ROUTINES
   '========================================================================================
   Private Sub frmRVTypesDB_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
 
-    fRMVDefaultTablesDBName = CStrRMVDefaultTablesDBName
-    MessageBox.Show(fRMVDefaultTablesDBName)
-    fRMVDefaultTablesDBExt = CStrRMVDefaultTablesDBExt
-    MessageBox.Show(fRMVDefaultTablesDBExt)
-    fRMVDefaultTablesFullFileName = RMVDefaultTablesDBName & RMVDefaultTablesDBExt
-    MessageBox.Show(fRMVDefaultTablesFullFileName)
-    fRMVDefaultTablesFilePath = frmAppSettings.ApplicationPath
-    MessageBox.Show(fRMVDefaultTablesFilePath)
-    fRMVDefaultTablesNamePath = fRMVDefaultTablesFilePath & "\" & fRMVDefaultTablesFullFileName
-    MessageBox.Show(fRMVDefaultTablesNamePath)
+    fRVMDefaultTablesDBName = CStrRVMDefaultTablesDBName
+    MessageBox.Show(fRVMDefaultTablesDBName)
+    fRVMDefaultTablesDBExt = CStrRVMDefaultTablesDBExt
+    MessageBox.Show(fRVMDefaultTablesDBExt)
+    fRVMDefaultTablesFullFileName = RVMDefaultTablesDBName & RVMDefaultTablesDBExt
+    MessageBox.Show(fRVMDefaultTablesFullFileName)
+    fRVMDefaultTablesFilePath = frmAppSettings.RVMDataPath
+    MessageBox.Show(fRVMDefaultTablesFilePath)
+    fRVMDefaultTablesNamePath = fRVMDefaultTablesFilePath & "\" & fRVMDefaultTablesFullFileName
+    MessageBox.Show(fRVMDefaultTablesNamePath)
 
     'Dim ConnectionString As String = fRMVDefaultTablesNamePath & ";Version=3;" 
-    Dim ConnectionString As String = "Data Source=" & fRMVDefaultTablesNamePath & ";Version=3;"
+    Dim ConnectionString As String = "Data Source=" & fRVMDefaultTablesNamePath & ";Version=3;"
     MessageBox.Show(ConnectionString)
 
 
-    If My.Computer.FileSystem.FileExists(fRMVDefaultTablesNamePath) Then
+    If My.Computer.FileSystem.FileExists(fRVMDefaultTablesNamePath) Then
       MessageBox.Show("Exists")
     Else
       MessageBox.Show("Doesnt Exist")
       Dim SQLconnect As New SQLite.SQLiteConnection()
       Dim SQLcommand As SQLiteCommand
       'Database Doesn't Exist so Created at Path
-      Dim ds As String = "Data Source=" & fRMVDefaultTablesFullFileName & ";Version=3;"
+      Dim ds As String = "Data Source=" & fRVMDefaultTablesFullFileName & ";Version=3;"
       MessageBox.Show(ds)
       SQLconnect.ConnectionString = ds
       SQLconnect.Open()

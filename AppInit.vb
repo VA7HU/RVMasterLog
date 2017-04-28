@@ -14,9 +14,11 @@ Module AppInit
   '                         frmAppSettings.SetupFileExists
   '                         frmAppSettings.ReadSetupFile
   '                         frmAppSettings.LoadAppSettings
+  '                         frmAppSettings.RVMDataPath
+  '
   '   Version: 1.0.0
   '
-  '   Date: 17 Apr 2017
+  '   Date: 28 Apr 2017
   '
   '========================================================================================
 
@@ -63,7 +65,8 @@ Module AppInit
     ' we reinstall them.
     If frmAppSettings.SetupFileExists Then
       frmAppSettings.ReadSetupFile()
-      If Not My.Computer.FileSystem.FileExists("Test") Then
+      MessageBox.Show(frmAppSettings.RVMDataPath)
+      If Not My.Computer.FileSystem.FileExists(frmAppSettings.RVMDataPath) Then
 
       End If
     Else
