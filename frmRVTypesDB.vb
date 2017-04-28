@@ -62,54 +62,42 @@ Public Class frmRVTypesDB
   '========================================================================================
   '          PROPERTY ROUTINES
   '========================================================================================
-  Public Property RMVDefaultTablesDBName() As String
+  Private ReadOnly Property RMVDefaultTablesDBName() As String
     Get
       Return fRMVDefaultTablesDBName
     End Get
-    Set(ByVal DBName As String)
-      fRMVDefaultTablesDBName = DBName
-    End Set
-  End Property 'Public Property RMVDefaultTablesDBName()
+  End Property 'Private Property RMVDefaultTablesDBName()
 
   '------------------------------------------------------------------------------------------
-  Public Property RMVDefaultTablesDBExt() As String
+  Private ReadOnly Property RMVDefaultTablesDBExt() As String
     Get
       Return fRMVDefaultTablesDBExt
     End Get
-    Set(ByVal DefaultTablesDBExt As String)
-      fRMVDefaultTablesDBExt = DefaultTablesDBExt
-    End Set
-  End Property 'RMVDefaultTablesDBExt()
+  End Property ' Private ReadOnly Property RMVDefaultTablesDBExt
 
   '----------------------------------------------------------------------------------------
-  Public Property RMVDefaultTablesFullFileName() As String
+  Private ReadOnly Property RMVDefaultTablesFullFileName() As String
     Get
       Return fRMVDefaultTablesFullFileName
     End Get
-    Set(ByVal DefaultTablesFullFileName As String)
-      fRMVDefaultTablesFullFileName = DefaultTablesFullFileName
-    End Set
-  End Property 'Public Property SetupFullFileName() As String
+  End Property 'Private Property SetupFullFileName() As String
 
   '------------------------------------------------------------------------------------------
-  Public Property RMVDefaultTablesFilePath() As String
+  Private ReadOnly Property RMVDefaultTablesFilePath() As String
     Get
       Return fRMVDefaultTablesFilePath
     End Get
-    Set(ByVal DefaultTablesFilePath As String)
-      fRMVDefaultTablesFilePath = DefaultTablesFilePath
-    End Set
-  End Property 'Public Property RMVDefaultTablesFilePath()
+  End Property 'Private Property RMVDefaultTablesFilePath()
 
   '------------------------------------------------------------------------------------------
-  Public Property RMVDefaultTablesNamePath() As String
+  Private ReadOnly Property RMVDefaultTablesNamePath() As String
     Get
-      Return RMVDefaultTablesNamePath
+      Return fRMVDefaultTablesNamePath
     End Get
-    Set(ByVal DefaultTablesNamePath As String)
-      fRMVDefaultTablesNamePath = DefaultTablesNamePath
-    End Set
-  End Property 'Public Property SetupFileNamePath() As String
+    'Set(ByVal DefaultTablesNamePath As String)
+    'fRMVDefaultTablesNamePath = DefaultTablesNamePath
+    'End Set
+  End Property 'PubPrivatelic Property SetupFileNamePath() As String
 
   '========================================================================================
 
@@ -134,30 +122,31 @@ Public Class frmRVTypesDB
   '========================================================================================
   Private Sub frmRVTypesDB_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
 
-    RMVDefaultTablesNamePath = frmAppSettings.ApplicationPath
+    fRMVDefaultTablesDBName = CStrRMVDefaultTablesDBName
+    fRMVDefaultTablesDBExt = CStrRMVDefaultTablesDBExt
+    fRMVDefaultTablesFullFileName = RMVDefaultTablesDBName & RMVDefaultTablesDBExt
+    fRMVDefaultTablesFilePath = frmAppSettings.ApplicationPath
+    fRMVDefaultTablesNamePath = fRMVDefaultTablesFilePath & "\" & fRMVDefaultTablesFullFileName
 
-    '  Dim connection As String = "Data Source=" & Form1.connstring & ";Version=3"
-    Dim connection As String = RMVDefaultTablesNamePath & ";Version=3"
-    MessageBox.Show(connection)
+    'Dim ConnectionString As String = fRMVDefaultTablesNamePath & ";Version=3;"
+    Dim ConnectionString As String = "Data Source=" & fRMVDefaultTablesNamePath & ";Version=3;"
+    MessageBox.Show(ConnectionString)
 
-    '  Dim SQLConn As New SQLiteConnection
-    '  Dim SQLcmd As New SQLiteCommand
-    ' Dim SQLdr As SQLiteDataReader
-
-    ' SQLConn.ConnectionString = connection
-    ' SQLConn.Open()
-
-    ' SQLcmd.Connection = SQLConn
-    ' SQLcmd.CommandText = SQLstr
-    ' SQLdr = SQLcmd.ExecuteReader()
-    ' While SQLdr.Read()
-    'MessageBox.Show(SQLdr(fieldIndexHere).ToString)
-    'Form1.ListBox1.Text = SQLdr(fieldIndexHere).ToString
-    'End While
-
-    'SQLdr.Close()
-    'SQLConn.Close()
-
+    Using Con As New SQLiteConnection(ConnectionString)
+      Con.Open()
+      Using cmd As New SQLiteCommand(Con)
+        cmd.CommandText = "SELECT * FROM DefaultRVTypeTable"
+        Dim rdr As SQLiteDataReader = cmd.ExecuteReader()
+        'Using rdr
+        'While (rdr.Read())
+        'Console.WriteLine(rdr.GetInt32(0) & " " _
+        '     & rdr.GetString(1) & " " & rdr.GetInt32(2))
+        'End While
+        'End Using
+        'End Using
+      End Using
+      Con.Close()
+    End Using
   End Sub  ' Private Sub frmRVTypesDB_Shown
 
   '========================================================================================
