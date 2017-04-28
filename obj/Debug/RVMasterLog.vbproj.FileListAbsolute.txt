@@ -69,7 +69,6 @@ C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Worki
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.exe
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.xml
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.pdb
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmRVTypesDB.resources
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmApplicationDB.resources
 C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog (RVM)\Working Copy\bin\Debug\RVMasterLog.exe.config
 C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog (RVM)\Working Copy\bin\Debug\RVMasterLog.exe
@@ -118,3 +117,4 @@ C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog\Wo
 C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.xml
 C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.pdb
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmRVMDefaultTables.resources

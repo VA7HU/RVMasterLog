@@ -1,12 +1,10 @@
 ﻿Imports System.Data.SQLite
 
-Public Class frmRVTypesDB
+Public Class frmRVMDefaultTables
 
   '========================================================================================
   '
-  '   Filename : frmRVTypesDB.vb
-  '
-  '   Description:
+  '   Filename : frmRVTypesDB.vbR
   '
   '   Called By:
   '

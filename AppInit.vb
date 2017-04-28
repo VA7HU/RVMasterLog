@@ -58,10 +58,14 @@ Module AppInit
     frmAppSettings.InitSetupFileData()
     frmAppSettings.InitSettingsFileData()
 
-    ' First we have to read the InnoSetup file. If it is not there we cannot go any
-    ' further
+    ' First we have to read the InnoSetup file. If it Is Not there we cannot go any
+    ' further. We then confirm all default databases are installed. If any are missing
+    ' we reinstall them.
     If frmAppSettings.SetupFileExists Then
       frmAppSettings.ReadSetupFile()
+      If Not My.Computer.FileSystem.FileExists("Test") Then
+
+      End If
     Else
       MessageBox.Show("No Setup File Found")
       Return False

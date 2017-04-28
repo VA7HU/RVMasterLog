@@ -68,12 +68,12 @@
   '         CONFIGURATION MENU
   '========================================================================================
   Private Sub mnuConfigurationDatabaseRVTypes_Click(sender As Object, e As EventArgs)
-    frmRVTypesDB.ShowDialog()
+    frmRVMDefaultTables.ShowDialog()
   End Sub ' Private Sub mnuConfigurationDatabaseRVTypes_Click
 
   '----------------------------------------------------------------------------------------
   Private Sub DefaultRVTypeTableToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DefaultRVTypeTableToolStripMenuItem.Click
-    frmRVTypesDB.Show()
+    frmRVMDefaultTables.Show()
   End Sub ' Private Sub DefaultRVTypeTableToolStripMenuItem_Click
 
   '========================================================================================
