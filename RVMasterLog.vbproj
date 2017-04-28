@@ -116,10 +116,10 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRVMDefaultTables.Designer.vb">
-      <DependentUpon>frmRVMDefaultTables.vb</DependentUpon>
+    <Compile Include="frmRVMDefaultTablesDB.Designer.vb">
+      <DependentUpon>frmRVMDefaultTablesDB.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmRVMDefaultTables.vb">
+    <Compile Include="frmRVMDefaultTablesDB.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HUTextFiles.vb" />
@@ -149,8 +149,8 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRVMDefaultTables.resx">
-      <DependentUpon>frmRVMDefaultTables.vb</DependentUpon>
+    <EmbeddedResource Include="frmRVMDefaultTablesDB.resx">
+      <DependentUpon>frmRVMDefaultTablesDB.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -1,10 +1,10 @@
 ﻿Imports System.Data.SQLite
 
-Public Class frmRVMDefaultTables
+Public Class frmRVMDefaultTablesDB
 
   '========================================================================================
   '
-  '   Filename : frmRVTypesDB.vbR
+  '   Filename : frmRVMDefaultTablesDB.vb
   '
   '   Called By:
   '
@@ -12,7 +12,7 @@ Public Class frmRVMDefaultTables
   '
   '   Version:  1.0.0
   '
-  '   Date: 27 Apr 2017
+  '   Date: 28 Apr 2017
   '
   '========================================================================================
 

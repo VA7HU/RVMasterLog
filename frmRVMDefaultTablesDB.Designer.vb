@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmRVMDefaultTables
+Partial Class frmRVMDefaultTablesDB
   Inherits System.Windows.Forms.Form
 
   'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class frmRVMDefaultTables
   <System.Diagnostics.DebuggerStepThrough()>
   Private Sub InitializeComponent()
     Me.components = New System.ComponentModel.Container()
-    Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRVMDefaultTables))
+    Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRVMDefaultTablesDB))
     Me.btnClose = New System.Windows.Forms.Button()
     Me.btnCancel = New System.Windows.Forms.Button()
     Me.Panel1 = New System.Windows.Forms.Panel()
