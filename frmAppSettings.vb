@@ -438,7 +438,7 @@ Public Class frmAppSettings
       '     MessageBox.Show("Renaming old Settingsfile.")
       '     MessageBox.Show(OldSettingsFileName)
       '     MessageBox.Show(SettingsFileNamePath)
-      My.Computer.FileSystem.RenameFile(OldSettingsFileNamePath, SettingsFullFileName)
+      'My.Computer.FileSystem.RenameFile(OldSettingsFileNamePath, SettingsFullFileName)
     End Try
 
     ' Delete the OLD file if we were successful

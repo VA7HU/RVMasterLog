@@ -123,30 +123,47 @@ Public Class frmRVTypesDB
   Private Sub frmRVTypesDB_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
 
     fRMVDefaultTablesDBName = CStrRMVDefaultTablesDBName
+    MessageBox.Show(fRMVDefaultTablesDBName)
     fRMVDefaultTablesDBExt = CStrRMVDefaultTablesDBExt
+    MessageBox.Show(fRMVDefaultTablesDBExt)
     fRMVDefaultTablesFullFileName = RMVDefaultTablesDBName & RMVDefaultTablesDBExt
+    MessageBox.Show(fRMVDefaultTablesFullFileName)
     fRMVDefaultTablesFilePath = frmAppSettings.ApplicationPath
+    MessageBox.Show(fRMVDefaultTablesFilePath)
     fRMVDefaultTablesNamePath = fRMVDefaultTablesFilePath & "\" & fRMVDefaultTablesFullFileName
+    MessageBox.Show(fRMVDefaultTablesNamePath)
 
-    'Dim ConnectionString As String = fRMVDefaultTablesNamePath & ";Version=3;"
+    'Dim ConnectionString As String = fRMVDefaultTablesNamePath & ";Version=3;" 
     Dim ConnectionString As String = "Data Source=" & fRMVDefaultTablesNamePath & ";Version=3;"
     MessageBox.Show(ConnectionString)
 
-    Using Con As New SQLiteConnection(ConnectionString)
-      Con.Open()
-      Using cmd As New SQLiteCommand(Con)
-        cmd.CommandText = "SELECT * FROM DefaultRVTypeTable"
-        Dim rdr As SQLiteDataReader = cmd.ExecuteReader()
-        'Using rdr
-        'While (rdr.Read())
-        'Console.WriteLine(rdr.GetInt32(0) & " " _
-        '     & rdr.GetString(1) & " " & rdr.GetInt32(2))
-        'End While
-        'End Using
-        'End Using
-      End Using
-      Con.Close()
-    End Using
+
+    If My.Computer.FileSystem.FileExists(fRMVDefaultTablesNamePath) Then
+      MessageBox.Show("Exists")
+    Else
+      MessageBox.Show("Doesnt Exist")
+      Dim SQLconnect As New SQLite.SQLiteConnection()
+      Dim SQLcommand As SQLiteCommand
+      'Database Doesn't Exist so Created at Path
+      Dim ds As String = "Data Source=" & fRMVDefaultTablesFullFileName & ";Version=3;"
+      MessageBox.Show(ds)
+      SQLconnect.ConnectionString = ds
+      SQLconnect.Open()
+      SQLconnect.Close()
+      SQLconnect.ConnectionString = ds
+      SQLconnect.Open()
+      SQLcommand = SQLconnect.CreateCommand
+      'SQL query to Create Table
+      SQLcommand.CommandText = "CREATE TABLE DefaultRVTypeTable (
+                                  RVTypeID TEXT PRIMARY KEY,
+                                  RVTypeState TEXT,
+                                  RVTypeName TEXT)"
+
+      SQLcommand.ExecuteNonQuery()
+      SQLcommand.Dispose()
+      SQLconnect.Close()
+    End If
+
   End Sub  ' Private Sub frmRVTypesDB_Shown
 
   '========================================================================================
