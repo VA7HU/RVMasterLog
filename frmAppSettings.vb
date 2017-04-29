@@ -32,7 +32,7 @@ Public Class frmAppSettings
   '========================================================================================
   Public CStrSettingsFileExt As String = ".stg"
   Public cstrSettingsFileName As String = "RVMSettings"
-  Public cstrSetupFileExt As String = ".ini"
+  Public cstrSetupFileExt As String = ".sup"
   Public cstrSetupFileName As String = "RVMSetup"
 
   '========================================================================================
@@ -47,8 +47,8 @@ Public Class frmAppSettings
   Private fSettingsFileName As String     'Filename
   Private fSettingsFileExt As String      'File Extension
   Private fSettingsFullFileName As String 'Filename + Extension
-  Private fSettingsFilePath                'Path to Filename 
-  Private fSettingsFileNamePath           ' Path including Filename
+  Private fSettingsFilePath               'Path to Filename 
+  Private fSettingsFileNamePath           'Path including Filename
 
   Private fSetupFileName As String
   Private fSetupFileExt As String
@@ -64,7 +64,7 @@ Public Class frmAppSettings
   ' Locate the =. If it is there we return the portion of the string after the = otherwise
   ' we return the complete string
 
-  Private SettingsFile As New HUSettingsFile
+  Private SetupFile As New HUTextFile
 
   '========================================================================================
   '          PUBLIC VARIABLES
@@ -146,7 +146,7 @@ Public Class frmAppSettings
   '========================================================================================
   Public Property SettingsFileName() As String
     Get
-      Return SettingsFileName
+      Return fSettingsFileName
     End Get
     Set(ByVal FileName As String)
       fSettingsFileName = FileName
@@ -472,3 +472,4 @@ Public Class frmAppSettings
   '========================================================================================
 
 End Class 'Public Class frmAppSettings
+

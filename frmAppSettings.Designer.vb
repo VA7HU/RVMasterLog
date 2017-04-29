@@ -27,6 +27,7 @@ Partial Class frmAppSettings
     Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
     Me.TabControl1 = New System.Windows.Forms.TabControl()
     Me.tpApplicationSettings = New System.Windows.Forms.TabPage()
+    Me.btnBrowse = New System.Windows.Forms.Button()
     Me.chkUseLastLog = New System.Windows.Forms.CheckBox()
     Me.Label5 = New System.Windows.Forms.Label()
     Me.Label6 = New System.Windows.Forms.Label()
@@ -40,7 +41,6 @@ Partial Class frmAppSettings
     Me.btnOK = New System.Windows.Forms.Button()
     Me.btnHelp = New System.Windows.Forms.Button()
     Me.btnCancel = New System.Windows.Forms.Button()
-    Me.btnBrowse = New System.Windows.Forms.Button()
     Me.TabControl1.SuspendLayout()
     Me.tpApplicationSettings.SuspendLayout()
     Me.SuspendLayout()
@@ -96,6 +96,15 @@ Partial Class frmAppSettings
     Me.tpApplicationSettings.TabIndex = 0
     Me.tpApplicationSettings.Text = "Application Settings"
     Me.tpApplicationSettings.UseVisualStyleBackColor = True
+    '
+    'btnBrowse
+    '
+    Me.btnBrowse.Image = CType(resources.GetObject("btnBrowse.Image"), System.Drawing.Image)
+    Me.btnBrowse.Location = New System.Drawing.Point(602, 56)
+    Me.btnBrowse.Name = "btnBrowse"
+    Me.btnBrowse.Size = New System.Drawing.Size(36, 23)
+    Me.btnBrowse.TabIndex = 18
+    Me.btnBrowse.UseVisualStyleBackColor = True
     '
     'chkUseLastLog
     '
@@ -189,7 +198,7 @@ Partial Class frmAppSettings
     Me.tpDefaultCOMPortSettings.Margin = New System.Windows.Forms.Padding(4)
     Me.tpDefaultCOMPortSettings.Name = "tpDefaultCOMPortSettings"
     Me.tpDefaultCOMPortSettings.Padding = New System.Windows.Forms.Padding(4)
-    Me.tpDefaultCOMPortSettings.Size = New System.Drawing.Size(744, 224)
+    Me.tpDefaultCOMPortSettings.Size = New System.Drawing.Size(665, 224)
     Me.tpDefaultCOMPortSettings.TabIndex = 1
     Me.tpDefaultCOMPortSettings.Text = "Default COM Port Settings"
     Me.tpDefaultCOMPortSettings.UseVisualStyleBackColor = True
@@ -229,15 +238,6 @@ Partial Class frmAppSettings
     Me.btnCancel.TabIndex = 7
     Me.btnCancel.Text = "&Cancel"
     Me.btnCancel.UseVisualStyleBackColor = True
-    '
-    'btnBrowse
-    '
-    Me.btnBrowse.Image = CType(resources.GetObject("btnBrowse.Image"), System.Drawing.Image)
-    Me.btnBrowse.Location = New System.Drawing.Point(602, 56)
-    Me.btnBrowse.Name = "btnBrowse"
-    Me.btnBrowse.Size = New System.Drawing.Size(36, 23)
-    Me.btnBrowse.TabIndex = 18
-    Me.btnBrowse.UseVisualStyleBackColor = True
     '
     'frmAppSettings
     '

@@ -18,7 +18,7 @@ Module AppInit
   '
   '   Version: 1.0.0
   '
-  '   Date: 28 Apr 2017
+  '   Date: 29 Apr 2017
   '
   '========================================================================================
 
@@ -63,21 +63,15 @@ Module AppInit
     ' First we have to read the InnoSetup file. If it Is Not there we cannot go any
     ' further. We then confirm all default databases are installed. If any are missing
     ' we reinstall them.
-    If frmAppSettings.SetupFileExists Then
-      frmAppSettings.ReadSetupFile()
-      If Not My.Computer.FileSystem.FileExists(frmRVMDefaultTablesDB.RVMDefaultTablesDBExists) Then
-        MessageBox.Show("Restoring RVMDatabaseTables")
-        frmRVMDefaultTablesDB.CreateRVMDefaultTablesDB()
-      End If ' If Not My.Computer.FileSystem.FileExists(frmAppSettings.RVMDataPath)
-    Else
-        MessageBox.Show("No Setup File Found")
+    Dim InnoSetupFile As New HUTextFile
+    If Not InnoSetupFile.OpenHUTextFile(frmAppSettings.SetupFileNamePath) Then
+      'If Not SetupFile.OpenHUTextFile("C:\Test") Then
+      MessageBox.Show("Setup Not File Read")
       Return False
-    End If 'If frmAppSettings.SetupFileExists
-
-    ' Now we load the AppSettings data
-    frmAppSettings.LoadAppSettings()
-
-    Return True
+    Else
+      MessageBox.Show("Setup File Read")
+      Return True
+    End If 'If not InnoSetupFile.OpenHUTextFile(fSetupFileNamePath)
 
   End Function 'Public Sub Initialise()
 

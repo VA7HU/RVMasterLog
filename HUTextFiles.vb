@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 
-Public Class HUSettingsFile
+Public Class HUTextFile
 
   '========================================================================================
   '
@@ -8,8 +8,13 @@ Public Class HUSettingsFile
   '
   '   Description:
   '
-  '   Called By:
+  '     Setup File -  Read  - Designed to be READ ONLY and used to process Setup data 
+  '                           created by external Installation software. The original file
+  '                           will not be changed.
+  '                   Write - No Write functionality implemented.
   '
+  '   Called By:
+  ' 
   '   Calls:
   '
   '   Version:  1.0.0
@@ -21,20 +26,23 @@ Public Class HUSettingsFile
   '========================================================================================
   '          PRIVATE CONSTANTS
   '========================================================================================
-  Dim cstrFileTypeConfig As String = "CONFIG"
-  Dim cstrFileTypeData As String = "DATA"
-  Dim cstrFileTypeNone As String = ""
-  Dim cstrFileTypeOther As String = "OTHER"
-  Dim cstrFileTypeSettings As String = "SETTINGS"
+  'Dim cstrFileTypeConfig As String = "CONFIG"
+  'Dim cstrFileTypeData As String = "DATA"
+  'Dim cstrFileTypeNone As String = ""
+  'Dim cstrFileTypeOther As String = "OTHER"
+  'Dim cstrFileTypeSettings As String = "SETTINGS"
+  'Dim cstrFileTypeSetup As String = "SETUP"
 
   Dim cstrDefaultConfigFileName As String = "Config"
   Dim cstrDefaultDataFileName As String = "Data"
   Dim cstrDefaultSettingsFileName As String = "Settings"
+  Dim cstrDefaultSetupFileName As String = "Setup"
   Dim cblnDefaultCreateParam As Boolean = False
 
-  Dim cstrConfigFileExtension As String = "cfg"
-  Dim cstrDataFileExtension As String = "dta"
-  Dim cstrSettingsFileExtension As String = "stg"
+  Dim cstrConfigFileExtension As String = ".cfg"
+  Dim cstrDataFileExtension As String = ".dta"
+  Dim cstrSettingsFileExtension As String = ".stg"
+  Dim cstrSetupFileExtension As String = ".sup"
 
   Dim cstrDefaultFileExtension As String = cstrSettingsFileExtension
   Dim cstrDefaultFileName As String = cstrDefaultSettingsFileName
@@ -46,9 +54,10 @@ Public Class HUSettingsFile
   '========================================================================================
   '          PRIVATE VARIABLES
   '========================================================================================
-  Dim vstrNewFileExtension As String
-  Dim vstrNewFileName As String
-  Dim vstrNewFilePath As String
+  Dim vstrOriginalFileExtension As String
+  'Dim vstrOriginalFileName As String
+  'Dim vstrOriginalFullFileName As String
+  'Dim vstrOriginalFullFilePath As String
 
   '========================================================================================
   '          PUBLIC VARIABLES
@@ -95,193 +104,41 @@ Public Class HUSettingsFile
   '========================================================================================
 
   '========================================================================================
-  '          FILE ROUTINES
+  '          FILE ROUTINES 
+  '========================================================================================
+  Public Function OpenHUTextFile(ByRef vstrFullFilePathName As String) As Boolean
+
+    ' If vstrFullFilePathName does not exist, we display and Error message and Return Nothing
+    If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) Then
+      MessageBox.Show("Setup File" _
+                          + vbCr _
+                           + vstrFullFilePathName _
+                          + vbCr _
+                          + "does not Exist")
+      Return False
+    End If 'If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) 
+
+    ' Now we check to see if it is a Valid HUTextFile. If not we display and Error message
+    ' And Return Nothing
+    Dim vOriginalFileInfo = My.Computer.FileSystem.GetFileInfo(vstrFullFilePathName)
+    vstrOriginalFileExtension = vOriginalFileInfo.Extension
+
+    Select Case vstrOriginalFileExtension
+      Case cstrConfigFileExtension
+      Case cstrDataFileExtension
+      Case cstrSettingsFileExtension 'cstrSettingsFileExtension
+      Case cstrSetupFileExtension 'cstrSettingsFileExtension
+      Case Else
+        MessageBox.Show("Invalid Setup File Extension" _
+                          + vbCr _
+                           + vstrFullFilePathName)
+        Return False
+    End Select ' Case vstrOriginalFileExtension
+
+    My.Computer.FileSystem.OpenTextFileReader(vstrFullFilePathName)
+    Return True
+
+  End Function ' Public Function ReadHUTextFile(vstrFullFilepathName As String)
   '========================================================================================
 
-  Public Function OpenHUTextFile(vstrFullFilePath As String) As String
-
-    ' If the file vstrFullFilePath does not exist we Create and Open a default text file
-    ' With FileName "Settings.stg" Using the path passed in the vstrPath parameter and a
-    ' Create flag of True. If there is an error in the process we return "Nothing" otherwise 
-    ' The full FileName And Path are returned to the calling routine. 
-    '
-    ' If file vstrFullFilePathdoes exist we replace it with a a text file of the same
-    ' FileName and path passed in the vstrPath parameter and a  Create flag of True. If
-    ' there Is an error in the process we return "Nothing" and do not delete the original
-    ' File. 
-
-    If My.Computer.FileSystem.FileExists(vstrNewFileName) Then
-
-      MessageBox.Show("File Exists")
-      MessageBox.Show(vstrNewFileName)
-      ' Rename the old file
-      ' If error then display error message and rename the old file back to original name
-      Return Nothing
-
-      ' Create the New File
-      ' If error then display error message and rename the old file back to original name
-      Return Nothing
-
-
-      ' Delete the old file
-      Return vstrNewFileName
-
-    Else
-
-      'MessageBox.Show("File does not Exist")
-      'MessageBox.Show(vstrNewFileName)
-
-      'Create the New file
-      ' If error then display error message and rename the old file back to original name
-      'Return Nothing
-      'else
-      Return vstrNewFileName
-
-    End If ' If Not My.Computer.FileSystem.FileExists
-
-
-
-
-
-
-
-
-
-
-    ' vstrNewFileName = vstrPath + "/" +
-    'cstrDefaultFileName + "." + cstrDefaultFileExtension
-
-    'Return frmAppSettings.ApplicationPath +
-    '         "/" +
-    'cstrDefaultFileName +
-    '         "." + cstrDefaultFileExtension
-
-  End Function ' Public Function OpenHUTextFile
-
-  '----------------------------------------------------------------------------------------
-  Public Function OpenHUTextFile(vstrPath As String, vstrFileType As String) As String
-    'Creates and Opens a default text file based on the FileType parameter passed.
-    ' The default FileName will be "Settings.stg" using the application path with a
-    ' Create flag of True. The New FileName is returned to the calling routine.
-
-    '  Select Case vstrFileType
-    ' Case cstrFileTypeConfig
-    '      vstrNewFileExtension = cstrConfigFileExtension
-    '     vstrNewFileName = frmAppSettings.ApplicationPath +
-    '                      "/" +
-    '                     cstrDefaultConfigFileName +
-    '                    "." + vstrNewFileExtension
-    'Case cstrFileTypeData
-    '     vstrNewFileExtension = cstrDataFileExtension
-    '    vstrNewFileName = frmAppSettings.ApplicationPath +
-    '                     "/" +
-    '                    cstrDefaultDataFileName +
-    '                   "." + vstrNewFileExtension
-    'Case cstrFileTypeNone
-    '     vstrNewFileExtension = cstrSettingsFileExtension
-    '    vstrNewFileName = frmAppSettings.ApplicationPath +
-    '                     "/" +
-    '                    cstrDefaultSettingsFileName +
-    '                   "." + vstrNewFileExtension
-    'Case cstrFileTypeOther
-    '     vstrNewFileExtension = cstrSettingsFileExtension
-    '    vstrNewFileName = frmAppSettings.ApplicationPath +
-    '                     "/" +
-    '                    cstrDefaultSettingsFileName +
-    '                   "." + vstrNewFileExtension
-    'Case cstrFileTypeSettings
-    '     vstrNewFileExtension = cstrSettingsFileExtension
-    '    vstrNewFileName = frmAppSettings.ApplicationPath +
-    '                     "/" +
-    '                    cstrDefaultSettingsFileName +
-    '                   "." + vstrNewFileExtension
-    'End Select
-
-    Return vstrNewFileName
-
-  End Function ' Public Function OpenHUTextFile
-
-  '----------------------------------------------------------------------------------------
-
-  '  Public Function OpenHUTextFile(vstrFileType As String,
-  '                            vstrFileName As String,
-  '                          vblnCreate As Boolean) As Boolean
-  '
-  'Dim FileNameParameterExt As String
-  'Dim FileNameParameter As String
-
-  'Ensure that the FileName parameter has been passed
-
-  'If Len(vstrFileName) < 1 Then
-  ' MessageBox.Show("No FIlename Parameter")
-  ' Return False
-  'End If ' If Len(vstrFileName) < 1
-
-  ' Now we must determine the new File Extension using both the FileType and FileName 
-  ' parameters.
-  '   Case 1 FileType - Use FileType
-  '   Case 2 No FileType but FileName - use FileName
-  '   Case 3 No FileType and No FileName - use Default
-
-  'Select Case vstrFileType
-  'Case cstrFileTypeConfig
-  'Case cstrFileTypeData
-  'Case cstrFileTypeSettings
-  'Case cstrFileTypeOther
-  'End Select ' Case vstrFileType
-
-
-
-  '
-
-
-
-
-
-
-
-
-
-
-  'Parse the FileName parameter
-  'FileNameParameterExt = Path.GetExtension(vstrFileName)
-  'FileNameParameter = Path.GetFileNameWithoutExtension(vstrFileName)
-
-  'Case 1 There is a FileType so use FileType regardless
-  'If (Len(vstrFileType) > 0) Then
-  ' If the FIleName has an extension, we must replace it'
-  'vstrNewFileName = FileNameParameter + "."
-  'End If
-
-  'Case 2 No File Type parameter and FIleName parameter has an extension so we use the complete
-  ' FileName [arameter
-  'If (Len(vstrFileType) < 1 And (Len(FileNameParameterExt) > 0)) Then
-  'vstrNewFileName = vstrFileName
-  'Return True
-  'End If
-
-
-  '   If Len(vstrFileType) < 1 Then
-
-  '    If Len(vstrFileType) > 0 Then
-  '    vstrFileExtension = vstrFileType
-  '    vstrNewFileName =
-  '    ElseIf Len(Ext) > 0 Then
-  '    Else
-  '    vstrFileExtension = cstrDefaultFileExtension
-  '    End If ' If Len(vstrFileType) > 0
-
-  ' Construct the complete path of the new FileName
-  '    vstrNewFileName = 
-
-
-
-
-  'Return True
-
-  'End Function ' Public Function OpenHUTextFile
-
-
-  '========================================================================================
-
-End Class
+End Class ' Public Class HUTextFile
