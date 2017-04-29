@@ -52,6 +52,20 @@ Public Class frmRVMDefaultTablesDB
   '========================================================================================
   '          PRIVATE ROUTINES
   '========================================================================================
+  Private Sub InitRVMDefaultTablesDB()
+
+    fRVMDefaultTablesDBName = CStrRVMDefaultTablesDBName
+    MessageBox.Show(fRVMDefaultTablesDBName)
+    fRVMDefaultTablesDBExt = CStrRVMDefaultTablesDBExt
+    MessageBox.Show(fRVMDefaultTablesDBExt)
+    fRVMDefaultTablesFullFileName = RVMDefaultTablesDBName & RVMDefaultTablesDBExt
+    MessageBox.Show(fRVMDefaultTablesFullFileName)
+    fRVMDefaultTablesFilePath = frmAppSettings.RVMDataPath
+    MessageBox.Show(fRVMDefaultTablesFilePath)
+    fRVMDefaultTablesNamePath = fRVMDefaultTablesFilePath + "\" + fRVMDefaultTablesFullFileName
+    MessageBox.Show("XXX " + fRVMDefaultTablesNamePath)
+
+  End Sub 'Private Sub InitRVMDefaultTablesDB()
 
   '========================================================================================
   '          PUBLIC ROUTINES
@@ -119,29 +133,17 @@ Public Class frmRVMDefaultTablesDB
       Return True
     Else
       Return False
-    End If
-
+    End If ' If My.Computer.FileSystem.FileExists(RVMDefaultTablesNamePath)
   End Function ' Public Function RVMDefaultTablesDBExists()
-  '========================================================================================
-  '          FORM ROUTINES
-  '========================================================================================
-  Private Sub frmRVTypesDB_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
 
-    fRVMDefaultTablesDBName = CStrRVMDefaultTablesDBName
-    MessageBox.Show(fRVMDefaultTablesDBName)
-    fRVMDefaultTablesDBExt = CStrRVMDefaultTablesDBExt
-    MessageBox.Show(fRVMDefaultTablesDBExt)
-    fRVMDefaultTablesFullFileName = RVMDefaultTablesDBName & RVMDefaultTablesDBExt
-    MessageBox.Show(fRVMDefaultTablesFullFileName)
-    fRVMDefaultTablesFilePath = frmAppSettings.RVMDataPath
-    MessageBox.Show(fRVMDefaultTablesFilePath)
-    fRVMDefaultTablesNamePath = fRVMDefaultTablesFilePath & "\" & fRVMDefaultTablesFullFileName
-    MessageBox.Show(fRVMDefaultTablesNamePath)
+  '----------------------------------------------------------------------------------------
+  Public Sub CreateRVMDefaultTablesDB()
+
+    InitRVMDefaultTablesDB()
 
     'Dim ConnectionString As String = fRMVDefaultTablesNamePath & ";Version=3;" 
-    Dim ConnectionString As String = "Data Source=" & fRVMDefaultTablesNamePath & ";Version=3;"
+    Dim ConnectionString As String = "Data Source=" + fRVMDefaultTablesNamePath + ";Version=3;"
     MessageBox.Show(ConnectionString)
-
 
     If My.Computer.FileSystem.FileExists(fRVMDefaultTablesNamePath) Then
       MessageBox.Show("Exists")
@@ -167,9 +169,42 @@ Public Class frmRVMDefaultTablesDB
       SQLcommand.ExecuteNonQuery()
       SQLcommand.Dispose()
       SQLconnect.Close()
-    End If
+    End If ' If My.Computer.FileSystem.FileExists(fRVMDefaultTablesNamePath)
+
+  End Sub 'Public Sub CreateRVMDefaultTablesDB()
+
+  '========================================================================================
+  '          FORM ROUTINES
+  '========================================================================================
+  Private Sub frmRVTypesDB_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+
+    'fRVMDefaultTablesDBName = CStrRVMDefaultTablesDBName
+    'MessageBox.Show(fRVMDefaultTablesDBName)
+    'fRVMDefaultTablesDBExt = CStrRVMDefaultTablesDBExt
+    'MessageBox.Show(fRVMDefaultTablesDBExt)
+    'fRVMDefaultTablesFullFileName = RVMDefaultTablesDBName & RVMDefaultTablesDBExt
+    'MessageBox.Show(fRVMDefaultTablesFullFileName)
+    'fRVMDefaultTablesFilePath = frmAppSettings.RVMDataPath
+    'MessageBox.Show(fRVMDefaultTablesFilePath)
+    'fRVMDefaultTablesNamePath = fRVMDefaultTablesFilePath & "\" & fRVMDefaultTablesFullFileName
+    'MessageBox.Show(fRVMDefaultTablesNamePath)
 
   End Sub  ' Private Sub frmRVTypesDB_Shown
+
+  Private Sub frmRVMDefaultTablesDB_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    'fRVMDefaultTablesDBName = CStrRVMDefaultTablesDBName
+    'MessageBox.Show(fRVMDefaultTablesDBName)
+    'fRVMDefaultTablesDBExt = CStrRVMDefaultTablesDBExt
+    'MessageBox.Show(fRVMDefaultTablesDBExt)
+    'fRVMDefaultTablesFullFileName = RVMDefaultTablesDBName & RVMDefaultTablesDBExt
+    'MessageBox.Show(fRVMDefaultTablesFullFileName)
+    'fRVMDefaultTablesFilePath = frmAppSettings.RVMDataPath
+    'MessageBox.Show(fRVMDefaultTablesFilePath)
+    'fRVMDefaultTablesNamePath = fRVMDefaultTablesFilePath & "\" & fRVMDefaultTablesFullFileName
+    'MessageBox.Show(fRVMDefaultTablesNamePath)
+
+  End Sub
 
   '========================================================================================
 End Class' Public Class frmRVTypesDB

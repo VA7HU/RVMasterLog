@@ -189,7 +189,7 @@ Partial Class frmRVMDefaultTablesDB
     Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
     Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
     '
-    'frmRVTypesDB
+    'frmRVMDefaultTablesDB
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -197,7 +197,7 @@ Partial Class frmRVMDefaultTablesDB
     Me.Controls.Add(Me.Panel1)
     Me.Controls.Add(Me.btnCancel)
     Me.Controls.Add(Me.btnClose)
-    Me.Name = "frmRVTypesDB"
+    Me.Name = "frmRVMDefaultTablesDB"
     Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
     Me.Text = "frmRVTypesDB"
     Me.Panel1.ResumeLayout(False)

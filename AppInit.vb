@@ -65,12 +65,12 @@ Module AppInit
     ' we reinstall them.
     If frmAppSettings.SetupFileExists Then
       frmAppSettings.ReadSetupFile()
-      MessageBox.Show(frmAppSettings.RVMDataPath)
-      If Not My.Computer.FileSystem.FileExists(frmAppSettings.RVMDataPath) Then
-
-      End If
+      If Not My.Computer.FileSystem.FileExists(frmRVMDefaultTablesDB.RVMDefaultTablesDBExists) Then
+        MessageBox.Show("Restoring RVMDatabaseTables")
+        frmRVMDefaultTablesDB.CreateRVMDefaultTablesDB()
+      End If ' If Not My.Computer.FileSystem.FileExists(frmAppSettings.RVMDataPath)
     Else
-      MessageBox.Show("No Setup File Found")
+        MessageBox.Show("No Setup File Found")
       Return False
     End If 'If frmAppSettings.SetupFileExists
 

@@ -19,7 +19,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 27 Apr 2017
+  '   Date: 29 Apr 2017
   '
   '===========================================================================================
 
@@ -61,6 +61,8 @@ Public Class frmAppSettings
   Private fRVMLogsPath As String
 
   Private fUseLastLog As Boolean = True
+  ' Locate the =. If it is there we return the portion of the string after the = otherwise
+  ' we return the complete string
 
   Private SettingsFile As New HUSettingsFile
 
@@ -71,6 +73,9 @@ Public Class frmAppSettings
   '========================================================================================
   '          PRIVATE ROUTINES
   '========================================================================================
+  Private Function ReadString(vstrString As String) As String
+    Return vstrString
+  End Function
 
   '========================================================================================
   '          PUBLIC ROUTINES
@@ -295,10 +300,11 @@ Public Class frmAppSettings
       ' Create an instance of Stream Reader to read from a file.
       ' The using statement also closes the Stream Reader.
       Using sr As StreamReader = New StreamReader(SetupFileNamePath)
-        Dim line As String
+        Dim vstrline As String
         ' Read lines from the file until the end of
         ' the file is reached.
-        line = sr.ReadLine()        'File Version number
+        vstrline = ReadString(sr.ReadLine())        'File Version number
+        MessageBox.Show("line = " + vstrline)
         RVMPath = sr.ReadLine()
         RVMDataPath = sr.ReadLine()
         RVMLogsPath = sr.ReadLine()
