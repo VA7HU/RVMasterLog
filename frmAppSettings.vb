@@ -19,7 +19,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 29 Apr 2017
+  '   Date: 30 Apr 2017
   '
   '===========================================================================================
 
@@ -64,7 +64,7 @@ Public Class frmAppSettings
   ' Locate the =. If it is there we return the portion of the string after the = otherwise
   ' we return the complete string
 
-  Private SetupFile As New HUTextFile
+  ' Private SetupFile As New HUTextFile
 
   '========================================================================================
   '          PUBLIC VARIABLES
