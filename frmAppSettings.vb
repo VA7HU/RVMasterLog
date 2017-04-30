@@ -69,6 +69,7 @@ Public Class frmAppSettings
   '========================================================================================
   '          PUBLIC VARIABLES
   '========================================================================================
+  Public InnoSetupFile As New HUSetupFiles
 
   '========================================================================================
   '          PRIVATE ROUTINES
@@ -266,14 +267,26 @@ Public Class frmAppSettings
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
-  Public Sub InitSetupFileData()
+  Public Function OpenHUSetupFiles(SetupFileNamePath) As Boolean
 
+    'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles(frmAppSettings.SetupFileNamePath) Then
+    '  'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles("c:\test") Then
+    '  MessageBox.Show("setup not file read")
+    '  Return False
+    'Else
+    '  frmAppSettings.ReadSetupFile()
+    '  MessageBox.Show("setup file read")
+    '  Return True
+    'End If 'if not innosetupfile.openhutextfile(fsetupfilenamepath)
+
+  End Function
+  '========================================================================================
+  Public Sub InitSetupFileData()
     SetupFileName = cstrSetupFileName
     SetupFileExt = cstrSetupFileExt
     SetupFullFileName = cstrSetupFileName + cstrSetupFileExt
     SetupFilePath = ApplicationPath
     SetupFileNamePath = ApplicationPath + "\" + SetupFullFileName
-
   End Sub ' Public Sub InitSetupFileData
 
   '----------------------------------------------------------------------------------------
@@ -299,11 +312,13 @@ Public Class frmAppSettings
     Try
       ' Create an instance of Stream Reader to read from a file.
       ' The using statement also closes the Stream Reader.
+
       Using sr As StreamReader = New StreamReader(SetupFileNamePath)
         Dim vstrline As String
         ' Read lines from the file until the end of
         ' the file is reached.
-        vstrline = ReadString(sr.ReadLine())        'File Version number
+        'vstrline = ReadString(sr.ReadLine())        'File Version number
+        InnoSetupFile.ReadSetupString
         MessageBox.Show("line = " + vstrline)
         RVMPath = sr.ReadLine()
         RVMDataPath = sr.ReadLine()
@@ -369,7 +384,7 @@ Public Class frmAppSettings
   '----------------------------------------------------------------------------------------
   Public Sub ReadSettingsFile()
 
-    '   MessageBox.Show("ReadSettingsFile")
+    MessageBox.Show("ReadSettingsFile")
 
     Try
       '  Create an instance of Stream Reader to read from a file.
@@ -382,12 +397,13 @@ Public Class frmAppSettings
         ' Read lines from the file until the end of
         ' the file is reached.
 
-        line = sr.ReadLine()        'File Version number
-        RVMPath = sr.ReadLine()
-        RVMDataPath = sr.ReadLine()
-        RVMLogsPath = sr.ReadLine()
-        SettingsFileNamePath = sr.ReadLine()
-        UseLastLog = sr.ReadLine()
+        'line = sr.ReadSetupString        'File Version number
+        'MessageBox.Show("line = " + line)
+        'RVMPath = sr.ReadLine()
+        'RVMDataPath = sr.ReadLine()
+        'RVMLogsPath = sr.ReadLine()
+        'SettingsFileNamePath = sr.ReadLine()
+        'UseLastLog = sr.ReadLine()
       End Using
 
     Catch e As Exception

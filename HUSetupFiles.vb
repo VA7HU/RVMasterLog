@@ -1,4 +1,6 @@
-﻿Public Class HUSetupFiles
+﻿Imports System.IO
+
+Public Class HUSetupFiles
 
   '========================================================================================
   '
@@ -19,6 +21,8 @@
   '========================================================================================
   '          PRIVATE CONSTANTS
   '========================================================================================
+  Dim cstrDefaultSetupFileName As String = "Setup"
+  Dim cstrSetupFileExtension As String = ".sup"
 
   '========================================================================================
   '          PUBLIC CONSTANTS
@@ -27,6 +31,10 @@
   '========================================================================================
   '          PRIVATE VARIABLES
   '========================================================================================
+  'Dim vstrOriginalFileExtension As String
+  'Dim vstrOriginalFileName As String
+  'Dim vstrOriginalFullFileName As String
+  'Dim vstrOriginalFullFilePath As String
 
   '========================================================================================
   '          PUBLIC VARIABLES
@@ -75,41 +83,29 @@
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
-  'Public Function OpenHUTextFile(ByRef vstrFullFilePathName As String) As Boolean
+  Public Function OpenHUSetupFiles(ByRef vstrFullFilePathName As String) As Boolean
 
-  '  ' If vstrFullFilePathName does not exist, we display and Error message and Return Nothing
-  '  If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) Then
-  '    MessageBox.Show("Setup File" _
-  '                        + vbCr _
-  '                         + vstrFullFilePathName _
-  '                        + vbCr _
-  '                        + "does not Exist")
-  '    Return False
-  '  End If 'If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) 
+    ' If vstrFullFilePathName does not exist, we display an Error message and Return Nothing
+    If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) Then
+      MessageBox.Show("Setup File" _
+                            + vbCr _
+                             + vstrFullFilePathName _
+                            + vbCr _
+                            + "does not Exist")
+      Return False
+    End If 'If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) 
 
-  '  ' Now we check to see if it is a Valid HUTextFile. If not we display and Error message
-  '  ' And Return Nothing
-  '  Dim vOriginalFileInfo = My.Computer.FileSystem.GetFileInfo(vstrFullFilePathName)
-  '  vstrOriginalFileExtension = vOriginalFileInfo.Extension
+    My.Computer.FileSystem.OpenTextFileReader(vstrFullFilePathName)
+    Dim sr As StreamReader = New StreamReader(vstrFullFilePathName)
 
-  '  Select Case vstrOriginalFileExtension
-  '    Case cstrConfigFileExtension
-  '    Case cstrDataFileExtension
-  '    Case cstrSettingsFileExtension 'cstrSettingsFileExtension
-  '    Case cstrSetupFileExtension 'cstrSettingsFileExtension
-  '    Case Else
-  '      MessageBox.Show("Invalid Setup File Extension" _
-  '                        + vbCr _
-  '                         + vstrFullFilePathName)
-  '      Return False
-  '  End Select ' Case vstrOriginalFileExtension
+    Return True
 
-  '  My.Computer.FileSystem.OpenTextFileReader(vstrFullFilePathName)
-  '  Return True
-
-  'End Function ' Public Function ReadHUTextFile(vstrFullFilepathName As String)
+  End Function ' Public Function OpenHUSetupFiles(vstrFullFilepathName As String)
 
   '========================================================================================
+  Public Function ReadSetupString() As String
+
+  End Function ' Public Function ReadSetupString() As String
 
   '========================================================================================
 
