@@ -1,5 +1,5 @@
-RVM Setup file Ver. 1.0.0
-C:\RVMPath
-C:\RVMDataPath
-C:\RVMLogsPath
+RVMSetup file Ver=1.0.0
+RVMPath=C:\RVMPath
+RVMDataPath=C:\RVMDataPath
+RVMLogsPath=C:\RVMLogsPath
 [EOF]

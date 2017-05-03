@@ -19,7 +19,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 30 Apr 2017
+  '   Date: 3 May 2017
   '
   '===========================================================================================
 
@@ -55,6 +55,7 @@ Public Class frmAppSettings
   Private fSetupFullFileName As String
   Private fSetupFilePath
   Private fSetupFileNamePath As String
+  Private fSetupFileVersion As String
 
   Private fRVMPath As String
   Private fRVMDataPath As String
@@ -74,13 +75,31 @@ Public Class frmAppSettings
   '========================================================================================
   '          PRIVATE ROUTINES
   '========================================================================================
-  Private Function ReadString(vstrString As String) As String
-    Return vstrString
+  Private Function SetupStringData(vstrStringData As String) As String
   End Function
 
   '========================================================================================
   '          PUBLIC ROUTINES
   '========================================================================================
+  Public Sub InitSetupFileData()
+    SetupFileName = cstrSetupFileName
+    SetupFileExt = cstrSetupFileExt
+    SetupFullFileName = cstrSetupFileName + cstrSetupFileExt
+    SetupFilePath = ApplicationPath
+    SetupFileNamePath = ApplicationPath + "\" + SetupFullFileName
+  End Sub ' Public Sub InitSetupFileData
+
+  '========================================================================================
+  Public Sub InitSettingsFileData()
+
+    SettingsFileName = cstrSettingsFileName
+    SettingsFileExt = CStrSettingsFileExt
+    SettingsFullFileName = cstrSettingsFileName + CStrSettingsFileExt
+    SettingsFilePath = ApplicationPath + "\"
+    SettingsFileNamePath = SettingsFilePath + SettingsFullFileName
+
+  End Sub ' Public Sub InitSetttingsFileData
+
 
   '========================================================================================
   '          PROPERTY ROUTINES
@@ -143,6 +162,16 @@ Public Class frmAppSettings
       fSetupFileNamePath = SetupFileNamePath
     End Set
   End Property 'Public Property SetupFileNamePath() As String
+
+  '------------------------------------------------------------------------------------------
+  Public Property SetupFileVersion() As String
+    Get
+      Return fSetupFileVersion
+    End Get
+    Set(ByVal SetupFileVersion As String)
+      fSetupFileVersion = SetupFileVersion
+    End Set
+  End Property 'Public Property SetupFileVersion() As String
 
   '========================================================================================
   Public Property SettingsFileName() As String
@@ -280,14 +309,11 @@ Public Class frmAppSettings
     'End If 'if not innosetupfile.openhutextfile(fsetupfilenamepath)
 
   End Function
+
   '========================================================================================
-  Public Sub InitSetupFileData()
-    SetupFileName = cstrSetupFileName
-    SetupFileExt = cstrSetupFileExt
-    SetupFullFileName = cstrSetupFileName + cstrSetupFileExt
-    SetupFilePath = ApplicationPath
-    SetupFileNamePath = ApplicationPath + "\" + SetupFullFileName
-  End Sub ' Public Sub InitSetupFileData
+  'Private Function ReadString(vstrString As String) As String
+  '  Return vstrString
+  'End Function
 
   '----------------------------------------------------------------------------------------
   Public Function SetupFileExists() As Boolean
@@ -307,41 +333,30 @@ Public Class frmAppSettings
   '----------------------------------------------------------------------------------------
   Public Sub ReadSetupFile()
 
-    '  MessageBox.Show("ReadSetupFile")
+    MessageBox.Show("ReadSetupFile")
 
     Try
       ' Create an instance of Stream Reader to read from a file.
       ' The using statement also closes the Stream Reader.
 
-      Using sr As StreamReader = New StreamReader(SetupFileNamePath)
-        Dim vstrline As String
-        ' Read lines from the file until the end of
-        ' the file is reached.
-        'vstrline = ReadString(sr.ReadLine())        'File Version number
-        InnoSetupFile.ReadSetupString
-        MessageBox.Show("line = " + vstrline)
-        RVMPath = sr.ReadLine()
-        RVMDataPath = sr.ReadLine()
-        RVMLogsPath = sr.ReadLine()
+      MessageBox.Show(SetupFileNamePath)
+      Using SetupFile_sr As StreamReader = New StreamReader(SetupFileNamePath)
+        Dim vstrTStr As String
+        vstrTStr = SetupFile_sr.ReadLine()       'File Version number
+        SetupFileVersion = SetupStringData(vstrTStr)
+        MessageBox.Show("SetupFileVersion = " + vstrTStr)
+        'RVMPath = SR.ReadLine()
+        'RVMDataPath = SR.ReadLine()
+        'RVMLogsPath = SR.ReadLine()
       End Using
     Catch e As Exception
       'Let the user know what went wrong.
-      MessageBox.Show(e.Message)
+      MessageBox.Show("Read Setup File Failed = " + e.Message)
     End Try
 
   End Sub 'Public Sub ReadSetupFile
 
   '========================================================================================
-  Public Sub InitSettingsFileData()
-
-    SettingsFileName = cstrSettingsFileName
-    SettingsFileExt = CStrSettingsFileExt
-    SettingsFullFileName = cstrSettingsFileName + CStrSettingsFileExt
-    SettingsFilePath = ApplicationPath + "\"
-    SettingsFileNamePath = SettingsFilePath + SettingsFullFileName
-
-  End Sub ' Public Sub InitSetttingsFileData
-
   '----------------------------------------------------------------------------------------
   Public Function SettingsFileExists() As Boolean
 
@@ -488,4 +503,3 @@ Public Class frmAppSettings
   '========================================================================================
 
 End Class 'Public Class frmAppSettings
-

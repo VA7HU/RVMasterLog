@@ -14,7 +14,7 @@ Public Class HUSetupFiles
   '
   '   Version:
   '
-  '   Date: 30 Apr 2017
+  '   Date: 3 May 2017
   '
   '========================================================================================
 
@@ -103,8 +103,13 @@ Public Class HUSetupFiles
   End Function ' Public Function OpenHUSetupFiles(vstrFullFilepathName As String)
 
   '========================================================================================
-  Public Function ReadSetupString() As String
-
+  Public Function SetupStringData(vstrStringData As String) As String
+    ' return the data to the right of the equals sign
+    ' Find the POS of the equals sign
+    Dim Pos As String
+    Pos = InStr(vstrStringData, "=")
+    MessageBox.Show(Pos)
+    Return (Pos)
   End Function ' Public Function ReadSetupString() As String
 
   '========================================================================================
