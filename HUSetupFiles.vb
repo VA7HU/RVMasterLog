@@ -102,7 +102,7 @@ Public Class HUSetupFiles
 
   End Function ' Public Function OpenHUSetupFiles(vstrFullFilepathName As String)
 
-  '========================================================================================
+  '----------------------------------------------------------------------------------------
   Public Sub SetupStringData(vstrStringData As String,
                              ByRef vstrProperty As String,
                              ByRef vstrValue As String)
@@ -124,7 +124,79 @@ Public Class HUSetupFiles
       vstrValue = Right(vstrStringData, Len(vstrStringData) - Pos)
     End If ' If Pos > 0
 
-  End Sub ' Public Function SetupStringData() As String
+  End Sub ' Sub SetupStringData() 
+
+  '----------------------------------------------------------------------------------------
+  Public Sub SetupBooleanData(vstrStringData As String,
+                             ByRef vstrProperty As String,
+                             ByRef vblnValue As Boolean)
+    ' Each record consists of one or two parts. If only one part exists it is returned as 
+    ' it is returned as the Value. If both parts (separated by the equals sign) exists,
+    ' then the first part is returned as the Property and the second part is returned as
+    ' the Value'
+
+    ' first find the POS of the equals sign
+    Dim Pos As Integer
+    Pos = InStr(vstrStringData, "=")
+
+    ' Now deternine number of returned parts
+    If Pos = 0 Then
+      vstrProperty = Nothing
+      vblnValue = CBool(Right(vstrStringData, Len(vstrStringData) - Pos))
+    Else
+      vstrProperty = Left(vstrStringData, (Pos - 1))
+      vblnValue = CBool(Right(vstrStringData, Len(vstrStringData) - Pos))
+    End If ' If Pos > 0
+
+  End Sub ' Sub SetupBooleanData()
+
+  '----------------------------------------------------------------------------------------
+  Public Sub SetupIntegerData(vstrStringData As String,
+                             ByRef vstrProperty As String,
+                             ByRef vintValue As Integer)
+    ' Each record consists of one or two parts. If only one part exists it is returned as 
+    ' it is returned as the Value. If both parts (separated by the equals sign) exists,
+    ' then the first part is returned as the Property and the second part is returned as
+    ' the Value'
+
+    ' first find the POS of the equals sign
+    Dim Pos As Integer
+    Pos = InStr(vstrStringData, "=")
+
+    ' Now deternine number of returned parts
+    If Pos = 0 Then
+      vstrProperty = Nothing
+      vintValue = CInt(Right(vstrStringData, Len(vstrStringData) - Pos))
+    Else
+      vstrProperty = Left(vstrStringData, (Pos - 1))
+      vintValue = CInt(Right(vstrStringData, Len(vstrStringData) - Pos))
+    End If ' If Pos > 0
+
+  End Sub ' Sub SetupIntegerData() 
+
+  '----------------------------------------------------------------------------------------
+  Public Sub SetupDoubleData(vstrStringData As String,
+                             ByRef vstrProperty As String,
+                             ByRef vdblDouble As Integer)
+    ' Each record consists of one or two parts. If only one part exists it is returned as 
+    ' it is returned as the Value. If both parts (separated by the equals sign) exists,
+    ' then the first part is returned as the Property and the second part is returned as
+    ' the Value'
+
+    ' first find the POS of the equals sign
+    Dim Pos As Integer
+    Pos = InStr(vstrStringData, "=")
+
+    ' Now deternine number of returned parts
+    If Pos = 0 Then
+      vstrProperty = Nothing
+      vdblDouble = CDbl(Right(vstrStringData, Len(vstrStringData) - Pos))
+    Else
+      vstrProperty = Left(vstrStringData, (Pos - 1))
+      vdblDouble = CDbl(Right(vstrStringData, Len(vstrStringData) - Pos))
+    End If ' If Pos > 0
+
+  End Sub ' Sub SetupDoubleData() 
 
   '========================================================================================
 

@@ -296,19 +296,19 @@ Public Class frmAppSettings
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
-  Public Function OpenHUSetupFiles(SetupFileNamePath) As Boolean
+  'Public Function OpenHUSetupFiles(SetupFileNamePath) As Boolean
 
-    'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles(frmAppSettings.SetupFileNamePath) Then
-    '  'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles("c:\test") Then
-    '  MessageBox.Show("setup not file read")
-    '  Return False
-    'Else
-    '  frmAppSettings.ReadSetupFile()
-    '  MessageBox.Show("setup file read")
-    '  Return True
-    'End If 'if not innosetupfile.openhutextfile(fsetupfilenamepath)
+  'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles(frmAppSettings.SetupFileNamePath) Then
+  '  'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles("c:\test") Then
+  '  MessageBox.Show("setup not file read")
+  '  Return False
+  'Else
+  '  frmAppSettings.ReadSetupFile()
+  '  MessageBox.Show("setup file read")
+  '  Return True
+  'End If 'if not innosetupfile.openhutextfile(fsetupfilenamepath)
 
-  End Function
+  'End Function
 
   '========================================================================================
   'Private Function ReadString(vstrString As String) As String

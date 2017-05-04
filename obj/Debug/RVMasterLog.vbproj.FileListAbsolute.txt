@@ -49,27 +49,7 @@ C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog\RVMasterlog Worki
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog\RVMasterlog Working Copy\obj\Debug\RVMasterLog.exe
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog\RVMasterlog Working Copy\obj\Debug\RVMasterLog.xml
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog\RVMasterlog Working Copy\obj\Debug\RVMasterLog.pdb
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.exe.config
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.exe
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.pdb
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.xml
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\EntityFramework.dll
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.dll
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.EF6.dll
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\EntityFramework.xml
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.xml
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmAppSettings.resources
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmMain.resources
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.Resources.resources
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.vbproj.GenerateResource.Cache
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.exe
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.xml
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.pdb
-C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmApplicationDB.resources
 C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog (RVM)\Working Copy\bin\Debug\RVMasterLog.exe.config
 C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog (RVM)\Working Copy\bin\Debug\RVMasterLog.exe
 C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog (RVM)\Working Copy\bin\Debug\RVMasterLog.pdb
@@ -116,5 +96,25 @@ C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog\Wo
 C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.exe
 C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.xml
 C:\Users\va7hu\Documents\Programming\Programming Projects\VB 2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.pdb
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.exe.config
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.exe
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.pdb
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\RVMasterLog.xml
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\EntityFramework.dll
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.dll
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.xml
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmApplicationDB.resources
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmAppSettings.resources
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmMain.resources
 C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.frmRVMDefaultTablesDB.resources
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.Resources.resources
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.vbproj.GenerateResource.Cache
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.exe
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.xml
+C:\Users\Hew\Documents\Programming\Programming Projects\VB2017\RVMasterLog\Working Copy\obj\Debug\RVMasterLog.pdb
