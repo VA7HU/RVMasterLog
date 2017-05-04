@@ -14,7 +14,7 @@ Public Class HUSetupFiles
   '
   '   Version:
   '
-  '   Date: 3 May 2017
+  '   Date: 4 May 2017
   '
   '========================================================================================
 
@@ -103,14 +103,28 @@ Public Class HUSetupFiles
   End Function ' Public Function OpenHUSetupFiles(vstrFullFilepathName As String)
 
   '========================================================================================
-  Public Function SetupStringData(vstrStringData As String) As String
-    ' return the data to the right of the equals sign
-    ' Find the POS of the equals sign
-    Dim Pos As String
+  Public Sub SetupStringData(vstrStringData As String,
+                             ByRef vstrProperty As String,
+                             ByRef vstrValue As String)
+    ' Each record consists of one or two parts. If only one part exists it is returned as 
+    ' it is returned as the Value. If both parts (separated by the equals sign) exists,
+    ' then the first part is returned as the Property and the second part is returned as
+    ' the Value'
+
+    ' first find the POS of the equals sign
+    Dim Pos As Integer
     Pos = InStr(vstrStringData, "=")
-    MessageBox.Show(Pos)
-    Return (Pos)
-  End Function ' Public Function ReadSetupString() As String
+
+    ' Now deternine number of returned parts
+    If Pos = 0 Then
+      vstrProperty = Nothing
+      vstrValue = Right(vstrStringData, Len(vstrStringData) - Pos)
+    Else
+      vstrProperty = Left(vstrStringData, (Pos - 1))
+      vstrValue = Right(vstrStringData, Len(vstrStringData) - Pos)
+    End If ' If Pos > 0
+
+  End Sub ' Public Function SetupStringData() As String
 
   '========================================================================================
 

@@ -20,7 +20,7 @@ Module AppInit
   '
   '   Version: 1.0.0
   '
-  '   Date: 30 Apr 2017
+  '   Date: 4 May 2017
   '
   '========================================================================================
 
@@ -72,11 +72,9 @@ Module AppInit
 
     If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles(frmAppSettings.SetupFileNamePath) Then
       'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles("c:\test") Then
-      MessageBox.Show("setup not file read")
       Return False
     Else
       frmAppSettings.ReadSetupFile()
-      MessageBox.Show("setup file read")
       Return True
     End If 'if not innosetupfile.openhutextfile(fsetupfilenamepath)
 

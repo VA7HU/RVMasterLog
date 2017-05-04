@@ -75,8 +75,8 @@ Public Class frmAppSettings
   '========================================================================================
   '          PRIVATE ROUTINES
   '========================================================================================
-  Private Function SetupStringData(vstrStringData As String) As String
-  End Function
+  'Private Function SetupStringData(vstrStringData As String) As String
+  'End Function
 
   '========================================================================================
   '          PUBLIC ROUTINES
@@ -333,22 +333,33 @@ Public Class frmAppSettings
   '----------------------------------------------------------------------------------------
   Public Sub ReadSetupFile()
 
-    MessageBox.Show("ReadSetupFile")
-
     Try
       ' Create an instance of Stream Reader to read from a file.
       ' The using statement also closes the Stream Reader.
 
-      MessageBox.Show(SetupFileNamePath)
       Using SetupFile_sr As StreamReader = New StreamReader(SetupFileNamePath)
+
         Dim vstrTStr As String
+        Dim vstrProperty As String
+        Dim vstrValue As String
+
         vstrTStr = SetupFile_sr.ReadLine()       'File Version number
-        SetupFileVersion = SetupStringData(vstrTStr)
-        MessageBox.Show("SetupFileVersion = " + vstrTStr)
-        'RVMPath = SR.ReadLine()
-        'RVMDataPath = SR.ReadLine()
-        'RVMLogsPath = SR.ReadLine()
-      End Using
+        InnoSetupFile.SetupStringData(vstrTStr, vstrProperty, vstrValue)
+        SetupFileVersion = vstrValue
+
+        vstrTStr = SetupFile_sr.ReadLine()       'File Version number
+        InnoSetupFile.SetupStringData(vstrTStr, vstrProperty, vstrValue)
+        RVMPath = vstrValue
+
+        vstrTStr = SetupFile_sr.ReadLine()       'File Version number
+        InnoSetupFile.SetupStringData(vstrTStr, vstrProperty, vstrValue)
+        RVMDataPath = vstrValue
+
+        vstrTStr = SetupFile_sr.ReadLine()       'File Version number
+        InnoSetupFile.SetupStringData(vstrTStr, vstrProperty, vstrValue)
+        RVMLogsPath = vstrValue
+
+      End Using ' Using SetupFile_sr As StreamReader
     Catch e As Exception
       'Let the user know what went wrong.
       MessageBox.Show("Read Setup File Failed = " + e.Message)
@@ -357,10 +368,7 @@ Public Class frmAppSettings
   End Sub 'Public Sub ReadSetupFile
 
   '========================================================================================
-  '----------------------------------------------------------------------------------------
   Public Function SettingsFileExists() As Boolean
-
-    '   MessageBox.Show("SettingsFileExists")
 
     If My.Computer.FileSystem.FileExists(SettingsFileNamePath) Then
       Return True
