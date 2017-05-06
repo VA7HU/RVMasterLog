@@ -75,8 +75,6 @@ Public Class frmAppSettings
   '========================================================================================
   '          PRIVATE ROUTINES
   '========================================================================================
-  'Private Function SetupStringData(vstrStringData As String) As String
-  'End Function
 
   '========================================================================================
   '          PUBLIC ROUTINES
@@ -296,41 +294,6 @@ Public Class frmAppSettings
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
-  'Public Function OpenHUSetupFiles(SetupFileNamePath) As Boolean
-
-  'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles(frmAppSettings.SetupFileNamePath) Then
-  '  'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles("c:\test") Then
-  '  MessageBox.Show("setup not file read")
-  '  Return False
-  'Else
-  '  frmAppSettings.ReadSetupFile()
-  '  MessageBox.Show("setup file read")
-  '  Return True
-  'End If 'if not innosetupfile.openhutextfile(fsetupfilenamepath)
-
-  'End Function
-
-  '========================================================================================
-  'Private Function ReadString(vstrString As String) As String
-  '  Return vstrString
-  'End Function
-
-  '----------------------------------------------------------------------------------------
-  Public Function SetupFileExists() As Boolean
-
-    ' MessageBox.Show(SetupFileNamePath)
-
-    If My.Computer.FileSystem.FileExists(SetupFileNamePath) Then
-      '   MessageBox.Show("Setup File Exists")
-      Return True
-    Else
-      '   MessageBox.Show("Setup File Does Not Exist")
-      Return False
-    End If 'If My.Computer.FileSystem.FileExists
-
-  End Function 'Public Function SetupFileExist
-
-  '----------------------------------------------------------------------------------------
   Public Sub ReadSetupFile()
 
     Try
