@@ -14,7 +14,7 @@ Public Class HUSetupFiles
   '
   '   Version:
   '
-  '   Date: 4 May 2017
+  '   Date: 6 May 2017
   '
   '========================================================================================
 
@@ -23,6 +23,9 @@ Public Class HUSetupFiles
   '========================================================================================
   Dim cstrDefaultSetupFileName As String = "Setup"
   Dim cstrSetupFileExtension As String = ".sup"
+
+  Dim cstrDefaultSettingsFileName As String = "Setttings"
+  Dim cstrSettingsFileExtension As String = ".stg"
 
   '========================================================================================
   '          PUBLIC CONSTANTS
@@ -83,6 +86,27 @@ Public Class HUSetupFiles
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
+  Public Function OpenHUSettingsFiles(ByRef vstrFullFilePathName As String) As Boolean
+
+    ' If vstrFullFilePathName does not exist, we display an Error message and Return Nothing
+    ' or create a new Settings file.
+    If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) Then
+      MessageBox.Show("Settings File" _
+                            + vbCr _
+                             + vstrFullFilePathName _
+                            + vbCr _
+                            + "does not Exist")
+      Return False
+    End If 'If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) 
+
+    My.Computer.FileSystem.OpenTextFileReader(vstrFullFilePathName)
+    Dim sr As StreamReader = New StreamReader(vstrFullFilePathName)
+
+    Return True
+
+  End Function ' Public Function OpenHUSettingFiles(vstrFullFilepathName As String)
+
+  '----------------------------------------------------------------------------------------
   Public Function OpenHUSetupFiles(ByRef vstrFullFilePathName As String) As Boolean
 
     ' If vstrFullFilePathName does not exist, we display an Error message and Return Nothing
@@ -102,8 +126,8 @@ Public Class HUSetupFiles
 
   End Function ' Public Function OpenHUSetupFiles(vstrFullFilepathName As String)
 
-  '----------------------------------------------------------------------------------------
-  Public Sub SetupStringData(vstrStringData As String,
+  '========================================================================================
+  Public Sub ParseSetupStringData(vstrStringData As String,
                              ByRef vstrProperty As String,
                              ByRef vstrValue As String)
     ' Each record consists of one or two parts. If only one part exists it is returned as 
@@ -124,10 +148,10 @@ Public Class HUSetupFiles
       vstrValue = Right(vstrStringData, Len(vstrStringData) - Pos)
     End If ' If Pos > 0
 
-  End Sub ' Sub SetupStringData() 
+  End Sub ' Sub ParseSetupStringData() 
 
   '----------------------------------------------------------------------------------------
-  Public Sub SetupBooleanData(vstrStringData As String,
+  Public Sub ParseSetupBooleanData(vstrStringData As String,
                              ByRef vstrProperty As String,
                              ByRef vblnValue As Boolean)
     ' Each record consists of one or two parts. If only one part exists it is returned as 
@@ -148,10 +172,10 @@ Public Class HUSetupFiles
       vblnValue = CBool(Right(vstrStringData, Len(vstrStringData) - Pos))
     End If ' If Pos > 0
 
-  End Sub ' Sub SetupBooleanData()
+  End Sub ' Sub ParseSetupBooleanData()
 
   '----------------------------------------------------------------------------------------
-  Public Sub SetupIntegerData(vstrStringData As String,
+  Public Sub ParseSetupIntegerData(vstrStringData As String,
                              ByRef vstrProperty As String,
                              ByRef vintValue As Integer)
     ' Each record consists of one or two parts. If only one part exists it is returned as 
@@ -172,10 +196,10 @@ Public Class HUSetupFiles
       vintValue = CInt(Right(vstrStringData, Len(vstrStringData) - Pos))
     End If ' If Pos > 0
 
-  End Sub ' Sub SetupIntegerData() 
+  End Sub ' Sub ParseSetupIntegerData() 
 
   '----------------------------------------------------------------------------------------
-  Public Sub SetupDoubleData(vstrStringData As String,
+  Public Sub ParseSetupDoubleData(vstrStringData As String,
                              ByRef vstrProperty As String,
                              ByRef vdblDouble As Integer)
     ' Each record consists of one or two parts. If only one part exists it is returned as 
@@ -196,7 +220,65 @@ Public Class HUSetupFiles
       vdblDouble = CDbl(Right(vstrStringData, Len(vstrStringData) - Pos))
     End If ' If Pos > 0
 
-  End Sub ' Sub SetupDoubleData() 
+  End Sub ' Sub ParseSetupDoubleData() 
+
+  '========================================================================================
+  Public Function FormatSetupStringData(vstrProperty As String, vstrValue As String) As String
+    ' Each record consists of two parts. Both parts are concatenated using and equal sign
+    ' and returned as the formatted string "vstrProperty=vstrValue"
+
+    ' Format and return the String data
+    Return vstrProperty + "=" + vstrValue
+
+  End Function ' Function FormatSetupStringData() 
+
+  '----------------------------------------------------------------------------------------
+  Public Function FormatSetupBooleanData(vstrProperty As String, vblnValue As Boolean) As String
+    ' Each record consists of two parts. Both parts are concatenated using and equal sign
+    ' and returned as the formatted string "vstrProperty=vblnValue"
+
+    ' Format and return the String data
+    Dim vstrTStr As String
+    If vblnValue = True Then
+      vstrTStr = "True"
+    Else
+      vstrTStr = "False"
+    End If
+    Return vstrProperty + "=" + vstrTStr
+
+  End Function ' Function FormatSetupBooleanData() 
+
+  '----------------------------------------------------------------------------------------
+  Public Function FormatSetupIntegerData(vstrProperty As String, vintValue As Integer) As String
+    ' Each record consists of two parts. Both parts are concatenated using and equal sign
+    ' and returned as the formatted string "vstrProperty=vintValue"
+
+    ' Format and return the String data
+    Dim vstrTStr As String
+    Try
+      vstrTStr = CInt(vintValue)
+    Catch ex As Exception
+      vstrTStr = "Integer Conversion Error"
+    End Try
+    Return vstrProperty + "=" + vstrTStr
+
+  End Function ' Function FormatSetupBooleanData() 
+
+  '----------------------------------------------------------------------------------------
+  Public Function FormatSetupDoubleData(vstrProperty As String, vdblValue As Double) As String
+    ' Each record consists of two parts. Both parts are concatenated using and equal sign
+    ' and returned as the formatted string "vstrProperty=vdblValue"
+
+    ' Format and return the String data
+    Dim vstrTStr As String
+    Try
+      vstrTStr = CDbl(vdblValue)
+    Catch ex As Exception
+      vstrTStr = "Double Conversion Error"
+    End Try
+    Return vstrProperty + "=" + vstrTStr
+
+  End Function ' Function FormatSetupDoubleData() 
 
   '========================================================================================
 

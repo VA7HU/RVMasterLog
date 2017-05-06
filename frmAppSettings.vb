@@ -19,7 +19,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 3 May 2017
+  '   Date: 5 May 2017
   '
   '===========================================================================================
 
@@ -344,19 +344,19 @@ Public Class frmAppSettings
         Dim vstrValue As String
 
         vstrTStr = SetupFile_sr.ReadLine()       'File Version number
-        InnoSetupFile.SetupStringData(vstrTStr, vstrProperty, vstrValue)
+        InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
         SetupFileVersion = vstrValue
 
         vstrTStr = SetupFile_sr.ReadLine()       'File Version number
-        InnoSetupFile.SetupStringData(vstrTStr, vstrProperty, vstrValue)
+        InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
         RVMPath = vstrValue
 
         vstrTStr = SetupFile_sr.ReadLine()       'File Version number
-        InnoSetupFile.SetupStringData(vstrTStr, vstrProperty, vstrValue)
+        InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
         RVMDataPath = vstrValue
 
         vstrTStr = SetupFile_sr.ReadLine()       'File Version number
-        InnoSetupFile.SetupStringData(vstrTStr, vstrProperty, vstrValue)
+        InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
         RVMLogsPath = vstrValue
 
       End Using ' Using SetupFile_sr As StreamReader
