@@ -8,11 +8,12 @@
   '
   '   Called By:  frmMain : frmMain_FormClosing
   '
-  '   Calls:  frmAppSettings.WriteSettingsFile
+  '   Calls:  HUSetupFiles : OpenHUSettingsFile
+  '                           WriteSettingsFile
   '
   '   Version: 1.0.0
   '
-  '   Date: 29 Mar 2017
+  '   Date: 6 May 2017
   '
   '========================================================================================
 
@@ -40,8 +41,12 @@
   '          PUBLIC ROUTINES
   '========================================================================================
   Public Sub Finalise()
+
     MessageBox.Show("Finalise")
+
+    frmAppSettings.InnoSetupFile.OpenHUSettingsFiles(frmAppSettings.SettingsFileNamePath)
     frmAppSettings.WriteSettingsFile()
+
   End Sub ' Public Sub Finalise()
 
   '========================================================================================

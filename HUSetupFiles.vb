@@ -86,27 +86,6 @@ Public Class HUSetupFiles
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
-  Public Function OpenHUSettingsFiles(ByRef vstrFullFilePathName As String) As Boolean
-
-    ' If vstrFullFilePathName does not exist, we display an Error message and Return Nothing
-    ' or create a new Settings file.
-    If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) Then
-      MessageBox.Show("Settings File" _
-                            + vbCr _
-                             + vstrFullFilePathName _
-                            + vbCr _
-                            + "does not Exist")
-      Return False
-    End If 'If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) 
-
-    My.Computer.FileSystem.OpenTextFileReader(vstrFullFilePathName)
-    Dim sr As StreamReader = New StreamReader(vstrFullFilePathName)
-
-    Return True
-
-  End Function ' Public Function OpenHUSettingFiles(vstrFullFilepathName As String)
-
-  '----------------------------------------------------------------------------------------
   Public Function OpenHUSetupFiles(ByRef vstrFullFilePathName As String) As Boolean
 
     ' If vstrFullFilePathName does not exist, we display an Error message and Return Nothing
@@ -223,6 +202,28 @@ Public Class HUSetupFiles
   End Sub ' Sub ParseSetupDoubleData() 
 
   '========================================================================================
+  Public Function OpenHUSettingsFiles(ByRef vstrFullFilePathName As String) As Boolean
+
+    ' If vstrFullFilePathName does not exist, we display an Information message create a 
+    ' a New Settings file.
+    If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) Then
+      MessageBox.Show("Settings File" _
+                            + vbCr _
+                             + vstrFullFilePathName _
+                            + vbCr _
+                            + "does not Exist" _
+                            + vbCr _
+                            + "Creating a New Settings file.")
+    End If 'If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) 
+                            
+    My.Computer.FileSystem.OpenTextFileReader(vstrFullFilePathName)
+    Dim sr As StreamReader = New StreamReader(vstrFullFilePathName)
+
+    Return True
+
+  End Function ' Public Function OpenHUSettingFiles(vstrFullFilepathName As String)
+
+  '----------------------------------------------------------------------------------------
   Public Function FormatSetupStringData(vstrProperty As String, vstrValue As String) As String
     ' Each record consists of two parts. Both parts are concatenated using and equal sign
     ' and returned as the formatted string "vstrProperty=vstrValue"

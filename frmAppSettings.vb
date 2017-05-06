@@ -19,7 +19,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 5 May 2017
+  '   Date: 6 May 2017
   '
   '===========================================================================================
 
@@ -404,57 +404,57 @@ Public Class frmAppSettings
 
     MessageBox.Show("WriteSettingsFile")
 
-    Dim OldSettingsFileName As String = "OLD" + SettingsFullFileName
-    Dim OldSettingsFileNamePath As String = SettingsFilePath + OldSettingsFileName
-    '  MessageBox.Show(SettingsFullFileName)
-    '  MessageBox.Show(OldSettingsFileName)
-    ' MessageBox.Show(OldSettingsFileNamePath)
+    'Dim OldSettingsFileName As String = "OLD" + SettingsFullFileName
+    'Dim OldSettingsFileNamePath As String = SettingsFilePath + OldSettingsFileName
+    ''  MessageBox.Show(SettingsFullFileName)
+    ''  MessageBox.Show(OldSettingsFileName)
+    '' MessageBox.Show(OldSettingsFileNamePath)
 
-    ' Delete any previous OLD file
-    If My.Computer.FileSystem.FileExists(OldSettingsFileNamePath) Then
-      '  MessageBox.Show("Deleting " + OldSettingsFileName)
-      My.Computer.FileSystem.DeleteFile(OldSettingsFileNamePath)
-    End If
+    '' Delete any previous OLD file
+    'If My.Computer.FileSystem.FileExists(OldSettingsFileNamePath) Then
+    '  '  MessageBox.Show("Deleting " + OldSettingsFileName)
+    '  My.Computer.FileSystem.DeleteFile(OldSettingsFileNamePath)
+    'End If
 
-    ' If the Settings file exists then we must rename it before creating a new one
-    If SettingsFileExists() Then
-      '  MessageBox.Show("Renaming old Settingsfile.")
-      '   MessageBox.Show(SettingsFileNamePath)
-      '   MessageBox.Show(OldSettingsFileName)
-      Dim vstrTFileNamePath As String = SettingsFileNamePath
-      My.Computer.FileSystem.RenameFile(vstrTFileNamePath, OldSettingsFileName)
-      '  MessageBox.Show(vstrTFileNamePath)
-    End If ' If SettingsFileExists
+    '' If the Settings file exists then we must rename it before creating a new one
+    'If SettingsFileExists() Then
+    '  '  MessageBox.Show("Renaming old Settingsfile.")
+    '  '   MessageBox.Show(SettingsFileNamePath)
+    '  '   MessageBox.Show(OldSettingsFileName)
+    '  Dim vstrTFileNamePath As String = SettingsFileNamePath
+    '  My.Computer.FileSystem.RenameFile(vstrTFileNamePath, OldSettingsFileName)
+    '  '  MessageBox.Show(vstrTFileNamePath)
+    'End If ' If SettingsFileExists
 
-    Try
-      'Create an instance of Stream Writer to read from a file.
-      ' The using statement also closes the Stream Writer.
-      Using SettingsFile As StreamWriter = New StreamWriter(SettingsFileNamePath)
-        'Dim line As String
-        ' Write records to the file 
-        SettingsFile.WriteLine("Version Nr")
-        SettingsFile.WriteLine(RVMPath)
-        SettingsFile.WriteLine(RVMDataPath)
-        SettingsFile.WriteLine(RVMLogsPath)
-        SettingsFile.WriteLine(SettingsFileNamePath)
-        SettingsFile.WriteLine(UseLastLog)
-      End Using
-    Catch e As Exception
-      'Let the user know what went wrong.
-      MessageBox.Show(e.Message)
-      'Restore the previous file
-      '     MessageBox.Show("Renaming old Settingsfile.")
-      '     MessageBox.Show(OldSettingsFileName)
-      '     MessageBox.Show(SettingsFileNamePath)
-      'My.Computer.FileSystem.RenameFile(OldSettingsFileNamePath, SettingsFullFileName)
-    End Try
+    'Try
+    '  'Create an instance of Stream Writer to read from a file.
+    '  ' The using statement also closes the Stream Writer.
+    '  Using SettingsFile As StreamWriter = New StreamWriter(SettingsFileNamePath)
+    '    'Dim line As String
+    '    ' Write records to the file 
+    '    SettingsFile.WriteLine("Version Nr")
+    '    SettingsFile.WriteLine(RVMPath)
+    '    SettingsFile.WriteLine(RVMDataPath)
+    '    SettingsFile.WriteLine(RVMLogsPath)
+    '    SettingsFile.WriteLine(SettingsFileNamePath)
+    '    SettingsFile.WriteLine(UseLastLog)
+    '  End Using
+    'Catch e As Exception
+    '  'Let the user know what went wrong.
+    '  MessageBox.Show(e.Message)
+    '  'Restore the previous file
+    '  '     MessageBox.Show("Renaming old Settingsfile.")
+    '  '     MessageBox.Show(OldSettingsFileName)
+    '  '     MessageBox.Show(SettingsFileNamePath)
+    '  'My.Computer.FileSystem.RenameFile(OldSettingsFileNamePath, SettingsFullFileName)
+    'End Try
 
-    ' Delete the OLD file if we were successful
-    If My.Computer.FileSystem.FileExists(OldSettingsFileName) Then
-      My.Computer.FileSystem.DeleteFile(OldSettingsFileName)
-    End If
+    '' Delete the OLD file if we were successful
+    'If My.Computer.FileSystem.FileExists(OldSettingsFileName) Then
+    '  My.Computer.FileSystem.DeleteFile(OldSettingsFileName)
+    'End If
 
-    '   MessageBox.Show("Write Setings File Complete")
+    ''   MessageBox.Show("Write Setings File Complete")
 
   End Sub 'Public Sub WriteSettingsFile
 
