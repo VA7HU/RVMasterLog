@@ -13,7 +13,7 @@
   '
   '   Version: 1.0.0
   '
-  '   Date: 6 May 2017
+  '   Date: 7 May 2017
   '
   '========================================================================================
 
@@ -44,7 +44,9 @@
 
     MessageBox.Show("Finalise")
 
-    frmAppSettings.InnoSetupFile.OpenHUSettingsFiles(frmAppSettings.SettingsFileNamePath)
+    frmAppSettings.InnoSetupFile.OpenHUSettingsFiles(
+                             HUSetupFiles.HUSettingsFileMode.fmReplace,
+                             frmAppSettings.SettingsFileNamePath)
     frmAppSettings.WriteSettingsFile()
 
   End Sub ' Public Sub Finalise()

@@ -14,7 +14,7 @@ Public Class HUSetupFiles
   '
   '   Version:
   '
-  '   Date: 6 May 2017
+  '   Date: 7 May 2017
   '
   '========================================================================================
 
@@ -30,6 +30,10 @@ Public Class HUSetupFiles
   '========================================================================================
   '          PUBLIC CONSTANTS
   '========================================================================================
+  Public Enum HUSettingsFileMode
+    fmBackup = 0
+    fmReplace = 1
+  End Enum ' HUSettingsFileMode
 
   '========================================================================================
   '          PRIVATE VARIABLES
@@ -86,6 +90,10 @@ Public Class HUSetupFiles
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
+
+  '==============================
+  '     SETUP FILES
+  '==============================
   Public Function OpenHUSetupFiles(ByRef vstrFullFilePathName As String) As Boolean
 
     ' If vstrFullFilePathName does not exist, we display an Error message and Return Nothing
@@ -99,7 +107,6 @@ Public Class HUSetupFiles
     End If 'If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) 
 
     My.Computer.FileSystem.OpenTextFileReader(vstrFullFilePathName)
-    Dim sr As StreamReader = New StreamReader(vstrFullFilePathName)
 
     Return True
 
@@ -202,36 +209,49 @@ Public Class HUSetupFiles
   End Sub ' Sub ParseSetupDoubleData() 
 
   '========================================================================================
-  Public Function OpenHUSettingsFiles(ByRef vstrFullFilePathName As String) As Boolean
+
+  '==============================
+  '     SETTING FILES
+  '==============================
+  Public Function OpenHUSettingsFiles(fmFileMode As HUSettingsFileMode,
+                                      ByRef SettingsFileNamePath As String) As Boolean
 
     ' If vstrFullFilePathName does not exist, we display an Information message create a 
     ' a New Settings file.
-    If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) Then
-      MessageBox.Show("Settings File" _
-                            + vbCr _
-                             + vstrFullFilePathName _
-                            + vbCr _
-                            + "does not Exist" _
-                            + vbCr _
-                            + "Creating a New Settings file.")
-    End If 'If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) 
-                            
-    My.Computer.FileSystem.OpenTextFileReader(vstrFullFilePathName)
-    Dim sr As StreamReader = New StreamReader(vstrFullFilePathName)
+    'If Not My.Computer.FileSystem.FileExists(SettingsFileNamePath) Then
+    '  MessageBox.Show("Settings File" _
+    '                        + vbCr _
+    '                         + vstrFullFilePathName _
+    '                        + vbCr _
+    '                        + "does not Exist" _
+    '                        + vbCr _
+    '                        + "Creating a New Settings file.")
+    'End If 'If Not My.Computer.FileSystem.FileExists(SettingsFileNamePath) 
+
+    Select Case fmFileMode
+      Case fmFileMode.fmBackup
+        MessageBox.Show("Backup")
+      Case fmFileMode.fmReplace
+        MessageBox.Show("Replace")
+        'If File Then exists
+        'My.Computer.FileSystem.DeleteFile((SettingsFileNamePath))
+    End Select ' Case fmFileMode
+
+    My.Computer.FileSystem.OpenTextFileReader(SettingsFileNamePath)
 
     Return True
 
   End Function ' Public Function OpenHUSettingFiles(vstrFullFilepathName As String)
 
   '----------------------------------------------------------------------------------------
-  Public Function FormatSetupStringData(vstrProperty As String, vstrValue As String) As String
+  Public Function FormatSettingStringData(vstrProperty As String, vstrValue As String) As String
     ' Each record consists of two parts. Both parts are concatenated using and equal sign
     ' and returned as the formatted string "vstrProperty=vstrValue"
 
     ' Format and return the String data
     Return vstrProperty + "=" + vstrValue
 
-  End Function ' Function FormatSetupStringData() 
+  End Function ' Function FormatSettingStringData() 
 
   '----------------------------------------------------------------------------------------
   Public Function FormatSetupBooleanData(vstrProperty As String, vblnValue As Boolean) As String

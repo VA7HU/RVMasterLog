@@ -95,7 +95,7 @@ Public Class frmAppSettings
     SettingsFullFileName = cstrSettingsFileName + CStrSettingsFileExt
     SettingsFilePath = ApplicationPath + "\"
     SettingsFileNamePath = SettingsFilePath + SettingsFullFileName
-
+    MessageBox.Show(SettingsFileNamePath)
   End Sub ' Public Sub InitSetttingsFileData
 
 
@@ -310,19 +310,20 @@ Public Class frmAppSettings
         InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
         SetupFileVersion = vstrValue
 
-        vstrTStr = SetupFile_sr.ReadLine()       'File Version number
+        vstrTStr = SetupFile_sr.ReadLine()       'RVMPath
         InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
         RVMPath = vstrValue
 
-        vstrTStr = SetupFile_sr.ReadLine()       'File Version number
+        vstrTStr = SetupFile_sr.ReadLine()       'RVMDataPath
         InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
         RVMDataPath = vstrValue
 
-        vstrTStr = SetupFile_sr.ReadLine()       'File Version number
+        vstrTStr = SetupFile_sr.ReadLine()       'RVMLogsPath
         InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
         RVMLogsPath = vstrValue
 
       End Using ' Using SetupFile_sr As StreamReader
+
     Catch e As Exception
       'Let the user know what went wrong.
       MessageBox.Show("Read Setup File Failed = " + e.Message)
@@ -376,7 +377,7 @@ Public Class frmAppSettings
       '  Create an instance of Stream Reader to read from a file.
       ' The using statement also closes the Stream Reader.
 
-      Using sr As StreamReader = New StreamReader(SettingsFileNamePath)
+      Using SettingsFile_sr As StreamReader = New StreamReader(SettingsFileNamePath)
 
         Dim line As String
 
@@ -404,57 +405,25 @@ Public Class frmAppSettings
 
     MessageBox.Show("WriteSettingsFile")
 
-    'Dim OldSettingsFileName As String = "OLD" + SettingsFullFileName
-    'Dim OldSettingsFileNamePath As String = SettingsFilePath + OldSettingsFileName
-    ''  MessageBox.Show(SettingsFullFileName)
-    ''  MessageBox.Show(OldSettingsFileName)
-    '' MessageBox.Show(OldSettingsFileNamePath)
+    Try
+      '  Create an instance of StreamWriter to write to a file.
+      ' The using statement also closes the StreamWriter.
 
-    '' Delete any previous OLD file
-    'If My.Computer.FileSystem.FileExists(OldSettingsFileNamePath) Then
-    '  '  MessageBox.Show("Deleting " + OldSettingsFileName)
-    '  My.Computer.FileSystem.DeleteFile(OldSettingsFileNamePath)
-    'End If
+      Using SettingsFile_sw As StreamWriter = New StreamWriter(SettingsFileNamePath)
 
-    '' If the Settings file exists then we must rename it before creating a new one
-    'If SettingsFileExists() Then
-    '  '  MessageBox.Show("Renaming old Settingsfile.")
-    '  '   MessageBox.Show(SettingsFileNamePath)
-    '  '   MessageBox.Show(OldSettingsFileName)
-    '  Dim vstrTFileNamePath As String = SettingsFileNamePath
-    '  My.Computer.FileSystem.RenameFile(vstrTFileNamePath, OldSettingsFileName)
-    '  '  MessageBox.Show(vstrTFileNamePath)
-    'End If ' If SettingsFileExists
+        Dim vstrline As String
+        vstrline = InnoSetupFile.FormatSettingStringData("RVMPath", RVMPath)
+        vstrline = InnoSetupFile.FormatSettingStringData("RVMDataPath", RVMDataPath)
+        vstrline = InnoSetupFile.FormatSettingStringData("RVMLogsPath", RVMLogsPath)
+        'UseLastLog = sr.ReadLine()
 
-    'Try
-    '  'Create an instance of Stream Writer to read from a file.
-    '  ' The using statement also closes the Stream Writer.
-    '  Using SettingsFile As StreamWriter = New StreamWriter(SettingsFileNamePath)
-    '    'Dim line As String
-    '    ' Write records to the file 
-    '    SettingsFile.WriteLine("Version Nr")
-    '    SettingsFile.WriteLine(RVMPath)
-    '    SettingsFile.WriteLine(RVMDataPath)
-    '    SettingsFile.WriteLine(RVMLogsPath)
-    '    SettingsFile.WriteLine(SettingsFileNamePath)
-    '    SettingsFile.WriteLine(UseLastLog)
-    '  End Using
-    'Catch e As Exception
-    '  'Let the user know what went wrong.
-    '  MessageBox.Show(e.Message)
-    '  'Restore the previous file
-    '  '     MessageBox.Show("Renaming old Settingsfile.")
-    '  '     MessageBox.Show(OldSettingsFileName)
-    '  '     MessageBox.Show(SettingsFileNamePath)
-    '  'My.Computer.FileSystem.RenameFile(OldSettingsFileNamePath, SettingsFullFileName)
-    'End Try
+      End Using ' SettingsFile_sw As StreamWriter
 
-    '' Delete the OLD file if we were successful
-    'If My.Computer.FileSystem.FileExists(OldSettingsFileName) Then
-    '  My.Computer.FileSystem.DeleteFile(OldSettingsFileName)
-    'End If
+    Catch e As Exception
+      'Let the user know what went wrong.
+      MessageBox.Show(e.Message)
+    End Try
 
-    ''   MessageBox.Show("Write Setings File Complete")
 
   End Sub 'Public Sub WriteSettingsFile
 
