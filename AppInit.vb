@@ -64,7 +64,10 @@ Module AppInit
     ' First we have to read the InnoSetup file. If it Is Not there we cannot go any
     ' further.
     If Not frmAppSettings.ReadSetupFile() Then
-      MessageBox.Show("Read Setup File Failure")
+      MessageBox.Show("Initialization Process has Failed",
+                      "Initialization Failure",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error)
       Return False
     Else
       Return True

@@ -27,6 +27,12 @@ Public Class frmAppSettings
   '          PRIVATE CONSTANTS
   '========================================================================================
 
+  '==============================
+  '        MESSAGE TEXTS
+  '==============================
+  Dim cstrSetupFileReadFailureText = "Unable to read Setup file"
+  Dim cstrSetupFileReadFailureTitle = "Read Setup File Failure"
+
   '========================================================================================
   '          PUBLIC CONSTANTS
   '========================================================================================
@@ -92,7 +98,6 @@ Public Class frmAppSettings
     SettingsFullFileName = cstrSettingsFileName + CStrSettingsFileExt
     SettingsFilePath = ApplicationPath + "\"
     SettingsFileNamePath = SettingsFilePath + SettingsFullFileName
-    MessageBox.Show(SettingsFileNamePath)
   End Sub ' Public Sub InitSetttingsFileData
 
   '========================================================================================
@@ -328,7 +333,10 @@ Public Class frmAppSettings
 
     Catch e As Exception
       'Let the user know what went wrong.
-      MessageBox.Show("Read Setup File Failed = " + e.Message)
+      MessageBox.Show(cstrSetupFileReadFailureText,
+                      cstrSetupFileReadFailureTitle,
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error)
       Return False
     End Try
 
