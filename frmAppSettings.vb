@@ -295,7 +295,11 @@ Public Class frmAppSettings
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
-  Public Sub ReadSetupFile()
+
+  '==============================
+  '         SETUP FILE
+  '==============================
+  Public Function ReadSetupFile() As Boolean
 
     Try
       ' Create an instance of Stream Reader to read from a file.
@@ -330,48 +334,16 @@ Public Class frmAppSettings
     Catch e As Exception
       'Let the user know what went wrong.
       MessageBox.Show("Read Setup File Failed = " + e.Message)
+      Return False
     End Try
 
-  End Sub 'Public Sub ReadSetupFile
+    Return True
 
-  '========================================================================================
-  Public Function SettingsFileExists() As Boolean
+  End Function ' Public Function ReadSetupFile() As Boolean
 
-    If My.Computer.FileSystem.FileExists(SettingsFileNamePath) Then
-      Return True
-    Else
-      Return False
-    End If 'If My.Computer.FileSystem.FileExists
-
-  End Function 'Public Function SettingsFileExist
-
-  '----------------------------------------------------------------------------------------
-  Public Sub InstallDefaultSettings()
-
-    MessageBox.Show("InstallDefaultSettings")
-
-  End Sub ' Public Sub InstallDefaultSettings
-
-  '----------------------------------------------------------------------------------------
-  Public Function LoadAppSettings() As Boolean
-
-    ' We check to see if there is a Settings.stg file there. If it is, we use that data. If
-    ' it is not, we load the Defaukt data
-
-    '   MessageBox.Show("LoadAppSettings")
-
-    If SettingsFileExists() Then
-      ReadSettingsFile()
-      Return True
-    Else
-      MessageBox.Show("No Settings File found. loading Default data.")
-      InstallDefaultSettings()
-      Return False
-    End If ' If Not SettingsFileExists
-
-  End Function ' Public Function LoadAppSettings
-
-  '----------------------------------------------------------------------------------------
+  '==============================
+  '         SETUP FILE
+  '==============================
   Public Sub ReadSettingsFile()
 
     MessageBox.Show("ReadSettingsFile")
@@ -415,7 +387,6 @@ Public Class frmAppSettings
       Using SettingsFile_sw As StreamWriter = New StreamWriter(SettingsFileNamePath)
 
         Dim vstrline As String
-        MessageBox.Show(RVMPath)
         vstrline = RVMSettingsFile.FormatSettingStringData("RVMPath", RVMPath)
         SettingsFile_sw.WriteLine(vstrline)
         vstrline = RVMSettingsFile.FormatSettingStringData("RVMDataPath", RVMDataPath)

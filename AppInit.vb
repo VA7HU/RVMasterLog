@@ -19,7 +19,7 @@ Module AppInit
   '
   '   Version: 1.0.0
   '
-  '   Date: 6 May 2017
+  '   Date: 16 May 2017
   '
   '========================================================================================
 
@@ -54,10 +54,6 @@ Module AppInit
   '========================================================================================
   '          PUBLIC ROUTINES
   '========================================================================================
-  ''' <summary>
-  ''' 
-  ''' </summary>
-  ''' <returns></returns>
   Public Function Initialise()
 
     ' Get the Application path
@@ -67,13 +63,12 @@ Module AppInit
 
     ' First we have to read the InnoSetup file. If it Is Not there we cannot go any
     ' further.
-    If Not frmAppSettings.InnoSetupFile.OpenHUSetupFilesReader(frmAppSettings.SetupFileNamePath) Then
-      'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles("c:\test") Then
+    If Not frmAppSettings.ReadSetupFile() Then
+      MessageBox.Show("Read Setup File Failure")
       Return False
     Else
-      frmAppSettings.ReadSetupFile()
       Return True
-    End If 'if not innosetupfile.openhutextfile(fsetupfilenamepath)
+    End If 'Not frmAppSettings.WriteSettingsFile 
 
   End Function 'Public Sub Initialise()
 

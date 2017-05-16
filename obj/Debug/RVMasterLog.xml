@@ -22,11 +22,5 @@ RVMasterLog
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="M:RVMasterLog.AppInit.Initialise">
- <summary>
- 
- </summary>
- <returns></returns>
-</member>
 </members>
 </doc>
