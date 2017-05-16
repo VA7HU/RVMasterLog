@@ -67,7 +67,7 @@ Module AppInit
 
     ' First we have to read the InnoSetup file. If it Is Not there we cannot go any
     ' further.
-    If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles(frmAppSettings.SetupFileNamePath) Then
+    If Not frmAppSettings.InnoSetupFile.OpenHUSetupFilesReader(frmAppSettings.SetupFileNamePath) Then
       'If Not frmAppSettings.InnoSetupFile.OpenHUSetupFiles("c:\test") Then
       Return False
     Else

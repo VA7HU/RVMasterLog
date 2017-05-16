@@ -19,7 +19,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 6 May 2017
+  '   Date: 15 May 2017
   '
   '===========================================================================================
 
@@ -71,6 +71,7 @@ Public Class frmAppSettings
   '          PUBLIC VARIABLES
   '========================================================================================
   Public InnoSetupFile As New HUSetupFiles
+  Public RVMSettingsFile As New HUSetupFiles
 
   '========================================================================================
   '          PRIVATE ROUTINES
@@ -322,6 +323,8 @@ Public Class frmAppSettings
         InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
         RVMLogsPath = vstrValue
 
+        SetupFile_sr.Close()
+
       End Using ' Using SetupFile_sr As StreamReader
 
     Catch e As Exception
@@ -401,20 +404,24 @@ Public Class frmAppSettings
   End Sub ' Public Sub ReadSettingsFile()
 
   '----------------------------------------------------------------------------------------
-  Public Sub WriteSettingsFile()
+  Public Function WriteSettingsFile() As Boolean
 
     MessageBox.Show("WriteSettingsFile")
 
     Try
-      '  Create an instance of StreamWriter to write to a file.
+      ' Open an instance of StreamWriter to write to a file.
       ' The using statement also closes the StreamWriter.
 
       Using SettingsFile_sw As StreamWriter = New StreamWriter(SettingsFileNamePath)
 
         Dim vstrline As String
-        vstrline = InnoSetupFile.FormatSettingStringData("RVMPath", RVMPath)
-        vstrline = InnoSetupFile.FormatSettingStringData("RVMDataPath", RVMDataPath)
-        vstrline = InnoSetupFile.FormatSettingStringData("RVMLogsPath", RVMLogsPath)
+        MessageBox.Show(RVMPath)
+        vstrline = RVMSettingsFile.FormatSettingStringData("RVMPath", RVMPath)
+        SettingsFile_sw.WriteLine(vstrline)
+        vstrline = RVMSettingsFile.FormatSettingStringData("RVMDataPath", RVMDataPath)
+        SettingsFile_sw.WriteLine(vstrline)
+        vstrline = RVMSettingsFile.FormatSettingStringData("RVMLogsPath", RVMLogsPath)
+        SettingsFile_sw.WriteLine(vstrline)
         'UseLastLog = sr.ReadLine()
 
       End Using ' SettingsFile_sw As StreamWriter
@@ -422,10 +429,12 @@ Public Class frmAppSettings
     Catch e As Exception
       'Let the user know what went wrong.
       MessageBox.Show(e.Message)
+      Return False
     End Try
 
+    Return True
 
-  End Sub 'Public Sub WriteSettingsFile
+  End Function 'Public Sub WriteSettingsFile
 
   '========================================================================================
   '          FORM ROUTINES

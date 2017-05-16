@@ -14,7 +14,7 @@ Public Class HUSetupFiles
   '
   '   Version:
   '
-  '   Date: 7 May 2017
+  '   Date: 15 May 2017
   '
   '========================================================================================
 
@@ -94,7 +94,7 @@ Public Class HUSetupFiles
   '==============================
   '     SETUP FILES
   '==============================
-  Public Function OpenHUSetupFiles(ByRef vstrFullFilePathName As String) As Boolean
+  Public Function OpenHUSetupFilesReader(ByRef vstrFullFilePathName As String) As Boolean
 
     ' If vstrFullFilePathName does not exist, we display an Error message and Return Nothing
     If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) Then
@@ -213,7 +213,7 @@ Public Class HUSetupFiles
   '==============================
   '     SETTING FILES
   '==============================
-  Public Function OpenHUSettingsFiles(fmFileMode As HUSettingsFileMode,
+  Public Function OpenHUSettingsFilesWriter(fmFileMode As HUSettingsFileMode,
                                       ByRef SettingsFileNamePath As String) As Boolean
 
     ' If vstrFullFilePathName does not exist, we display an Information message create a 
@@ -228,16 +228,16 @@ Public Class HUSetupFiles
     '                        + "Creating a New Settings file.")
     'End If 'If Not My.Computer.FileSystem.FileExists(SettingsFileNamePath) 
 
-    Select Case fmFileMode
-      Case fmFileMode.fmBackup
-        MessageBox.Show("Backup")
-      Case fmFileMode.fmReplace
-        MessageBox.Show("Replace")
-        'If File Then exists
-        'My.Computer.FileSystem.DeleteFile((SettingsFileNamePath))
-    End Select ' Case fmFileMode
+    'Select Case fmFileMode
+    '  Case fmFileMode.fmBackup
+    '    MessageBox.Show("Backup")
+    '  Case fmFileMode.fmReplace
+    '    MessageBox.Show("Replace")
+    '    'If File Then exists
+    '    'My.Computer.FileSystem.DeleteFile((SettingsFileNamePath))
+    'End Select ' Case fmFileMode
 
-    My.Computer.FileSystem.OpenTextFileReader(SettingsFileNamePath)
+    'My.Computer.FileSystem.OpenTextFileReader(SettingsFileNamePath)
 
     Return True
 

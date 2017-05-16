@@ -13,7 +13,7 @@
   '
   '   Version: 1.0.0
   '
-  '   Date: 7 May 2017
+  '   Date: 16 May 2017
   '
   '========================================================================================
 
@@ -44,10 +44,12 @@
 
     MessageBox.Show("Finalise")
 
-    frmAppSettings.InnoSetupFile.OpenHUSettingsFiles(
-                             HUSetupFiles.HUSettingsFileMode.fmReplace,
-                             frmAppSettings.SettingsFileNamePath)
-    frmAppSettings.WriteSettingsFile()
+    'frmAppSettings.InnoSetupFile.OpenHUSettingsFilesWriter(
+    '                         HUSetupFiles.HUSettingsFileMode.fmReplace,
+    '                         frmAppSettings.SettingsFileNamePath)
+    If Not frmAppSettings.WriteSettingsFile() Then
+      MessageBox.Show("Write Settings File Failure")
+    End If 'Not frmAppSettings.WriteSettingsFile 
 
   End Sub ' Public Sub Finalise()
 
