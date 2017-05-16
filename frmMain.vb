@@ -14,7 +14,7 @@
   '
   '   Version: 1.0.0
   '
-  '   Date: 27 Apr 2017
+  '   Date: 16 May 2017
   '
   '========================================================================================
 
@@ -100,7 +100,7 @@
 
   '========================================================================================
   Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-    MessageBox.Show("Form Closing")
+    MessageBox.Show("RVMasterLog Closing")
     AppFinal.Finalise()
   End Sub ' Private Sub frmMain_FormClosing
 

@@ -62,10 +62,6 @@ Public Class frmAppSettings
   Private fRVMLogsPath As String
 
   Private fUseLastLog As Boolean = True
-  ' Locate the =. If it is there we return the portion of the string after the = otherwise
-  ' we return the complete string
-
-  ' Private SetupFile As New HUTextFile
 
   '========================================================================================
   '          PUBLIC VARIABLES
@@ -98,7 +94,6 @@ Public Class frmAppSettings
     SettingsFileNamePath = SettingsFilePath + SettingsFullFileName
     MessageBox.Show(SettingsFileNamePath)
   End Sub ' Public Sub InitSetttingsFileData
-
 
   '========================================================================================
   '          PROPERTY ROUTINES
