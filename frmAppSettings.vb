@@ -19,7 +19,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 15 May 2017
+  '   Date: 18 May 2017
   '
   '===========================================================================================
 
@@ -47,7 +47,7 @@ Public Class frmAppSettings
   Private fApplicationFileName As String
   Private fApplicationFileExt As String
   Private fApplicationFullFileName As String
-  Private fApplicationPath As String
+  Private Shared fApplicationPath As String
   Private fApplicationFileNamePath As String
 
   Private fSettingsFileName As String     'Filename
@@ -63,11 +63,11 @@ Public Class frmAppSettings
   Private fSetupFileNamePath As String
   Private fSetupFileVersion As String
 
-  Private fRVMPath As String
-  Private fRVMDataPath As String
-  Private fRVMLogsPath As String
+  Private Shared fRVMPath As String
+  Private Shared fRVMDataPath As String
+  Private Shared fRVMLogsPath As String
 
-  Private fUseLastLog As Boolean = True
+  Private Shared fUseLastLog As Boolean = True
 
   '========================================================================================
   '          PUBLIC VARIABLES
@@ -92,7 +92,6 @@ Public Class frmAppSettings
 
   '========================================================================================
   Public Sub InitSettingsFileData()
-
     SettingsFileName = cstrSettingsFileName
     SettingsFileExt = CStrSettingsFileExt
     SettingsFullFileName = cstrSettingsFileName + CStrSettingsFileExt
@@ -270,21 +269,23 @@ Public Class frmAppSettings
   '          COMMAND BUTTON ROUTINES
   '========================================================================================
   Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
-
+    MessageBox.Show("Browse")
   End Sub 'Private Sub btnBrowse_Click
 
   '========================================================================================
   Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    MessageBox.Show("Cancel")
     Me.Close()
   End Sub 'Private Sub btnCancel_Click
 
   '========================================================================================
   Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-    Me.Close()
+    MessageBox.Show("Help")
   End Sub 'Private Sub btnHelp
 
   '==========================================================================================
   Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
+    MessageBox.Show("OK")
     Me.Close()
   End Sub 'Private Sub btnOK_Cli
 
@@ -414,13 +415,11 @@ Public Class frmAppSettings
   '          FORM ROUTINES
   '========================================================================================
   Private Sub frmAppSettings_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-
     tbxApplicationPath.Text = ApplicationPath
     tbxRVMPath.Text = RVMPath
     tbxRVMDataPath.Text = RVMDataPath
     tbxRVMLogsPath.Text = RVMLogsPath
     chkUseLastLog.Checked = UseLastLog
-
   End Sub 'Private Sub frmAppSettings_Shown
 
   '========================================================================================

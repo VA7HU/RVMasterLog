@@ -229,6 +229,7 @@ Partial Class frmAppSettings
     '
     'btnCancel
     '
+    Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
     Me.btnCancel.Image = CType(resources.GetObject("btnCancel.Image"), System.Drawing.Image)
     Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
     Me.btnCancel.Location = New System.Drawing.Point(575, 292)
@@ -241,9 +242,12 @@ Partial Class frmAppSettings
     '
     'frmAppSettings
     '
+    Me.AcceptButton = Me.btnOK
     Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+    Me.CancelButton = Me.btnCancel
     Me.ClientSize = New System.Drawing.Size(712, 348)
+    Me.ControlBox = False
     Me.Controls.Add(Me.btnCancel)
     Me.Controls.Add(Me.btnHelp)
     Me.Controls.Add(Me.btnOK)
