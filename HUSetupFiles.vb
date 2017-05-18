@@ -254,7 +254,7 @@ Public Class HUSetupFiles
   End Function ' Function FormatSettingStringData() 
 
   '----------------------------------------------------------------------------------------
-  Public Function FormatSetupBooleanData(vstrProperty As String, vblnValue As Boolean) As String
+  Public Function FormatSettingBooleanData(vstrProperty As String, vblnValue As Boolean) As String
     ' Each record consists of two parts. Both parts are concatenated using and equal sign
     ' and returned as the formatted string "vstrProperty=vblnValue"
 
@@ -267,7 +267,7 @@ Public Class HUSetupFiles
     End If
     Return vstrProperty + "=" + vstrTStr
 
-  End Function ' Function FormatSetupBooleanData() 
+  End Function ' Function FormatSettingBooleanData() 
 
   '----------------------------------------------------------------------------------------
   Public Function FormatSetupIntegerData(vstrProperty As String, vintValue As Integer) As String

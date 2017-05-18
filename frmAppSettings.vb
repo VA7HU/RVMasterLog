@@ -66,9 +66,9 @@ Public Class frmAppSettings
   Private Shared fRVMPath As String
   Private Shared fRVMDataPath As String
   Private Shared fRVMLogsPath As String
-  Private vblnOriginalUseLastLog As Boolean
   Private Shared fUseLastLog As Boolean = True
 
+  Private vblnOriginalUseLastLog As Boolean
 
   '========================================================================================
   '          PUBLIC VARIABLES
@@ -275,7 +275,9 @@ Public Class frmAppSettings
 
   '========================================================================================
   Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    ' Restore original data and close
     MessageBox.Show("Cancel")
+    pUseLastLog = vblnOriginalUseLastLog
     Me.Close()
   End Sub 'Private Sub btnCancel_Click
 
@@ -286,17 +288,15 @@ Public Class frmAppSettings
 
   '==========================================================================================
   Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
+    ' Save changeable data and close
     MessageBox.Show("OK")
+    pUseLastLog = chkUseLastLog.Checked
     Me.Close()
   End Sub 'Private Sub btnOK_Cli
 
   '========================================================================================
   '          CONTROL ROUTINES
   '========================================================================================
-  Private Sub tbxRVMPath_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbxRVMPath.KeyPress
-
-  End Sub ' Private Sub tbxRVMPath_KeyPress
-
 
   '========================================================================================
   '          FILE ROUTINES
@@ -396,13 +396,17 @@ Public Class frmAppSettings
       Using SettingsFile_sw As StreamWriter = New StreamWriter(pSettingsFileNamePath)
 
         Dim vstrline As String
+        'line = sr.ReadSetupString        'File Version number
+        vstrline = RVMSettingsFile.FormatSettingStringData("Version", "001")
+        SettingsFile_sw.WriteLine(vstrline)
         vstrline = RVMSettingsFile.FormatSettingStringData("RVMPath", pRVMPath)
         SettingsFile_sw.WriteLine(vstrline)
         vstrline = RVMSettingsFile.FormatSettingStringData("RVMDataPath", pRVMDataPath)
         SettingsFile_sw.WriteLine(vstrline)
         vstrline = RVMSettingsFile.FormatSettingStringData("RVMLogsPath", pRVMLogsPath)
         SettingsFile_sw.WriteLine(vstrline)
-        'UseLastLog = sr.ReadLine()
+        vstrline = RVMSettingsFile.FormatSettingBooleanData("UseLastLog", pUseLastLog)
+        SettingsFile_sw.WriteLine(vstrline)
 
       End Using ' SettingsFile_sw As StreamWriter
 
@@ -420,11 +424,13 @@ Public Class frmAppSettings
   '          FORM ROUTINES
   '========================================================================================
   Private Sub frmAppSettings_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+    ' Load Text box data and save Original data that can be changed
     tbxApplicationPath.Text = pApplicationPath
     tbxRVMPath.Text = pRVMPath
     tbxRVMDataPath.Text = pRVMDataPath
     tbxRVMLogsPath.Text = pRVMLogsPath
     chkUseLastLog.Checked = pUseLastLog
+    vblnOriginalUseLastLog = pUseLastLog
   End Sub 'Private Sub frmAppSettings_Shown
 
   '========================================================================================
