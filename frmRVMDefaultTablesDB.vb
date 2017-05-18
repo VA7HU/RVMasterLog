@@ -12,7 +12,7 @@ Public Class frmRVMDefaultTablesDB
   '
   '   Version:  1.0.0
   '
-  '   Date: 28 Apr 2017
+  '   Date: 18 May 2017
   '
   '========================================================================================
 
@@ -60,7 +60,7 @@ Public Class frmRVMDefaultTablesDB
     MessageBox.Show(fRVMDefaultTablesDBExt)
     fRVMDefaultTablesFullFileName = RVMDefaultTablesDBName & RVMDefaultTablesDBExt
     MessageBox.Show(fRVMDefaultTablesFullFileName)
-    fRVMDefaultTablesFilePath = frmAppSettings.RVMDataPath
+    fRVMDefaultTablesFilePath = frmAppSettings.pRVMDataPath
     MessageBox.Show(fRVMDefaultTablesFilePath)
     fRVMDefaultTablesNamePath = fRVMDefaultTablesFilePath + "\" + fRVMDefaultTablesFullFileName
     MessageBox.Show("XXX " + fRVMDefaultTablesNamePath)

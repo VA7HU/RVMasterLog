@@ -99,6 +99,7 @@ Partial Class frmAppSettings
     '
     'btnBrowse
     '
+    Me.btnBrowse.Enabled = False
     Me.btnBrowse.Image = CType(resources.GetObject("btnBrowse.Image"), System.Drawing.Image)
     Me.btnBrowse.Location = New System.Drawing.Point(602, 56)
     Me.btnBrowse.Name = "btnBrowse"
@@ -164,6 +165,7 @@ Partial Class frmAppSettings
     Me.tbxRVMLogsPath.Location = New System.Drawing.Point(174, 133)
     Me.tbxRVMLogsPath.Margin = New System.Windows.Forms.Padding(4)
     Me.tbxRVMLogsPath.Name = "tbxRVMLogsPath"
+    Me.tbxRVMLogsPath.ReadOnly = True
     Me.tbxRVMLogsPath.Size = New System.Drawing.Size(410, 22)
     Me.tbxRVMLogsPath.TabIndex = 12
     '
@@ -172,6 +174,7 @@ Partial Class frmAppSettings
     Me.tbxRVMDataPath.Location = New System.Drawing.Point(174, 95)
     Me.tbxRVMDataPath.Margin = New System.Windows.Forms.Padding(4)
     Me.tbxRVMDataPath.Name = "tbxRVMDataPath"
+    Me.tbxRVMDataPath.ReadOnly = True
     Me.tbxRVMDataPath.Size = New System.Drawing.Size(410, 22)
     Me.tbxRVMDataPath.TabIndex = 11
     '
@@ -180,6 +183,7 @@ Partial Class frmAppSettings
     Me.tbxRVMPath.Location = New System.Drawing.Point(174, 57)
     Me.tbxRVMPath.Margin = New System.Windows.Forms.Padding(4)
     Me.tbxRVMPath.Name = "tbxRVMPath"
+    Me.tbxRVMPath.ReadOnly = True
     Me.tbxRVMPath.Size = New System.Drawing.Size(410, 22)
     Me.tbxRVMPath.TabIndex = 10
     '

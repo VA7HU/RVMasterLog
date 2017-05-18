@@ -19,7 +19,7 @@ Module AppInit
   '
   '   Version: 1.0.0
   '
-  '   Date: 16 May 2017
+  '   Date: 18 May 2017
   '
   '========================================================================================
 
@@ -57,7 +57,7 @@ Module AppInit
   Public Function Initialise()
 
     ' Get the Application path
-    frmAppSettings.ApplicationPath = My.Application.Info.DirectoryPath
+    frmAppSettings.pApplicationPath = My.Application.Info.DirectoryPath
     frmAppSettings.InitSetupFileData()
     frmAppSettings.InitSettingsFileData()
 

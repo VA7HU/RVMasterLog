@@ -66,8 +66,9 @@ Public Class frmAppSettings
   Private Shared fRVMPath As String
   Private Shared fRVMDataPath As String
   Private Shared fRVMLogsPath As String
-
+  Private vblnOriginalUseLastLog As Boolean
   Private Shared fUseLastLog As Boolean = True
+
 
   '========================================================================================
   '          PUBLIC VARIABLES
@@ -83,183 +84,183 @@ Public Class frmAppSettings
   '          PUBLIC ROUTINES
   '========================================================================================
   Public Sub InitSetupFileData()
-    SetupFileName = cstrSetupFileName
-    SetupFileExt = cstrSetupFileExt
-    SetupFullFileName = cstrSetupFileName + cstrSetupFileExt
-    SetupFilePath = ApplicationPath
-    SetupFileNamePath = ApplicationPath + "\" + SetupFullFileName
+    pSetupFileName = cstrSetupFileName
+    pSetupFileExt = cstrSetupFileExt
+    pSetupFullFileName = cstrSetupFileName + cstrSetupFileExt
+    pSetupFilePath = pApplicationPath
+    pSetupFileNamePath = pApplicationPath + "\" + pSetupFullFileName
   End Sub ' Public Sub InitSetupFileData
 
   '========================================================================================
   Public Sub InitSettingsFileData()
-    SettingsFileName = cstrSettingsFileName
-    SettingsFileExt = CStrSettingsFileExt
-    SettingsFullFileName = cstrSettingsFileName + CStrSettingsFileExt
-    SettingsFilePath = ApplicationPath + "\"
-    SettingsFileNamePath = SettingsFilePath + SettingsFullFileName
+    pSettingsFileName = cstrSettingsFileName
+    pSettingsFileExt = CStrSettingsFileExt
+    pSettingsFullFileName = cstrSettingsFileName + CStrSettingsFileExt
+    pSettingsFilePath = pApplicationPath + "\"
+    pSettingsFileNamePath = pSettingsFilePath + pSettingsFullFileName
   End Sub ' Public Sub InitSetttingsFileData
 
   '========================================================================================
   '          PROPERTY ROUTINES
   '========================================================================================
-  Public Property ApplicationPath() As String
+  Public Property pApplicationPath() As String
     Get
       Return fApplicationPath
     End Get
     Set(ByVal path As String)
       fApplicationPath = path
     End Set
-  End Property 'Public Property fApplicationPath
+  End Property 'Public Property pApplicationPath
 
   '========================================================================================
-  Public Property SetupFileName() As String
+  Public Property pSetupFileName() As String
     Get
       Return fSetupFileName
     End Get
     Set(ByVal FileName As String)
       fSetupFileName = FileName
     End Set
-  End Property 'Public Property SetupFileName()
+  End Property 'Public Property pSetupFileName()
 
   '------------------------------------------------------------------------------------------
-  Public Property SetupFileExt() As String
+  Public Property pSetupFileExt() As String
     Get
       Return fSetupFileExt
     End Get
     Set(ByVal FileExt As String)
       fSetupFileExt = FileExt
     End Set
-  End Property 'Public Property SetupFileExt()
+  End Property 'Public Property pSetupFileExt()
 
   '----------------------------------------------------------------------------------------
-  Public Property SetupFullFileName() As String
+  Public Property pSetupFullFileName() As String
     Get
       Return fSetupFullFileName
     End Get
     Set(ByVal SetupFullFileName As String)
       fSetupFullFileName = SetupFullFileName
     End Set
-  End Property 'Public Property SetupFullFileName() As String
+  End Property 'Public Property pSetupFullFileName() As String
 
   '------------------------------------------------------------------------------------------
-  Public Property SetupFilePath() As String
+  Public Property pSetupFilePath() As String
     Get
       Return fSetupFilePath
     End Get
     Set(ByVal FilePath As String)
       fSetupFilePath = FilePath
     End Set
-  End Property 'Public Property SetupFilePath() As String
+  End Property 'Public Property pSetupFilePath() As String
 
   '------------------------------------------------------------------------------------------
-  Public Property SetupFileNamePath() As String
+  Public Property pSetupFileNamePath() As String
     Get
       Return fSetupFileNamePath
     End Get
     Set(ByVal SetupFileNamePath As String)
       fSetupFileNamePath = SetupFileNamePath
     End Set
-  End Property 'Public Property SetupFileNamePath() As String
+  End Property 'Public Property pSetupFileNamePath() As String
 
   '------------------------------------------------------------------------------------------
-  Public Property SetupFileVersion() As String
+  Public Property pSetupFileVersion() As String
     Get
       Return fSetupFileVersion
     End Get
     Set(ByVal SetupFileVersion As String)
       fSetupFileVersion = SetupFileVersion
     End Set
-  End Property 'Public Property SetupFileVersion() As String
+  End Property 'Public Property pSetupFileVersion() As String
 
   '========================================================================================
-  Public Property SettingsFileName() As String
+  Public Property pSettingsFileName() As String
     Get
       Return fSettingsFileName
     End Get
     Set(ByVal FileName As String)
       fSettingsFileName = FileName
     End Set
-  End Property 'Public Property SettingsFileName()
+  End Property 'Public Property pSettingsFileName()
 
   '------------------------------------------------------------------------------------------
-  Public Property SettingsFileExt() As String
+  Public Property pSettingsFileExt() As String
     Get
       Return fSettingsFileExt
     End Get
     Set(ByVal FileExt As String)
       fSettingsFileExt = FileExt
     End Set
-  End Property 'Public Property SettingsFileExt()
+  End Property 'Public Property pSettingsFileExt()
 
   '----------------------------------------------------------------------------------------
-  Public Property SettingsFullFileName() As String
+  Public Property pSettingsFullFileName() As String
     Get
       Return fSettingsFullFileName
     End Get
     Set(ByVal FullFileName As String)
       fSettingsFullFileName = FullFileName
     End Set
-  End Property 'Public Property SettingsFileName() As String
+  End Property 'Public Property pSettingsFileName() As String
 
   '------------------------------------------------------------------------------------------
-  Public Property SettingsFilePath() As String
+  Public Property pSettingsFilePath() As String
     Get
       Return fSettingsFilePath
     End Get
     Set(ByVal FilePath As String)
       fSettingsFilePath = FilePath
     End Set
-  End Property 'Public Property SettingsFilePath() As String
+  End Property 'Public Property pSettingsFilePath() As String
 
   '----------------------------------------------------------------------------------------
-  Public Property SettingsFileNamePath() As String
+  Public Property pSettingsFileNamePath() As String
     Get
       Return fSettingsFileNamePath
     End Get
     Set(ByVal SettingsFileNamePath As String)
       fSettingsFileNamePath = SettingsFileNamePath
     End Set
-  End Property 'Public Property SettingsFileNamePath() As String
+  End Property 'Public Property pSettingsFileNamePath() As String
 
   '========================================================================================
-  Public Property RVMPath() As String
+  Public Property pRVMPath() As String
     Get
       Return fRVMPath
     End Get
     Set(ByVal path As String)
       fRVMPath = path
     End Set
-  End Property 'Public Property RVMPath
+  End Property 'Public Property pRVMPath
 
   '========================================================================================
-  Public Property RVMDataPath() As String
+  Public Property pRVMDataPath() As String
     Get
       Return fRVMDataPath
     End Get
     Set(ByVal path As String)
       fRVMDataPath = path
     End Set
-  End Property 'Public Property RVMDataPath
+  End Property 'Public Property pRVMDataPath
 
   '========================================================================================
-  Public Property RVMLogsPath() As String
+  Public Property pRVMLogsPath() As String
     Get
       Return fRVMLogsPath
     End Get
     Set(ByVal path As String)
       fRVMLogsPath = path
     End Set
-  End Property 'Public Property RVMLogsPath
+  End Property 'Public Property pRVMLogsPath
 
   '========================================================================================
-  Public Property UseLastLog() As Boolean
+  Public Property pUseLastLog() As Boolean
     Get
       Return fUseLastLog
     End Get
     Set(ByVal Value As Boolean)
       fUseLastLog = Value
     End Set
-  End Property 'Public Property RVMLogsPath
+  End Property 'Public Property pUseLastLog
 
   '========================================================================================
   '          MENU ROUTINES
@@ -292,6 +293,10 @@ Public Class frmAppSettings
   '========================================================================================
   '          CONTROL ROUTINES
   '========================================================================================
+  Private Sub tbxRVMPath_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbxRVMPath.KeyPress
+
+  End Sub ' Private Sub tbxRVMPath_KeyPress
+
 
   '========================================================================================
   '          FILE ROUTINES
@@ -306,7 +311,7 @@ Public Class frmAppSettings
       ' Create an instance of Stream Reader to read from a file.
       ' The using statement also closes the Stream Reader.
 
-      Using SetupFile_sr As StreamReader = New StreamReader(SetupFileNamePath)
+      Using SetupFile_sr As StreamReader = New StreamReader(pSetupFileNamePath)
 
         Dim vstrTStr As String
         Dim vstrProperty As String
@@ -314,19 +319,19 @@ Public Class frmAppSettings
 
         vstrTStr = SetupFile_sr.ReadLine()       'File Version number
         InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
-        SetupFileVersion = vstrValue
+        pSetupFileVersion = vstrValue
 
         vstrTStr = SetupFile_sr.ReadLine()       'RVMPath
         InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
-        RVMPath = vstrValue
+        pRVMPath = vstrValue
 
         vstrTStr = SetupFile_sr.ReadLine()       'RVMDataPath
         InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
-        RVMDataPath = vstrValue
+        pRVMDataPath = vstrValue
 
         vstrTStr = SetupFile_sr.ReadLine()       'RVMLogsPath
         InnoSetupFile.ParseSetupStringData(vstrTStr, vstrProperty, vstrValue)
-        RVMLogsPath = vstrValue
+        pRVMLogsPath = vstrValue
 
         SetupFile_sr.Close()
 
@@ -356,7 +361,7 @@ Public Class frmAppSettings
       '  Create an instance of Stream Reader to read from a file.
       ' The using statement also closes the Stream Reader.
 
-      Using SettingsFile_sr As StreamReader = New StreamReader(SettingsFileNamePath)
+      Using SettingsFile_sr As StreamReader = New StreamReader(pSettingsFileNamePath)
 
         Dim line As String
 
@@ -388,14 +393,14 @@ Public Class frmAppSettings
       ' Open an instance of StreamWriter to write to a file.
       ' The using statement also closes the StreamWriter.
 
-      Using SettingsFile_sw As StreamWriter = New StreamWriter(SettingsFileNamePath)
+      Using SettingsFile_sw As StreamWriter = New StreamWriter(pSettingsFileNamePath)
 
         Dim vstrline As String
-        vstrline = RVMSettingsFile.FormatSettingStringData("RVMPath", RVMPath)
+        vstrline = RVMSettingsFile.FormatSettingStringData("RVMPath", pRVMPath)
         SettingsFile_sw.WriteLine(vstrline)
-        vstrline = RVMSettingsFile.FormatSettingStringData("RVMDataPath", RVMDataPath)
+        vstrline = RVMSettingsFile.FormatSettingStringData("RVMDataPath", pRVMDataPath)
         SettingsFile_sw.WriteLine(vstrline)
-        vstrline = RVMSettingsFile.FormatSettingStringData("RVMLogsPath", RVMLogsPath)
+        vstrline = RVMSettingsFile.FormatSettingStringData("RVMLogsPath", pRVMLogsPath)
         SettingsFile_sw.WriteLine(vstrline)
         'UseLastLog = sr.ReadLine()
 
@@ -415,13 +420,12 @@ Public Class frmAppSettings
   '          FORM ROUTINES
   '========================================================================================
   Private Sub frmAppSettings_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-    tbxApplicationPath.Text = ApplicationPath
-    tbxRVMPath.Text = RVMPath
-    tbxRVMDataPath.Text = RVMDataPath
-    tbxRVMLogsPath.Text = RVMLogsPath
-    chkUseLastLog.Checked = UseLastLog
+    tbxApplicationPath.Text = pApplicationPath
+    tbxRVMPath.Text = pRVMPath
+    tbxRVMDataPath.Text = pRVMDataPath
+    tbxRVMLogsPath.Text = pRVMLogsPath
+    chkUseLastLog.Checked = pUseLastLog
   End Sub 'Private Sub frmAppSettings_Shown
 
   '========================================================================================
-
 End Class 'Public Class frmAppSettings
