@@ -54,7 +54,7 @@ Public Class frmAppSettings
   Private fSettingsFileExt As String      'File Extension
   Private fSettingsFullFileName As String 'Filename + Extension
   Private fSettingsFilePath               'Path to Filename 
-  Private fSettingsFileNamePath           'Path including Filename
+  Private Shared fSettingsFileNamePath           'Path including Filename
 
   Private fSetupFileName As String
   Private fSetupFileExt As String
@@ -275,21 +275,29 @@ Public Class frmAppSettings
 
   '========================================================================================
   Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-    ' Restore original data and close
-    MessageBox.Show("Cancel")
-    pUseLastLog = vblnOriginalUseLastLog
-    Me.Close()
+    ' Confirm Cancel request is valid. If so, Restore original data and close the
+    ' form. If not, Restore the original data and keep the form open.
+    If MessageBox.Show("Confirm you wish to Cancel",
+                        "Confirm Cancel",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question,
+                        MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+      chkUseLastLog.Checked = vblnOriginalUseLastLog
+      pUseLastLog = vblnOriginalUseLastLog
+    Else
+      pUseLastLog = chkUseLastLog.Checked
+      Me.Close()
+    End If ' MessageBox.Show
   End Sub 'Private Sub btnCancel_Click
 
   '========================================================================================
   Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-    MessageBox.Show("Help")
+    MessageBox.Show("Help not yet Implemented")
   End Sub 'Private Sub btnHelp
 
   '==========================================================================================
   Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
     ' Save changeable data and close
-    MessageBox.Show("OK")
     pUseLastLog = chkUseLastLog.Checked
     Me.Close()
   End Sub 'Private Sub btnOK_Cli
@@ -361,21 +369,17 @@ Public Class frmAppSettings
       '  Create an instance of Stream Reader to read from a file.
       ' The using statement also closes the Stream Reader.
 
+      'Using SetupFile_sr As StreamReader = New StreamReader(pSetupFileNamePath)
       Using SettingsFile_sr As StreamReader = New StreamReader(pSettingsFileNamePath)
 
-        Dim line As String
-
-        ' Read lines from the file until the end of
-        ' the file is reached.
-
-        'line = sr.ReadSetupString        'File Version number
-        'MessageBox.Show("line = " + line)
-        'RVMPath = sr.ReadLine()
-        'RVMDataPath = sr.ReadLine()
-        'RVMLogsPath = sr.ReadLine()
-        'SettingsFileNamePath = sr.ReadLine()
-        'UseLastLog = sr.ReadLine()
-      End Using
+        Dim vstrline As String
+        pSetupFileVersion = SettingsFile_sr.ReadLine
+        pRVMPath = SettingsFile_sr.ReadLine()
+        pRVMDataPath = SettingsFile_sr.ReadLine()
+        pRVMLogsPath = SettingsFile_sr.ReadLine()
+        pSettingsFileNamePath = SettingsFile_sr.ReadLine()
+        pUseLastLog = SettingsFile_sr.ReadLine()
+      End Using ' SettingsFile_sr As StreamReader
 
     Catch e As Exception
       'Let the user know what went wrong.
@@ -388,6 +392,7 @@ Public Class frmAppSettings
   Public Function WriteSettingsFile() As Boolean
 
     MessageBox.Show("WriteSettingsFile")
+    MessageBox.Show(pSettingsFileNamePath)
 
     Try
       ' Open an instance of StreamWriter to write to a file.
