@@ -19,7 +19,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 18 May 2017
+  '   Date: 19 May 2017
   '
   '===========================================================================================
 
@@ -359,7 +359,7 @@ Public Class frmAppSettings
   End Function ' Public Function ReadSetupFile() As Boolean
 
   '==============================
-  '         SETUP FILE
+  '         SETTIMGS FILE
   '==============================
   Public Sub ReadSettingsFile()
 
@@ -372,13 +372,41 @@ Public Class frmAppSettings
       'Using SetupFile_sr As StreamReader = New StreamReader(pSetupFileNamePath)
       Using SettingsFile_sr As StreamReader = New StreamReader(pSettingsFileNamePath)
 
-        Dim vstrline As String
-        pSetupFileVersion = SettingsFile_sr.ReadLine
-        pRVMPath = SettingsFile_sr.ReadLine()
-        pRVMDataPath = SettingsFile_sr.ReadLine()
-        pRVMLogsPath = SettingsFile_sr.ReadLine()
-        pSettingsFileNamePath = SettingsFile_sr.ReadLine()
-        pUseLastLog = SettingsFile_sr.ReadLine()
+        Dim vstrTstr As String
+        Dim vblnTbln As String
+        Dim vstrProperty As String
+        Dim vstrValue As String
+
+        'pSetupFileVersion = SettingsFile_sr.ReadLine
+        vstrTstr = SettingsFile_sr.ReadLine()       'File Version number
+        MessageBox.Show(vstrTstr)
+        RVMSettingsFile.ParseSettingsStringData(vstrTstr, vstrProperty, vstrValue)
+        pSetupFileVersion = vstrTstr
+
+        'pRVMPath = SettingsFile_sr.ReadLine()
+        vstrTstr = SettingsFile_sr.ReadLine()
+        MessageBox.Show(vstrTstr)
+        RVMSettingsFile.ParseSettingsStringData(vstrTstr, vstrProperty, vstrValue)
+        pRVMPath = vstrTstr
+
+        'pRVMDataPath = SettingsFile_sr.ReadLine()
+        vstrTstr = SettingsFile_sr.ReadLine()
+        MessageBox.Show(vstrTstr)
+        RVMSettingsFile.ParseSettingsStringData(vstrTstr, vstrProperty, vstrValue)
+        pRVMDataPath = vstrTstr
+
+        'pRVMLogsPath = SettingsFile_sr.ReadLine()
+        vstrTstr = SettingsFile_sr.ReadLine()
+        MessageBox.Show(vstrTstr)
+        RVMSettingsFile.ParseSettingsStringData(vstrTstr, vstrProperty, vstrValue)
+        pRVMLogsPath = vstrTstr
+
+        'vstrline = RVMSettingsFile.FormatSettingBooleanData("UseLastLog", pUseLastLog)
+        vblnTbln = SettingsFile_sr.ReadLine()
+        'MessageBox.Show(vstrTstr)
+        RVMSettingsFile.ParseSettingsBooleanData(vstrTstr, vstrProperty, vstrValue)
+        pRVMLogsPath = vstrTstr
+
       End Using ' SettingsFile_sr As StreamReader
 
     Catch e As Exception
@@ -410,7 +438,7 @@ Public Class frmAppSettings
         SettingsFile_sw.WriteLine(vstrline)
         vstrline = RVMSettingsFile.FormatSettingStringData("RVMLogsPath", pRVMLogsPath)
         SettingsFile_sw.WriteLine(vstrline)
-        vstrline = RVMSettingsFile.FormatSettingBooleanData("UseLastLog", pUseLastLog)
+        vstrline = RVMSettingsFile.FormatSettingStringData("UseLastLog", pUseLastLog)
         SettingsFile_sw.WriteLine(vstrline)
 
       End Using ' SettingsFile_sw As StreamWriter

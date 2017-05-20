@@ -10,16 +10,18 @@ Module AppInit
   '
   '   Called By:  frmMain : frmMain_Load
   '
-  '   Calls: AppSettings :  frmAppSettings.ApplicationPath
-  '                         frmAppSettings.ReadSetupFile
-  '                         frmAppSettings.LoadAppSettings
-  '                         frmAppSettings.RVMDataPath
-  '                         frmAppSettings.ReadSetupFile
+  '   Calls: AppSettings :  frmAppSettings  : InitSettingsFileData 
+  '                                           InitSetupFileData
+  '                                           LoadAppSettings
+  '                                           pApplicationPath
+  '                                           RVMDataPath
+  '                                           ReadSetupFile
+  '                                           ReadSettingsFile
   '                         HUSetupFiles.OpenHUTextFile
   '
   '   Version: 1.0.0
   '
-  '   Date: 18 May 2017
+  '   Date: 19 May 2017
   '
   '========================================================================================
 
@@ -56,12 +58,12 @@ Module AppInit
   '========================================================================================
   Public Function Initialise()
 
-    ' Get the Application path
+    ' Get the Application path and Initialise the Setup and Settings files data elements
     frmAppSettings.pApplicationPath = My.Application.Info.DirectoryPath
     frmAppSettings.InitSetupFileData()
     frmAppSettings.InitSettingsFileData()
 
-    ' First we have to read the InnoSetup file. If it Is Not there we cannot go any
+    ' First we have to read the RVMSetup file. If it Is Not there we cannot go any
     ' further.
     If Not frmAppSettings.ReadSetupFile() Then
       MessageBox.Show("Initialization Process has Failed",
@@ -69,9 +71,12 @@ Module AppInit
                       MessageBoxButtons.OK,
                       MessageBoxIcon.Error)
       Return False
-    Else
-      Return True
     End If 'Not frmAppSettings.WriteSettingsFile 
+
+    ' Now we read the RVMSettings file
+    frmAppSettings.ReadSettingsFile()
+
+    Return True
 
   End Function 'Public Sub Initialise()
 

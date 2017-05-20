@@ -14,7 +14,7 @@ Public Class HUSetupFiles
   '
   '   Version:
   '
-  '   Date: 15 May 2017
+  '   Date: 19 May 2017
   '
   '========================================================================================
 
@@ -301,6 +301,112 @@ Public Class HUSetupFiles
 
   End Function ' Function FormatSetupDoubleData() 
 
+  '========================================================================================
+  Public Sub ParseSettingsStringData(vstrStringData As String,
+                              vstrProperty As String,
+                              vstrValue As String)
+    ' Each record consists of one or two parts. If only one part exists it is returned as 
+    '  ' it is returned as the Value. If both parts (separated by the equals sign) exists,
+    '  ' then the first part is returned as the Property and the second part is returned as
+    '  ' the Value'
+
+    ' first find the POS of the equals sign
+    Dim Pos As Integer
+    Pos = InStr(vstrStringData, "=")
+
+    ' Now deternine number of returned parts
+    If Pos = 0 Then
+      vstrProperty = Nothing
+      vstrValue = Right(vstrStringData, Len(vstrStringData) - Pos)
+    Else
+      vstrProperty = Left(vstrStringData, (Pos - 1))
+      vstrValue = Right(vstrStringData, Len(vstrStringData) - Pos)
+    End If ' If Pos > 0
+
+  End Sub ' Sub ParseSettingsStringData() 
+
+  '----------------------------------------------------------------------------------------
+  Public Sub ParseSettingsBooleanData(vstrStringData As String,
+                                ByRef vstrProperty As String,
+                                ByRef vblnValue As Boolean)
+    ' Each record consists of one or two parts. If only one part exists it is returned as 
+    ' it is returned as the Value. If both parts (separated by the equals sign) exists,
+    ' then the first part is returned as the Property and the second part is returned as
+    ' the Value'
+
+    Dim vstrTStr As String
+
+    MessageBox.Show(vstrStringData)
+
+    ' first find the POS of the equals sign
+    Dim Pos As Integer
+    Pos = InStr(vstrStringData, "=")
+    MessageBox.Show(Right(vstrStringData, Len(vstrStringData) - Pos))
+
+    ' Now deternine number of returned parts
+    If Pos = 0 Then
+      vstrProperty = Nothing
+      MessageBox.Show(Right(vstrStringData, Len(vstrStringData) - Pos))
+      vblnValue = Right(vstrStringData, Len(vstrStringData) - Pos)
+      'vblnValue = CBool(Right(vstrStringData, Len(vstrStringData) - Pos))
+    Else
+      vstrProperty = Left(vstrStringData, (Pos - 1))
+      MessageBox.Show(Right(vstrStringData, Len(vstrStringData) - Pos))
+      vblnValue = Right(vstrStringData, Len(vstrStringData) - Pos)
+      'vblnValue = CBool(Right(vstrStringData, Len(vstrStringData) - Pos))
+    End If ' If Pos > 0
+
+  End Sub ' Sub ParseSettingsBooleanData()
+
+  '----------------------------------------------------------------------------------------
+  'Public Sub ParseSetupIntegerData(vstrStringData As String,
+  '                           ByRef vstrProperty As String,
+  '                           ByRef vintValue As Integer)
+  '  ' Each record consists of one or two parts. If only one part exists it is returned as 
+  '  ' it is returned as the Value. If both parts (separated by the equals sign) exists,
+  '  ' then the first part is returned as the Property and the second part is returned as
+  '  ' the Value'
+
+  '  ' first find the POS of the equals sign
+  '  Dim Pos As Integer
+  '  Pos = InStr(vstrStringData, "=")
+
+  '  ' Now deternine number of returned parts
+  '  If Pos = 0 Then
+  '    vstrProperty = Nothing
+  '    vintValue = CInt(Right(vstrStringData, Len(vstrStringData) - Pos))
+  '  Else
+  '    vstrProperty = Left(vstrStringData, (Pos - 1))
+  '    vintValue = CInt(Right(vstrStringData, Len(vstrStringData) - Pos))
+  '  End If ' If Pos > 0
+
+  'End Sub ' Sub ParseSetupIntegerData() 
+
+  '----------------------------------------------------------------------------------------
+  'Public Sub ParseSetupDoubleData(vstrStringData As String,
+  '                           ByRef vstrProperty As String,
+  '                           ByRef vdblDouble As Integer)
+  '  ' Each record consists of one or two parts. If only one part exists it is returned as 
+  '  ' it is returned as the Value. If both parts (separated by the equals sign) exists,
+  '  ' then the first part is returned as the Property and the second part is returned as
+  '  ' the Value'
+
+  '  ' first find the POS of the equals sign
+  '  Dim Pos As Integer
+  '  Pos = InStr(vstrStringData, "=")
+
+  '  ' Now deternine number of returned parts
+  '  If Pos = 0 Then
+  '    vstrProperty = Nothing
+  '    vdblDouble = CDbl(Right(vstrStringData, Len(vstrStringData) - Pos))
+  '  Else
+  '    vstrProperty = Left(vstrStringData, (Pos - 1))
+  '    vdblDouble = CDbl(Right(vstrStringData, Len(vstrStringData) - Pos))
+  '  End If ' If Pos > 0
+
+  'End Sub ' Sub ParseSetupDoubleData() 
+
+  '========================================================================================
   '========================================================================================
 
 End Class ' Public Class HUSetupFiles
