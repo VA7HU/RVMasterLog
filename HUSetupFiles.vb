@@ -14,7 +14,7 @@ Public Class HUSetupFiles
   '
   '   Version:
   '
-  '   Date: 19 May 2017
+  '   Date: 20 May 2017
   '
   '========================================================================================
 
@@ -352,8 +352,13 @@ Public Class HUSetupFiles
     Else
       vstrProperty = Left(vstrStringData, (Pos - 1))
       MessageBox.Show(Right(vstrStringData, Len(vstrStringData) - Pos))
-      vblnValue = Right(vstrStringData, Len(vstrStringData) - Pos)
+      If Right(vstrStringData, Len(vstrStringData) - Pos) = "True" Then
+        vblnValue = True
+      Else
+        vblnValue = False
+      End If
       'vblnValue = CBool(Right(vstrStringData, Len(vstrStringData) - Pos))
+
     End If ' If Pos > 0
 
   End Sub ' Sub ParseSettingsBooleanData()

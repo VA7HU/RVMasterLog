@@ -373,7 +373,7 @@ Public Class frmAppSettings
       Using SettingsFile_sr As StreamReader = New StreamReader(pSettingsFileNamePath)
 
         Dim vstrTstr As String
-        Dim vblnTbln As String
+        Dim vblnValue As Boolean
         Dim vstrProperty As String
         Dim vstrValue As String
 
@@ -402,10 +402,10 @@ Public Class frmAppSettings
         pRVMLogsPath = vstrTstr
 
         'vstrline = RVMSettingsFile.FormatSettingBooleanData("UseLastLog", pUseLastLog)
-        vblnTbln = SettingsFile_sr.ReadLine()
-        'MessageBox.Show(vstrTstr)
-        RVMSettingsFile.ParseSettingsBooleanData(vstrTstr, vstrProperty, vstrValue)
-        pRVMLogsPath = vstrTstr
+        vstrTstr = SettingsFile_sr.ReadLine()
+        MessageBox.Show(vstrTstr)
+        RVMSettingsFile.ParseSettingsBooleanData(vstrTstr, vstrProperty, pUseLastLog)
+        ' pRVMLogsPath = vblnValue
 
       End Using ' SettingsFile_sr As StreamReader
 
@@ -438,7 +438,11 @@ Public Class frmAppSettings
         SettingsFile_sw.WriteLine(vstrline)
         vstrline = RVMSettingsFile.FormatSettingStringData("RVMLogsPath", pRVMLogsPath)
         SettingsFile_sw.WriteLine(vstrline)
-        vstrline = RVMSettingsFile.FormatSettingStringData("UseLastLog", pUseLastLog)
+        If pUseLastLog Then
+          vstrline = RVMSettingsFile.FormatSettingStringData("UseLastLog", "True")
+        Else
+          vstrline = RVMSettingsFile.FormatSettingStringData("UseLastLog", "False")
+        End If ' If pUseLastLog
         SettingsFile_sw.WriteLine(vstrline)
 
       End Using ' SettingsFile_sw As StreamWriter

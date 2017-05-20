@@ -122,7 +122,6 @@
     <Compile Include="frmRVMDefaultTablesDB.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HUMessages.vb" />
     <Compile Include="HUSetupFiles.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
