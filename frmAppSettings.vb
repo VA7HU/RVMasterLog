@@ -54,7 +54,7 @@ Public Class frmAppSettings
   Private fSettingsFileExt As String      'File Extension
   Private fSettingsFullFileName As String 'Filename + Extension
   Private fSettingsFilePath               'Path to Filename 
-  Private Shared fSettingsFileNamePath           'Path including Filename
+  Private Shared fSettingsFileNamePath    'Path including Filename
 
   Private fSetupFileName As String
   Private fSetupFileExt As String
@@ -405,7 +405,6 @@ Public Class frmAppSettings
         vstrTstr = SettingsFile_sr.ReadLine()
         MessageBox.Show(vstrTstr)
         RVMSettingsFile.ParseSettingsBooleanData(vstrTstr, vstrProperty, pUseLastLog)
-        ' pRVMLogsPath = vblnValue
 
       End Using ' SettingsFile_sr As StreamReader
 

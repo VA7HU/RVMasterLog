@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports cllHULibrary
 
 Public Class HUSetupFiles
 
@@ -14,7 +15,7 @@ Public Class HUSetupFiles
   '
   '   Version:
   '
-  '   Date: 20 May 2017
+  '   Date: 29 May 2017
   '
   '========================================================================================
 
@@ -260,11 +261,7 @@ Public Class HUSetupFiles
 
     ' Format and return the String data
     Dim vstrTStr As String
-    If vblnValue = True Then
-      vstrTStr = "True"
-    Else
-      vstrTStr = "False"
-    End If
+    vstrTStr = HUBooltoTFString(vblnValue)
     Return vstrProperty + "=" + vstrTStr
 
   End Function ' Function FormatSettingBooleanData() 
@@ -352,12 +349,12 @@ Public Class HUSetupFiles
     Else
       vstrProperty = Left(vstrStringData, (Pos - 1))
       MessageBox.Show(Right(vstrStringData, Len(vstrStringData) - Pos))
-      If Right(vstrStringData, Len(vstrStringData) - Pos) = "True" Then
-        vblnValue = True
-      Else
-        vblnValue = False
-      End If
-      'vblnValue = CBool(Right(vstrStringData, Len(vstrStringData) - Pos))
+      'If Right(vstrStringData, Len(vstrStringData) - Pos) = "True" Then
+      '  vblnValue = True
+      'Else
+      '  vblnValue = False
+      'End If
+      vblnValue = HUTFStringToBool(Right(vstrStringData, Len(vstrStringData) - Pos))
 
     End If ' If Pos > 0
 

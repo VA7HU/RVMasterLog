@@ -1,26 +1,16 @@
-﻿Imports System.Windows
-Imports cllHULibrary
-
-Module AppInit
+﻿Public Module HUStringsLibrary
 
   '========================================================================================
   '
-  '   Filename : AppInit.vb
+  '   Filename : HUStringsLibrary.vb
   '
-  '   Description: Application Initialization
+  '   Description:
   '
-  '   Called By:  frmMain : frmMain_Load
+  '   Called By:
   '
-  '   Calls: AppSettings :  frmAppSettings  : InitSettingsFileData 
-  '                                           InitSetupFileData
-  '                                           LoadAppSettings
-  '                                           pApplicationPath
-  '                                           RVMDataPath
-  '                                           ReadSetupFile
-  '                                           ReadSettingsFile
-  '                         HUSetupFiles.OpenHUTextFile
+  '   Calls:
   '
-  '   Version: 1.0.0
+  '   Version:  1.0.0
   '
   '   Date: 29 May 2017
   '
@@ -31,15 +21,11 @@ Module AppInit
   '========================================================================================
 
   '========================================================================================
-  '          PRIVATE VARIABLES
-  '========================================================================================
-
-  '========================================================================================
-  '          PRIVATE PROPERTIES
-  '========================================================================================
-
-  '========================================================================================
   '          PUBLIC CONSTANTS
+  '========================================================================================
+
+  '========================================================================================
+  '          PRIVATE VARIABLES
   '========================================================================================
 
   '========================================================================================
@@ -47,7 +33,35 @@ Module AppInit
   '========================================================================================
 
   '========================================================================================
+  '          PRIVATE PROPERTIES
+  '========================================================================================
+
+  '========================================================================================
   '          PUBLIC PROPERTIES
+  '========================================================================================
+
+  '========================================================================================
+  '          PRIVATE PROPERTY ROUTINES
+  '========================================================================================
+
+  '========================================================================================
+  '          PUBLIC PROPERTY ROUTINES
+  '========================================================================================
+
+  '========================================================================================
+  '          PRIVATE EVENT ROUTINES
+  '========================================================================================
+
+  '========================================================================================
+  '          PUBLIC EVENT ROUTINES
+  '========================================================================================
+
+  '========================================================================================
+  '          PRIVATE METHOD ROUTINES
+  '========================================================================================
+
+  '========================================================================================
+  '          PUBLIC METHOD ROUTINES
   '========================================================================================
 
   '========================================================================================
@@ -57,37 +71,27 @@ Module AppInit
   '========================================================================================
   '          PUBLIC ROUTINES
   '========================================================================================
-  Public Function Initialise()
-
-    ' Get the Application path and Initialise the Setup and Settings files data elements
-    frmAppSettings.pApplicationPath = My.Application.Info.DirectoryPath
-    frmAppSettings.InitSetupFileData()
-    frmAppSettings.InitSettingsFileData()
-
-    ' First we have to read the RVMSetup file. If it Is Not there we cannot go any
-    ' further.
-    If Not frmAppSettings.ReadSetupFile() Then
-      MessageBox.Show("Initialization Process has Failed",
-                      "Initialization Failure",
-                      MessageBoxButtons.OK,
-                      MessageBoxIcon.Error)
+  Public Function HUTFStringToBool(vstrValue As String) As Boolean
+    If vstrValue = "True" Then
+      Return True
+    Else
       Return False
-    End If 'Not frmAppSettings.WriteSettingsFile 
+    End If ' If vstrValue = "True"
+  End Function ' Public Function HUTFStringToBool() As Boolean
 
-    ' Now we read the RVMSettings file
-    frmAppSettings.ReadSettingsFile()
-
-    Return True
-
-  End Function 'Public Sub Initialise()
-
-  '========================================================================================
-  '          PROPERTY ROUTINES
-  '========================================================================================
+  '----------------------------------------------------------------------------------------
+  Public Function HUBooltoTFString(vblnValue As Boolean) As String
+    If vblnValue = True Then
+      Return "True"
+    Else
+      Return "False"
+    End If ' If vblnValue = True
+  End Function ' Public Function HUBooltoTFString(vstrValue As Boolean) As String
 
   '========================================================================================
   '          FILE ROUTINES
   '========================================================================================
 
   '========================================================================================
-End Module 'Module AppInit
+
+End Module ' Public Module HUStringsLibrary
