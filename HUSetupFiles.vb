@@ -31,10 +31,10 @@ Public Class HUSetupFiles
   '========================================================================================
   '          PUBLIC CONSTANTS
   '========================================================================================
-  Public Enum HUSettingsFileMode
-    fmBackup = 0
-    fmReplace = 1
-  End Enum ' HUSettingsFileMode
+  'Public Enum HUSettingsFileMode
+  '  fmBackup = 0
+  '  fmReplace = 1
+  'End Enum ' husettingsfilemode
 
   '========================================================================================
   '          PRIVATE VARIABLES
@@ -95,25 +95,6 @@ Public Class HUSetupFiles
   '==============================
   '     SETUP FILES
   '==============================
-  Public Function OpenHUSetupFilesReader(ByRef vstrFullFilePathName As String) As Boolean
-
-    ' If vstrFullFilePathName does not exist, we display an Error message and Return Nothing
-    If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) Then
-      MessageBox.Show("Setup File" _
-                            + vbCr _
-                             + vstrFullFilePathName _
-                            + vbCr _
-                            + "does not Exist")
-      Return False
-    End If 'If Not My.Computer.FileSystem.FileExists(vstrFullFilePathName) 
-
-    My.Computer.FileSystem.OpenTextFileReader(vstrFullFilePathName)
-
-    Return True
-
-  End Function ' Public Function OpenHUSetupFiles(vstrFullFilepathName As String)
-
-  '========================================================================================
   Public Sub ParseSetupStringData(vstrStringData As String,
                              ByRef vstrProperty As String,
                              ByRef vstrValue As String)
@@ -214,37 +195,6 @@ Public Class HUSetupFiles
   '==============================
   '     SETTING FILES
   '==============================
-  Public Function OpenHUSettingsFilesWriter(fmFileMode As HUSettingsFileMode,
-                                      ByRef SettingsFileNamePath As String) As Boolean
-
-    ' If vstrFullFilePathName does not exist, we display an Information message create a 
-    ' a New Settings file.
-    'If Not My.Computer.FileSystem.FileExists(SettingsFileNamePath) Then
-    '  MessageBox.Show("Settings File" _
-    '                        + vbCr _
-    '                         + vstrFullFilePathName _
-    '                        + vbCr _
-    '                        + "does not Exist" _
-    '                        + vbCr _
-    '                        + "Creating a New Settings file.")
-    'End If 'If Not My.Computer.FileSystem.FileExists(SettingsFileNamePath) 
-
-    'Select Case fmFileMode
-    '  Case fmFileMode.fmBackup
-    '    MessageBox.Show("Backup")
-    '  Case fmFileMode.fmReplace
-    '    MessageBox.Show("Replace")
-    '    'If File Then exists
-    '    'My.Computer.FileSystem.DeleteFile((SettingsFileNamePath))
-    'End Select ' Case fmFileMode
-
-    'My.Computer.FileSystem.OpenTextFileReader(SettingsFileNamePath)
-
-    Return True
-
-  End Function ' Public Function OpenHUSettingFiles(vstrFullFilepathName As String)
-
-  '----------------------------------------------------------------------------------------
   Public Function FormatSettingStringData(vstrProperty As String, vstrValue As String) As String
     ' Each record consists of two parts. Both parts are concatenated using and equal sign
     ' and returned as the formatted string "vstrProperty=vstrValue"
@@ -361,54 +311,53 @@ Public Class HUSetupFiles
   End Sub ' Sub ParseSettingsBooleanData()
 
   '----------------------------------------------------------------------------------------
-  'Public Sub ParseSetupIntegerData(vstrStringData As String,
-  '                           ByRef vstrProperty As String,
-  '                           ByRef vintValue As Integer)
-  '  ' Each record consists of one or two parts. If only one part exists it is returned as 
-  '  ' it is returned as the Value. If both parts (separated by the equals sign) exists,
-  '  ' then the first part is returned as the Property and the second part is returned as
-  '  ' the Value'
+  Public Sub ParseSettingsIntegerData(vstrStringData As String,
+                             ByRef vstrProperty As String,
+                             ByRef vintValue As Integer)
+    ' Each record consists of one or two parts. If only one part exists it is returned as 
+    ' it is returned as the Value. If both parts (separated by the equals sign) exists,
+    ' then the first part is returned as the Property and the second part is returned as
+    ' the Value'
 
-  '  ' first find the POS of the equals sign
-  '  Dim Pos As Integer
-  '  Pos = InStr(vstrStringData, "=")
+    ' first find the POS of the equals sign
+    Dim Pos As Integer
+    Pos = InStr(vstrStringData, "=")
 
-  '  ' Now deternine number of returned parts
-  '  If Pos = 0 Then
-  '    vstrProperty = Nothing
-  '    vintValue = CInt(Right(vstrStringData, Len(vstrStringData) - Pos))
-  '  Else
-  '    vstrProperty = Left(vstrStringData, (Pos - 1))
-  '    vintValue = CInt(Right(vstrStringData, Len(vstrStringData) - Pos))
-  '  End If ' If Pos > 0
+    ' Now deternine number of returned parts
+    If Pos = 0 Then
+      vstrProperty = Nothing
+      vintValue = CInt(Right(vstrStringData, Len(vstrStringData) - Pos))
+    Else
+      vstrProperty = Left(vstrStringData, (Pos - 1))
+      vintValue = CInt(Right(vstrStringData, Len(vstrStringData) - Pos))
+    End If ' If Pos > 0
 
-  'End Sub ' Sub ParseSetupIntegerData() 
+  End Sub ' Sub ParseSettingsIntegerData() 
 
   '----------------------------------------------------------------------------------------
-  'Public Sub ParseSetupDoubleData(vstrStringData As String,
-  '                           ByRef vstrProperty As String,
-  '                           ByRef vdblDouble As Integer)
-  '  ' Each record consists of one or two parts. If only one part exists it is returned as 
-  '  ' it is returned as the Value. If both parts (separated by the equals sign) exists,
-  '  ' then the first part is returned as the Property and the second part is returned as
-  '  ' the Value'
+  Public Sub ParseSettingsDoubleData(vstrStringData As String,
+                             ByRef vstrProperty As String,
+                             ByRef vdblDouble As Integer)
+    ' Each record consists of one or two parts. If only one part exists it is returned as 
+    ' it is returned as the Value. If both parts (separated by the equals sign) exists,
+    ' then the first part is returned as the Property and the second part is returned as
+    ' the Value'
 
-  '  ' first find the POS of the equals sign
-  '  Dim Pos As Integer
-  '  Pos = InStr(vstrStringData, "=")
+    ' first find the POS of the equals sign
+    Dim Pos As Integer
+    Pos = InStr(vstrStringData, "=")
 
-  '  ' Now deternine number of returned parts
-  '  If Pos = 0 Then
-  '    vstrProperty = Nothing
-  '    vdblDouble = CDbl(Right(vstrStringData, Len(vstrStringData) - Pos))
-  '  Else
-  '    vstrProperty = Left(vstrStringData, (Pos - 1))
-  '    vdblDouble = CDbl(Right(vstrStringData, Len(vstrStringData) - Pos))
-  '  End If ' If Pos > 0
+    ' Now deternine number of returned parts
+    If Pos = 0 Then
+      vstrProperty = Nothing
+      vdblDouble = CDbl(Right(vstrStringData, Len(vstrStringData) - Pos))
+    Else
+      vstrProperty = Left(vstrStringData, (Pos - 1))
+      vdblDouble = CDbl(Right(vstrStringData, Len(vstrStringData) - Pos))
+    End If ' If Pos > 0
 
-  'End Sub ' Sub ParseSetupDoubleData() 
+  End Sub ' Sub ParseSettingsDoubleData() 
 
-  '========================================================================================
   '========================================================================================
 
 End Class ' Public Class HUSetupFiles

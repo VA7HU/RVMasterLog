@@ -71,6 +71,24 @@
   '========================================================================================
   '          PUBLIC ROUTINES
   '========================================================================================
+  Public Function HUOOStringToBool(vstrValue As String) As Boolean
+    If vstrValue = "On" Then
+      Return True
+    Else
+      Return False
+    End If ' If vstrValue = "On"
+  End Function ' Public Function HUOOStringToBool() As Boolean
+
+  '----------------------------------------------------------------------------------------
+  Public Function HUBooltoOOString(vblnValue As Boolean) As String
+    If vblnValue = True Then
+      Return "On"
+    Else
+      Return "Off"
+    End If ' If vblnValue = True
+  End Function ' Public Function HUBooltoOOString(vstrValue As Boolean) As String
+
+  '========================================================================================
   Public Function HUTFStringToBool(vstrValue As String) As Boolean
     If vstrValue = "True" Then
       Return True
@@ -87,6 +105,24 @@
       Return "False"
     End If ' If vblnValue = True
   End Function ' Public Function HUBooltoTFString(vstrValue As Boolean) As String
+
+  '========================================================================================
+  Public Function HUYNStringToBool(vstrValue As String) As Boolean
+    If vstrValue = "Yes" Then
+      Return True
+    Else
+      Return False
+    End If ' If vstrValue = "Yes"
+  End Function ' Public Function HUYNStringToBool() As Boolean
+
+  '----------------------------------------------------------------------------------------
+  Public Function HUBooltoYNString(vblnValue As Boolean) As String
+    If vblnValue = True Then
+      Return "Yes"
+    Else
+      Return "No"
+    End If ' If vblnValue = True
+  End Function ' Public Function HUBooltoYNString(vstrValue As Boolean) As String
 
   '========================================================================================
   '          FILE ROUTINES
