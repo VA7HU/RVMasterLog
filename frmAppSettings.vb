@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports cllHUFilesLibrary.HUFilesLibrary
 
 Public Class frmAppSettings
 
@@ -74,7 +75,7 @@ Public Class frmAppSettings
   '          PUBLIC VARIABLES
   '========================================================================================
   Public InnoSetupFile As New HUSetupFiles
-  Public RVMSettingsFile As New HUSetupFiles
+  Public RVMSettingsFile As New HUSettingsFiles
 
   '========================================================================================
   '          PRIVATE ROUTINES
