@@ -144,3 +144,6 @@ C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Worki
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUStringsLibrary.dll
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUStringsLibrary.pdb
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUStringsLibrary.xml
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUFilesLibrary.dll
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUFilesLibrary.pdb
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUFilesLibrary.xml

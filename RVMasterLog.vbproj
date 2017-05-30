@@ -49,6 +49,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="cllHUFilesLibrary">
+      <HintPath>..\..\..\HULibrary Files\HULibs Development\Working Copy\cllHUFilesLibrary\bin\Debug\cllHUFilesLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="cllHUStringsLibrary">
       <HintPath>..\..\..\HULibrary Files\HULibs Development\Working Copy\cllHUStringsLibrary\bin\Debug\cllHUStringsLibrary.dll</HintPath>
     </Reference>
@@ -125,7 +128,6 @@
     <Compile Include="frmRVMDefaultTablesDB.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HUSetupFiles.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
