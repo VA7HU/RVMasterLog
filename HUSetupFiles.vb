@@ -1,5 +1,5 @@
 ﻿Imports System.IO
-Imports cllHULibrary
+Imports cllHUStringsLibrary
 
 Public Class HUSetupFiles
 
@@ -15,7 +15,7 @@ Public Class HUSetupFiles
   '
   '   Version:
   '
-  '   Date: 29 May 2017
+  '   Date: 30 May 2017
   '
   '========================================================================================
 

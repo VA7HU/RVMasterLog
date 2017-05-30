@@ -141,6 +141,6 @@ C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Worki
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.xml
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.pdb
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHULibrary.dll
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHULibrary.pdb
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHULibrary.xml
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUStringsLibrary.dll
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUStringsLibrary.pdb
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUStringsLibrary.xml
