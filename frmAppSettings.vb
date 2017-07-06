@@ -20,7 +20,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 19 May 2017
+  '   Date: 6 Jul 2017
   '
   '===========================================================================================
 
@@ -378,33 +378,23 @@ Public Class frmAppSettings
         Dim vstrProperty As String
         Dim vstrValue As String
 
-        'pSetupFileVersion = SettingsFile_sr.ReadLine
         vstrTstr = SettingsFile_sr.ReadLine()       'File Version number
-        MessageBox.Show(vstrTstr)
         RVMSettingsFile.ParseSettingsStringData(vstrTstr, vstrProperty, vstrValue)
         pSetupFileVersion = vstrTstr
 
-        'pRVMPath = SettingsFile_sr.ReadLine()
         vstrTstr = SettingsFile_sr.ReadLine()
-        MessageBox.Show(vstrTstr)
         RVMSettingsFile.ParseSettingsStringData(vstrTstr, vstrProperty, vstrValue)
         pRVMPath = vstrTstr
 
-        'pRVMDataPath = SettingsFile_sr.ReadLine()
         vstrTstr = SettingsFile_sr.ReadLine()
-        MessageBox.Show(vstrTstr)
         RVMSettingsFile.ParseSettingsStringData(vstrTstr, vstrProperty, vstrValue)
         pRVMDataPath = vstrTstr
 
-        'pRVMLogsPath = SettingsFile_sr.ReadLine()
         vstrTstr = SettingsFile_sr.ReadLine()
-        MessageBox.Show(vstrTstr)
         RVMSettingsFile.ParseSettingsStringData(vstrTstr, vstrProperty, vstrValue)
         pRVMLogsPath = vstrTstr
 
-        'vstrline = RVMSettingsFile.FormatSettingBooleanData("UseLastLog", pUseLastLog)
         vstrTstr = SettingsFile_sr.ReadLine()
-        MessageBox.Show(vstrTstr)
         RVMSettingsFile.ParseSettingsBooleanData(vstrTstr, vstrProperty, pUseLastLog)
 
       End Using ' SettingsFile_sr As StreamReader
@@ -420,7 +410,7 @@ Public Class frmAppSettings
   Public Function WriteSettingsFile() As Boolean
 
     MessageBox.Show("WriteSettingsFile")
-    MessageBox.Show(pSettingsFileNamePath)
+    'MessageBox.Show(pSettingsFileNamePath)
 
     Try
       ' Open an instance of StreamWriter to write to a file.
@@ -429,7 +419,6 @@ Public Class frmAppSettings
       Using SettingsFile_sw As StreamWriter = New StreamWriter(pSettingsFileNamePath)
 
         Dim vstrline As String
-        'line = sr.ReadSetupString        'File Version number
         vstrline = RVMSettingsFile.FormatSettingStringData("Version", "001")
         SettingsFile_sw.WriteLine(vstrline)
         vstrline = RVMSettingsFile.FormatSettingStringData("RVMPath", pRVMPath)

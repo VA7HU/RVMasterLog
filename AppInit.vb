@@ -64,8 +64,7 @@ Module AppInit
     frmAppSettings.InitSetupFileData()
     frmAppSettings.InitSettingsFileData()
 
-    ' First we have to read the RVMSetup file. If it Is Not there we cannot go any
-    ' further.
+    ' First we have to read the RVMSetup file. If it Is Not there we cannot go any further.
     If Not frmAppSettings.ReadSetupFile() Then
       MessageBox.Show("Initialization Process has Failed",
                       "Initialization Failure",

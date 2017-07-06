@@ -1,5 +1,5 @@
 Version=001
-RVMPath=RVMPath=RVMPath=RVMPath=RVMPath=RVMPath=RVMPath=RVMPath=RVMPath=RVMPath=RVMPath=RVMPath=RVMPath=C:\RVM
-RVMDataPath=RVMDataPath=RVMDataPath=RVMDataPath=RVMDataPath=RVMDataPath=RVMDataPath=RVMDataPath=RVMDataPath=RVMDataPath=RVMDataPath=RVMDataPath=RVMDataPath=C:\RVM\Data
-RVMLogsPath=RVMLogsPath=RVMLogsPath=RVMLogsPath=RVMLogsPath=RVMLogsPath=RVMLogsPath=RVMLogsPath=RVMLogsPath=RVMLogsPath=RVMLogsPath=True
+RVMPath=C:\RVM
+RVMDataPath=C:\RVM\Data
+RVMLogsPath=C:\RVM\Logs
 UseLastLog=True
