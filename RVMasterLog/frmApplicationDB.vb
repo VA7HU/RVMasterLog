@@ -1,28 +1,18 @@
-﻿Imports System.Windows
-'Imports cllHULibrary
-
-Module AppInit
+﻿Public Class frmApplicationDB
 
   '========================================================================================
   '
-  '   Filename : AppInit.vb
+  '   Filename : frmApplicationDB.vb
   '
-  '   Description: Application Initialization
+  '   Description:
   '
-  '   Called By:  frmMain : frmMain_Load
+  '   Called By:
   '
-  '   Calls: AppSettings :  frmAppSettings  : InitSettingsFileData 
-  '                                           InitSetupFileData
-  '                                           LoadAppSettings
-  '                                           pApplicationPath
-  '                                           RVMDataPath
-  '                                           ReadSetupFile
-  '                                           ReadSettingsFile
-  '                         HUSetupFiles.OpenHUTextFile
+  '   Calls:
   '
-  '   Version: 1.0.0
+  '   Version:  1.0.0
   '
-  '   Date: 13 Jan 2018
+  '   Date: 8 Apr 2017
   '
   '========================================================================================
 
@@ -57,31 +47,31 @@ Module AppInit
   '========================================================================================
   '          PUBLIC ROUTINES
   '========================================================================================
-  Public Function Initialise()
-
-    ' Get the Application path and Initialise the Setup and Settings files data elements
-    'frmAppSettings.pApplicationPath = My.Application.Info.DirectoryPath
-    'frmAppSettings.InitSetupFileData()
-    'frmAppSettings.InitSettingsFileData()
-
-    ' First we have to read the RVMSetup file. If it Is Not there we cannot go any further.
-    'If Not frmAppSettings.ReadSetupFile() Then
-    '  MessageBox.Show("Initialization Process has Failed",
-    '                  "Initialization Failure",
-    '                  MessageBoxButtons.OK,
-    '                  MessageBoxIcon.Error)
-    '  Return False
-    'End If 'Not frmAppSettings.WriteSettingsFile 
-
-    ' Now we read the RVMSettings file
-    'frmAppSettings.ReadSettingsFile()
-
-    Return True
-
-  End Function 'Public Sub Initialise()
 
   '========================================================================================
   '          PROPERTY ROUTINES
+  '========================================================================================
+
+  '========================================================================================
+  '          MENU ROUTINES
+  '========================================================================================
+
+  '========================================================================================
+  '          COMMAND BUTTON ROUTINES
+  '========================================================================================
+  Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
+    MessageBox.Show("OK")
+    Me.Close()
+  End Sub ' Private Sub btnOK_Clickbox
+
+  '========================================================================================
+  Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    MessageBox.Show("Cancel")
+    Me.Close()
+  End Sub ' Private Sub btnCancel_Click
+
+  '========================================================================================
+  '          CONTROL ROUTINES
   '========================================================================================
 
   '========================================================================================
@@ -89,4 +79,8 @@ Module AppInit
   '========================================================================================
 
   '========================================================================================
-End Module 'Module AppInit
+  '          FORM ROUTINES
+  '========================================================================================
+
+  '========================================================================================
+End Class

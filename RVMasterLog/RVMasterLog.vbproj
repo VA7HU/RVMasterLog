@@ -74,11 +74,23 @@
   <ItemGroup>
     <Compile Include="AppFinal.vb" />
     <Compile Include="AppInit.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmApplicationDB.Designer.vb" />
+    <Compile Include="frmApplicationDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAppSettings.Designer.vb" />
+    <Compile Include="frmAppSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRVMDefaultTablesDB.Designer.vb" />
+    <Compile Include="frmRVMDefaultTablesDB.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -98,6 +110,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmApplicationDB.resx" />
+    <EmbeddedResource Include="frmAppSettings.resx" />
+    <EmbeddedResource Include="frmRVMDefaultTablesDB.resx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
