@@ -1,5 +1,5 @@
 Version=001
-RVMPath=C:\RVM
-RVMDataPath=C:\RVM\Data
-RVMLogsPath=C:\RVM\Logs
+RVMPath=RVMPath=C:\RVM
+RVMDataPath=RVMDataPath=C:\RVM\Data
+RVMLogsPath=RVMLogsPath=C:\RVM\Logs
 UseLastLog=True
