@@ -112,6 +112,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmApplicationDB.resx" />
     <EmbeddedResource Include="frmAppSettings.resx" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRVMDefaultTablesDB.resx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
