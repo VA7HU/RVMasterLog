@@ -32,4 +32,3 @@ C:\Users\va7hu\Documents\Programming\Programming Projects\Visual Basic\Visual Ba
 C:\Users\va7hu\Documents\Programming\Programming Projects\Visual Basic\Visual Basic 2017\RVMasterLog Development\Working Copy\RVMasterLog\obj\Debug\RVMasterLog.exe
 C:\Users\va7hu\Documents\Programming\Programming Projects\Visual Basic\Visual Basic 2017\RVMasterLog Development\Working Copy\RVMasterLog\obj\Debug\RVMasterLog.xml
 C:\Users\va7hu\Documents\Programming\Programming Projects\Visual Basic\Visual Basic 2017\RVMasterLog Development\Working Copy\RVMasterLog\obj\Debug\RVMasterLog.pdb
-C:\Users\va7hu\Documents\Programming\Programming Projects\Visual Basic\Visual Basic 2017\RVMasterLog Development\Working Copy\RVMasterLog\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache

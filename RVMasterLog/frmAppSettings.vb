@@ -1,5 +1,5 @@
 ﻿Imports System.IO
-'Imports cllHUFilesLibrary.HUFilesLibrary
+Imports cllHUFilesLibrary.HUFilesLibrary
 
 Public Class frmAppSettings
 
@@ -31,8 +31,8 @@ Public Class frmAppSettings
   '==============================
   '        MESSAGE TEXTS
   '==============================
-  Dim cstrSetupFileReadFailureText = "Unable to read Setup file"
-  Dim cstrSetupFileReadFailureTitle = "Read Setup File Failure"
+  Dim cstrSetupFileReadFailureText As String = "Unable to read Setup file"
+  Dim cstrSetupFileReadFailureTitle As String = "Read Setup File Failure"
 
   '========================================================================================
   '          PUBLIC CONSTANTS
@@ -54,13 +54,13 @@ Public Class frmAppSettings
   Private fSettingsFileName As String     'Filename
   Private fSettingsFileExt As String      'File Extension
   Private fSettingsFullFileName As String 'Filename + Extension
-  Private fSettingsFilePath               'Path to Filename 
-  Private Shared fSettingsFileNamePath    'Path including Filename
+  Private fSettingsFilePath As String              'Path to Filename 
+  Private Shared fSettingsFileNamePath As String    'Path including Filename
 
   Private fSetupFileName As String
   Private fSetupFileExt As String
   Private fSetupFullFileName As String
-  Private fSetupFilePath
+  Private fSetupFilePath As String
   Private fSetupFileNamePath As String
   Private fSetupFileVersion As String
 
@@ -410,37 +410,37 @@ Public Class frmAppSettings
   Public Function WriteSettingsFile() As Boolean
 
     MessageBox.Show("WriteSettingsFile")
-    ''MessageBox.Show(pSettingsFileNamePath)
+    'MessageBox.Show(pSettingsFileNamePath)
 
-    'Try
-    '  ' Open an instance of StreamWriter to write to a file.
-    '  ' The using statement also closes the StreamWriter.
+    Try
+      ' Open an instance of StreamWriter to write to a file.
+      ' The using statement also closes the StreamWriter.
 
-    '  Using SettingsFile_sw As StreamWriter = New StreamWriter(pSettingsFileNamePath)
+      Using SettingsFile_sw As StreamWriter = New StreamWriter(pSettingsFileNamePath)
 
-    '    Dim vstrline As String
-    '    vstrline = 'RVMSettingsFile.FormatSettingStringData("Version", "001")
-    '    SettingsFile_sw.WriteLine(vstrline)
-    '    vstrline = 'RVMSettingsFile.FormatSettingStringData("RVMPath", pRVMPath)
-    '    SettingsFile_sw.WriteLine(vstrline)
-    '    vstrline = 'RVMSettingsFile.FormatSettingStringData("RVMDataPath", pRVMDataPath)
-    '    SettingsFile_sw.WriteLine(vstrline)
-    '    vstrline = 'RVMSettingsFile.FormatSettingStringData("RVMLogsPath", pRVMLogsPath)
-    '    SettingsFile_sw.WriteLine(vstrline)
-    '    If pUseLastLog Then
-    '      vstrline = 'RVMSettingsFile.FormatSettingStringData("UseLastLog", "True")
-    '    Else
-    '      vstrline = 'RVMSettingsFile.FormatSettingStringData("UseLastLog", "False")
-    '    End If ' If pUseLastLog
-    '    SettingsFile_sw.WriteLine(vstrline)
+        Dim vstrline As String
+        'vstrline = RVMSettingsFile.FormatSettingStringData("Version", "001")
+        SettingsFile_sw.WriteLine(vstrline)
+        'vstrline = RVMSettingsFile.FormatSettingStringData("RVMPath", pRVMPath)
+        SettingsFile_sw.WriteLine(vstrline)
+        'vstrline = RVMSettingsFile.FormatSettingStringData("RVMDataPath", pRVMDataPath)
+        SettingsFile_sw.WriteLine(vstrline)
+        'vstrline = RVMSettingsFile.FormatSettingStringData("RVMLogsPath", pRVMLogsPath)
+        SettingsFile_sw.WriteLine(vstrline)
+        If pUseLastLog Then
+          'vstrline = RVMSettingsFile.FormatSettingStringData("UseLastLog", "True")
+        Else
+          'vstrline = RVMSettingsFile.FormatSettingStringData("UseLastLog", "False")
+        End If ' If pUseLastLog
+        SettingsFile_sw.WriteLine(vstrline)
 
-    '  End Using ' SettingsFile_sw As StreamWriter
+      End Using ' SettingsFile_sw As StreamWriter
 
-    'Catch e As Exception
-    '  'Let the user know what went wrong.
-    '  MessageBox.Show(e.Message)
-    '  Return False
-    'End Try
+    Catch e As Exception
+      'Let the user know what went wrong.
+      MessageBox.Show(e.Message)
+      Return False
+    End Try
 
     Return True
 
