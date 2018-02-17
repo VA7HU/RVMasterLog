@@ -1,5 +1,4 @@
 ﻿Imports System.Windows
-'Imports cllHULibrary
 
 Module AppInit
 
@@ -22,7 +21,7 @@ Module AppInit
   '
   '   Version: 1.0.0
   '
-  '   Date: 14 Jan 2018
+  '   Date: 17 Feb 2018
   '
   '========================================================================================
 

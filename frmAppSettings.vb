@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports cllHUFilesLibrary.HUFilesLibrary
 
 Public Class frmAppSettings
 
@@ -20,7 +19,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 6 Jul 2017
+  '   Date: 17 Feb 2017
   '
   '===========================================================================================
 
