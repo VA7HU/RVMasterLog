@@ -47,6 +47,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="cllHUMessagesLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\HULibDevelopment\Working Copy\cllHUMessagesLibrary\bin\Debug\cllHUMessagesLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -93,6 +97,7 @@
     <Compile Include="frmRVMDefaultTablesDB.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Libraries.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

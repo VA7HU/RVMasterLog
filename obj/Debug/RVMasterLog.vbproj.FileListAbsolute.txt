@@ -36,7 +36,9 @@ C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\bin\Debug\RVMasterLog.exe
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\bin\Debug\RVMasterLog.pdb
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\bin\Debug\RVMasterLog.xml
-C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
+C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUMessagesLibrary.dll
+C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUMessagesLibrary.pdb
+C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\bin\Debug\cllHUMessagesLibrary.xml
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.frmApplicationDB.resources
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.frmAppSettings.resources
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.frmMain.resources

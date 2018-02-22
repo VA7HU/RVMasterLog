@@ -6,11 +6,12 @@
   '
   '   Description: Application Main module
   '
-  '   Called By:
+  '   Called By:  
   '
   '   Calls:  AppFinal  : Finalise
   '                       AppInit: Initialise 
   '           frmRVTypesDB : frmRVTypesDB.Show
+  '           Libraries : 
   '
   '   Version: 1.0.0
   '
@@ -27,6 +28,7 @@
   '========================================================================================
   '          PUBLIC CONSTANTS
   '========================================================================================
+  'Public HUMsgLib As New cllHUMessageLibrary.HUMessagesLibrary
 
   '========================================================================================
   '          PRIVATE VARIABLES

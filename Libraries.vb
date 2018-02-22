@@ -1,24 +1,15 @@
-﻿Imports System.Windows
-
-Module AppInit
+﻿Module Libraries
 
   '========================================================================================
   '
-  '   Filename : AppInit.vb
+  '   Filename : Libraries.vb
   '
-  '   Description: Application Initialization
+  '   Description: 
   '
-  '   Called By:  frmMain : frmMain_Load
+  '   Called By:  AppInit
+  '               frmMain
   '
-  '   Calls: AppSettings :  frmAppSettings  : InitSettingsFileData 
-  '                                           InitSetupFileData
-  '                                           LoadAppSettings
-  '                                           pApplicationPath
-  '                                           RVMDataPath
-  '                                           ReadSetupFile
-  '                                           ReadSettingsFile
-  '                         HUSetupFiles.OpenHUTextFile
-  '                         Libraries
+  '   Calls: AppSettings :  
   '
   '   Version: 1.0.0
   '
@@ -45,7 +36,7 @@ Module AppInit
   '========================================================================================
   '          PUBLIC VARIABLES
   '========================================================================================
-  'Dim HUMsgLib As New cllHUMessageLibrary.HUMessagesLibrary
+  Public HUMsgLib As New cllHUMessageLibrary.HUMessagesLibrary
 
   '========================================================================================
   '          PUBLIC PROPERTIES
@@ -58,28 +49,6 @@ Module AppInit
   '========================================================================================
   '          PUBLIC ROUTINES
   '========================================================================================
-  Public Function Initialise()
-
-    ' Get the Application path and Initialise the Setup and Settings files data elements
-    frmAppSettings.pApplicationPath = My.Application.Info.DirectoryPath
-    frmAppSettings.InitSetupFileData()
-    frmAppSettings.InitSettingsFileData()
-
-    ' First we have to read the RVMSetup file. If it Is Not there we cannot go any further.
-    If Not frmAppSettings.ReadSetupFile() Then
-      Libraries.HUMsgLib.HUErrorMessagBoxOK("Initialization Process has Failed" +
-                                          vbCrLf +
-                                          "Initialization Failure")
-
-      Return False
-    End If 'Not frmAppSettings.WriteSettingsFile 
-
-    ' Now we read the RVMSettings file
-    frmAppSettings.ReadSettingsFile()
-
-    Return True
-
-  End Function 'Public Sub Initialise()
 
   '========================================================================================
   '          PROPERTY ROUTINES
@@ -91,3 +60,4 @@ Module AppInit
 
   '========================================================================================
 End Module 'Module AppInit
+
