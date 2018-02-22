@@ -15,7 +15,7 @@
   '
   '   Version: 1.0.0
   '
-  '   Date: 11 Feb 2018
+  '   Date: 22 Feb 2018
   '
   '========================================================================================
 
@@ -24,7 +24,7 @@
   '========================================================================================
   Private cstrAppClosingText = "RVMasterLog Closing"
   Private cstrAppClosingTitle = "Application Closing"
-  Private cstrmnuFileExit_Click = "mnuFileExit_Click"
+  Private cstrmnuFileExitClick = "mnuFileExit_Click"
   Private cstFormClosed = "Form Cosed"
 
   '========================================================================================
@@ -59,11 +59,11 @@
   '         FILE MENU
   '========================================================================================
   Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles mnuFileExit.Click
-    MessageBox.Show(cstrmnuFileExit_Click)
+    Libraries.HUMsgLib.HUConfirmationMessagOK(cstrmnuFileExitClick, Nothing)
     Application.Exit()
   End Sub 'Private Sub mnuFileExit_Click
 
-  '========================================================================================
+  '========================================.================================================
   '         SETTINGS MENU
   '========================================================================================
   Private Sub mnuSettings_Click(sender As Object, e As EventArgs) Handles mnuSettings.Click
@@ -100,16 +100,17 @@
 
   '========================================================================================
   Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-    'MessageBox.Show("RVMasterLog Closing")
-    MessageBox.Show(cstrAppClosingText,
-                      cstrAppClosingTitle,
-                      MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+    Libraries.HUMsgLib.HUConfirmationMessagOK("Form CLosing", Nothing)
+    'MessageBox.Show(cstrAppClosingText,
+    '                  cstrAppClosingTitle,
+    '                  MessageBoxButtons.OK,
+    '                  MessageBoxIcon.Information)
     AppFinal.Finalise()
   End Sub ' Private Sub frmMain_FormClosing
 
   '----------------------------------------------------------------------------------------
   Private Sub frmMain_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+    Libraries.HUMsgLib.HUConfirmationMessagOK(cstFormClosed, Nothing)
     MessageBox.Show(cstFormClosed)
   End Sub ' Private Sub frmMain_FormClosed
 

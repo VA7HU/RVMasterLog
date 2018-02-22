@@ -73,7 +73,6 @@ Module AppInit
     If Not frmAppSettings.ReadSetupFile() Then
       Libraries.HUMsgLib.HUErrorMessagOKCancel(CStrInitializationProcessFailedMSg,
                                          CStrInitializationProcessFailedTitle)
-
       Return False
     End If 'Not frmAppSettings.WriteSettingsFile 
 
