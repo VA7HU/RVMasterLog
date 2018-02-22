@@ -30,6 +30,11 @@ Module AppInit
   '          PRIVATE CONSTANTS
   '========================================================================================
 
+  '==================== Messages ====================
+  Private CStrInitializationProcessFailedMSg As String =
+                                                    "Initialization Process has Failed"
+  Private CStrInitializationProcessFailedTitle As String = "Initialization Failure"
+
   '========================================================================================
   '          PRIVATE VARIABLES
   '========================================================================================
@@ -45,7 +50,6 @@ Module AppInit
   '========================================================================================
   '          PUBLIC VARIABLES
   '========================================================================================
-  'Dim HUMsgLib As New cllHUMessageLibrary.HUMessagesLibrary
 
   '========================================================================================
   '          PUBLIC PROPERTIES
@@ -67,9 +71,8 @@ Module AppInit
 
     ' First we have to read the RVMSetup file. If it Is Not there we cannot go any further.
     If Not frmAppSettings.ReadSetupFile() Then
-      Libraries.HUMsgLib.HUErrorMessagBoxOK("Initialization Process has Failed" +
-                                          vbCrLf +
-                                          "Initialization Failure")
+      Libraries.HUMsgLib.HUErrorMessagOKCancel(CStrInitializationProcessFailedMSg,
+                                         CStrInitializationProcessFailedTitle)
 
       Return False
     End If 'Not frmAppSettings.WriteSettingsFile 

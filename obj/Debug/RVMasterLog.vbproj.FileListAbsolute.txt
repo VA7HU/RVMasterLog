@@ -49,3 +49,4 @@ C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.exe
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.xml
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.pdb
+C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache

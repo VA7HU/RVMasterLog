@@ -30,8 +30,9 @@ Public Class frmAppSettings
   '==============================
   '        MESSAGE TEXTS
   '==============================
-  Dim cstrSetupFileReadFailureText As String = "Unable to read Setup file"
-  Dim cstrSetupFileReadFailureTitle As String = "Read Setup File Failure"
+  Private cstrSetupFileReadFailureText As String = "Unable to read Setup file"
+  Private cstrSetupFileReadFailureTitle As String = "Read Setup File Failure"
+  Private cstrBrowseClick As String = "Browse Click"
 
   '========================================================================================
   '          PUBLIC CONSTANTS
@@ -270,7 +271,7 @@ Public Class frmAppSettings
   '          COMMAND BUTTON ROUTINES
   '========================================================================================
   Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
-    MessageBox.Show("Browse")
+    MessageBox.Show(cstrBrowseClick)
   End Sub 'Private Sub btnBrowse_Click
 
   '========================================================================================

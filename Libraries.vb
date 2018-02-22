@@ -33,6 +33,11 @@
   '          PUBLIC CONSTANTS
   '========================================================================================
 
+  '================ PUBLIC MESSAGES ====================
+
+  Public cstrConfirmCancelMSg As String = "Confirm you wish to Cancel"
+  Public cstrConfirmCancelTitle As String = "Confirm Cancel"
+
   '========================================================================================
   '          PUBLIC VARIABLES
   '========================================================================================

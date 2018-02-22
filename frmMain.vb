@@ -24,11 +24,12 @@
   '========================================================================================
   Private cstrAppClosingText = "RVMasterLog Closing"
   Private cstrAppClosingTitle = "Application Closing"
+  Private cstrmnuFileExit_Click = "mnuFileExit_Click"
+  Private cstFormClosed = "Form Cosed"
 
   '========================================================================================
   '          PUBLIC CONSTANTS
   '========================================================================================
-  'Public HUMsgLib As New cllHUMessageLibrary.HUMessagesLibrary
 
   '========================================================================================
   '          PRIVATE VARIABLES
@@ -58,7 +59,7 @@
   '         FILE MENU
   '========================================================================================
   Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles mnuFileExit.Click
-    MessageBox.Show("mnuFileExit_Click")
+    MessageBox.Show(cstrmnuFileExit_Click)
     Application.Exit()
   End Sub 'Private Sub mnuFileExit_Click
 
@@ -109,8 +110,8 @@
 
   '----------------------------------------------------------------------------------------
   Private Sub frmMain_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-    MessageBox.Show("Form Cosed")
+    MessageBox.Show(cstFormClosed)
   End Sub ' Private Sub frmMain_FormClosed
 
   '========================================================================================
-End Class
+End Class 'Public Class frmMain
