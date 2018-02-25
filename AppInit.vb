@@ -64,8 +64,6 @@ Module AppInit
   '========================================================================================
   Public Function Initialise()
 
-
-
     ' Get the Application path and Initialise the Setup and Settings files data elements
     frmAppSettings.pApplicationPath = My.Application.Info.DirectoryPath
     frmAppSettings.InitSetupFileData()

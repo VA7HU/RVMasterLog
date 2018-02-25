@@ -15,7 +15,7 @@ Public Class frmAppSettings
   '               AppFinal : Finalise
   '               frmRVTypesDB : frmRVTypesDB_Load
   '
-  '   Calls:
+  '   Calls:  Libraries : HUMsgLib.HUInformationMessageOK
   '
   '   Version: 1.0.0
   '
@@ -271,7 +271,7 @@ Public Class frmAppSettings
   '          COMMAND BUTTON ROUTINES
   '========================================================================================
   Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
-    MessageBox.Show(cstrBrowseClick)
+    Libraries.HUMsgLib.HUInformationMessageOK("Browse Click", Nothing)
   End Sub 'Private Sub btnBrowse_Click
 
   '========================================================================================
@@ -293,7 +293,7 @@ Public Class frmAppSettings
 
   '========================================================================================
   Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-    MessageBox.Show("Help not yet Implemented")
+    Libraries.HUMsgLib.HUInformationMessageOK("Help not yet Implemented", Nothing)
   End Sub 'Private Sub btnHelp
 
   '==========================================================================================
@@ -350,11 +350,6 @@ Public Class frmAppSettings
       'Let the user know what went wrong.
       Libraries.HUMsgLib.HUErrorMessageOK(cstrSetupFileReadFailureText,
                                           cstrSetupFileReadFailureCaption)
-
-      'MessageBox.Show(cstrSetupFileReadFailureText,
-      '                cstrSetupFileReadFailureTitle,
-      '                MessageBoxButtons.OK,
-      '                MessageBoxIcon.Error)
       Return False
     End Try
 
@@ -367,7 +362,7 @@ Public Class frmAppSettings
   '==============================
   Public Sub ReadSettingsFile()
 
-    MessageBox.Show("ReadSettingsFile")
+    Libraries.HUMsgLib.HUInformationMessageOK("ReadSettingsFile", Nothing)
 
     Try
       '  Create an instance of Stream Reader to read from a file.
@@ -404,7 +399,7 @@ Public Class frmAppSettings
 
     Catch e As Exception
       'Let the user know what went wrong.
-      MessageBox.Show(e.Message)
+      Libraries.HUMsgLib.HUInformationMessageOK(e.Message, Nothing)
     End Try
 
   End Sub ' Public Sub ReadSettingsFile()
@@ -412,8 +407,7 @@ Public Class frmAppSettings
   '----------------------------------------------------------------------------------------
   Public Function WriteSettingsFile() As Boolean
 
-    MessageBox.Show("WriteSettingsFile")
-    'MessageBox.Show(pSettingsFileNamePath)
+    Libraries.HUMsgLib.HUInformationMessageOK("WriteSettingsFile", Nothing)
 
     Try
       ' Open an instance of StreamWriter to write to a file.
@@ -441,7 +435,7 @@ Public Class frmAppSettings
 
     Catch e As Exception
       'Let the user know what went wrong.
-      MessageBox.Show(e.Message)
+      Libraries.HUMsgLib.HUInformationMessageOK(e.Message, Nothing)
       Return False
     End Try
 
