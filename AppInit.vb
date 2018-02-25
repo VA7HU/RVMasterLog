@@ -71,7 +71,7 @@ Module AppInit
 
     ' First we have to read the RVMSetup file. If it Is Not there we cannot go any further.
     If Not frmAppSettings.ReadSetupFile() Then
-      Libraries.HUMsgLib.HUErrorMessagOKCancel(CStrInitializationProcessFailedMSg,
+      Libraries.HUMsgLib.HUErrorMessageOKCancel(CStrInitializationProcessFailedMSg,
                                          CStrInitializationProcessFailedTitle)
       Return False
     End If 'Not frmAppSettings.WriteSettingsFile 

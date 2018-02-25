@@ -15,7 +15,7 @@
   '
   '   Version: 1.0.0
   '
-  '   Date: 22 Feb 2018
+  '   Date: 25 Feb 2018
   '
   '========================================================================================
 
@@ -59,7 +59,7 @@
   '         FILE MENU
   '========================================================================================
   Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles mnuFileExit.Click
-    Libraries.HUMsgLib.HUConfirmationMessagOK(cstrmnuFileExitClick, Nothing)
+    Libraries.HUMsgLib.HUInformationMessageOK(cstrmnuFileExitClick, Nothing)
     Application.Exit()
   End Sub 'Private Sub mnuFileExit_Click
 
@@ -100,7 +100,7 @@
 
   '========================================================================================
   Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-    Libraries.HUMsgLib.HUConfirmationMessagOK("Form CLosing", Nothing)
+    Libraries.HUMsgLib.HUInformationMessageOK("Form CLosing", Nothing)
     'MessageBox.Show(cstrAppClosingText,
     '                  cstrAppClosingTitle,
     '                  MessageBoxButtons.OK,
@@ -110,7 +110,7 @@
 
   '----------------------------------------------------------------------------------------
   Private Sub frmMain_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-    Libraries.HUMsgLib.HUConfirmationMessagOK(cstFormClosed, Nothing)
+    Libraries.HUMsgLib.HUInformationMessageOK(cstFormClosed, Nothing)
     MessageBox.Show(cstFormClosed)
   End Sub ' Private Sub frmMain_FormClosed
 
