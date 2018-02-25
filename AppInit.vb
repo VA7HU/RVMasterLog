@@ -18,11 +18,11 @@ Module AppInit
   '                                           ReadSetupFile
   '                                           ReadSettingsFile
   '                         HUSetupFiles.OpenHUTextFile
-  '                         Libraries
+  '                         Libraries.HUMsgLib.HUErrorMessageOK
   '
   '   Version: 1.0.0
   '
-  '   Date: 22 Feb 2018
+  '   Date: 25 Feb 2018
   '
   '========================================================================================
 
@@ -64,6 +64,8 @@ Module AppInit
   '========================================================================================
   Public Function Initialise()
 
+
+
     ' Get the Application path and Initialise the Setup and Settings files data elements
     frmAppSettings.pApplicationPath = My.Application.Info.DirectoryPath
     frmAppSettings.InitSetupFileData()
@@ -71,7 +73,7 @@ Module AppInit
 
     ' First we have to read the RVMSetup file. If it Is Not there we cannot go any further.
     If Not frmAppSettings.ReadSetupFile() Then
-      Libraries.HUMsgLib.HUErrorMessageOKCancel(CStrInitializationProcessFailedMSg,
+      Libraries.HUMsgLib.HUErrorMessageOK(CStrInitializationProcessFailedMSg,
                                          CStrInitializationProcessFailedTitle)
       Return False
     End If 'Not frmAppSettings.WriteSettingsFile 

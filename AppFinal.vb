@@ -10,6 +10,7 @@
   '
   '   Calls:  HUSetupFiles : OpenHUSettingsFile
   '                           WriteSettingsFile
+  '           Libraries.HUMsgLib.HUInformationMessageOK
   '
   '   Version: 1.0.0
   '
@@ -44,7 +45,8 @@
 
     'MessageBox.Show("Finalise")
 
-    Libraries.HUMsgLib.HUInformationMessageOKCancel("", "Finalise")
+    Libraries.HUMsgLib.HUInformationMessageOK("Finalise", Nothing)
+
     'frmAppSettings.InnoSetupFile.OpenHUSettingsFilesWriter(
     '                         HUSetupFiles.HUSettingsFileMode.fmReplace,
     '                         frmAppSettings.SettingsFileNamePath)

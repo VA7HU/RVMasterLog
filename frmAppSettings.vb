@@ -19,7 +19,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 22 Feb 2017
+  '   Date: 25 Feb 2017
   '
   '===========================================================================================
 
@@ -31,7 +31,7 @@ Public Class frmAppSettings
   '        MESSAGE TEXTS
   '==============================
   Private cstrSetupFileReadFailureText As String = "Unable to read Setup file"
-  Private cstrSetupFileReadFailureTitle As String = "Read Setup File Failure"
+  Private cstrSetupFileReadFailureCaption As String = "Read Setup File Failure"
   Private cstrBrowseClick As String = "Browse Click"
 
   '========================================================================================
@@ -348,10 +348,13 @@ Public Class frmAppSettings
 
     Catch e As Exception
       'Let the user know what went wrong.
-      MessageBox.Show(cstrSetupFileReadFailureText,
-                      cstrSetupFileReadFailureTitle,
-                      MessageBoxButtons.OK,
-                      MessageBoxIcon.Error)
+      Libraries.HUMsgLib.HUErrorMessageOK(cstrSetupFileReadFailureText,
+                                          cstrSetupFileReadFailureCaption)
+
+      'MessageBox.Show(cstrSetupFileReadFailureText,
+      '                cstrSetupFileReadFailureTitle,
+      '                MessageBoxButtons.OK,
+      '                MessageBoxIcon.Error)
       Return False
     End Try
 
