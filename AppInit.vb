@@ -66,10 +66,16 @@ Module AppInit
 
     ' Get the Application path and Initialise the Setup and Settings files data elements
     frmAppSettings.pApplicationPath = My.Application.Info.DirectoryPath
+
+    Dim LocalUserAppDataPath As String
+    LocalUserAppDataPath = Application.LocalUserAppDataPath
+    MsgBox(LocalUserAppDataPath)
+
     frmAppSettings.InitSetupFileData()
     frmAppSettings.InitSettingsFileData()
 
-    ' First we have to read the RVMSetup file. If it Is Not there we cannot go any further.
+    ' First we have to load the Settings data from the RVMSettings.sl3 Database.  If the
+    ' database does not exist, we create a new one with a Default set of data.
     If Not frmAppSettings.ReadSetupFile() Then
       Libraries.HUMsgLib.HUErrorMessageOK(CStrInitializationProcessFailedMSg,
                                          CStrInitializationProcessFailedTitle)

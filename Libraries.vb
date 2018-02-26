@@ -1,4 +1,6 @@
-﻿Module Libraries
+﻿Imports cllHUMessageLibrary
+
+Module Libraries
 
   '========================================================================================
   '
@@ -6,14 +8,13 @@
   '
   '   Description: 
   '
-  '   Called By:  AppInit
-  '               frmMain
+  '   Called By:  
   '
-  '   Calls: AppSettings :  
+  '   Calls: 
   '
   '   Version: 1.0.0
   '
-  '   Date: 22 Feb 2018
+  '   Date: 25 Feb 2018
   '
   '========================================================================================
 

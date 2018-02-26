@@ -37,25 +37,21 @@ Public Class frmAppSettings
   '========================================================================================
   '          PUBLIC CONSTANTS
   '========================================================================================
-  Public CStrSettingsFileExt As String = ".stg"
-  Public cstrSettingsFileName As String = "RVMSettings"
-  Public cstrSetupFileExt As String = ".sup"
-  Public cstrSetupFileName As String = "RVMSetup"
+  Public cStrDBExtension As String = ".sl3"
+  Public cStrAppName As String = "RVM"
+  Public cstrRVMDataDBName As String = "RVMData"
+  Public cstrRVMLogsDBName As String = "RVMLogs"
 
   '========================================================================================
   '          PRIVATE VARIABLES
   '========================================================================================
-  Private fApplicationFileName As String
-  Private fApplicationFileExt As String
-  Private fApplicationFullFileName As String
-  Private Shared fApplicationPath As String
-  Private fApplicationFileNamePath As String
+  Private fAppFileName As String      'Filename
+  Private fAppFileExt As              'File Extension
+  Private fAppFullFileName As String  'Filename + Extension
+  Private fAppPath As String          'Path to Filename
+  Private fAppFileNamePath As String  'Path including Filename
 
-  Private fSettingsFileName As String     'Filename
-  Private fSettingsFileExt As String      'File Extension
-  Private fSettingsFullFileName As String 'Filename + Extension
-  Private fSettingsFilePath As String              'Path to Filename 
-  Private Shared fSettingsFileNamePath As String    'Path including Filename
+  Private fSetUpTableName As String   'Filename
 
   Private fSetupFileName As String
   Private fSetupFileExt As String

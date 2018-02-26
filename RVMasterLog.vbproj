@@ -49,7 +49,7 @@
   <ItemGroup>
     <Reference Include="cllHUMessagesLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\HULibDevelopment\Working Copy\cllHUMessagesLibrary\bin\Debug\cllHUMessagesLibrary.dll</HintPath>
+      <HintPath>..\..\HULibs Development\Working Copy\cllHUMessagesLibrary\bin\Debug\cllHUMessagesLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
