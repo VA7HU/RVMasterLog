@@ -23,10 +23,17 @@
   '========================================================================================
   '          PUBLIC CONSTANTS
   '========================================================================================
+  Public CStrSettingsDBExt As String = ".sl3"
+  Public cstrSettingsDBName As String = "RVMSettings"
 
   '========================================================================================
   '          PRIVATE VARIABLES
-  '/========================================================================================
+  '========================================================================================
+  'Private fApplicationFileName As String
+  'Private fApplicationFileExt As String
+  'Private fApplicationFullFileName As String
+  'Private Shared fApplicationPath As String
+  'Private fApplicationFileNamePath As String
 
   '========================================================================================
   '          PUBLIC VARIABLES
@@ -75,6 +82,17 @@
   '========================================================================================
   '          FORM ROUTINES
   '========================================================================================
+  Private Sub frmAppSettings_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+
+    ' Load Text box data and save Original data that can be changed
+    'tbxApplicationPath.Text = pApplicationPath
+    'tbxRVMPath.Text = pRVMPath
+    'tbxRVMDataPath.Text = pRVMDataPath
+    'tbxRVMLogsPath.Text = pRVMLogsPath
+    'chkUseLastLog.Checked = pUseLastLog
+    'vblnOriginalUseLastLog = pUseLastLog
+
+  End Sub 'frmAppSettings_Shown
 
   '========================================================================================
 
