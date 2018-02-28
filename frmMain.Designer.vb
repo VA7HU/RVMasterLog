@@ -26,10 +26,10 @@ Partial Class frmMain
     Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
     Me.mnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
     Me.mnuSettings = New System.Windows.Forms.ToolStripMenuItem()
-    Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-    Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
     Me.mnuConfigure = New System.Windows.Forms.ToolStripMenuItem()
     Me.mnuConfigureRVTypesTable = New System.Windows.Forms.ToolStripMenuItem()
+    Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+    Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
     Me.MenuStrip1.SuspendLayout()
     Me.SuspendLayout()
     '
@@ -61,6 +61,19 @@ Partial Class frmMain
     Me.mnuSettings.Size = New System.Drawing.Size(61, 20)
     Me.mnuSettings.Text = "&Settings"
     '
+    'mnuConfigure
+    '
+    Me.mnuConfigure.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConfigureRVTypesTable})
+    Me.mnuConfigure.Name = "mnuConfigure"
+    Me.mnuConfigure.Size = New System.Drawing.Size(72, 20)
+    Me.mnuConfigure.Text = "&Configure"
+    '
+    'mnuConfigureRVTypesTable
+    '
+    Me.mnuConfigureRVTypesTable.Name = "mnuConfigureRVTypesTable"
+    Me.mnuConfigureRVTypesTable.Size = New System.Drawing.Size(121, 22)
+    Me.mnuConfigureRVTypesTable.Text = "RV Types"
+    '
     'ToolStrip1
     '
     Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
@@ -77,19 +90,6 @@ Partial Class frmMain
     Me.StatusStrip1.TabIndex = 2
     Me.StatusStrip1.Text = "StatusStrip1"
     '
-    'mnuConfigure
-    '
-    Me.mnuConfigure.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConfigureRVTypesTable})
-    Me.mnuConfigure.Name = "mnuConfigure"
-    Me.mnuConfigure.Size = New System.Drawing.Size(72, 20)
-    Me.mnuConfigure.Text = "&Configure"
-    '
-    'mnuConfigureRVTypesTable
-    '
-    Me.mnuConfigureRVTypesTable.Name = "mnuConfigureRVTypesTable"
-    Me.mnuConfigureRVTypesTable.Size = New System.Drawing.Size(152, 22)
-    Me.mnuConfigureRVTypesTable.Text = "RV Types"
-    '
     'frmMain
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -98,8 +98,11 @@ Partial Class frmMain
     Me.Controls.Add(Me.StatusStrip1)
     Me.Controls.Add(Me.ToolStrip1)
     Me.Controls.Add(Me.MenuStrip1)
+    Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+    Me.HelpButton = True
     Me.MainMenuStrip = Me.MenuStrip1
     Me.Name = "frmMain"
+    Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
     Me.Text = "Form1"
     Me.MenuStrip1.ResumeLayout(False)
     Me.MenuStrip1.PerformLayout()

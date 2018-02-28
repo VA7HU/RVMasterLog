@@ -22,7 +22,7 @@ Module AppInit
   '
   '   Version: 1.0.0
   '
-  '   Date: 25 Feb 2018
+  '   Date: 28 Feb 2018
   '
   '========================================================================================
 
@@ -65,13 +65,13 @@ Module AppInit
   Public Function Initialise()
 
     ' Get the Application path and Initialise the Setup and Settings files data elements
-    ' frmAppSettings.pApplicationPath = My.Application.Info.DirectoryPath
+    frmAppSettings.pAppPath = My.Application.Info.DirectoryPath
 
-    Dim LocalUserAppDataPath As String
-    LocalUserAppDataPath = Application.LocalUserAppDataPath
-    MsgBox(LocalUserAppDataPath)
+    'Dim LocalUserAppDataPath As String
+    'LocalUserAppDataPath = Application.LocalUserAppDataPath
+    'MsgBox(LocalUserAppDataPath)
 
-    'frmAppSettings.InitSetupFileData()
+    'frmAppSettings.InitSettingsFileData()
     'frmAppSettings.InitSettingsFileData()
 
     ' First we have to load the Settings data from the RVMSettings.sl3 Database.  If the

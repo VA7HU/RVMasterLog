@@ -29,10 +29,15 @@
   '========================================================================================
   '          PRIVATE VARIABLES
   '========================================================================================
-  'Private fApplicationFileName As String
+  Private fAppPath As String
+  Private fRMVPath As String
+  Private fRMVDataPath As String
+  Private fRMVLogbooksPath As String
+
+
+  'Private fAppDBName As String
   'Private fApplicationFileExt As String
   'Private fApplicationFullFileName As String
-  'Private Shared fApplicationPath As String
   'Private fApplicationFileNamePath As String
 
   '========================================================================================
@@ -46,9 +51,27 @@
   '========================================================================================
   '          PUBLIC ROUTINES
   '========================================================================================
+  Public Sub InitSettingsFileData()
+    'pSettingsDBName = cstrSettingsDBName
+    'pSettingsFileExt = CStrSettingsFileExt
+    'pSettingsFullFileName = cstrSettingsFileName + CStrSettingsFileExt
+    'pSettingsFilePath = pApplicationPath + "\"
+    'pSettingsFileNamePath = pSettingsFilePath + pSettingsFullFileName
+  End Sub ' Public Sub InitSetttingsFileData
+
 
   '========================================================================================
   '          PROPERTY ROUTINES
+  '========================================================================================
+  Public Property pAppPath() As String
+    Get
+      Return fAppPath
+    End Get
+    Set(ByVal path As String)
+      fAppPath = path
+    End Set
+  End Property 'pAppPath
+
   '========================================================================================
 
   '========================================================================================
@@ -70,6 +93,24 @@
   '========================================================================================
   '          COMMAND BUTTON ROUTINES
   '========================================================================================
+  Private Sub btnCancle_Click(sender As Object, e As EventArgs) Handles btnCancle.Click
+    Me.Close()
+  End Sub 'btnCancle_Click
+
+  '----------------------------------------------------------------------------------------
+  Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+
+  End Sub 'btnHelp_Click
+
+  '----------------------------------------------------------------------------------------
+  Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+
+  End Sub 'btnReset_Click
+
+  '----------------------------------------------------------------------------------------
+  Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Me.Close()
+  End Sub 'btnSave_Click
 
   '========================================================================================
   '          CONTROL ROUTINES
@@ -85,7 +126,7 @@
   Private Sub frmAppSettings_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
     ' Load Text box data and save Original data that can be changed
-    'tbxApplicationPath.Text = pApplicationPath
+    tbxAppPath.Text = pAppPath
     'tbxRVMPath.Text = pRVMPath
     'tbxRVMDataPath.Text = pRVMDataPath
     'tbxRVMLogsPath.Text = pRVMLogsPath
@@ -93,8 +134,6 @@
     'vblnOriginalUseLastLog = pUseLastLog
 
   End Sub 'frmAppSettings_Shown
-
-  '========================================================================================
 
   '========================================================================================
 End Class 'Public Class frmMain
