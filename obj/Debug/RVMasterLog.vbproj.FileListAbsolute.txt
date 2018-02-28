@@ -58,10 +58,7 @@ C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Worki
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\bin\Debug\cllHUMessagesLibrary.pdb
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\bin\Debug\cllHUMessagesLibrary.xml
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.frmApplicationDB.resources
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.frmAppSettings.resources
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.frmMain.resources
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.frmRVMDefaultTablesDB.resources
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.Resources.resources
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.vbproj.GenerateResource.Cache
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.vbproj.CoreCompileInputs.cache

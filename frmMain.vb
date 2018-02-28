@@ -63,14 +63,14 @@
   '         SETTINGS MENU
   '========================================================================================
   Private Sub mnuSettings_Click(sender As Object, e As EventArgs) Handles mnuSettings.Click
-    frmAppSettings.Show()
+    'frmAppSettings.Show()
   End Sub 'Private Sub mnuSettings_Click
 
   '========================================================================================
   '         CONFIGURATION MENU
   '========================================================================================
   Private Sub mnuConfigureRVTypesTable_Click(sender As Object, e As EventArgs) Handles mnuConfigureRVTypesTable.Click
-    frmRVMDefaultTablesDB.Show()
+    'frmRVMDefaultTablesDB.Show()
   End Sub ' Private Sub mnuConfigureRVTypesTable_Click
 
   '========================================================================================
