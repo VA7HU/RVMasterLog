@@ -78,6 +78,12 @@
   <ItemGroup>
     <Compile Include="AppFinal.vb" />
     <Compile Include="AppInit.vb" />
+    <Compile Include="frmAppSettings.Designer.vb">
+      <DependentUpon>frmAppSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAppSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAppSettings.resx">
+      <DependentUpon>frmAppSettings.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
