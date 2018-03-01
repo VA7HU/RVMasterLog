@@ -71,10 +71,10 @@ Module AppInit
     'LocalUserAppDataPath = Application.LocalUserAppDataPath
     'MsgBox(LocalUserAppDataPath)
 
-    'frmAppSettings.InitSettingsFileData()
+    frmAppSettings.InitSettingsDBData()
     'frmAppSettings.InitSettingsFileData()
 
-    ' First we have to load the Settings data from the RVMSettings.sl3 Database.  If the
+    ' First we have to load the Settings data from the RVMSettings.sl3 Database. If the
     ' database does not exist, we create a new one with a Default set of data.
     'If Not frmAppSettings.ReadSetupFile() Then
     '  Libraries.HUMsgLib.HUErrorMessageOK(CStrInitializationProcessFailedMSg,

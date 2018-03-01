@@ -23,8 +23,10 @@
   '========================================================================================
   '          PUBLIC CONSTANTS
   '========================================================================================
-  Public CStrSettingsDBExt As String = ".sl3"
-  Public cstrSettingsDBName As String = "RVMSettings"
+  Private cstrSettingsDBName As String = "RVMSettings.sl3"
+  Private CStrRMVSubPath As String = "\RMV"
+  Private CStrRMVDataSubPath As String = "\RMVData"
+  Private CStrRMVLogbookSubPath As String = "\RMVLogbook"
 
   '========================================================================================
   '          PRIVATE VARIABLES
@@ -34,11 +36,8 @@
   Private fRMVDataPath As String
   Private fRMVLogbooksPath As String
 
-
-  'Private fAppDBName As String
-  'Private fApplicationFileExt As String
-  'Private fApplicationFullFileName As String
-  'Private fApplicationFileNamePath As String
+  Private fSettingsDBName As String
+  Private fSettingsDBPath As String
 
   '========================================================================================
   '          PUBLIC VARIABLES
@@ -51,14 +50,11 @@
   '========================================================================================
   '          PUBLIC ROUTINES
   '========================================================================================
-  Public Sub InitSettingsFileData()
-    'pSettingsDBName = cstrSettingsDBName
-    'pSettingsFileExt = CStrSettingsFileExt
-    'pSettingsFullFileName = cstrSettingsFileName + CStrSettingsFileExt
-    'pSettingsFilePath = pApplicationPath + "\"
-    'pSettingsFileNamePath = pSettingsFilePath + pSettingsFullFileName
+  Public Sub InitSettingsDBData()
+    pAppPath = fAppPath
+    pSettingsDBPath = pAppPath
+    pSettingsDBName = pSettingsDBPath + "\" + cstrSettingsDBName
   End Sub ' Public Sub InitSetttingsFileData
-
 
   '========================================================================================
   '          PROPERTY ROUTINES
@@ -72,10 +68,30 @@
     End Set
   End Property 'pAppPath
 
+  '----------------------------------------------------------------------------------------
+  Public Property pSettingsDBPath() As String
+    Get
+      Return fSettingsDBPath
+    End Get
+    Set(ByVal path As String)
+      fSettingsDBPath = path
+    End Set
+  End Property 'pSettingsDBPath
+
+  Public Property pSettingsDBName() As String
+    Get
+      Return fSettingsDBName
+    End Get
+    Set(ByVal Name As String)
+      fSettingsDBName = Name
+    End Set
+  End Property 'pSettingsDBPath
+
   '========================================================================================
 
   '========================================================================================
   '          MENU ROUTINES
+
   '========================================================================================
 
   '========================================================================================
