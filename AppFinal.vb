@@ -14,7 +14,7 @@
   '
   '   Version: 1.0.0
   '
-  '   Date: 25 Jan 2018
+  '   Date: 2 Mar 2018
   '
   '========================================================================================
 
@@ -45,7 +45,7 @@
 
     'MessageBox.Show("Finalise")
 
-    Libraries.HUMsgLib.HUInformationMessageOK("Finalise", Nothing)
+    Libraries.HUMsgLib.HUInformationMsgOK("Finalise", Nothing)
 
     'frmAppSettings.InnoSetupFile.OpenHUSettingsFilesWriter(
     '                         HUSetupFiles.HUSettingsFileMode.fmReplace,

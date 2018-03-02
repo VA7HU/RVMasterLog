@@ -50,12 +50,6 @@ C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.xml
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.pdb
 C:\Users\Hew\Documents\Programming\Projects\RVMasterLog Development\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.frmAppSettings.resources
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.frmMain.resources
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.Resources.resources
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.vbproj.GenerateResource.Cache
-C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.vbproj.CoreCompileInputs.cache
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\bin\Debug\RVMasterLog.exe.config
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\bin\Debug\RVMasterLog.exe
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\bin\Debug\RVMasterLog.pdb
@@ -63,6 +57,12 @@ C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Worki
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\bin\Debug\cllHUMessagesLibrary.dll
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\bin\Debug\cllHUMessagesLibrary.pdb
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\bin\Debug\cllHUMessagesLibrary.xml
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.frmAppSettings.resources
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.frmMain.resources
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.Resources.resources
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.vbproj.GenerateResource.Cache
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.vbproj.CoreCompileInputs.cache
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.exe
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.xml
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.pdb
