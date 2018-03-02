@@ -56,6 +56,10 @@
     pSettingsDBName = pSettingsDBPath + "\" + cstrSettingsDBName
   End Sub ' Public Sub InitSetttingsFileData
 
+  Public Sub CreateDefaultSettingsDB()
+    MessageBox.Show("Create Default DB")
+  End Sub ' CreateDefaultSettingsDB()
+
   '========================================================================================
   '          PROPERTY ROUTINES
   '========================================================================================

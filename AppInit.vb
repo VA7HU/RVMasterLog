@@ -22,7 +22,7 @@ Module AppInit
   '
   '   Version: 1.0.0
   '
-  '   Date: 28 Feb 2018
+  '   Date: 1 Mar 2018
   '
   '========================================================================================
 
@@ -64,14 +64,32 @@ Module AppInit
   '========================================================================================
   Public Function Initialise()
 
-    ' Get the Application path and Initialise the Setup and Settings files data elements
-    frmAppSettings.pAppPath = My.Application.Info.DirectoryPath
+    Dim Result As DialogResult
 
+    ' Get the Application path and Initialise the Settings Database Name
+    frmAppSettings.pAppPath = My.Application.Info.DirectoryPath
+    frmAppSettings.InitSettingsDBData()
+
+    'Check for the Settings Database. If not present then we either have to create a default
+    ' one or close the program.
+    If Not My.Computer.FileSystem.FileExists(frmAppSettings.pSettingsDBName) Then
+      Libraries.HUMsgLib.HUErrorMessageOK("Creating a Default", Nothing)
+      frmAppSettings.CreateDefaultSettingsDB()
+    End If ' Not My.Computer.FileSystem.FileExists
+
+    ' This ensures that we Abort if there was a failure creating the DB
+    If Not My.Computer.FileSystem.FileExists(frmAppSettings.pSettingsDBName) Then
+      Libraries.HUMsgLib.HUErrorMessageOK("Failure Creating a Default", Nothing)
+      Return False
+    End If ' Not My.Computer.FileSystem.FileExists
+
+    Return True
+
+    '======================================================================================
     'Dim LocalUserAppDataPath As String
     'LocalUserAppDataPath = Application.LocalUserAppDataPath
     'MsgBox(LocalUserAppDataPath)
 
-    frmAppSettings.InitSettingsDBData()
     'frmAppSettings.InitSettingsFileData()
 
     ' First we have to load the Settings data from the RVMSettings.sl3 Database. If the
@@ -85,7 +103,6 @@ Module AppInit
     '    ' Now we read the RVMSettings file
     'frmAppSettings.ReadSettingsFile()
 
-    Return True
 
   End Function 'Public Sub Initialise()
 
