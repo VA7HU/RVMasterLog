@@ -1,4 +1,5 @@
-﻿Public Class frmAppSettings
+﻿
+Public Class frmAppSettings
 
   '========================================================================================
   '
