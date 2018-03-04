@@ -17,16 +17,24 @@ Module AppInit
   '
   '   Version: 1.0.0
   '
-  '   Date: 2 Mar 2018
+  '   Date: 4 Mar 2018
   '
   '========================================================================================
 
   '========================================================================================
   '          PRIVATE CONSTANTS
   '========================================================================================
-  Private CStrInitializationProcessFailedMSg As String =
+  Private cstrInitializationProcessFailedMSg As String =
                                                     "Initialization Process has Failed"
-  Private CStrInitializationProcessFailedTitle As String = "Initialization Failure"
+  Private cstrInitializationProcessFailedTitle As String = "Initialization Failure"
+
+  Private cstrSettingsDBNotExistMsg As String = "  Settings Database Not Found." +
+                                      vbCrLf +
+                                      "Creating a New Default Settings Database."
+  Private cstrSettingsDBNotCreatedMsg As String = "   Failure Creating Settings Database." +
+                                                  vbCrLf +
+                                                  "        RVMasterlog Must Close."
+  Private cstrSettingsDBNotExistTitle As String = "Settings Database Not Found"
 
   '========================================================================================
   '          PRIVATE VARIABLES
@@ -67,17 +75,15 @@ Module AppInit
     'Check for the Settings Database. If not present then we either have to create a default
     ' one or close the program.
     If Not My.Computer.FileSystem.FileExists(frmAppSettings.pSettingsDBName) Then
-      Libraries.HUMsgLib.HUErrorMsgOK("  Settings Database Not Found." +
-                                      vbCrLf +
-                                      "Creating a New Default Database.", "Database Not Found")
+      Libraries.HUMsgLib.HUErrorMsgOK(cstrSettingsDBNotExistMsg, cstrSettingsDBNotExistTitle)
       frmAppSettings.CreateDefaultSettingsDB()
     End If ' Not My.Computer.FileSystem.FileExists
 
     ' This ensures that we Abort if there was a failure creating the DB
-    'If Not My.Computer.FileSystem.FileExists(frmAppSettings.pSettingsDBName) Then
-    '  Libraries.HUMsgLib.HUErrorMessageOK("Failure Creating a Default", Nothing)
-    '  Return False
-    'End If ' Not My.Computer.FileSystem.FileExists
+    If Not My.Computer.FileSystem.FileExists(frmAppSettings.pSettingsDBName) Then
+      Libraries.HUMsgLib.HUErrorMsgOK(cstrSettingsDBNotCreatedMsg, cstrSettingsDBNotExistTitle)
+      Return False
+    End If ' Not My.Computer.FileSystem.FileExists
 
     Return True
 

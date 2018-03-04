@@ -13,7 +13,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 2 Mar 2018
+  '   Date: 4 Mar 2018
   '
   '========================================================================================
 
@@ -64,7 +64,9 @@ Public Class frmAppSettings
 
   '========================================================================================
   Public Sub CreateDefaultSettingsDB()
+
     Libraries.HUMsgLib.HUInformationMsgOK("Creating a New Default DB", "New Database")
+
   End Sub ' CreateDefaultSettingsDB()
 
   '========================================================================================
