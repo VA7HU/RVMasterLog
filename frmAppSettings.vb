@@ -13,7 +13,7 @@ Public Class frmAppSettings
   '
   '   Version: 1.0.0
   '
-  '   Date: 4 Mar 2018
+  '   Date: 11 Mar 2018
   '
   '========================================================================================
 
@@ -63,11 +63,38 @@ Public Class frmAppSettings
   End Sub ' Public Sub InitSetttingsFileData
 
   '========================================================================================
-  Public Sub CreateDefaultSettingsDB()
+  Public Function CreateDefaultSettingsDB() As Boolean
 
     Libraries.HUMsgLib.HUInformationMsgOK("Creating a New Default DB", "New Database")
 
-  End Sub ' CreateDefaultSettingsDB()
+    Dim Result As Boolean
+    Dim SQLconnection As New SQLite.SQLiteConnection()
+    Dim SQLcommand As New SQLite.SQLiteCommand
+
+    Try
+      SQLconnection.ConnectionString = "Data Source=" & fSettingsDBName & ";"
+      SQLconnection.Open()
+      Result = True
+    Catch
+      Result = False
+    End Try 'SQLconnection.Open
+
+    If Result = False Then
+      Libraries.HUMsgLib.HUErrorMsgOK("Failure Creating a New Default DB", "")
+      Return Result
+    End If 'If Result = False
+
+    MessageBox.Show("Creating Table")
+
+    ' Now we Create the AppSettings Table
+    SQLcommand = SQLconnection.CreateCommand
+    SQLcommand.CommandText = "CREATE TABLE AppSettings (id integer primary key, text varchar(100))"
+    SQLcommand.ExecuteNonQuery()
+
+    Result = True
+    SQLconnection.Close()
+
+  End Function ' CreateDefaultSettingsDB()
 
   '========================================================================================
   '          PROPERTY ROUTINES

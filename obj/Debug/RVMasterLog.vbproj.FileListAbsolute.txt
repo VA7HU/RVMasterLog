@@ -75,3 +75,4 @@ C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Worki
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.exe
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.xml
 C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.pdb
+C:\Users\Hew\Documents\Visual Studio 2017\Projects\RVMasterlog Development\Working Copy\obj\Debug\RVMasterLog.vbprojResolveAssemblyReference.cache
