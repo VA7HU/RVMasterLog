@@ -10,7 +10,9 @@ unit Main;
 //
 // Called By :
 //
-// Calls :  AppInit : Initialize
+// Calls :  AppFinal  : Finalize
+//          AppInit : Initialize
+//          AppSettings :  frmSettings.ShowModal
 //
 // Ver. : 1.00
 //
@@ -24,7 +26,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppInit, AppSettings;
+  AppFinal, AppInit, AppSettings;
 
 type
 
@@ -177,6 +179,7 @@ end;// procedure TfrmMain.mnuSettingsClick
 procedure TfrmMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
  showmessage('On Close')
+ AppFinal;.Finalize;
 end;// procedure TfrmMain.FormClose
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: boolean);

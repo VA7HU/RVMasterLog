@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Main, AppSettings, AppInit, HUMessageBoxes, HUConstants;
+  Forms, Main, AppSettings, AppInit, HUMessageBoxes, HUConstants, AppFinal;
 
 {$R *.res}
 

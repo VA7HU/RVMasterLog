@@ -27,7 +27,10 @@ const
 
   emNoFile = ' - FILE DOES NOT EXIST';
 
+  huLF =  #10;
   huCR = #13;
+
+  huCRLF = huCR+huLF;
 
 implementation
 
@@ -70,5 +73,5 @@ implementation
 
 //========================================================================================
 
-end.
+end.// unit HUConstants
 

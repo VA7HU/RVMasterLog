@@ -55,11 +55,18 @@ implementation
 
                     {ERROR MESSAGES}
 
+function HUErrorMsgOK (ErrorType, ErrorMsg : String) : Integer;
+begin
+  Result := MessageDlg('ERROR' + ErrorType, ErrorMsg, mtError,
+  [mbOK],0);
+end;// function HUErrorMsgOK
+
+//----------------------------------------------------------------------------------------
 function HUErrorMsgYN (ErrorType, ErrorMsg : String) : Integer;
 begin
   Result := MessageDlg('ERROR' + ErrorType, ErrorMsg, mtError,
   [mbYes, mbNo],0);
-end;
+end;// function HUErrorMsgYN
 
 
 //========================================================================================
@@ -76,5 +83,5 @@ end;
 
 //========================================================================================
 
-end.
+end.// unit HUMessageBoxes
 

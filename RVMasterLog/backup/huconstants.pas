@@ -27,7 +27,10 @@ const
 
   emNoFile = ' - FILE DOES NOT EXIST';
 
-  huCR = #13
+  huLF =  #10;
+  huCR = #13;
+
+  huCRLF = huCR+huLF;
 
 implementation
 

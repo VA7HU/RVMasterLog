@@ -76,7 +76,6 @@ begin
   // for action.
   if frmSettings.INIFileExists then
   begin
-    showmessage('Read It');
     frmSettings.ReadSettingsINIFile;
   end
   else
@@ -84,12 +83,10 @@ begin
 
     if HUErrorMsgYN(emNoFile, em1) = mrYes then
     begin
-      showmessage('Read It');
       frmSettings.ReadSettingsINIFile;
     end
     else
     begin
-      showmessage('Close');
       InitFailure := True;
     end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
 

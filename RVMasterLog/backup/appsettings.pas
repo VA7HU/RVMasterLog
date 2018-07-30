@@ -28,12 +28,13 @@ uses
 
 type
 
+  { TfrmSettings }
+
   TfrmSettings = class(TForm)
     bbtCancel: TBitBtn;
     bbtOk: TBitBtn;
-    bbtBrowse: TBitBtn;
-    Edit1: TEdit;
-    edtLogbookDirectory: TEdit;
+    edtBackupsDirectory: TEdit;
+    edtLogbooksDirectory: TEdit;
     edtSettingsDirectory: TEdit;
     edtApplicationDirectory: TEdit;
     Label1: TLabel;
@@ -43,32 +44,37 @@ type
     Label5: TLabel;
     pcSettings: TPageControl;
     tsDirectories: TTabSheet;
+    procedure edtSettingsDirectoryMouseUp(Sender: TObject;
+      Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+
   private
     fApplicationDirectory : string;
     fSettingsDirectory : string;
-{    fRadiosDirectory : string;
-    fBackupDirectory : string; }
+    fLogbooksDirectory : string;
+    fBackupsDirectory : string;
     function GetApplicationDirectory : string;
     procedure SetApplicationDirectory(Dir : string);
     function GetSettingsDirectory : string;
     procedure SetSettingsDirectory(Dir : string);
-{    function GetRadiosDirectory : string;
-    procedure SetRadiosDirectory(Dir : string);
-    function GetBackupDirectory : string;
-    procedure SetBackupDirectory(Dir : string); }
-
+    function GetLogbooksDirectory : string;
+    procedure SetLogbooksDirectory(Dir : string);
+    function GetBackupsDirectory : string;
+    procedure SetBackupsDirectory(Dir : string);
 
   public
     property pApplicationDirectory : string read GetApplicationDirectory write SetApplicationDirectory;
     property pSettingsDirectory : string read GetSettingsDirectory write SetSettingsDirectory;
+    property pLogbooksDirectory : string read GetLogbooksDirectory write SetLogbooksDirectory;
+    property pBackupsDirectory : string read GetBackupsDirectory write SetBackupsDirectory;
 
     function INIFileExists : Boolean;
     procedure ReadSettingsINIFile;
     procedure WriteSettingsINIFile;
-  end;
+
+  end;// TfrmSettings
 
 var
   frmSettings: TfrmSettings;
@@ -124,7 +130,28 @@ begin
 end;// procedure TfrmSettings.SetAppSettingsDirectory
 
 //========================================================================================
+function TfrmSettings.GetLogbooksDirectory: string;
+begin
+   Result := fLogbooksDirectory;
+end;// procedure TfrmSettings.GetLogbooksDirectory
 
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetLogbooksDirectory(Dir: string);
+begin
+    fLogbooksDirectory := Dir;
+end;// procedure TfrmSettings.SetLogbooksDirectory
+
+//========================================================================================
+function TfrmSettings.GetBackupsDirectory: string;
+begin
+   Result := fBackupsDirectory;
+end;// procedure TfrmSettings.GetBackupsDirectory
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetBackupsDirectory(Dir: string);
+begin
+    fBackupsDirectory := Dir;
+end;// procedure TfrmSettings.SetBackupsDirectory
 
 //========================================================================================
 //          PROPERTY ROUTINES
@@ -141,6 +168,12 @@ end;// procedure TfrmSettings.SetAppSettingsDirectory
 //========================================================================================
 //          CONTROL ROUTINES
 //========================================================================================
+procedure TfrmSettings.edtSettingsDirectoryMouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  If Button = mbRight then
+    showmessage('Mouse Up');
+end;// procedure TfrmSettings.edtSettingsDirectoryMouseUp
 
 //========================================================================================
 //          FILE ROUTINES
@@ -153,17 +186,18 @@ end;// procedure TfrmSettings.SetAppSettingsDirectory
 const
 
   cstrSettingsDirectoryName = 'RVMasterLog';
-  cstrRadiosDirectoryName = 'Radios';
-  cstrBackupDirectoryName = 'Backup';
+  cstrLogbooksDirectoryName = 'Logbooks';
+  cstrBackupsDirectoryName = 'Backups';
 
   cstrApplicationINIFileName = 'RVMasterLog.ini';
 
   cstrSectionDirectories = 'DIRECTORIES';
   cstrKeySettingsDirectory = 'Settings Directory';
-  cstrKeyRadiosDirectory = 'Radios Directory';
-  cstrKeyBackupDirectory = 'Backup Directory';
+  cstrKeyLogbooksDirectory = 'Logbooks Directory';
+  cstrKeyBackupsDirectory = 'Backups Directory';
 
 var
+
   ApplicationINIFile : TINIFile;
   ApplicationINIFileName : string;
 
@@ -171,7 +205,6 @@ var
 function TfrmSettings.INIFileExists : Boolean;
 begin
   ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
-  showmessage(ApplicationINIFileName);
   Result := FileExists(ApplicationINIFileName);
 end;// function TfrmAppSetupApplicationDirectoryp.INIFileExists
 
@@ -183,30 +216,36 @@ var
 
 begin
 
+  showmessage('ReadSettingsINIFile');
+
   ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
   ApplicationINIFile := TINIFile.Create(ApplicationINIFileName);
 
-  // APPLICATION DIRECTORY SECTION
+  // DIRECTORY SECTION
 
+    // Settings Directory
   vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
                                                         cstrKeySettingsDirectory,
                                                         '');
   if vstrTStr = '' then
-    pSettingsDirectory := GetUserDir + cstrSettingsDirectoryName;
+    pSettingsDirectory := GetUserDir {+ cstrSettingsDirectoryName};
+  pSettingsDirectory := vstrTStr;
 
-{  vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
-                                            cstrKeyRadiosDirectory,
-                                            '');
-  if vstrTStr = '' then
-    vstrTStr := pApplicationDirectory + '\' + cstrRadiosDirectoryName;
-  pRadiosDirectory := vstrTStr;
-
+    // Logbooks Directory
   vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
-                                            cstrKeyBackupDirectory,
+                                            cstrKeyLogbooksDirectory,
                                             '');
   if vstrTStr = '' then
-    vstrTStr := pApplicationDirectory + '\' + cstrBackupDirectoryName;
-  pBackupDirectory := vstrTStr; }
+    vstrTStr := pSettingsDirectory + '\' + cstrLogbooksDirectoryName;
+  pLogbooksDirectory := vstrTStr;
+
+  // Backups Directory
+  vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
+                                            cstrKeyBackupsDirectory,
+                                            '');
+  if vstrTStr = '' then
+    vstrTStr := pSettingsDirectory + '\' + cstrBackupsDirectoryName;
+  pBackupsDirectory := vstrTStr;
 
   ApplicationINIFile.Free;
 
@@ -216,7 +255,7 @@ end;// procedure TfrmSettings.ReadSettingsINIFile
 procedure TfrmSettings.WriteSettingsINIFile;
 begin
 
-{    showmessage('WriteSettingsINIFile');
+    showmessage('WriteSettingsINIFile');
 
     ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
     ApplicationINIFile := TINIFile.Create(ApplicationINIFileName);
@@ -226,10 +265,14 @@ begin
                                     pSettingsDirectory);
 
     ApplicationINIFile.WriteString(cstrSectionDirectories,
-                                    cstrKeyBackupDirectory,
-                                    pBackupDirectory);
+                                    cstrKeyLogbooksDirectory,
+                                    pLogbooksDirectory);
 
-    ApplicationINIFile.Free;}
+    ApplicationINIFile.WriteString(cstrSectionDirectories,
+                                    cstrKeyBackupsDirectory,
+                                    pBackupsDirectory);
+
+    ApplicationINIFile.Free;
 
 end;// procedure TfrmSettings.WriteSettingsINIFile
 
@@ -245,25 +288,18 @@ end;// procedure TfrmAppSetup.FormCreate
 procedure TfrmSettings.FormShow(Sender: TObject);
 begin
 
-  // Hide future controls
-  //bbtSettingsBrowse.Visible:=False;
-  //bbtBackupBrowse.Visible:=False;
-
   // Load current properties
-
-//    showmessage('AppSettings - ' + frmAppSetup.pApplicationDirectory);
-
   edtApplicationDirectory.Text:= pApplicationDirectory;
   edtSettingsDirectory.Text:=pSettingsDirectory;
-  //edtRadiosDirectory.Text:=pRadiosDirectory;
-  //edtBackupDirectory.Text:=pBackupDirectory;
+  edtLogbooksDirectory.Text:=pLogbooksDirectory;
+  edtBackupsDirectory.Text := pBackupsDirectory;
 
 end; // procedure TfrmAppSetup.FormShow
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSettings.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-    //showmessage('AppSettings - ' + frmAppSetup.pApplicationDirectory);
+
 end;// procedure TfrmAppSetup.FormClose
 
 //========================================================================================

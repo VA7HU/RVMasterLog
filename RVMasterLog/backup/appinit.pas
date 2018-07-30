@@ -74,9 +74,9 @@ begin
 
   // If the .ini file does not exist we display an Error message and prompt the user
   // for action.
-  if not frmSettings.INIFileExists then
+  if frmSettings.INIFileExists then
   begin
-    showmessage('Read It');
+    showmessage('Exists Read It');
     frmSettings.ReadSettingsINIFile;
   end
   else
@@ -84,12 +84,12 @@ begin
 
     if HUErrorMsgYN(emNoFile, em1) = mrYes then
     begin
-      showmessage('Read It');
+      showmessage('Yes Read It');
       frmSettings.ReadSettingsINIFile;
     end
     else
     begin
-      showmessage('Close');
+      showmessage('No Close');
       InitFailure := True;
     end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
 
