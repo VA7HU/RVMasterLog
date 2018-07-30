@@ -38,7 +38,7 @@ implementation
 //========================================================================================
 const
   em1 = '    RVMasterLog Does Not Exist.'
-      + #13
+      + huCR
       + ' Do You Want to Create a New One ?';
 
 //========================================================================================
@@ -71,11 +71,10 @@ begin
 
   // Start the application setup
   frmSettings.pApplicationDirectory := GetCurrentDir;
-  showmessage(frmSettings.pApplicationDirectory);
 
   // If the .ini file does not exist we display an Error message and prompt the user
   // for action.
-  if frmSettings.INIFileExists then
+  if not frmSettings.INIFileExists then
   begin
     showmessage('Read It');
     frmSettings.ReadSettingsINIFile;

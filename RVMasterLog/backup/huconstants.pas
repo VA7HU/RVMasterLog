@@ -25,7 +25,9 @@ uses
 
 const
 
-  emFileNotExist = ' - FILE DOES NOT EXIST';
+  emNoFile = ' - FILE DOES NOT EXIST';
+
+  huCR = #13
 
 implementation
 

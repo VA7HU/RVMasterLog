@@ -28,8 +28,6 @@ uses
 
 type
 
-  { TfrmSettings }
-
   TfrmSettings = class(TForm)
     bbtCancel: TBitBtn;
     bbtOk: TBitBtn;
@@ -64,8 +62,8 @@ type
 
 
   public
-    property pApplicationDirectory : string read GetApplicationDirectory                                     write SetApplicationDirectory;
-    property pSettingsDirectory : string read GetSettingsDirectory                                     write SetApplicationDirectory;
+    property pApplicationDirectory : string read GetApplicationDirectory write SetApplicationDirectory;
+    property pSettingsDirectory : string read GetSettingsDirectory write SetSettingsDirectory;
 
     function INIFileExists : Boolean;
     procedure ReadSettingsINIFile;
@@ -154,6 +152,7 @@ end;// procedure TfrmSettings.SetAppSettingsDirectory
 
 const
 
+  cstrSettingsDirectoryName = 'RVMasterLog';
   cstrRadiosDirectoryName = 'Radios';
   cstrBackupDirectoryName = 'Backup';
 
@@ -192,8 +191,7 @@ begin
                                                         cstrKeySettingsDirectory,
                                                         '');
   if vstrTStr = '' then
-    vstrTStr := GetUserDir;
-  pSettingsDirectory := vstrTStr;
+    pSettingsDirectory := GetUserDir + cstrSettingsDirectoryName;
 
 {  vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
                                             cstrKeyRadiosDirectory,
@@ -254,8 +252,8 @@ begin
 
 //    showmessage('AppSettings - ' + frmAppSetup.pApplicationDirectory);
 
-  edtApplicationDirectory.Text:=pApplicationDirectory;
-  //edtSettingsDirectory.Text:=pSettingsDirectory;
+  edtApplicationDirectory.Text:= pApplicationDirectory;
+  edtSettingsDirectory.Text:=pSettingsDirectory;
   //edtRadiosDirectory.Text:=pRadiosDirectory;
   //edtBackupDirectory.Text:=pBackupDirectory;
 

@@ -27,6 +27,8 @@ const
 
   emNoFile = ' - FILE DOES NOT EXIST';
 
+  huCR = #13;
+
 implementation
 
 
