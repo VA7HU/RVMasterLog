@@ -10,7 +10,7 @@ unit Main;
 //
 // Called By :
 //
-// Calls :
+// Calls :  AppInit : Initialize
 //
 // Ver. : 1.00
 //
@@ -24,7 +24,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppSettings;
+  AppInit, AppSettings;
 
 type
 
@@ -48,6 +48,7 @@ type
     ToolBar1: TToolBar;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormCreate(Sender: TObject);
     procedure mnuLogbooksNewClick(Sender: TObject);
     procedure mnuLogbooksExitClick(Sender: TObject);
     procedure mnuLogbooksOpenLogbookClick(Sender: TObject);
@@ -181,6 +182,18 @@ procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
  showmessage('On Close Query')
 end;// procedure TfrmMain.FormCloseQuery
+
+//----------------------------------------------------------------------------------------
+procedure TfrmMain.FormCreate(Sender: TObject);
+begin
+
+end;// procedure TfrmMain.FormCreate
+
+//========================================================================================
+procedure TfrmMain.FormShow(Sender: TObject);
+begin
+  Initialize;
+end;// procedure TfrmMain.FormShow(Sender: TObject);
 
 //========================================================================================
 

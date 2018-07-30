@@ -48,6 +48,8 @@ type
     ToolBar1: TToolBar;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure mnuLogbooksNewClick(Sender: TObject);
     procedure mnuLogbooksExitClick(Sender: TObject);
     procedure mnuLogbooksOpenLogbookClick(Sender: TObject);
@@ -181,6 +183,18 @@ procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
  showmessage('On Close Query')
 end;// procedure TfrmMain.FormCloseQuery
+
+//----------------------------------------------------------------------------------------
+procedure TfrmMain.FormCreate(Sender: TObject);
+begin
+
+end;// procedure TfrmMain.FormCreate
+
+//========================================================================================
+procedure TfrmMain.FormShow(Sender: TObject);
+begin
+  Initialize;
+end;// procedure TfrmMain.FormShow(Sender: TObject);
 
 //========================================================================================
 

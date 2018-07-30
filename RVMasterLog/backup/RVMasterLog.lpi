@@ -49,7 +49,7 @@
         <UnitName Value="AppSettings"/>
       </Unit2>
       <Unit3>
-        <Filename Value="Images\Buttons\appinit.pas"/>
+        <Filename Value="appinit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
       </Unit3>

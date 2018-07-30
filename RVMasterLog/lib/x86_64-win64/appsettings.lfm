@@ -8,6 +8,9 @@ object frmSettings: TfrmSettings
   Caption = 'frmAppSettings'
   ClientHeight = 375
   ClientWidth = 698
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '1.8.4.0'
   object bbtCancel: TBitBtn

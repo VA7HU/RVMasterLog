@@ -8,20 +8,22 @@ unit AppInit;
 //
 // Description :
 //
-// Called By :
+// Called By TfrmMain.FormShow:  Main  Main  :
 //
-// Calls :
+// Calls :  AppSettings : pApplicationDirectory
 //
 // Ver. : 1.00
 //
-// Date : 29 Jul 2018
+// Date : 30 Jul 2018
 //
 //========================================================================================
 
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, Dialogs, SysUtils,
+  //
+  AppSettings;
 
 function Initialize : Boolean;
 
@@ -52,6 +54,25 @@ implementation
 //========================================================================================
 function Initialize : Boolean;
 begin
+
+  showmessage('Initialize');
+
+  // Start the application setup
+  frmSettings.pApplicationDirectory := GetCurrentDir;
+
+  // If the .ini file does not exist we display an Error message and prompt the user
+  // for action.
+  if frmSettings.INIFileExists then
+  begin
+    ShowMessage('File Exists');
+    //frmSettings.ReadSettingsINIFile;
+  end
+  else
+  begin
+    ShowMessage('No File');
+    //frmSettings.ReadSettingsINIFile;
+  end;
+
 
 end;// function Initialize
 

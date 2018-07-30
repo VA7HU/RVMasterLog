@@ -8,20 +8,22 @@ unit AppInit;
 //
 // Description :
 //
-// Called By :
+// Called By TfrmMain.FormShow:  Main  Main  :
 //
-// Calls :
+// Calls :  AppSettings : pApplicationDirectory
 //
 // Ver. : 1.00
 //
-// Date : 29 Jul 2018
+// Date : 30 Jul 2018
 //
 //========================================================================================
 
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, Dialogs, SysUtils,
+  //
+  AppSettings;
 
 function Initialize : Boolean;
 
@@ -52,6 +54,11 @@ implementation
 //========================================================================================
 function Initialize : Boolean;
 begin
+
+  showmessage('Initialize');
+
+  // Start the application setup
+  frmSettings.pApplicationDirectory := GetCurrentDir;
 
 end;// function Initialize
 
