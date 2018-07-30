@@ -10,7 +10,7 @@ unit Main;
 //
 // Called By :
 //
-// Calls :
+// Calls :  AppInit : Initialize
 //
 // Ver. : 1.00
 //
@@ -22,13 +22,16 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  ComCtrls;
+  ComCtrls,
+  //
+  AppInit, AppSettings;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    mnuSettings: TMenuItem;
     muLogbooksSep2: TMenuItem;
     mnuLogbooksPrint: TMenuItem;
     mnuLogbooksPrinterSetup: TMenuItem;
@@ -53,6 +56,7 @@ type
     procedure mnuLogbooksRemoveClick(Sender: TObject);
     procedure mnuLogBooksSaveAsClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
+    procedure mnuSettingsClick(Sender: TObject);
   private
 
   public
@@ -145,6 +149,13 @@ begin
   showmessage('Exit');
   Close;
 end;// procedure TfrmMain.mnuFileExitClick
+
+//========================================================================================
+procedure TfrmMain.mnuSettingsClick(Sender: TObject);
+begin
+ showmessage('Settings');
+ frmSettings.ShowModal;
+end;// procedure TfrmMain.mnuSettingsClick
 
 //========================================================================================
 //          COMMAND BUTTON ROUTINES

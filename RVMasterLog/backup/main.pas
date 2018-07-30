@@ -22,13 +22,16 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  ComCtrls;
+  ComCtrls,
+  //
+  AppSettings;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    mnuSettings: TMenuItem;
     muLogbooksSep2: TMenuItem;
     mnuLogbooksPrint: TMenuItem;
     mnuLogbooksPrinterSetup: TMenuItem;
@@ -53,6 +56,7 @@ type
     procedure mnuLogbooksRemoveClick(Sender: TObject);
     procedure mnuLogBooksSaveAsClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
+    procedure mnuSettingsClick(Sender: TObject);
   private
 
   public
@@ -131,13 +135,13 @@ end;// procedure TfrmMain.mnuLogbooksRemoveClick
 procedure TfrmMain.mnuLogbooksPrinterSetupClick(Sender: TObject);
 begin
  showmessage('Printer Setup');
-end;//
+end;// procedure TfrmMain.mnuLogbooksPrinterSetupClick
 
 //----------------------------------------------------------------------------------------
 procedure TfrmMain.mnuLogbooksPrintClick(Sender: TObject);
 begin
-
-end;
+ showmessage('Print');
+end;// procedure TfrmMain.mnuLogbooksPrintClick
 
 //----------------------------------------------------------------------------------------
 procedure TfrmMain.mnuLogbooksExitClick(Sender: TObject);
@@ -145,6 +149,13 @@ begin
   showmessage('Exit');
   Close;
 end;// procedure TfrmMain.mnuFileExitClick
+
+//========================================================================================
+procedure TfrmMain.mnuSettingsClick(Sender: TObject);
+begin
+ showmessage('Settings');
+ frmSettings.ShowModal;
+end;// procedure TfrmMain.mnuSettingsClick
 
 //========================================================================================
 //          COMMAND BUTTON ROUTINES

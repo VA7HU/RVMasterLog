@@ -27,7 +27,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="4">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -40,6 +40,19 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="appsettings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmSettings"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AppSettings"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="appinit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AppInit"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

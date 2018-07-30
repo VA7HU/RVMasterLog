@@ -71,5 +71,9 @@ object frmMain: TfrmMain
         OnClick = mnuLogbooksExitClick
       end
     end
+    object mnuSettings: TMenuItem
+      Caption = '&Settings'
+      OnClick = mnuSettingsClick
+    end
   end
 end
