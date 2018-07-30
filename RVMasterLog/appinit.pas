@@ -8,9 +8,13 @@ unit AppInit;
 //
 // Description :
 //
-// Called By TfrmMain.FormShow:  Main  Main  :
+// Called By TfrmMain.FormShow:
 //
-// Calls :  AppSettings : pApplicationDirectory
+// Calls :  AppSettings : iniFileExists
+//                        ReadSettinsINIFile
+//                        pApplicationDirectory
+//          HUConstants
+//          HUMessageBoxes
 //
 // Ver. : 1.00
 //
@@ -21,9 +25,9 @@ unit AppInit;
 interface
 
 uses
-  Classes, Dialogs, SysUtils,
+  Classes, Controls, Dialogs, SysUtils,
   //
-  AppSettings;
+  AppSettings, HUConstants, HUMessageBoxes;
 
 function Initialize : Boolean;
 
@@ -32,6 +36,10 @@ implementation
 //========================================================================================
 //          PRIVATE CONSTANTS
 //========================================================================================
+const
+  em1 = '    RVMasterLog Does Not Exist.'
+      + #13
+      + ' Do You Want to Create a New One ?';
 
 //========================================================================================
 //          PUBLIC CONSTANTS
@@ -53,6 +61,10 @@ implementation
 //          PUBLIC ROUTINES
 //========================================================================================
 function Initialize : Boolean;
+
+var
+  InitFailure : Boolean;
+
 begin
 
   showmessage('Initialize');
@@ -64,14 +76,28 @@ begin
   // for action.
   if frmSettings.INIFileExists then
   begin
-    ShowMessage('File Exists');
-    //frmSettings.ReadSettingsINIFile;
+    showmessage('Read It');
+    frmSettings.ReadSettingsINIFile;
   end
   else
   begin
-    ShowMessage('No File');
-    //frmSettings.ReadSettingsINIFile;
-  end;
+
+    if HUErrorMsgYN(emNoFile, em1) = mrYes then
+    begin
+      showmessage('Read It');
+      frmSettings.ReadSettingsINIFile;
+    end
+    else
+    begin
+      showmessage('Close');
+      InitFailure := True;
+    end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
+
+  end;// if frmSettings.INIFileExists
+
+  if InitFailure then
+    Result := False;
+
 
 
 end;// function Initialize

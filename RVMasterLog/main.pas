@@ -11,10 +11,11 @@ unit Main;
 // Called By :
 //
 // Calls :  AppInit : Initialize
+//          AppSettings :  frmSettings.ShowModal
 //
 // Ver. : 1.00
 //
-// Date : 29 Jul 2018
+// Date : 30 Jul 2018
 //
 //========================================================================================
 
@@ -193,7 +194,17 @@ end;// procedure TfrmMain.FormCreate
 //========================================================================================
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
-  Initialize;
+
+  if Initialize then
+  begin
+    showmessage('Init OK');
+  end
+  else
+  begin
+    showmessage('Init Failure');
+    Close;
+  end;
+
 end;// procedure TfrmMain.FormShow(Sender: TObject);
 
 //========================================================================================

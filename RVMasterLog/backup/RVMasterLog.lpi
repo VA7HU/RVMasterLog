@@ -27,7 +27,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="6">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -53,6 +53,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="humessageboxes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="HUMessageBoxes"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="huconstants.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="HUConstants"/>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

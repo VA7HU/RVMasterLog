@@ -50,25 +50,26 @@ type
     procedure FormShow(Sender: TObject);
   private
     fApplicationDirectory : string;
-{    fSettingsDirectory : string;
-    fRadiosDirectory : string;
+    fSettingsDirectory : string;
+{    fRadiosDirectory : string;
     fBackupDirectory : string; }
     function GetApplicationDirectory : string;
     procedure SetApplicationDirectory(Dir : string);
-{    function GetSettingsDirectory : string;
+    function GetSettingsDirectory : string;
     procedure SetSettingsDirectory(Dir : string);
-    function GetRadiosDirectory : string;
+{    function GetRadiosDirectory : string;
     procedure SetRadiosDirectory(Dir : string);
     function GetBackupDirectory : string;
     procedure SetBackupDirectory(Dir : string); }
 
 
   public
-    property pApplicationDirectory : string read GetApplicationDirectory
-                                     write SetApplicationDirectory;
+    property pApplicationDirectory : string read GetApplicationDirectory                                     write SetApplicationDirectory;
+    property pSettingsDirectory : string read GetSettingsDirectory                                     write SetApplicationDirectory;
 
     function INIFileExists : Boolean;
-
+    procedure ReadSettingsINIFile;
+    procedure WriteSettingsINIFile;
   end;
 
 var
@@ -113,6 +114,21 @@ begin
 end;// procedure TfrmSettings.SetApplicationDirectory
 
 //========================================================================================
+function TfrmSettings.GetSettingsDirectory: string;
+begin
+   Result := fSettingsDirectory;
+end;// procedure TfrmSettings.GetAppSettingsDirectory
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetSettingsDirectory(Dir: string);
+begin
+    fSettingsDirectory := Dir;
+end;// procedure TfrmSettings.SetAppSettingsDirectory
+
+//========================================================================================
+
+
+//========================================================================================
 //          PROPERTY ROUTINES
 //========================================================================================
 
@@ -141,7 +157,7 @@ const
   cstrRadiosDirectoryName = 'Radios';
   cstrBackupDirectoryName = 'Backup';
 
-  cstrApplicationINIFileName = 'HUKenMem.ini';
+  cstrApplicationINIFileName = 'RVMasterLog.ini';
 
   cstrSectionDirectories = 'DIRECTORIES';
   cstrKeySettingsDirectory = 'Settings Directory';
@@ -160,7 +176,7 @@ begin
 end;// function TfrmAppSetupApplicationDirectoryp.INIFileExists
 
 //----------------------------------------------------------------------------------------
-{procedure TfrmAppSetup.ReadSettingsINIFile;
+procedure TfrmSettings.ReadSettingsINIFile;
 
 var
   vstrTStr : string;
@@ -171,14 +187,15 @@ begin
   ApplicationINIFile := TINIFile.Create(ApplicationINIFileName);
 
   // APPLICATION DIRECTORY SECTION
+
   vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
                                                         cstrKeySettingsDirectory,
                                                         '');
   if vstrTStr = '' then
-    vstrTStr := pApplicationDirectory;
+    vstrTStr := GetUserDir;
   pSettingsDirectory := vstrTStr;
 
-  vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
+{  vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
                                             cstrKeyRadiosDirectory,
                                             '');
   if vstrTStr = '' then
@@ -190,17 +207,17 @@ begin
                                             '');
   if vstrTStr = '' then
     vstrTStr := pApplicationDirectory + '\' + cstrBackupDirectoryName;
-  pBackupDirectory := vstrTStr;
+  pBackupDirectory := vstrTStr; }
 
   ApplicationINIFile.Free;
 
-end;// procedure TfrmAppSetup.ReadSettingsINIFile
+end;// procedure TfrmSettings.ReadSettingsINIFile
 
 //----------------------------------------------------------------------------------------
-procedure TfrmAppSetup.WriteSettingsINIFile;
+procedure TfrmSettings.WriteSettingsINIFile;
 begin
 
-    showmessage('WriteSettingsINIFile');
+{    showmessage('WriteSettingsINIFile');
 
     ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
     ApplicationINIFile := TINIFile.Create(ApplicationINIFileName);
@@ -213,9 +230,9 @@ begin
                                     cstrKeyBackupDirectory,
                                     pBackupDirectory);
 
-    ApplicationINIFile.Free;
+    ApplicationINIFile.Free;}
 
-end;// procedure TfrmAppSetup.WriteSettingsINIFile }
+end;// procedure TfrmSettings.WriteSettingsINIFile
 
 //========================================================================================
 //          FORM ROUTINES
