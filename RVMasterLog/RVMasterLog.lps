@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="11">
+    <Units Count="12">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -19,7 +19,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
-        <TopLine Value="190"/>
+        <TopLine Value="181"/>
         <CursorPos X="26" Y="181"/>
         <UsageCount Value="39"/>
         <Loaded Value="True"/>
@@ -32,7 +32,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="161"/>
         <CursorPos X="9" Y="172"/>
@@ -44,7 +43,7 @@
         <Filename Value="appinit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="97"/>
         <CursorPos Y="90"/>
         <UsageCount Value="36"/>
@@ -62,19 +61,17 @@
       </Unit4>
       <Unit5>
         <Filename Value="huconstants.pas"/>
-        <IsPartOfProject Value="True"/>
         <UnitName Value="HUConstants"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="57"/>
         <CursorPos X="24" Y="76"/>
         <UsageCount Value="30"/>
-        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="appfinal.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppFinal"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="48"/>
         <CursorPos Y="29"/>
         <UsageCount Value="24"/>
@@ -110,6 +107,16 @@
         <CursorPos Y="29"/>
         <UsageCount Value="20"/>
       </Unit10>
+      <Unit11>
+        <Filename Value="..\..\..\Common Folders\huconstants.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="HUConstants"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="13" Y="17"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit11>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>

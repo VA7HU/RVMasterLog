@@ -59,14 +59,14 @@
         <UnitName Value="HUMessageBoxes"/>
       </Unit4>
       <Unit5>
-        <Filename Value="huconstants.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="HUConstants"/>
-      </Unit5>
-      <Unit6>
         <Filename Value="appfinal.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppFinal"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\..\..\Common Folders\huconstants.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="HUConstants"/>
       </Unit6>
     </Units>
   </ProjectOptions>
@@ -78,6 +78,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="..\..\..\Common Folders"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

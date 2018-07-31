@@ -57,6 +57,7 @@ object frmSettings: TfrmSettings
       97FF000097FF000097FF000097FF000097E700009745FFFFFF00
     }
     ModalResult = 2
+    OnClick = bbtCancelClick
     TabOrder = 0
   end
   object bbtOk: TBitBtn
@@ -102,6 +103,7 @@ object frmSettings: TfrmSettings
       41FF278C41FF278C41FF278C41FF278C41E7278C4145FFFFFF00
     }
     ModalResult = 1
+    OnClick = bbtOkClick
     TabOrder = 1
   end
   object pcSettings: TPageControl
