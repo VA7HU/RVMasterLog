@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Main, AppSettings, AppInit, HUMessageBoxes, AppFinal;
+  Forms, Main, AppSettings, AppInit, HUMessageBoxes, AppFinal, RVData, ManufacturerDB;
 
 {$R *.res}
 
@@ -16,6 +16,8 @@ begin
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmSettings, frmSettings);
+  Application.CreateForm(TfrmRVData, frmRVData);
+  Application.CreateForm(TfrmManufacturerDB, frmManufacturerDB);
   Application.Run;
 end.
 

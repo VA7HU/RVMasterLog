@@ -13,10 +13,11 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
+//          RV  : frmRVData.ShowModal
 //
-// Ver. : 1.00
+// Ver. : 1.0.0
 //
-// Date : 30 Jul 2018
+// Date : 31 Jul 2018
 //
 //========================================================================================
 
@@ -26,13 +27,16 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings;
+  AppFinal, AppInit, AppSettings, RVData;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    mnuSettingsDatabasesManufacturer: TMenuItem;
+    mnuSettingsDatabases: TMenuItem;
+    mnuSettingsDIrectories: TMenuItem;
     mnuSettings: TMenuItem;
     muLogbooksSep2: TMenuItem;
     mnuLogbooksPrint: TMenuItem;
@@ -60,7 +64,8 @@ type
     procedure mnuLogbooksRemoveClick(Sender: TObject);
     procedure mnuLogBooksSaveAsClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
-    procedure mnuSettingsClick(Sender: TObject);
+    procedure mnuSettingsDatabasesManufacturerClick(Sender: TObject);
+    procedure mnuSettingsDIrectoriesClick(Sender: TObject);
   private
 
   public
@@ -108,7 +113,7 @@ implementation
 //========================================================================================
 procedure TfrmMain.mnuLogbooksNewClick(Sender: TObject);
 begin
-  showmessage('New Logbook')
+  frmRVData.ShowModal;
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------
@@ -155,11 +160,18 @@ begin
 end;// procedure TfrmMain.mnuFileExitClick
 
 //========================================================================================
-procedure TfrmMain.mnuSettingsClick(Sender: TObject);
+procedure TfrmMain.mnuSettingsDIrectoriesClick(Sender: TObject);
 begin
- showmessage('Settings');
- frmSettings.ShowModal;
-end;// procedure TfrmMain.mnuSettingsClick
+  showmessage('Settings - Directories');
+  frmSettings.ShowModal;
+end;
+
+//----------------------------------------------------------------------------------------
+procedure TfrmMain.mnuSettingsDatabasesManufacturerClick(Sender: TObject);
+begin
+  showmessage('Settings - Databases - Manufacturers');
+  frmManufacturerDB.ShowModal;
+end;
 
 //========================================================================================
 //          COMMAND BUTTON ROUTINES
@@ -178,8 +190,8 @@ end;// procedure TfrmMain.mnuSettingsClick
 //========================================================================================
 procedure TfrmMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
- showmessage('On Close')
- AppFinal;.Finalize;
+ showmessage('On Close');
+ Finalize;
 end;// procedure TfrmMain.FormClose
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: boolean);

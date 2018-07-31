@@ -16,7 +16,7 @@ unit AppInit;
 //          HUConstants
 //          HUMessageBoxes
 //
-// Ver. : 1.00
+// Ver. : 1.0.0
 //
 // Date : 30 Jul 2018
 //

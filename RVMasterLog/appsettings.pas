@@ -9,12 +9,14 @@ unit AppSettings;
 // Description :
 //
 // Called By :  AppInit : Initialize
+//              Main  : TfrmMain.mnuSettingsDIrectoriesClick
+//                      TfrmMain.mnuSettingsDatabasesClick
 //
 // Calls :
 //
-// Ver. : 1.00
+// Ver. : 1.0.0
 //
-// Date : 30 Jul 2018
+// Date : 31 Jul 2018
 //
 //========================================================================================
 
@@ -43,7 +45,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     pcSettings: TPageControl;
-    tsDirectories: TTabSheet;
+    pgDirectories: TTabSheet;
     procedure bbtCancelClick(Sender: TObject);
     procedure bbtOkClick(Sender: TObject);
     procedure edtSettingsDirectoryMouseUp(Sender: TObject;

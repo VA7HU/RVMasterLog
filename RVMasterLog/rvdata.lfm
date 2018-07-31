@@ -1,0 +1,77 @@
+object frmRVData: TfrmRVData
+  Left = 322
+  Height = 542
+  Top = 130
+  Width = 699
+  Caption = 'RV Data'
+  ClientHeight = 542
+  ClientWidth = 699
+  Position = poScreenCenter
+  LCLVersion = '1.8.4.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 519
+    Width = 699
+    Panels = <>
+  end
+  object PageControl1: TPageControl
+    Left = 32
+    Height = 424
+    Top = 24
+    Width = 640
+    ActivePage = tsGeneral
+    TabIndex = 0
+    TabOrder = 1
+    object tsGeneral: TTabSheet
+      Caption = 'General'
+      ClientHeight = 396
+      ClientWidth = 632
+      object bbtOK: TBitBtn
+        Left = 448
+        Height = 30
+        Top = 352
+        Width = 75
+        Default = True
+        DefaultCaption = True
+        Kind = bkOK
+        ModalResult = 1
+        TabOrder = 0
+      end
+      object bbtClose: TBitBtn
+        Left = 536
+        Height = 30
+        Top = 352
+        Width = 75
+        DefaultCaption = True
+        Kind = bkClose
+        ModalResult = 11
+        TabOrder = 1
+      end
+      object Label1: TLabel
+        Left = 24
+        Height = 15
+        Top = 28
+        Width = 55
+        Caption = 'RV Name :'
+        ParentColor = False
+      end
+      object edtRVName: TEdit
+        Left = 90
+        Height = 23
+        Top = 24
+        Width = 240
+        Alignment = taCenter
+        TabOrder = 2
+      end
+      object Label2: TLabel
+        Left = 32
+        Height = 15
+        Top = 59
+        Width = 81
+        Caption = 'Manufacturer : '
+        ParentColor = False
+      end
+    end
+  end
+end

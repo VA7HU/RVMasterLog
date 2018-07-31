@@ -31,7 +31,7 @@ object frmMain: TfrmMain
   end
   object mnuMain: TMainMenu
     left = 400
-    top = 122
+    top = 128
     object mnuLogbooks: TMenuItem
       Caption = '&Logbooks'
       object mnuLogbooksNew: TMenuItem
@@ -75,7 +75,17 @@ object frmMain: TfrmMain
     end
     object mnuSettings: TMenuItem
       Caption = '&Settings'
-      OnClick = mnuSettingsClick
+      object mnuSettingsDIrectories: TMenuItem
+        Caption = 'Directories'
+        OnClick = mnuSettingsDIrectoriesClick
+      end
+      object mnuSettingsDatabases: TMenuItem
+        Caption = 'Databases'
+        object mnuSettingsDatabasesManufacturer: TMenuItem
+          Caption = 'Manufacturer'
+          OnClick = mnuSettingsDatabasesManufacturerClick
+        end
+      end
     end
   end
 end
