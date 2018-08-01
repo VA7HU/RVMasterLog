@@ -18,7 +18,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 30 Jul 2018
+// Date : 1 Aug 2018
 //
 //========================================================================================
 
@@ -32,6 +32,9 @@ uses
 function Initialize : Boolean;
 
 implementation
+
+uses
+  Main;
 
 //========================================================================================
 //          PRIVATE CONSTANTS
@@ -91,6 +94,13 @@ begin
     end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
 
   end;// if frmSettings.INIFileExists
+
+
+
+
+
+
+
 
   if InitFailure then
     Result := False;

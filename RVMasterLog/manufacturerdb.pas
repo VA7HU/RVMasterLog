@@ -10,7 +10,7 @@ unit ManufacturerDB;
 //
 // Called By :
 //
-// Calls :
+// Calls :  AppSettings : pApplicationDirectory
 //
 // Ver. : 1.0.0
 //
@@ -22,7 +22,9 @@ interface
 
 uses
   Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms, Controls,
-  Graphics, Dialogs, DbCtrls, Buttons, ExtCtrls, StdCtrls, DBGrids;
+  Graphics, Dialogs, DbCtrls, Buttons, ExtCtrls, StdCtrls, DBGrids,
+  //
+  AppSettings;
 
 type
 
@@ -36,8 +38,9 @@ type
     DBNavigator1: TDBNavigator;
     DBTManufacturersName: TDBText;
     Label1: TLabel;
+    Memo1: TMemo;
     Panel1: TPanel;
-    DBConnection: TSQLite3Connection;
+    SQLite3Connection1: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
     procedure bbtCloseClick(Sender: TObject);
@@ -56,7 +59,6 @@ var
 implementation
 
 {$R *.lfm}
-
 
 //========================================================================================
 //          PRIVATE CONSTANTS
@@ -116,7 +118,7 @@ end;// procedure TfrmManufacturerDB.bbtOKClick
 //          FORM ROUTINES
 //========================================================================================
 procedure TfrmManufacturerDB.FormShow(Sender: TObject);
-begin
+
 
 end;// procedure TfrmManufacturerDB.FormShow
 

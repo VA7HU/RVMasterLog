@@ -10,7 +10,7 @@ unit ManufacturerDB;
 //
 // Called By :
 //
-// Calls :
+// Calls :  AppSettings : pApplicationDirectory
 //
 // Ver. : 1.0.0
 //
@@ -22,7 +22,9 @@ interface
 
 uses
   Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms, Controls,
-  Graphics, Dialogs, DbCtrls, Buttons, ExtCtrls, StdCtrls, DBGrids;
+  Graphics, Dialogs, DbCtrls, Buttons, ExtCtrls, StdCtrls, DBGrids,
+  //
+  AppSettings;
 
 type
 
@@ -36,8 +38,9 @@ type
     DBNavigator1: TDBNavigator;
     DBTManufacturersName: TDBText;
     Label1: TLabel;
+    Memo1: TMemo;
     Panel1: TPanel;
-    DBConnection: TSQLite3Connection;
+    SQLite3Connection1: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
     procedure bbtCloseClick(Sender: TObject);
@@ -56,7 +59,6 @@ var
 implementation
 
 {$R *.lfm}
-
 
 //========================================================================================
 //          PRIVATE CONSTANTS
@@ -116,7 +118,47 @@ end;// procedure TfrmManufacturerDB.bbtOKClick
 //          FORM ROUTINES
 //========================================================================================
 procedure TfrmManufacturerDB.FormShow(Sender: TObject);
+
+var
+  Query : string;
+  names : TStringList;
+  currentLine : string;
+  i : Integer;
+  currentField : string;
+
 begin
+
+  // Connect to SQLite3
+  SQLite3Connection1.DatabaseName
+        := frmSettings.pApplicationDirectory + '\Application.db3';
+  SQLQuery1.SQLConnection := SQLite3Connection1;
+  SQLite3Connection1.Connected := True;
+  Query := 'SELECT * FROM Manufacturers;';
+  try
+    SQLQuery1.SQL.Text := query;
+    SQLQuery1.Active := true;
+  except
+    on E: Exception do
+      Memo1.Text := 'Exception raised with message: ' + E.Message;
+  end;
+
+  if SQLQuery1.IsEmpty then
+    showmessage('Empty')
+  else
+    showmessage('Full');
+
+
+
+
+ { SQLTransaction1.DataBase := SQLite3Connection1;
+
+
+  SqLQuery1.Transaction := SQLTransaction1;
+  SQLQuery1.Database := SQLite3Connection1;
+  SQLQuery1.SQL.Text := 'Select * from Manufacturer';
+  DataSource1.DataSet := SQLquery1;
+  DBNavigator1.DataSource := Datasource1;
+  DBGrid1.DataSource := DataSource1; }
 
 end;// procedure TfrmManufacturerDB.FormShow
 

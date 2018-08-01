@@ -8,12 +8,11 @@ unit Main;
 //
 // Description :
 //
-// Called By :
+// Called By :  ManufacturerDB  : TfrmManufacturerDB.FormShow
 //
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          ManufacturerDB  : frmManufacturerDB.ShowModal
 //
 // Ver. : 1.0.0
 //
@@ -27,7 +26,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, ManufacturerDB, RVData;
+  AppFinal, AppInit, AppSettings, ManufacturerDB, RVData, sqlite3conn;
 
 type
 
@@ -50,6 +49,7 @@ type
     mnuLogbooksExit: TMenuItem;
     mnuLogbooks: TMenuItem;
     mnuMain: TMainMenu;
+    SQLite3Connection1: TSQLite3Connection;
     StatusBar1: TStatusBar;
     ToolBar1: TToolBar;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -217,7 +217,7 @@ begin
   begin
     showmessage('Init Failure');
     Close;
-  end;
+  end;// if Initialize
 
 end;// procedure TfrmMain.FormShow(Sender: TObject);
 

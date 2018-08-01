@@ -111,8 +111,8 @@ object frmSettings: TfrmSettings
     Height = 296
     Top = 16
     Width = 648
-    ActivePage = pgDatabases
-    TabIndex = 1
+    ActivePage = pgDirectories
+    TabIndex = 0
     TabOrder = 2
     object pgDirectories: TTabSheet
       Caption = 'Directories'
@@ -191,9 +191,6 @@ object frmSettings: TfrmSettings
         ReadOnly = True
         TabOrder = 3
       end
-    end
-    object pgDatabases: TTabSheet
-      Caption = 'Databases'
     end
   end
 end

@@ -83,6 +83,7 @@
         <Filename Value="manufacturerdb.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmManufacturerDB"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ManufacturerDB"/>
       </Unit8>

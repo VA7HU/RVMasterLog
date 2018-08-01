@@ -46,7 +46,6 @@ type
     Label5: TLabel;
     pcSettings: TPageControl;
     pgDirectories: TTabSheet;
-    pgDatabases: TTabSheet;
     procedure bbtCancelClick(Sender: TObject);
     procedure bbtOkClick(Sender: TObject);
     procedure edtSettingsDirectoryMouseUp(Sender: TObject;

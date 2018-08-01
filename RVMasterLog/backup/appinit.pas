@@ -16,9 +16,9 @@ unit AppInit;
 //          HUConstants
 //          HUMessageBoxes
 //
-// Ver. : 1.00
+// Ver. : 1.0.0
 //
-// Date : 30 Jul 2018
+// Date : 1 Aug 2018
 //
 //========================================================================================
 
@@ -32,6 +32,9 @@ uses
 function Initialize : Boolean;
 
 implementation
+
+uses
+  Main;
 
 //========================================================================================
 //          PRIVATE CONSTANTS
@@ -91,6 +94,24 @@ begin
     end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
 
   end;// if frmSettings.INIFileExists
+
+  // Get correct SQLite .dll
+   if GetEnvironmentVariable('ProgramFiles')=GetEnvironmentVariable('ProgramFiles(x86)') then
+    showmessage('Win32 program running on Win64')
+  else
+    showmessage('Win32 program running on Win32');
+
+ { frmMain.SQLite3Connection1.DatabaseName
+        := frmSettings.pApplicationDirectory + '\Application.db3';
+  frmMain.SQLite3Connection1.Connected:= True;
+
+  showmessage(frmMain.SQLite3Connection1.DatabaseName);}
+
+
+
+
+
+
 
   if InitFailure then
     Result := False;
