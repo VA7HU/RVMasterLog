@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Main, AppSettings, AppInit, AppFinal, RVData, ManufacturerDB;
+  Forms, Main, AppSettings, AppInit, AppFinal, RVData, ManufacturerTable;
 
 {$R *.res}
 

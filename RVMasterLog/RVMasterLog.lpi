@@ -75,12 +75,12 @@
         <UnitName Value="RVData"/>
       </Unit6>
       <Unit7>
-        <Filename Value="manufacturerdb.pas"/>
+        <Filename Value="manufacturertable.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmManufacturerDB"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="ManufacturerDB"/>
+        <UnitName Value="ManufacturerTable"/>
       </Unit7>
       <Unit8>
         <Filename Value="..\..\..\Common Folders\humessageboxes.pas"/>

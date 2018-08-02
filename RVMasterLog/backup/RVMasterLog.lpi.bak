@@ -57,35 +57,34 @@
         <UnitName Value="AppInit"/>
       </Unit3>
       <Unit4>
-        <Filename Value="humessageboxes.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="HUMessageBoxes"/>
-      </Unit4>
-      <Unit5>
         <Filename Value="appfinal.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppFinal"/>
-      </Unit5>
-      <Unit6>
+      </Unit4>
+      <Unit5>
         <Filename Value="..\..\..\Common Folders\huconstants.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUConstants"/>
-      </Unit6>
-      <Unit7>
+      </Unit5>
+      <Unit6>
         <Filename Value="rvdata.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmRVData"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RVData"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="manufacturerdb.pas"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="manufacturertable.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmManufacturerDB"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="ManufacturerDB"/>
+        <UnitName Value="ManufacturerTable"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\..\..\Common Folders\humessageboxes.pas"/>
+        <IsPartOfProject Value="True"/>
       </Unit8>
     </Units>
   </ProjectOptions>

@@ -49,7 +49,6 @@ type
     mnuLogbooksExit: TMenuItem;
     mnuLogbooks: TMenuItem;
     mnuMain: TMainMenu;
-    SQLite3Connection1: TSQLite3Connection;
     StatusBar1: TStatusBar;
     ToolBar1: TToolBar;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
