@@ -1,7 +1,7 @@
 object frmManufacturersTable: TfrmManufacturersTable
-  Left = 303
+  Left = 301
   Height = 453
-  Top = 138
+  Top = 156
   Width = 819
   Caption = 'frmManufacturersTable'
   ClientHeight = 453
@@ -65,7 +65,23 @@ object frmManufacturersTable: TfrmManufacturersTable
       Top = 16
       Width = 224
       Color = clWindow
-      Columns = <>
+      Columns = <      
+        item
+          Title.Caption = 'ID'
+          FieldName = 'ID'
+        end      
+        item
+          Title.Caption = 'Name'
+          FieldName = 'Name'
+        end      
+        item
+          Title.Caption = 'Address1'
+          FieldName = 'Address1'
+        end      
+        item
+          Title.Caption = 'Address2'
+          FieldName = 'Address2'
+        end>
       TabOrder = 0
     end
     object Memo1: TMemo
@@ -111,6 +127,10 @@ object frmManufacturersTable: TfrmManufacturersTable
     FieldDefs = <>
     Params = <>
     left = 296
+    top = 312
+  end
+  object DataSource1: TDataSource
+    left = 400
     top = 312
   end
 end

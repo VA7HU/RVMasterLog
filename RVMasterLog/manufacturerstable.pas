@@ -34,11 +34,11 @@ type
   TfrmManufacturersTable = class(TForm)
     bbtClose: TBitBtn;
     bbtOK: TBitBtn;
+    DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
     DBTManufacturersName: TDBText;
     Label1: TLabel;
-    Memo1: TMemo;
     Panel1: TPanel;
     SQLite3Connection1: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
@@ -70,6 +70,7 @@ uses
 const
 
   cstrApplicationDBName = 'Application.db3';
+  cstrManufacturersTableName = 'Manufacturers';
 
 //========================================================================================
 //          PUBLIC CONSTANTS
@@ -141,12 +142,29 @@ begin
                                  cstrApplicationDBName;
 
   SQLite3Connection1.DatabaseName:= vstrApplicationDatabasePathName;
+  SQLite3Connection1.Transaction := SQLTransaction1;
+
+  DataSource1.DataSet := SQLquery1;
 
   SQLQuery1.DataBase := SQLite3Connection1;
 
+  SQLTransaction1.DataBase := SQLite3Connection1;
+
   SQLQuery1.Transaction := SQLTransaction1;
 
+  DBGrid1.DataSource := DataSource1;
+
   SQLite3Connection1.Connected := True;
+
+  SQLTransaction1.Active := True;
+
+  SQLQuery1.SQL.Text := 'select * from ' + cstrManufacturersTableName;
+
+  SQLQuery1.Open;
+
+  //showmessage(SQLQuery1.SQL.Text);
+
+
 
 end;// procedure TfrmManufacturersTable.FormShow
 
