@@ -41,6 +41,8 @@ type
     Memo1: TMemo;
     Panel1: TPanel;
     SQLite3Connection1: TSQLite3Connection;
+    SQLQuery1: TSQLQuery;
+    SQLTransaction1: TSQLTransaction;
     procedure bbtCloseClick(Sender: TObject);
     procedure bbtOKClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -67,7 +69,7 @@ uses
 //========================================================================================
 const
 
-  cstrManufacturersTableFileName = 'ManufacturersTable.db3';
+  cstrApplicationDBName = 'Application.db3';
 
 //========================================================================================
 //          PUBLIC CONSTANTS
@@ -78,7 +80,7 @@ const
 //========================================================================================
 var
 
-  vstrManufacturersTableDatabaseName : string;
+  vstrApplicationDatabasePathName : string;
 
 //========================================================================================
 //          PUBLIC VARIABLES
@@ -134,12 +136,17 @@ end;// procedure TfrmManufacturersTable.FormCreate
 procedure TfrmManufacturersTable.FormShow(Sender: TObject);
 begin
 
-  vstrManufacturersTableDatabaseName := frmSettings.pApplicationDirectory +
-                                        '\' +
-                                        'ManufacturersTable.db3';
+  vstrApplicationDatabasePathName := frmSettings.pApplicationDirectory +
+                                 '\' +
+                                 cstrApplicationDBName;
 
-  SQLite3Connection1.DatabaseName:= vstrManufacturersTableDatabaseName;
-  SQLite3Connection1.Connected := True;
+  SQLite3Connection1.DatabaseName:= vstrApplicationDatabasePathName;
+
+  SQLQuery1.DataBase := SQLite3Connection1;
+
+  SQLQuery1.Transaction := SQLTransaction1;
+
+  //SQLite3Connection1.Connected := True;
 
 end;// procedure TfrmManufacturersTable.FormShow
 
@@ -147,6 +154,9 @@ end;// procedure TfrmManufacturersTable.FormShow
 procedure TfrmManufacturersTable.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
+
+  //if SQLite3Connection1.Connected then
+    SQLite3Connection1.Connected := False;
 
 end;// procedure TfrmManufacturersTable.FormClose
 

@@ -102,4 +102,15 @@ object frmManufacturersTable: TfrmManufacturersTable
     left = 70
     top = 312
   end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    left = 192
+    top = 312
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    left = 296
+    top = 312
+  end
 end
