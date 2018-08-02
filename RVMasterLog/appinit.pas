@@ -18,7 +18,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 1 Aug 2018
+// Date : 2 Aug 2018
 //
 //========================================================================================
 
@@ -84,14 +84,14 @@ begin
   else
   begin
 
-    if HUErrorMsgYN(emNoFile, em1) = mrYes then
+  {  if HUErrorMsgYN(emNoFile, em1) = mrYes then
     begin
       frmSettings.ReadSettingsINIFile;
     end
     else
     begin
       InitFailure := True;
-    end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
+    end;// if HUErrorMsgYN(emNoFile, em1) = mrYes  }
 
   end;// if frmSettings.INIFileExists
 
@@ -102,10 +102,10 @@ begin
 
 
 
-  if InitFailure then
-    Result := False;
+ { if InitFailure then
+    Result := False;   }
 
-
+ Result := True;
 
 end;// function Initialize
 

@@ -18,7 +18,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 1 Aug 2018
+// Date : 2 Aug 2018
 //
 //========================================================================================
 
@@ -84,28 +84,17 @@ begin
   else
   begin
 
-    if HUErrorMsgYN(emNoFile, em1) = mrYes then
+  {  if HUErrorMsgYN(emNoFile, em1) = mrYes then
     begin
       frmSettings.ReadSettingsINIFile;
     end
     else
     begin
       InitFailure := True;
-    end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
+    end;// if HUErrorMsgYN(emNoFile, em1) = mrYes  }
 
   end;// if frmSettings.INIFileExists
 
-  // Get correct SQLite .dll
-   if GetEnvironmentVariable('ProgramFiles')=GetEnvironmentVariable('ProgramFiles(x86)') then
-    showmessage('Win32 program running on Win64')
-  else
-    showmessage('Win32 program running on Win32');
-
- { frmMain.SQLite3Connection1.DatabaseName
-        := frmSettings.pApplicationDirectory + '\Application.db3';
-  frmMain.SQLite3Connection1.Connected:= True;
-
-  showmessage(frmMain.SQLite3Connection1.DatabaseName);}
 
 
 
@@ -113,8 +102,8 @@ begin
 
 
 
-  if InitFailure then
-    Result := False;
+ { if InitFailure then
+    Result := False;   }
 
 
 

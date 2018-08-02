@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="15">
+    <Units Count="16">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -31,6 +31,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <CursorPos X="62" Y="14"/>
         <UsageCount Value="57"/>
@@ -41,14 +42,13 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="88"/>
-        <CursorPos Y="98"/>
+        <TopLine Value="89"/>
+        <CursorPos X="17" Y="108"/>
         <UsageCount Value="56"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="humessageboxes.pas"/>
-        <IsPartOfProject Value="True"/>
         <UnitName Value="HUMessageBoxes"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="55"/>
@@ -90,7 +90,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ManufacturerDB"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <TopLine Value="111"/>
         <CursorPos Y="122"/>
@@ -144,6 +143,15 @@
         <CursorPos X="3" Y="1819"/>
         <UsageCount Value="10"/>
       </Unit14>
+      <Unit15>
+        <Filename Value="..\..\..\Common Folders\humessageboxes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="20"/>
+      </Unit15>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
