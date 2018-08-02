@@ -16,7 +16,7 @@ unit Main;
 //
 // Ver. : 1.0.0
 //
-// Date : 31 Jul 2018
+// Date : 2 Aug 2018
 //
 //========================================================================================
 
@@ -26,7 +26,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, ManufacturerTable, RVData, sqlite3conn;
+  AppFinal, AppInit, AppSettings, ManufacturersTable, RVData, sqlite3conn;
 
 type
 
@@ -169,7 +169,7 @@ end;
 procedure TfrmMain.mnuSettingsDatabasesManufacturerClick(Sender: TObject);
 begin
   showmessage('Settings - Databases - Manufacturers');
-  frmManufacturerDB.ShowModal;
+  frmManufacturersTable.ShowModal;
 end;
 
 //========================================================================================

@@ -14,7 +14,7 @@ unit ManufacturerTable;
 //
 // Ver. : 1.0.0
 //
-// Date : 31 Jul 2018
+// Date : 2 Aug 2018
 //
 //========================================================================================
 
@@ -28,9 +28,9 @@ uses
 
 type
 
-  { TfrmManufacturerDB }
+  { TfrmManufacturersTable }
 
-  TfrmManufacturerDB = class(TForm)
+  TfrmManufacturersTable = class(TForm)
     bbtClose: TBitBtn;
     bbtOK: TBitBtn;
     DBGrid1: TDBGrid;
@@ -50,7 +50,7 @@ type
   end;
 
 var
-  frmManufacturerDB: TfrmManufacturerDB;
+  frmManufacturersTable: TfrmManufacturersTable;
 
 implementation
 
@@ -94,16 +94,16 @@ uses
 //========================================================================================
 //          COMMAND BUTTON ROUTINES
 //========================================================================================
-procedure TfrmManufacturerDB.bbtCloseClick(Sender: TObject);
+procedure TfrmManufacturersTable.bbtCloseClick(Sender: TObject);
 begin
 
-end;// procedure TfrmManufacturerDB.bbtCloseClick
+end;// procedure TfrmManufacturersTable.bbtCloseClick
 
 //----------------------------------------------------------------------------------------
-procedure TfrmManufacturerDB.bbtOKClick(Sender: TObject);
+procedure TfrmManufacturersTable.bbtOKClick(Sender: TObject);
 begin
 
-end;// procedure TfrmManufacturerDB.bbtOKClick
+end;// procedure TfrmManufacturersTable.bbtOKClick
 
 //========================================================================================
 //          CONTROL ROUTINES
@@ -116,17 +116,17 @@ end;// procedure TfrmManufacturerDB.bbtOKClick
 //========================================================================================
 //          FORM ROUTINES
 //========================================================================================
-procedure TfrmManufacturerDB.FormShow(Sender: TObject);
+procedure TfrmManufacturersTable.FormShow(Sender: TObject);
 begin
 
-end;// procedure TfrmManufacturerDB.FormShow
+end;// procedure TfrmManufacturersTable.FormShow
 
 //----------------------------------------------------------------------------------------
-procedure TfrmManufacturerDB.FormClose(Sender: TObject;
+procedure TfrmManufacturersTable.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
 
-end;// procedure TfrmManufacturerDB.FormClose
+end;// procedure TfrmManufacturersTable.FormClose
 
 //========================================================================================
 

@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Main, AppSettings, AppInit, AppFinal, RVData, ManufacturerTable;
+  Forms, Main, AppSettings, AppInit, AppFinal, RVData, ManufacturersTable;
 
 {$R *.res}
 
@@ -17,7 +17,7 @@ begin
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TfrmRVData, frmRVData);
-  Application.CreateForm(TfrmManufacturerDB, frmManufacturerDB);
+  Application.CreateForm(TfrmManufacturersTable, frmManufacturersTable);
   Application.Run;
 end.
 

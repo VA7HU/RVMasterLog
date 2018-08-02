@@ -1,9 +1,9 @@
-object frmManufacturerDB: TfrmManufacturerDB
+object frmManufacturersTable: TfrmManufacturersTable
   Left = 303
   Height = 453
   Top = 138
   Width = 819
-  Caption = 'frmManufacturerDB'
+  Caption = 'frmManufacturersTable'
   ClientHeight = 453
   ClientWidth = 819
   OnClose = FormClose
