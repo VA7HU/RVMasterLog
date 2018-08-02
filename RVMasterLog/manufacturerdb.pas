@@ -33,16 +33,12 @@ type
   TfrmManufacturerDB = class(TForm)
     bbtClose: TBitBtn;
     bbtOK: TBitBtn;
-    DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
     DBTManufacturersName: TDBText;
     Label1: TLabel;
     Memo1: TMemo;
     Panel1: TPanel;
-    SQLite3Connection1: TSQLite3Connection;
-    SQLQuery1: TSQLQuery;
-    SQLTransaction1: TSQLTransaction;
     procedure bbtCloseClick(Sender: TObject);
     procedure bbtOKClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -57,6 +53,9 @@ var
   frmManufacturerDB: TfrmManufacturerDB;
 
 implementation
+
+uses
+  Main;
 
 {$R *.lfm}
 
@@ -118,7 +117,7 @@ end;// procedure TfrmManufacturerDB.bbtOKClick
 //          FORM ROUTINES
 //========================================================================================
 procedure TfrmManufacturerDB.FormShow(Sender: TObject);
-
+begin
 
 end;// procedure TfrmManufacturerDB.FormShow
 
@@ -130,8 +129,6 @@ begin
 end;// procedure TfrmManufacturerDB.FormClose
 
 //========================================================================================
-
-{ TfrmManufacturerDB }
 
 end.// unit ManufacturerDB
 

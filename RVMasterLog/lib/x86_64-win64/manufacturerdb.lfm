@@ -101,19 +101,4 @@ object frmManufacturerDB: TfrmManufacturerDB
     left = 80
     top = 310
   end
-  object SQLTransaction1: TSQLTransaction
-    Active = False
-    left = 200
-    top = 310
-  end
-  object SQLQuery1: TSQLQuery
-    FieldDefs = <>
-    Params = <>
-    left = 296
-    top = 312
-  end
-  object DataSource1: TDataSource
-    left = 395
-    top = 310
-  end
 end

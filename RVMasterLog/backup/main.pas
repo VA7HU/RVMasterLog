@@ -13,7 +13,6 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          ManufacturerDB  : frmManufacturerDB.ShowModal
 //
 // Ver. : 1.0.0
 //
