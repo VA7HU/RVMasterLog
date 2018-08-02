@@ -35,11 +35,10 @@ type
     bbtClose: TBitBtn;
     bbtOK: TBitBtn;
     DataSource1: TDataSource;
-    DBGrid1: TDBGrid;
+    DBComboBox1: TDBComboBox;
+    dbedtID: TDBEdit;
     DBNavigator1: TDBNavigator;
-    DBTManufacturersName: TDBText;
-    Label1: TLabel;
-    Memo1: TMemo;
+    DBText1: TDBText;
     Panel1: TPanel;
     SQLite3Connection1: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
@@ -138,6 +137,7 @@ end;// procedure TfrmManufacturersTable.FormCreate
 procedure TfrmManufacturersTable.FormShow(Sender: TObject);
 begin
 
+    // Setup all of the Database Controls
   vstrApplicationDatabasePathName := frmSettings.pApplicationDirectory +
                                  '\' +
                                  cstrApplicationDBName;
@@ -145,25 +145,25 @@ begin
   SQLite3Connection1.DatabaseName:= vstrApplicationDatabasePathName;
   SQLite3Connection1.Transaction := SQLTransaction1;
 
-  DataSource1.DataSet := SQLquery1;
-
-  SQLQuery1.DataBase := SQLite3Connection1;
-
   SQLTransaction1.DataBase := SQLite3Connection1;
 
+  SQLQuery1.DataBase := SQLite3Connection1;
   SQLQuery1.Transaction := SQLTransaction1;
 
-  DBGrid1.DataSource := DataSource1;
+  DataSource1.DataSet := SQLquery1;
+
+  DBText1.DataSource := DataSource1;
+  DBText1.DataField := 'Name';
+
+  dbedtID.Datasource := Datasource1;
+  dbedtID.DataField := 'ID';
+
 
   SQLite3Connection1.Connected := True;
-
   SQLTransaction1.Active := True;
 
   SQLQuery1.SQL.Text := 'select * from ' + cstrManufacturersTableName;
-
   SQLQuery1.Open;
-
-  //showmessage(SQLQuery1.SQL.Text);
 
 
 

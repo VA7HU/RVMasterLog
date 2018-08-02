@@ -4,13 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="17">
+    <Units Count="18">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="66" Y="10"/>
-        <UsageCount Value="65"/>
+        <UsageCount Value="67"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -21,7 +21,7 @@
         <UnitName Value="Main"/>
         <TopLine Value="166"/>
         <CursorPos X="19" Y="172"/>
-        <UsageCount Value="65"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
@@ -33,7 +33,7 @@
         <UnitName Value="AppSettings"/>
         <EditorIndex Value="2"/>
         <CursorPos X="16" Y="20"/>
-        <UsageCount Value="63"/>
+        <UsageCount Value="65"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -43,7 +43,7 @@
         <UnitName Value="AppInit"/>
         <EditorIndex Value="1"/>
         <CursorPos X="17" Y="108"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="64"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -52,7 +52,7 @@
         <UnitName Value="AppFinal"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="15" Y="15"/>
-        <UsageCount Value="50"/>
+        <UsageCount Value="52"/>
       </Unit4>
       <Unit5>
         <Filename Value="..\..\..\Common Folders\huconstants.pas"/>
@@ -60,7 +60,7 @@
         <UnitName Value="HUConstants"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="15" Y="15"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="48"/>
       </Unit5>
       <Unit6>
         <Filename Value="rvdata.pas"/>
@@ -72,7 +72,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="22"/>
         <CursorPos X="21" Y="8"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="48"/>
       </Unit6>
       <Unit7>
         <Filename Value="manufacturerstable.pas"/>
@@ -83,9 +83,9 @@
         <UnitName Value="ManufacturersTable"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="140"/>
-        <CursorPos X="37" Y="155"/>
-        <UsageCount Value="44"/>
+        <TopLine Value="142"/>
+        <CursorPos X="3" Y="163"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit7>
@@ -95,7 +95,7 @@
         <UnitName Value="HUMessageBoxes"/>
         <EditorIndex Value="4"/>
         <CursorPos Y="29"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -159,116 +159,136 @@
         <CursorPos X="14" Y="295"/>
         <UsageCount Value="10"/>
       </Unit16>
+      <Unit17>
+        <Filename Value="C:\lazarus\lcl\dbctrls.pp"/>
+        <UnitName Value="DbCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1513"/>
+        <CursorPos X="35" Y="1524"/>
+        <UsageCount Value="10"/>
+      </Unit17>
     </Units>
-    <JumpHistory Count="27" HistoryIndex="26">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="main.pas"/>
-        <Caret Line="16" TopLine="10"/>
+        <Filename Value="manufacturerstable.pas"/>
+        <Caret Line="156" Column="37" TopLine="141"/>
       </Position1>
       <Position2>
-        <Filename Value="main.pas"/>
-        <Caret Line="19" Column="16"/>
+        <Filename Value="manufacturerstable.pas"/>
+        <Caret Line="155" Column="37" TopLine="140"/>
       </Position2>
       <Position3>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="7" Column="24"/>
+        <Caret Line="140" Column="42" TopLine="147"/>
       </Position3>
       <Position4>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="68" Column="100" TopLine="62"/>
+        <Caret Line="141" Column="42" TopLine="141"/>
       </Position4>
       <Position5>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="78" Column="39" TopLine="67"/>
+        <Caret Line="140" Column="42" TopLine="140"/>
       </Position5>
       <Position6>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="134" Column="39" TopLine="118"/>
+        <Caret Line="141" Column="42" TopLine="141"/>
       </Position6>
       <Position7>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="78" Column="39" TopLine="67"/>
+        <Caret Line="156" TopLine="145"/>
       </Position7>
       <Position8>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="80" Column="3" TopLine="80"/>
+        <Caret Line="155" TopLine="144"/>
       </Position8>
       <Position9>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="129" Column="64" TopLine="120"/>
+        <Caret Line="156" Column="36" TopLine="144"/>
       </Position9>
       <Position10>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="15" Column="3" TopLine="3"/>
+        <Caret Line="158" Column="3" TopLine="136"/>
       </Position10>
       <Position11>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="27" Column="22" TopLine="18"/>
+        <Caret Line="157" Column="30" TopLine="136"/>
       </Position11>
       <Position12>
-        <Filename Value="..\..\..\Common Folders\humessageboxes.pas"/>
-        <Caret Line="29" TopLine="18"/>
+        <Filename Value="manufacturerstable.pas"/>
+        <Caret Line="156" Column="30" TopLine="135"/>
       </Position12>
       <Position13>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="140" Column="3" TopLine="130"/>
+        <Caret Line="155" Column="30" TopLine="134"/>
       </Position13>
       <Position14>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="141" Column="44" TopLine="131"/>
+        <Caret Line="160" Column="3" TopLine="139"/>
       </Position14>
       <Position15>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="151" Column="52"/>
+        <Caret Line="159" Column="3" TopLine="138"/>
       </Position15>
       <Position16>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="152" Column="52" TopLine="130"/>
+        <Caret Line="160" Column="3" TopLine="139"/>
       </Position16>
       <Position17>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="145" Column="25" TopLine="131"/>
+        <Caret Line="159" Column="3" TopLine="138"/>
       </Position17>
       <Position18>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="72" Column="20" TopLine="66"/>
+        <Caret Line="160" Column="3" TopLine="139"/>
       </Position18>
       <Position19>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="143" Column="64" TopLine="119"/>
+        <Caret Line="161" Column="3" TopLine="140"/>
       </Position19>
       <Position20>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="145" Column="41" TopLine="134"/>
+        <Caret Line="160" Column="3" TopLine="139"/>
       </Position20>
       <Position21>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="83" Column="30" TopLine="72"/>
+        <Caret Line="161" Column="3" TopLine="140"/>
       </Position21>
       <Position22>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="153" Column="33" TopLine="146"/>
+        <Caret Line="160" Column="3" TopLine="139"/>
       </Position22>
       <Position23>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="158" Column="5" TopLine="139"/>
+        <Caret Line="161" Column="3" TopLine="140"/>
       </Position23>
       <Position24>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="145" Column="52" TopLine="139"/>
+        <Caret Line="160" Column="3" TopLine="139"/>
       </Position24>
       <Position25>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="146" Column="3" TopLine="140"/>
+        <Caret Line="161" Column="3" TopLine="140"/>
       </Position25>
       <Position26>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="156" Column="37" TopLine="141"/>
+        <Caret Line="162" Column="3" TopLine="141"/>
       </Position26>
       <Position27>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="155" Column="37" TopLine="140"/>
+        <Caret Line="161" Column="3" TopLine="140"/>
       </Position27>
+      <Position28>
+        <Filename Value="manufacturerstable.pas"/>
+        <Caret Line="162" Column="3" TopLine="141"/>
+      </Position28>
+      <Position29>
+        <Filename Value="manufacturerstable.pas"/>
+        <Caret Line="161" Column="3" TopLine="140"/>
+      </Position29>
+      <Position30>
+        <Filename Value="manufacturerstable.pas"/>
+        <Caret Line="162" Column="3" TopLine="141"/>
+      </Position30>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
