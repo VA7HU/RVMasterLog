@@ -27,6 +27,7 @@ object frmManufacturersTable: TfrmManufacturersTable
     DataSource = DataSource1
     Options = []
     TabOrder = 0
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]
   end
   object bbtClose: TBitBtn
     Left = 676
@@ -61,7 +62,7 @@ object frmManufacturersTable: TfrmManufacturersTable
     ClientWidth = 756
     TabOrder = 3
     object DBComboBox1: TDBComboBox
-      Left = 32
+      Left = 16
       Height = 23
       Top = 104
       Width = 100
@@ -72,7 +73,7 @@ object frmManufacturersTable: TfrmManufacturersTable
       TabOrder = 0
     end
     object Label1: TLabel
-      Left = 32
+      Left = 16
       Height = 15
       Top = 79
       Width = 106
@@ -80,32 +81,19 @@ object frmManufacturersTable: TfrmManufacturersTable
       ParentColor = False
     end
     object Panel2: TPanel
-      Left = 168
+      Left = 144
       Height = 304
       Top = 16
-      Width = 560
-      ClientHeight = 304
-      ClientWidth = 560
+      Width = 584
+      BorderStyle = bsSingle
+      ClientHeight = 300
+      ClientWidth = 580
       TabOrder = 1
-      object DBText1: TDBText
-        Left = 96
-        Height = 30
-        Top = 16
-        Width = 376
-        Alignment = taCenter
-        AutoSize = False
-        DataField = 'Name'
-        DataSource = DataSource1
-        Font.Height = -21
-        Layout = tlCenter
-        ParentColor = False
-        ParentFont = False
-      end
       object dbedtID: TDBEdit
-        Left = 32
+        Left = 16
         Height = 23
         Top = 32
-        Width = 35
+        Width = 27
         ReadOnly = True
         AutoSize = False
         CharCase = ecNormal
@@ -113,12 +101,140 @@ object frmManufacturersTable: TfrmManufacturersTable
         TabOrder = 0
       end
       object Label2: TLabel
-        Left = 40
+        Left = 24
         Height = 15
         Top = 8
         Width = 11
         Caption = 'ID'
         ParentColor = False
+      end
+      object dbedtName: TDBEdit
+        Left = 56
+        Height = 23
+        Top = 32
+        Width = 240
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object Label3: TLabel
+        Left = 152
+        Height = 15
+        Top = 8
+        Width = 32
+        Caption = 'Name'
+        ParentColor = False
+      end
+      object dbedtAddress1: TDBEdit
+        Left = 312
+        Height = 23
+        Top = 32
+        Width = 240
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object Label4: TLabel
+        Left = 408
+        Height = 15
+        Top = 8
+        Width = 54
+        Caption = ' Address 1'
+        ParentColor = False
+      end
+      object dbedtAddress2: TDBEdit
+        Left = 56
+        Height = 23
+        Top = 88
+        Width = 240
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 3
+      end
+      object Label5: TLabel
+        Left = 144
+        Height = 15
+        Top = 64
+        Width = 54
+        Caption = ' Address 2'
+        ParentColor = False
+      end
+      object Label6: TLabel
+        Left = 408
+        Height = 15
+        Top = 64
+        Width = 21
+        Caption = 'City'
+        ParentColor = False
+      end
+      object dbedtCity: TDBEdit
+        Left = 312
+        Height = 23
+        Top = 88
+        Width = 240
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 4
+      end
+      object dbedtProvState: TDBEdit
+        Left = 56
+        Height = 23
+        Top = 144
+        Width = 32
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 5
+      end
+      object dbcbxProvState: TDBComboBox
+        Left = 104
+        Height = 23
+        Top = 144
+        Width = 52
+        ItemHeight = 15
+        MaxLength = 0
+        TabOrder = 6
+      end
+      object Label7: TLabel
+        Left = 80
+        Height = 15
+        Top = 120
+        Width = 55
+        Caption = 'Prov/State'
+        ParentColor = False
+      end
+      object dbedtCountry: TDBEdit
+        Left = 176
+        Height = 23
+        Top = 144
+        Width = 240
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 7
+      end
+      object Label8: TLabel
+        Left = 277
+        Height = 15
+        Top = 120
+        Width = 43
+        Caption = 'Country'
+        ParentColor = False
+      end
+      object Label9: TLabel
+        Left = 456
+        Height = 15
+        Top = 122
+        Width = 63
+        Caption = 'Postal Code'
+        ParentColor = False
+      end
+      object dbedtPostalCode: TDBEdit
+        Left = 432
+        Height = 23
+        Top = 144
+        Width = 120
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 8
       end
     end
   end
@@ -142,6 +258,16 @@ object frmManufacturersTable: TfrmManufacturersTable
   end
   object DataSource1: TDataSource
     left = 400
+    top = 312
+  end
+  object SQLQuery2: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    left = 480
+    top = 312
+  end
+  object DataSource2: TDataSource
+    left = 568
     top = 312
   end
 end

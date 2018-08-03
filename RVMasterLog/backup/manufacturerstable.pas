@@ -22,8 +22,8 @@ unit ManufacturersTable;
 interface
 
 uses
-  Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms, Controls,
-  Graphics, Dialogs, DbCtrls, Buttons, ExtCtrls, StdCtrls, DBGrids,
+  Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms,
+  Controls, Graphics, Dialogs, DbCtrls, Buttons, ExtCtrls, StdCtrls, DBGrids,
   //
   AppSettings, HUMessageBoxes;
 
@@ -35,13 +35,32 @@ type
     bbtClose: TBitBtn;
     bbtOK: TBitBtn;
     DataSource1: TDataSource;
+    DataSource2: TDataSource;
     DBComboBox1: TDBComboBox;
+    dbcbxProvState: TDBComboBox;
+    dbedtPostalCode: TDBEdit;
+    dbedtCountry: TDBEdit;
+    dbedtProvState: TDBEdit;
+    dbedtCity: TDBEdit;
+    dbedtAddress2: TDBEdit;
+    dbedtAddress1: TDBEdit;
+    dbedtName: TDBEdit;
     dbedtID: TDBEdit;
     DBNavigator1: TDBNavigator;
-    DBText1: TDBText;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
     Panel1: TPanel;
+    Panel2: TPanel;
     SQLite3Connection1: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
+    SQLQuery2: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
     procedure bbtCloseClick(Sender: TObject);
     procedure bbtOKClick(Sender: TObject);
@@ -152,11 +171,29 @@ begin
 
   DataSource1.DataSet := SQLquery1;
 
-  DBText1.DataSource := DataSource1;
-  DBText1.DataField := 'Name';
-
   dbedtID.Datasource := Datasource1;
   dbedtID.DataField := 'ID';
+
+  dbedtName.DataSource := DataSource1;
+  dbedtName.DataField := 'Name';
+
+  dbedtAddress1.DataSource := DataSource1;
+  dbedtAddress1.DataField := 'Address1';
+
+  dbedtAddress2.DataSource := DataSource1;
+  dbedtAddress2.DataField := 'Address2';
+
+  dbedtCity.DataSource := DataSource1;
+  dbedtCity.DataField := 'City';
+
+  dbedtCountry.DataSource := DataSource1;
+  dbedtCountry.DataField := 'Country';
+
+  dbedtPostal.DataSource := DataSource1;
+  dbedtPostal.DataField := 'PostalCode';
+
+
+
 
 
   SQLite3Connection1.Connected := True;
