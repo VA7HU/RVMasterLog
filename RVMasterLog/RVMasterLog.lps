@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="66" Y="10"/>
-        <UsageCount Value="70"/>
+        <UsageCount Value="71"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -21,7 +21,7 @@
         <UnitName Value="Main"/>
         <TopLine Value="166"/>
         <CursorPos X="19" Y="172"/>
-        <UsageCount Value="70"/>
+        <UsageCount Value="71"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
@@ -33,7 +33,7 @@
         <UnitName Value="AppSettings"/>
         <EditorIndex Value="2"/>
         <CursorPos X="16" Y="20"/>
-        <UsageCount Value="68"/>
+        <UsageCount Value="69"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -43,7 +43,7 @@
         <UnitName Value="AppInit"/>
         <EditorIndex Value="1"/>
         <CursorPos X="17" Y="108"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="68"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -52,7 +52,7 @@
         <UnitName Value="AppFinal"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="15" Y="15"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="56"/>
       </Unit4>
       <Unit5>
         <Filename Value="..\..\..\Common Folders\huconstants.pas"/>
@@ -60,7 +60,7 @@
         <UnitName Value="HUConstants"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="15" Y="15"/>
-        <UsageCount Value="51"/>
+        <UsageCount Value="52"/>
       </Unit5>
       <Unit6>
         <Filename Value="rvdata.pas"/>
@@ -72,7 +72,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="22"/>
         <CursorPos X="21" Y="8"/>
-        <UsageCount Value="51"/>
+        <UsageCount Value="52"/>
       </Unit6>
       <Unit7>
         <Filename Value="manufacturerstable.pas"/>
@@ -83,9 +83,9 @@
         <UnitName Value="ManufacturersTable"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="181"/>
-        <CursorPos X="18" Y="193"/>
-        <UsageCount Value="49"/>
+        <TopLine Value="182"/>
+        <CursorPos X="18" Y="194"/>
+        <UsageCount Value="50"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit7>
@@ -93,10 +93,9 @@
         <Filename Value="..\..\..\Common Folders\humessageboxes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUMessageBoxes"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <CursorPos Y="29"/>
-        <UsageCount Value="31"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="32"/>
       </Unit8>
       <Unit9>
         <Filename Value="humessageboxes.pas"/>
@@ -287,7 +286,7 @@
       </Position29>
       <Position30>
         <Filename Value="manufacturerstable.pas"/>
-        <Caret Line="193" Column="39" TopLine="184"/>
+        <Caret Line="193" Column="18" TopLine="181"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

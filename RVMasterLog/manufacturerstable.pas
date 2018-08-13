@@ -34,6 +34,7 @@ type
   TfrmManufacturersTable = class(TForm)
     bbtClose: TBitBtn;
     bbtOK: TBitBtn;
+    BitBtn1: TBitBtn;
     DataSource1: TDataSource;
     DataSource2: TDataSource;
     DBComboBox1: TDBComboBox;

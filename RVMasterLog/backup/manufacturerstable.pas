@@ -189,8 +189,8 @@ begin
   dbedtCountry.DataSource := DataSource1;
   dbedtCountry.DataField := 'Country';
 
-  dbedtPostal.DataSource := DataSource1;
-  dbedtPostal.DataField := 'PostalCode';
+  dbedtPostalCode.DataSource := DataSource1;
+  dbedtPostalCode.DataField := 'PostalCode';
 
 
 
