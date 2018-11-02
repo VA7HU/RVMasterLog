@@ -270,8 +270,6 @@ end;// procedure TfrmSettings.ReadSettingsINIFile
 procedure TfrmSettings.WriteSettingsINIFile;
 begin
 
-    showmessage('WriteSettingsINIFile');
-
     ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
     ApplicationINIFile := TINIFile.Create(ApplicationINIFileName);
 

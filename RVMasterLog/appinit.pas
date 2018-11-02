@@ -18,7 +18,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Aug 2018
+// Date : 2 Nov 2018
 //
 //========================================================================================
 
@@ -41,7 +41,7 @@ uses
 //========================================================================================
 const
   em1 = '    RVMasterLog Does Not Exist.'
-      + huCR
+      + K_CR
       + ' Do You Want to Create a New One ?';
 
 //========================================================================================
@@ -70,28 +70,26 @@ var
 
 begin
 
-  showmessage('Initialize');
-
   // Start the application setup
-  frmSettings.pApplicationDirectory := GetCurrentDir;
+    frmSettings.pApplicationDirectory := GetCurrentDir;
 
   // If the .ini file does not exist we display an Error message and prompt the user
   // for action.
   if frmSettings.INIFileExists then
   begin
-    frmSettings.ReadSettingsINIFile;
+    //frmSettings.ReadSettingsINIFile;
   end
   else
   begin
 
-  {  if HUErrorMsgYN(emNoFile, em1) = mrYes then
+   {if HUErrorMsgYN(emNoFile, em1) = mrYes then
     begin
       frmSettings.ReadSettingsINIFile;
     end
     else
     begin
       InitFailure := True;
-    end;// if HUErrorMsgYN(emNoFile, em1) = mrYes  }
+    end;// if HUErrorMsgYN(emNoFile, em1) = mrYes}
 
   end;// if frmSettings.INIFileExists
 
@@ -102,8 +100,8 @@ begin
 
 
 
- { if InitFailure then
-    Result := False;   }
+//  if InitFailure then
+//    Result := False;
 
  Result := True;
 
