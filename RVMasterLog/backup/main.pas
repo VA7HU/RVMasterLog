@@ -26,14 +26,14 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, ManufacturersTable, RVData, sqlite3conn;
+  AppFinal, AppInit, AppSettings, SuppliersTable, RVData, sqlite3conn;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
-    mnuSettingsDatabasesManufacturer: TMenuItem;
+    mnuSettingsDatabasesSuppliers: TMenuItem;
     mnuSettingsDatabases: TMenuItem;
     mnuSettingsDIrectories: TMenuItem;
     mnuSettings: TMenuItem;
@@ -63,7 +63,7 @@ type
     procedure mnuLogbooksRemoveClick(Sender: TObject);
     procedure mnuLogBooksSaveAsClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
-    procedure mnuSettingsDatabasesManufacturerClick(Sender: TObject);
+    procedure mnuSettingsDatabasesSuppliersClick(Sender: TObject);
     procedure mnuSettingsDIrectoriesClick(Sender: TObject);
   private
 
@@ -166,10 +166,10 @@ begin
 end;
 
 //----------------------------------------------------------------------------------------
-procedure TfrmMain.mnuSettingsDatabasesManufacturerClick(Sender: TObject);
+procedure TfrmMain.mnuSettingsDatabasesSuppliersClick(Sender: TObject);
 begin
   showmessage('Settings - Databases - Manufacturers');
-  frmManufacturerTable.ShowModal;
+  frmSuppliersTable.ShowModal;
 end;
 
 //========================================================================================

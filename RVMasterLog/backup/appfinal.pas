@@ -56,7 +56,7 @@ procedure Finalize;
 begin
 
   showmessage('Finalize');
-  frmSettings.WriteSettingsINIFile;
+  //frmSettings.WriteSettingsINIFile;
 
 end;// procedure Finalize
 

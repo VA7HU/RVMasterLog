@@ -70,12 +70,12 @@
         <UnitName Value="RVData"/>
       </Unit5>
       <Unit6>
-        <Filename Value="manufacturerstable.pas"/>
+        <Filename Value="supplierstable.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmManufacturersTable"/>
+        <ComponentName Value="frmSuppliersTable"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="ManufacturersTable"/>
+        <UnitName Value="SuppliersTable"/>
       </Unit6>
       <Unit7>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Forms\HUNagScreen Development\HUNagScreen\hunagscreen.lfm"/>

@@ -34,10 +34,15 @@ type
   TfrmManufacturersTable = class(TForm)
     bbtClose: TBitBtn;
     bbtOK: TBitBtn;
+    BitBtn1: TBitBtn;
     DataSource1: TDataSource;
     DataSource2: TDataSource;
     DBComboBox1: TDBComboBox;
     dbcbxProvState: TDBComboBox;
+    DBComboBox2: TDBComboBox;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
     dbedtPostalCode: TDBEdit;
     dbedtCountry: TDBEdit;
     dbedtProvState: TDBEdit;
@@ -48,6 +53,10 @@ type
     dbedtID: TDBEdit;
     DBNavigator1: TDBNavigator;
     Label1: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label14: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;

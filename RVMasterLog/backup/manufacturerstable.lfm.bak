@@ -1,10 +1,10 @@
 object frmManufacturersTable: TfrmManufacturersTable
-  Left = 301
-  Height = 453
-  Top = 156
+  Left = 281
+  Height = 523
+  Top = 146
   Width = 819
   Caption = 'frmManufacturersTable'
-  ClientHeight = 453
+  ClientHeight = 523
   ClientWidth = 819
   OnClose = FormClose
   OnCreate = FormCreate
@@ -13,7 +13,7 @@ object frmManufacturersTable: TfrmManufacturersTable
   object DBNavigator1: TDBNavigator
     Left = 48
     Height = 25
-    Top = 412
+    Top = 468
     Width = 241
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -32,7 +32,7 @@ object frmManufacturersTable: TfrmManufacturersTable
   object bbtClose: TBitBtn
     Left = 676
     Height = 30
-    Top = 400
+    Top = 456
     Width = 75
     DefaultCaption = True
     Kind = bkClose
@@ -43,7 +43,7 @@ object frmManufacturersTable: TfrmManufacturersTable
   object bbtOK: TBitBtn
     Left = 554
     Height = 30
-    Top = 401
+    Top = 457
     Width = 75
     Default = True
     DefaultCaption = True
@@ -53,18 +53,18 @@ object frmManufacturersTable: TfrmManufacturersTable
     TabOrder = 2
   end
   object Panel1: TPanel
-    Left = 29
-    Height = 352
-    Top = 24
+    Left = 48
+    Height = 414
+    Top = 16
     Width = 760
     BorderStyle = bsSingle
-    ClientHeight = 348
+    ClientHeight = 410
     ClientWidth = 756
     TabOrder = 3
     object DBComboBox1: TDBComboBox
       Left = 16
       Height = 23
-      Top = 104
+      Top = 136
       Width = 100
       DataField = 'Name'
       DataSource = DataSource1
@@ -75,18 +75,18 @@ object frmManufacturersTable: TfrmManufacturersTable
     object Label1: TLabel
       Left = 16
       Height = 15
-      Top = 79
+      Top = 112
       Width = 106
       Caption = 'Select Manufacturer'
       ParentColor = False
     end
     object Panel2: TPanel
       Left = 144
-      Height = 304
-      Top = 16
+      Height = 365
+      Top = 24
       Width = 584
       BorderStyle = bsSingle
-      ClientHeight = 300
+      ClientHeight = 361
       ClientWidth = 580
       TabOrder = 1
       object dbedtID: TDBEdit
@@ -236,38 +236,114 @@ object frmManufacturersTable: TfrmManufacturersTable
         MaxLength = 0
         TabOrder = 8
       end
+      object Label10: TLabel
+        Left = 272
+        Height = 15
+        Top = 184
+        Width = 53
+        Caption = 'Contacts :'
+        ParentColor = False
+      end
+      object Label11: TLabel
+        Left = 112
+        Height = 15
+        Top = 200
+        Width = 32
+        Caption = 'Name'
+        ParentColor = False
+      end
+      object Label12: TLabel
+        Left = 216
+        Height = 15
+        Top = 208
+        Width = 53
+        Caption = 'Phone Nr.'
+        ParentColor = False
+      end
+      object Label14: TLabel
+        Left = 472
+        Height = 15
+        Top = 208
+        Width = 43
+        Caption = 'Position'
+        ParentColor = False
+      end
+      object DBEdit1: TDBEdit
+        Left = 224
+        Height = 23
+        Top = 240
+        Width = 80
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 9
+      end
+      object DBEdit2: TDBEdit
+        Left = 32
+        Height = 23
+        Top = 240
+        Width = 168
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 10
+      end
+      object DBEdit3: TDBEdit
+        Left = 320
+        Height = 23
+        Top = 240
+        Width = 80
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 11
+      end
+      object DBComboBox2: TDBComboBox
+        Left = 424
+        Height = 23
+        Top = 240
+        Width = 100
+        ItemHeight = 15
+        MaxLength = 0
+        TabOrder = 12
+      end
     end
+  end
+  object BitBtn1: TBitBtn
+    Left = 432
+    Height = 30
+    Top = 456
+    Width = 75
+    Caption = 'BitBtn1'
+    TabOrder = 4
   end
   object SQLite3Connection1: TSQLite3Connection
     Connected = False
     LoginPrompt = False
     KeepConnection = False
-    left = 70
-    top = 312
+    left = 80
+    top = 32
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
-    left = 192
-    top = 312
+    left = 80
+    top = 88
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
     Params = <>
-    left = 296
-    top = 312
+    left = 91
+    top = 216
   end
   object DataSource1: TDataSource
-    left = 400
-    top = 312
+    left = 91
+    top = 272
   end
   object SQLQuery2: TSQLQuery
     FieldDefs = <>
     Params = <>
-    left = 480
-    top = 312
+    left = 96
+    top = 384
   end
   object DataSource2: TDataSource
-    left = 568
-    top = 312
+    left = 91
+    top = 328
   end
 end

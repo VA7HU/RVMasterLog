@@ -39,6 +39,15 @@ type
     DataSource2: TDataSource;
     DBComboBox1: TDBComboBox;
     dbcbxProvState: TDBComboBox;
+    DBComboBox2: TDBComboBox;
+    DBComboBox3: TDBComboBox;
+    DBComboBox4: TDBComboBox;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
     dbedtPostalCode: TDBEdit;
     dbedtCountry: TDBEdit;
     dbedtProvState: TDBEdit;
@@ -49,6 +58,10 @@ type
     dbedtID: TDBEdit;
     DBNavigator1: TDBNavigator;
     Label1: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label14: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;

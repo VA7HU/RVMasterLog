@@ -70,8 +70,6 @@ var
 
 begin
 
-  //  showmessage('Initialize');
-
   // Start the application setup
     frmSettings.pApplicationDirectory := GetCurrentDir;
 
@@ -79,19 +77,19 @@ begin
   // for action.
   if frmSettings.INIFileExists then
   begin
-    //frmSettings.ReadSettingsINIFile;
+    frmSettings.ReadSettingsINIFile;
   end
   else
   begin
 
-   {if HUErrorMsgYN(emNoFile, em1) = mrYes then
+   if HUErrorMsgYN(emNoFile, em1) = mrYes then
     begin
       frmSettings.ReadSettingsINIFile;
     end
     else
     begin
       InitFailure := True;
-    end;// if HUErrorMsgYN(emNoFile, em1) = mrYes}
+    end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
 
   end;// if frmSettings.INIFileExists
 

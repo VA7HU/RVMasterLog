@@ -81,9 +81,9 @@ object frmMain: TfrmMain
       end
       object mnuSettingsDatabases: TMenuItem
         Caption = 'Databases'
-        object mnuSettingsDatabasesManufacturer: TMenuItem
-          Caption = 'Manufacturer'
-          OnClick = mnuSettingsDatabasesManufacturerClick
+        object mnuSettingsDatabasesSuppliers: TMenuItem
+          Caption = 'Suppliers'
+          OnClick = mnuSettingsDatabasesSuppliersClick
         end
       end
     end
