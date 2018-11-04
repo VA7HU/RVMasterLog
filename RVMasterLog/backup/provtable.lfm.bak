@@ -6,6 +6,8 @@ object frmProvTable: TfrmProvTable
   Caption = 'frmProvTable'
   ClientHeight = 379
   ClientWidth = 598
+  OnCreate = FormCreate
+  OnShow = FormShow
   LCLVersion = '1.8.4.0'
   object BitBtn1: TBitBtn
     Left = 416
@@ -65,15 +67,36 @@ object frmProvTable: TfrmProvTable
     ModalResult = 11
     TabOrder = 4
   end
+  object dbedtAbbreviation: TDBEdit
+    Left = 408
+    Height = 23
+    Top = 111
+    Width = 48
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object dbedtFullName: TDBEdit
+    Left = 368
+    Height = 23
+    Top = 154
+    Width = 138
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 6
+  end
   object SQLTransaction1: TSQLTransaction
     Active = False
+    Database = SQLite3Connection1
     left = 168
     top = 272
   end
   object SQLite3Connection1: TSQLite3Connection
     Connected = False
     LoginPrompt = False
+    DatabaseName = 'C:\Users\Hew\Documents\Programming Projects\Lazarus\HULibs Development\Working Copy\Lazarus Libraries\Databases\HUDB1 Development\HUDB1.sl3'
     KeepConnection = False
+    Transaction = SQLTransaction1
     left = 56
     top = 264
   end

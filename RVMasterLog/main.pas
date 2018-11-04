@@ -13,7 +13,6 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          ProvTable : frmProvTable.ShowModal
 //
 // Ver. : 1.0.0
 //
@@ -27,14 +26,13 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, ProvTable, SuppliersTable, RVData, sqlite3conn;
+  AppFinal, AppInit, AppSettings, SuppliersTable, RVData, sqlite3conn;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
-    mnuSettingsDatabasesCommonProvTable: TMenuItem;
     mnuSettingsDatabasesCommon: TMenuItem;
     mnuSettingsDatabases: TMenuItem;
     mnuSettingsDIrectories: TMenuItem;
@@ -66,7 +64,6 @@ type
     procedure mnuLogbooksRemoveClick(Sender: TObject);
     procedure mnuLogBooksSaveAsClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
-    procedure mnuSettingsDatabasesCommonProvTableClick(Sender: TObject);
     procedure mnuSettingsDirectoriesClick(Sender: TObject);
   private
 
@@ -166,12 +163,6 @@ procedure TfrmMain.mnuSettingsDirectoriesClick(Sender: TObject);
 begin
   frmSettings.ShowModal;
 end;// procedure TfrmMain.mnuSettingsDirectoriesClick
-
-//----------------------------------------------------------------------------------------
-procedure TfrmMain.mnuSettingsDatabasesCommonProvTableClick(Sender: TObject);
-begin
-  frmProvTable.ShowModal;
-end;// procedure TfrmMain.mnuSettingsDatabasesCommonProvTableClick
 
 //----------------------------------------------------------------------------------------
 
