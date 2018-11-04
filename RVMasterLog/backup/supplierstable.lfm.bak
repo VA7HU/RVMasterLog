@@ -286,7 +286,7 @@ object frmSuppliersTable: TfrmSuppliersTable
         MaxLength = 0
         TabOrder = 10
       end
-      object DBComboBox2: TDBComboBox
+      object dbcbxContact1Position: TDBComboBox
         Left = 424
         Height = 23
         Top = 240
@@ -331,7 +331,7 @@ object frmSuppliersTable: TfrmSuppliersTable
         MaxLength = 0
         TabOrder = 15
       end
-      object DBComboBox4: TDBComboBox
+      object dbcbxContact3Position: TDBComboBox
         Left = 424
         Height = 23
         Top = 320
@@ -350,7 +350,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     Caption = 'BitBtn1'
     TabOrder = 4
   end
-  object DBComboBox3: TDBComboBox
+  object dbcbxContact2Position: TDBComboBox
     Left = 624
     Height = 23
     Top = 328

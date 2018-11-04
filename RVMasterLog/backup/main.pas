@@ -13,10 +13,11 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
+//          ProvTable : frmProvTable.ShowModal
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Aug 2018
+// Date : 4 Oct 2018
 //
 //========================================================================================
 
@@ -26,14 +27,15 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, SuppliersTable, RVData, sqlite3conn;
+  AppFinal, AppInit, AppSettings, ProvTable, SuppliersTable, RVData, sqlite3conn;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
-    mnuSettingsDatabasesSuppliers: TMenuItem;
+    mnuSettingsDatabasesCommonProvTable: TMenuItem;
+    mnuSettingsDatabasesCommon: TMenuItem;
     mnuSettingsDatabases: TMenuItem;
     mnuSettingsDIrectories: TMenuItem;
     mnuSettings: TMenuItem;
@@ -55,6 +57,7 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure MenuItem1Click(Sender: TObject);
     procedure mnuLogbooksNewClick(Sender: TObject);
     procedure mnuLogbooksExitClick(Sender: TObject);
     procedure mnuLogbooksOpenLogbookClick(Sender: TObject);
@@ -63,7 +66,8 @@ type
     procedure mnuLogbooksRemoveClick(Sender: TObject);
     procedure mnuLogBooksSaveAsClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
-    procedure mnuSettingsDatabasesSuppliersClick(Sender: TObject);
+    procedure mnuSettingsDatabasesCommonClick(Sender: TObject);
+    procedure mnuSettingsDatabasesCommonProvTableClick(Sender: TObject);
     procedure mnuSettingsDIrectoriesClick(Sender: TObject);
   private
 
@@ -159,18 +163,25 @@ begin
 end;// procedure TfrmMain.mnuFileExitClick
 
 //========================================================================================
-procedure TfrmMain.mnuSettingsDIrectoriesClick(Sender: TObject);
+procedure TfrmMain.mnuSettingsDirectoriesClick(Sender: TObject);
 begin
-  showmessage('Settings - Directories');
   frmSettings.ShowModal;
-end;
+end;// procedure TfrmMain.mnuSettingsDirectoriesClick
 
 //----------------------------------------------------------------------------------------
-procedure TfrmMain.mnuSettingsDatabasesSuppliersClick(Sender: TObject);
+procedure TfrmMain.mnuSettingsDatabasesCommonClick(Sender: TObject);
 begin
-  showmessage('Settings - Databases - Manufacturers');
-  frmSuppliersTable.ShowModal;
-end;
+  showmessage('Common Databases');
+end;// procedure TfrmMain.mnuSettingsDatabasesCommonClick
+
+//----------------------------------------------------------------------------------------
+procedure TfrmMain.mnuSettingsDatabasesCommonProvTableClick(Sender: TObject);
+begin
+  frmProvTable.ShowModal;
+end;// procedure TfrmMain.mnuSettingsDatabasesCommonProvTableClick
+
+//----------------------------------------------------------------------------------------
+
 
 //========================================================================================
 //          COMMAND BUTTON ROUTINES
@@ -219,6 +230,12 @@ begin
   end;// if Initialize
 
 end;// procedure TfrmMain.FormShow(Sender: TObject);
+
+procedure TfrmMain.MenuItem1Click(Sender: TObject);
+begin
+
+end;
+
 
 //========================================================================================
 

@@ -93,13 +93,6 @@ begin
 
   end;// if frmSettings.INIFileExists
 
-
-
-
-
-
-
-
 //  if InitFailure then
 //    Result := False;
 

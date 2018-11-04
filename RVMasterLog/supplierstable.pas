@@ -102,8 +102,8 @@ uses
 //========================================================================================
 const
 
-  cstrApplicationDBName = 'Application.db3';
-  cstrManufacturersTableName = 'Manufacturers';
+  cstrApplicationDBName = 'HUDB1.sl3';
+  cstrManufacturersTableName = 'Suppliers';
 
 //========================================================================================
 //          PUBLIC CONSTANTS

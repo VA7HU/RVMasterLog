@@ -39,9 +39,9 @@ type
     DataSource2: TDataSource;
     dbCbxSelectSupplier: TDBComboBox;
     dbcbxProvState: TDBComboBox;
-    DBComboBox2: TDBComboBox;
-    DBComboBox3: TDBComboBox;
-    DBComboBox4: TDBComboBox;
+    dbcbxContact1Position: TDBComboBox;
+    dbcbxContact2Position: TDBComboBox;
+    dbcbxContact3Position: TDBComboBox;
     dbedtContact1Phone: TDBEdit;
     dbedtContact1Name: TDBEdit;
     dbedtContact2Name: TDBEdit;
