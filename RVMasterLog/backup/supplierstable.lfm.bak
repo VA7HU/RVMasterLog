@@ -362,18 +362,24 @@ object frmSuppliersTable: TfrmSuppliersTable
   object SQLite3Connection1: TSQLite3Connection
     Connected = False
     LoginPrompt = False
+    DatabaseName = 'C:\Users\Hew\Documents\Programming Projects\Lazarus\HULibs Development\Working Copy\Lazarus Libraries\Databases\HUDB1 Development\HUDB1.sl3'
     KeepConnection = False
+    Transaction = SQLTransaction1
     left = 80
     top = 32
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
+    Database = SQLite3Connection1
     left = 80
     top = 88
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
     Params = <>
+    DataSource = DataSource1
     left = 91
     top = 216
   end

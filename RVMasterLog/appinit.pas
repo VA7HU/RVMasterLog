@@ -18,7 +18,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 4 Nov 2018
+// Date : 5 Nov 2018
 //
 //========================================================================================
 
@@ -64,11 +64,23 @@ function Initialize : Boolean;
 
 var
   InitFailure : Boolean;
+  vstrNewUserDir : string;
 
 begin
 
-  // Start the application setup
     frmSettings.pApplicationDirectory := GetCurrentDir;
+    //showmessage(GetUserDir);
+    if frmSettings.pSettingsDirectory  = '' then
+     begin
+      showmessage('Creating Dirs');
+      vstrNewUserDir := GetUserDir + 'AppData\Roaming\RVMasterLog';
+      showmessage(vstrNewUserDir);
+      CreateDir(vstrNewUserDir);
+      frmSettings.pSettingsDirectory := vstrNewUserDir;
+      showmessage('pSettings - ' + frmSettings.pSettingsDirectory);
+     end
+    else
+      showmessage(frmSettings.pSettingsDirectory);
 
   // If the .ini file does not exist we display an Error message and prompt the user
   // for action.
