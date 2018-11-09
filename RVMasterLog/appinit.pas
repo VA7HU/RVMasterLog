@@ -18,7 +18,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 5 Nov 2018
+// Date : 09 Nov 2018
 //
 //========================================================================================
 
@@ -68,16 +68,14 @@ var
 
 begin
 
+    // Get Application Directory
     frmSettings.pApplicationDirectory := GetCurrentDir;
-    //showmessage(GetUserDir);
-    if frmSettings.pSettingsDirectory  = '' then
+
+    // Create Application User Directories if Necessary
+    if frmSettings.pUserDirectory  = '' then
      begin
       showmessage('Creating Dirs');
-      vstrNewUserDir := GetUserDir + 'AppData\Roaming\RVMasterLog';
-      showmessage(vstrNewUserDir);
-      CreateDir(vstrNewUserDir);
-      frmSettings.pSettingsDirectory := vstrNewUserDir;
-      showmessage('pSettings - ' + frmSettings.pSettingsDirectory);
+      frmSettings.CreateUserDirectories;
      end
     else
       showmessage(frmSettings.pSettingsDirectory);

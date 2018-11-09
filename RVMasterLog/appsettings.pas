@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Aug 2018
+// Date : 09 Nov 2018
 //
 //========================================================================================
 
@@ -57,11 +57,14 @@ type
 
   private
     fApplicationDirectory : string;
+    fUserDirectory : string;
     fSettingsDirectory : string;
     fLogbooksDirectory : string;
     fBackupsDirectory : string;
     function GetApplicationDirectory : string;
     procedure SetApplicationDirectory(Dir : string);
+    function GetUserDirectory : string;
+    procedure SetUserDirectory(Dir : string);
     function GetSettingsDirectory : string;
     procedure SetSettingsDirectory(Dir : string);
     function GetLogbooksDirectory : string;
@@ -71,6 +74,7 @@ type
 
   public
     property pApplicationDirectory : string read GetApplicationDirectory write SetApplicationDirectory;
+    property pUserDirectory : string read GetUserDirectory write SetUserDirectory;
     property pSettingsDirectory : string read GetSettingsDirectory write SetSettingsDirectory;
     property pLogbooksDirectory : string read GetLogbooksDirectory write SetLogbooksDirectory;
     property pBackupsDirectory : string read GetBackupsDirectory write SetBackupsDirectory;
@@ -78,6 +82,7 @@ type
     function INIFileExists : Boolean;
     procedure ReadSettingsINIFile;
     procedure WriteSettingsINIFile;
+    function CreateUserDirectories : Boolean;
 
   end;// TfrmSettings
 
@@ -96,6 +101,8 @@ implementation
 //          PUBLIC CONSTANTS
 //========================================================================================
 
+//'AppData\Roaming\RVMasterLog'
+
 //========================================================================================
 //          PRIVATE VARIABLES
 //========================================================================================
@@ -107,10 +114,6 @@ implementation
 //========================================================================================
 //          PRIVATE ROUTINES
 //========================================================================================
-
-//========================================================================================
-//          PUBLIC ROUTINES
-//========================================================================================
 function TfrmSettings.GetApplicationDirectory: string;
 begin
    Result := fApplicationDirectory;
@@ -121,6 +124,18 @@ procedure TfrmSettings.SetApplicationDirectory(Dir: string);
 begin
     fApplicationDirectory := Dir;
 end;// procedure TfrmSettings.SetApplicationDirectory
+
+//========================================================================================
+function TfrmSettings.GetUserDirectory: string;
+begin
+   Result := fUserDirectory;
+end;// function TfrmSettings.GetUserDirectory
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetUserDirectory(Dir: string);
+begin
+    fUserDirectory := Dir;
+end;// procedure TfrmSettings.SetUserDirectory
 
 //========================================================================================
 function TfrmSettings.GetSettingsDirectory: string;
@@ -157,6 +172,27 @@ procedure TfrmSettings.SetBackupsDirectory(Dir: string);
 begin
     fBackupsDirectory := Dir;
 end;// procedure TfrmSettings.SetBackupsDirectory
+
+
+//========================================================================================
+//          PUBLIC ROUTINES
+//========================================================================================
+function TfrmSettings.CreateUserDirectories : Boolean;
+var
+  vstrNewUserDir : string;
+begin
+
+  vstrNewUserDir := GetUserDir + 'AppData\Roaming\RVMasterLog';
+  showmessage('Creating User Directory');
+  CreateDir(vstrNewUserDir);
+  frmSettings.pUserDirectory := vstrNewUserDir;
+
+        // Settings Directory
+      //frmSettings.pSettingsDirectory := vstrNewUserDir;
+      //showmessage('pSettings - ' + frmSettings.pSettingsDirectory);
+
+
+end;// function CreateUserDirectories
 
 //========================================================================================
 //          PROPERTY ROUTINES
@@ -200,13 +236,15 @@ end;// procedure TfrmSettings.edtSettingsDirectoryMouseUp
 
 const
 
+  cstrUserDirectoryPath = 'AppData\Roaming\RVMasterLog';
   cstrSettingsDirectoryName = 'RVMasterLog';
   cstrLogbooksDirectoryName = 'Logbooks';
   cstrBackupsDirectoryName = 'Backups';
 
   cstrApplicationINIFileName = 'RVMasterLog.ini';
 
-  cstrSectionDirectories = 'DIRECTORIES';
+  cstrUserDirectories = 'USER DIRECTORIES';
+  cstrKeyuserDirectory = 'User Directory';
   cstrKeySettingsDirectory = 'Settings Directory';
   cstrKeyLogbooksDirectory = 'Logbooks Directory';
   cstrKeyBackupsDirectory = 'Backups Directory';
@@ -239,15 +277,15 @@ begin
   // DIRECTORY SECTION
 
     // Settings Directory
-  vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
-                                                        cstrKeySettingsDirectory,
+  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
+                                                        cstrKeyUserDirectory,
                                                         '');
   if vstrTStr = '' then
-    pSettingsDirectory := GetUserDir {+ cstrSettingsDirectoryName};
+    pUserDirectory := GetUserDir + cstrUserDirectoryPath;
   pSettingsDirectory := vstrTStr;
 
     // Logbooks Directory
-  vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
+  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                             cstrKeyLogbooksDirectory,
                                             '');
   if vstrTStr = '' then
@@ -255,7 +293,7 @@ begin
   pLogbooksDirectory := vstrTStr;
 
   // Backups Directory
-  vstrTStr := ApplicationINIFile.ReadString(cstrSectionDirectories,
+  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                             cstrKeyBackupsDirectory,
                                             '');
   if vstrTStr = '' then
@@ -273,15 +311,19 @@ begin
     ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
     ApplicationINIFile := TINIFile.Create(ApplicationINIFileName);
 
-    ApplicationINIFile.WriteString(cstrSectionDirectories,
+    ApplicationINIFile.WriteString(cstrUserDirectories,
+                                   cstrKeyUserDirectory,
+                                   pUserDirectory);
+
+    ApplicationINIFile.WriteString(cstrUserDirectories,
                                     cstrKeySettingsDirectory,
                                     pSettingsDirectory);
 
-    ApplicationINIFile.WriteString(cstrSectionDirectories,
+    ApplicationINIFile.WriteString(cstrUserDirectories,
                                     cstrKeyLogbooksDirectory,
                                     pLogbooksDirectory);
 
-    ApplicationINIFile.WriteString(cstrSectionDirectories,
+    ApplicationINIFile.WriteString(cstrUserDirectories,
                                     cstrKeyBackupsDirectory,
                                     pBackupsDirectory);
 
