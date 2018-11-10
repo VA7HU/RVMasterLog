@@ -18,7 +18,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 09 Nov 2018
+// Date : 10 Nov 2018
 //
 //========================================================================================
 
@@ -37,9 +37,9 @@ implementation
 //          PRIVATE CONSTANTS
 //========================================================================================
 const
-  em1 = '    RVMasterLog Does Not Exist.'
-      + K_CR
-      + ' Do You Want to Create a New One ?';
+  imNoINIFile = '    The file RVMasterLog.ini Does Not Exist.'
+              + K_CR
+              + ' Is this an Initial installation of RVMasterLog ?';
 
 //========================================================================================
 //          PUBLIC CONSTANTS
@@ -68,36 +68,49 @@ var
 
 begin
 
-    // Get Application Directory
-    frmSettings.pApplicationDirectory := GetCurrentDir;
+  InitFailure := False;
 
-    // Create Application User Directories if Necessary
-    if frmSettings.pUserDirectory  = '' then
-     begin
-      showmessage('Creating Dirs');
-      frmSettings.CreateUserDirectories;
-      //vstrNewUserDir := GetUserDir + 'AppData\Roaming\RVMasterLog';
-      //showmessage('Creating User Directory');
-      //CreateDir(vstrNewUserDir);
-      //frmSettings.pUserDirectory := vstrNewUserDir;
+  // Get Application Directory
+  frmSettings.pApplicationDirectory := GetCurrentDir;
 
-
-     end
-    else
-      showmessage(frmSettings.pSettingsDirectory);
-
-  // If the .ini file does not exist we display an Error message and prompt the user
-  // for action.
+  // If the .ini file exists we read it.
+  //
+  //If it does not there are only two possibilities:
+  //
+  //   1. This is an initial installation and it has not been created yet; or,
+  //
+  //   2. It has somehow disappeared.
+  //
+  // We display an Information message and give the user the option of either creating a
+  // default .ini file or closing the application and loading a backup .ini file or
+  // re-installing the appplication.
+  //
   if frmSettings.INIFileExists then
   begin
+
+
+
     frmSettings.ReadSettingsINIFile;
   end
   else
   begin
-
-   if HUErrorMsgYN(emNoFile, em1) = mrYes then
+    if HUInformationMsgYN('', imNoINIFile) = mrYes then
     begin
-      frmSettings.ReadSettingsINIFile;
+
+{     // If the User Directory has not been set then this is an Initial installation
+      if frmSettings.pUserDirectory  = '' then
+      begin
+
+        showmessage('Creating Dirs');
+
+        if not frmSettings.CreateUserDirectories then
+        begin
+          showmessage('Not Created');
+          InitFailure := True;
+        end;// if frmSettings.pUserDirectory  = ''
+
+      frmSettings.ReadSettingsINIFile; }
+
     end
     else
     begin
@@ -106,10 +119,46 @@ begin
 
   end;// if frmSettings.INIFileExists
 
-//  if InitFailure then
-//    Result := False;
 
- Result := True;
+
+
+
+
+
+ { if InitFailure then
+  begin
+    Result := False;
+    Exit;
+  end; }
+
+
+
+
+
+
+
+      {begin
+        showmessage('Creating Dirs');
+      if not frmSettings.CreateUserDirectories then
+      begin
+        showmessage('Not Created');
+        InitFailure := True;
+      end
+      else
+        showmessage('Not created');
+    end;// if frmSettings.pUserDirectory  = ''
+
+    if InitFailure then
+    begin
+      Result := False;
+      Exit;
+    end; }
+
+
+  if InitFailure then
+    Result := False;
+
+  Result := True;
 
 end;// function Initialize
 
