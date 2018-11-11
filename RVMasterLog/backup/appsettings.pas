@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 09 Nov 2018
+// Date : 11 Nov 2018
 //
 //========================================================================================
 
@@ -55,12 +55,15 @@ type
 
   private
     fApplicationDirectory : string;
+    fSystemUserDirectory : string;
     fUserDirectory : string;
     fSettingsDirectory : string;
     fLogbooksDirectory : string;
     fBackupsDirectory : string;
     function GetApplicationDirectory : string;
     procedure SetApplicationDirectory(Dir : string);
+    function GetSystemUserDirectory : string;
+    procedure SetSystemUserDirectory(Dir : string);
     function GetUserDirectory : string;
     procedure SetUserDirectory(Dir : string);
     function GetSettingsDirectory : string;
@@ -72,6 +75,7 @@ type
 
   public
     property pApplicationDirectory : string read GetApplicationDirectory write SetApplicationDirectory;
+    property pSystemUserDirectory : string read GetUserDirectory write SetUserDirectory;
     property pUserDirectory : string read GetUserDirectory write SetUserDirectory;
     property pSettingsDirectory : string read GetSettingsDirectory write SetSettingsDirectory;
     property pLogbooksDirectory : string read GetLogbooksDirectory write SetLogbooksDirectory;
@@ -126,8 +130,7 @@ var
 begin
 
     // USER DIRECTORY
-  vstrNewDir := GetUserDir + cstrUserDirectoryPath;
-//  showmessage(vstrNewDir);
+  vstrNewDir := frmSettings.pSystemUserDirectory + cstrUserDirectoryPath;
   if not CreateDir(vstrNewDir)then
   begin
     showmessage('USER DIR FAILED');
@@ -137,7 +140,7 @@ begin
   else
     showmessage('USER DIR CREATED');
 
-  if Result := False then
+  if Result = False then
     Exit;
 
   frmSettings.pUserDirectory := vstrNewDir;
@@ -156,9 +159,8 @@ begin
   vstrNewDir := pUserDirectory + '\' + cstrBackupsDirectoryName;
   CreateDir(vstrNewDir);
   frmSettings.pBackupsDirectory := vstrNewDir;
-  showmessage('pBackups Dir - ' + pBackupsDirectory);
 
-  //Result := False;
+  Result := True;
 
 end;// function CreateUserDirectories
 
@@ -187,6 +189,21 @@ procedure TfrmSettings.SetUserDirectory(Dir: string);
 begin
     fUserDirectory := Dir;
 end;// procedure TfrmSettings.SetUserDirectory
+
+//========================================================================================
+function TfrmSettings.GetSystemUserDirectory: string;
+begin
+   Result := fSystemUserDirectory;
+end;// function TfrmSettings.GetSystemUserDirectory
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetSystemUserDirectory(Dir: string);
+begin
+    fSystemUserDirectory := Dir;
+end;// procedure TfrmSettings.SetSystemUserDirectory
+
+//========================================================================================
+
 
 //========================================================================================
 function TfrmSettings.GetSettingsDirectory: string;
@@ -279,7 +296,8 @@ var
 function TfrmSettings.INIFileExists : Boolean;
 begin
   ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
-  Result := FileExists(ApplicationINIFileName);
+  showmessage(ApplicationINIFileName);
+  Result :=  FileExists(ApplicationINIFileName);
 end;// function TfrmAppSetupApplicationDirectoryp.INIFileExists
 
 //----------------------------------------------------------------------------------------
@@ -300,22 +318,26 @@ begin
     // USER Directory
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                                         cstrKeyUserDirectory,
-                                                        '');
+                                                        pSystemUserDirectory);
 
-    // SETTINGS DIRECTORY
+{  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
+                                                        cstrKeySystemUserDirectory,
+                                                        pSystemUserDirectory); }
+
+  // SETTINGS DIRECTORY
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                                       cstrKeySettingsDirectory,
-                                                      '');
+                                                      pSystemUserDirectory);
 
     // LOGBOOKS DIRECTORY
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                             cstrKeyLogbooksDirectory,
-                                            '');
+                                            pSystemUserDirectory);
 
     // BACKUPS DIRECTORY
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                             cstrKeyBackupsDirectory,
-                                            '');
+                                            pSystemUserDirectory);
 
   ApplicationINIFile.Free;
 
@@ -331,6 +353,10 @@ begin
     ApplicationINIFile.WriteString(cstrUserDirectories,
                                    cstrKeyUserDirectory,
                                    pUserDirectory);
+
+{    ApplicationINIFile.WriteString(cstrUserDirectories,
+                                   cstrKeySystemUserDirectory,
+                                   pSystemUserDirectory); }
 
     ApplicationINIFile.WriteString(cstrUserDirectories,
                                     cstrKeySettingsDirectory,

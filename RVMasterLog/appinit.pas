@@ -18,7 +18,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 10 Nov 2018
+// Date : 11 Nov 2018
 //
 //========================================================================================
 
@@ -70,8 +70,9 @@ begin
 
   InitFailure := False;
 
-  // Get Application Directory
+  // Get the reqired System Directories
   frmSettings.pApplicationDirectory := GetCurrentDir;
+  frmSettings.pSystemUserDirectory := GetUserDir;
 
   // If the .ini file exists we read it.
   //
@@ -87,15 +88,16 @@ begin
   //
   if frmSettings.INIFileExists then
   begin
-    frmSettings.ReadSettingsINIFile;
+     frmSettings.ReadSettingsINIFile;
   end
   else
   begin
+
     if HUInformationMsgYN('', imNoINIFile) = mrYes then
     begin
 
-{     // If the User Directory has not been set then this is an Initial installation
-      if frmSettings.pUserDirectory  = '' then
+      // If the User Directory has not been set then this is an Initial installation
+      if frmSettings.pUserDirectory  = frmSettings.pSystemUserDirectory then
       begin
 
         showmessage('Creating Dirs');
@@ -106,54 +108,24 @@ begin
           InitFailure := True;
         end;// if frmSettings.pUserDirectory  = ''
 
-      frmSettings.ReadSettingsINIFile; }
+        frmSettings.ReadSettingsINIFile;
+
+      end;// if frmSettings.pUserDirectory  = ''
 
     end
     else
     begin
+      showmessage('Must Close');
       InitFailure := True;
     end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
 
   end;// if frmSettings.INIFileExists
 
-
-
-
-
-
-
- { if InitFailure then
-  begin
-    Result := False;
-    Exit;
-  end; }
-
-
-
-
-
-
-
-      {begin
-        showmessage('Creating Dirs');
-      if not frmSettings.CreateUserDirectories then
-      begin
-        showmessage('Not Created');
-        InitFailure := True;
-      end
-      else
-        showmessage('Not created');
-    end;// if frmSettings.pUserDirectory  = ''
-
-    if InitFailure then
-    begin
-      Result := False;
-      Exit;
-    end; }
-
-
   if InitFailure then
-    Result := False;
+  begin
+    showmessage('Halting');
+    Halt;
+  end;
 
   Result := True;
 
