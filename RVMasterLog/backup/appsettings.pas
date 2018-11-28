@@ -319,25 +319,25 @@ begin
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                                         cstrKeyUserDirectory,
                                                         pSystemUserDirectory);
-
-{  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
-                                                        cstrKeySystemUserDirectory,
-                                                        pSystemUserDirectory); }
+  pSystemUserDirectory := vstrTStr;
 
   // SETTINGS DIRECTORY
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                                       cstrKeySettingsDirectory,
-                                                      pSystemUserDirectory);
+                                                      pSettingsDirectory);
+  pSettingsDirectory := vstrTStr;
 
     // LOGBOOKS DIRECTORY
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                             cstrKeyLogbooksDirectory,
-                                            pSystemUserDirectory);
+                                            pLogbooksDirectory);
+  pLogbooksDirectory := vstrTStr;
 
     // BACKUPS DIRECTORY
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                             cstrKeyBackupsDirectory,
-                                            pSystemUserDirectory);
+                                            pBackupsDirectory);
+  pBackupsDirectory := vstrTStr;
 
   ApplicationINIFile.Free;
 
@@ -353,10 +353,6 @@ begin
     ApplicationINIFile.WriteString(cstrUserDirectories,
                                    cstrKeyUserDirectory,
                                    pUserDirectory);
-
-{    ApplicationINIFile.WriteString(cstrUserDirectories,
-                                   cstrKeySystemUserDirectory,
-                                   pSystemUserDirectory); }
 
     ApplicationINIFile.WriteString(cstrUserDirectories,
                                     cstrKeySettingsDirectory,

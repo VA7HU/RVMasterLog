@@ -13,10 +13,11 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
+//          HUCountruDB : dlgHUCountryDB.ShowModal
 //
 // Ver. : 1.0.0
 //
-// Date : 4 Oct 2018
+// Date : 28 Nov 2018
 //
 //========================================================================================
 
@@ -26,13 +27,16 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, SuppliersTable, RVData, sqlite3conn;
+  AppFinal, AppInit, AppSettings, SuppliersTable, RVData, sqlite3conn,
+  // HULibrary Units
+  HUCountryDB;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    mnuSettingsCommonHUCountryDB: TMenuItem;
     mnuSettingsDatabasesCommon: TMenuItem;
     mnuSettingsDatabases: TMenuItem;
     mnuSettingsDIrectories: TMenuItem;
@@ -55,7 +59,7 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure MenuItem1Click(Sender: TObject);
+    procedure mnuSettingsDatabasesCommonHUCountryDBClick(Sender: TObject);
     procedure mnuLogbooksNewClick(Sender: TObject);
     procedure mnuLogbooksExitClick(Sender: TObject);
     procedure mnuLogbooksOpenLogbookClick(Sender: TObject);
@@ -64,6 +68,7 @@ type
     procedure mnuLogbooksRemoveClick(Sender: TObject);
     procedure mnuLogBooksSaveAsClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
+    procedure mnuSettingsDatabasesCommonClick(Sender: TObject);
     procedure mnuSettingsDirectoriesClick(Sender: TObject);
   private
 
@@ -127,6 +132,11 @@ begin
  showmessage('Save Logbook');
 end;// procedure TfrmMain.mnuLogbooksSaveClick
 
+procedure TfrmMain.mnuSettingsDatabasesCommonClick(Sender: TObject);
+begin
+
+end;// procedure TfrmMain.mnuSettingsDatabasesCommonClick
+
 //----------------------------------------------------------------------------------------
 procedure TfrmMain.mnuLogBooksSaveAsClick(Sender: TObject);
 begin
@@ -163,6 +173,11 @@ procedure TfrmMain.mnuSettingsDirectoriesClick(Sender: TObject);
 begin
   frmSettings.ShowModal;
 end;// procedure TfrmMain.mnuSettingsDirectoriesClick
+
+procedure TfrmMain.mnuSettingsDatabasesCommonHUCountryDBClick(Sender: TObject);
+begin
+  dlgHUCountryDB.ShowModal;
+end;// procedure TfrmMain.mnuSettingsCommonHUCountryDBClick
 
 //----------------------------------------------------------------------------------------
 
@@ -214,12 +229,6 @@ begin
   end;// if Initialize
 
 end;// procedure TfrmMain.FormShow(Sender: TObject);
-
-procedure TfrmMain.MenuItem1Click(Sender: TObject);
-begin
-
-end;
-
 
 //========================================================================================
 

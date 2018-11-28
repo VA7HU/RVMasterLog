@@ -72,14 +72,7 @@ begin
 
   // Get the reqired System Directories
   frmSettings.pApplicationDirectory := GetCurrentDir;
-
-         showmessage('1 ' + frmSettings.pApplicationDirectory);
-         showmessage('1 ' + frmSettings.pUserDirectory);
-
   frmSettings.pSystemUserDirectory := GetUserDir;
-  showmessage('2 ' + frmSettings.pApplicationDirectory);
-         showmessage('2 ' + frmSettings.pUserDirectory);
-
 
   // If the .ini file exists we read it.
   //
@@ -102,8 +95,6 @@ begin
 
     if HUInformationMsgYN('', imNoINIFile) = mrYes then
     begin
-
-       showmessage(frmSettings.pUserDirectory);
 
       // If the User Directory has not been set then this is an Initial installation
       if frmSettings.pUserDirectory  = frmSettings.pSystemUserDirectory then

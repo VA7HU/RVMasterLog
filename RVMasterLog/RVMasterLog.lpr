@@ -14,7 +14,7 @@ program RVMasterLog;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Nov 2018
+// Date : 28 Nov 2018
 //
 //========================================================================================
 
@@ -25,7 +25,9 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms,
   // Application Units
-  Main, AppInit, AppFinal, RVData, SuppliersTable, AppSettings;
+  AppFinal, AppInit, AppSettings, Main, RVData, SuppliersTable,
+  // HULibrary Units
+  HUCountryDB;
 
 {$R *.res}
 
@@ -36,6 +38,7 @@ begin
   Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TfrmRVData, frmRVData);
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
+  Application.CreateForm(TdlgHUCountryDB, dlgHUCountryDB);
   Application.Run;
 end.
 

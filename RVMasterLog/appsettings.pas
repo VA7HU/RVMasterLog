@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 11 Nov 2018
+// Date : 28 Nov 2018
 //
 //========================================================================================
 
@@ -319,21 +319,25 @@ begin
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                                         cstrKeyUserDirectory,
                                                         pSystemUserDirectory);
+  pSystemUserDirectory := vstrTStr;
 
   // SETTINGS DIRECTORY
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                                       cstrKeySettingsDirectory,
-                                                      pSystemUserDirectory);
+                                                      pSettingsDirectory);
+  pSettingsDirectory := vstrTStr;
 
     // LOGBOOKS DIRECTORY
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                             cstrKeyLogbooksDirectory,
-                                            pSystemUserDirectory);
+                                            pLogbooksDirectory);
+  pLogbooksDirectory := vstrTStr;
 
     // BACKUPS DIRECTORY
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                             cstrKeyBackupsDirectory,
-                                            pSystemUserDirectory);
+                                            pBackupsDirectory);
+  pBackupsDirectory := vstrTStr;
 
   ApplicationINIFile.Free;
 
