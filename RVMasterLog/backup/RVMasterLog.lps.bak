@@ -21,7 +21,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
-        <TopLine Value="52"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="12"/>
         <CursorPos Y="62"/>
         <UsageCount Value="109"/>
         <Loaded Value="True"/>
@@ -34,10 +35,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="316"/>
-        <CursorPos X="4" Y="328"/>
+        <TopLine Value="3"/>
+        <CursorPos X="13" Y="20"/>
         <UsageCount Value="106"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -47,8 +47,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="72"/>
-        <CursorPos X="8" Y="96"/>
+        <TopLine Value="9"/>
+        <CursorPos X="13" Y="21"/>
         <UsageCount Value="106"/>
         <Loaded Value="True"/>
       </Unit3>

@@ -1,0 +1,61 @@
+object Form1: TForm1
+  Left = 438
+  Height = 465
+  Top = 150
+  Width = 411
+  Caption = 'Form1'
+  ClientHeight = 465
+  ClientWidth = 411
+  LCLVersion = '1.6.0.4'
+  object DBGrid1: TDBGrid
+    Left = 80
+    Height = 136
+    Top = 56
+    Width = 264
+    Color = clWindow
+    Columns = <>
+    TabOrder = 0
+  end
+  object BitBtn1: TBitBtn
+    Left = 45
+    Height = 30
+    Top = 226
+    Width = 99
+    Caption = 'Connect'
+    OnClick = BitBtn1Click
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 196
+    Height = 15
+    Top = 228
+    Width = 34
+    Caption = 'Label1'
+    ParentColor = False
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Options = []
+    left = 96
+    top = 304
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Options = []
+    left = 222
+    top = 304
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Options = []
+    Params = <>
+    left = 224
+    top = 352
+  end
+  object DataSource1: TDataSource
+    left = 222
+    top = 409
+  end
+end
