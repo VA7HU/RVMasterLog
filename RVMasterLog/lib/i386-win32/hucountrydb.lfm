@@ -1,29 +1,60 @@
 object dlgHUCountryDB: TdlgHUCountryDB
-  Left = 350
-  Height = 324
-  Top = 209
-  Width = 536
+  Left = 445
+  Height = 390
+  Top = 234
+  Width = 427
   Caption = 'dlgHUCountryDB'
-  ClientHeight = 324
-  ClientWidth = 536
+  ClientHeight = 390
+  ClientWidth = 427
   OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '1.8.4.0'
   object bbtClose: TBitBtn
-    Left = 432
+    Left = 264
     Height = 30
-    Top = 272
+    Top = 328
     Width = 75
     DefaultCaption = True
     Kind = bkClose
     ModalResult = 11
     TabOrder = 0
   end
+  object bbtCancel: TBitBtn
+    Left = 176
+    Height = 30
+    Top = 328
+    Width = 75
+    Cancel = True
+    DefaultCaption = True
+    Kind = bkCancel
+    ModalResult = 2
+    TabOrder = 1
+  end
+  object bbtSave: TBitBtn
+    Left = 88
+    Height = 30
+    Top = 328
+    Width = 75
+    Caption = '&Save'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 25
+    Height = 208
+    Top = 16
+    Width = 376
+    Color = clWindow
+    Columns = <>
+    TabOrder = 3
+  end
   object DBNavigator1: TDBNavigator
-    Left = 237
+    Left = 85
     Height = 25
-    Top = 201
-    Width = 241
+    Top = 280
+    Width = 256
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
     ChildSizing.EnlargeVertical = crsScaleChilds
@@ -32,61 +63,48 @@ object dlgHUCountryDB: TdlgHUCountryDB
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 100
     ClientHeight = 25
-    ClientWidth = 241
+    ClientWidth = 256
     Options = []
-    TabOrder = 1
-  end
-  object DBGrid1: TDBGrid
-    Left = 264
-    Height = 100
-    Top = 40
-    Width = 200
-    Color = clWindow
-    Columns = <>
-    TabOrder = 2
-  end
-  object bbtCancel: TBitBtn
-    Left = 344
-    Height = 30
-    Top = 272
-    Width = 75
-    Cancel = True
-    DefaultCaption = True
-    Kind = bkCancel
-    ModalResult = 2
-    TabOrder = 3
-  end
-  object bbtSave: TBitBtn
-    Left = 256
-    Height = 30
-    Top = 272
-    Width = 75
-    Caption = '&Save'
-    Default = True
-    Kind = bkOK
-    ModalResult = 1
     TabOrder = 4
+  end
+  object DBEdit1: TDBEdit
+    Left = 121
+    Height = 23
+    Top = 240
+    Width = 80
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object DBEdit2: TDBEdit
+    Left = 225
+    Height = 23
+    Top = 240
+    Width = 80
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 6
   end
   object SQLite3Connection1: TSQLite3Connection
     Connected = False
     LoginPrompt = False
     KeepConnection = False
-    left = 49
-    top = 51
+    left = 168
+    top = 40
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
-    left = 48
-    top = 117
-  end
-  object DataSource1: TDataSource
-    left = 48
-    top = 192
+    left = 168
+    top = 96
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
     Params = <>
-    left = 45
-    top = 262
+    left = 112
+    top = 160
+  end
+  object DataSource1: TDataSource
+    left = 224
+    top = 160
   end
 end
