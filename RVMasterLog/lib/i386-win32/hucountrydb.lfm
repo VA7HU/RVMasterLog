@@ -6,6 +6,7 @@ object dlgHUCountryDB: TdlgHUCountryDB
   Caption = 'dlgHUCountryDB'
   ClientHeight = 390
   ClientWidth = 427
+  OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '1.8.4.0'
@@ -64,6 +65,7 @@ object dlgHUCountryDB: TdlgHUCountryDB
     ChildSizing.ControlsPerLine = 100
     ClientHeight = 25
     ClientWidth = 256
+    OnClick = DBNavigator1Click
     Options = []
     TabOrder = 4
   end
