@@ -176,6 +176,7 @@ end;// procedure TfrmMain.mnuSettingsDirectoriesClick
 
 procedure TfrmMain.mnuSettingsDatabasesCommonHUCountryDBClick(Sender: TObject);
 begin
+  dlgHUCountryDB.pDebug := True;
   dlgHUCountryDB.ShowModal;
 end;// procedure TfrmMain.mnuSettingsCommonHUCountryDBClick
 

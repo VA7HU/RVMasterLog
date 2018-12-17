@@ -59,7 +59,6 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure mnuSettingsCommonHUCountryDBClick(Sender: TObject);
     procedure mnuSettingsDatabasesCommonHUCountryDBClick(Sender: TObject);
     procedure mnuLogbooksNewClick(Sender: TObject);
     procedure mnuLogbooksExitClick(Sender: TObject);
