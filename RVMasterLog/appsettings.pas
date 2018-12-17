@@ -11,7 +11,6 @@ unit AppSettings;
 // Called By :  AppInit : Initialize
 //              Main  : TfrmMain.mnuSettingsDIrectoriesClick
 //                      TfrmMain.mnuSettingsDatabasesClick
-//              ManufacturersDB  : TfrmManufacturersDB.FormShow
 //
 // Calls :
 //

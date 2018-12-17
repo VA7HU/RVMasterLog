@@ -8,9 +8,9 @@
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="12"/>
-        <CursorPos X="29" Y="30"/>
+        <CursorPos X="78" Y="28"/>
         <UsageCount Value="122"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -21,8 +21,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
-        <TopLine Value="62"/>
-        <CursorPos Y="62"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="51"/>
+        <CursorPos Y="60"/>
         <UsageCount Value="122"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -54,7 +55,7 @@
         <Filename Value="appfinal.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppFinal"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="7"/>
         <UsageCount Value="107"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -65,7 +66,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RVData"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="34"/>
         <CursorPos X="3" Y="47"/>
         <UsageCount Value="103"/>
@@ -82,10 +83,10 @@
         <CursorPos Y="219"/>
         <UsageCount Value="101"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.lfm"/>
-        <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
@@ -95,18 +96,14 @@
       </Unit7>
       <Unit8>
         <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <IsPartOfProject Value="True"/>
         <ComponentName Value="dlgHUCountryDB"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HUCountryDB"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="89"/>
         <CursorPos X="19" Y="103"/>
         <UsageCount Value="36"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
@@ -285,11 +282,10 @@
       <Unit30>
         <Filename Value="C:\lazarus\lcl\dbctrls.pp"/>
         <UnitName Value="DbCtrls"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="1166"/>
         <CursorPos X="3" Y="1177"/>
         <UsageCount Value="14"/>
-        <Loaded Value="True"/>
       </Unit30>
       <Unit31>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Forms\HUAppSetup Development\appsetup.lfm"/>
@@ -329,127 +325,15 @@
         <UsageCount Value="19"/>
       </Unit34>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="2" HistoryIndex="1">
       <Position1>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="125" Column="45" TopLine="105"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="16"/>
       </Position1>
       <Position2>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="180" Column="5" TopLine="160"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="173" Column="54" TopLine="167"/>
       </Position2>
-      <Position3>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="176" TopLine="158"/>
-      </Position3>
-      <Position4>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="174" Column="43" TopLine="156"/>
-      </Position4>
-      <Position5>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="132" Column="80" TopLine="116"/>
-      </Position5>
-      <Position6>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="110" Column="11" TopLine="106"/>
-      </Position6>
-      <Position7>
-        <Filename Value="C:\lazarus\lcl\dbctrls.pp"/>
-        <Caret Line="207" Column="14" TopLine="197"/>
-      </Position7>
-      <Position8>
-        <Filename Value="C:\lazarus\lcl\dbctrls.pp"/>
-        <Caret Line="1177" Column="3" TopLine="1166"/>
-      </Position8>
-      <Position9>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="134" Column="15" TopLine="118"/>
-      </Position9>
-      <Position10>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="186" Column="2" TopLine="167"/>
-      </Position10>
-      <Position11>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="110" Column="91" TopLine="93"/>
-      </Position11>
-      <Position12>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="151" Column="39" TopLine="136"/>
-      </Position12>
-      <Position13>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="139" TopLine="120"/>
-      </Position13>
-      <Position14>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="17" Column="13" TopLine="3"/>
-      </Position14>
-      <Position15>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="190" TopLine="179"/>
-      </Position15>
-      <Position16>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="110" Column="4" TopLine="97"/>
-      </Position16>
-      <Position17>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="115" Column="4" TopLine="99"/>
-      </Position17>
-      <Position18>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="130" Column="24" TopLine="111"/>
-      </Position18>
-      <Position19>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="113" Column="14" TopLine="104"/>
-      </Position19>
-      <Position20>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="121" TopLine="103"/>
-      </Position20>
-      <Position21>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="125" Column="20" TopLine="116"/>
-      </Position21>
-      <Position22>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="70" Column="21" TopLine="61"/>
-      </Position22>
-      <Position23>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="54" Column="39" TopLine="37"/>
-      </Position23>
-      <Position24>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="56" Column="62" TopLine="44"/>
-      </Position24>
-      <Position25>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="55" Column="27" TopLine="46"/>
-      </Position25>
-      <Position26>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="104" Column="18" TopLine="87"/>
-      </Position26>
-      <Position27>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="234" Column="3" TopLine="229"/>
-      </Position27>
-      <Position28>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="113" Column="35" TopLine="101"/>
-      </Position28>
-      <Position29>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="105" Column="6" TopLine="95"/>
-      </Position29>
-      <Position30>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.pas"/>
-        <Caret Line="114" Column="16" TopLine="97"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

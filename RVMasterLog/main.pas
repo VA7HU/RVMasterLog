@@ -13,11 +13,10 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          HUCountruDB : dlgHUCountryDB.ShowModal
 //
 // Ver. : 1.0.0
 //
-// Date : 28 Nov 2018
+// Date : 17 Dec 2018
 //
 //========================================================================================
 
@@ -27,9 +26,8 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, SuppliersTable, RVData, sqlite3conn,
-  // HULibrary Units
-  HUCountryDB;
+  AppFinal, AppInit, AppSettings, SuppliersTable, RVData, sqlite3conn;
+
 
 type
 
@@ -59,7 +57,6 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure mnuSettingsDatabasesCommonHUCountryDBClick(Sender: TObject);
     procedure mnuLogbooksNewClick(Sender: TObject);
     procedure mnuLogbooksExitClick(Sender: TObject);
     procedure mnuLogbooksOpenLogbookClick(Sender: TObject);
@@ -173,12 +170,6 @@ procedure TfrmMain.mnuSettingsDirectoriesClick(Sender: TObject);
 begin
   frmSettings.ShowModal;
 end;// procedure TfrmMain.mnuSettingsDirectoriesClick
-
-procedure TfrmMain.mnuSettingsDatabasesCommonHUCountryDBClick(Sender: TObject);
-begin
-  dlgHUCountryDB.pDebug := True;
-  dlgHUCountryDB.ShowModal;
-end;// procedure TfrmMain.mnuSettingsCommonHUCountryDBClick
 
 //----------------------------------------------------------------------------------------
 

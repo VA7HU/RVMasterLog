@@ -86,7 +86,6 @@ object frmMain: TfrmMain
           OnClick = mnuSettingsDatabasesCommonClick
           object mnuSettingsCommonHUCountryDB: TMenuItem
             Caption = 'HUCountryDB'
-            OnClick = mnuSettingsDatabasesCommonHUCountryDBClick
           end
         end
       end
