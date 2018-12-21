@@ -11,13 +11,12 @@ unit AppSettings;
 // Called By :  AppInit : Initialize
 //              Main  : TfrmMain.mnuSettingsDIrectoriesClick
 //                      TfrmMain.mnuSettingsDatabasesClick
-//              ManufacturersDB  : TfrmManufacturersDB.FormShow
 //
 // Calls :
 //
 // Ver. : 1.0.0
 //
-// Date : 11 Nov 2018
+// Date : 28 Nov 2018
 //
 //========================================================================================
 
