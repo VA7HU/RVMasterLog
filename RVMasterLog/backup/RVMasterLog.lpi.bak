@@ -78,12 +78,13 @@
         <UnitName Value="SuppliersTable"/>
       </Unit6>
       <Unit7>
-        <Filename Value="..\..\..\HULibraries Development\Working Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit7>
       <Unit8>
-        <Filename Value="..\..\..\HULibraries Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="HUMessageBoxes"/>
       </Unit8>
     </Units>
   </ProjectOptions>
@@ -95,7 +96,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="..\..\..\HULibraries Development\Working Copy\Lazarus Libraries\Units\HUConstants Development;..\..\..\HULibraries Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development"/>
+      <OtherUnitFiles Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

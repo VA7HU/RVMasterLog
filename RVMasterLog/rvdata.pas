@@ -21,8 +21,8 @@ unit RVData;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  Buttons, StdCtrls;
+  Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms, Controls,
+  Graphics, Dialogs, ComCtrls, Buttons, StdCtrls;
 
 type
 
@@ -31,10 +31,14 @@ type
   TfrmRVData = class(TForm)
     bbtOK: TBitBtn;
     bbtClose: TBitBtn;
+    DataSource1: TDataSource;
     edtRVName: TEdit;
     Label1: TLabel;
     Label2: TLabel;
     PageControl1: TPageControl;
+    SQLite3Connection1: TSQLite3Connection;
+    SQLQuery1: TSQLQuery;
+    SQLTransaction1: TSQLTransaction;
     StatusBar1: TStatusBar;
     tsGeneral: TTabSheet;
   private

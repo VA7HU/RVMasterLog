@@ -25,9 +25,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms,
   // Application Units
-  AppFinal, AppInit, Main, RVData, SuppliersTable, AppSettings,
-  // HULibrary Units
-  HUCountryDB;
+  AppFinal, AppInit, AppSettings, Main, RVData, SuppliersTable;
 
 {$R *.res}
 
@@ -38,7 +36,6 @@ begin
   Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TfrmRVData, frmRVData);
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
-  Application.CreateForm(TdlgHUCountryDB, dlgHUCountryDB);
   Application.Run;
 end.
 

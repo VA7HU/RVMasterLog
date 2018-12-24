@@ -31,8 +31,9 @@ type
   TfrmRVData = class(TForm)
     bbtOK: TBitBtn;
     bbtClose: TBitBtn;
-    Edit1: TEdit;
+    edtRVName: TEdit;
     Label1: TLabel;
+    Label2: TLabel;
     PageControl1: TPageControl;
     StatusBar1: TStatusBar;
     tsGeneral: TTabSheet;

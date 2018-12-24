@@ -74,4 +74,26 @@ object frmRVData: TfrmRVData
       end
     end
   end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    left = 112
+    top = 173
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    left = 115
+    top = 340
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    left = 231
+    top = 302
+  end
+  object DataSource1: TDataSource
+    left = 93
+    top = 251
+  end
 end
