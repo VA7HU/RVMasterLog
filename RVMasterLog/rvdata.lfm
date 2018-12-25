@@ -6,6 +6,7 @@ object frmRVData: TfrmRVData
   Caption = 'RV Data'
   ClientHeight = 542
   ClientWidth = 699
+  OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '1.8.4.0'
   object StatusBar1: TStatusBar
@@ -17,15 +18,15 @@ object frmRVData: TfrmRVData
   end
   object PageControl1: TPageControl
     Left = 32
-    Height = 424
-    Top = 24
+    Height = 440
+    Top = 56
     Width = 640
     ActivePage = tsGeneral
     TabIndex = 0
     TabOrder = 1
     object tsGeneral: TTabSheet
       Caption = 'General'
-      ClientHeight = 396
+      ClientHeight = 412
       ClientWidth = 632
       object bbtOK: TBitBtn
         Left = 448
@@ -55,14 +56,6 @@ object frmRVData: TfrmRVData
         Width = 55
         Caption = 'RV Name :'
         ParentColor = False
-      end
-      object edtRVName: TEdit
-        Left = 90
-        Height = 23
-        Top = 24
-        Width = 240
-        Alignment = taCenter
-        TabOrder = 2
       end
       object Label2: TLabel
         Left = 32
@@ -95,5 +88,9 @@ object frmRVData: TfrmRVData
   object DataSource1: TDataSource
     left = 93
     top = 251
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    left = 220
+    top = 121
   end
 end

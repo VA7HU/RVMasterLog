@@ -62,29 +62,28 @@
         <UnitName Value="AppFinal"/>
       </Unit4>
       <Unit5>
-        <Filename Value="rvdata.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmRVData"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="RVData"/>
-      </Unit5>
-      <Unit6>
         <Filename Value="supplierstable.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmSuppliersTable"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SuppliersTable"/>
-      </Unit6>
-      <Unit7>
+      </Unit5>
+      <Unit6>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
         <IsPartOfProject Value="True"/>
-      </Unit7>
-      <Unit8>
+      </Unit6>
+      <Unit7>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUMessageBoxes"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Newlogbook.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmNewLogbook"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="NewLogbook"/>
       </Unit8>
     </Units>
   </ProjectOptions>

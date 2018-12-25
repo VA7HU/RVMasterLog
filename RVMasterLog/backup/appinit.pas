@@ -18,14 +18,14 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 11 Nov 2018
+// Date : 24 Dec 2018
 //
 //========================================================================================
 
 interface
 
 uses
-  Classes, Controls, Dialogs, SysUtils,
+  Classes, Controls, Dialogs, FileUtil, SysUtils,
   //
   AppSettings, HUConstants, HUMessageBoxes;
 
@@ -64,7 +64,6 @@ function Initialize : Boolean;
 
 var
   InitFailure : Boolean;
-  vstrNewUserDir : string;
 
 begin
 
@@ -106,11 +105,16 @@ begin
         begin
           showmessage('Not Created');
           InitFailure := True;
-        end;// if frmSettings.pUserDirectory  = ''
+        end;// if not frmSettings.CreateUserDirectories
+
+        // Load the common User databases
+        CopyFile (frmSettings.pApplicationDirectory +
+                      '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
+                  frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
 
         frmSettings.ReadSettingsINIFile;
 
-      end;// if frmSettings.pUserDirectory  = ''
+      end;// if frmSettings.pUserDirectory  = frmSettings.pSystemUserDirectory
 
     end
     else

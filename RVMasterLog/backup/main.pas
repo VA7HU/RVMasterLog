@@ -13,10 +13,12 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
+//          Logbooks : TfrmLogBooks.CreateLogbookFolder;
+//                     frmLogbooks.showmodal
 //
 // Ver. : 1.0.0
 //
-// Date : 17 Dec 2018
+// Date : 24 Dec 2018
 //
 //========================================================================================
 
@@ -57,7 +59,6 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure mnuSettingsDatabasesCommonHUCountryDBClick(Sender: TObject);
     procedure mnuLogbooksNewClick(Sender: TObject);
     procedure mnuLogbooksExitClick(Sender: TObject);
     procedure mnuLogbooksOpenLogbookClick(Sender: TObject);
@@ -115,7 +116,7 @@ implementation
 //========================================================================================
 procedure TfrmMain.mnuLogbooksNewClick(Sender: TObject);
 begin
-  frmRVData.ShowModal;
+  showmessage('New Logbook');
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------
