@@ -13,12 +13,11 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          Logbooks : TfrmLogBooks.CreateLogbookFolder;
-//                     frmLogbooks.showmodal
+//          Logbook :
 //
 // Ver. : 1.0.0
 //
-// Date : 24 Dec 2018
+// Date : 27 Dec 2018
 //
 //========================================================================================
 
@@ -28,7 +27,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, NewLogbook, SuppliersTable, RVData, sqlite3conn;
+  AppFinal, AppInit, AppSettings, Logbook, RVData, SuppliersTable, sqlite3conn;
 
 
 type
@@ -36,6 +35,7 @@ type
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    mnuLogbooksSaveLogbook: TMenuItem;
     mnuSettingsCommonHUCountryDB: TMenuItem;
     mnuSettingsDatabasesCommon: TMenuItem;
     mnuSettingsDatabases: TMenuItem;
@@ -45,11 +45,9 @@ type
     mnuLogbooksPrint: TMenuItem;
     mnuLogbooksPrinterSetup: TMenuItem;
     mnuLogbooksSep1: TMenuItem;
-    mnuLogbooksRemove: TMenuItem;
-    mnuLogBooksSaveAs: TMenuItem;
-    mnuLogbooksSave: TMenuItem;
-    mnuLogbooksOpenLogbook: TMenuItem;
-    mnuLogbooksNew: TMenuItem;
+    mnuLogbookDeleteLogbook: TMenuItem;
+    mnuLogbookOpenLogbook: TMenuItem;
+    mnuLogbooksNewLogbook: TMenuItem;
     mnuLogbooksExit: TMenuItem;
     mnuLogbooks: TMenuItem;
     mnuMain: TMainMenu;
@@ -59,15 +57,13 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure mnuLogbooksNewClick(Sender: TObject);
+    procedure mnuLogbooksNewLogbookClick(Sender: TObject);
     procedure mnuLogbooksExitClick(Sender: TObject);
-    procedure mnuLogbooksOpenLogbookClick(Sender: TObject);
+    procedure mnuLogbookOpenLogbookClick(Sender: TObject);
     procedure mnuLogbooksPrintClick(Sender: TObject);
     procedure mnuLogbooksPrinterSetupClick(Sender: TObject);
-    procedure mnuLogbooksRemoveClick(Sender: TObject);
-    procedure mnuLogBooksSaveAsClick(Sender: TObject);
+    procedure mnuLogbookDeleteLogbookClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
-    procedure mnuSettingsDatabasesCommonClick(Sender: TObject);
     procedure mnuSettingsDirectoriesClick(Sender: TObject);
   private
 
@@ -114,40 +110,32 @@ implementation
 //========================================================================================
 //          MENU ROUTINES
 //========================================================================================
-procedure TfrmMain.mnuLogbooksNewClick(Sender: TObject);
+procedure TfrmMain.mnuLogbooksNewLogbookClick(Sender: TObject);
 begin
   showmessage('New Logbook');
-  frmNewLogbook.ShowModal;
+  frmLogbook.CreateNewLogbook;
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------
-procedure TfrmMain.mnuLogbooksOpenLogbookClick(Sender: TObject);
+procedure TfrmMain.mnuLogbookOpenLogbookClick(Sender: TObject);
 begin
   showmessage('Open Logbook');
+  frmLogbook.OpenLogbook;
 end;// procedure TfrmMain.mnuLogbooksOpenLogbookClick
 
 //----------------------------------------------------------------------------------------
 procedure TfrmMain.mnuLogbooksSaveClick(Sender: TObject);
 begin
  showmessage('Save Logbook');
+ frmLogbook.SaveLogbook;
 end;// procedure TfrmMain.mnuLogbooksSaveClick
 
-procedure TfrmMain.mnuSettingsDatabasesCommonClick(Sender: TObject);
-begin
-
-end;// procedure TfrmMain.mnuSettingsDatabasesCommonClick
-
 //----------------------------------------------------------------------------------------
-procedure TfrmMain.mnuLogBooksSaveAsClick(Sender: TObject);
+procedure TfrmMain.mnuLogbookDeleteLogbookClick(Sender: TObject);
 begin
- showmessage('Save Logbook as');
-end;// procedure TfrmMain.mnuLogBooksSaveAsClick
-
-//----------------------------------------------------------------------------------------
-procedure TfrmMain.mnuLogbooksRemoveClick(Sender: TObject);
-begin
- showmessage('Remove Logbook');
-end;// procedure TfrmMain.mnuLogbooksRemoveClick
+ showmessage('Delete Logbook');
+ frmLogbook.DeleteLogbook;
+end;// procedure TfrmMain.mnuLogbooksDeleteClick
 
 //----------------------------------------------------------------------------------------
 procedure TfrmMain.mnuLogbooksPrinterSetupClick(Sender: TObject);

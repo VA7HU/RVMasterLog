@@ -70,20 +70,20 @@
         <UnitName Value="SuppliersTable"/>
       </Unit5>
       <Unit6>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
+        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit6>
       <Unit7>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
+        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUMessageBoxes"/>
       </Unit7>
       <Unit8>
-        <Filename Value="Newlogbook.pas"/>
+        <Filename Value="logbook.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmNewLogbook"/>
+        <ComponentName Value="frmLogbook"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="NewLogbook"/>
+        <UnitName Value="Logbook"/>
       </Unit8>
     </Units>
   </ProjectOptions>
@@ -95,7 +95,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development"/>
+      <OtherUnitFiles Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUConstants Development;..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUMessageBoxes Development"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

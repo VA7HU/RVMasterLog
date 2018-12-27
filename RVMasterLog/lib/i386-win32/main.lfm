@@ -34,25 +34,21 @@ object frmMain: TfrmMain
     top = 16
     object mnuLogbooks: TMenuItem
       Caption = '&Logbooks'
-      object mnuLogbooksNew: TMenuItem
+      object mnuLogbooksNewLogbook: TMenuItem
         Caption = 'New Logbook ...'
-        OnClick = mnuLogbooksNewClick
+        OnClick = mnuLogbooksNewLogbookClick
       end
-      object mnuLogbooksOpenLogbook: TMenuItem
+      object mnuLogbookOpenLogbook: TMenuItem
         Caption = 'Open Logbook ...'
-        OnClick = mnuLogbooksOpenLogbookClick
+        OnClick = mnuLogbookOpenLogbookClick
       end
-      object mnuLogbooksSave: TMenuItem
-        Caption = 'Save'
+      object mnuLogbookDeleteLogbook: TMenuItem
+        Caption = '&Delete Logbook'
+        OnClick = mnuLogbookDeleteLogbookClick
+      end
+      object mnuLogbooksSaveLogbook: TMenuItem
+        Caption = '&Save Logbook'
         OnClick = mnuLogbooksSaveClick
-      end
-      object mnuLogBooksSaveAs: TMenuItem
-        Caption = 'Save Logbook as ...'
-        OnClick = mnuLogBooksSaveAsClick
-      end
-      object mnuLogbooksRemove: TMenuItem
-        Caption = '&Remove Logbook'
-        OnClick = mnuLogbooksRemoveClick
       end
       object mnuLogbooksSep1: TMenuItem
         Caption = '-'
@@ -83,7 +79,6 @@ object frmMain: TfrmMain
         Caption = 'Databases'
         object mnuSettingsDatabasesCommon: TMenuItem
           Caption = 'Common '
-          OnClick = mnuSettingsDatabasesCommonClick
           object mnuSettingsCommonHUCountryDB: TMenuItem
             Caption = 'HUCountryDB'
           end

@@ -1,0 +1,21 @@
+object frmLogbook: TfrmLogbook
+  Left = 290
+  Height = 388
+  Top = 163
+  Width = 631
+  Caption = 'frmLogbook'
+  ClientHeight = 388
+  ClientWidth = 631
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.4.0'
+  object lblProcessing: TLabel
+    Left = 280
+    Height = 15
+    Top = 30
+    Width = 70
+    Caption = 'lblProcessing'
+    ParentColor = False
+  end
+end
