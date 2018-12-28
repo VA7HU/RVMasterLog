@@ -10,25 +10,34 @@ unit Logbook;
 //
 // Called By :
 //
-// Calls :
+// Calls : HUDirNameEntry : dlgHUDirNameEntry.ShowModal
 //
 // Ver. : 1.0.0
 //
-// Date : 27 Dec 2018
+// Date : 28 Dec 2018
 //
 //========================================================================================
 
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  ComCtrls, Buttons,
+  //
+  HUDirNameEntry;
 
 type
 
   { TfrmLogbook }
 
   TfrmLogbook = class(TForm)
-    lblProcessing: TLabel;
+    bbtCancel: TBitBtn;
+    bbtOK: TBitBtn;
+    edtLogbookName: TEdit;
+    Label1: TLabel;
+    memAction: TMemo;
+    PageControl1: TPageControl;
+    StatusBar1: TStatusBar;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure CreateNewLogbook;
@@ -74,24 +83,29 @@ implementation
 //========================================================================================
 procedure TfrmLogbook.CreateNewLogbook;
 begin
-  showmessage('Create New Logbook');
-  lblProcessing.Caption := 'CREATE NEW LOGBOOK';
-  frmLogbook.ShowModal;
+
+  dlgHUDirNameEntry.pDirName := '';
+  dlgHUDirNameEntry.ShowModal;
+  if dlgHUDirNameEntry.pDirName = '' then
+    Exit;
+  edtLogbookName.Text:=dlgHUDirNameEntry.pDirName;
+  frmLogbook.ShowModal ;
+
 end;// procedure TfrmLogbook.CreateNewLogbook
 
 //----------------------------------------------------------------------------------------
 procedure TfrmLogbook.OpenLogbook;
 begin
-  showmessage('Open Logbook');
-  lblProcessing.Caption := 'OPEN LOGBOOK';
-  frmLogbook.ShowModal;
+  showmessage('Open Log book');
+  memAction.Append('OPEN LOGBOOK');
+  frmLogbook.ShowModal ;
 end;// procedure TfrmLogbook.OpenLogbook
 
 //----------------------------------------------------------------------------------------
 procedure TfrmLogbook.DeleteLogbook;
 begin
   showmessage('Delete Logbook');
-  lblProcessing.Caption := 'DELETE LOGBOOK';
+//lblProcessing.Caption := 'DELETE LOGBOOK';
   frmLogbook.ShowModal;
 end;// procedure TfrmLogbook.DeleteLogbook
 
@@ -99,7 +113,7 @@ end;// procedure TfrmLogbook.DeleteLogbook
 procedure TfrmLogbook.SaveLogbook;
 begin
   showmessage('Save Logbook');
-  lblProcessing.Caption := 'SAVE LOGBOOK';
+ // lblProcessing.Caption := 'SAVE LOGBOOK';
   frmLogbook.ShowModal;
 end;// procedure TfrmLogbook.SaveLogbook
 

@@ -163,8 +163,8 @@ object frmSettings: TfrmSettings
         Left = 16
         Height = 15
         Top = 144
-        Width = 113
-        Caption = 'Logbooks Diredtory ; '
+        Width = 112
+        Caption = 'Logbooks Directory ; '
         ParentColor = False
       end
       object edtLogbooksDirectory: TEdit

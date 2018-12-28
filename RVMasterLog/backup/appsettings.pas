@@ -11,7 +11,6 @@ unit AppSettings;
 // Called By :  AppInit : Initialize
 //              Main  : TfrmMain.mnuSettingsDIrectoriesClick
 //                      TfrmMain.mnuSettingsDatabasesClick
-//              RVData : TfrmRVData.CreateRVDataDB
 //
 // Calls :
 //

@@ -15,7 +15,7 @@ unit RVData;
 //
 // Ver. : 1.0.0
 //
-// Date : 24 Dec 2018
+// Date : 28 Dec 2018
 //
 //========================================================================================
 
@@ -23,7 +23,7 @@ interface
 
 uses
   Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms, Controls,
-  Graphics, Dialogs, ComCtrls, Buttons, StdCtrls,
+  Graphics, Dialogs, ComCtrls, Buttons, StdCtrls, ExtCtrls,
   //
   AppSettings;
 
@@ -32,28 +32,18 @@ type
   { TfrmRVData }
 
   TfrmRVData = class(TForm)
-    bbtOK: TBitBtn;
-    bbtClose: TBitBtn;
     DataSource1: TDataSource;
-    Label1: TLabel;
-    Label2: TLabel;
-    PageControl1: TPageControl;
-    SelectDirectoryDialog1: TSelectDirectoryDialog;
+    Panel1: TPanel;
     SQLite3Connection1: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
     StatusBar1: TStatusBar;
-    tsGeneral: TTabSheet;
     procedure FormShow(Sender: TObject);
     function CreateRVDataDB: boolean;
 
   private
-    fRVDataDir : string;
-    function GetRVDataDir : string;
-    procedure SetRVDataDir(Dir : string);
 
   public
-    property pRVDataDir : string read GetRVDataDir write SetRVDataDir;
 
   end;
 
@@ -93,14 +83,13 @@ begin
   showmessage('Creating New Logbook');
 
   // First create the Logbook folder
-  SelectDirectoryDialog1.Execute;
 
 end;// function TfrmRVData.CreateRVDataDB
 
 //========================================================================================
 //          PROPERTY ROUTINES
 //========================================================================================
-function TfrmRVData.GetRVDataDir: string;
+{function TfrmRVData.GetRVDataDir: string;
 begin
    Result := fRVDataDir;
 end;// function TfrmRVData.GetApplicationDirectory
@@ -109,7 +98,7 @@ end;// function TfrmRVData.GetApplicationDirectory
 procedure TfrmRVData.SetRVDataDir(Dir: string);
 begin
     fRVDataDir := Dir;
-end;// procedure TfrmRVData.SetRVDataDir
+end;// procedure TfrmRVData.SetRVDataDir  }
 
 //========================================================================================
 //          MENU ROUTINES

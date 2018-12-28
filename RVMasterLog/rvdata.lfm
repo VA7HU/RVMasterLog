@@ -1,7 +1,7 @@
 object frmRVData: TfrmRVData
-  Left = 322
+  Left = 308
   Height = 542
-  Top = 130
+  Top = 121
   Width = 699
   Caption = 'RV Data'
   ClientHeight = 542
@@ -16,81 +16,35 @@ object frmRVData: TfrmRVData
     Width = 699
     Panels = <>
   end
-  object PageControl1: TPageControl
-    Left = 32
-    Height = 440
-    Top = 56
-    Width = 640
-    ActivePage = tsGeneral
-    TabIndex = 0
+  object Panel1: TPanel
+    Left = 112
+    Height = 264
+    Top = 88
+    Width = 480
+    BorderStyle = bsSingle
+    Caption = 'Panel1'
     TabOrder = 1
-    object tsGeneral: TTabSheet
-      Caption = 'General'
-      ClientHeight = 412
-      ClientWidth = 632
-      object bbtOK: TBitBtn
-        Left = 448
-        Height = 30
-        Top = 352
-        Width = 75
-        Default = True
-        DefaultCaption = True
-        Kind = bkOK
-        ModalResult = 1
-        TabOrder = 0
-      end
-      object bbtClose: TBitBtn
-        Left = 536
-        Height = 30
-        Top = 352
-        Width = 75
-        DefaultCaption = True
-        Kind = bkClose
-        ModalResult = 11
-        TabOrder = 1
-      end
-      object Label1: TLabel
-        Left = 24
-        Height = 15
-        Top = 28
-        Width = 55
-        Caption = 'RV Name :'
-        ParentColor = False
-      end
-      object Label2: TLabel
-        Left = 32
-        Height = 15
-        Top = 59
-        Width = 81
-        Caption = 'Manufacturer : '
-        ParentColor = False
-      end
-    end
   end
   object SQLite3Connection1: TSQLite3Connection
     Connected = False
     LoginPrompt = False
     KeepConnection = False
-    left = 112
-    top = 173
+    left = 40
+    top = 464
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
     Params = <>
-    left = 115
-    top = 340
+    left = 256
+    top = 464
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
-    left = 231
-    top = 302
+    left = 160
+    top = 464
   end
   object DataSource1: TDataSource
-    left = 93
-    top = 251
-  end
-  object SelectDirectoryDialog1: TSelectDirectoryDialog
-    left = 220
-    top = 121
+    left = 336
+    top = 464
   end
 end
