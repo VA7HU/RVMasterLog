@@ -38,6 +38,7 @@ object frmLogbook: TfrmLogbook
     Height = 23
     Top = 72
     Width = 232
+    Alignment = taCenter
     TabOrder = 2
   end
   object memAction: TMemo

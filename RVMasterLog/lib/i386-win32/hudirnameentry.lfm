@@ -1,11 +1,11 @@
 object dlgHUDirNameEntry: TdlgHUDirNameEntry
   Left = 536
-  Height = 240
+  Height = 164
   Top = 227
   Width = 320
   BorderStyle = bsDialog
-  Caption = 'Enter a Directory Name'
-  ClientHeight = 240
+  Caption = 'Enter a Valid Directory Name'
+  ClientHeight = 164
   ClientWidth = 320
   OnCreate = FormCreate
   OnShow = FormShow
@@ -16,31 +16,32 @@ object dlgHUDirNameEntry: TdlgHUDirNameEntry
     Height = 23
     Top = 47
     Width = 264
+    Alignment = taCenter
     OnKeyPress = edtDirNameKeyPress
     TabOrder = 0
   end
   object bbtCancel: TBitBtn
-    Left = 224
+    Left = 168
     Height = 30
-    Top = 192
+    Top = 88
     Width = 75
     Cancel = True
     DefaultCaption = True
     Kind = bkCancel
     ModalResult = 2
     OnClick = bbtCancelClick
-    TabOrder = 1
+    TabOrder = 2
   end
   object bbtOK: TBitBtn
-    Left = 136
+    Left = 80
     Height = 30
-    Top = 192
+    Top = 88
     Width = 75
     Default = True
     DefaultCaption = True
     Kind = bkOK
     ModalResult = 1
     OnClick = bbtOKClick
-    TabOrder = 2
+    TabOrder = 1
   end
 end

@@ -86,6 +86,8 @@ begin
 
   dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
+  if dlgHUDirNameEntry.pDirName = '' then
+    Exit;
   edtLogbookName.Text:=dlgHUDirNameEntry.pDirName;
   frmLogbook.ShowModal ;
 
