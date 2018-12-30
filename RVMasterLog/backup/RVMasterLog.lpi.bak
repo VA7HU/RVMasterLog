@@ -30,7 +30,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="11">
+    <Units Count="12">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -70,36 +70,38 @@
         <UnitName Value="SuppliersTable"/>
       </Unit5>
       <Unit6>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="HUConstants"/>
-      </Unit6>
-      <Unit7>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="HUMessageBoxes"/>
-      </Unit7>
-      <Unit8>
         <Filename Value="logbook.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmLogbook"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Logbook"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="HUConstants"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="HUMessageBoxes"/>
       </Unit8>
       <Unit9>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="dlgHUDirNameEntry"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="HUDirNameEntry"/>
-      </Unit9>
-      <Unit10>
-        <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUValidations"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.lfm"/>
+        <IsPartOfProject Value="True"/>
       </Unit10>
+      <Unit11>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="HUDirNameEntry"/>
+      </Unit11>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -110,7 +112,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUConstants Development;..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUMessageBoxes Development;..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry;..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUValidations Development"/>
+      <OtherUnitFiles Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

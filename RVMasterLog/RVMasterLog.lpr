@@ -23,9 +23,9 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, huconstants, HUMessageBoxes,
+  Forms, HUMessageBoxes, huconstants, huvalidations, hudirnameentry,
   // Application Units
-  AppFinal, AppInit, AppSettings, Main, SuppliersTable, Logbook, HUDirNameEntry;
+  AppFinal, AppInit, AppSettings, Main, SuppliersTable, Logbook;
 
 {$R *.res}
 
