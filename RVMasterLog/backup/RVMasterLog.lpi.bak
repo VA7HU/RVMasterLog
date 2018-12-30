@@ -99,7 +99,9 @@
       <Unit11>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="dlgHUDirNameEntry"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="HUDirNameEntry"/>
       </Unit11>
     </Units>
