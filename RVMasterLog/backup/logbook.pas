@@ -11,10 +11,11 @@ unit Logbook;
 // Called By :
 //
 // Calls : HUDirNameEntry : dlgHUDirNameEntry.ShowModal
+//                          TdlgHUDirNameEntry.bbtOKClick
 //
 // Ver. : 1.0.0
 //
-// Date : 28 Dec 2018
+// Date : 29 Dec 2018
 //
 //========================================================================================
 
@@ -22,8 +23,10 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, Buttons,
-  //
+  ComCtrls, Buttons, ExtCtrls,
+  // Application units
+  AppSettings,
+  // HULibrary units
   HUDirNameEntry;
 
 type
@@ -86,9 +89,12 @@ begin
 
   dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
+
   if dlgHUDirNameEntry.pDirName = '' then
     Exit;
-  edtLogbookName.Text:=dlgHUDirNameEntry.pDirName;
+
+  edtLogbookName.Text := frmSettings.pUserDirectory + '\' + dlgHUDirNameEntry.pDirName;
+  memAction.Text := 'Creating New Logbook';
   frmLogbook.ShowModal ;
 
 end;// procedure TfrmLogbook.CreateNewLogbook
