@@ -19,25 +19,17 @@ object frmLogbook: TfrmLogbook
     Panels = <>
   end
   object PageControl1: TPageControl
-    Left = 64
+    Left = 49
     Height = 312
     Top = 120
     Width = 648
     TabOrder = 1
   end
-  object Label1: TLabel
-    Left = 350
-    Height = 15
-    Top = 64
-    Width = 47
-    Caption = 'Logbook'
-    ParentColor = False
-  end
   object edtLogbookName: TEdit
-    Left = 193
+    Left = 125
     Height = 23
     Top = 88
-    Width = 360
+    Width = 496
     Alignment = taCenter
     TabOrder = 2
   end

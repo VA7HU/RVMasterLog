@@ -37,7 +37,6 @@ type
     bbtCancel: TBitBtn;
     bbtOK: TBitBtn;
     edtLogbookName: TEdit;
-    Label1: TLabel;
     memAction: TMemo;
     PageControl1: TPageControl;
     StatusBar1: TStatusBar;
@@ -87,6 +86,7 @@ implementation
 procedure TfrmLogbook.CreateNewLogbook;
 begin
 
+  dlgHUDirNameEntry.pBaseDirName := frmSettings.pLogbooksDirectory;
   dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
 

@@ -86,13 +86,14 @@ implementation
 procedure TfrmLogbook.CreateNewLogbook;
 begin
 
+  dlgHUDirNameEntry.pBaseDirName := frmSettings.pLogbooksDirectory;
   dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
 
   if dlgHUDirNameEntry.pDirName = '' then
     Exit;
 
-  edtLogbookName.Text := frmSettings.pUserDirectory + '\' + dlgHUDirNameEntry.pDirName;
+  edtLogbookName.Text := frmSettings.pLogbooksDirectory + '\' + dlgHUDirNameEntry.pDirName;
   memAction.Text := 'Creating New Logbook';
   frmLogbook.ShowModal ;
 
