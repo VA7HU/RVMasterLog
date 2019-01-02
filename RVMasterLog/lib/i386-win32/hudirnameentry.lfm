@@ -1,11 +1,11 @@
 object dlgHUDirNameEntry: TdlgHUDirNameEntry
   Left = 536
-  Height = 103
+  Height = 216
   Top = 227
   Width = 320
   BorderStyle = bsDialog
   Caption = 'Enter a Valid Directory Name'
-  ClientHeight = 103
+  ClientHeight = 216
   ClientWidth = 320
   OnCreate = FormCreate
   OnShow = FormShow
@@ -45,5 +45,13 @@ object dlgHUDirNameEntry: TdlgHUDirNameEntry
     ModalResult = 1
     OnClick = bbtOKClick
     TabOrder = 1
+  end
+  object Edit1: TEdit
+    Left = 16
+    Height = 23
+    Top = 117
+    Width = 287
+    TabOrder = 3
+    Text = 'Edit1'
   end
 end
