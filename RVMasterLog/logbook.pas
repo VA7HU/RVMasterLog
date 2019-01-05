@@ -15,7 +15,7 @@ unit Logbook;
 //
 // Ver. : 1.0.0
 //
-// Date : 29 Dec 2018
+// Date : 03 Jan 2019
 //
 //========================================================================================
 
@@ -84,6 +84,9 @@ implementation
 //          PUBLIC ROUTINES
 //========================================================================================
 procedure TfrmLogbook.CreateNewLogbook;
+var
+  vstrNewDir: string;
+
 begin
 
   dlgHUDirNameEntry.pBaseDirName := frmSettings.pLogbooksDirectory;
@@ -94,7 +97,26 @@ begin
     Exit;
 
   edtLogbookName.Text := frmSettings.pLogbooksDirectory + '\' + dlgHUDirNameEntry.pDirName;
+  vstrNewDir := edtLogbookName.Text;
+
+  showmessage(vstrNewDir);
+
   memAction.Text := 'Creating New Logbook';
+
+  CreateDir(edtLogbookName.Text);
+
+  if not CreateDir(vstrNewDir)then
+  begin
+    showmessage('USER DIR FAILED');
+    Result := False;
+    exit;
+  end
+  else
+    showmessage('USER DIR CREATED');
+
+  if Result = False then
+    Exit;
+
   frmLogbook.ShowModal ;
 
 end;// procedure TfrmLogbook.CreateNewLogbook

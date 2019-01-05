@@ -130,6 +130,7 @@ begin
 
     // USER DIRECTORY
   vstrNewDir := frmSettings.pSystemUserDirectory + cstrUserDirectoryPath;
+
   if not CreateDir(vstrNewDir)then
   begin
     showmessage('USER DIR FAILED');

@@ -23,7 +23,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, HUMessageBoxes, huconstants, huvalidations,
+  Forms, HUMessageBoxes, huconstants, huvalidations, hudirnameentry,
   // Application Units
   AppFinal, AppInit, AppSettings, Main, SuppliersTable, Logbook;
 
@@ -36,6 +36,7 @@ begin
   Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.CreateForm(TfrmLogbook, frmLogbook);
+  Application.CreateForm(TdlgHUDirNameEntry, dlgHUDirNameEntry);
   Application.Run;
 end.
 
