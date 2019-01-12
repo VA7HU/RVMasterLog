@@ -15,7 +15,7 @@ unit Logbook;
 //
 // Ver. : 1.0.0
 //
-// Date : 03 Jan 2019
+// Date : 12 Jan 2019
 //
 //========================================================================================
 
@@ -46,7 +46,6 @@ type
     procedure OpenLogbook;
     procedure DeleteLogbook;
     procedure SaveLogbook;
-
   private
 
   public
@@ -92,32 +91,42 @@ begin
   dlgHUDirNameEntry.pBaseDirName := frmSettings.pLogbooksDirectory;
   dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
+  vstrNewDir := dlgHUDirNameEntry.pDirName;
+  showmessage(vstrNewDir);
 
-  if dlgHUDirNameEntry.pDirName = '' then
+  if vstrNewDir = '' then
     Exit;
 
-  edtLogbookName.Text := frmSettings.pLogbooksDirectory + '\' + dlgHUDirNameEntry.pDirName;
-  vstrNewDir := edtLogbookName.Text;
+
+
+{  //edtLogbookName.Text := frmSettings.pLogbooksDirectory + '\' + dlgHUDirNameEntry.pDirName;
+ // vstrNewDir := frmSettings.pUserDirectory + '\' + cstrLogbooksDirectoryName;
+  vstrNewDir := dlgHUDirNameEntry.pDirName;
 
   showmessage(vstrNewDir);
 
   memAction.Text := 'Creating New Logbook';
 
-  CreateDir(edtLogbookName.Text);
+//  CreateDir(vstrNewDir);
 
-  if not CreateDir(vstrNewDir)then
+vstrNewDir := frmSettings.pUserDirectory + '\' + cstrLogbooksDirectoryName;
+CreateDir(vstrNewDir);
+
+  if not CreateUserDirectories(vstrNewDir)then
   begin
-    showmessage('USER DIR FAILED');
-    Result := False;
+    showmessage('Logbook FAILED');
+ //   Result := False;
     exit;
   end
   else
-    showmessage('USER DIR CREATED');
+    showmessage('LogBook CREATED');
 
-  if Result = False then
-    Exit;
+ // if Result = False then
+    Exit; }
 
   frmLogbook.ShowModal ;
+
+  //end;
 
 end;// procedure TfrmLogbook.CreateNewLogbook
 
