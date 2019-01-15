@@ -8,11 +8,10 @@
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="20"/>
-        <CursorPos X="59" Y="32"/>
-        <UsageCount Value="164"/>
-        <Loaded Value="True"/>
+        <CursorPos X="63" Y="39"/>
+        <UsageCount Value="165"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -23,7 +22,7 @@
         <UnitName Value="Main"/>
         <TopLine Value="111"/>
         <CursorPos X="30" Y="115"/>
-        <UsageCount Value="164"/>
+        <UsageCount Value="165"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -34,10 +33,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="137"/>
         <CursorPos X="50" Y="140"/>
-        <UsageCount Value="161"/>
+        <UsageCount Value="162"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -45,18 +44,18 @@
         <Filename Value="appinit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="93"/>
         <CursorPos X="49" Y="104"/>
-        <UsageCount Value="161"/>
+        <UsageCount Value="162"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="appfinal.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppFinal"/>
-        <EditorIndex Value="6"/>
-        <UsageCount Value="149"/>
+        <EditorIndex Value="5"/>
+        <UsageCount Value="150"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -68,7 +67,7 @@
         <UnitName Value="SuppliersTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="219"/>
-        <UsageCount Value="143"/>
+        <UsageCount Value="144"/>
       </Unit5>
       <Unit6>
         <Filename Value="logbook.pas"/>
@@ -78,9 +77,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Logbook"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="81"/>
-        <CursorPos X="28" Y="48"/>
-        <UsageCount Value="42"/>
+        <TopLine Value="80"/>
+        <CursorPos X="31" Y="93"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit6>
@@ -91,7 +90,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="25"/>
         <CursorPos X="7" Y="41"/>
-        <UsageCount Value="80"/>
+        <UsageCount Value="81"/>
       </Unit7>
       <Unit8>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
@@ -100,7 +99,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="21"/>
         <CursorPos X="10" Y="31"/>
-        <UsageCount Value="80"/>
+        <UsageCount Value="81"/>
       </Unit8>
       <Unit9>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
@@ -109,7 +108,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="16"/>
         <CursorPos X="15" Y="32"/>
-        <UsageCount Value="61"/>
+        <UsageCount Value="62"/>
       </Unit9>
       <Unit10>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
@@ -119,10 +118,10 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HUDirNameEntry"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="154"/>
-        <CursorPos X="47" Y="134"/>
-        <UsageCount Value="29"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="176"/>
+        <CursorPos X="23" Y="188"/>
+        <UsageCount Value="30"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit10>
@@ -355,9 +354,9 @@
         <Filename Value="C:\lazarus\lcl\forms.pp"/>
         <UnitName Value="Forms"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="1809"/>
+        <TopLine Value="1808"/>
         <CursorPos X="3" Y="1819"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="10"/>
       </Unit37>
       <Unit38>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\packages\fcl-db\src\sqldb\sqldb.pp"/>
