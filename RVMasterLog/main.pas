@@ -13,11 +13,11 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          Logbook :
+//          Logbook : frmLogbook.CreateNewLogbook
 //
 // Ver. : 1.0.0
 //
-// Date : 27 Dec 2018
+// Date : 15 Jan 2018
 //
 //========================================================================================
 
@@ -112,7 +112,6 @@ implementation
 //========================================================================================
 procedure TfrmMain.mnuLogbooksNewLogbookClick(Sender: TObject);
 begin
-  showmessage('New Logbook');
   frmLogbook.CreateNewLogbook;
 end;// procedure TfrmMain.mnuLogbooksNewClick
 

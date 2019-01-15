@@ -15,7 +15,7 @@ unit Logbook;
 //
 // Ver. : 1.0.0
 //
-// Date : 12 Jan 2019
+// Date : 15 Jan 2019
 //
 //========================================================================================
 
@@ -46,7 +46,6 @@ type
     procedure OpenLogbook;
     procedure DeleteLogbook;
     procedure SaveLogbook;
-
   private
 
   public
@@ -93,41 +92,18 @@ begin
   dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
   vstrNewDir := dlgHUDirNameEntry.pDirName;
-  showmessage(vstrNewDir);
 
   if vstrNewDir = '' then
     Exit;
 
-
-
-{  //edtLogbookName.Text := frmSettings.pLogbooksDirectory + '\' + dlgHUDirNameEntry.pDirName;
- // vstrNewDir := frmSettings.pUserDirectory + '\' + cstrLogbooksDirectoryName;
-  vstrNewDir := dlgHUDirNameEntry.pDirName;
-
-  showmessage(vstrNewDir);
-
-  memAction.Text := 'Creating New Logbook';
-
-//  CreateDir(vstrNewDir);
-
-vstrNewDir := frmSettings.pUserDirectory + '\' + cstrLogbooksDirectoryName;
-CreateDir(vstrNewDir);
-
-  if not CreateUserDirectories(vstrNewDir)then
+  if not CreateDir(vstrNewDir)then
   begin
     showmessage('Logbook FAILED');
- //   Result := False;
     exit;
-  end
-  else
-    showmessage('LogBook CREATED');
+  end;
 
- // if Result = False then
-    Exit; }
-
+  memAction.Text := 'Creating New Logbook';
   frmLogbook.ShowModal ;
-
-  //end;
 
 end;// procedure TfrmLogbook.CreateNewLogbook
 

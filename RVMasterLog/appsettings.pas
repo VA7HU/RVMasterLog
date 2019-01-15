@@ -98,8 +98,6 @@ implementation
 //          PRIVATE CONSTANTS
 //========================================================================================
 const
-  cstrUserDirectoryPath = 'AppData\Roaming\RVMasterLog';
-
   cstrSettingsDirectoryName = 'Settings';
   cstrLogbooksDirectoryName = 'Logbooks';
   cstrBackupsDirectoryName = 'Backups';
@@ -107,6 +105,8 @@ const
 //========================================================================================
 //          PUBLIC CONSTANTS
 //========================================================================================
+const
+  cstrUserDirectoryPath = 'AppData\Roaming\RVMasterLog';
 
 //========================================================================================
 //          PRIVATE VARIABLES
