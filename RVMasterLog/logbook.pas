@@ -47,8 +47,11 @@ type
     procedure DeleteLogbook;
     procedure SaveLogbook;
   private
-
+    fAction : string;
+    procedure SetAction(Act : string);
+    function GetAction : string;
   public
+    property pAction : string read GetAction write SetAction;
 
   end;
 
@@ -88,7 +91,6 @@ var
 
 begin
 
-  dlgHUDirNameEntry.pBaseDirName := frmSettings.pLogbooksDirectory;
   dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
   vstrNewDir := dlgHUDirNameEntry.pDirName;
@@ -119,7 +121,7 @@ end;// procedure TfrmLogbook.OpenLogbook
 procedure TfrmLogbook.DeleteLogbook;
 begin
   showmessage('Delete Logbook');
-//lblProcessing.Caption := 'DELETE LOGBOOK';
+  memAction.Text := 'DELETE LOGBOOK';
   frmLogbook.ShowModal;
 end;// procedure TfrmLogbook.DeleteLogbook
 
@@ -127,13 +129,23 @@ end;// procedure TfrmLogbook.DeleteLogbook
 procedure TfrmLogbook.SaveLogbook;
 begin
   showmessage('Save Logbook');
- // lblProcessing.Caption := 'SAVE LOGBOOK';
+  memAction.Text := 'SAVE LOGBOOK';
   frmLogbook.ShowModal;
 end;// procedure TfrmLogbook.SaveLogbook
 
 //========================================================================================
 //          PROPERTY ROUTINES
 //========================================================================================
+function TfrmLogbook.GetAction: string;
+begin
+   Result := fAction;
+end;// function TfrmLogbook.GetAction
+
+//----------------------------------------------------------------------------------------
+procedure TfrmLogbook.SetAction(Act: string);
+begin
+    fAction := Act;
+end;// procedure TfrmLogbook.SetAction
 
 //========================================================================================
 //          MENU ROUTINES

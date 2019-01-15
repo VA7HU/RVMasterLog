@@ -47,8 +47,11 @@ type
     procedure DeleteLogbook;
     procedure SaveLogbook;
   private
-
+    fAction : string;
+    procedure SetAction(Act : string);
+    function GetAction : string;
   public
+    property pAction : string read GetAction write SetAction;
 
   end;
 
@@ -88,7 +91,7 @@ var
 
 begin
 
-  dlgHUDirNameEntry.pBaseDirName := frmSettings.pLogbooksDirectory;
+//  dlgHUDirNameEntry.pBaseDirName := frmSettings.pLogbooksDirectory;
   dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
   vstrNewDir := dlgHUDirNameEntry.pDirName;
@@ -134,6 +137,16 @@ end;// procedure TfrmLogbook.SaveLogbook
 //========================================================================================
 //          PROPERTY ROUTINES
 //========================================================================================
+function TfrmLogbook.GetAction: string;
+begin
+   Result := fAction;
+end;// function TfrmLogbook.GetAction
+
+//----------------------------------------------------------------------------------------
+procedure TfrmLogbook.SetAction(Act: string);
+begin
+    fAction := Act;
+end;// procedure TfrmLogbook.SetAction
 
 //========================================================================================
 //          MENU ROUTINES
@@ -162,7 +175,7 @@ end;// procedure TfrmLogbook.FormCreate
 //========================================================================================
 procedure TfrmLogbook.FormShow(Sender: TObject);
 begin
-  showmessage('Logbook Form Show');
+
 end;// procedure TfrmLogbook.FormShow
 
 //========================================================================================
