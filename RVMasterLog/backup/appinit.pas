@@ -111,6 +111,9 @@ begin
         CopyFile (frmSettings.pApplicationDirectory +
                       '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
                   frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
+        CopyFile (frmSettings.pApplicationDirectory +
+                      '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
+                  frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
         frmSettings.ReadSettingsINIFile;
 

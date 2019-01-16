@@ -13,7 +13,7 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          Logbook :
+//          Logbook : frmLogbook.CreateNewLogbook
 //
 // Ver. : 1.0.0
 //

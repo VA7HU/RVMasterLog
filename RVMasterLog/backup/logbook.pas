@@ -17,6 +17,8 @@ unit Logbook;
 //
 // Date : 15 Jan 2019
 //
+// ToDo: Todo_text
+//
 //========================================================================================
 
 interface
@@ -91,7 +93,6 @@ var
 
 begin
 
-//  dlgHUDirNameEntry.pBaseDirName := frmSettings.pLogbooksDirectory;
   dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
   vstrNewDir := dlgHUDirNameEntry.pDirName;
@@ -122,7 +123,7 @@ end;// procedure TfrmLogbook.OpenLogbook
 procedure TfrmLogbook.DeleteLogbook;
 begin
   showmessage('Delete Logbook');
-//lblProcessing.Caption := 'DELETE LOGBOOK';
+  memAction.Text := 'DELETE LOGBOOK';
   frmLogbook.ShowModal;
 end;// procedure TfrmLogbook.DeleteLogbook
 
@@ -130,7 +131,7 @@ end;// procedure TfrmLogbook.DeleteLogbook
 procedure TfrmLogbook.SaveLogbook;
 begin
   showmessage('Save Logbook');
- // lblProcessing.Caption := 'SAVE LOGBOOK';
+  memAction.Text := 'SAVE LOGBOOK';
   frmLogbook.ShowModal;
 end;// procedure TfrmLogbook.SaveLogbook
 
@@ -179,6 +180,5 @@ begin
 end;// procedure TfrmLogbook.FormShow
 
 //========================================================================================
-
 end.// unit Logbook
 

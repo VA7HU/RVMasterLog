@@ -14,7 +14,9 @@ unit AppFinal;
 //
 // Ver. : 1.0.0
 //
-// Date : 30 Jul 2018
+// Date : 2 Nov 2018
+//
+// ToDo: 15 Jan 2019 Todo_text}
 //
 //========================================================================================
 
@@ -56,7 +58,7 @@ procedure Finalize;
 begin
 
   showmessage('Finalize');
-  //frmSettings.WriteSettingsINIFile;
+  frmSettings.WriteSettingsINIFile;
 
 end;// procedure Finalize
 
