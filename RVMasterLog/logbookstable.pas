@@ -10,7 +10,7 @@ unit LogbooksTable;
 //
 // Called By :
 //
-// Calls :
+// Calls : dlgHUDirNameEntry
 //
 // Ver. : 1.00
 //
@@ -23,10 +23,18 @@ unit LogbooksTable;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
+  // HULib Units
+  HUDirNameEntry;
 
 type
+
+  { TfrmLogbooksTable }
+
   TfrmLogbooksTable = class(TForm)
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -69,9 +77,10 @@ var
 
 begin
 
-{  dlgHUDirNameEntry.pDirName := '';
+  dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
   vstrNewDir := dlgHUDirNameEntry.pDirName;
+
 
   if vstrNewDir = '' then
     Exit;
@@ -82,8 +91,8 @@ begin
     exit;
   end;
 
-  memAction.Text := 'Creating New Logbook';
-  frmLogbook.ShowModal ;  }
+//  memAction.Text := 'Creating New Logbook';
+  frmLogbooksTable.ShowModal ;
 
 end;// procedure TfrmLogbooksTable.CreateNewLogbook
 
@@ -110,6 +119,23 @@ end;// procedure TfrmLogbooksTable.CreateNewLogbook
 //========================================================================================
 //          FORM ROUTINES
 //========================================================================================
+procedure TfrmLogbooksTable.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
+begin
+
+end;// procedure TfrmLogbooksTable.FormClose
+
+//========================================================================================
+procedure TfrmLogbooksTable.FormCreate(Sender: TObject);
+begin
+
+end;// procedure TfrmLogbooksTable.FormCreate
+
+//========================================================================================
+procedure TfrmLogbooksTable.FormShow(Sender: TObject);
+begin
+
+end;// procedure TfrmLogbooksTable.FormShow
 
 //========================================================================================
 

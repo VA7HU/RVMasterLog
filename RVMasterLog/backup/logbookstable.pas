@@ -10,11 +10,11 @@ unit LogbooksTable;
 //
 // Called By :
 //
-// Calls :
+// Calls : dlgHUDirNameEntry
 //
 // Ver. : 1.00
 //
-// Date :
+// Date : 20 Jan 2019
 //
 // ToDo: 20 Jan 2019 - LogbooksTable
 //
@@ -23,7 +23,9 @@ unit LogbooksTable;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
+  // HULib Units
+  HUDirNameEntry;
 
 type
   TfrmLogbooksTable = class(TForm)
@@ -69,9 +71,10 @@ var
 
 begin
 
-{  dlgHUDirNameEntry.pDirName := '';
+  dlgHUDirNameEntry.pDirName := '';
   dlgHUDirNameEntry.ShowModal;
   vstrNewDir := dlgHUDirNameEntry.pDirName;
+
 
   if vstrNewDir = '' then
     Exit;
@@ -82,8 +85,8 @@ begin
     exit;
   end;
 
-  memAction.Text := 'Creating New Logbook';
-  frmLogbook.ShowModal ;  }
+//  memAction.Text := 'Creating New Logbook';
+  frmLogbooksTable.ShowModal ;
 
 end;// procedure TfrmLogbooksTable.CreateNewLogbook
 
