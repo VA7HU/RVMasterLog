@@ -28,7 +28,7 @@ object frmLogbook: TfrmLogbook
   object edtLogbookName: TEdit
     Left = 125
     Height = 23
-    Top = 88
+    Top = 72
     Width = 496
     Alignment = taCenter
     TabOrder = 2

@@ -13,11 +13,11 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          Logbook : frmLogbook.CreateNewLogbook
+//          Logbook : frmLogbooksTable.CreateNewLogbook
 //
 // Ver. : 1.0.0
 //
-// Date : 15 Jan 2018
+// Date : 20 Jan 2019
 //
 //
 // ToDo: Todo_text
@@ -30,7 +30,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, Logbook, RVData, SuppliersTable, sqlite3conn;
+  AppFinal, AppInit, AppSettings, LogbooksTable, RVData, SuppliersTable, sqlite3conn;
 
 
 type
@@ -115,28 +115,28 @@ implementation
 //========================================================================================
 procedure TfrmMain.mnuLogbooksNewLogbookClick(Sender: TObject);
 begin
-  frmLogbook.CreateNewLogbook;
+  frmLogbooksTable.ShowModal;
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------
 procedure TfrmMain.mnuLogbookOpenLogbookClick(Sender: TObject);
 begin
   showmessage('Open Logbook');
-  frmLogbook.OpenLogbook;
+//  frmLogbooksTable.OpenLogbook;
 end;// procedure TfrmMain.mnuLogbooksOpenLogbookClick
 
 //----------------------------------------------------------------------------------------
 procedure TfrmMain.mnuLogbooksSaveClick(Sender: TObject);
 begin
  showmessage('Save Logbook');
- frmLogbook.SaveLogbook;
+// frmLogbooksTable.SaveLogbook;
 end;// procedure TfrmMain.mnuLogbooksSaveClick
 
 //----------------------------------------------------------------------------------------
 procedure TfrmMain.mnuLogbookDeleteLogbookClick(Sender: TObject);
 begin
  showmessage('Delete Logbook');
- frmLogbook.DeleteLogbook;
+// frmLogbook.DeleteLogbook;
 end;// procedure TfrmMain.mnuLogbooksDeleteClick
 
 //----------------------------------------------------------------------------------------

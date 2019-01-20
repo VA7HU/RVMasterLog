@@ -190,6 +190,7 @@ object frmSuppliersTable: TfrmSuppliersTable
         Height = 23
         Top = 144
         Width = 52
+        DataSource = DataSource1
         ItemHeight = 15
         MaxLength = 0
         TabOrder = 6

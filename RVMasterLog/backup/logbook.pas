@@ -17,7 +17,7 @@ unit Logbook;
 //
 // Date : 15 Jan 2019
 //
-// ToDo: Todo_text
+// ToDo: 19 Jan 2019 - Logbook : TfrmLogbook.FormShow.FormShow
 //
 //========================================================================================
 
