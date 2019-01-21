@@ -23,21 +23,35 @@ unit LogbooksTable;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  // Applikcation Units
+  AppSettings,
   // HULib Units
-  HUDirNameEntry;
+  HUConstants, HUDirNameEntry;
 
 type
 
   { TfrmLogbooksTable }
 
   TfrmLogbooksTable = class(TForm)
+    memMode: TMemo;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
-
+    fMode : string;
+    fLogName : string;
+    fLogPath : string;
+    function GetMode : string;
+    procedure SetMode(Mode : string);
+    function GetLogName : string;
+    procedure SetLogName(LogName : string);
+    function GetLogPath : string;
+    procedure SetLogPath(LogPath : string);
   public
+    property pMode : string read GetMode write SetMode;
+    property pLogName : string read GetLogName write SetLogName;
+    property pLogPath : string read GetLogPath write SetLogPath;
     procedure CreateNewLogbook;
   end;// TfrmLogbooksTable
 
@@ -73,25 +87,28 @@ implementation
 //========================================================================================
 procedure TfrmLogbooksTable.CreateNewLogbook;
 var
-  vstrNewDir: string;
+  vstrNewLogPath: string;
 
 begin
 
   dlgHUDirNameEntry.pDirName := '';
+  dlgHUDirNameEntry.pDirPath := frmSettings.pLogBooksDirectory;
   dlgHUDirNameEntry.ShowModal;
-  vstrNewDir := dlgHUDirNameEntry.pDirName;
+  vstrNewLogPath := dlgHUDirNameEntry.pDirPath;
 
-
-  if vstrNewDir = '' then
+  // We cancelled here
+  if vstrNewLogPath = '' then
     Exit;
 
-  if not CreateDir(vstrNewDir)then
+  if not CreateDir(vstrNewLogPath)then
   begin
     showmessage('Logbook FAILED');
     exit;
   end;
 
-//  memAction.Text := 'Creating New Logbook';
+  pMode := 'Create';
+  pLogName := '';
+  pLogPath := dlgHUDirNameEntry.pDirPath;
   frmLogbooksTable.ShowModal ;
 
 end;// procedure TfrmLogbooksTable.CreateNewLogbook
@@ -99,6 +116,40 @@ end;// procedure TfrmLogbooksTable.CreateNewLogbook
 //========================================================================================
 //          PROPERTY ROUTINES
 //========================================================================================
+function TfrmLogbooksTable.GetMode: string;
+begin
+   Result := fMode;
+end;// function TfrmLogbooksTable.GetMode
+
+//----------------------------------------------------------------------------------------
+procedure TfrmLogbooksTable.SetMode(Mode: string);
+begin
+    fMode := Mode;
+end;// procedure TfrmLogbooksTable.SetMode
+
+//========================================================================================
+function TfrmLogbooksTable.GetLogName: string;
+begin
+   Result := fLogName;
+end;// function TfrmLogbooksTable.GetLogName
+
+//----------------------------------------------------------------------------------------
+procedure TfrmLogbooksTable.SetLogName(LogName: string);
+begin
+    fMode := LogName;
+end;// procedure TfrmLogbooksTable.SetMode
+
+//========================================================================================
+function TfrmLogbooksTable.GetLogPath: string;
+begin
+   Result := fLogPath;
+end;// function TfrmLogbooksTable.GetLogPath
+
+//----------------------------------------------------------------------------------------
+procedure TfrmLogbooksTable.SetLogPath(LogPath: string);
+begin
+    fLogPath := LogPath;
+end;// procedure TfrmLogbooksTable.SetPath
 
 //========================================================================================
 //          MENU ROUTINES
@@ -134,6 +185,13 @@ end;// procedure TfrmLogbooksTable.FormCreate
 //========================================================================================
 procedure TfrmLogbooksTable.FormShow(Sender: TObject);
 begin
+
+  case pMode of
+    'Create': memMode.Text := 'Creating Logbook' +
+                              K_CR + K_LF +
+                              pLogName;
+    'Edit': memMode.Text := 'Edit';
+  end;// case pMode of
 
 end;// procedure TfrmLogbooksTable.FormShow
 

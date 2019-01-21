@@ -115,7 +115,7 @@ implementation
 //========================================================================================
 procedure TfrmMain.mnuLogbooksNewLogbookClick(Sender: TObject);
 begin
-  frmLogbooksTable.ShowModal;
+  frmLogbooksTable.CreateNewLogbook;
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------

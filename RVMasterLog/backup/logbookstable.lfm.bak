@@ -1,8 +1,26 @@
 object frmLogbooksTable: TfrmLogbooksTable
-  Left = 668
-  Height = 240
-  Top = 127
-  Width = 320
+  Left = 360
+  Height = 557
+  Top = 131
+  Width = 743
   Caption = 'frmLogbooksTable'
+  ClientHeight = 557
+  ClientWidth = 743
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
   LCLVersion = '1.8.4.0'
+  object memMode: TMemo
+    Left = 272
+    Height = 56
+    Top = 24
+    Width = 199
+    Alignment = taCenter
+    Font.Height = -16
+    Lines.Strings = (
+      'memMode'
+    )
+    ParentFont = False
+    TabOrder = 0
+  end
 end
