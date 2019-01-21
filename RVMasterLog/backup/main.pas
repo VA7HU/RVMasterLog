@@ -13,12 +13,12 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
+//          HUGeoDB : ShowModal
 //          Logbook : frmLogbooksTable.CreateNewLogbook
 //
 // Ver. : 1.0.0
 //
 // Date : 20 Jan 2019
-//
 //
 // ToDo: Todo_text
 //
@@ -30,7 +30,9 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, LogbooksTable, RVData, SuppliersTable, sqlite3conn;
+  AppFinal, AppInit, AppSettings, LogbooksTable, RVData, SuppliersTable, sqlite3conn,
+  //
+  HUGeoDB;
 
 
 type
@@ -38,6 +40,12 @@ type
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem;
+    mnuMainToolsDBMaintenanceHUGeoDB: TMenuItem;
+    mnuMainToolsDBMaintenanceHUCountryDB: TMenuItem;
+    mnuToolsDBMaintenanceApplicationDB: TMenuItem;
+    mnuToolsDBMaintenance: TMenuItem;
+    mnuTools: TMenuItem;
     mnuLogbooksSaveLogbook: TMenuItem;
     mnuSettingsCommonHUCountryDB: TMenuItem;
     mnuSettingsDatabasesCommon: TMenuItem;
@@ -67,6 +75,7 @@ type
     procedure mnuLogbooksPrinterSetupClick(Sender: TObject);
     procedure mnuLogbookDeleteLogbookClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
+    procedure mnuMainToolsDBMaintenanceHUGeoDBClick(Sender: TObject);
     procedure mnuSettingsDirectoriesClick(Sender: TObject);
   private
 
@@ -115,7 +124,7 @@ implementation
 //========================================================================================
 procedure TfrmMain.mnuLogbooksNewLogbookClick(Sender: TObject);
 begin
-  frmLogbooksTable.ShowModal;
+  frmLogbooksTable.CreateNewLogbook;
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------
@@ -164,8 +173,11 @@ begin
   frmSettings.ShowModal;
 end;// procedure TfrmMain.mnuSettingsDirectoriesClick
 
-//----------------------------------------------------------------------------------------
-
+//========================================================================================
+procedure TfrmMain.mnuMainToolsDBMaintenanceHUGeoDBClick(Sender: TObject);
+begin
+  frmHUGeoDB.ShowModal;
+end;// procedure TfrmMain.mnuMainToolsDBMaintenanceHUGeoDBClick
 
 //========================================================================================
 //          COMMAND BUTTON ROUTINES

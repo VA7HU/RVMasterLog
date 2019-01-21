@@ -18,7 +18,10 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 24 Dec 2018
+// Date : 21 Jan 2019
+//
+//
+// ToDo: Todo_text
 //
 //========================================================================================
 
@@ -107,13 +110,19 @@ begin
           InitFailure := True;
         end;// if not frmSettings.CreateUserDirectories
 
-        // Load the common User databases
+        // Load the databases
+        CopyFile (frmSettings.pApplicationDirectory +
+                      '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
+                      frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
         CopyFile (frmSettings.pApplicationDirectory +
                       '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
                   frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
         CopyFile (frmSettings.pApplicationDirectory +
                       '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
                   frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
+        CopyFile (frmSettings.pApplicationDirectory +
+                      '\' + 'UserData' + '\' + 'HUCountryDB.sl3',
+                  frmSettings.pUserDirectory + '\' + 'HUCountryDB.sl3');
 
         frmSettings.ReadSettingsINIFile;
 

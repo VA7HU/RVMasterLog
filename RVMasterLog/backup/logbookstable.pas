@@ -16,7 +16,7 @@ unit LogbooksTable;
 //
 // Date : 20 Jan 2019
 //
-// ToDo: 20 Jan 2019 - LogbooksTable
+// ToDo: 21 Jan 2019 - LogbooksTable
 //
 //========================================================================================
 
@@ -107,7 +107,7 @@ begin
   end;
 
   pMode := 'Create';
-  pLogName := '';
+  pLogName := dlgHUDirNameEntry.pDirName;
   pLogPath := dlgHUDirNameEntry.pDirPath;
   frmLogbooksTable.ShowModal ;
 
@@ -136,7 +136,7 @@ end;// function TfrmLogbooksTable.GetLogName
 //----------------------------------------------------------------------------------------
 procedure TfrmLogbooksTable.SetLogName(LogName: string);
 begin
-    fMode := LogName;
+    fLogName := LogName;
 end;// procedure TfrmLogbooksTable.SetMode
 
 //========================================================================================
@@ -186,14 +186,18 @@ end;// procedure TfrmLogbooksTable.FormCreate
 procedure TfrmLogbooksTable.FormShow(Sender: TObject);
 begin
 
-  Showmessage(pLogName);
-  Showmessage(pLogPath);
-
   case pMode of
-    'Create': memMode.Text := 'Creating Logbook' +
-                              K_CR + K_LF +
-                              pLogName;
+    'Create': begin
+                memMode.Lines.Add('Creating Logbook');
+                memMode.Lines.Add(pLogName);
+
+                // Copy and Rename Databases
+                //CopyFile(const SrcFilename, DestFilename: string);
+
+              end;
+
     'Edit': memMode.Text := 'Edit';
+
   end;// case pMode of
 
 end;// procedure TfrmLogbooksTable.FormShow

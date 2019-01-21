@@ -30,7 +30,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="11">
+    <Units Count="12">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -100,6 +100,13 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="LogbooksTable"/>
       </Unit10>
+      <Unit11>
+        <Filename Value="hugeodb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmHUGeoDB"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="HUGeoDB"/>
+      </Unit11>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

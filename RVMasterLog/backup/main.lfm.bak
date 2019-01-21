@@ -85,5 +85,24 @@ object frmMain: TfrmMain
         end
       end
     end
+    object mnuTools: TMenuItem
+      Caption = '&Tools'
+      object mnuToolsDBMaintenance: TMenuItem
+        Caption = 'DB Maintenance'
+        object mnuToolsDBMaintenanceApplicationDB: TMenuItem
+          Caption = 'ApplicationDB'
+        end
+        object mnuMainToolsDBMaintenanceHUCountryDB: TMenuItem
+          Caption = 'HUCountryDB'
+        end
+        object mnuMainToolsDBMaintenanceHUGeoDB: TMenuItem
+          Caption = 'HUGeoDB'
+          OnClick = mnuMainToolsDBMaintenanceHUGeoDBClick
+        end
+        object mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem
+          Caption = 'ManufacturersDB'
+        end
+      end
+    end
   end
 end

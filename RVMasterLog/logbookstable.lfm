@@ -17,9 +17,6 @@ object frmLogbooksTable: TfrmLogbooksTable
     Width = 199
     Alignment = taCenter
     Font.Height = -16
-    Lines.Strings = (
-      'memMode'
-    )
     ParentFont = False
     TabOrder = 0
   end
