@@ -16,7 +16,7 @@ unit LogbooksTable;
 //
 // Date : 20 Jan 2019
 //
-// ToDo: 21 Jan 2019 - LogbooksTable
+// ToDo:
 //
 //========================================================================================
 
@@ -194,7 +194,7 @@ begin
                 // Copy and Rename Databases
                 //CopyFile(const SrcFilename, DestFilename: string);
 
-              end;
+              end;// 'Create'
 
     'Edit': memMode.Text := 'Edit';
 

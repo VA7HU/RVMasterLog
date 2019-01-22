@@ -67,7 +67,18 @@ object frmHUGeoDB: TfrmHUGeoDB
     Connected = False
     LoginPrompt = False
     KeepConnection = False
-    left = 64
-    top = 184
+    left = 56
+    top = 104
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    left = 98
+    top = 323
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    left = 186
+    top = 302
   end
 end
