@@ -23,7 +23,8 @@ unit HUGeoDB;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Buttons;
+  Classes, SysUtils, db, sqlite3conn, FileUtil, Forms, Controls, Graphics,
+  Dialogs, Buttons, DBGrids, DbCtrls;
 
 type
 
@@ -32,6 +33,10 @@ type
   TfrmHUGeoDB = class(TForm)
     bbtOK: TBitBtn;
     bbtCancel: TBitBtn;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    SQLite3Connection1: TSQLite3Connection;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);

@@ -1,7 +1,7 @@
 object frmHUGeoDB: TfrmHUGeoDB
-  Left = 355
+  Left = 325
   Height = 476
-  Top = 82
+  Top = 170
   Width = 698
   Caption = 'frmHUGeoDB'
   ClientHeight = 476
@@ -32,5 +32,42 @@ object frmHUGeoDB: TfrmHUGeoDB
     Kind = bkCancel
     ModalResult = 2
     TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 448
+    Height = 100
+    Top = 88
+    Width = 200
+    Color = clWindow
+    Columns = <>
+    TabOrder = 2
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 360
+    Height = 25
+    Top = 248
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    Options = []
+    TabOrder = 3
+  end
+  object DataSource1: TDataSource
+    left = 56
+    top = 226
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    left = 64
+    top = 184
   end
 end

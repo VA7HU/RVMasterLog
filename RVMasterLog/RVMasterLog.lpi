@@ -104,6 +104,7 @@
         <Filename Value="hugeodb.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmHUGeoDB"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HUGeoDB"/>
       </Unit11>
