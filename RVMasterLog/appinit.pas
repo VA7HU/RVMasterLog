@@ -115,18 +115,21 @@ begin
         CopyFile (frmSettings.pApplicationDirectory +
                       '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
                       frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
+
         CopyFile (frmSettings.pApplicationDirectory +
                       '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
                   frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
+
         CopyFile (frmSettings.pApplicationDirectory +
                       '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
                   frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
-        frmHUGeoDB.pHUGeoDBPath := frmSettings.pApplicationDirectory +
-                      '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName;
+        frmHUGeoDB.pHUGeoDBPath := frmSettings.pUserDirectory +
+                      '\' + frmHUGeoDB.pHUGeoDBName;
+
         CopyFile (frmSettings.pApplicationDirectory +
                       '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
-                  frmSettings.pUserDirectory + '\' + frmHUGeoDB.pHUGeoDBName);
+                  frmHUGeoDB.pHUGeoDBPath);
 
         frmSettings.ReadSettingsINIFile;
 

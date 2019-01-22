@@ -111,7 +111,7 @@ end;// procedure TfrmHUGeoDB.SetHUGeoDBName
 //========================================================================================
 function TfrmHUGeoDB.GetHUGeoDBPath: string;
 begin
-   Result := cstrHUGeoDBPath;
+   Result := fHUGeoDBPath;
 end;// function TfrmHUGeoDB.GetHUGeoDBPath
 
 //----------------------------------------------------------------------------------------
@@ -155,12 +155,12 @@ procedure TfrmHUGeoDB.FormShow(Sender: TObject);
 begin
 
 //  vstrHUGeoDBPath := frmSettings.pUserDirectory  + '\' + cstrHUGeoDBName;
-//  showmessage(vstrHUGeoDBPath);
+  showmessage(pHUGeoDBPath);
 
   SQLite3Connection1.Connected := False;
   SQLQuery1.Active := False;
   SQLTransaction1.Active := False;
-  SQLite3Connection1.DatabaseName := vstrHUGeoDBPath;
+  SQLite3Connection1.DatabaseName := pHUGeoDBPath;
 
   if FileExists(SQLite3Connection1.DatabaseName) then
     showmessage('True')
