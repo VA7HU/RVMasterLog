@@ -132,9 +132,9 @@ var
 begin
 
     // USER DIRECTORY
-  vstrNewDir := frmSettings.pSystemUserDirectory + cstrUserDirectoryPath;
+  pUserDirectory := frmSettings.pSystemUserDirectory + cstrUserDirectoryPath;
 
-  if not CreateDir(vstrNewDir)then
+  if not CreateDir(pUserDirectory)then
   begin
     showmessage('USER DIR FAILED');
     Result := False;
@@ -145,8 +145,6 @@ begin
 
   if Result = False then
     Exit;
-
-  frmSettings.pUserDirectory := vstrNewDir;
 
     // SETTINGS DIRECTORY
   vstrNewDir := pUserDirectory + '\' + cstrSettingsDirectoryName;
@@ -275,9 +273,7 @@ end;// procedure TfrmSettings.edtSettingsDirectoryMouseUp
 //========================================================================================
 //          FILE ROUTINES
 //========================================================================================
-
 const
-
   cstrApplicationINIFileName = 'RVMasterLog.ini';
 
   cstrUserDirectories = 'USER DIRECTORIES';
@@ -287,7 +283,6 @@ const
   cstrKeyBackupsDirectory = 'Backups Directory';
 
 var
-
   ApplicationINIFile : TINIFile;
   ApplicationINIFileName : string;
 

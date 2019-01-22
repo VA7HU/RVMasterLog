@@ -18,7 +18,7 @@ unit Main;
 //
 // Ver. : 1.0.0
 //
-// Date : 21 Jan 2019
+// Date : 22 Jan 2019
 //
 // *ToDo:
 //
@@ -215,6 +215,10 @@ end;// procedure TfrmMain.FormCreate
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
 
+  // Get the reqired System Directories
+  frmSettings.pApplicationDirectory := GetCurrentDir;
+  frmSettings.pSystemUserDirectory := GetUserDir;
+
   if Initialize then
   begin
     showmessage('Init OK');
@@ -228,6 +232,5 @@ begin
 end;// procedure TfrmMain.FormShow(Sender: TObject);
 
 //========================================================================================
-
 end.// unit Main
 

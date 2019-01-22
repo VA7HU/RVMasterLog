@@ -124,12 +124,6 @@ begin
                       '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
                   frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
-        frmHUGeoDB.pHUGeoDBPath := frmSettings.pUserDirectory +
-                      '\' + frmHUGeoDB.pHUGeoDBName;
-
-        showmessage(frmHUGeoDB.pHUGeoDBPath);
-
-
         CopyFile (frmSettings.pApplicationDirectory +
                       '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
                   frmHUGeoDB.pHUGeoDBPath);
@@ -146,6 +140,7 @@ begin
     end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
 
   end;// if frmSettings.INIFileExists
+
 
   if InitFailure then
   begin

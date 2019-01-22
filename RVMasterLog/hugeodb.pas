@@ -154,15 +154,27 @@ end;// procedure TfrmHUGeoDB.FormCreate
 procedure TfrmHUGeoDB.FormShow(Sender: TObject);
 begin
 
+  pHUGeoDBPath := frmSettings.pUserDirectory + '\' + pHUGeoDBName;
+  showmessage(pHUGeoDBPath);
+
   SQLite3Connection1.Connected := False;
   SQLQuery1.Active := False;
   SQLTransaction1.Active := False;
-  SQLite3Connection1.DatabaseName := pHUGeoDBPath;
 
-  if FileExists(SQLite3Connection1.DatabaseName) then
-    showmessage('True')
-  else
-    showmessage('False');
+  showmessage(pHUGeoDBPath);
+
+  SQLite3Connection1.DatabaseName := pHUGeoDBPath;
+  SQLite3Connection1.Transaction := SQLTransaction1;
+
+  SQLTransaction1.DataBase := SQLite3Connection1;
+
+  SQLQuery1.DataBase := SQLite3Connection1;
+  SQLQuery1.Transaction := SQLTransaction1;
+  SQLQuery1.SQL.Text := 'select * from CountryTbl';
+
+  SQLTransaction1.Active := True;
+  SQLite3Connection1.Open;
+  SQLQuery1.Open;
 
 end;// procedure TfrmHUGeoDB.FormShow
 

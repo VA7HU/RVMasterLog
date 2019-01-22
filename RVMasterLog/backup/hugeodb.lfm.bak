@@ -67,6 +67,7 @@ object frmHUGeoDB: TfrmHUGeoDB
     Connected = False
     LoginPrompt = False
     KeepConnection = False
+    Transaction = SQLTransaction1
     left = 56
     top = 104
   end
@@ -78,6 +79,7 @@ object frmHUGeoDB: TfrmHUGeoDB
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
+    Database = SQLite3Connection1
     left = 186
     top = 302
   end

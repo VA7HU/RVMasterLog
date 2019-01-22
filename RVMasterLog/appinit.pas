@@ -73,10 +73,6 @@ begin
 
   InitFailure := False;
 
-  // Get the reqired System Directories
-  frmSettings.pApplicationDirectory := GetCurrentDir;
-  frmSettings.pSystemUserDirectory := GetUserDir;
-
   // If the .ini file exists we read it.
   //
   //If it does not there are only two possibilities:
@@ -124,9 +120,6 @@ begin
                       '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
                   frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
-        frmHUGeoDB.pHUGeoDBPath := frmSettings.pUserDirectory +
-                      '\' + frmHUGeoDB.pHUGeoDBName;
-
         CopyFile (frmSettings.pApplicationDirectory +
                       '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
                   frmHUGeoDB.pHUGeoDBPath);
@@ -143,6 +136,7 @@ begin
     end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
 
   end;// if frmSettings.INIFileExists
+
 
   if InitFailure then
   begin
