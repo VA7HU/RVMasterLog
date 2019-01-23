@@ -172,6 +172,9 @@ begin
   SQLQuery1.Transaction := SQLTransaction1;
   SQLQuery1.SQL.Text := 'select * from CountryTbl';
 
+  DataSource1.DataSet := SQLQuery1;
+  DBGrid1.DataSource := DataSource1;
+
   SQLTransaction1.Active := True;
   SQLite3Connection1.Open;
   SQLQuery1.Open;

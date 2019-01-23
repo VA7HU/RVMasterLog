@@ -34,18 +34,26 @@ object frmHUGeoDB: TfrmHUGeoDB
     TabOrder = 1
   end
   object DBGrid1: TDBGrid
-    Left = 448
-    Height = 100
-    Top = 88
+    Left = 472
+    Height = 272
+    Top = 24
     Width = 200
     Color = clWindow
-    Columns = <>
+    Columns = <    
+      item
+        Title.Caption = 'Country'
+        FieldName = 'Country'
+      end    
+      item
+        Title.Caption = 'CountryCode'
+        FieldName = 'CountryCode'
+      end>
     TabOrder = 2
   end
   object DBNavigator1: TDBNavigator
-    Left = 360
+    Left = 400
     Height = 25
-    Top = 248
+    Top = 328
     Width = 241
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds

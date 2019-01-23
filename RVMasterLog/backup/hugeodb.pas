@@ -161,6 +161,8 @@ begin
   SQLQuery1.Active := False;
   SQLTransaction1.Active := False;
 
+  showmessage(pHUGeoDBPath);
+
   SQLite3Connection1.DatabaseName := pHUGeoDBPath;
   SQLite3Connection1.Transaction := SQLTransaction1;
 
@@ -169,6 +171,9 @@ begin
   SQLQuery1.DataBase := SQLite3Connection1;
   SQLQuery1.Transaction := SQLTransaction1;
   SQLQuery1.SQL.Text := 'select * from CountryTbl';
+
+  DataSource1.DataSet := SQLQuery1;
+  DBGrid1.DataSource := DataSource1;
 
   SQLTransaction1.Active := True;
   SQLite3Connection1.Open;
