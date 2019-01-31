@@ -16,7 +16,7 @@ unit HUGeoDB;
 //
 // Date : 22 Jan 2019
 //
-// ToDo: 22 Jan 2019 - HUGeoDB : FormShow
+// ToDo: 31 Jan 2019 - HUGeoDB : FormShow
 //
 //========================================================================================
 
@@ -42,6 +42,8 @@ type
     SQLite3Connection1: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
+    procedure DBNavigator1BeforeAction(Sender: TObject; Button: TDBNavButtonType
+      );
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -131,6 +133,55 @@ end;// procedure TfrmHUGeoDB.SetHUGeoDBPath
 //========================================================================================
 //          CONTROL ROUTINES
 //========================================================================================
+procedure TfrmHUGeoDB.DBNavigator1BeforeAction(Sender: TObject;
+  Button: TDBNavButtonType);
+begin
+
+  case Button of
+
+    nbFirst: Begin
+               ShowMessage('nbFirst');
+
+             End;
+    nbPrior: Begin
+               ShowMessage('nbPrior');
+
+             End;
+    nbNext:  Begin
+               ShowMessage('nbNext');
+
+             End;
+    nbLast:  Begin
+               ShowMessage('nbLast');
+
+             End;
+    nbInsert: Begin
+                ShowMessage('nbInsert');
+                Abort;
+              End;
+    nbDelete: Begin
+                ShowMessage('nbDelete');
+                Abort;
+              End;
+    nbEdit: Begin
+              ShowMessage('nbEdit');
+              Abort;
+            End;
+    nbPost: Begin
+              ShowMessage('nbPost');
+              Abort;
+            End;
+    nbCancel: Begin
+                ShowMessage('nbCancel');
+                Abort;
+              End;
+    nbRefresh: Begin
+                 ShowMessage('nbRefresh');
+                 Abort;
+               End;
+  end;
+
+end;// procedure TfrmHUGeoDB.DBNavigator1BeforeAction
 
 //========================================================================================
 //          FILE ROUTINES
@@ -155,13 +206,13 @@ procedure TfrmHUGeoDB.FormShow(Sender: TObject);
 begin
 
   pHUGeoDBPath := frmSettings.pUserDirectory + '\' + pHUGeoDBName;
-  showmessage(pHUGeoDBPath);
+//  showmessage(pHUGeoDBPath);
 
   SQLite3Connection1.Connected := False;
   SQLQuery1.Active := False;
   SQLTransaction1.Active := False;
 
-  showmessage(pHUGeoDBPath);
+//  showmessage(pHUGeoDBPath);
 
   SQLite3Connection1.DatabaseName := pHUGeoDBPath;
   SQLite3Connection1.Transaction := SQLTransaction1;
@@ -174,6 +225,7 @@ begin
 
   DataSource1.DataSet := SQLQuery1;
   DBGrid1.DataSource := DataSource1;
+  DBNavigator1.DataSource := DataSource1;
 
   SQLTransaction1.Active := True;
   SQLite3Connection1.Open;

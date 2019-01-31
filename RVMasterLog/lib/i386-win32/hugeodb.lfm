@@ -55,6 +55,7 @@ object frmHUGeoDB: TfrmHUGeoDB
     Height = 25
     Top = 328
     Width = 241
+    BeforeAction = DBNavigator1BeforeAction
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
     ChildSizing.EnlargeVertical = crsScaleChilds

@@ -37,7 +37,7 @@ object frmHUGeoDB: TfrmHUGeoDB
     Left = 472
     Height = 272
     Top = 24
-    Width = 161
+    Width = 200
     Color = clWindow
     Columns = <    
       item
@@ -55,6 +55,7 @@ object frmHUGeoDB: TfrmHUGeoDB
     Height = 25
     Top = 328
     Width = 241
+    BeforeAction = DBNavigator1BeforeAction
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
     ChildSizing.EnlargeVertical = crsScaleChilds
