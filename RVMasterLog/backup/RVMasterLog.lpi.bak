@@ -93,20 +93,19 @@
         <UnitName Value="HUDirNameEntry"/>
       </Unit9>
       <Unit10>
-        <Filename Value="logbookstable.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmLogbooksTable"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="LogbooksTable"/>
-      </Unit10>
-      <Unit11>
         <Filename Value="hugeodb.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmHUGeoDB"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HUGeoDB"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="huregistration.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dlgHURegistration"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="HURegistration"/>
       </Unit11>
     </Units>
   </ProjectOptions>
