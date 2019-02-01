@@ -13,12 +13,11 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          HUGeoDB : ShowModal
 //          Logbook : frmLogbooksTable.CreateNewLogbook
 //
 // Ver. : 1.0.0
 //
-// Date : 22 Jan 2019
+// Date : 1 Feb 2019
 //
 // *ToDo:
 //
@@ -30,10 +29,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, LogbooksTable, RVData, SuppliersTable, sqlite3conn,
-  //
-  HUGeoDB;
-
+  AppFinal, AppInit, AppSettings, LogbooksTable, RVData, SuppliersTable, sqlite3conn;
 
 type
 
@@ -75,13 +71,12 @@ type
     procedure mnuLogbooksPrinterSetupClick(Sender: TObject);
     procedure mnuLogbookDeleteLogbookClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
-    procedure mnuMainToolsDBMaintenanceHUGeoDBClick(Sender: TObject);
     procedure mnuSettingsDirectoriesClick(Sender: TObject);
   private
 
   public
 
-  end;
+  end;// TfrmMain = class(TForm)
 
 var
   frmMain: TfrmMain;
@@ -172,12 +167,6 @@ procedure TfrmMain.mnuSettingsDirectoriesClick(Sender: TObject);
 begin
   frmSettings.ShowModal;
 end;// procedure TfrmMain.mnuSettingsDirectoriesClick
-
-//========================================================================================
-procedure TfrmMain.mnuMainToolsDBMaintenanceHUGeoDBClick(Sender: TObject);
-begin
-  frmHUGeoDB.ShowModal;
-end;// procedure TfrmMain.mnuMainToolsDBMaintenanceHUGeoDBClick
 
 //========================================================================================
 //          COMMAND BUTTON ROUTINES

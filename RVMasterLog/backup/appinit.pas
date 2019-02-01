@@ -29,9 +29,8 @@ interface
 uses
   Classes, Controls, Dialogs, FileUtil, SysUtils,
   //
-  AppSettings, HUConstants, HUMessageBoxes,
+  AppSettings, HUConstants, HUMessageBoxes;
   // HULibs
-  HUGeoDB;
 
 function Initialize : Boolean;
 
@@ -72,10 +71,6 @@ var
 begin
 
   InitFailure := False;
-
-  // Get the reqired System Directories
-  frmSettings.pApplicationDirectory := GetCurrentDir;
-  frmSettings.pSystemUserDirectory := GetUserDir;
 
   // If the .ini file exists we read it.
   //

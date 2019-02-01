@@ -18,7 +18,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 22 Jan 2019
+// Date : 1 Feb 2019
 //
 // *ToDo:
 //
@@ -29,9 +29,8 @@ interface
 uses
   Classes, Controls, Dialogs, FileUtil, SysUtils,
   //
-  AppSettings, HUConstants, HUMessageBoxes,
+  AppSettings, HUConstants, HUMessageBoxes;
   // HULibs
-  HUGeoDB;
 
 function Initialize : Boolean;
 
@@ -120,9 +119,9 @@ begin
                       '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
                   frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
-        CopyFile (frmSettings.pApplicationDirectory +
-                      '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
-                  frmHUGeoDB.pHUGeoDBPath);
+//        CopyFile (frmSettings.pApplicationDirectory +
+//                      '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
+//                  frmHUGeoDB.pHUGeoDBPath);
 
         frmSettings.ReadSettingsINIFile;
 

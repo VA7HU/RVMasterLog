@@ -1,7 +1,7 @@
 object dlgHURegistration: TdlgHURegistration
-  Left = 450
+  Left = 383
   Height = 385
-  Top = 120
+  Top = 163
   Width = 614
   BorderStyle = bsDialog
   Caption = 'dlgHURegistration'

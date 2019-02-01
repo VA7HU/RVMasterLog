@@ -18,7 +18,7 @@ unit Main;
 //
 // Ver. : 1.0.0
 //
-// Date : 21 Jan 2019
+// Date : 1 Feb 2019
 //
 // *ToDo:
 //
@@ -30,10 +30,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, LogbooksTable, RVData, SuppliersTable, sqlite3conn,
-  //
-  HUGeoDB;
-
+  AppFinal, AppInit, AppSettings, LogbooksTable, RVData, SuppliersTable, sqlite3conn;
 
 type
 
@@ -232,6 +229,5 @@ begin
 end;// procedure TfrmMain.FormShow(Sender: TObject);
 
 //========================================================================================
-
 end.// unit Main
 

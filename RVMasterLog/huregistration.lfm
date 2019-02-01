@@ -11,7 +11,7 @@ object dlgHURegistration: TdlgHURegistration
   object bbtOK: TBitBtn
     Left = 416
     Height = 30
-    Top = 328
+    Top = 296
     Width = 75
     Default = True
     DefaultCaption = True
@@ -20,9 +20,9 @@ object dlgHURegistration: TdlgHURegistration
     TabOrder = 0
   end
   object bbtCancel: TBitBtn
-    Left = 512
+    Left = 504
     Height = 30
-    Top = 328
+    Top = 296
     Width = 75
     Cancel = True
     Caption = '&Cancel'

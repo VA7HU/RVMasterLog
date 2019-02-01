@@ -26,7 +26,7 @@ uses
   Forms, HUDirNameEntry, HUConstants, HUMessageBoxes, HUValidations,
   // Application Units
   AppFinal, AppInit, AppSettings, Main, SuppliersTable,
-  HUGeoDB, HURegistration;
+  HURegistration, hucommondatadb;
 
 {$R *.res}
 
@@ -37,8 +37,8 @@ begin
   Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.CreateForm(TdlgHUDirNameEntry, dlgHUDirNameEntry);
-  Application.CreateForm(TfrmHUGeoDB, frmHUGeoDB);
   Application.CreateForm(TdlgHURegistration, dlgHURegistration);
+  Application.CreateForm(TdlgHUCommonDataDB, dlgHUCommonDataDB);
   Application.Run;
 end.
 
