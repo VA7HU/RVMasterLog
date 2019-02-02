@@ -41,6 +41,8 @@ begin
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.CreateForm(TdlgHUDirNameEntry, dlgHUDirNameEntry);
   Application.CreateForm(TdlgHURegistration, dlgHURegistration);
+  Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
+  Application.dlgHUNagScreen.Show;
   Application.Run;
 end.
 

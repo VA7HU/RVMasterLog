@@ -16,8 +16,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 24 Dec 2018
-//
+// Date : 2 Feb 2019
 //
 // *ToDo:
 //
@@ -62,6 +61,11 @@ type
     fSettingsDirectory : string;
     fLogbooksDirectory : string;
     fBackupsDirectory : string;
+    fOwnerFirstName : string;
+    fOwnerLastName : string;
+    fOwnerCallsign : string;
+    fOwnerEmail : string;
+    fOwnerUserID : string;
     function GetApplicationDirectory : string;
     procedure SetApplicationDirectory(Dir : string);
     function GetSystemUserDirectory : string;
@@ -74,6 +78,16 @@ type
     procedure SetLogbooksDirectory(Dir : string);
     function GetBackupsDirectory : string;
     procedure SetBackupsDirectory(Dir : string);
+    function GetOwnerFirstName : string;
+    procedure SetOwnerFirstName (FirstName : string);
+    function GetOwnerLastName : string;
+    procedure SetOwnerLastName (LastName : string);
+    function GetOwnerCallsign : string;
+    procedure SetOwnerCallsign (Callsign : string);
+    function GetOwnerEmail : string;
+    procedure SetOwnerEmail (Email : string);
+    function GetOwnerUserID : string;
+    procedure SetOwnerUserID (ID : string);
 
   public
     property pApplicationDirectory : string read GetApplicationDirectory write SetApplicationDirectory;
@@ -82,6 +96,11 @@ type
     property pSettingsDirectory : string read GetSettingsDirectory write SetSettingsDirectory;
     property pLogbooksDirectory : string read GetLogbooksDirectory write SetLogbooksDirectory;
     property pBackupsDirectory : string read GetBackupsDirectory write SetBackupsDirectory;
+    property pOwnerFirstName : string read GetOwnerFirstName write SetOwnerFirstName;
+    property pOwnerLastName : string read GetOwnerLastName write SetOwnerLastName;
+    property pOwnerCallsign : string read GetOwnerCallsign write SetOwnerCallsign;
+    property pOwnerEmail : string read GetOwnerEmail write SetOwnerEmail;
+    property pOwnerUserID : string read GetOwnerUserID write SetOwnerUserID;
 
     function INIFileExists : Boolean;
     procedure ReadSettingsINIFile;
@@ -204,9 +223,6 @@ begin
 end;// procedure TfrmSettings.SetSystemUserDirectory
 
 //========================================================================================
-
-
-//========================================================================================
 function TfrmSettings.GetSettingsDirectory: string;
 begin
    Result := fSettingsDirectory;
@@ -241,6 +257,66 @@ procedure TfrmSettings.SetBackupsDirectory(Dir: string);
 begin
     fBackupsDirectory := Dir;
 end;// procedure TfrmSettings.SetBackupsDirectory
+
+//========================================================================================
+function TfrmSettings.GetOwnerFirstName: string;
+begin
+   Result := fOwnerFirstName;
+end;// procedure TfrmSettings.GetOwnerFirstName
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetOwnerFirstName(FirstName: string);
+begin
+    fOwnerFirstName := FirstName;
+end;// procedure TfrmSettings.SetOwnerFirstName
+
+//========================================================================================
+function TfrmSettings.GetOwnerLastName: string;
+begin
+   Result := fOwnerLastName;
+end;// procedure TfrmSettings.GetOwnerLastName
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetOwnerLastName(LastName: string);
+begin
+    fOwnerLastName := LastName;
+end;// procedure TfrmSettings.SetOwnerLastName
+
+//========================================================================================
+function TfrmSettings.GetOwnerCallsign: string;
+begin
+   Result := fOwnerCallsign;
+end;// procedure TfrmSettings.GetOwnerCallsign
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetOwnerCallsign(Callsign: string);
+begin
+    fOwnerCallsign := Callsign;
+end;// procedure TfrmSettings.SetOwnerCallsign
+
+//========================================================================================
+function TfrmSettings.GetOwnerEmail: string;
+begin
+   Result := fOwnerEmail;
+end;// procedure TfrmSettings.GetOwnerEmail
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetOwnerEmail(Email: string);
+begin
+    fOwnerEmail := EMail;
+end;// procedure TfrmSettings.SetOwnerEmail
+
+//========================================================================================
+function TfrmSettings.GetOwnerUserID: string;
+begin
+   Result := fOwnerUserID;
+end;// procedure TfrmSettings.GetOwnerUserID
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetOwnerUserID(UserID: string);
+begin
+    fOwnerUserID := UserID;
+end;// procedure TfrmSettings.SetOwnerUserID
 
 //========================================================================================
 //          MENU ROUTINES
