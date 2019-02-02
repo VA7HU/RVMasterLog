@@ -14,7 +14,7 @@ program RVMasterLog;
 //
 // Ver. : 1.0.0
 //
-// Date : 31 Jan 2019
+// Date : 1 Feb 2019
 //
 //========================================================================================
 
@@ -23,10 +23,13 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, HUDirNameEntry, HUConstants, HUMessageBoxes, HUValidations,
+  Forms,
+
   // Application Units
   AppFinal, AppInit, AppSettings, Main, SuppliersTable,
-  HURegistration, hucommondatadb;
+  // HULib Units
+  HUConstants, HUDirNameEntry, HUMessageBoxes, HUNagScreen, HURegistration,
+  HUValidations;
 
 {$R *.res}
 
@@ -38,7 +41,7 @@ begin
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.CreateForm(TdlgHUDirNameEntry, dlgHUDirNameEntry);
   Application.CreateForm(TdlgHURegistration, dlgHURegistration);
-  Application.CreateForm(TdlgHUCommonDataDB, dlgHUCommonDataDB);
+  Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
   Application.Run;
 end.
 

@@ -15,10 +15,11 @@ unit AppInit;
 //                        pApplicationDirectory
 //          HUConstants
 //          HUMessageBoxes
+//          HURegistration : dlgHURegistration.ShowModal
 //
 // Ver. : 1.0.0
 //
-// Date : 22 Jan 2019
+// Date : 2 Feb 2019
 //
 // *ToDo:
 //
@@ -28,9 +29,10 @@ interface
 
 uses
   Classes, Controls, Dialogs, FileUtil, SysUtils,
-  //
-  AppSettings, HUConstants, HUMessageBoxes;
-  // HULibs
+  // Application Units
+  AppSettings,
+  // HULib Units
+  HUConstants, HUMessageBoxes, HURegistration;
 
 function Initialize : Boolean;
 
@@ -119,9 +121,9 @@ begin
                       '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
                   frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
-        CopyFile (frmSettings.pApplicationDirectory +
-                      '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
-                  frmHUGeoDB.pHUGeoDBPath);
+//        CopyFile (frmSettings.pApplicationDirectory +
+//                      '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
+//                  frmHUGeoDB.pHUGeoDBPath);
 
         frmSettings.ReadSettingsINIFile;
 
@@ -136,6 +138,7 @@ begin
 
   end;// if frmSettings.INIFileExists
 
+  dlgHURegistration.ShowModal;
 
   if InitFailure then
   begin

@@ -15,10 +15,12 @@ unit AppInit;
 //                        pApplicationDirectory
 //          HUConstants
 //          HUMessageBoxes
+//          HUNagScreen : dlgHUNagScreen.ShowModal
+//          HURegistration : dlgHURegistration.ShowModal
 //
 // Ver. : 1.0.0
 //
-// Date : 1 Feb 2019
+// Date : 2 Feb 2019
 //
 // *ToDo:
 //
@@ -28,9 +30,10 @@ interface
 
 uses
   Classes, Controls, Dialogs, FileUtil, SysUtils,
-  //
-  AppSettings, HUConstants, HUMessageBoxes;
-  // HULibs
+  // Application Units
+  AppSettings,
+  // HULib Units
+  HUConstants, HUMessageBoxes, HUNagScreen, HURegistration;
 
 function Initialize : Boolean;
 
@@ -136,6 +139,9 @@ begin
 
   end;// if frmSettings.INIFileExists
 
+  dlgHUNagScreen.ShowModal;
+
+  dlgHURegistration.ShowModal;
 
   if InitFailure then
   begin

@@ -92,12 +92,6 @@ object frmMain: TfrmMain
         object mnuToolsDBMaintenanceApplicationDB: TMenuItem
           Caption = 'ApplicationDB'
         end
-        object mnuMainToolsDBMaintenanceHUCountryDB: TMenuItem
-          Caption = 'HUCountryDB'
-        end
-        object mnuMainToolsDBMaintenanceHUGeoDB: TMenuItem
-          Caption = 'HUGeoDB'
-        end
         object mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem
           Caption = 'ManufacturersDB'
         end
