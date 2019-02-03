@@ -7,6 +7,8 @@ object dlgHURegistration: TdlgHURegistration
   Caption = 'dlgHURegistration'
   ClientHeight = 385
   ClientWidth = 404
+  OnCreate = FormCreate
+  OnShow = FormShow
   LCLVersion = '1.8.4.0'
   object bbtOK: TBitBtn
     Left = 192

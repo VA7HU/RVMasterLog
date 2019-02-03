@@ -20,7 +20,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Feb 2019
+// Date : 3 Feb 2019
 //
 // *ToDo:
 //
@@ -139,15 +139,21 @@ begin
 
   end;// if frmSettings.INIFileExists
 
-  dlgHUNagScreen.ShowModal;
-
-  dlgHURegistration.ShowModal;
-
   if InitFailure then
   begin
     showmessage('Halting');
     Halt;
   end;
+
+  if dlgHUNagScreen.ShowModal = mrYes then
+      dlgHURegistration.ShowModal
+  else
+  begin
+    HUInformationMsgOK ('Info Type', 'You May Register Later');
+  end;// if dlgHUNagScreen.ShowModal = mrYes
+
+
+
 
   Result := True;
 

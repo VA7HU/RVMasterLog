@@ -18,7 +18,7 @@ unit AppSettings;
 //
 // Date : 2 Feb 2019
 //
-// *ToDo:
+// ToDo: AppSettings - Implement User Data Elements and save/read to/from inifile
 //
 //========================================================================================
 

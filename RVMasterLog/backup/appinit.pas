@@ -15,11 +15,12 @@ unit AppInit;
 //                        pApplicationDirectory
 //          HUConstants
 //          HUMessageBoxes
+//          HUNagScreen : dlgHUNagScreen.ShowModal
 //          HURegistration : dlgHURegistration.ShowModal
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Feb 2019
+// Date : 3 Feb 2019
 //
 // *ToDo:
 //
@@ -32,7 +33,7 @@ uses
   // Application Units
   AppSettings,
   // HULib Units
-  HUConstants, HUMessageBoxes, HURegistration;
+  HUConstants, HUMessageBoxes, HUNagScreen, HURegistration;
 
 function Initialize : Boolean;
 
@@ -138,13 +139,21 @@ begin
 
   end;// if frmSettings.INIFileExists
 
-  dlgHURegistration.ShowModal;
-
   if InitFailure then
   begin
     showmessage('Halting');
     Halt;
   end;
+
+  if dlgHUNagScreen.ShowModal = mrYes then
+      dlgHURegistration.ShowModal
+  else
+  begin
+    HUInformationMsgOK ('Info Type', 'You May Register Later');
+  end;
+
+
+
 
   Result := True;
 

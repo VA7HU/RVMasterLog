@@ -18,7 +18,7 @@ unit AppSettings;
 //
 // Date : 2 Feb 2019
 //
-// *ToDo:
+// ToDo: Implement User Data Elements and save/read to/from inifile
 //
 //========================================================================================
 
@@ -87,7 +87,7 @@ type
     function GetOwnerEmail : string;
     procedure SetOwnerEmail (Email : string);
     function GetOwnerUserID : string;
-    procedure SetOwnerUserID (ID : string);
+    procedure SetOwnerUserID (UserID : string);
 
   public
     property pApplicationDirectory : string read GetApplicationDirectory write SetApplicationDirectory;

@@ -37,8 +37,6 @@ type
 
   TfrmMain = class(TForm)
     mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem;
-    mnuMainToolsDBMaintenanceHUGeoDB: TMenuItem;
-    mnuMainToolsDBMaintenanceHUCountryDB: TMenuItem;
     mnuToolsDBMaintenanceApplicationDB: TMenuItem;
     mnuToolsDBMaintenance: TMenuItem;
     mnuTools: TMenuItem;

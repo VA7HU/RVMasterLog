@@ -4,7 +4,7 @@ unit HURegistration;
 
 //========================================================================================
 //
-// Unit :
+// Unit : HURegistration.pas
 //
 // Description :
 //
@@ -14,7 +14,7 @@ unit HURegistration;
 //
 // Ver. : 1.0.0
 //
-// Date : 28 Nov 2018
+// Date : 2 Feb 2019
 //
 //========================================================================================
 
@@ -43,11 +43,13 @@ type
     Label4: TLabel;
     Label5: TLabel;
     memInstructions: TMemo;
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
 
   public
 
-  end;
+  end;// TdlgHURegistration
 
 var
   dlgHURegistration: TdlgHURegistration;
@@ -103,6 +105,16 @@ implementation
 //========================================================================================
 //          FORM ROUTINES
 //========================================================================================
+procedure TdlgHURegistration.FormCreate(Sender: TObject);
+begin
+
+end;// procedure TdlgHURegistration.FormCreate
+
+//----------------------------------------------------------------------------------------
+procedure TdlgHURegistration.FormShow(Sender: TObject);
+begin
+
+end;// procedure TdlgHURegistration.FormShow
 
 //========================================================================================
 end.// unit HURegistration
