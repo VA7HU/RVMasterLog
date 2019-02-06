@@ -22,27 +22,41 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Buttons,
-  StdCtrls;
+  StdCtrls, ExtCtrls;
 
 type
 
   { TdlgHURegistration }
 
   TdlgHURegistration = class(TForm)
-    bbtOK: TBitBtn;
+    bbtRegister: TBitBtn;
     bbtCancel: TBitBtn;
-    chkRegister: TCheckBox;
+    CbxCountry: TComboBox;
+    edtPostalcODE: TEdit;
+    edtProvState: TEdit;
+    edtCity: TEdit;
+    edtAddress2: TEdit;
+    edtAddress1: TEdit;
     edtEmail: TEdit;
     edtCallsign: TEdit;
     edtUserID: TEdit;
     edtLastName: TEdit;
     edtFirstNamer: TEdit;
     Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
+    lblCountry: TLabel;
+    lblPostalCode: TLabel;
+    lblCity: TLabel;
+    lblAddress2: TLabel;
+    lblAddress1: TLabel;
+    lblFirstName: TLabel;
+    lblLastName: TLabel;
+    lblUserID: TLabel;
+    lblCallsign: TLabel;
+    lblEmail: TLabel;
     memInstructions: TMemo;
+    Panel1: TPanel;
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -103,6 +117,16 @@ implementation
 //========================================================================================
 //          FORM ROUTINES
 //========================================================================================
+procedure TdlgHURegistration.FormCreate(Sender: TObject);
+begin
+
+end;// procedure TdlgHURegistration.FormCreate
+
+//----------------------------------------------------------------------------------------
+procedure TdlgHURegistration.FormShow(Sender: TObject);
+begin
+
+end;// procedure TdlgHURegistration.FormShow
 
 //========================================================================================
 end.// unit HURegistration
