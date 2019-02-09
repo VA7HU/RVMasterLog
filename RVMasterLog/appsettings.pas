@@ -16,7 +16,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Feb 2019
+// Date : 8 Feb 2019
 //
 // ToDo: AppSettings - Implement User Data Elements and save/read to/from inifile
 //
@@ -64,8 +64,8 @@ type
     fOwnerFirstName : string;
     fOwnerLastName : string;
     fOwnerCallsign : string;
-    fOwnerEmail : string;
-    fOwnerUserID : string;
+    fOwnerEmailAddress : string;
+    fOwnerID : string;
     function GetApplicationDirectory : string;
     procedure SetApplicationDirectory(Dir : string);
     function GetSystemUserDirectory : string;
@@ -84,10 +84,10 @@ type
     procedure SetOwnerLastName (LastName : string);
     function GetOwnerCallsign : string;
     procedure SetOwnerCallsign (Callsign : string);
-    function GetOwnerEmail : string;
-    procedure SetOwnerEmail (Email : string);
-    function GetOwnerUserID : string;
-    procedure SetOwnerUserID (UserID : string);
+    function GetOwnerEmailAddress : string;
+    procedure SetOwnerEmailAddress (EmailAddress : string);
+    function GetOwnerID : string;
+    procedure SetOwnerID (OwnerID : string);
 
   public
     property pApplicationDirectory : string read GetApplicationDirectory write SetApplicationDirectory;
@@ -99,8 +99,8 @@ type
     property pOwnerFirstName : string read GetOwnerFirstName write SetOwnerFirstName;
     property pOwnerLastName : string read GetOwnerLastName write SetOwnerLastName;
     property pOwnerCallsign : string read GetOwnerCallsign write SetOwnerCallsign;
-    property pOwnerEmail : string read GetOwnerEmail write SetOwnerEmail;
-    property pOwnerUserID : string read GetOwnerUserID write SetOwnerUserID;
+    property pOwnerEmailAddress : string read GetOwnerEmailAddress write SetOwnerEmailAddress;
+    property pOwnerID : string read GetOwnerID write SetOwnerID;
 
     function INIFileExists : Boolean;
     procedure ReadSettingsINIFile;
@@ -295,28 +295,28 @@ begin
 end;// procedure TfrmSettings.SetOwnerCallsign
 
 //========================================================================================
-function TfrmSettings.GetOwnerEmail: string;
+function TfrmSettings.GetOwnerEmailAddress: string;
 begin
-   Result := fOwnerEmail;
-end;// procedure TfrmSettings.GetOwnerEmail
+   Result := fOwnerEmailAddress;
+end;// procedure TfrmSettings.GetOwnerEmailAddress
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetOwnerEmail(Email: string);
+procedure TfrmSettings.SetOwnerEmailAddress(EmailAddress: string);
 begin
-    fOwnerEmail := EMail;
-end;// procedure TfrmSettings.SetOwnerEmail
+    fOwnerEmailAddress := EMailAddress;
+end;// procedure TfrmSettings.SetOwnerEmailAddress
 
 //========================================================================================
-function TfrmSettings.GetOwnerUserID: string;
+function TfrmSettings.GetOwnerID: string;
 begin
-   Result := fOwnerUserID;
-end;// procedure TfrmSettings.GetOwnerUserID
+   Result := fOwnerID;
+end;// procedure TfrmSettings.GetUserID
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetOwnerUserID(UserID: string);
+procedure TfrmSettings.SetOwnerID(OwnerID: string);
 begin
-    fOwnerUserID := UserID;
-end;// procedure TfrmSettings.SetOwnerUserID
+    fOwnerID := OwnerID;
+end;// procedure TfrmSettings.SetOwnerID
 
 //========================================================================================
 //          MENU ROUTINES
@@ -357,6 +357,12 @@ const
   cstrKeySettingsDirectory = 'Settings Directory';
   cstrKeyLogbooksDirectory = 'Logbooks Directory';
   cstrKeyBackupsDirectory = 'Backups Directory';
+  cstrRegistrationData = 'REGISTRATION DATA';
+  cstrKeyOwnerFirstName = 'Owner First Name';
+  cstrKeyOwnerLastName = 'Owner Last Name';
+  cstrKeyOwnerCallsign = 'Owner Callsign';
+  cstrKeyOwnerEmailAddress = 'Owner Email Address';
+  cstrKeyOwnerID = 'Owner ID';
 
 var
   ApplicationINIFile : TINIFile;
@@ -413,6 +419,33 @@ begin
                                             pBackupsDirectory);
   pBackupsDirectory := vstrTStr;
 
+  // REGISTRATION DATA
+
+    // Owner First Name
+  vstrTStr := ApplicationINIFile.ReadString(cstrRegistrationData,
+                                                        cstrKeyOwnerFirstName,
+                                                        pOwnerFirstName);
+
+    // Owner Last Name
+vstrTStr := ApplicationINIFile.ReadString(cstrRegistrationData,
+                                                      cstrKeyOwnerLastName,
+                                                      pOwnerLastName);
+
+    // Owner Callsign
+vstrTStr := ApplicationINIFile.ReadString(cstrRegistrationData,
+                                                    cstrKeyOwnerCallsign,
+                                                    pOwnerCallsign);
+
+    // Owner Email Address
+vstrTStr := ApplicationINIFile.ReadString(cstrRegistrationData,
+                                                cstrKeyOwnerEmailAddress,
+                                                pOwnerEmailAddress);
+
+    // OwnerID
+vstrTStr := ApplicationINIFile.ReadString(cstrRegistrationData,
+                                            cstrKeyOwnerID,
+                                            pOwnerID);
+
   ApplicationINIFile.Free;
 
 end;// procedure TfrmSettings.ReadSettingsINIFile
@@ -424,6 +457,9 @@ begin
     ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
     ApplicationINIFile := TINIFile.Create(ApplicationINIFileName);
 
+    // DIRECTORY SECTION
+
+      // USER Directory
     ApplicationINIFile.WriteString(cstrUserDirectories,
                                    cstrKeyUserDirectory,
                                    pUserDirectory);
@@ -439,6 +475,33 @@ begin
     ApplicationINIFile.WriteString(cstrUserDirectories,
                                     cstrKeyBackupsDirectory,
                                     pBackupsDirectory);
+
+    // REGISTRATION DATA
+
+      // Owner First Name
+    ApplicationINIFile.WriteString(cstrRegistrationData,
+                                   cstrKeyOwnerFirstName,
+                                   pOwnerFirstName);
+
+    // Owner Last Name
+    ApplicationINIFile.WriteString(cstrRegistrationData,
+                                   cstrKeyOwnerLastName,
+                                   pOwnerLastName);
+
+    // Owner Callsign
+    ApplicationINIFile.WriteString(cstrRegistrationData,
+                                   cstrKeyOwnerCallsign,
+                                   pOwnerCallsign);
+
+    // Owner Email Address
+    ApplicationINIFile.WriteString(cstrRegistrationData,
+                                   cstrKeyOwnerEmailAddress,
+                                   pOwnerEmailAddress);
+
+    // OwnerID
+    ApplicationINIFile.WriteString(cstrRegistrationData,
+                                   cstrKeyOwnerID,
+                                   pOwnerID);
 
     ApplicationINIFile.Free;
 

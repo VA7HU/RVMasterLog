@@ -14,7 +14,7 @@ unit HURegistration;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Feb 2019
+// Date : 9 Feb 2019
 //
 //========================================================================================
 
@@ -31,30 +31,17 @@ type
   TdlgHURegistration = class(TForm)
     bbtRegister: TBitBtn;
     bbtCancel: TBitBtn;
-    CbxCountry: TComboBox;
-    edtPostalcODE: TEdit;
-    edtProvState: TEdit;
-    edtCity: TEdit;
-    edtAddress2: TEdit;
-    edtAddress1: TEdit;
-    edtEmail: TEdit;
+    edtFirstName: TEdit;
+    edtID: TEdit;
+    edtAddress: TEdit;
     edtCallsign: TEdit;
-    edtUserID: TEdit;
     edtLastName: TEdit;
-    edtFirstNamer: TEdit;
-    Label1: TLabel;
-    lblCountry: TLabel;
-    lblPostalCode: TLabel;
-    lblCity: TLabel;
-    lblAddress2: TLabel;
-    lblAddress1: TLabel;
     lblFirstName: TLabel;
     lblLastName: TLabel;
-    lblUserID: TLabel;
+    lblID: TLabel;
     lblCallsign: TLabel;
-    lblEmail: TLabel;
+    lblEmailAddress: TLabel;
     memInstructions: TMemo;
-    Panel1: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
