@@ -1,122 +1,130 @@
 object dlgHURegistration: TdlgHURegistration
   Left = 373
-  Height = 496
+  Height = 387
   Top = 118
-  Width = 316
+  Width = 326
   BorderStyle = bsDialog
   Caption = 'dlgHURegistration'
-  ClientHeight = 496
-  ClientWidth = 316
+  ClientHeight = 387
+  ClientWidth = 326
   OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '2.0.0.4'
   object bbtRegister: TBitBtn
-    Left = 153
+    Left = 74
     Height = 30
-    Top = 424
+    Top = 336
     Width = 75
     Caption = '&Register'
     Default = True
     Kind = bkOK
     ModalResult = 1
-    TabOrder = 0
+    TabOrder = 6
   end
   object bbtCancel: TBitBtn
-    Left = 56
+    Left = 178
     Height = 30
-    Top = 424
+    Top = 336
     Width = 75
     Cancel = True
     Caption = '&Cancel'
     Kind = bkCancel
     ModalResult = 2
-    TabOrder = 1
+    TabOrder = 5
   end
   object edtFirstName: TEdit
-    Left = 104
+    Left = 138
     Height = 23
-    Top = 168
+    Top = 136
     Width = 150
     Alignment = taCenter
-    TabOrder = 2
+    OnKeyPress = edtFirstNameKeyPress
+    TabOrder = 0
   end
   object lblFirstName: TLabel
-    Left = 16
+    Left = 35
     Height = 15
-    Top = 144
+    Top = 140
     Width = 66
     Caption = 'First Name : '
     ParentColor = False
   end
   object lblLastName: TLabel
-    Left = 8
+    Left = 35
     Height = 15
-    Top = 200
+    Top = 180
     Width = 62
     Caption = 'Last Name :'
     ParentColor = False
   end
   object edtLastName: TEdit
-    Left = 80
+    Left = 138
     Height = 23
-    Top = 232
+    Top = 176
     Width = 148
     Alignment = taCenter
-    TabOrder = 3
+    OnKeyPress = edtLastNameKeyPress
+    TabOrder = 1
   end
   object lblID: TLabel
-    Left = 24
+    Left = 35
     Height = 15
-    Top = 384
-    Width = 17
+    Top = 300
+    Width = 94
     Alignment = taCenter
-    Caption = 'ID :'
+    Caption = 'Registration Key : '
     ParentColor = False
   end
-  object edtID: TEdit
-    Left = 120
+  object edtRegistrationKey: TEdit
+    Left = 136
     Height = 23
-    Top = 376
+    Top = 296
     Width = 150
+    Alignment = taCenter
     ReadOnly = True
+    TabStop = False
     TabOrder = 4
   end
   object lblCallsign: TLabel
-    Left = 16
+    Left = 35
     Height = 15
-    Top = 344
+    Top = 260
     Width = 51
     Caption = 'Callsign : '
     ParentColor = False
   end
   object edtCallsign: TEdit
-    Left = 88
+    Left = 138
     Height = 23
-    Top = 336
+    Top = 256
     Width = 148
-    TabOrder = 5
+    Alignment = taCenter
+    OnKeyPress = edtCallsignKeyPress
+    TabOrder = 3
   end
   object lblEmail: TLabel
-    Left = 13
+    Left = 35
     Height = 15
-    Top = 288
+    Top = 220
     Width = 86
     Caption = 'Email  Address : '
     ParentColor = False
   end
   object edtEmailAddress: TEdit
-    Left = 106
+    Left = 138
     Height = 23
-    Top = 288
+    Top = 216
     Width = 148
     Alignment = taCenter
-    TabOrder = 6
+    OnKeyPress = edtEmailAddressKeyPress
+    TabOrder = 2
   end
   object memInstructions: TMemo
-    Left = 32
+    Left = 42
     Height = 90
     Top = 24
     Width = 242
     TabOrder = 7
+    TabStop = False
   end
 end

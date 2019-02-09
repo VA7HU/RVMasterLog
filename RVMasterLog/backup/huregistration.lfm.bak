@@ -19,7 +19,7 @@ object dlgHURegistration: TdlgHURegistration
     Default = True
     Kind = bkOK
     ModalResult = 1
-    TabOrder = 0
+    TabOrder = 6
   end
   object bbtCancel: TBitBtn
     Left = 178
@@ -30,7 +30,7 @@ object dlgHURegistration: TdlgHURegistration
     Caption = '&Cancel'
     Kind = bkCancel
     ModalResult = 2
-    TabOrder = 1
+    TabOrder = 5
   end
   object edtFirstName: TEdit
     Left = 138
@@ -38,7 +38,8 @@ object dlgHURegistration: TdlgHURegistration
     Top = 136
     Width = 150
     Alignment = taCenter
-    TabOrder = 2
+    OnKeyPress = edtFirstNameKeyPress
+    TabOrder = 0
   end
   object lblFirstName: TLabel
     Left = 35
@@ -62,23 +63,26 @@ object dlgHURegistration: TdlgHURegistration
     Top = 176
     Width = 148
     Alignment = taCenter
-    TabOrder = 3
+    OnKeyPress = edtLastNameKeyPress
+    TabOrder = 1
   end
   object lblID: TLabel
     Left = 35
     Height = 15
     Top = 300
-    Width = 100
+    Width = 94
     Alignment = taCenter
-    Caption = 'Registration Key :  :'
+    Caption = 'Registration Key : '
     ParentColor = False
   end
-  object edtID: TEdit
+  object edtRegistrationKey: TEdit
     Left = 136
     Height = 23
     Top = 296
     Width = 150
+    Alignment = taCenter
     ReadOnly = True
+    TabStop = False
     TabOrder = 4
   end
   object lblCallsign: TLabel
@@ -94,7 +98,9 @@ object dlgHURegistration: TdlgHURegistration
     Height = 23
     Top = 256
     Width = 148
-    TabOrder = 5
+    Alignment = taCenter
+    OnKeyPress = edtCallsignKeyPress
+    TabOrder = 3
   end
   object lblEmail: TLabel
     Left = 35
@@ -110,7 +116,8 @@ object dlgHURegistration: TdlgHURegistration
     Top = 216
     Width = 148
     Alignment = taCenter
-    TabOrder = 6
+    OnKeyPress = edtEmailAddressKeyPress
+    TabOrder = 2
   end
   object memInstructions: TMemo
     Left = 42
@@ -118,5 +125,6 @@ object dlgHURegistration: TdlgHURegistration
     Top = 24
     Width = 242
     TabOrder = 7
+    TabStop = False
   end
 end
