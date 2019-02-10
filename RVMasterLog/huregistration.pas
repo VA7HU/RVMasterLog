@@ -16,7 +16,7 @@ unit HURegistration;
 //
 // Ver. : 1.0.0
 //
-// Date : 9 Feb 2019
+// Date : 10 Feb 2019
 //
 //========================================================================================
 
@@ -37,7 +37,7 @@ type
     bbtRegister: TBitBtn;
     bbtCancel: TBitBtn;
     edtFirstName: TEdit;
-    edtRegistrationKey: TEdit;
+    edtReg: TEdit;
     edtEmailAddress: TEdit;
     edtCallsign: TEdit;
     edtLastName: TEdit;
@@ -47,7 +47,9 @@ type
     lblCallsign: TLabel;
     lblEmailAddress: TLabel;
     memInstructions: TMemo;
-				procedure edtCallsignKeyPress(Sender: TObject; var Key: char);
+				procedure bbtCancelClick(Sender: TObject);
+    procedure bbtRegisterClick(Sender: TObject);
+    procedure edtCallsignKeyPress(Sender: TObject; var Key: char);
     procedure edtEmailAddressKeyPress(Sender: TObject; var Key: char);
     procedure edtFirstNameKeyPress(Sender: TObject; var Key: char);
 				procedure edtLastNameKeyPress(Sender: TObject; var Key: char);
@@ -61,12 +63,16 @@ type
     fRegKey : string;
     function GetFirstName : string;
     procedure SetFirstName(FirstName : string);
+    function ValidateFirstName : Boolean;
     function GetLastName : string;
     procedure SetLastName(LastName : string);
+    function ValidateLastName : Boolean;
     function GetEmailAddress : string;
     procedure SetEmailAddress(EmailAddress : string);
+    function ValidateEmailAddress : Boolean;
     function GetCallsign : string;
     procedure SetCallsign(Callsign : string);
+    function ValidateCallsign : Boolean;
     function GetRegKey : string;
     procedure SetRegKey(RegKey : string);
 
@@ -98,6 +104,16 @@ const
                  'Bug Fixes, Changes or Enhancements to keep it current.' +
                  K_CR + K_CR +
                  'Your registration data will never be sold or shared.';
+
+  cintFirstNameMaxLength = 20;
+  cintLastNameMaxLength = 20;
+  cintEmailAddressMaxLength = 30;
+  cintCallsignMaxLength = 20;
+
+  cintFirstNameMinLength = 2;
+  cintLastNameMinLength = 2;
+  cintEmailAddressMinLength = 10;
+  cintCallsignMinLength = 3;
 
 //========================================================================================
 //          PUBLIC CONSTANTS
@@ -188,6 +204,50 @@ end;// procedure TdlgHURegistration.SetRegKey
 //========================================================================================
 //          COMMAND BUTTON ROUTINES
 //========================================================================================
+procedure TdlgHURegistration.bbtCancelClick(Sender: TObject);
+begin
+
+end;// procedure TdlgHURegistration.bbtCancelClick
+
+//========================================================================================
+procedure TdlgHURegistration.bbtRegisterClick(Sender: TObject);
+begin
+
+  if not ValidateFirstName then
+  begin
+    ModalResult := mrNone;
+    showmessage('Invalid First Name');
+    edtFirstName.SetFocus;
+    Exit;
+		end;// if not ValidateFirstName
+
+  if not ValidateLastName then
+  begin
+    ModalResult := mrNone;
+    showmessage('Invalid Last Name');
+    edtLastName.SetFocus;
+    Exit;
+		end;// if not ValidateLastName
+
+  if not ValidateEmailAddress then
+  begin
+    ModalResult := mrNone;
+    showmessage('Invalid Email Address');
+    edtEmailAddress.SetFocus;
+    Exit;
+		end;// if not ValidateEmailAddress
+
+  if not ValidateCallsign then
+  begin
+    ModalResult := mrNone;
+    showmessage('Invalid Callsign');
+    edtCallsign.SetFocus;
+    Exit;
+		end;// if not ValidateCallsign
+
+end;// procedure TdlgHURegistration.bbtRegisterClick
+
+//========================================================================================
 
 //========================================================================================
 //          CONTROL ROUTINES
@@ -198,12 +258,32 @@ begin
   Key := ValidNameCharacter(Key);
 end;// procedure TdlgHURegistration.edtFirstNameKeyPress
 
+//----------------------------------------------------------------------------------------
+function TdlgHURegistration.ValidateFirstName : Boolean;
+begin
+  if Length(edtFirstName.Text) < cintFirstNameMinLength then
+    Result := False
+  else
+    Result := True;
+end;// function TdlgHURegistration.ValidateFirstName
+
 //========================================================================================
 procedure TdlgHURegistration.edtLastNameKeyPress(Sender: TObject; var Key: char
 			);
 begin
   Key := ValidNameCharacter(Key);
 end;// procedure TdlgHURegistration.edtLastNameKeyPress
+
+
+
+//----------------------------------------------------------------------------------------
+function TdlgHURegistration.ValidateLastName : Boolean;
+begin
+  if Length(edtLastName.Text) < cintLastNameMinLength then
+    Result := False
+  else
+    Result := True;
+end;// function TdlgHURegistration.ValidateLastName
 
 //========================================================================================
 procedure TdlgHURegistration.edtEmailAddressKeyPress(Sender: TObject;
@@ -212,12 +292,30 @@ begin
   Key := ValidEmailCharacter(Key);
 end;// procedure TdlgHURegistration.edtEmailAddressKeyPress
 
+//----------------------------------------------------------------------------------------
+function TdlgHURegistration.ValidateEmailAddress : Boolean;
+begin
+  if Length(edtEmailAddress.Text) < cintEmailAddressMinLength then
+    Result := False
+  else
+    Result := True;
+end;// function TdlgHURegistration.ValidateEmailAddress
+
 //========================================================================================
 procedure TdlgHURegistration.edtCallsignKeyPress(Sender: TObject; var Key: char
 			);
 begin
   Key := ValidCallsignCharacter(Key);
 end;// procedure TdlgHURegistration.edtCallsignKeyPress
+
+//----------------------------------------------------------------------------------------
+function TdlgHURegistration.ValidateCallsign : Boolean;
+begin
+  if Length(edtCallsign.Text) < cintCallsignMinLength then
+    Result := False
+  else
+    Result := True;
+end;// function TdlgHURegistration.ValidateCallsign
 
 //========================================================================================
 //          FILE ROUTINES
@@ -228,7 +326,14 @@ end;// procedure TdlgHURegistration.edtCallsignKeyPress
 //========================================================================================
 procedure TdlgHURegistration.FormCreate(Sender: TObject);
 begin
+
   memInstructions.Text := cstrMemInstructions;
+
+  edtFirstName.MaxLength := cintFirstNameMaxLength;
+  edtLastName.MaxLength := cintLastNameMaxLength;
+  edtEmailAddress.MaxLength := cintEmailAddressMaxLength;
+  edtCallsign.MaxLength := cintCallsignMaxLength;
+
 end;// procedure TdlgHURegistration.FormCreate
 
 //----------------------------------------------------------------------------------------
@@ -239,7 +344,7 @@ begin
   edtLastName.Text := '';
   edtEmailaddress.Text := '';
   edtCallsign.Text := '';
-  edtRegistrationKey.Text := '';
+  edtReg.Text := '';
 
   edtFirstName.SetFocus;
 
