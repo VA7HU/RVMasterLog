@@ -18,8 +18,6 @@ unit AppSettings;
 //
 // Date : 18 Apr 2019
 //
-// ToDo: AppSettings - Implement User Data Elements and save/read to/from inifile
-//
 //========================================================================================
 
 interface
@@ -154,37 +152,46 @@ var
   vstrNewDir : string;
 begin
 
+  Result := True;
+
     // USER DIRECTORY
   pUserDirectory := frmSettings.pSystemUserDirectory + cstrUserDirectoryPath;
-
   if not CreateDir(pUserDirectory)then
   begin
     showmessage('USER DIR FAILED');
     Result := False;
-    exit;
-  end
-  else
-    showmessage('USER DIR CREATED');
-
-  if Result = False then
-    Exit;
+  end;
 
     // SETTINGS DIRECTORY
-  vstrNewDir := pUserDirectory + '\' + cstrSettingsDirectoryName;
-  CreateDir(vstrNewDir);
-  frmSettings.pSettingsDirectory := vstrNewDir;
+  pSettingsDirectory := pUserDirectory + '\' + cstrSettingsDirectoryName;
+  if not CreateDir(pSettingsDirectory)then
+  begin
+    showmessage('SETTINGS DIR FAILED');
+    Result := False;
+  end;
 
   // LOGBOOKS DIRECTORY
-  vstrNewDir := pUserDirectory + '\' + cstrLogbooksDirectoryName;
-  CreateDir(vstrNewDir);
-  frmSettings.pLogbooksDirectory := vstrNewDir;
+  pLogbooksDirectory := pUserDirectory + '\' + cstrLogbooksDirectoryName;
+  if not CreateDir(pLogbooksDirectory)then
+  begin
+    showmessage('LOGBOOKS DIR FAILED');
+    Result := False;
+  end;
 
   // BACKUPS DIRECTORY
-  vstrNewDir := pUserDirectory + '\' + cstrBackupsDirectoryName;
-  CreateDir(vstrNewDir);
-  frmSettings.pBackupsDirectory := vstrNewDir;
+  pBackupsDirectory := pUserDirectory + '\' + cstrBackupsDirectoryName;
+  if not CreateDir(pBackupsDirectory)then
+  begin
+    showmessage('BACKUP DIR FAILED');
+    Result := False;
+  end;
 
-  Result := True;
+  if Result = True then
+  begin
+    showmessage('Deleting');
+//     Result:=DeleteDirectory(NomeDir,True);
+    DeleteDirectory(pUserDirectory, True);
+  end;
 
 end;// function CreateUserDirectories
 
@@ -392,7 +399,6 @@ var
 function TfrmSettings.INIFileExists : Boolean;
 begin
   ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
-  showmessage(ApplicationINIFileName);
   Result :=  FileExists(ApplicationINIFileName);
 end;// function TfrmAppSetupApplicationDirectoryp.INIFileExists
 

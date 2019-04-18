@@ -22,8 +22,6 @@ unit AppInit;
 //
 // Date : 18 Apr 2019
 //
-// *ToDo:
-//
 //========================================================================================
 
 interface
@@ -102,7 +100,8 @@ begin
         begin
           HUErrorMsgOK ('erCreateUserDirsFailed', erCreateUserDirsFailed);
           InitFailure := True;
-        end;// if not frmSettings.CreateUserDirectories
+          Halt;
+        end;
 
         // Load the databases
           CopyFile (frmSettings.pApplicationDirectory +
@@ -125,11 +124,9 @@ begin
 
       end;// if frmSettings.pUserDirectory  = frmSettings.pSystemUserDirectory
 
-    end
-    else
-    begin
-      HUInformationMsgOK('imApplicationClosing', imApplicationClosing);
-      InitFailure := True;
+      // Generate a default file or load a save one
+      frmSettings.ReadSettingsINIFile;
+
     end;// if HUInformationMsgYN('', imNoINIFile) = mrYes
 
   end;// if not frmSettings.INIFileExists

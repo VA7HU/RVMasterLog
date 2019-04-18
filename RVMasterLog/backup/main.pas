@@ -201,11 +201,7 @@ end;// procedure TfrmMain.FormCreate
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
 
-  if Initialize then
-  begin
-    showmessage('Init OK');
-  end
-  else
+  if not Initialize then
   begin
     showmessage('Init Failure');
     Close;
