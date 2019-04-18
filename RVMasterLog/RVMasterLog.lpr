@@ -26,7 +26,7 @@ uses
   // Application Units
   AppFinal, AppInit, AppSettings, Main, SuppliersTable,
   // HULib units
-  HUDirNameEntry, HUConstants, HUMessageBoxes, HUNagScreen, HUValidations;
+  HUDirNameEntry, HUConstants, HUMessageBoxes, HUNagScreen, HURegistration, HUValidations;
 
 {$R *.res}
 
@@ -37,6 +37,7 @@ begin
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
+  Application.CreateForm(TdlgHURegistration, dlgHURegistration);
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.Run;
 

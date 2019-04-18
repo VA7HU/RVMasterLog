@@ -31,12 +31,18 @@ uses
 {$R *.res}
 
 begin
+
   RequireDerivedFormResource:=True;
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
+  Application.CreateForm(TdlgHURegistration, dlgHURegistration);
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.Run;
-end.
+
+end.//program RVMasterLog
+
+//========================================================================================
+
 
