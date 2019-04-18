@@ -31,7 +31,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="13">
+    <Units Count="15">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -94,25 +94,29 @@
         <UnitName Value="HUDirNameEntry"/>
       </Unit9>
       <Unit10>
-        <Filename Value="huregistration.pas"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.lfm"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="dlgHURegistration"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="HURegistration"/>
       </Unit10>
       <Unit11>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Forms\HUNagScreen Development\HUNagScreen\hunagscreen.lfm"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HUNagScreen\hunagscreen.lfm"/>
         <IsPartOfProject Value="True"/>
       </Unit11>
       <Unit12>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Forms\HUNagScreen Development\HUNagScreen\hunagscreen.pas"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HUNagScreen\hunagscreen.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="dlgHUNagScreen"/>
         <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
         <UnitName Value="HUNagScreen"/>
       </Unit12>
+      <Unit13>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="HURegistration"/>
+      </Unit14>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -123,7 +127,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Forms\HUNagScreen Development\HUNagScreen"/>
+      <OtherUnitFiles Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HUNagScreen;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

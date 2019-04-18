@@ -1,0 +1,101 @@
+object frmMain: TfrmMain
+  Left = 292
+  Height = 357
+  Top = 207
+  Width = 632
+  BorderIcons = [biSystemMenu, biMinimize, biHelp]
+  Caption = 'frmMain'
+  ClientHeight = 337
+  ClientWidth = 632
+  Menu = mnuMain
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.4.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 632
+    Caption = 'ToolBar1'
+    TabOrder = 0
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 314
+    Width = 632
+    Panels = <>
+  end
+  object mnuMain: TMainMenu
+    left = 16
+    top = 16
+    object mnuLogbooks: TMenuItem
+      Caption = '&Logbooks'
+      object mnuLogbooksNewLogbook: TMenuItem
+        Caption = 'New Logbook ...'
+        OnClick = mnuLogbooksNewLogbookClick
+      end
+      object mnuLogbookOpenLogbook: TMenuItem
+        Caption = 'Open Logbook ...'
+        OnClick = mnuLogbookOpenLogbookClick
+      end
+      object mnuLogbookDeleteLogbook: TMenuItem
+        Caption = '&Delete Logbook'
+        OnClick = mnuLogbookDeleteLogbookClick
+      end
+      object mnuLogbooksSaveLogbook: TMenuItem
+        Caption = '&Save Logbook'
+        OnClick = mnuLogbooksSaveClick
+      end
+      object mnuLogbooksSep1: TMenuItem
+        Caption = '-'
+      end
+      object mnuLogbooksPrinterSetup: TMenuItem
+        Caption = 'Printer Setup'
+        OnClick = mnuLogbooksPrinterSetupClick
+      end
+      object mnuLogbooksPrint: TMenuItem
+        Caption = '&Print'
+        OnClick = mnuLogbooksPrintClick
+      end
+      object muLogbooksSep2: TMenuItem
+        Caption = '-'
+      end
+      object mnuLogbooksExit: TMenuItem
+        Caption = 'E&xit'
+        OnClick = mnuLogbooksExitClick
+      end
+    end
+    object mnuSettings: TMenuItem
+      Caption = '&Settings'
+      object mnuSettingsDIrectories: TMenuItem
+        Caption = 'Directories'
+        OnClick = mnuSettingsDIrectoriesClick
+      end
+      object mnuSettingsDatabases: TMenuItem
+        Caption = 'Databases'
+        object mnuSettingsDatabasesCommon: TMenuItem
+          Caption = 'Common '
+          object mnuSettingsCommonHUCountryDB: TMenuItem
+            Caption = 'HUCountryDB'
+          end
+        end
+      end
+    end
+    object mnuTools: TMenuItem
+      Caption = '&Tools'
+      object mnuToolsDBMaintenance: TMenuItem
+        Caption = 'DB Maintenance'
+        object mnuToolsDBMaintenanceApplicationDB: TMenuItem
+          Caption = 'ApplicationDB'
+        end
+        object mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem
+          Caption = 'ManufacturersDB'
+        end
+      end
+    end
+  end
+end

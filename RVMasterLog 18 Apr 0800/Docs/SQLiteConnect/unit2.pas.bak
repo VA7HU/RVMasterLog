@@ -1,0 +1,77 @@
+unit Unit2;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, db, sqldb, FileUtil, Forms, Controls, Graphics, Dialogs,
+  DBGrids;
+
+type
+
+  { TForm2 }
+
+  TForm2 = class(TForm)
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormShow(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.lfm}
+
+uses
+  Unit1;
+
+{ TForm2 }
+
+procedure TForm2.FormShow(Sender: TObject);
+begin
+    Form1.SQLite3Connection1.DatabaseName := 'A.db';
+  Form1.SQLite3Connection1.Transaction := Form1.SQLTransaction1;
+
+  Form1.SQLTransaction1.DataBase := Form1.SQLite3Connection1;
+
+  Form1.SQLQuery1.DataBase := Form1.SQLite3Connection1;
+  Form1.SQLQuery1.Transaction := Form1.SQLTransaction1;
+  Form1.SQLQuery1.SQL.Text := 'SELECT * FROM Student';
+
+  DataSOurce1.DataSet := Form1.SQLQuery1;
+  DBGrid1.DataSource := DataSource1;
+
+  Form1.SQLite3Connection1.Connected := True;
+
+  if Form1.SQLite3Connection1.Connected then
+    Form1.Label1.Caption := 'Connected - Great'
+  else
+    Form1.Label1.Caption := 'OOOPS';
+
+  Form1.SQLQuery1.Open;
+
+end;
+
+procedure TForm2.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+
+    Form1.SQLite3Connection1.Connected := False;;
+
+      if Form1.SQLite3Connection1.Connected then
+    Form1.Label1.Caption := 'Connected - Great'
+  else
+    Form1.Label1.Caption := 'OOOPS';
+
+
+end;
+
+end.
+

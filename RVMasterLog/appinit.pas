@@ -20,7 +20,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 3 Feb 2019
+// Date : 18 Apr 2019
 //
 // *ToDo:
 //

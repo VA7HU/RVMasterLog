@@ -1,0 +1,95 @@
+Things to do
+
+	Set up an Itinerary - steps to insure you have all of the things required for your trip
+	Checklists
+		Equipment
+		Pre trip service and maintenance
+	Log section for each stop on the trip
+	Add photos for each stop
+	Details for all RV parks/Hotels
+
+==================================================================================================
+Functions
+	1	Setup a Travel Itineray trip
+	2	Detailed Checklists for each trip
+	3	Daily Travel Log for each trip
+			Comments
+				Hotels
+				Sidetrips
+				Visits
+			Photos
+	4	Daily Expense Logs
+
+===================================================================================================
+Sections
+	Trip Log
+		Transit Trip
+		RV Trip
+	Maintenance Log
+		Tow Vehicle
+			Scheduled
+			Unscheduled
+		RV
+			Scheduled
+			Unscheduled
+	RV Park Log
+		Park
+	Checklists
+		Departure
+			Tow Vehicle
+			RV
+		Destinaion
+			Setup			
+	Expenses
+		Capital (General or Trip)
+			RV
+			Tow Vehicle
+			Other
+			Scheduled
+			Unscheduled
+		Mainenance (General or Trip)
+			RV
+			Tow Vehicle
+			Scheduled
+			Unscheduled
+		Operation (Trip)
+			RV
+			Tow Vehicle
+			Scheduled
+			Unscheduled
+	Inventory
+		Tow Vehicle
+		RV
+
+====================================================================================================
+Trip Log
+	Start Date
+	Start Fuel
+	Start Propane
+	End Date
+	Start Mileage
+	ENd Mileage
+
+Daily Log
+	Date
+	Start Time 
+	Destination
+	Stops
+		Fuel
+		Meals
+		Site visits
+		Maintenance
+	End Time
+	End Mileage
+	Expenses
+		Fuel
+		Propane
+		Meals
+		Tools
+		Food
+		Recreation
+		Maintenance
+		Accomodation
+		Misc
+
+	
