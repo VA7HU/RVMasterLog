@@ -16,7 +16,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 8 Feb 2019
+// Date : 18 Apr 2019
 //
 // ToDo: AppSettings - Implement User Data Elements and save/read to/from inifile
 //
@@ -56,6 +56,7 @@ type
 
   private
     fApplicationDirectory : string;
+    fApplicationName : string;
     fSystemUserDirectory : string;
     fUserDirectory : string;
     fSettingsDirectory : string;
@@ -68,6 +69,8 @@ type
     fOwnerID : string;
     function GetApplicationDirectory : string;
     procedure SetApplicationDirectory(Dir : string);
+    function GetApplicationName : string;
+    procedure SetApplicationName(AppName : string);
     function GetSystemUserDirectory : string;
     procedure SetSystemUserDirectory(Dir : string);
     function GetUserDirectory : string;
@@ -91,7 +94,8 @@ type
 
   public
     property pApplicationDirectory : string read GetApplicationDirectory write SetApplicationDirectory;
-    property pSystemUserDirectory : string read GetUserDirectory write SetUserDirectory;
+    property pApplicationName : string read GetApplicationName write SetApplicationName;
+   property pSystemUserDirectory : string read GetUserDirectory write SetUserDirectory;
     property pUserDirectory : string read GetUserDirectory write SetUserDirectory;
     property pSettingsDirectory : string read GetSettingsDirectory write SetSettingsDirectory;
     property pLogbooksDirectory : string read GetLogbooksDirectory write SetLogbooksDirectory;
@@ -197,6 +201,18 @@ procedure TfrmSettings.SetApplicationDirectory(Dir: string);
 begin
     fApplicationDirectory := Dir;
 end;// procedure TfrmSettings.SetApplicationDirectory
+
+//========================================================================================
+function TfrmSettings.GetApplicationName: string;
+begin
+   Result := fApplicationName;
+end;// function TfrmSettings.GetApplicationName
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetApplicationName(AppName: string);
+begin
+    fApplicationName := AppName;
+end;// procedure TfrmSettings.SetApplicationName
 
 //========================================================================================
 function TfrmSettings.GetUserDirectory: string;

@@ -83,7 +83,6 @@ implementation
 
 {$R *.lfm}
 
-
 //========================================================================================
 //          PRIVATE CONSTANTS
 //========================================================================================
@@ -201,10 +200,6 @@ end;// procedure TfrmMain.FormCreate
 //========================================================================================
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
-
-  // Get the reqired System Directories
-  frmSettings.pApplicationDirectory := GetCurrentDir;
-  frmSettings.pSystemUserDirectory := GetUserDir;
 
   if Initialize then
   begin

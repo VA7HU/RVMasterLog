@@ -33,7 +33,7 @@ uses
   // Application Units
   AppSettings,
   // HULib Units
-  HUConstants, HUMessageBoxes, HUNagScreen{, HURegistration};
+  HUConstants, HUMessageBoxes, HUNagScreen, HURegistration;
 
 function Initialize : Boolean;
 
@@ -42,10 +42,6 @@ implementation
 //========================================================================================
 //          PRIVATE CONSTANTS
 //========================================================================================
-const
-  imNoINIFile = '    The file RVMasterLog.ini Does Not Exist.'
-              + K_CR
-              + ' Is this an Initial installation of RVMasterLog ?';
 
 //========================================================================================
 //          PUBLIC CONSTANTS
@@ -75,6 +71,9 @@ begin
 
   InitFailure := False;
 
+  frmSettings.pApplicationDirectory := GetCurrentDir;
+  frmSettings.pSystemUserDirectory := GetUserDir;
+
   // If the .ini file exists we read it.
   //
   //If it does not there are only two possibilities:
@@ -86,74 +85,68 @@ begin
   // We display an Information message and give the user the option of either creating a
   // default .ini file or closing the application and loading a backup .ini file or
   // re-installing the appplication.
-  //
-  if frmSettings.INIFileExists then
-  begin
-     frmSettings.ReadSettingsINIFile;
-  end
-  else
+
+  if not frmSettings.INIFileExists then
   begin
 
-    if HUInformationMsgYN('', imNoINIFile) = mrYes then
+    if HUInformationMsgYN('imNoINIFile', imNoINIFile) = mrYes then
     begin
 
-      // If the User Directory has not been set then this is an Initial installation
+      // This is an Initial Installation
       if frmSettings.pUserDirectory  = frmSettings.pSystemUserDirectory then
       begin
 
-        showmessage('Creating Dirs');
+        HUInformationMsgOK('imCreateUserDirs', imCreateUserDirs);
 
         if not frmSettings.CreateUserDirectories then
         begin
-          showmessage('Not Created');
+          HUErrorMsgOK ('erCreateUserDirsFailed', erCreateUserDirsFailed);
           InitFailure := True;
         end;// if not frmSettings.CreateUserDirectories
 
         // Load the databases
-        CopyFile (frmSettings.pApplicationDirectory +
-                      '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
-                      frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
+          CopyFile (frmSettings.pApplicationDirectory +
+                    '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
+                    frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
 
-        CopyFile (frmSettings.pApplicationDirectory +
-                      '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
-                  frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
+          CopyFile (frmSettings.pApplicationDirectory +
+                    '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
+                    frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
 
-        CopyFile (frmSettings.pApplicationDirectory +
-                      '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
-                  frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
+          CopyFile (frmSettings.pApplicationDirectory +
+                    '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
+                    frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
-//        CopyFile (frmSettings.pApplicationDirectory +
-//                      '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
-//                  frmHUGeoDB.pHUGeoDBPath);
+   //     CopyFile (frmSettings.pApplicationDirectory +
+   //               '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
+   //               frmHUGeoDB.pHUGeoDBPath);
 
-        frmSettings.ReadSettingsINIFile;
+          frmSettings.ReadSettingsINIFile;
 
       end;// if frmSettings.pUserDirectory  = frmSettings.pSystemUserDirectory
 
     end
     else
     begin
-      showmessage('Must Close');
+      HUInformationMsgOK('imApplicationClosing', imApplicationClosing);
       InitFailure := True;
-    end;// if HUErrorMsgYN(emNoFile, em1) = mrYes
+    end;// if HUInformationMsgYN('', imNoINIFile) = mrYes
 
-  end;// if frmSettings.INIFileExists
+  end;// if not frmSettings.INIFileExists
 
   if InitFailure then
-  begin
-    showmessage('Halting');
     Halt;
-  end;
+
+  dlgHUNagScreen.pDlgTitle := frmSettings.pApplicationName + '.exe';
 
   if dlgHUNagScreen.ShowModal = mrYes then
-      dlgHURegistration.ShowModal
-  else
   begin
-    HUInformationMsgOK ('Info Type', 'You May Register Later');
-  end;// if dlgHUNagScreen.ShowModal = mrYes
-
-
-
+      dlgHURegistration.GetREgistrationKey;
+      showmessage('RegID = ' + dlgHURegistration.pRegKey);
+  end
+  else
+    showmessage('Register Later');
+  // if dlgHUNagScreen.ShowModal = mrYes
 
   Result := True;
 
