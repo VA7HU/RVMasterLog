@@ -68,7 +68,7 @@ function Initialize : Boolean;
 begin
 
 
-//****************************************************************************************
+{****************************************************************************************
   frmSettings.pApplicationDirectory := GetCurrentDir;
   frmSettings.pSystemUserDirectory := GetUserDir;
 
@@ -141,7 +141,7 @@ begin
     showmessage('Register Later');
   // if dlgHUNagScreen.ShowModal = mrYes
 
-//****************************************************************************************
+//****************************************************************************************}
 
   Result := True;
 

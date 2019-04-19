@@ -209,13 +209,7 @@ end;// procedure TfrmMain.FormCreate
 //========================================================================================
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
-
-  if not Initialize then
-  begin
-    showmessage('Init Failure');
-    Close;
-  end;// if Initialize
-
+  Initialize;
 end;// procedure TfrmMain.FormShow(Sender: TObject);
 
 //========================================================================================

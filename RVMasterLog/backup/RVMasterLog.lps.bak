@@ -21,7 +21,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="197"/>
         <CursorPos X="14" Y="212"/>
         <FoldState Value=" TM HkI01L"/>
@@ -47,9 +46,10 @@
         <Filename Value="appinit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="140"/>
-        <CursorPos Y="159"/>
+        <TopLine Value="13"/>
+        <CursorPos X="13" Y="24"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
       </Unit3>

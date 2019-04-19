@@ -191,6 +191,7 @@ begin
     showmessage('Deleting');
 //     Result:=DeleteDirectory(NomeDir,True);
     DeleteDirectory(pUserDirectory, True);
+    Result := False;
   end;
 
 end;// function CreateUserDirectories

@@ -26,7 +26,7 @@ uses
   // Application Units
   AppFinal, AppInit, AppSettings, Main, SuppliersTable,
   // HULib units
-  HUDirNameEntry, HUConstants, HUMessageBoxes, HUNagScreen, HUValidations;
+  HUDirNameEntry, HUConstants, HUMessageBoxes, HUNagScreen, HURegistration, HUValidations;
 
 {$R *.res}
 
