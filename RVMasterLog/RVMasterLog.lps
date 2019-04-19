@@ -8,11 +8,9 @@
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="26"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="77" Y="29"/>
         <UsageCount Value="206"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -21,12 +19,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="21"/>
         <CursorPos X="11" Y="31"/>
         <FoldState Value=" TM HkI01L"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="appsettings.pas"/>
@@ -35,33 +33,28 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="546"/>
-        <CursorPos X="34" Y="557"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="87"/>
+        <CursorPos X="22" Y="99"/>
         <UsageCount Value="203"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="appinit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="71"/>
-        <CursorPos X="4" Y="81"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="96"/>
+        <CursorPos X="42" Y="99"/>
         <UsageCount Value="203"/>
-        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="appfinal.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppFinal"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="6"/>
         <CursorPos Y="19"/>
         <UsageCount Value="201"/>
-        <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="supplierstable.pas"/>
@@ -80,7 +73,6 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUConstants"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="64"/>
         <CursorPos X="9" Y="58"/>
         <UsageCount Value="200"/>
       </Unit6>
@@ -88,11 +80,10 @@
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUMessageBoxes"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="71"/>
         <CursorPos X="22" Y="88"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
@@ -100,7 +91,7 @@
         <UnitName Value="HUValidations"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="13" Y="17"/>
-        <UsageCount Value="182"/>
+        <UsageCount Value="184"/>
       </Unit8>
       <Unit9>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
@@ -110,9 +101,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HUDirNameEntry"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="41"/>
+        <TopLine Value="40"/>
         <CursorPos Y="171"/>
-        <UsageCount Value="150"/>
+        <UsageCount Value="152"/>
       </Unit9>
       <Unit10>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.lfm"/>
@@ -121,7 +112,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit10>
       <Unit11>
@@ -131,7 +122,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit11>
       <Unit12>
@@ -139,11 +130,10 @@
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
         <UnitName Value="HUNagScreen"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="109"/>
         <CursorPos X="25" Y="118"/>
-        <UsageCount Value="38"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="40"/>
       </Unit12>
       <Unit13>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.lfm"/>
@@ -152,7 +142,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit13>
       <Unit14>
@@ -160,11 +150,9 @@
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
         <UnitName Value="HURegistration"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="21"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="16" Y="31"/>
-        <UsageCount Value="38"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="40"/>
       </Unit14>
       <Unit15>
         <Filename Value="huregistration.pas"/>
@@ -530,128 +518,7 @@
         <UsageCount Value="17"/>
       </Unit55>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
-      <Position1>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="122" Column="3" TopLine="111"/>
-      </Position1>
-      <Position2>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="74" Column="50" TopLine="64"/>
-      </Position2>
-      <Position3>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="78" Column="27" TopLine="62"/>
-      </Position3>
-      <Position4>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="74" Column="72" TopLine="64"/>
-      </Position4>
-      <Position5>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="72" Column="35" TopLine="64"/>
-      </Position5>
-      <Position6>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="71" Column="21" TopLine="63"/>
-      </Position6>
-      <Position7>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="96" Column="57" TopLine="87"/>
-      </Position7>
-      <Position8>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="217" Column="37" TopLine="198"/>
-      </Position8>
-      <Position9>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="84" Column="21" TopLine="65"/>
-      </Position9>
-      <Position10>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="401" Column="28" TopLine="390"/>
-      </Position10>
-      <Position11>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="27" Column="27" TopLine="18"/>
-      </Position11>
-      <Position12>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="124" TopLine="128"/>
-      </Position12>
-      <Position13>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="87" Column="7" TopLine="78"/>
-      </Position13>
-      <Position14>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="150" TopLine="143"/>
-      </Position14>
-      <Position15>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="156" Column="26" TopLine="141"/>
-      </Position15>
-      <Position16>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="30" Column="19" TopLine="21"/>
-      </Position16>
-      <Position17>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="27" Column="22" TopLine="17"/>
-      </Position17>
-      <Position18>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="78" Column="26" TopLine="67"/>
-      </Position18>
-      <Position19>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="101" Column="23" TopLine="91"/>
-      </Position19>
-      <Position20>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="255" Column="42" TopLine="238"/>
-      </Position20>
-      <Position21>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="100" Column="100" TopLine="92"/>
-      </Position21>
-      <Position22>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="101" Column="85" TopLine="91"/>
-      </Position22>
-      <Position23>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="146" Column="31" TopLine="139"/>
-      </Position23>
-      <Position24>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="163" Column="37" TopLine="152"/>
-      </Position24>
-      <Position25>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="111" Column="33" TopLine="102"/>
-      </Position25>
-      <Position26>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="81" Column="4" TopLine="71"/>
-      </Position26>
-      <Position27>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="217" Column="31" TopLine="201"/>
-      </Position27>
-      <Position28>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="137" Column="15" TopLine="125"/>
-      </Position28>
-      <Position29>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="254" Column="14" TopLine="238"/>
-      </Position29>
-      <Position30>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="502" Column="45" TopLine="493"/>
-      </Position30>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode="default"/>

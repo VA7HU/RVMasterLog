@@ -78,11 +78,25 @@ begin
   // We display an Error message and give the user the option of either creating
   // the RVMasterLog user files or terminating appplication.
 
-  if not frmSettings.UserFilesExist then
+  If not frmSettings.UserDataDirectoriesExist then
   begin
-    showmessage('No');
+    showmessage('Major Error - No Data Directories found.');
     Main.TerminateApp;
-  end;// if not frmSettings.UserFilesExist
+  end;// if not frmSettings.UserDataDIrectoriesExist
+
+  // Generate a default file or load a save one
+  frmSettings.ReadSettingsINIFile;
+
+  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
+
+  if dlgHUNagScreen.ShowModal = mrYes then
+  begin
+      dlgHURegistration.GetREgistrationKey;
+      showmessage('RegID = ' + dlgHURegistration.pRegKey);
+  end
+  else
+    showmessage('Register Later');
+  // if dlgHUNagScreen.ShowModal = mrYes
 
 
 {****************************************************************************************

@@ -111,7 +111,7 @@ type
     function UserDataDirectoriesExist : Boolean;
     procedure ReadSettingsINIFile;
     procedure WriteSettingsINIFile;
-    function CreateUserDirectories : Boolean;
+    function CreateUserDataDirectories : Boolean;
 
   end;// TfrmSettings
 
@@ -149,15 +149,10 @@ begin
   if not DirectoryExists(pUserDataDirectory) then
   begin
 
-    if HUErrorMsgYN(' No User Data Directory', 'Create One ?') = mrYes then
+    if HUErrorMsgYN('No User Data Directory', 'Initial Installation?') = mrYes then
     begin
-      showmessage('Create One');
-      Result := True;
-    end
-    else
-    begin
-      Result := False;
-      Main.TerminateApp;
+      showmessage('Creating Data Directories');
+      CreateUserDataDirectories;
     end;// if HUErrorMsgYN(' No User Directory', 'Create One ?') = mrYes
 
   end;// if UserDataDirectoriesExist(pUserDirectory)
@@ -165,56 +160,71 @@ begin
 end;// function TfrmAppSetupApplicationDirectoryp.UserFIlesExist
 
 //========================================================================================
-//          PUBLIC ROUTINES
-//========================================================================================
-function TfrmSettings.CreateUserDirectories : Boolean;
-var
-  vstrNewDir : string;
+function TfrmSettings.CreateUserDataDirectories : Boolean;
 begin
 
-  Result := True;
-
-    // USER DIRECTORY
+    // USER DATA DIRECTORY
   pUserDataDirectory := frmSettings.pSystemUserDirectory + cstrUserDataDirectoryPath;
-  if not CreateDir(pUserDataDirectory)then
+
+  if not CreateDir(pUserDataDirectory) then
   begin
-    showmessage('USER DIR FAILED');
+    showmessage('USER DATA DIRECTORY FAILED');
     Result := False;
-  end;
+    Main.TerminateApp;
+  end;// if not CreateDir(pUserDataDirectory)
 
     // SETTINGS DIRECTORY
+
   pSettingsDirectory := pUserDataDirectory + '\' + cstrSettingsDirectoryName;
   if not CreateDir(pSettingsDirectory)then
   begin
-    showmessage('SETTINGS DIR FAILED');
+    showmessage('SETTINGS DIRECTORY FAILED');
     Result := False;
-  end;
+    Main.TerminateApp;
+  end;// if not CreateDir(pSettingsDirectory)
 
   // LOGBOOKS DIRECTORY
   pLogbooksDirectory := pUserDataDirectory + '\' + cstrLogbooksDirectoryName;
   if not CreateDir(pLogbooksDirectory)then
   begin
-    showmessage('LOGBOOKS DIR FAILED');
+    showmessage('LOGBOOKS DIRECTORY FAILED');
     Result := False;
-  end;
+    Main.TerminateApp;
+  end;// if not CreateDir(pLogbooksDirectory)
 
   // BACKUPS DIRECTORY
   pBackupsDirectory := pUserDataDirectory + '\' + cstrBackupsDirectoryName;
   if not CreateDir(pBackupsDirectory)then
   begin
-    showmessage('BACKUP DIR FAILED');
+    showmessage('BACKUP DIRECTORY FAILED');
     Result := False;
-  end;
+    Main.TerminateApp;
+  end;// if not CreateDir(pBackupsDirectory)
 
-  if Result = True then
-  begin
-    showmessage('Deleting');
-//     Result:=DeleteDirectory(NomeDir,True);
-    DeleteDirectory(pUserDataDirectory, True);
-    Result := False;
-  end;
+  // Load the databases
+  CopyFile (frmSettings.pApplicationDirectory +
+            '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
+            frmSettings.pUserDataDirectory + '\' + 'ApplicationDB.sl3');
+
+  CopyFile (frmSettings.pApplicationDirectory +
+            '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
+            frmSettings.pUserDataDirectory + '\' + 'LogbooksDB.sl3');
+
+  CopyFile (frmSettings.pApplicationDirectory +
+            '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
+            frmSettings.pUserDataDirectory + '\' + 'ManufacturersDB.sl3');
+
+//     CopyFile (frmSettings.pApplicationDirectory +
+//               '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
+//               frmHUGeoDB.pHUGeoDBPath);
+
+  Result := True;
 
 end;// function CreateUserDataDirectories
+
+//========================================================================================
+//          PUBLIC ROUTINES
+//========================================================================================
 
 //========================================================================================
 //          PROPERTY ROUTINES

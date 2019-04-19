@@ -78,62 +78,16 @@ begin
   // We display an Error message and give the user the option of either creating
   // the RVMasterLog user files or terminating appplication.
 
-  If not frmSettings.UserDataDIrectoriesExist then
+  If not frmSettings.UserDataDirectoriesExist then
   begin
-    showmessage('No');
+    showmessage('Major Error - No Data Directories found.');
     Main.TerminateApp;
   end;// if not frmSettings.UserDataDIrectoriesExist
 
+  // Generate a default file or load a save one
+  frmSettings.ReadSettingsINIFile;
 
-{****************************************************************************************
-
-  if not frmSettings.INIFileExists then
-  begin
-
-    if HUInformationMsgYN('imNoINIFile', imNoINIFile) = mrYes then
-    begin
-
-      // This is an Initial Installation
-      if frmSettings.pUserDirectory  = frmSettings.pSystemUserDirectory then
-      begin
-
-        HUInformationMsgOK('imCreateUserDirs', imCreateUserDirs);
-
-        if not frmSettings.CreateUserDirectories then
-        begin
-          HUErrorMsgOK ('erCreateUserDirsFailed', erCreateUserDirsFailed);
-          Main.TerminateApp;
-        end;// if not frmSettings.CreateUserDirectories
-
-        // Load the databases
-        CopyFile (frmSettings.pApplicationDirectory +
-                  '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
-                  frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
-
-        CopyFile (frmSettings.pApplicationDirectory +
-                  '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
-                  frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
-
-        CopyFile (frmSettings.pApplicationDirectory +
-                  '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
-                  frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
-
-   //     CopyFile (frmSettings.pApplicationDirectory +
-   //               '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
-   //               frmHUGeoDB.pHUGeoDBPath);
-
-        frmSettings.ReadSettingsINIFile;
-
-      end;// if frmSettings.pUserDirectory  = frmSettings.pSystemUserDirectory
-
-      // Generate a default file or load a save one
-      frmSettings.ReadSettingsINIFile;
-
-    end;// if HUInformationMsgYN('', imNoINIFile) = mrYes
-
-  end;// if not frmSettings.INIFileExists
-
-  dlgHUNagScreen.pDlgTitle := frmSettings.pApplicationName + '.exe';
+  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
 
   if dlgHUNagScreen.ShowModal = mrYes then
   begin
@@ -143,8 +97,6 @@ begin
   else
     showmessage('Register Later');
   // if dlgHUNagScreen.ShowModal = mrYes
-
-//****************************************************************************************}
 
   Result := True;
 
