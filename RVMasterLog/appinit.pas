@@ -21,7 +21,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 18 Apr 2019
+// Date : 19 Apr 2019
 //
 //========================================================================================
 
@@ -67,6 +67,8 @@ uses
 function Initialize : Boolean;
 begin
 
+
+//****************************************************************************************
   frmSettings.pApplicationDirectory := GetCurrentDir;
   frmSettings.pSystemUserDirectory := GetUserDir;
 
@@ -138,6 +140,8 @@ begin
   else
     showmessage('Register Later');
   // if dlgHUNagScreen.ShowModal = mrYes
+
+//****************************************************************************************
 
   Result := True;
 

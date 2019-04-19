@@ -38,7 +38,6 @@ function Initialize : Boolean;
 
 implementation
 
-
 uses
   Main;
 
@@ -99,20 +98,20 @@ begin
         begin
           HUErrorMsgOK ('erCreateUserDirsFailed', erCreateUserDirsFailed);
           Main.TerminateApp;
-        end;
+        end;// if not frmSettings.CreateUserDirectories
 
         // Load the databases
-          CopyFile (frmSettings.pApplicationDirectory +
-                    '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
-                    frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
+        CopyFile (frmSettings.pApplicationDirectory +
+                  '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
+                  frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
 
-          CopyFile (frmSettings.pApplicationDirectory +
-                    '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
-                    frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
+        CopyFile (frmSettings.pApplicationDirectory +
+                  '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
+                  frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
 
-          CopyFile (frmSettings.pApplicationDirectory +
-                    '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
-                    frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
+        CopyFile (frmSettings.pApplicationDirectory +
+                  '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
+                  frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
    //     CopyFile (frmSettings.pApplicationDirectory +
    //               '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
@@ -157,6 +156,5 @@ end;// function Initialize
 //========================================================================================
 
 //========================================================================================
-
 end.// unit AppInit
 

@@ -22,8 +22,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="203"/>
-        <CursorPos X="91" Y="203"/>
+        <TopLine Value="197"/>
+        <CursorPos X="14" Y="212"/>
         <FoldState Value=" TM HkI01L"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
