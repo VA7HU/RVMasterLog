@@ -16,7 +16,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 18 Apr 2019
+// Date : 19 Apr 2019
 //
 //========================================================================================
 
@@ -24,7 +24,10 @@ interface
 
 uses
   Buttons, Classes, ComCtrls, Controls, Dialogs, FileUtil, Forms, Graphics, INIFiles,
-  StdCtrls, SysUtils;
+  StdCtrls, SysUtils,
+  //App Units
+  // HULib units
+  HUMessageBoxes;
 
 type
 
@@ -54,9 +57,9 @@ type
 
   private
     fApplicationDirectory : string;
-    fApplicationName : string;
+    fAppName : string;
     fSystemUserDirectory : string;
-    fUserDirectory : string;
+    fUserDataDirectory : string;
     fSettingsDirectory : string;
     fLogbooksDirectory : string;
     fBackupsDirectory : string;
@@ -67,12 +70,12 @@ type
     fOwnerID : string;
     function GetApplicationDirectory : string;
     procedure SetApplicationDirectory(Dir : string);
-    function GetApplicationName : string;
-    procedure SetApplicationName(AppName : string);
+    function GetAppName : string;
+    procedure SetAppName(AppName : string);
     function GetSystemUserDirectory : string;
     procedure SetSystemUserDirectory(Dir : string);
-    function GetUserDirectory : string;
-    procedure SetUserDirectory(Dir : string);
+    function GetUserDataDirectory : string;
+    procedure SetUserDataDirectory(Dir : string);
     function GetSettingsDirectory : string;
     procedure SetSettingsDirectory(Dir : string);
     function GetLogbooksDirectory : string;
@@ -91,10 +94,11 @@ type
     procedure SetOwnerID (OwnerID : string);
 
   public
+
     property pApplicationDirectory : string read GetApplicationDirectory write SetApplicationDirectory;
-    property pApplicationName : string read GetApplicationName write SetApplicationName;
-   property pSystemUserDirectory : string read GetUserDirectory write SetUserDirectory;
-    property pUserDirectory : string read GetUserDirectory write SetUserDirectory;
+    property pAppName : string read GetAppName write SetAppName;
+    property pSystemUserDirectory : string read GetSystemUserDirectory write SetSystemUserDirectory;
+    property pUserDataDirectory : string read GetUserDataDirectory write SetUserDataDirectory;
     property pSettingsDirectory : string read GetSettingsDirectory write SetSettingsDirectory;
     property pLogbooksDirectory : string read GetLogbooksDirectory write SetLogbooksDirectory;
     property pBackupsDirectory : string read GetBackupsDirectory write SetBackupsDirectory;
@@ -104,7 +108,7 @@ type
     property pOwnerEmailAddress : string read GetOwnerEmailAddress write SetOwnerEmailAddress;
     property pOwnerID : string read GetOwnerID write SetOwnerID;
 
-    function INIFileExists : Boolean;
+    function UserDataDirectoriesExist : Boolean;
     procedure ReadSettingsINIFile;
     procedure WriteSettingsINIFile;
     function CreateUserDirectories : Boolean;
@@ -118,31 +122,47 @@ implementation
 
 {$R *.lfm}
 
+uses
+  Main;
+
 //========================================================================================
 //          PRIVATE CONSTANTS
 //========================================================================================
 const
+
+  cstrAppName = 'RVMasterLog';
   cstrSettingsDirectoryName = 'Settings';
   cstrLogbooksDirectoryName = 'Logbooks';
   cstrBackupsDirectoryName = 'Backups';
-
-//========================================================================================
-//          PUBLIC CONSTANTS
-//========================================================================================
-const
-  cstrUserDirectoryPath = 'AppData\Roaming\RVMasterLog';
+  cstrUserDataDirectoryPath = 'AppData\Roaming\RVMasterLog';
 
 //========================================================================================
 //          PRIVATE VARIABLES
 //========================================================================================
 
 //========================================================================================
-//          PUBLIC VARIABLES
-//========================================================================================
-
-//========================================================================================
 //          PRIVATE ROUTINES
 //========================================================================================
+function TfrmSettings.UserDataDirectoriesExist : Boolean;
+begin
+
+  if not DirectoryExists(pUserDataDirectory) then
+  begin
+
+    if HUErrorMsgYN(' No User Data Directory', 'Create One ?') = mrYes then
+    begin
+      showmessage('Create One');
+      Result := True;
+    end
+    else
+    begin
+      Result := False;
+      Main.TerminateApp;
+    end;// if HUErrorMsgYN(' No User Directory', 'Create One ?') = mrYes
+
+  end;// if UserDataDirectoriesExist(pUserDirectory)
+
+end;// function TfrmAppSetupApplicationDirectoryp.UserFIlesExist
 
 //========================================================================================
 //          PUBLIC ROUTINES
@@ -155,15 +175,15 @@ begin
   Result := True;
 
     // USER DIRECTORY
-  pUserDirectory := frmSettings.pSystemUserDirectory + cstrUserDirectoryPath;
-  if not CreateDir(pUserDirectory)then
+  pUserDataDirectory := frmSettings.pSystemUserDirectory + cstrUserDataDirectoryPath;
+  if not CreateDir(pUserDataDirectory)then
   begin
     showmessage('USER DIR FAILED');
     Result := False;
   end;
 
     // SETTINGS DIRECTORY
-  pSettingsDirectory := pUserDirectory + '\' + cstrSettingsDirectoryName;
+  pSettingsDirectory := pUserDataDirectory + '\' + cstrSettingsDirectoryName;
   if not CreateDir(pSettingsDirectory)then
   begin
     showmessage('SETTINGS DIR FAILED');
@@ -171,7 +191,7 @@ begin
   end;
 
   // LOGBOOKS DIRECTORY
-  pLogbooksDirectory := pUserDirectory + '\' + cstrLogbooksDirectoryName;
+  pLogbooksDirectory := pUserDataDirectory + '\' + cstrLogbooksDirectoryName;
   if not CreateDir(pLogbooksDirectory)then
   begin
     showmessage('LOGBOOKS DIR FAILED');
@@ -179,7 +199,7 @@ begin
   end;
 
   // BACKUPS DIRECTORY
-  pBackupsDirectory := pUserDirectory + '\' + cstrBackupsDirectoryName;
+  pBackupsDirectory := pUserDataDirectory + '\' + cstrBackupsDirectoryName;
   if not CreateDir(pBackupsDirectory)then
   begin
     showmessage('BACKUP DIR FAILED');
@@ -190,11 +210,11 @@ begin
   begin
     showmessage('Deleting');
 //     Result:=DeleteDirectory(NomeDir,True);
-    DeleteDirectory(pUserDirectory, True);
+    DeleteDirectory(pUserDataDirectory, True);
     Result := False;
   end;
 
-end;// function CreateUserDirectories
+end;// function CreateUserDataDirectories
 
 //========================================================================================
 //          PROPERTY ROUTINES
@@ -211,28 +231,28 @@ begin
 end;// procedure TfrmSettings.SetApplicationDirectory
 
 //========================================================================================
-function TfrmSettings.GetApplicationName: string;
+function TfrmSettings.GetAppName: string;
 begin
-   Result := fApplicationName;
-end;// function TfrmSettings.GetApplicationName
+   Result := fAppName;
+end;// function TfrmSettings.GetAppName
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetApplicationName(AppName: string);
+procedure TfrmSettings.SetAppName(AppName: string);
 begin
-    fApplicationName := AppName;
-end;// procedure TfrmSettings.SetApplicationName
+    fAppName := AppName;
+end;// procedure TfrmSettings.SetAppName
 
 //========================================================================================
-function TfrmSettings.GetUserDirectory: string;
+function TfrmSettings.GetUserDataDirectory: string;
 begin
-   Result := fUserDirectory;
-end;// function TfrmSettings.GetUserDirectory
+   Result := fUserDataDirectory;
+end;// function TfrmSettings.GetUserDataDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetUserDirectory(Dir: string);
+procedure TfrmSettings.SetUserDataDirectory(Dir: string);
 begin
-    fUserDirectory := Dir;
-end;// procedure TfrmSettings.SetUserDirectory
+    fUserDataDirectory := Dir;
+end;// procedure TfrmSettings.SetUserDataDirectory
 
 //========================================================================================
 function TfrmSettings.GetSystemUserDirectory: string;
@@ -397,12 +417,6 @@ var
   //==============================
 
 //----------------------------------------------------------------------------------------
-function TfrmSettings.INIFileExists : Boolean;
-begin
-  ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
-  Result :=  FileExists(ApplicationINIFileName);
-end;// function TfrmAppSetupApplicationDirectoryp.INIFileExists
-
 //----------------------------------------------------------------------------------------
 procedure TfrmSettings.ReadSettingsINIFile;
 
@@ -485,7 +499,7 @@ begin
       // USER Directory
     ApplicationINIFile.WriteString(cstrUserDirectories,
                                    cstrKeyUserDirectory,
-                                   pUserDirectory);
+                                   pUserDataDirectory);
 
     ApplicationINIFile.WriteString(cstrUserDirectories,
                                     cstrKeySettingsDirectory,
@@ -535,6 +549,12 @@ end;// procedure TfrmSettings.WriteSettingsINIFile
 //========================================================================================
 procedure TfrmSettings.FormCreate(Sender: TObject);
 begin
+
+  pAppName := cstrAppName;
+  pApplicationDirectory := GetCurrentDir;
+  pSystemUserDirectory := GetUserDir;
+  pUserDirectory := frmSettings.pSystemUserDirectory + cstrUserDirectoryPath;
+  pSettingsDirectory := pUserDirectory + '\' + cstrSettingsDirectoryName;
 
 end;// procedure TfrmAppSetup.FormCreate
 

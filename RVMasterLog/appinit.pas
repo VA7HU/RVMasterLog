@@ -65,24 +65,27 @@ uses
 //          PUBLIC ROUTINES
 //========================================================================================
 function Initialize : Boolean;
+var
+  vstrTUserDir : string;
 begin
 
-
-{****************************************************************************************
-  frmSettings.pApplicationDirectory := GetCurrentDir;
-  frmSettings.pSystemUserDirectory := GetUserDir;
-
-  // If the .ini file exists we read it.
-  //
-  //If it does not there are only two possibilities:
+  // If the UserDirectory does not exist, there are only two possibilities:
   //
   //   1. This is an initial installation and it has not been created yet; or,
   //
   //   2. It has somehow disappeared.
   //
-  // We display an Information message and give the user the option of either creating a
-  // default .ini file or closing the application and loading a backup .ini file or
-  // re-installing the appplication.
+  // We display an Error message and give the user the option of either creating
+  // the RVMasterLog user files or terminating appplication.
+
+  If not frmSettings.UserDataDIrectoriesExist then
+  begin
+    showmessage('No');
+    Main.TerminateApp;
+  end;// if not frmSettings.UserDataDIrectoriesExist
+
+
+{****************************************************************************************
 
   if not frmSettings.INIFileExists then
   begin
