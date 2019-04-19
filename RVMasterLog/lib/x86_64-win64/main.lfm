@@ -38,13 +38,13 @@ object frmMain: TfrmMain
         Caption = 'New Logbook ...'
         OnClick = mnuLogbooksNewLogbookClick
       end
-      object mnuLogbookOpenLogbook: TMenuItem
+      object mnuLogbooksOpenLogbook: TMenuItem
         Caption = 'Open Logbook ...'
-        OnClick = mnuLogbookOpenLogbookClick
+        OnClick = mnuLogbooksOpenLogbookClick
       end
-      object mnuLogbookDeleteLogbook: TMenuItem
+      object mnuLogbooksDeleteLogbook: TMenuItem
         Caption = '&Delete Logbook'
-        OnClick = mnuLogbookDeleteLogbookClick
+        OnClick = mnuLogbooksDeleteLogbookClick
       end
       object mnuLogbooksSaveLogbook: TMenuItem
         Caption = '&Save Logbook'

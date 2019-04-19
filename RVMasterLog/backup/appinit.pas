@@ -17,6 +17,7 @@ unit AppInit;
 //          HUMessageBoxes
 //          HUNagScreen : dlgHUNagScreen.ShowModal
 //          HURegistration : dlgHURegistration.ShowModal
+//          Main : TerminateApp
 //
 // Ver. : 1.0.0
 //
@@ -36,6 +37,10 @@ uses
 function Initialize : Boolean;
 
 implementation
+
+
+uses
+  Main;
 
 //========================================================================================
 //          PRIVATE CONSTANTS
@@ -61,13 +66,7 @@ implementation
 //          PUBLIC ROUTINES
 //========================================================================================
 function Initialize : Boolean;
-
-var
-  InitFailure : Boolean;
-
 begin
-
-  InitFailure := False;
 
   frmSettings.pApplicationDirectory := GetCurrentDir;
   frmSettings.pSystemUserDirectory := GetUserDir;
@@ -99,8 +98,7 @@ begin
         if not frmSettings.CreateUserDirectories then
         begin
           HUErrorMsgOK ('erCreateUserDirsFailed', erCreateUserDirsFailed);
-          InitFailure := True;
-          Halt;
+          Main.TerminateApp;
         end;
 
         // Load the databases
@@ -120,16 +118,16 @@ begin
    //               '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
    //               frmHUGeoDB.pHUGeoDBPath);
 
-          frmSettings.ReadSettingsINIFile;
+        frmSettings.ReadSettingsINIFile;
 
       end;// if frmSettings.pUserDirectory  = frmSettings.pSystemUserDirectory
+
+      // Generate a default file or load a save one
+      frmSettings.ReadSettingsINIFile;
 
     end;// if HUInformationMsgYN('', imNoINIFile) = mrYes
 
   end;// if not frmSettings.INIFileExists
-
-  if InitFailure then
-    Exit;
 
   dlgHUNagScreen.pDlgTitle := frmSettings.pApplicationName + '.exe';
 

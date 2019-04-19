@@ -9,6 +9,7 @@ unit Main;
 // Description :
 //
 // Called By :  ManufacturerDB  : TfrmManufacturerDB.FormShow
+//              AppInit : Initialize
 //
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
@@ -17,9 +18,7 @@ unit Main;
 //
 // Ver. : 1.0.0
 //
-// Date : 1 Feb 2019
-//
-// *ToDo:
+// Date : 18 Apr 2019
 //
 //========================================================================================
 
@@ -50,8 +49,8 @@ type
     mnuLogbooksPrint: TMenuItem;
     mnuLogbooksPrinterSetup: TMenuItem;
     mnuLogbooksSep1: TMenuItem;
-    mnuLogbookDeleteLogbook: TMenuItem;
-    mnuLogbookOpenLogbook: TMenuItem;
+    mnuLogbooksDeleteLogbook: TMenuItem;
+    mnuLogbooksOpenLogbook: TMenuItem;
     mnuLogbooksNewLogbook: TMenuItem;
     mnuLogbooksExit: TMenuItem;
     mnuLogbooks: TMenuItem;
@@ -64,10 +63,10 @@ type
     procedure FormShow(Sender: TObject);
     procedure mnuLogbooksNewLogbookClick(Sender: TObject);
     procedure mnuLogbooksExitClick(Sender: TObject);
-    procedure mnuLogbookOpenLogbookClick(Sender: TObject);
+    procedure mnuLogbooksOpenLogbookClick(Sender: TObject);
     procedure mnuLogbooksPrintClick(Sender: TObject);
     procedure mnuLogbooksPrinterSetupClick(Sender: TObject);
-    procedure mnuLogbookDeleteLogbookClick(Sender: TObject);
+    procedure mnuLogbooksDeleteLogbookClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
     procedure mnuSettingsDirectoriesClick(Sender: TObject);
   private
@@ -78,6 +77,8 @@ type
 
 var
   frmMain: TfrmMain;
+
+procedure TerminateApp;
 
 implementation
 
@@ -106,6 +107,11 @@ implementation
 //========================================================================================
 //          PUBLIC ROUTINES
 //========================================================================================
+procedure TerminateApp;
+begin
+ showmessage('Terminating Application');
+ Halt;
+end;// procedure TerminateApp
 
 //========================================================================================
 //          PROPERTY ROUTINES
@@ -114,27 +120,29 @@ implementation
 //========================================================================================
 //          MENU ROUTINES
 //========================================================================================
+
+//==========
+// mnuLogbooksClick
+//==========
 procedure TfrmMain.mnuLogbooksNewLogbookClick(Sender: TObject);
 begin
   frmLogbooksTable.CreateNewLogbook;
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------
-procedure TfrmMain.mnuLogbookOpenLogbookClick(Sender: TObject);
+procedure TfrmMain.mnuLogbooksOpenLogbookClick(Sender: TObject);
 begin
   showmessage('Open Logbook');
-//  frmLogbooksTable.OpenLogbook;
 end;// procedure TfrmMain.mnuLogbooksOpenLogbookClick
 
 //----------------------------------------------------------------------------------------
 procedure TfrmMain.mnuLogbooksSaveClick(Sender: TObject);
 begin
  showmessage('Save Logbook');
-// frmLogbooksTable.SaveLogbook;
 end;// procedure TfrmMain.mnuLogbooksSaveClick
 
 //----------------------------------------------------------------------------------------
-procedure TfrmMain.mnuLogbookDeleteLogbookClick(Sender: TObject);
+procedure TfrmMain.mnuLogbooksDeleteLogbookClick(Sender: TObject);
 begin
  showmessage('Delete Logbook');
 // frmLogbook.DeleteLogbook;
@@ -186,12 +194,13 @@ begin
  Finalize;
 end;// procedure TfrmMain.FormClose
 
+//========================================================================================
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
  showmessage('On Close Query')
 end;// procedure TfrmMain.FormCloseQuery
 
-//----------------------------------------------------------------------------------------
+//========================================================================================
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
 

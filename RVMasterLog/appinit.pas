@@ -17,6 +17,7 @@ unit AppInit;
 //          HUMessageBoxes
 //          HUNagScreen : dlgHUNagScreen.ShowModal
 //          HURegistration : dlgHURegistration.ShowModal
+//          Main : TerminateApp
 //
 // Ver. : 1.0.0
 //
@@ -36,6 +37,9 @@ uses
 function Initialize : Boolean;
 
 implementation
+
+uses
+  Main;
 
 //========================================================================================
 //          PRIVATE CONSTANTS
@@ -61,13 +65,7 @@ implementation
 //          PUBLIC ROUTINES
 //========================================================================================
 function Initialize : Boolean;
-
-var
-  InitFailure : Boolean;
-
 begin
-
-  InitFailure := False;
 
   frmSettings.pApplicationDirectory := GetCurrentDir;
   frmSettings.pSystemUserDirectory := GetUserDir;
@@ -99,28 +97,27 @@ begin
         if not frmSettings.CreateUserDirectories then
         begin
           HUErrorMsgOK ('erCreateUserDirsFailed', erCreateUserDirsFailed);
-          InitFailure := True;
-          Halt;
-        end;
+          Main.TerminateApp;
+        end;// if not frmSettings.CreateUserDirectories
 
         // Load the databases
-          CopyFile (frmSettings.pApplicationDirectory +
-                    '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
-                    frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
+        CopyFile (frmSettings.pApplicationDirectory +
+                  '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
+                  frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
 
-          CopyFile (frmSettings.pApplicationDirectory +
-                    '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
-                    frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
+        CopyFile (frmSettings.pApplicationDirectory +
+                  '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
+                  frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
 
-          CopyFile (frmSettings.pApplicationDirectory +
-                    '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
-                    frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
+        CopyFile (frmSettings.pApplicationDirectory +
+                  '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
+                  frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
    //     CopyFile (frmSettings.pApplicationDirectory +
    //               '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
    //               frmHUGeoDB.pHUGeoDBPath);
 
-          frmSettings.ReadSettingsINIFile;
+        frmSettings.ReadSettingsINIFile;
 
       end;// if frmSettings.pUserDirectory  = frmSettings.pSystemUserDirectory
 
@@ -130,9 +127,6 @@ begin
     end;// if HUInformationMsgYN('', imNoINIFile) = mrYes
 
   end;// if not frmSettings.INIFileExists
-
-  if InitFailure then
-    Exit;
 
   dlgHUNagScreen.pDlgTitle := frmSettings.pApplicationName + '.exe';
 
@@ -162,6 +156,5 @@ end;// function Initialize
 //========================================================================================
 
 //========================================================================================
-
 end.// unit AppInit
 
