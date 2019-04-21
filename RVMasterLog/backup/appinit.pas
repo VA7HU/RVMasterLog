@@ -93,7 +93,10 @@ begin
   frmSettings.ReadSettingsINIFile;
 
   dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
-  dlgHUNagScreen.ShowModal;
+  if dlgHUNagScreen.ShowModal = mrYes then
+  begin
+    dlgHURegistration.RequestRegistrationKey;
+  end;
 
   Result := True;
 

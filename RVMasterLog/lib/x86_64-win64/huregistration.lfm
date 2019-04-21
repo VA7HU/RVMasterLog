@@ -1,13 +1,13 @@
 object dlgHURegistration: TdlgHURegistration
   Left = 345
-  Height = 403
+  Height = 495
   Top = 135
-  Width = 366
+  Width = 641
   BorderIcons = [biMaximize]
   BorderStyle = bsDialog
   Caption = 'dlgHURegistration'
-  ClientHeight = 403
-  ClientWidth = 366
+  ClientHeight = 495
+  ClientWidth = 641
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
@@ -17,12 +17,12 @@ object dlgHURegistration: TdlgHURegistration
     Height = 30
     Top = 352
     Width = 100
-    Caption = '&Registration'
+    Caption = '&Register'
     Default = True
     Kind = bkOK
     ModalResult = 1
     OnClick = bbtRegIDClick
-    TabOrder = 6
+    TabOrder = 1
   end
   object bbtCancel: TBitBtn
     Left = 238
@@ -34,103 +34,7 @@ object dlgHURegistration: TdlgHURegistration
     Kind = bkCancel
     ModalResult = 2
     OnClick = bbtCancelClick
-    TabOrder = 7
-  end
-  object edtFirstName: TEdit
-    Left = 156
-    Height = 23
-    Top = 152
-    Width = 150
-    Alignment = taCenter
-    OnKeyPress = edtFirstNameKeyPress
-    TabOrder = 1
-  end
-  object Label1: TLabel
-    Left = 60
-    Height = 15
-    Top = 156
-    Width = 78
-    Caption = '1. First Name : '
-    Font.Color = clRed
-    ParentColor = False
-    ParentFont = False
-  end
-  object Label2: TLabel
-    Left = 60
-    Height = 15
-    Top = 191
-    Width = 74
-    Caption = '2. Last Name :'
-    Font.Color = clRed
-    ParentColor = False
-    ParentFont = False
-  end
-  object edtLastName: TEdit
-    Left = 156
-    Height = 23
-    Top = 187
-    Width = 148
-    Alignment = taCenter
-    OnKeyPress = edtLastNameKeyPress
     TabOrder = 2
-  end
-  object lblKeyID: TLabel
-    Left = 60
-    Height = 15
-    Top = 316
-    Width = 91
-    Alignment = taCenter
-    Caption = 'Registration Key :'
-    ParentColor = False
-  end
-  object edtKeyID: TEdit
-    Left = 156
-    Height = 23
-    Top = 312
-    Width = 150
-    Alignment = taCenter
-    Color = clSilver
-    ReadOnly = True
-    TabStop = False
-    TabOrder = 5
-  end
-  object lblStep4: TLabel
-    Left = 60
-    Height = 15
-    Top = 267
-    Width = 63
-    Caption = '4. Callsign : '
-    Font.Color = clRed
-    ParentColor = False
-    ParentFont = False
-  end
-  object edtStep4: TEdit
-    Left = 158
-    Height = 23
-    Top = 263
-    Width = 148
-    Alignment = taCenter
-    OnKeyPress = edtStep4KeyPress
-    TabOrder = 4
-  end
-  object Label5: TLabel
-    Left = 60
-    Height = 15
-    Top = 229
-    Width = 50
-    Caption = '3. Email : '
-    Font.Color = clRed
-    ParentColor = False
-    ParentFont = False
-  end
-  object edtEmail: TEdit
-    Left = 158
-    Height = 23
-    Top = 225
-    Width = 148
-    Alignment = taCenter
-    OnKeyPress = edtEmailKeyPress
-    TabOrder = 3
   end
   object memInstructions: TMemo
     Left = 67
@@ -152,6 +56,137 @@ object dlgHURegistration: TdlgHURegistration
     DefaultCaption = True
     Kind = bkHelp
     OnClick = bbtHelpClick
-    TabOrder = 8
+    TabOrder = 3
+  end
+  object PageControl1: TPageControl
+    Left = 24
+    Height = 200
+    Top = 136
+    Width = 320
+    ActivePage = tsRequestRegistrationKey
+    ShowTabs = False
+    TabIndex = 0
+    TabOrder = 4
+    Options = [nboShowCloseButtons, nboShowAddTabButton]
+    object tsRequestRegistrationKey: TTabSheet
+      Caption = 'Request Registration'
+      ClientHeight = 192
+      ClientWidth = 312
+      object Label3: TLabel
+        Left = 8
+        Height = 15
+        Top = 16
+        Width = 78
+        Caption = '1. First Name : '
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+      end
+      object edtFirstName: TEdit
+        Left = 120
+        Height = 23
+        Top = 16
+        Width = 150
+        Alignment = taCenter
+        OnKeyPress = edtFirstNameKeyPress
+        TabOrder = 0
+      end
+      object Label4: TLabel
+        Left = 8
+        Height = 15
+        Top = 48
+        Width = 74
+        Caption = '2. Last Name :'
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+      end
+      object edtLastName: TEdit
+        Left = 122
+        Height = 23
+        Top = 48
+        Width = 148
+        Alignment = taCenter
+        OnKeyPress = edtLastNameKeyPress
+        TabOrder = 1
+      end
+      object Label6: TLabel
+        Left = 8
+        Height = 15
+        Top = 80
+        Width = 50
+        Caption = '3. Email : '
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+      end
+      object edtEmail: TEdit
+        Left = 122
+        Height = 23
+        Top = 80
+        Width = 148
+        Alignment = taCenter
+        OnKeyPress = edtEmailKeyPress
+        TabOrder = 2
+      end
+      object lblStep5: TLabel
+        Left = 0
+        Height = 15
+        Top = 128
+        Width = 63
+        Caption = '4. Callsign : '
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+      end
+      object edtStep5: TEdit
+        Left = 120
+        Height = 23
+        Top = 120
+        Width = 148
+        Alignment = taCenter
+        OnKeyPress = edtStep4KeyPress
+        TabOrder = 3
+      end
+    end
+    object tsRequestUserID: TTabSheet
+      Caption = 'Request UserID'
+      ClientHeight = 192
+      ClientWidth = 312
+      object Label1: TLabel
+        Left = 140
+        Height = 15
+        Top = 87
+        Width = 19
+        Caption = 'TS2'
+        ParentColor = False
+      end
+    end
+    object tsEnterRegistrationKey: TTabSheet
+      Caption = 'EnterRegistration'
+      ClientHeight = 192
+      ClientWidth = 312
+      object Label2: TLabel
+        Left = 149
+        Height = 15
+        Top = 100
+        Width = 19
+        Caption = 'TS3'
+        ParentColor = False
+      end
+    end
+    object tsEnterUserIID: TTabSheet
+      Caption = 'EnterUserID'
+      ClientHeight = 192
+      ClientWidth = 312
+      object Label5: TLabel
+        Left = 154
+        Height = 15
+        Top = 97
+        Width = 19
+        Caption = 'TS4'
+        ParentColor = False
+      end
+    end
   end
 end
