@@ -12,17 +12,18 @@ object dlgHURegistration: TdlgHURegistration
   OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '2.0.0.4'
-  object bbtRegID: TBitBtn
+  object bbtPrint: TBitBtn
     Left = 136
     Height = 30
     Top = 408
     Width = 100
-    Caption = '&Print ID'
+    Caption = '&Print'
     Default = True
+    Enabled = False
     Kind = bkOK
     ModalResult = 1
-    OnClick = bbtRegIDClick
-    TabOrder = 1
+    OnClick = bbtPrintClick
+    TabOrder = 2
   end
   object bbtCancel: TBitBtn
     Left = 248
@@ -34,7 +35,7 @@ object dlgHURegistration: TdlgHURegistration
     Kind = bkCancel
     ModalResult = 2
     OnClick = bbtCancelClick
-    TabOrder = 2
+    TabOrder = 4
   end
   object memInstructions: TMemo
     Left = 24
@@ -63,18 +64,19 @@ object dlgHURegistration: TdlgHURegistration
     Height = 200
     Top = 184
     Width = 328
-    ActivePage = tsEnterRegistrationKey
+    TabStop = False
+    ActivePage = tsRequestRegistrationKey
     ShowTabs = False
-    TabIndex = 1
-    TabOrder = 4
+    TabIndex = 0
+    TabOrder = 1
     object tsRequestRegistrationKey: TTabSheet
       Caption = 'Request Registration'
       ClientHeight = 192
       ClientWidth = 320
-      object Label3: TLabel
-        Left = 8
+      object lblFirstName: TLabel
+        Left = 32
         Height = 15
-        Top = 16
+        Top = 36
         Width = 78
         Caption = '1. First Name : '
         Font.Color = clRed
@@ -82,18 +84,19 @@ object dlgHURegistration: TdlgHURegistration
         ParentFont = False
       end
       object edtFirstName: TEdit
-        Left = 104
+        Left = 128
         Height = 23
-        Top = 16
+        Top = 32
         Width = 150
         Alignment = taCenter
+        OnExit = edtFirstNameExit
         OnKeyPress = edtFirstNameKeyPress
         TabOrder = 0
       end
-      object Label4: TLabel
-        Left = 8
+      object lblLastName: TLabel
+        Left = 32
         Height = 15
-        Top = 48
+        Top = 72
         Width = 74
         Caption = '2. Last Name :'
         Font.Color = clRed
@@ -101,47 +104,46 @@ object dlgHURegistration: TdlgHURegistration
         ParentFont = False
       end
       object edtLastName: TEdit
-        Left = 104
+        Left = 128
         Height = 23
-        Top = 48
+        Top = 72
         Width = 148
         Alignment = taCenter
         OnKeyPress = edtLastNameKeyPress
         TabOrder = 1
       end
-      object Label6: TLabel
-        Left = 8
+      object lblEMail: TLabel
+        Left = 32
         Height = 15
-        Top = 80
+        Top = 104
         Width = 50
         Caption = '3. Email : '
         Font.Color = clRed
         ParentColor = False
         ParentFont = False
       end
-      object edtEmail: TEdit
-        Left = 104
+      object edtEmailAddress: TEdit
+        Left = 128
         Height = 23
-        Top = 80
+        Top = 104
         Width = 148
         Alignment = taCenter
-        OnKeyPress = edtEmailKeyPress
+        OnKeyPress = edtEmailAddressKeyPress
         TabOrder = 2
       end
-      object lblStep5: TLabel
-        Left = 8
+      object lblCallsign: TLabel
+        Left = 32
         Height = 15
-        Top = 112
+        Top = 144
         Width = 63
         Caption = '4. Callsign : '
-        Font.Color = clRed
         ParentColor = False
         ParentFont = False
       end
-      object edtStep5: TEdit
-        Left = 104
+      object edtCallsign: TEdit
+        Left = 128
         Height = 23
-        Top = 112
+        Top = 140
         Width = 148
         Alignment = taCenter
         TabOrder = 3
