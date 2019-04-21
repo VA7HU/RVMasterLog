@@ -62,16 +62,14 @@ object dlgHURegistration: TdlgHURegistration
     Left = 24
     Height = 200
     Top = 136
-    Width = 320
+    Width = 416
     ActivePage = tsRequestRegistrationKey
-    ShowTabs = False
     TabIndex = 0
     TabOrder = 4
-    Options = [nboShowCloseButtons, nboShowAddTabButton]
     object tsRequestRegistrationKey: TTabSheet
       Caption = 'Request Registration'
-      ClientHeight = 192
-      ClientWidth = 312
+      ClientHeight = 172
+      ClientWidth = 408
       object Label3: TLabel
         Left = 8
         Height = 15
@@ -83,7 +81,7 @@ object dlgHURegistration: TdlgHURegistration
         ParentFont = False
       end
       object edtFirstName: TEdit
-        Left = 120
+        Left = 104
         Height = 23
         Top = 16
         Width = 150
@@ -102,7 +100,7 @@ object dlgHURegistration: TdlgHURegistration
         ParentFont = False
       end
       object edtLastName: TEdit
-        Left = 122
+        Left = 104
         Height = 23
         Top = 48
         Width = 148
@@ -121,7 +119,7 @@ object dlgHURegistration: TdlgHURegistration
         ParentFont = False
       end
       object edtEmail: TEdit
-        Left = 122
+        Left = 104
         Height = 23
         Top = 80
         Width = 148
@@ -130,9 +128,9 @@ object dlgHURegistration: TdlgHURegistration
         TabOrder = 2
       end
       object lblStep5: TLabel
-        Left = 0
+        Left = 8
         Height = 15
-        Top = 128
+        Top = 112
         Width = 63
         Caption = '4. Callsign : '
         Font.Color = clRed
@@ -140,32 +138,18 @@ object dlgHURegistration: TdlgHURegistration
         ParentFont = False
       end
       object edtStep5: TEdit
-        Left = 120
+        Left = 104
         Height = 23
-        Top = 120
+        Top = 112
         Width = 148
         Alignment = taCenter
-        OnKeyPress = edtStep4KeyPress
         TabOrder = 3
-      end
-    end
-    object tsRequestUserID: TTabSheet
-      Caption = 'Request UserID'
-      ClientHeight = 192
-      ClientWidth = 312
-      object Label1: TLabel
-        Left = 140
-        Height = 15
-        Top = 87
-        Width = 19
-        Caption = 'TS2'
-        ParentColor = False
       end
     end
     object tsEnterRegistrationKey: TTabSheet
       Caption = 'EnterRegistration'
-      ClientHeight = 192
-      ClientWidth = 312
+      ClientHeight = 172
+      ClientWidth = 408
       object Label2: TLabel
         Left = 149
         Height = 15
@@ -175,10 +159,23 @@ object dlgHURegistration: TdlgHURegistration
         ParentColor = False
       end
     end
+    object tsRequestUserID: TTabSheet
+      Caption = 'Request UserID'
+      ClientHeight = 172
+      ClientWidth = 408
+      object Label1: TLabel
+        Left = 140
+        Height = 15
+        Top = 87
+        Width = 19
+        Caption = 'TS2'
+        ParentColor = False
+      end
+    end
     object tsEnterUserIID: TTabSheet
       Caption = 'EnterUserID'
-      ClientHeight = 192
-      ClientWidth = 312
+      ClientHeight = 172
+      ClientWidth = 408
       object Label5: TLabel
         Left = 154
         Height = 15
