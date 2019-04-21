@@ -1,23 +1,23 @@
 object dlgHURegistration: TdlgHURegistration
   Left = 345
-  Height = 495
+  Height = 454
   Top = 135
-  Width = 641
+  Width = 377
   BorderIcons = [biMaximize]
   BorderStyle = bsDialog
   Caption = 'dlgHURegistration'
-  ClientHeight = 495
-  ClientWidth = 641
+  ClientHeight = 454
+  ClientWidth = 377
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '2.0.0.4'
   object bbtRegID: TBitBtn
-    Left = 131
+    Left = 136
     Height = 30
-    Top = 352
+    Top = 408
     Width = 100
-    Caption = '&Register'
+    Caption = '&Print ID'
     Default = True
     Kind = bkOK
     ModalResult = 1
@@ -25,9 +25,9 @@ object dlgHURegistration: TdlgHURegistration
     TabOrder = 1
   end
   object bbtCancel: TBitBtn
-    Left = 238
+    Left = 248
     Height = 30
-    Top = 352
+    Top = 408
     Width = 100
     Cancel = True
     Caption = '&Cancel'
@@ -37,10 +37,10 @@ object dlgHURegistration: TdlgHURegistration
     TabOrder = 2
   end
   object memInstructions: TMemo
-    Left = 67
-    Height = 120
-    Top = 8
-    Width = 232
+    Left = 24
+    Height = 152
+    Top = 16
+    Width = 328
     Alignment = taCenter
     Lines.Strings = (
       'Instructions Here'
@@ -49,9 +49,9 @@ object dlgHURegistration: TdlgHURegistration
     TabStop = False
   end
   object bbtHelp: TBitBtn
-    Left = 24
+    Left = 16
     Height = 30
-    Top = 352
+    Top = 408
     Width = 100
     DefaultCaption = True
     Kind = bkHelp
@@ -61,15 +61,16 @@ object dlgHURegistration: TdlgHURegistration
   object PageControl1: TPageControl
     Left = 24
     Height = 200
-    Top = 136
-    Width = 416
-    ActivePage = tsRequestRegistrationKey
-    TabIndex = 0
+    Top = 184
+    Width = 328
+    ActivePage = tsEnterRegistrationKey
+    ShowTabs = False
+    TabIndex = 1
     TabOrder = 4
     object tsRequestRegistrationKey: TTabSheet
       Caption = 'Request Registration'
-      ClientHeight = 172
-      ClientWidth = 408
+      ClientHeight = 192
+      ClientWidth = 320
       object Label3: TLabel
         Left = 8
         Height = 15
@@ -148,8 +149,8 @@ object dlgHURegistration: TdlgHURegistration
     end
     object tsEnterRegistrationKey: TTabSheet
       Caption = 'EnterRegistration'
-      ClientHeight = 172
-      ClientWidth = 408
+      ClientHeight = 192
+      ClientWidth = 320
       object Label2: TLabel
         Left = 149
         Height = 15
@@ -161,8 +162,8 @@ object dlgHURegistration: TdlgHURegistration
     end
     object tsRequestUserID: TTabSheet
       Caption = 'Request UserID'
-      ClientHeight = 172
-      ClientWidth = 408
+      ClientHeight = 192
+      ClientWidth = 320
       object Label1: TLabel
         Left = 140
         Height = 15
@@ -174,8 +175,8 @@ object dlgHURegistration: TdlgHURegistration
     end
     object tsEnterUserIID: TTabSheet
       Caption = 'EnterUserID'
-      ClientHeight = 172
-      ClientWidth = 408
+      ClientHeight = 192
+      ClientWidth = 320
       object Label5: TLabel
         Left = 154
         Height = 15
