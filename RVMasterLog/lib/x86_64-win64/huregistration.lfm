@@ -109,6 +109,7 @@ object dlgHURegistration: TdlgHURegistration
         Top = 72
         Width = 148
         Alignment = taCenter
+        OnExit = edtLastNameExit
         OnKeyPress = edtLastNameKeyPress
         TabOrder = 1
       end
@@ -128,6 +129,7 @@ object dlgHURegistration: TdlgHURegistration
         Top = 104
         Width = 148
         Alignment = taCenter
+        OnExit = edtEmailAddressExit
         OnKeyPress = edtEmailAddressKeyPress
         TabOrder = 2
       end
@@ -146,6 +148,7 @@ object dlgHURegistration: TdlgHURegistration
         Top = 140
         Width = 148
         Alignment = taCenter
+        OnExit = edtCallsignExit
         TabOrder = 3
       end
     end

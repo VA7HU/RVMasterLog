@@ -94,7 +94,7 @@
         <UnitName Value="HUValidations"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="13" Y="17"/>
-        <UsageCount Value="199"/>
+        <UsageCount Value="200"/>
       </Unit8>
       <Unit9>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
@@ -106,7 +106,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="40"/>
         <CursorPos Y="171"/>
-        <UsageCount Value="167"/>
+        <UsageCount Value="168"/>
       </Unit9>
       <Unit10>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.lfm"/>
@@ -115,7 +115,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="56"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit10>
       <Unit11>
@@ -125,7 +125,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="56"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit11>
       <Unit12>
@@ -138,7 +138,7 @@
         <EditorIndex Value="5"/>
         <TopLine Value="21"/>
         <CursorPos X="21" Y="131"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit12>
@@ -149,7 +149,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="56"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit13>
       <Unit14>
@@ -161,9 +161,9 @@
         <UnitName Value="HURegistration"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="398"/>
-        <CursorPos X="18" Y="406"/>
-        <UsageCount Value="55"/>
+        <TopLine Value="240"/>
+        <CursorPos X="3" Y="257"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit14>
@@ -534,123 +534,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="219" Column="3" TopLine="209"/>
+        <Caret Line="391" Column="45" TopLine="378"/>
       </Position1>
       <Position2>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="328" Column="51" TopLine="318"/>
+        <Caret Line="212" Column="30" TopLine="202"/>
       </Position2>
       <Position3>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="362" Column="58" TopLine="356"/>
+        <Caret Line="150" Column="62" TopLine="135"/>
       </Position3>
       <Position4>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="190" Column="3" TopLine="175"/>
+        <Caret Line="412" Column="8" TopLine="397"/>
       </Position4>
       <Position5>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="135" Column="62" TopLine="118"/>
+        <Caret Line="414" Column="10" TopLine="398"/>
       </Position5>
       <Position6>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="133" Column="68" TopLine="3"/>
+        <Caret Line="40" Column="18" TopLine="30"/>
       </Position6>
       <Position7>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="190" TopLine="171"/>
+        <Caret Line="404" TopLine="391"/>
       </Position7>
       <Position8>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="191" Column="3" TopLine="120"/>
+        <Caret Line="405" TopLine="392"/>
       </Position8>
       <Position9>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="367" Column="44" TopLine="359"/>
+        <Caret Line="404" TopLine="391"/>
       </Position9>
       <Position10>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="139" Column="25" TopLine="119"/>
+        <Caret Line="410" TopLine="397"/>
       </Position10>
       <Position11>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="201" Column="7" TopLine="192"/>
+        <Caret Line="475" Column="18" TopLine="461"/>
       </Position11>
       <Position12>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="370" Column="40" TopLine="336"/>
+        <Caret Line="420" Column="3" TopLine="418"/>
       </Position12>
       <Position13>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="389" Column="30" TopLine="373"/>
+        <Caret Line="404" Column="3" TopLine="402"/>
       </Position13>
       <Position14>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="80" Column="27" TopLine="71"/>
+        <Caret Line="490" TopLine="460"/>
       </Position14>
       <Position15>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="79" Column="31" TopLine="70"/>
+        <Caret Line="422" Column="9" TopLine="415"/>
       </Position15>
       <Position16>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="47" Column="68" TopLine="41"/>
+        <Caret Line="484" Column="7" TopLine="480"/>
       </Position16>
       <Position17>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="408" Column="48" TopLine="398"/>
+        <Caret Line="489" Column="7" TopLine="476"/>
       </Position17>
       <Position18>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="204" Column="29" TopLine="191"/>
+        <Caret Line="495" Column="22" TopLine="484"/>
       </Position18>
       <Position19>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="77" Column="14" TopLine="67"/>
+        <Caret Line="496" Column="48" TopLine="484"/>
       </Position19>
       <Position20>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="368" Column="21" TopLine="353"/>
+        <Caret Line="272" Column="7" TopLine="263"/>
       </Position20>
       <Position21>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="391" Column="45" TopLine="378"/>
+        <Caret Line="252" Column="45" TopLine="239"/>
       </Position21>
       <Position22>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="212" Column="30" TopLine="202"/>
+        <Caret Line="367" TopLine="350"/>
       </Position22>
       <Position23>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="150" Column="62" TopLine="135"/>
+        <Caret Line="375" Column="8" TopLine="365"/>
       </Position23>
       <Position24>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="412" Column="8" TopLine="397"/>
+        <Caret Line="491" Column="30" TopLine="481"/>
       </Position24>
       <Position25>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="414" Column="10" TopLine="398"/>
+        <Caret Line="367" TopLine="357"/>
       </Position25>
       <Position26>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="40" Column="18" TopLine="30"/>
+        <Caret Line="376" TopLine="367"/>
       </Position26>
       <Position27>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="404" TopLine="391"/>
+        <Caret Line="491" Column="30" TopLine="481"/>
       </Position27>
       <Position28>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="405" TopLine="392"/>
+        <Caret Line="367" TopLine="357"/>
       </Position28>
       <Position29>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="404" TopLine="391"/>
+        <Caret Line="474" Column="40" TopLine="469"/>
       </Position29>
       <Position30>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="410" TopLine="397"/>
+        <Caret Line="489" Column="32" TopLine="472"/>
       </Position30>
     </JumpHistory>
     <RunParams>
