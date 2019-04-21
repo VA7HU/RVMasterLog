@@ -151,7 +151,7 @@ begin
 
     if HUErrorMsgYN('No User Data Directory', 'Initial Installation?') = mrYes then
     begin
-      showmessage('Creating Data Directories');
+      HUInformationMsgOK('Caption', 'Creating Data Directories');
       CreateUserDataDirectories;
     end;// if HUErrorMsgYN(' No User Directory', 'Create One ?') = mrYes
 

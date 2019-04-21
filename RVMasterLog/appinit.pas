@@ -21,7 +21,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 19 Apr 2019
+// Date : 20 Apr 2019
 //
 //========================================================================================
 
@@ -44,6 +44,11 @@ uses
 //========================================================================================
 //          PRIVATE CONSTANTS
 //========================================================================================
+
+//==========
+// Nessages
+//==========
+
 
 //========================================================================================
 //          PUBLIC CONSTANTS
@@ -80,7 +85,7 @@ begin
 
   If not frmSettings.UserDataDirectoriesExist then
   begin
-    showmessage('Major Error - No Data Directories found.');
+    HUErrorMsgOK ('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
     Main.TerminateApp;
   end;// if not frmSettings.UserDataDIrectoriesExist
 
@@ -88,15 +93,10 @@ begin
   frmSettings.ReadSettingsINIFile;
 
   dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
-
   if dlgHUNagScreen.ShowModal = mrYes then
   begin
-      dlgHURegistration.GetREgistrationKey;
-      showmessage('RegID = ' + dlgHURegistration.pRegKey);
-  end
-  else
-    showmessage('Register Later');
-  // if dlgHUNagScreen.ShowModal = mrYes
+    dlgHURegistration.SHowModal;
+  end;
 
   Result := True;
 

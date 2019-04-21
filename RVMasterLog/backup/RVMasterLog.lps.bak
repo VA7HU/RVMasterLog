@@ -19,12 +19,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="21"/>
         <CursorPos X="11" Y="31"/>
-        <FoldState Value=" TM HkI01L"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="appsettings.pas"/>
@@ -33,19 +32,22 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="87"/>
-        <CursorPos X="22" Y="99"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="92"/>
+        <CursorPos X="15" Y="149"/>
         <UsageCount Value="203"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="appinit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="96"/>
-        <CursorPos X="42" Y="99"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="83"/>
+        <CursorPos X="3" Y="100"/>
         <UsageCount Value="203"/>
+        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="appfinal.pas"/>
@@ -80,10 +82,11 @@
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUMessageBoxes"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="71"/>
-        <CursorPos X="22" Y="88"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="34"/>
+        <CursorPos X="27" Y="42"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
@@ -91,7 +94,7 @@
         <UnitName Value="HUValidations"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="13" Y="17"/>
-        <UsageCount Value="184"/>
+        <UsageCount Value="188"/>
       </Unit8>
       <Unit9>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
@@ -103,7 +106,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="40"/>
         <CursorPos Y="171"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="156"/>
       </Unit9>
       <Unit10>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.lfm"/>
@@ -112,7 +115,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="44"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit10>
       <Unit11>
@@ -122,18 +125,22 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="44"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HUNagScreen\hunagscreen.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="dlgHUNagScreen"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="HUNagScreen"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="109"/>
-        <CursorPos X="25" Y="118"/>
-        <UsageCount Value="40"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="139"/>
+        <CursorPos X="42" Y="155"/>
+        <UsageCount Value="44"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit12>
       <Unit13>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.lfm"/>
@@ -142,17 +149,23 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="44"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit13>
       <Unit14>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="dlgHURegistration"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="HURegistration"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="16" Y="31"/>
-        <UsageCount Value="40"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="367"/>
+        <CursorPos X="5" Y="377"/>
+        <UsageCount Value="44"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit14>
       <Unit15>
         <Filename Value="huregistration.pas"/>
@@ -518,7 +531,48 @@
         <UsageCount Value="17"/>
       </Unit55>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="10" HistoryIndex="9">
+      <Position1>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
+        <Caret Line="31" Column="34" TopLine="27"/>
+      </Position1>
+      <Position2>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
+        <Caret Line="41" Column="38" TopLine="27"/>
+      </Position2>
+      <Position3>
+        <Filename Value="appinit.pas"/>
+        <Caret Line="24" Column="13" TopLine="14"/>
+      </Position3>
+      <Position4>
+        <Filename Value="appinit.pas"/>
+        <Caret Line="88" Column="5" TopLine="79"/>
+      </Position4>
+      <Position5>
+        <Filename Value="appinit.pas"/>
+        <Caret Line="95" Column="61" TopLine="87"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
+        <Caret Line="306" Column="7" TopLine="296"/>
+      </Position6>
+      <Position7>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
+        <Caret Line="363" Column="3" TopLine="354"/>
+      </Position7>
+      <Position8>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
+        <Caret Line="20" Column="17"/>
+      </Position8>
+      <Position9>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
+        <Caret Line="300" Column="45" TopLine="282"/>
+      </Position9>
+      <Position10>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
+        <Caret Line="376" Column="3" TopLine="366"/>
+      </Position10>
+    </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode="default"/>

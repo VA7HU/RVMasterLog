@@ -104,7 +104,9 @@
       <Unit12>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HUNagScreen\hunagscreen.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="dlgHUNagScreen"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="HUNagScreen"/>
       </Unit12>
       <Unit13>
@@ -114,7 +116,9 @@
       <Unit14>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="dlgHURegistration"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="HURegistration"/>
       </Unit14>
     </Units>
