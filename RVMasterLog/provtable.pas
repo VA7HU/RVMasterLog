@@ -14,7 +14,7 @@ unit ProvTable;
 //
 // Ver. : 1.00
 //
-// Date : 4 Nov 2018
+// Date : 24 Apr 2019
 //
 //========================================================================================
 
@@ -112,9 +112,9 @@ procedure TfrmProvTable.FormShow(Sender: TObject);
 begin
 
   // Setup all of the Database Controls
-vstrApplicationDatabasePathName := frmSettings.pApplicationDirectory +
+{vstrApplicationDatabasePathName := frmSettings.pApplicationDirectory +
                                '\' +
-                               cstrApplicationDBName;
+                               cstrApplicationDBName;}
 
 {SQLite3Connection1.DatabaseName:= vstrApplicationDatabasePathName;
 SQLite3Connection1.Transaction := SQLTransaction1;

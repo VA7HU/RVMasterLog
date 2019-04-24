@@ -40,9 +40,14 @@ type
     DBComboBox1: TDBComboBox;
     dbcbxProvState: TDBComboBox;
     DBComboBox2: TDBComboBox;
+    DBComboBox3: TDBComboBox;
+    DBComboBox4: TDBComboBox;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
     dbedtPostalCode: TDBEdit;
     dbedtCountry: TDBEdit;
     dbedtProvState: TDBEdit;
