@@ -8,7 +8,6 @@
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <TopLine Value="16"/>
         <CursorPos X="16" Y="29"/>
@@ -365,9 +364,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ProvTable"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="41" Y="2"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="102"/>
+        <CursorPos X="55" Y="117"/>
         <UsageCount Value="20"/>
+        <Loaded Value="True"/>
       </Unit35>
       <Unit36>
         <Filename Value="..\..\..\Common Folders\huconstants.pas"/>
@@ -540,7 +542,7 @@
         <UsageCount Value="21"/>
       </Unit56>
     </Units>
-    <JumpHistory Count="5" HistoryIndex="4">
+    <JumpHistory Count="6" HistoryIndex="5">
       <Position1>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
         <Caret Line="52" Column="22"/>
@@ -561,6 +563,10 @@
         <Filename Value="RVMasterLog.lpr"/>
         <Caret Line="28" Column="73" TopLine="7"/>
       </Position5>
+      <Position6>
+        <Filename Value="RVMasterLog.lpr"/>
+        <Caret Line="29" Column="16" TopLine="16"/>
+      </Position6>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
