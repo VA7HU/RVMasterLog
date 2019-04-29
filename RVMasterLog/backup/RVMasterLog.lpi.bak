@@ -157,7 +157,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HUNagScreen;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development"/>
+      <OtherUnitFiles Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HUNagScreen;..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

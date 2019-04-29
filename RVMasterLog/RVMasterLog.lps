@@ -8,9 +8,8 @@
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="16"/>
-        <CursorPos X="16" Y="29"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="13" Y="17"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -33,9 +32,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="17"/>
-        <CursorPos X="27" Y="30"/>
+        <TopLine Value="6"/>
+        <CursorPos X="12" Y="19"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -44,8 +44,8 @@
         <Filename Value="appinit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
-        <TopLine Value="22"/>
-        <CursorPos X="32" Y="35"/>
+        <TopLine Value="79"/>
+        <CursorPos X="44" Y="87"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -81,9 +81,9 @@
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUMessageBoxes"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="13"/>
-        <CursorPos X="3" Y="26"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="43"/>
+        <CursorPos X="19" Y="54"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit7>
@@ -102,7 +102,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="60"/>
+        <UsageCount Value="63"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit9>
       <Unit10>
@@ -112,11 +112,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HUNagScreen"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="20" Y="30"/>
-        <UsageCount Value="60"/>
+        <TopLine Value="116"/>
+        <CursorPos X="18" Y="17"/>
+        <UsageCount Value="63"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.lfm"/>
@@ -125,7 +126,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="60"/>
+        <UsageCount Value="63"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit11>
       <Unit12>
@@ -135,11 +136,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HURegistration"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="108"/>
         <CursorPos X="40" Y="119"/>
-        <UsageCount Value="60"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="63"/>
       </Unit12>
       <Unit13>
         <Filename Value="logbookstable.pas"/>
@@ -148,12 +148,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="LogbooksTable"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="14"/>
         <CursorPos X="17" Y="17"/>
-        <UsageCount Value="48"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="51"/>
       </Unit13>
       <Unit14>
         <Filename Value="Newlogbook.pas"/>
@@ -164,7 +162,7 @@
         <UnitName Value="NewLogbook"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="41" Y="5"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="25"/>
       </Unit14>
       <Unit15>
         <Filename Value="rvdata.pas"/>
@@ -175,7 +173,7 @@
         <UnitName Value="RVData"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="30" Y="2"/>
-        <UsageCount Value="106"/>
+        <UsageCount Value="109"/>
       </Unit15>
       <Unit16>
         <Filename Value="provtable.pas"/>
@@ -187,7 +185,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="102"/>
         <CursorPos X="55" Y="117"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="25"/>
       </Unit16>
       <Unit17>
         <Filename Value="manufacturerstable.pas"/>
@@ -196,7 +194,7 @@
         <UnitName Value="ManufacturersTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="18"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="26"/>
       </Unit17>
       <Unit18>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
@@ -540,31 +538,27 @@
         <UsageCount Value="16"/>
       </Unit56>
     </Units>
-    <JumpHistory Count="6" HistoryIndex="5">
+    <JumpHistory Count="5" HistoryIndex="4">
       <Position1>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
-        <Caret Line="52" Column="22"/>
-      </Position1>
-      <Position2>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
-        <Caret Line="26" Column="3" TopLine="13"/>
-      </Position2>
-      <Position3>
         <Filename Value="appinit.pas"/>
         <Caret Line="35" Column="32" TopLine="22"/>
-      </Position3>
-      <Position4>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HUNagScreen\hunagscreen.pas"/>
-        <Caret Line="26" Column="32" TopLine="13"/>
-      </Position4>
-      <Position5>
+      </Position1>
+      <Position2>
         <Filename Value="RVMasterLog.lpr"/>
         <Caret Line="28" Column="73" TopLine="7"/>
-      </Position5>
-      <Position6>
+      </Position2>
+      <Position3>
         <Filename Value="RVMasterLog.lpr"/>
         <Caret Line="29" Column="16" TopLine="16"/>
-      </Position6>
+      </Position3>
+      <Position4>
+        <Filename Value="RVMasterLog.lpr"/>
+        <Caret Line="28" Column="2" TopLine="16"/>
+      </Position4>
+      <Position5>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HUNagScreen\hunagscreen.pas"/>
+        <Caret Line="119" Column="26" TopLine="111"/>
+      </Position5>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

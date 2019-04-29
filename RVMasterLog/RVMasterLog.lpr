@@ -14,7 +14,7 @@ program RVMasterLog;
 //
 // Ver. : 1.0.0
 //
-// Date : 24 Apr 2019
+// Date : 29 Apr 2019
 //
 //========================================================================================
 
@@ -22,8 +22,8 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Interfaces, Forms, HUNagScreen, HURegistration, HUMessageBoxes, HUConstants,
-		HUValidations,
+  Interfaces, Forms, HUNagScreen, HURegistration, HUConstants, HUMessageBoxes,
+  HUValidations,
   // Application Units
   AppFinal, AppInit, AppSettings, Main, ManufacturersTable, NewLogbook, SuppliersTable,
 		LogbooksTable, ProvTable, RVData;
@@ -38,7 +38,7 @@ begin
   Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
-  Application.CreateForm(TdlgHURegistration, dlgHURegistration);
+  Application.CreateForm(TdlgHURegistration, dlgHUREgistration);
   Application.Run;
 
 end.//program RVMasterLog

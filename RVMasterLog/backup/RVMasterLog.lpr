@@ -22,11 +22,11 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Interfaces, Forms, HUNagScreen, HURegistration, HUMessageBoxes, HUConstants,
-		HUValidations,
+  Interfaces, Forms, HUNagScreen, HURegistration, HUConstants, HUMessageBoxes,
+  HUValidations,
   // Application Units
   AppFinal, AppInit, AppSettings, Main, ManufacturersTable, NewLogbook, SuppliersTable,
-		LogbooksTable, ProvTable;
+		LogbooksTable, ProvTable, RVData;
 
 {$R *.res}
 
@@ -38,7 +38,7 @@ begin
   Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
-  Application.CreateForm(TdlgHURegistration, dlgHURegistration);
+  Application.CreateForm(TdlgHURegistration, dlgHUREgistration);
   Application.Run;
 
 end.//program RVMasterLog

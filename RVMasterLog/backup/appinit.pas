@@ -16,12 +16,12 @@ unit AppInit;
 //          HUConstants
 //          HUMessageBoxes
 //          HUNagScreen : dlgHUNagScreen.ShowModal
-//          HURegistration : dlgHURegistration.ShowModal
+//          HURegistration : RequestRegistrationKey
 //          Main : TerminateApp
 //
 // Ver. : 1.0.0
 //
-// Date : 20 Apr 2019
+// Date : 21 Apr 2019
 //
 //========================================================================================
 
@@ -96,7 +96,7 @@ begin
   if dlgHUNagScreen.ShowModal = mrYes then
   begin
     dlgHURegistration.RequestRegistrationKey;
-  end;
+  end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe'
 
   Result := True;
 

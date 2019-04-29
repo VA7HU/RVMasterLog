@@ -16,7 +16,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 19 Apr 2019
+// Date : 29 Apr 2019
 //
 //========================================================================================
 
@@ -149,9 +149,9 @@ begin
   if not DirectoryExists(pUserDataDirectory) then
   begin
 
-    if HUErrorMsgYN('No User Data Directory', 'Initial Installation?') = mrYes then
+    if HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound) = mrYes then
     begin
-      HUInformationMsgOK('Caption', 'Creating Data Directories');
+      HUInformationMsgOK('imCreateUserDirs', imCreateUserDirs);
       CreateUserDataDirectories;
     end;// if HUErrorMsgYN(' No User Directory', 'Create One ?') = mrYes
 
