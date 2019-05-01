@@ -12,11 +12,11 @@ unit AppSettings;
 //              Main  : TfrmMain.mnuSettingsDIrectoriesClick
 //                      TfrmMain.mnuSettingsDatabasesClick
 //
-// Calls :
+// Calls :  HUConstants
 //
 // Ver. : 1.0.0
 //
-// Date : 19 Apr 2019
+// Date : 1 MAy 2019
 //
 //========================================================================================
 
@@ -27,7 +27,7 @@ uses
   StdCtrls, SysUtils,
   //App Units
   // HULib units
-  HUMessageBoxes;
+  HUConstants, HUMessageBoxes;
 
 type
 
@@ -59,7 +59,7 @@ type
     fApplicationDirectory : string;
     fAppName : string;
     fSystemUserDirectory : string;
-    fUserDataDirectory : string;
+//    fUserDataDirectory : string;
     fSettingsDirectory : string;
     fLogbooksDirectory : string;
     fBackupsDirectory : string;
@@ -74,8 +74,8 @@ type
     procedure SetAppName(AppName : string);
     function GetSystemUserDirectory : string;
     procedure SetSystemUserDirectory(Dir : string);
-    function GetUserDataDirectory : string;
-    procedure SetUserDataDirectory(Dir : string);
+//    function GetUserDataDirectory : string;
+//    procedure SetUserDataDirectory(Dir : string);
     function GetSettingsDirectory : string;
     procedure SetSettingsDirectory(Dir : string);
     function GetLogbooksDirectory : string;
@@ -115,6 +115,43 @@ type
 
   end;// TfrmSettings
 
+  //========================================================================================
+  //          PUBLIC CONSTANTS
+  //========================================================================================
+const
+
+  //==========
+  //  MESSAGES
+  //==========
+
+    // Error MEssages
+
+       erNoDataDirectoriesFound = '       MAJOR ERROR' +
+                                  K_CR +
+                                   K_CR +
+                                   'No Data Directories found.' +
+                                   K_CR +
+                                   K_CR +
+                                   'Is this an Initial installation ?';
+
+       erCreateUserDataDirFailed = 'Failure Creating User Data Directory';
+
+       erCreateUserSettingsDirFailed = 'Failure Creating User Settings Directory';
+
+       erCreateUserDirsFailed = 'Failure Creating User Directories';
+
+    // Information Messages
+
+      imCreateUserDirs = 'Creating User Directories';
+
+      imNoINIFile = '   The .INI file Does Not Exist.'
+                  + K_CR
+                  + ' Is this an Initial installation ?';
+
+  //========================================================================================
+  //          PUBLIC VARIABLES
+  //========================================================================================
+
 var
   frmSettings: TfrmSettings;
 
@@ -146,13 +183,19 @@ const
 function TfrmSettings.UserDataDirectoriesExist : Boolean;
 begin
 
-  if not DirectoryExists(pUserDataDirectory) then
+  Result := True;
+
+  if not DirectoryExists(pSystemUserDirectory) then
   begin
 
     if HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound) = mrYes then
     begin
-      HUInformationMsgOK('Caption', 'Creating Data Directories');
-      CreateUserDataDirectories;
+
+      HUInformationMsgOK('imCreateUserDirs', imCreateUserDirs);
+
+      if not CreateUserDataDirectories then
+        Result := False;
+
     end;// if HUErrorMsgYN(' No User Directory', 'Create One ?') = mrYes
 
   end;// if UserDataDirectoriesExist(pUserDirectory)
@@ -168,7 +211,7 @@ begin
 
   if not CreateDir(pUserDataDirectory) then
   begin
-    showmessage('USER DATA DIRECTORY FAILED');
+    HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
     Result := False;
     Main.TerminateApp;
   end;// if not CreateDir(pUserDataDirectory)
@@ -179,6 +222,7 @@ begin
   if not CreateDir(pSettingsDirectory)then
   begin
     showmessage('SETTINGS DIRECTORY FAILED');
+    HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
     Result := False;
     Main.TerminateApp;
   end;// if not CreateDir(pSettingsDirectory)

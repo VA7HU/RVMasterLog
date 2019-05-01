@@ -73,14 +73,11 @@ var
   vstrTUserDir : string;
 begin
 
-  // If the UserDirectory does not exist, there are only two possibilities:
+  // If the UserDirectories do not exist, there are only two possibilities:
   //
-  //   1. This is an initial installation and it has not been created yet; or,
+  //   1. This is an initial installation and they have not been created yet; or,
   //
-  //   2. It has somehow disappeared.
-  //
-  // We display an Error message and give the user the option of either creating
-  // the RVMasterLog user files or terminating appplication.
+  //   2. they have somehow disappeared.
 
   If not frmSettings.UserDataDirectoriesExist then
   begin
@@ -88,7 +85,6 @@ begin
     Main.TerminateApp;
   end;// if not frmSettings.UserDataDIrectoriesExist
 
-  // Generate a default file or load a save one
   frmSettings.ReadSettingsINIFile;
 
   dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
