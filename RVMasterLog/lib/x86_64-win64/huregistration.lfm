@@ -8,6 +8,7 @@ object dlgHURegistration: TdlgHURegistration
   Caption = 'dlgHURegistration'
   ClientHeight = 454
   ClientWidth = 377
+  OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter

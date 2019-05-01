@@ -73,8 +73,6 @@ var
   vstrTUserDir : string;
 begin
 
-showmessage(pAppName);
-
   // If the UserDirectories do not exist, there are only two possibilities:
   //
   //   1. This is an initial installation and they have not been created yet; or,
@@ -92,8 +90,11 @@ showmessage(pAppName);
   dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
   if dlgHUNagScreen.ShowModal = mrYes then
   begin
-    dlgHURegistration.RequestRegistrationKey;
+   // dlgHURegistration.RequestRegistrationKey;
+showmessage('Registration Complete');
   end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe'
+
+showmessage('Init Complete');
 
   Result := True;
 
