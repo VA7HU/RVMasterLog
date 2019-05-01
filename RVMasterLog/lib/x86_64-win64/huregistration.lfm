@@ -192,4 +192,12 @@ object dlgHURegistration: TdlgHURegistration
       end
     end
   end
+  object Edit1: TEdit
+    Left = 312
+    Height = 23
+    Top = 420
+    Width = 80
+    TabOrder = 5
+    Text = 'Edit1'
+  end
 end

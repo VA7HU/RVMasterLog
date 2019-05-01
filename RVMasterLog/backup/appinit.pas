@@ -73,6 +73,8 @@ var
   vstrTUserDir : string;
 begin
 
+showmessage(pAppName);
+
   // If the UserDirectories do not exist, there are only two possibilities:
   //
   //   1. This is an initial installation and they have not been created yet; or,
@@ -85,7 +87,6 @@ begin
     Main.TerminateApp;
   end;// if not frmSettings.UserDataDIrectoriesExist
 
-  // Generate a default .ini file or load a save one
   frmSettings.ReadSettingsINIFile;
 
   dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
