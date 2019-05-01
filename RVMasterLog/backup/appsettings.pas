@@ -437,12 +437,7 @@ end;//  procedure TfrmSettings.bbtOkClick
 //========================================================================================
 //          CONTROL ROUTINES
 //========================================================================================
-procedure TfrmSettings.edtSettingsDirectoryMouseUp(Sender: TObject;
-  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-begin
-  If Button = mbRight then
-    showmessage('Mouse Up');
-end;// procedure TfrmSettings.edtSettingsDirectoryMouseUp
+
 
 //========================================================================================
 //          FILE ROUTINES

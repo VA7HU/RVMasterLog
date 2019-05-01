@@ -91,7 +91,7 @@ begin
   if dlgHUNagScreen.ShowModal = mrYes then
   begin
     dlgHURegistration.RequestRegistrationKey;
-showmessage('Registration Complete');
+    dlgHURegistration.SHowModal;
   end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe'
 
 showmessage('Init Complete');

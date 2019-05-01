@@ -49,8 +49,6 @@ type
     pgDirectories: TTabSheet;
     procedure bbtCancelClick(Sender: TObject);
     procedure bbtOkClick(Sender: TObject);
-    procedure edtSettingsDirectoryMouseUp(Sender: TObject;
-                              Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -437,12 +435,7 @@ end;//  procedure TfrmSettings.bbtOkClick
 //========================================================================================
 //          CONTROL ROUTINES
 //========================================================================================
-procedure TfrmSettings.edtSettingsDirectoryMouseUp(Sender: TObject;
-  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-begin
-  If Button = mbRight then
-    showmessage('Mouse Up');
-end;// procedure TfrmSettings.edtSettingsDirectoryMouseUp
+
 
 //========================================================================================
 //          FILE ROUTINES
