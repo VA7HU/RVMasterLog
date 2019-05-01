@@ -32,9 +32,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="145"/>
+        <TopLine Value="155"/>
         <CursorPos X="12" Y="19"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
@@ -44,8 +43,9 @@
         <Filename Value="appinit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
-        <TopLine Value="79"/>
-        <CursorPos X="44" Y="87"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="60"/>
+        <CursorPos Y="65"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
       </Unit3>
