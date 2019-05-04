@@ -18,7 +18,7 @@ unit Main;
 //
 // Ver. : 1.0.0
 //
-// Date : 18 Apr 2019
+// Date : 4 May 2019
 //
 //========================================================================================
 
@@ -126,7 +126,7 @@ end;// procedure TerminateApp
 //==========
 procedure TfrmMain.mnuLogbooksNewLogbookClick(Sender: TObject);
 begin
-  frmLogbooksTable.CreateNewLogbook;
+  frmNewLogbook.CreateNewLogbook;
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------

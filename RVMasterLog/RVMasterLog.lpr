@@ -25,7 +25,7 @@ uses
   Interfaces, Forms, HUNagScreen, HURegistration, HUConstants, HUMessageBoxes,
   HUValidations,
   // Application Units
-  AppFinal, AppInit, AppSettings, Main, ManufacturersTable, NewLogbook, SuppliersTable,
+  AppFinal, AppInit, AppSettings, Main, ManufacturersTable, SuppliersTable,
 		ProvTable, RVData;
 
 {$R *.res}

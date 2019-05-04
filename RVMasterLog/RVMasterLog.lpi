@@ -31,7 +31,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="17">
+    <Units Count="16">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -110,35 +110,27 @@
         <UnitName Value="HURegistration"/>
       </Unit12>
       <Unit13>
-        <Filename Value="Newlogbook.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmNewLogbook"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="NewLogbook"/>
-      </Unit13>
-      <Unit14>
         <Filename Value="rvdata.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmRVData"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RVData"/>
-      </Unit14>
-      <Unit15>
+      </Unit13>
+      <Unit14>
         <Filename Value="provtable.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmProvTable"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ProvTable"/>
-      </Unit15>
-      <Unit16>
+      </Unit14>
+      <Unit15>
         <Filename Value="manufacturerstable.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
         <UnitName Value="ManufacturersTable"/>
-      </Unit16>
+      </Unit15>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
