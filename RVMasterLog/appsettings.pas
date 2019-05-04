@@ -16,7 +16,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 1 May 2019
+// Date : 2 May 2019
 //
 //========================================================================================
 
@@ -256,9 +256,9 @@ begin
             '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
             frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
-//     CopyFile (frmSettings.pApplicationDirectory +
-//               '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
-//               frmHUGeoDB.pHUGeoDBPath);
+  CopyFile (frmSettings.pApplicationDirectory +
+            '\' + 'UserData' + '\' + 'HUStaticCommonDB.sl3',
+            frmSettings.pUserDirectory + '\' + 'HUStaticCommonDB.sl3');
 
   Result := True;
 

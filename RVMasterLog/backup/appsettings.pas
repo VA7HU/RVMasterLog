@@ -49,8 +49,6 @@ type
     pgDirectories: TTabSheet;
     procedure bbtCancelClick(Sender: TObject);
     procedure bbtOkClick(Sender: TObject);
-    procedure edtSettingsDirectoryMouseUp(Sender: TObject;
-                              Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -258,9 +256,9 @@ begin
             '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
             frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
 
-//     CopyFile (frmSettings.pApplicationDirectory +
-//               '\' + 'UserData' + '\' + frmHUGeoDB.pHUGeoDBName,
-//               frmHUGeoDB.pHUGeoDBPath);
+  CopyFile (frmSettings.pApplicationDirectory +
+            '\' + 'UserData' + '\' + 'HUStaticCommonDB.sl3',
+            frmSettings.pUserDirectory + '\' + 'HUStaticCommonDB.sl3');
 
   Result := True;
 
