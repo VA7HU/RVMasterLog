@@ -20,8 +20,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="158"/>
-        <CursorPos X="11" Y="31"/>
+        <CursorPos X="16" Y="21"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -33,8 +32,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="10"/>
         <CursorPos X="12" Y="19"/>
         <UsageCount Value="203"/>
@@ -103,7 +101,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="80"/>
+        <UsageCount Value="81"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit9>
       <Unit10>
@@ -116,7 +114,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="61"/>
         <CursorPos X="48" Y="119"/>
-        <UsageCount Value="80"/>
+        <UsageCount Value="81"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit10>
@@ -127,7 +125,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="80"/>
+        <UsageCount Value="81"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit11>
       <Unit12>
@@ -140,13 +138,12 @@
         <EditorIndex Value="2"/>
         <TopLine Value="68"/>
         <CursorPos X="15" Y="86"/>
-        <UsageCount Value="80"/>
+        <UsageCount Value="81"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit12>
       <Unit13>
         <Filename Value="logbookstable.pas"/>
-        <IsPartOfProject Value="True"/>
         <ComponentName Value="frmLogbooksTable"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
@@ -154,7 +151,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="14"/>
         <CursorPos X="17" Y="17"/>
-        <UsageCount Value="68"/>
+        <UsageCount Value="69"/>
       </Unit13>
       <Unit14>
         <Filename Value="Newlogbook.pas"/>
@@ -163,9 +160,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="NewLogbook"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="41" Y="5"/>
-        <UsageCount Value="42"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="122"/>
+        <CursorPos X="41" Y="138"/>
+        <UsageCount Value="43"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit14>
       <Unit15>
         <Filename Value="rvdata.pas"/>
@@ -177,7 +178,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="69"/>
         <CursorPos Y="64"/>
-        <UsageCount Value="126"/>
+        <UsageCount Value="127"/>
       </Unit15>
       <Unit16>
         <Filename Value="provtable.pas"/>
@@ -189,7 +190,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="102"/>
         <CursorPos X="55" Y="117"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="43"/>
       </Unit16>
       <Unit17>
         <Filename Value="manufacturerstable.pas"/>
@@ -198,7 +199,7 @@
         <UnitName Value="ManufacturersTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="18"/>
-        <UsageCount Value="43"/>
+        <UsageCount Value="44"/>
       </Unit17>
       <Unit18>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
@@ -545,123 +546,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="78" Column="18" TopLine="66"/>
+        <Caret Line="240" Column="24" TopLine="231"/>
       </Position1>
       <Position2>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="101" Column="73" TopLine="91"/>
+        <Caret Line="556" Column="41" TopLine="547"/>
       </Position2>
       <Position3>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="309" Column="38" TopLine="291"/>
+        <Filename Value="appinit.pas"/>
+        <Caret Line="76" Column="33" TopLine="68"/>
       </Position3>
       <Position4>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="78" Column="22" TopLine="76"/>
+        <Caret Line="605" Column="5" TopLine="91"/>
       </Position4>
       <Position5>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="188" Column="27" TopLine="179"/>
+        <Filename Value="appinit.pas"/>
+        <Caret Line="76" Column="33" TopLine="62"/>
       </Position5>
       <Position6>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="76" TopLine="63"/>
+        <Filename Value="appinit.pas"/>
+        <Caret Line="76" Column="21" TopLine="62"/>
       </Position6>
       <Position7>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="100" TopLine="92"/>
+        <Caret Line="188" Column="11" TopLine="183"/>
       </Position7>
       <Position8>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="174" Column="11" TopLine="158"/>
+        <Caret Line="619" Column="2" TopLine="605"/>
       </Position8>
       <Position9>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="221" Column="30" TopLine="213"/>
+        <Caret Line="190" TopLine="178"/>
       </Position9>
       <Position10>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="231" Column="30" TopLine="221"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
+        <Caret Line="378" Column="33" TopLine="373"/>
       </Position10>
       <Position11>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="240" Column="29" TopLine="230"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
+        <Caret Line="381" Column="3" TopLine="381"/>
       </Position11>
       <Position12>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="251" Column="30" TopLine="241"/>
+        <Filename Value="appinit.pas"/>
+        <Caret Line="94" Column="23" TopLine="77"/>
       </Position12>
       <Position13>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="255" Column="30" TopLine="245"/>
+        <Caret Line="440" TopLine="45"/>
       </Position13>
       <Position14>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="259" Column="30" TopLine="249"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
+        <Caret Line="292" Column="50" TopLine="281"/>
       </Position14>
       <Position15>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="240" Column="24" TopLine="231"/>
+        <Caret Line="261" Column="70" TopLine="252"/>
       </Position15>
       <Position16>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="556" Column="41" TopLine="547"/>
+        <Caret Line="262" TopLine="252"/>
       </Position16>
       <Position17>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="76" Column="33" TopLine="68"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="31" Column="44" TopLine="17"/>
       </Position17>
       <Position18>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="605" Column="5" TopLine="91"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="68" Column="8" TopLine="54"/>
       </Position18>
       <Position19>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="76" Column="33" TopLine="62"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="72" Column="8" TopLine="58"/>
       </Position19>
       <Position20>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="76" Column="21" TopLine="62"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="79" Column="8" TopLine="60"/>
       </Position20>
       <Position21>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="188" Column="11" TopLine="183"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="71" Column="3" TopLine="61"/>
       </Position21>
       <Position22>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="619" Column="2" TopLine="605"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="91" Column="2" TopLine="78"/>
       </Position22>
       <Position23>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="190" TopLine="178"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="99" TopLine="79"/>
       </Position23>
       <Position24>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="378" Column="33" TopLine="373"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="33" TopLine="16"/>
       </Position24>
       <Position25>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="381" Column="3" TopLine="381"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="99" Column="43" TopLine="86"/>
       </Position25>
       <Position26>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="94" Column="23" TopLine="77"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="111" Column="5" TopLine="91"/>
       </Position26>
       <Position27>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="440" TopLine="45"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="106" Column="45" TopLine="91"/>
       </Position27>
       <Position28>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.pas"/>
-        <Caret Line="292" Column="50" TopLine="281"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="108" Column="91" TopLine="92"/>
       </Position28>
       <Position29>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="261" Column="70" TopLine="252"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="112" Column="3" TopLine="93"/>
       </Position29>
       <Position30>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="262" TopLine="252"/>
+        <Filename Value="Newlogbook.pas"/>
+        <Caret Line="108" Column="3" TopLine="94"/>
       </Position30>
     </JumpHistory>
     <RunParams>

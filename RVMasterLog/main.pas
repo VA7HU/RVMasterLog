@@ -14,11 +14,11 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          Logbook : frmLogbooksTable.CreateNewLogbook
+//          NewLogbook : frmNewLogbook.CreateNewLogbook
 //
 // Ver. : 1.0.0
 //
-// Date : 18 Apr 2019
+// Date : 4 May 2019
 //
 //========================================================================================
 
@@ -28,7 +28,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, LogbooksTable, RVData, SuppliersTable, sqlite3conn;
+  AppFinal, AppInit, AppSettings, NewLogbook, RVData, SuppliersTable, sqlite3conn;
 
 type
 
@@ -126,7 +126,7 @@ end;// procedure TerminateApp
 //==========
 procedure TfrmMain.mnuLogbooksNewLogbookClick(Sender: TObject);
 begin
-  frmLogbooksTable.CreateNewLogbook;
+  frmNewLogbook.CreateNewLogbook;
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------

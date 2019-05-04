@@ -1,8 +1,48 @@
 object frmNewLogbook: TfrmNewLogbook
-  Left = 655
-  Height = 240
-  Top = 127
-  Width = 320
+  Left = 274
+  Height = 510
+  Top = 140
+  Width = 713
   Caption = 'frmNewLogbook'
-  LCLVersion = '1.8.4.0'
+  ClientHeight = 510
+  ClientWidth = 713
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.0.4'
+  object bbtCancel: TBitBtn
+    Left = 597
+    Height = 30
+    Top = 452
+    Width = 75
+    Cancel = True
+    DefaultCaption = True
+    Kind = bkCancel
+    ModalResult = 2
+    OnClick = bbtCancelClick
+    TabOrder = 0
+  end
+  object bbtOK: TBitBtn
+    Left = 484
+    Height = 30
+    Top = 452
+    Width = 75
+    Default = True
+    DefaultCaption = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = bbtOKClick
+    TabOrder = 1
+  end
+  object bbtHelp: TBitBtn
+    Left = 71
+    Height = 30
+    Top = 459
+    Width = 75
+    DefaultCaption = True
+    Kind = bkHelp
+    OnClick = bbtHelpClick
+    TabOrder = 2
+  end
 end

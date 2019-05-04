@@ -14,7 +14,7 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          Logbook : frmLogbooksTable.CreateNewLogbook
+//          NewLogbook : frmNewLogbook.CreateNewLogbook
 //
 // Ver. : 1.0.0
 //
@@ -28,7 +28,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, LogbooksTable, RVData, SuppliersTable, sqlite3conn;
+  AppFinal, AppInit, AppSettings, NewLogbook, RVData, SuppliersTable, sqlite3conn;
 
 type
 
