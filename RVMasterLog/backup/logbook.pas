@@ -30,9 +30,14 @@ type
   TfrmLogbook = class(TForm)
     bbtCancel: TBitBtn;
     bbtOk: TBitBtn;
+    BitBtn1: TBitBtn;
   private
-
+    fRVName : string;
   public
+    function GetRVName : string;
+    procedure SetRVName(RVName : string);
+
+    property pRVName: string read GetRVName write SetRVName;
 
   end;
 
@@ -70,6 +75,16 @@ implementation
 //========================================================================================
 //          PROPERTY ROUTINES
 //========================================================================================
+function TfrmLogbook.GetRVName: String;
+begin
+  Result := fRVName;
+end;// function TfrmLogbook.GetRVName
+
+//----------------------------------------------------------------------------------------
+procedure TfrmLogbook.SetRVName(RVName: String);
+begin
+   fRVame := RVName;
+end;// procedure TfrmLogbook.SetFirstName
 
 //========================================================================================
 //          MENU ROUTINES

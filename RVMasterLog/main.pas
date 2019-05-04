@@ -27,7 +27,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, RVData, SuppliersTable, sqlite3conn;
+  AppFinal, AppInit, AppSettings, Logbook, RVData, SuppliersTable, sqlite3conn;
 
 type
 
@@ -125,7 +125,7 @@ end;// procedure TerminateApp
 //==========
 procedure TfrmMain.mnuLogbooksNewLogbookClick(Sender: TObject);
 begin
-
+  frmLogbook.ShowModal;
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------

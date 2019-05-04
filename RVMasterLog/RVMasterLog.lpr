@@ -14,7 +14,7 @@ program RVMasterLog;
 //
 // Ver. : 1.0.0
 //
-// Date : 29 Apr 2019
+// Date : 4 May 2019
 //
 //========================================================================================
 
@@ -25,8 +25,8 @@ uses
   Interfaces, Forms, HUNagScreen, HURegistration, HUConstants, HUMessageBoxes,
   HUValidations,
   // Application Units
-  AppFinal, AppInit, AppSettings, Main, ManufacturersTable, SuppliersTable,
-		ProvTable, RVData, unit1;
+  AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable, SuppliersTable,
+  ProvTable, RVData;
 
 {$R *.res}
 
