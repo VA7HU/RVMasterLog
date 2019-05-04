@@ -29,4 +29,13 @@ object frmLogbook: TfrmLogbook
     ModalResult = 1
     TabOrder = 1
   end
+  object bbtHelp: TBitBtn
+    Left = 32
+    Height = 30
+    Top = 383
+    Width = 75
+    DefaultCaption = True
+    Kind = bkHelp
+    TabOrder = 2
+  end
 end

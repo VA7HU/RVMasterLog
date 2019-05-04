@@ -25,8 +25,8 @@ uses
   Interfaces, Forms, HUNagScreen, HURegistration, HUConstants, HUMessageBoxes,
   HUValidations,
   // Application Units
-  AppFinal, AppInit, AppSettings, Main, ManufacturersTable, NewLogbook, SuppliersTable,
-		LogbooksTable, ProvTable, RVData;
+  AppFinal, AppInit, AppSettings, Main, ManufacturersTable, SuppliersTable,
+		ProvTable, RVData;
 
 {$R *.res}
 
@@ -34,8 +34,8 @@ begin
 
   RequireDerivedFormResource:=True;
   Application.Initialize;
-  Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
   Application.CreateForm(TdlgHURegistration, dlgHUREgistration);

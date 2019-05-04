@@ -26,7 +26,7 @@ uses
   HUValidations,
   // Application Units
   AppFinal, AppInit, AppSettings, Main, ManufacturersTable, SuppliersTable,
-		ProvTable, RVData;
+		ProvTable, RVData, unit1;
 
 {$R *.res}
 
@@ -39,6 +39,7 @@ begin
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
   Application.CreateForm(TdlgHURegistration, dlgHUREgistration);
+  Application.CreateForm(TfrmLogbook, frmLogbook);
   Application.Run;
 
 end.//program RVMasterLog

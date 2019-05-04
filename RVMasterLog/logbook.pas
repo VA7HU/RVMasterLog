@@ -30,6 +30,7 @@ type
   TfrmLogbook = class(TForm)
     bbtCancel: TBitBtn;
     bbtOk: TBitBtn;
+    bbtHelp: TBitBtn;
   private
 
   public

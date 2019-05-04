@@ -4,13 +4,15 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="57">
+    <Units Count="58">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="14"/>
         <CursorPos Y="38"/>
         <UsageCount Value="206"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -20,7 +22,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
         <EditorIndex Value="4"/>
-        <CursorPos X="16" Y="21"/>
+        <TopLine Value="116"/>
+        <CursorPos X="3" Y="128"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -32,8 +35,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="10"/>
         <CursorPos X="12" Y="19"/>
         <UsageCount Value="203"/>
@@ -102,7 +104,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="82"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit9>
       <Unit10>
@@ -115,7 +117,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="61"/>
         <CursorPos X="48" Y="119"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="82"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit10>
@@ -126,7 +128,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="82"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit11>
       <Unit12>
@@ -139,7 +141,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="68"/>
         <CursorPos X="15" Y="86"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="82"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit12>
@@ -164,7 +166,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="69"/>
         <CursorPos Y="64"/>
-        <UsageCount Value="127"/>
+        <UsageCount Value="128"/>
       </Unit14>
       <Unit15>
         <Filename Value="provtable.pas"/>
@@ -176,7 +178,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="102"/>
         <CursorPos X="55" Y="117"/>
-        <UsageCount Value="43"/>
+        <UsageCount Value="44"/>
       </Unit15>
       <Unit16>
         <Filename Value="manufacturerstable.pas"/>
@@ -185,7 +187,7 @@
         <UnitName Value="ManufacturersTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="18"/>
-        <UsageCount Value="44"/>
+        <UsageCount Value="45"/>
       </Unit16>
       <Unit17>
         <Filename Value="logbookstable.pas"/>
@@ -539,8 +541,22 @@
         <CursorPos X="27" Y="95"/>
         <UsageCount Value="16"/>
       </Unit56>
+      <Unit57>
+        <Filename Value="logbook.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmLogbook"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Logbook"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="75"/>
+        <CursorPos Y="95"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit57>
     </Units>
-    <JumpHistory Count="17" HistoryIndex="16">
+    <JumpHistory Count="21" HistoryIndex="20">
       <Position1>
         <Filename Value="appsettings.pas"/>
         <Caret Line="240" Column="24" TopLine="231"/>
@@ -609,6 +625,22 @@
         <Filename Value="main.pas"/>
         <Caret Line="31" Column="44" TopLine="17"/>
       </Position17>
+      <Position18>
+        <Filename Value="logbook.pas"/>
+        <Caret Line="90"/>
+      </Position18>
+      <Position19>
+        <Filename Value="logbook.pas"/>
+        <Caret Line="94" TopLine="74"/>
+      </Position19>
+      <Position20>
+        <Filename Value="logbook.pas"/>
+        <Caret Line="93" TopLine="73"/>
+      </Position20>
+      <Position21>
+        <Filename Value="logbook.pas"/>
+        <Caret Line="94" TopLine="74"/>
+      </Position21>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
