@@ -92,7 +92,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="84"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit8>
       <Unit9>
@@ -105,7 +105,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="61"/>
         <CursorPos X="48" Y="119"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="84"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit9>
@@ -116,7 +116,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="84"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit10>
       <Unit11>
@@ -129,7 +129,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="293"/>
         <CursorPos Y="313"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="84"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit11>
@@ -143,7 +143,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="69"/>
         <CursorPos Y="64"/>
-        <UsageCount Value="129"/>
+        <UsageCount Value="130"/>
       </Unit12>
       <Unit13>
         <Filename Value="provtable.pas"/>
@@ -155,7 +155,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="102"/>
         <CursorPos X="55" Y="117"/>
-        <UsageCount Value="45"/>
+        <UsageCount Value="46"/>
       </Unit13>
       <Unit14>
         <Filename Value="manufacturerstable.pas"/>
@@ -164,7 +164,7 @@
         <UnitName Value="ManufacturersTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="18"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="47"/>
       </Unit14>
       <Unit15>
         <Filename Value="logbook.pas"/>
@@ -176,7 +176,7 @@
         <EditorIndex Value="5"/>
         <TopLine Value="76"/>
         <CursorPos X="35" Y="87"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit15>
@@ -189,7 +189,7 @@
         <UnitName Value="SuppliersDB"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="10"/>
+        <TopLine Value="167"/>
         <CursorPos X="5" Y="187"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -202,7 +202,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit17>
       <Unit18>
@@ -558,7 +558,7 @@
         <UsageCount Value="16"/>
       </Unit57>
     </Units>
-    <JumpHistory Count="27" HistoryIndex="26">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="appsettings.pas"/>
         <Caret Line="240" Column="24" TopLine="231"/>
@@ -667,6 +667,10 @@
         <Filename Value="RVMasterLog.lpr"/>
         <Caret Line="39" Column="3" TopLine="8"/>
       </Position27>
+      <Position28>
+        <Filename Value="suppliersdb.pas"/>
+        <Caret Line="193" Column="5" TopLine="173"/>
+      </Position28>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

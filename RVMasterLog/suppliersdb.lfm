@@ -11,9 +11,9 @@ object frmSuppliersDB: TfrmSuppliersDB
   OnShow = FormShow
   LCLVersion = '2.0.0.4'
   object DBNavigator1: TDBNavigator
-    Left = 48
+    Left = 184
     Height = 25
-    Top = 468
+    Top = 456
     Width = 241
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -30,7 +30,7 @@ object frmSuppliersDB: TfrmSuppliersDB
     VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]
   end
   object bbtClose: TBitBtn
-    Left = 676
+    Left = 720
     Height = 30
     Top = 456
     Width = 75
@@ -41,9 +41,9 @@ object frmSuppliersDB: TfrmSuppliersDB
     TabOrder = 1
   end
   object bbtOK: TBitBtn
-    Left = 554
+    Left = 624
     Height = 30
-    Top = 457
+    Top = 456
     Width = 75
     Default = True
     DefaultCaption = True
@@ -62,10 +62,10 @@ object frmSuppliersDB: TfrmSuppliersDB
     ClientWidth = 756
     TabOrder = 3
     object dbCbxSelectSupplier: TDBComboBox
-      Left = 19
+      Left = 8
       Height = 23
-      Top = 144
-      Width = 100
+      Top = 88
+      Width = 124
       DataField = 'Name'
       DataSource = DataSource1
       ItemHeight = 15
@@ -75,7 +75,7 @@ object frmSuppliersDB: TfrmSuppliersDB
     object Label1: TLabel
       Left = 16
       Height = 15
-      Top = 120
+      Top = 64
       Width = 77
       Caption = 'Select Supplier'
       ParentColor = False
@@ -102,8 +102,8 @@ object frmSuppliersDB: TfrmSuppliersDB
         Left = 136
         Height = 15
         Top = 8
-        Width = 87
-        Caption = 'Company Name'
+        Width = 78
+        Caption = 'Supplier Name'
         ParentColor = False
       end
       object dbedtAddress1: TDBEdit
@@ -219,12 +219,14 @@ object frmSuppliersDB: TfrmSuppliersDB
         TabOrder = 7
       end
       object Label10: TLabel
-        Left = 272
-        Height = 15
-        Top = 184
-        Width = 53
+        Left = 248
+        Height = 25
+        Top = 176
+        Width = 82
         Caption = 'Contacts :'
+        Font.Height = -19
         ParentColor = False
+        ParentFont = False
       end
       object Label11: TLabel
         Left = 96
@@ -246,8 +248,8 @@ object frmSuppliersDB: TfrmSuppliersDB
         Left = 440
         Height = 15
         Top = 208
-        Width = 43
-        Caption = 'Position'
+        Width = 66
+        Caption = 'Dep;artment'
         ParentColor = False
       end
       object dbedtContact1Phone: TDBEdit
@@ -325,11 +327,12 @@ object frmSuppliersDB: TfrmSuppliersDB
     end
   end
   object BitBtn1: TBitBtn
-    Left = 432
+    Left = 24
     Height = 30
-    Top = 456
+    Top = 451
     Width = 75
-    Caption = 'BitBtn1'
+    DefaultCaption = True
+    Kind = bkHelp
     TabOrder = 4
   end
   object dbcbxContact2Position: TDBComboBox
@@ -347,14 +350,14 @@ object frmSuppliersDB: TfrmSuppliersDB
     DatabaseName = 'C:\Users\Hew\Documents\Programming Projects\Lazarus\HULibs Development\Working Copy\Lazarus Libraries\Databases\HUDB1 Development\HUDB1.sl3'
     KeepConnection = False
     Transaction = SQLTransaction1
-    left = 80
+    left = 104
     top = 32
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
     Database = SQLite3Connection1
-    left = 80
-    top = 88
+    left = 96
+    top = 160
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
