@@ -1,4 +1,4 @@
-unit suppliersDB;
+unit SuppliersDB;
 
 {$mode objfpc}{$H+}
 
@@ -101,7 +101,7 @@ uses
 const
 
   cstrApplicationDBName = 'HUDB1.sl3';
-  cstrManufacturersTableName = 'Suppliers';
+  cstrManufacturersTableName = 'SuppliersDB';
 
 //========================================================================================
 //          PUBLIC CONSTANTS
@@ -137,16 +137,16 @@ var
 //========================================================================================
 //          COMMAND BUTTON ROUTINES
 //========================================================================================
-procedure TfrmSuppliersTable.bbtCloseClick(Sender: TObject);
+procedure TfrmSuppliersDB.bbtCloseClick(Sender: TObject);
 begin
 
-end;// procedure TfrmSuppliersTable.bbtCloseClick
+end;// procedure TfrmSuppliersDB.bbtCloseClick
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSuppliersTable.bbtOKClick(Sender: TObject);
+procedure TfrmSuppliersDB.bbtOKClick(Sender: TObject);
 begin
 
-end;// procedure TfrmSuppliersTable.bbtOKClick
+end;// procedure TfrmSuppliersDB.bbtOKClick
 
 //========================================================================================
 //          CONTROL ROUTINES
@@ -159,13 +159,13 @@ end;// procedure TfrmSuppliersTable.bbtOKClick
 //========================================================================================
 //          FORM ROUTINES
 //========================================================================================
-procedure TfrmSuppliersTable.FormCreate(Sender: TObject);
+procedure TfrmSuppliersDB.FormCreate(Sender: TObject);
 begin
 
-end;// procedure TfrmSuppliersTable.FormCreate
+end;// procedure TfrmSuppliersDB.FormCreate
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSuppliersTable.FormShow(Sender: TObject);
+procedure TfrmSuppliersDB.FormShow(Sender: TObject);
 begin
 
     // Setup all of the Database Controls
@@ -183,8 +183,8 @@ begin
 
   DataSource1.DataSet := SQLquery1;
 
-//  dbedtID.Datasource := Datasource1;
-//  dbedtID.DataField := 'ID';
+  dbedtID.Datasource := Datasource1;
+  dbedtID.DataField := 'ID';
 
   dbedtName.DataSource := DataSource1;
   dbedtName.DataField := 'Name';
@@ -216,16 +216,16 @@ begin
 
 
 
-end;// procedure TfrmSuppliersTable.FormShow
+end;// procedure TfrmSuppliersDB.FormShow
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSuppliersTable.FormClose(Sender: TObject;
+procedure TfrmSuppliersDB.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
 
     SQLite3Connection1.Connected := False;
 
-end;// procedure TfrmSuppliersTable.FormClose
+end;// procedure TfrmSuppliersDB.FormClose
 
 //========================================================================================
 

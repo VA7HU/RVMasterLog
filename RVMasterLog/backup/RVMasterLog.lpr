@@ -36,7 +36,7 @@ begin
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmSettings, frmSettings);
-  Application.CreateForm(TfrmSuppliersDB, frmSuppliersDB);
+//  Application.CreateForm(TfrmSuppliersDB, frmSuppliersDB);
   Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
   Application.CreateForm(TdlgHURegistration, dlgHUREgistration);
   Application.CreateForm(TfrmLogbook, frmLogbook);

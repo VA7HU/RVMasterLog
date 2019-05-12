@@ -183,8 +183,8 @@ begin
 
   DataSource1.DataSet := SQLquery1;
 
-  dbedtID.Datasource := Datasource1;
-  dbedtID.DataField := 'ID';
+  //dbedtID.Datasource := Datasource1;
+  //dbedtID.DataField := 'ID';
 
   dbedtName.DataSource := DataSource1;
   dbedtName.DataField := 'Name';

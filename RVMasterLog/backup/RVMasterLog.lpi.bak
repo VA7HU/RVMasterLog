@@ -31,7 +31,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="16">
+    <Units Count="18">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -131,6 +131,18 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Logbook"/>
       </Unit15>
+      <Unit16>
+        <Filename Value="suppliersdb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmSuppliersTable"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="suppliersDB"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="suppliersdb.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit17>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

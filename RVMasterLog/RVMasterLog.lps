@@ -4,11 +4,10 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="57">
+    <Units Count="58">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
         <TopLine Value="8"/>
         <CursorPos X="3" Y="39"/>
@@ -184,14 +183,18 @@
       </Unit15>
       <Unit16>
         <Filename Value="suppliersdb.pas"/>
-        <ComponentName Value="frmSuppliersTable"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmSuppliersDB"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="suppliersDB"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="211"/>
-        <CursorPos X="28" Y="221"/>
+        <UnitName Value="SuppliersDB"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="177"/>
+        <CursorPos X="5" Y="187"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit16>
       <Unit17>
         <Filename Value="Newlogbook.pas"/>
@@ -545,6 +548,16 @@
         <CursorPos X="27" Y="95"/>
         <UsageCount Value="16"/>
       </Unit56>
+      <Unit57>
+        <Filename Value="suppliersdb.lfm"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit57>
     </Units>
     <JumpHistory Count="27" HistoryIndex="26">
       <Position1>
@@ -653,7 +666,7 @@
       </Position26>
       <Position27>
         <Filename Value="RVMasterLog.lpr"/>
-        <Caret Line="39" Column="3" TopLine="29"/>
+        <Caret Line="39" Column="3" TopLine="8"/>
       </Position27>
     </JumpHistory>
     <RunParams>
