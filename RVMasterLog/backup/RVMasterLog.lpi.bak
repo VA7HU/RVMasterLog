@@ -134,10 +134,10 @@
       <Unit16>
         <Filename Value="suppliersdb.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmSuppliersTable"/>
+        <ComponentName Value="frmSuppliersDB"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="suppliersDB"/>
+        <UnitName Value="SuppliersDB"/>
       </Unit16>
       <Unit17>
         <Filename Value="suppliersdb.lfm"/>

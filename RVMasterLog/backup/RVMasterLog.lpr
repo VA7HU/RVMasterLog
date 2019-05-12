@@ -26,7 +26,7 @@ uses
   HUValidations,
   // Application Units
   AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable,
-  ProvTable, RVData;
+  ProvTable, RVData, suppliersDB;
 
 {$R *.res}
 
