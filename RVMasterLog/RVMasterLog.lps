@@ -8,9 +8,11 @@
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="13" Y="17"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="29"/>
+        <CursorPos X="3" Y="39"/>
         <UsageCount Value="206"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -19,9 +21,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="121"/>
-        <CursorPos X="24" Y="128"/>
+        <TopLine Value="20"/>
+        <CursorPos X="52" Y="30"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -33,8 +36,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="10"/>
         <CursorPos X="12" Y="19"/>
         <UsageCount Value="203"/>
@@ -61,17 +63,14 @@
       </Unit4>
       <Unit5>
         <Filename Value="suppliersdb.pas"/>
-        <IsPartOfProject Value="True"/>
         <ComponentName Value="frmSuppliersTable"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="suppliersDB"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="211"/>
         <CursorPos X="28" Y="221"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
@@ -503,9 +502,9 @@
       <Unit51>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="2051"/>
-        <CursorPos Y="2064"/>
-        <UsageCount Value="2"/>
+        <TopLine Value="2060"/>
+        <CursorPos Y="2071"/>
+        <UsageCount Value="10"/>
       </Unit51>
       <Unit52>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\inc\objpash.inc"/>
@@ -547,7 +546,7 @@
         <UsageCount Value="16"/>
       </Unit56>
     </Units>
-    <JumpHistory Count="28" HistoryIndex="27">
+    <JumpHistory Count="27" HistoryIndex="26">
       <Position1>
         <Filename Value="appsettings.pas"/>
         <Caret Line="240" Column="24" TopLine="231"/>
@@ -649,17 +648,13 @@
         <Caret Line="86" Column="10" TopLine="74"/>
       </Position25>
       <Position26>
-        <Filename Value="suppliersdb.pas"/>
-        <Caret Line="18" Column="17"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="19" Column="12" TopLine="10"/>
       </Position26>
       <Position27>
-        <Filename Value="suppliersdb.pas"/>
-        <Caret Line="89" Column="34" TopLine="91"/>
+        <Filename Value="RVMasterLog.lpr"/>
+        <Caret Line="39" Column="3" TopLine="29"/>
       </Position27>
-      <Position28>
-        <Filename Value="suppliersdb.pas"/>
-        <Caret Line="221" Column="28" TopLine="211"/>
-      </Position28>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

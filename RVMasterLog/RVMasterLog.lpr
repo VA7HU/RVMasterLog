@@ -25,7 +25,7 @@ uses
   Interfaces, Forms, HUNagScreen, HURegistration, HUConstants, HUMessageBoxes,
   HUValidations,
   // Application Units
-  AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable, suppliersDB,
+  AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable,
   ProvTable, RVData;
 
 {$R *.res}
@@ -36,7 +36,7 @@ begin
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmSettings, frmSettings);
-  Application.CreateForm(TfrmSuppliersDB, frmSuppliersDB);
+//  Application.CreateForm(TfrmSuppliersDB, frmSuppliersDB);
   Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
   Application.CreateForm(TdlgHURegistration, dlgHUREgistration);
   Application.CreateForm(TfrmLogbook, frmLogbook);

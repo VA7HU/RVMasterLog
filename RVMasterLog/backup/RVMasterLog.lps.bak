@@ -10,7 +10,8 @@
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <CursorPos X="13" Y="17"/>
+        <TopLine Value="29"/>
+        <CursorPos X="3" Y="39"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -35,7 +36,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="10"/>
         <CursorPos X="12" Y="19"/>
         <UsageCount Value="203"/>
@@ -62,17 +63,14 @@
       </Unit4>
       <Unit5>
         <Filename Value="suppliersdb.pas"/>
-        <IsPartOfProject Value="True"/>
         <ComponentName Value="frmSuppliersTable"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="suppliersDB"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="211"/>
         <CursorPos X="28" Y="221"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
@@ -107,7 +105,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="82"/>
+        <UsageCount Value="83"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit9>
       <Unit10>
@@ -120,7 +118,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="61"/>
         <CursorPos X="48" Y="119"/>
-        <UsageCount Value="82"/>
+        <UsageCount Value="83"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit10>
@@ -131,7 +129,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="82"/>
+        <UsageCount Value="83"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit11>
       <Unit12>
@@ -144,7 +142,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="293"/>
         <CursorPos Y="313"/>
-        <UsageCount Value="82"/>
+        <UsageCount Value="83"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit12>
@@ -158,7 +156,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="69"/>
         <CursorPos Y="64"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="129"/>
       </Unit13>
       <Unit14>
         <Filename Value="provtable.pas"/>
@@ -170,7 +168,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="102"/>
         <CursorPos X="55" Y="117"/>
-        <UsageCount Value="44"/>
+        <UsageCount Value="45"/>
       </Unit14>
       <Unit15>
         <Filename Value="manufacturerstable.pas"/>
@@ -179,7 +177,7 @@
         <UnitName Value="ManufacturersTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="18"/>
-        <UsageCount Value="45"/>
+        <UsageCount Value="46"/>
       </Unit15>
       <Unit16>
         <Filename Value="logbook.pas"/>
@@ -191,7 +189,7 @@
         <EditorIndex Value="5"/>
         <TopLine Value="76"/>
         <CursorPos X="35" Y="87"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit16>
@@ -504,9 +502,9 @@
       <Unit51>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="2051"/>
-        <CursorPos Y="2064"/>
-        <UsageCount Value="2"/>
+        <TopLine Value="2060"/>
+        <CursorPos Y="2071"/>
+        <UsageCount Value="10"/>
       </Unit51>
       <Unit52>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\inc\objpash.inc"/>
@@ -548,7 +546,7 @@
         <UsageCount Value="16"/>
       </Unit56>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="26" HistoryIndex="25">
       <Position1>
         <Filename Value="appsettings.pas"/>
         <Caret Line="240" Column="24" TopLine="231"/>
@@ -650,21 +648,9 @@
         <Caret Line="86" Column="10" TopLine="74"/>
       </Position25>
       <Position26>
-        <Filename Value="suppliersdb.pas"/>
-        <Caret Line="18" Column="17"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="19" Column="12" TopLine="10"/>
       </Position26>
-      <Position27>
-        <Filename Value="suppliersdb.pas"/>
-        <Caret Line="89" Column="34" TopLine="91"/>
-      </Position27>
-      <Position28>
-        <Filename Value="suppliersdb.pas"/>
-        <Caret Line="221" Column="28" TopLine="211"/>
-      </Position28>
-      <Position29>
-        <Filename Value="RVMasterLog.lpr"/>
-        <Caret Line="39" Column="41" TopLine="29"/>
-      </Position29>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
