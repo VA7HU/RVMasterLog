@@ -126,7 +126,6 @@ end;// procedure TerminateApp
 procedure TfrmMain.mnuLogbooksNewLogbookClick(Sender: TObject);
 begin
   frmLogbook.ShowModal;
-
 end;// procedure TfrmMain.mnuLogbooksNewClick
 
 //----------------------------------------------------------------------------------------

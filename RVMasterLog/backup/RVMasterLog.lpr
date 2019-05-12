@@ -14,7 +14,7 @@ program RVMasterLog;
 //
 // Ver. : 1.0.0
 //
-// Date : 29 Apr 2019
+// Date : 4 May 2019
 //
 //========================================================================================
 
@@ -25,8 +25,8 @@ uses
   Interfaces, Forms, HUNagScreen, HURegistration, HUConstants, HUMessageBoxes,
   HUValidations,
   // Application Units
-  AppFinal, AppInit, AppSettings, Main, ManufacturersTable, SuppliersTable,
-		ProvTable, RVData, Logbook;
+  AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable, suppliersDB,
+  ProvTable, RVData;
 
 {$R *.res}
 
@@ -36,7 +36,7 @@ begin
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmSettings, frmSettings);
-  Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
+  Application.CreateForm(TfrmSuppliersDB, frmSuppliersTable);
   Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
   Application.CreateForm(TdlgHURegistration, dlgHUREgistration);
   Application.CreateForm(TfrmLogbook, frmLogbook);

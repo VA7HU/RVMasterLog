@@ -27,7 +27,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, Logbook, RVData, SuppliersTable, sqlite3conn;
+  AppFinal, AppInit, AppSettings, Logbook, RVData, suppliersDB, sqlite3conn;
 
 type
 
