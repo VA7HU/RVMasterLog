@@ -76,7 +76,7 @@ type
   private
 
   public
-
+    procedure CreateSuppliersDB;
   end;
 
 var
@@ -119,6 +119,10 @@ var
 //========================================================================================
 //          PUBLIC ROUTINES
 //========================================================================================
+procedure TfrmSuppliersDB.CreateSuppliersDB;
+begin
+
+end;// procedure TfrmSuppliersDB.CreateSuppliersDB
 
 //========================================================================================
 //          PROPERTY ROUTINES
@@ -169,11 +173,8 @@ procedure TfrmSuppliersDB.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
 
-
-
 end;// procedure TfrmSuppliersDB.FormClose
 
 //========================================================================================
-
 end.// unit ManufacturerDB
 

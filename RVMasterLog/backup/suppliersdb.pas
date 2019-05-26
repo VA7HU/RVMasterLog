@@ -162,60 +162,6 @@ end;// procedure TfrmSuppliersDB.FormCreate
 procedure TfrmSuppliersDB.FormShow(Sender: TObject);
 begin
 
-{    // Setup all of the Database Controls
- { vstrSuppliersDatabasePathName := frmSettings.pApplicationDirectory +
-                                 '\' +
-                                 cstrSuppliersDBName; }
-
-//  SQLite3Connection1.DatabaseName:= cstrSuppliersDBName{vstrSuppliersDatabasePathName};
-//  showmessage(SQLite3Connection1.DatabaseName);
-//  SQLite3Connection1.Transaction := SQLTransaction1;
-
-  SQLTransaction1.DataBase := SQLite3Connection1;
-
-  SQLQuery1.DataBase := SQLite3Connection1;
-  SQLQuery1.Transaction := SQLTransaction1;
-  SQLQuery1.SQL.Text := 'select * from ' + cstrSuppliersTableName;
-
-  DataSource1.DataSet := SQLquery1;
-
-  //dbedtID.Datasource := Datasource1;
-  //dbedtID.DataField := 'ID';
-
-  dbedtName.DataSource := DataSource1;
-  dbedtName.DataField := 'Name';
-
-  dbedtAddress1.DataSource := DataSource1;
-  dbedtAddress1.DataField := 'Address1';
-
-  dbedtAddress2.DataSource := DataSource1;
-  dbedtAddress2.DataField := 'Address2';
-
-  dbedtCity.DataSource := DataSource1;
-  dbedtCity.DataField := 'City';
-
-  dbedtCountry.DataSource := DataSource1;
-  dbedtCountry.DataField := 'Country';
-
-  dbedtPostalCode.DataSource := DataSource1;
-  dbedtPostalCode.DataField := 'PostalCode';
-
-  SQLite3Connection1.Connected := True;
-
-
-
-
-  //  SQLQuery1.Open;
-
-
-
-
-//  SQLite3Connection1.Connected := True;
-//  SQLTransaction1.Active := True;    }
-
-
-
-
 end;// procedure TfrmSuppliersDB.FormShow
 
 //----------------------------------------------------------------------------------------
@@ -223,11 +169,8 @@ procedure TfrmSuppliersDB.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
 
-
-
 end;// procedure TfrmSuppliersDB.FormClose
 
 //========================================================================================
-
 end.// unit ManufacturerDB
 

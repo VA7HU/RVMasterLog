@@ -16,7 +16,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 May 2019
+// Date : 26 May 2019
 //
 //========================================================================================
 
@@ -63,6 +63,7 @@ type
     fSettingsDirectory : string;
     fLogbooksDirectory : string;
     fBackupsDirectory : string;
+    fApplicationDB : string;
     fOwnerFirstName : string;
     fOwnerLastName : string;
     fOwnerCallsign : string;
@@ -82,6 +83,8 @@ type
     procedure SetLogbooksDirectory(Dir : string);
     function GetBackupsDirectory : string;
     procedure SetBackupsDirectory(Dir : string);
+    function GetApplicationDB : string;
+    procedure SetApplicationDB(DB : string);
     function GetOwnerFirstName : string;
     procedure SetOwnerFirstName (FirstName : string);
     function GetOwnerLastName : string;
@@ -102,6 +105,7 @@ type
     property pSettingsDirectory : string read GetSettingsDirectory write SetSettingsDirectory;
     property pLogbooksDirectory : string read GetLogbooksDirectory write SetLogbooksDirectory;
     property pBackupsDirectory : string read GetBackupsDirectory write SetBackupsDirectory;
+    property pApplicationDB : string read GetApplicationDB write SetApplicationDB;
     property pOwnerFirstName : string read GetOwnerFirstName write SetOwnerFirstName;
     property pOwnerLastName : string read GetOwnerLastName write SetOwnerLastName;
     property pOwnerCallsign : string read GetOwnerCallsign write SetOwnerCallsign;
@@ -173,6 +177,8 @@ const
   cstrBackupsDirectoryName = 'Backups';
   cstrUserDirectoryPath = 'AppData\Roaming\RVMasterLog';
 
+  cstrApplicationDB = 'ApplicationDB';
+
 //========================================================================================
 //          PRIVATE VARIABLES
 //========================================================================================
@@ -204,9 +210,11 @@ end;// function TfrmAppSetupApplicationDirectoryp.UserFIlesExist
 
 //========================================================================================
 function TfrmSettings.CreateUserDataDirectories : Boolean;
+var
+  VStr : string;
 begin
 
-    // USER DATA DIRECTORY
+    // CREATE USER DATA DIRECTORY
   pUserDirectory := frmSettings.pSystemUserDirectory + cstrUserDirectoryPath;
 
   if not CreateDir(pUserDirectory) then
@@ -216,9 +224,9 @@ begin
     Main.TerminateApp;
   end;// if not CreateDir(pUserDirectory)
 
-    // SETTINGS DIRECTORY
-
+    // CREATE SETTINGS DIRECTORY
   pSettingsDirectory := pUserDirectory + '\' + cstrSettingsDirectoryName;
+
   if not CreateDir(pSettingsDirectory)then
   begin
     showmessage('SETTINGS DIRECTORY FAILED');
@@ -227,17 +235,9 @@ begin
     Main.TerminateApp;
   end;// if not CreateDir(pSettingsDirectory)
 
-  // LOGBOOKS DIRECTORY
-  pLogbooksDirectory := pUserDirectory + '\' + cstrLogbooksDirectoryName;
-  if not CreateDir(pLogbooksDirectory)then
-  begin
-    showmessage('LOGBOOKS DIRECTORY FAILED');
-    Result := False;
-    Main.TerminateApp;
-  end;// if not CreateDir(pLogbooksDirectory)
-
-  // BACKUPS DIRECTORY
+    // CREATE BACKUPS DIRECTORY
   pBackupsDirectory := pUserDirectory + '\' + cstrBackupsDirectoryName;
+
   if not CreateDir(pBackupsDirectory)then
   begin
     showmessage('BACKUP DIRECTORY FAILED');
@@ -245,8 +245,32 @@ begin
     Main.TerminateApp;
   end;// if not CreateDir(pBackupsDirectory)
 
-  // LOAD DATABASES
-  CopyFile (frmSettings.pApplicationDirectory +
+  // CREATE LOGBOOKS DIRECTORY
+  pLogbooksDirectory := pUserDirectory + '\' + cstrApplicationDB;
+
+  if not CreateDir(pLogbooksDirectory)then
+  begin
+    showmessage('LOGBOOKS DIRECTORY FAILED');
+    Result := False;
+    Main.TerminateApp;
+  end;// if not CreateDir(pLogbooksDirectory)
+
+  // CREATE COMMON DATABASES
+
+    // CREATE APPLICATION Database
+    VStr := pUserDirectory + '\' + cstrLogbooksDirectoryName;
+
+    if not CreateDir(pApplicationDB)then
+    begin
+      showmessage('APPLICATIONDB FAILED');
+      Result := False;
+      Main.TerminateApp;
+    end;// if not CreateDir(pApplicationDB)
+
+
+
+
+{  CopyFile (frmSettings.pApplicationDirectory +
             '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
             frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
 
@@ -262,9 +286,9 @@ begin
             '\' + 'UserData' + '\' + 'HUStaticCommonDB.sl3',
             frmSettings.pUserDirectory + '\' + 'HUStaticCommonDB.sl3');
 
-   CopyFile (frmSettings.pApplicationDirectory +
-            '\' + 'UserData' + '\' + 'SuppliersDB.sl3',
-            frmSettings.pUserDirectory + '\' + 'Suppliers.sl3');
+  CopyFile (frmSettings.pApplicationDirectory +
+           '\' + 'UserData' + '\' + 'SuppliersDB.sl3',
+           frmSettings.pUserDirectory + '\' + 'Suppliers.sl3');  }
 
   Result := True;
 
@@ -359,6 +383,18 @@ procedure TfrmSettings.SetBackupsDirectory(Dir: string);
 begin
     fBackupsDirectory := Dir;
 end;// procedure TfrmSettings.SetBackupsDirectory
+
+//========================================================================================
+function TfrmSettings.GetApplicationDB: string;
+begin
+   Result := fApplicationDB;
+end;// procedure TfrmSettings.GetApplicationDB
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetApplicationDB(DB: string);
+begin
+    fApplicationDB := DB;
+end;// procedure TfrmSettings.SetApplicationDB
 
 //========================================================================================
 function TfrmSettings.GetOwnerFirstName: string;
