@@ -15,14 +15,14 @@ unit SuppliersDB;
 //
 // Ver. : 1.0.0
 //
-// Date : 12 May 2019
+// Date : 26 May 2019
 //
 //========================================================================================
 
 interface
 
 uses
-  Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms,
+  Classes, SysUtils, FileUtil, Forms,
   Controls, Graphics, Dialogs, DbCtrls, Buttons, ExtCtrls, StdCtrls, DBGrids,
   //
   AppSettings, HUMessageBoxes;
@@ -35,8 +35,6 @@ type
     bbtClose: TBitBtn;
     bbtOK: TBitBtn;
     BitBtn1: TBitBtn;
-    DataSource1: TDataSource;
-    DataSource2: TDataSource;
     dbCbxSelectSupplier: TDBComboBox;
     dbcbxProvState: TDBComboBox;
     dbcbxContact1Position: TDBComboBox;
@@ -70,10 +68,6 @@ type
     Label9: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
-    SQLite3Connection1: TSQLite3Connection;
-    SQLQuery1: TSQLQuery;
-    SQLQuery2: TSQLQuery;
-    SQLTransaction1: TSQLTransaction;
     procedure bbtCloseClick(Sender: TObject);
     procedure bbtOKClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -100,8 +94,8 @@ uses
 //========================================================================================
 const
 
-  cstrApplicationDBName = 'HUDB1.sl3';
-  cstrManufacturersTableName = 'SuppliersDB';
+  cstrSuppliersDBName = 'SuppliersDB.sl3';
+  cstrSuppliersTableName = 'SuppliersTable';
 
 //========================================================================================
 //          PUBLIC CONSTANTS
@@ -112,7 +106,7 @@ const
 //========================================================================================
 var
 
-  vstrApplicationDatabasePathName : string;
+  vstrSuppliersDatabasePathName : string;
 
 //========================================================================================
 //          PUBLIC VARIABLES
@@ -168,18 +162,20 @@ end;// procedure TfrmSuppliersDB.FormCreate
 procedure TfrmSuppliersDB.FormShow(Sender: TObject);
 begin
 
-    // Setup all of the Database Controls
-  vstrApplicationDatabasePathName := frmSettings.pApplicationDirectory +
+{    // Setup all of the Database Controls
+ { vstrSuppliersDatabasePathName := frmSettings.pApplicationDirectory +
                                  '\' +
-                                 cstrApplicationDBName;
+                                 cstrSuppliersDBName; }
 
-  SQLite3Connection1.DatabaseName:= vstrApplicationDatabasePathName;
-  SQLite3Connection1.Transaction := SQLTransaction1;
+//  SQLite3Connection1.DatabaseName:= cstrSuppliersDBName{vstrSuppliersDatabasePathName};
+//  showmessage(SQLite3Connection1.DatabaseName);
+//  SQLite3Connection1.Transaction := SQLTransaction1;
 
   SQLTransaction1.DataBase := SQLite3Connection1;
 
   SQLQuery1.DataBase := SQLite3Connection1;
   SQLQuery1.Transaction := SQLTransaction1;
+  SQLQuery1.SQL.Text := 'select * from ' + cstrSuppliersTableName;
 
   DataSource1.DataSet := SQLquery1;
 
@@ -204,15 +200,19 @@ begin
   dbedtPostalCode.DataSource := DataSource1;
   dbedtPostalCode.DataField := 'PostalCode';
 
-
-
-
-
   SQLite3Connection1.Connected := True;
-  SQLTransaction1.Active := True;
 
-  SQLQuery1.SQL.Text := 'select * from ' + cstrManufacturersTableName;
-  SQLQuery1.Open;
+
+
+
+  //  SQLQuery1.Open;
+
+
+
+
+//  SQLite3Connection1.Connected := True;
+//  SQLTransaction1.Active := True;    }
+
 
 
 
@@ -223,7 +223,7 @@ procedure TfrmSuppliersDB.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
 
-    SQLite3Connection1.Connected := False;
+
 
 end;// procedure TfrmSuppliersDB.FormClose
 

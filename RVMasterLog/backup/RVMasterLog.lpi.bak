@@ -120,7 +120,9 @@
       <Unit14>
         <Filename Value="manufacturerstable.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmManufacturersTable"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="ManufacturersTable"/>
       </Unit14>
       <Unit15>

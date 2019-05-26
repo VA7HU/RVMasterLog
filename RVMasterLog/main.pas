@@ -14,10 +14,10 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//
+//          SuppliersDB : frmSuppliersDB.ShowModal
 // Ver. : 1.0.0
 //
-// Date : 12 May 2019
+// Date : 25 May 2019
 //
 //========================================================================================
 
@@ -27,13 +27,14 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, Logbook, RVData, sqlite3conn;
+  AppFinal, AppInit, AppSettings, Logbook, RVData, sqlite3conn, SuppliersDB;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    mnuToolTest: TMenuItem;
     mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem;
     mnuToolsDBMaintenanceApplicationDB: TMenuItem;
     mnuToolsDBMaintenance: TMenuItem;
@@ -68,6 +69,7 @@ type
     procedure mnuLogbooksDeleteLogbookClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
     procedure mnuSettingsDirectoriesClick(Sender: TObject);
+    procedure mnuToolTestClick(Sender: TObject);
   private
 
   public
@@ -167,10 +169,25 @@ begin
 end;// procedure TfrmMain.mnuFileExitClick
 
 //========================================================================================
+
+//==========
+// mnuSettingsClick
+//==========
+
 procedure TfrmMain.mnuSettingsDirectoriesClick(Sender: TObject);
 begin
   frmSettings.ShowModal;
 end;// procedure TfrmMain.mnuSettingsDirectoriesClick
+
+//========================================================================================
+
+//==========
+// mnuToolsClick
+//==========
+procedure TfrmMain.mnuToolTestClick(Sender: TObject);
+begin
+  frmSuppliersDB.ShowModal;
+end;// procedure TfrmMain.mnuToolTestClick
 
 //========================================================================================
 //          COMMAND BUTTON ROUTINES

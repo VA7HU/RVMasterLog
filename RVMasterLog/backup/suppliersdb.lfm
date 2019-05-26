@@ -11,9 +11,9 @@ object frmSuppliersDB: TfrmSuppliersDB
   OnShow = FormShow
   LCLVersion = '2.0.0.4'
   object DBNavigator1: TDBNavigator
-    Left = 48
+    Left = 184
     Height = 25
-    Top = 468
+    Top = 456
     Width = 241
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -24,13 +24,12 @@ object frmSuppliersDB: TfrmSuppliersDB
     ChildSizing.ControlsPerLine = 100
     ClientHeight = 25
     ClientWidth = 241
-    DataSource = DataSource1
     Options = []
     TabOrder = 0
     VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]
   end
   object bbtClose: TBitBtn
-    Left = 676
+    Left = 720
     Height = 30
     Top = 456
     Width = 75
@@ -41,9 +40,9 @@ object frmSuppliersDB: TfrmSuppliersDB
     TabOrder = 1
   end
   object bbtOK: TBitBtn
-    Left = 554
+    Left = 624
     Height = 30
-    Top = 457
+    Top = 456
     Width = 75
     Default = True
     DefaultCaption = True
@@ -67,7 +66,6 @@ object frmSuppliersDB: TfrmSuppliersDB
       Top = 88
       Width = 124
       DataField = 'Name'
-      DataSource = DataSource1
       ItemHeight = 15
       MaxLength = 0
       TabOrder = 0
@@ -171,7 +169,6 @@ object frmSuppliersDB: TfrmSuppliersDB
         Height = 23
         Top = 144
         Width = 52
-        DataSource = DataSource1
         ItemHeight = 15
         MaxLength = 0
         TabOrder = 5
@@ -327,11 +324,12 @@ object frmSuppliersDB: TfrmSuppliersDB
     end
   end
   object BitBtn1: TBitBtn
-    Left = 432
+    Left = 24
     Height = 30
-    Top = 456
+    Top = 451
     Width = 75
-    Caption = 'BitBtn1'
+    DefaultCaption = True
+    Kind = bkHelp
     TabOrder = 4
   end
   object dbcbxContact2Position: TDBComboBox
@@ -342,43 +340,5 @@ object frmSuppliersDB: TfrmSuppliersDB
     ItemHeight = 15
     MaxLength = 0
     TabOrder = 5
-  end
-  object SQLite3Connection1: TSQLite3Connection
-    Connected = False
-    LoginPrompt = False
-    DatabaseName = 'C:\Users\Hew\Documents\Programming Projects\Lazarus\HULibs Development\Working Copy\Lazarus Libraries\Databases\HUDB1 Development\HUDB1.sl3'
-    KeepConnection = False
-    Transaction = SQLTransaction1
-    left = 104
-    top = 32
-  end
-  object SQLTransaction1: TSQLTransaction
-    Active = False
-    Database = SQLite3Connection1
-    left = 96
-    top = 160
-  end
-  object SQLQuery1: TSQLQuery
-    FieldDefs = <>
-    Database = SQLite3Connection1
-    Transaction = SQLTransaction1
-    Params = <>
-    DataSource = DataSource1
-    left = 91
-    top = 216
-  end
-  object DataSource1: TDataSource
-    left = 91
-    top = 272
-  end
-  object SQLQuery2: TSQLQuery
-    FieldDefs = <>
-    Params = <>
-    left = 96
-    top = 384
-  end
-  object DataSource2: TDataSource
-    left = 91
-    top = 328
   end
 end

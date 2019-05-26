@@ -96,6 +96,10 @@ object frmMain: TfrmMain
           Caption = 'ManufacturersDB'
         end
       end
+      object mnuToolTest: TMenuItem
+        Caption = 'Test'
+        OnClick = mnuToolTestClick
+      end
     end
   end
 end

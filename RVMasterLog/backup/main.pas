@@ -17,7 +17,7 @@ unit Main;
 //
 // Ver. : 1.0.0
 //
-// Date : 4 May 2019
+// Date : 25 May 2019
 //
 //========================================================================================
 
@@ -34,6 +34,7 @@ type
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    mnuToolTest: TMenuItem;
     mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem;
     mnuToolsDBMaintenanceApplicationDB: TMenuItem;
     mnuToolsDBMaintenance: TMenuItem;
@@ -68,6 +69,7 @@ type
     procedure mnuLogbooksDeleteLogbookClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
     procedure mnuSettingsDirectoriesClick(Sender: TObject);
+    procedure mnuToolTestClick(Sender: TObject);
   private
 
   public
@@ -167,10 +169,25 @@ begin
 end;// procedure TfrmMain.mnuFileExitClick
 
 //========================================================================================
+
+//==========
+// mnuSettingsClick
+//==========
+
 procedure TfrmMain.mnuSettingsDirectoriesClick(Sender: TObject);
 begin
   frmSettings.ShowModal;
 end;// procedure TfrmMain.mnuSettingsDirectoriesClick
+
+//========================================================================================
+
+//==========
+// mnuToolsClick
+//==========
+procedure TfrmMain.mnuToolTestClick(Sender: TObject);
+begin
+
+end;// procedure TfrmMain.mnuToolTestClick
 
 //========================================================================================
 //          COMMAND BUTTON ROUTINES

@@ -2,7 +2,7 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="9"/>
+    <Version Value="11"/>
     <BuildModes Active="Default"/>
     <Units Count="3">
       <Unit0>
@@ -136,5 +136,9 @@
         <Caret Line="60" Column="7" TopLine="38"/>
       </Position23>
     </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode="default"/>
+    </RunParams>
   </ProjectSession>
 </CONFIG>

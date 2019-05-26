@@ -16,7 +16,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 1 May 2019
+// Date : 2 May 2019
 //
 //========================================================================================
 
@@ -27,7 +27,7 @@ uses
   StdCtrls, SysUtils,
   //App Units
   // HULib units
-  HUConstants, HUMessageBoxes;
+  HUConstants, HUMessageBoxes, Types;
 
 type
 
@@ -52,6 +52,8 @@ type
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure pgDirectoriesContextPopup(Sender: TObject; MousePos: TPoint;
+      var Handled: Boolean);
 
   private
     fApplicationDirectory : string;
@@ -243,7 +245,7 @@ begin
     Main.TerminateApp;
   end;// if not CreateDir(pBackupsDirectory)
 
-  // Load the databases
+  // LOAD DATABASES
   CopyFile (frmSettings.pApplicationDirectory +
             '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
             frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
@@ -259,6 +261,10 @@ begin
   CopyFile (frmSettings.pApplicationDirectory +
             '\' + 'UserData' + '\' + 'HUStaticCommonDB.sl3',
             frmSettings.pUserDirectory + '\' + 'HUStaticCommonDB.sl3');
+
+   CopyFile (frmSettings.pApplicationDirectory +
+            '\' + 'UserData' + '\' + 'SuppliersDB.sl3',
+            frmSettings.pUserDirectory + '\' + 'Suppliers.sl3');
 
   Result := True;
 
@@ -616,6 +622,12 @@ begin
   edtBackupsDirectory.Text := pBackupsDirectory;
 
 end; // procedure TfrmAppSetup.FormShow
+
+procedure TfrmSettings.pgDirectoriesContextPopup(Sender: TObject;
+  MousePos: TPoint; var Handled: Boolean);
+begin
+
+end;
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSettings.FormClose(Sender: TObject; var CloseAction: TCloseAction);

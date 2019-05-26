@@ -118,6 +118,7 @@ object frmSettings: TfrmSettings
       Caption = 'Directories'
       ClientHeight = 268
       ClientWidth = 640
+      OnContextPopup = pgDirectoriesContextPopup
       object Label1: TLabel
         Left = 16
         Height = 15

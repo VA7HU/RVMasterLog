@@ -9,7 +9,7 @@ object frmManufacturersTable: TfrmManufacturersTable
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.0.0.4'
   object DBNavigator1: TDBNavigator
     Left = 48
     Height = 25
@@ -24,7 +24,6 @@ object frmManufacturersTable: TfrmManufacturersTable
     ChildSizing.ControlsPerLine = 100
     ClientHeight = 25
     ClientWidth = 241
-    DataSource = DataSource1
     Options = []
     TabOrder = 0
     VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]
@@ -67,7 +66,6 @@ object frmManufacturersTable: TfrmManufacturersTable
       Top = 136
       Width = 100
       DataField = 'Name'
-      DataSource = DataSource1
       ItemHeight = 15
       MaxLength = 0
       TabOrder = 0
@@ -245,23 +243,23 @@ object frmManufacturersTable: TfrmManufacturersTable
         ParentColor = False
       end
       object Label11: TLabel
-        Left = 112
+        Left = 88
         Height = 15
-        Top = 200
+        Top = 208
         Width = 32
         Caption = 'Name'
         ParentColor = False
       end
       object Label12: TLabel
-        Left = 216
+        Left = 243
         Height = 15
         Top = 208
-        Width = 53
-        Caption = 'Phone Nr.'
+        Width = 82
+        Caption = 'Phone Nr. - Ext.'
         ParentColor = False
       end
       object Label14: TLabel
-        Left = 472
+        Left = 440
         Height = 15
         Top = 208
         Width = 43
@@ -272,7 +270,7 @@ object frmManufacturersTable: TfrmManufacturersTable
         Left = 224
         Height = 23
         Top = 240
-        Width = 80
+        Width = 136
         CharCase = ecNormal
         MaxLength = 0
         TabOrder = 9
@@ -286,15 +284,6 @@ object frmManufacturersTable: TfrmManufacturersTable
         MaxLength = 0
         TabOrder = 10
       end
-      object DBEdit3: TDBEdit
-        Left = 320
-        Height = 23
-        Top = 240
-        Width = 80
-        CharCase = ecNormal
-        MaxLength = 0
-        TabOrder = 11
-      end
       object DBComboBox2: TDBComboBox
         Left = 424
         Height = 23
@@ -302,7 +291,52 @@ object frmManufacturersTable: TfrmManufacturersTable
         Width = 100
         ItemHeight = 15
         MaxLength = 0
+        TabOrder = 11
+      end
+      object DBEdit3: TDBEdit
+        Left = 32
+        Height = 23
+        Top = 280
+        Width = 168
+        CharCase = ecNormal
+        MaxLength = 0
         TabOrder = 12
+      end
+      object DBEdit4: TDBEdit
+        Left = 32
+        Height = 23
+        Top = 320
+        Width = 168
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 13
+      end
+      object DBEdit5: TDBEdit
+        Left = 224
+        Height = 23
+        Top = 280
+        Width = 136
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 14
+      end
+      object DBEdit6: TDBEdit
+        Left = 224
+        Height = 23
+        Top = 320
+        Width = 136
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 15
+      end
+      object DBComboBox4: TDBComboBox
+        Left = 424
+        Height = 23
+        Top = 320
+        Width = 100
+        ItemHeight = 15
+        MaxLength = 0
+        TabOrder = 16
       end
     end
   end
@@ -314,36 +348,13 @@ object frmManufacturersTable: TfrmManufacturersTable
     Caption = 'BitBtn1'
     TabOrder = 4
   end
-  object SQLite3Connection1: TSQLite3Connection
-    Connected = False
-    LoginPrompt = False
-    KeepConnection = False
-    left = 80
-    top = 32
-  end
-  object SQLTransaction1: TSQLTransaction
-    Active = False
-    left = 80
-    top = 88
-  end
-  object SQLQuery1: TSQLQuery
-    FieldDefs = <>
-    Params = <>
-    left = 91
-    top = 216
-  end
-  object DataSource1: TDataSource
-    left = 91
-    top = 272
-  end
-  object SQLQuery2: TSQLQuery
-    FieldDefs = <>
-    Params = <>
-    left = 96
-    top = 384
-  end
-  object DataSource2: TDataSource
-    left = 91
-    top = 328
+  object DBComboBox3: TDBComboBox
+    Left = 624
+    Height = 23
+    Top = 328
+    Width = 100
+    ItemHeight = 15
+    MaxLength = 0
+    TabOrder = 5
   end
 end

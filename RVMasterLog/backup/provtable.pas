@@ -112,9 +112,9 @@ procedure TfrmProvTable.FormShow(Sender: TObject);
 begin
 
   // Setup all of the Database Controls
-vstrApplicationDatabasePathName := frmSettings.pApplicationDirectory +
+{vstrApplicationDatabasePathName := frmSettings.pApplicationDirectory +
                                '\' +
-                               cstrApplicationDBName;
+                               cstrApplicationDBName;}
 
 {SQLite3Connection1.DatabaseName:= vstrApplicationDatabasePathName;
 SQLite3Connection1.Transaction := SQLTransaction1;
