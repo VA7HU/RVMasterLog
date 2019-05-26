@@ -14,7 +14,7 @@ program RVMasterLog;
 //
 // Ver. : 1.0.0
 //
-// Date : 12 May 2019
+// Date : 26 May 2019
 //
 //========================================================================================
 
@@ -26,7 +26,7 @@ uses
   HUValidations,
   // Application Units
   AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable,
-  ProvTable, RVData, suppliersDB;
+  ProvTable, RVData, SuppliersTable;
 
 {$R *.res}
 
@@ -36,10 +36,10 @@ begin
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmSettings, frmSettings);
-  Application.CreateForm(TfrmSuppliersDB, frmSuppliersDB);
   Application.CreateForm(TdlgHUNagScreen, dlgHUNagScreen);
   Application.CreateForm(TdlgHURegistration, dlgHUREgistration);
   Application.CreateForm(TfrmLogbook, frmLogbook);
+  Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.Run;
 
 end.//program RVMasterLog

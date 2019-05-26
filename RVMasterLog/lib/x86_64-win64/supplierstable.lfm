@@ -1,0 +1,8 @@
+object frmSuppliersTable: TfrmSuppliersTable
+  Left = 525
+  Height = 240
+  Top = 129
+  Width = 320
+  Caption = 'frmSuppliersTable'
+  LCLVersion = '2.0.0.4'
+end

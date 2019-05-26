@@ -15,9 +15,10 @@ unit Main;
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
 //          SuppliersDB : frmSuppliersDB.ShowModal
+//
 // Ver. : 1.0.0
 //
-// Date : 25 May 2019
+// Date : 26 May 2019
 //
 //========================================================================================
 
@@ -27,7 +28,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
   //
-  AppFinal, AppInit, AppSettings, Logbook, RVData, sqlite3conn, SuppliersDB;
+  AppFinal, AppInit, AppSettings, Logbook, RVData, SuppliersTable;
 
 type
 
@@ -186,7 +187,7 @@ end;// procedure TfrmMain.mnuSettingsDirectoriesClick
 //==========
 procedure TfrmMain.mnuToolTestClick(Sender: TObject);
 begin
-  frmSuppliersDB.ShowModal;
+  frmSuppliersTable.ShowModal;
 end;// procedure TfrmMain.mnuToolTestClick
 
 //========================================================================================
