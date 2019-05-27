@@ -14,7 +14,7 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          SuppliersDB : frmSuppliersDB.ShowModal
+//          SuppliersTable : frmSuppliersTable.ShowModal
 //
 // Ver. : 1.0.0
 //

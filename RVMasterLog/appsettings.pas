@@ -177,7 +177,7 @@ const
   cstrBackupsDirectoryName = 'Backups';
   cstrUserDirectoryPath = 'AppData\Roaming\RVMasterLog';
 
-  cstrApplicationDB = 'ApplicationDB';
+  cstrApplicationDBName = 'ApplicationDB';
 
 //========================================================================================
 //          PRIVATE VARIABLES
@@ -246,7 +246,7 @@ begin
   end;// if not CreateDir(pBackupsDirectory)
 
   // CREATE LOGBOOKS DIRECTORY
-  pLogbooksDirectory := pUserDirectory + '\' + cstrApplicationDB;
+  pLogbooksDirectory := pUserDirectory + '\' + cstrLogbooksDirectoryName;
 
   if not CreateDir(pLogbooksDirectory)then
   begin
@@ -258,14 +258,16 @@ begin
   // CREATE COMMON DATABASES
 
     // CREATE APPLICATION Database
-    VStr := pUserDirectory + '\' + cstrLogbooksDirectoryName;
+    VStr := pUserDirectory + '\' + cstrApplicationDBName;
 
-    if not CreateDir(pApplicationDB)then
+    if not CreateDir(VStr)then
     begin
       showmessage('APPLICATIONDB FAILED');
       Result := False;
       Main.TerminateApp;
     end;// if not CreateDir(pApplicationDB)
+
+    pApplicationDB := VStr;
 
   Result := True;
 

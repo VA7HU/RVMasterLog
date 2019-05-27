@@ -14,7 +14,7 @@ program RVMasterLog;
 //
 // Ver. : 1.0.0
 //
-// Date : 12 May 2019
+// Date : 26 May 2019
 //
 //========================================================================================
 
@@ -26,7 +26,7 @@ uses
   HUValidations,
   // Application Units
   AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable,
-  ProvTable, RVData, unit1;
+  ProvTable, RVData, SuppliersTable;
 
 {$R *.res}
 

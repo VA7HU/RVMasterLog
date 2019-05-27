@@ -22,8 +22,8 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Interfaces, Forms, HUNagScreen, HURegistration, HUConstants, HUMessageBoxes,
-  HUValidations,
+  Interfaces, Forms, dbflaz, HUNagScreen, HURegistration, HUConstants,
+  HUMessageBoxes, HUValidations,
   // Application Units
   AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable,
   ProvTable, RVData, SuppliersTable;

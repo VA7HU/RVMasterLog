@@ -177,7 +177,7 @@ const
   cstrBackupsDirectoryName = 'Backups';
   cstrUserDirectoryPath = 'AppData\Roaming\RVMasterLog';
 
-  cstrApplicationDB = 'ApplicationDB';
+  cstrApplicationDBName = 'ApplicationDB';
 
 //========================================================================================
 //          PRIVATE VARIABLES
@@ -246,7 +246,7 @@ begin
   end;// if not CreateDir(pBackupsDirectory)
 
   // CREATE LOGBOOKS DIRECTORY
-  pLogbooksDirectory := pUserDirectory + '\' + cstrApplicationDB;
+  pLogbooksDirectory := pUserDirectory + '\' + cstrLogbooksDirectoryName;
 
   if not CreateDir(pLogbooksDirectory)then
   begin
@@ -258,37 +258,18 @@ begin
   // CREATE COMMON DATABASES
 
     // CREATE APPLICATION Database
-    VStr := pUserDirectory + '\' + cstrLogbooksDirectoryName;
-
-    if not CreateDir(pApplicationDB)then
+    VStr := pUserDirectory + '\' + cstrApplicationDBName;
+showmessage(VStr);
+    if not CreateDir(VStr)then
     begin
       showmessage('APPLICATIONDB FAILED');
       Result := False;
       Main.TerminateApp;
     end;// if not CreateDir(pApplicationDB)
 
-
-
-
-{  CopyFile (frmSettings.pApplicationDirectory +
-            '\' + 'UserData' + '\' + 'ApplicationDB.sl3',
-            frmSettings.pUserDirectory + '\' + 'ApplicationDB.sl3');
-
-  CopyFile (frmSettings.pApplicationDirectory +
-            '\' + 'UserData' + '\' + 'LogbooksDB.sl3',
-            frmSettings.pUserDirectory + '\' + 'LogbooksDB.sl3');
-
-  CopyFile (frmSettings.pApplicationDirectory +
-            '\' + 'UserData' + '\' + 'ManufacturersDB.sl3',
-            frmSettings.pUserDirectory + '\' + 'ManufacturersDB.sl3');
-
-  CopyFile (frmSettings.pApplicationDirectory +
-            '\' + 'UserData' + '\' + 'HUStaticCommonDB.sl3',
-            frmSettings.pUserDirectory + '\' + 'HUStaticCommonDB.sl3');
-
-  CopyFile (frmSettings.pApplicationDirectory +
-           '\' + 'UserData' + '\' + 'SuppliersDB.sl3',
-           frmSettings.pUserDirectory + '\' + 'Suppliers.sl3');  }
+    pApplicationDB := VStr;
+    showmessage(VStr);
+    showmessage(pApplicationDB);
 
   Result := True;
 

@@ -187,7 +187,7 @@ end;// procedure TfrmMain.mnuSettingsDirectoriesClick
 //==========
 procedure TfrmMain.mnuToolTestClick(Sender: TObject);
 begin
-  SuppliersTable.ShowModal;
+  frmSuppliersTable.ShowModal;
 end;// procedure TfrmMain.mnuToolTestClick
 
 //========================================================================================
