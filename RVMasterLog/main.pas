@@ -14,11 +14,12 @@ unit Main;
 // Calls :  AppFinal  : Finalize
 //          AppInit : Initialize
 //          AppSettings :  frmSettings.ShowModal
-//          SuppliersTable : frmSuppliersTable.ShowModal
+//          SuppliersTable : frmSuppliersTable.CreateSuppliersTable
+//                           frmSuppliersTable.ShowModal
 //
 // Ver. : 1.0.0
 //
-// Date : 26 May 2019
+// Date : 29 May 2019
 //
 //========================================================================================
 

@@ -11,12 +11,13 @@ unit AppSettings;
 // Called By :  AppInit : Initialize
 //              Main  : TfrmMain.mnuSettingsDIrectoriesClick
 //                      TfrmMain.mnuSettingsDatabasesClick
+//              SuppliersTable : frmSuppliersTable.CreateSuppliersTable
 //
 // Calls :  HUConstants
 //
 // Ver. : 1.0.0
 //
-// Date : 26 May 2019
+// Date : 29 May 2019
 //
 //========================================================================================
 
@@ -24,10 +25,11 @@ interface
 
 uses
   Buttons, Classes, ComCtrls, Controls, Dialogs, FileUtil, Forms, Graphics, INIFiles,
-  StdCtrls, SysUtils,
+  StdCtrls, SysUtils, Types,
   //App Units
+  SuppliersTable,
   // HULib units
-  HUConstants, HUMessageBoxes, Types;
+  HUConstants, HUMessageBoxes;
 
 type
 
@@ -53,7 +55,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure pgDirectoriesContextPopup(Sender: TObject; MousePos: TPoint;
-      var Handled: Boolean);
+              var Handled: Boolean);
 
   private
     fApplicationDirectory : string;
@@ -152,6 +154,13 @@ const
                   + K_CR
                   + ' Is this an Initial installation ?';
 
+
+  //==========
+  // DATA ELEMENTS
+  //==========
+
+    cstrApplicationDBName = 'ApplicationDB';
+
   //========================================================================================
   //          PUBLIC VARIABLES
   //========================================================================================
@@ -176,8 +185,6 @@ const
   cstrLogbooksDirectoryName = 'Logbooks';
   cstrBackupsDirectoryName = 'Backups';
   cstrUserDirectoryPath = 'AppData\Roaming\RVMasterLog';
-
-  cstrApplicationDBName = 'ApplicationDB';
 
 //========================================================================================
 //          PRIVATE VARIABLES
@@ -257,19 +264,17 @@ begin
 
   // CREATE COMMON DATABASES
 
-    // CREATE APPLICATION Database
-    VStr := pUserDirectory + '\' + cstrApplicationDBName;
-showmessage(VStr);
-    if not CreateDir(VStr)then
+    // CREATE APPLICATION Database and Tables
+    pApplicationDB := pUserDirectory + '\' + cstrApplicationDBName;
+    if not CreateDir(pApplicationDB)then
     begin
       showmessage('APPLICATIONDB FAILED');
       Result := False;
       Main.TerminateApp;
     end;// if not CreateDir(pApplicationDB)
 
-    pApplicationDB := VStr;
-    showmessage(VStr);
-    showmessage(pApplicationDB);
+    CreateSuppliersTable;
+
 
   Result := True;
 

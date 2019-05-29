@@ -8,24 +8,24 @@ unit SuppliersTable;
 //
 // Description :
 //
-// Called By :
+// Called By : AppSettings : frmSettings.CreateUserDataDirectories
 //
 // Calls : frmAppSettings.pApplicationDB
+//         Main : TerminateApp
 //
 // Ver. : 1.0.0
 //
-// Date : 26 Nay 2019
+// Date : 29 May 2019
 //
 //========================================================================================
 
 interface
 
 uses
-  Classes, SysUtils, db, dbf, Dbf_Common, Forms, Controls, Graphics, Dialogs, Buttons,
+  Classes, SysUtils, db, dbf, Dbf_Common, Forms, Controls, Graphics, Dialogs, Buttons;
   // Application Units
-  AppSettings
   // HULib Units
-  ;
+
 
 //========================================================================================
 //          PUBLIC VARIABLES
@@ -45,10 +45,11 @@ type
     bbtNew: TBitBtn;
     bbtEdit: TBitBtn;
     bbtDelete: TBitBtn;
-    Dbf1: TDbf;
+    SuppliersTbl: TDbf;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure CreateSuppliersTable;
   private
 
   public
@@ -56,15 +57,21 @@ type
   end;// TfrmSuppliersTable
 
 var
+
   frmSuppliersTable: TfrmSuppliersTable;
 
 implementation
 
 {$R *.lfm}
 
+uses
+  AppSettings, Main;
+
 //========================================================================================
 //          PRIVATE CONSTANTS
 //========================================================================================
+const
+  cstrSuppliersTableName = 'Suppliers.Tbl';
 
 //========================================================================================
 //          PRIVATE VARIABLES
@@ -77,6 +84,14 @@ implementation
 //========================================================================================
 //          PUBLIC ROUTINES
 //========================================================================================
+procedure TfrmSuppliersTable.CreateSuppliersTable;
+begin
+
+  SuppliersTbl := TDbf.Create(nil);
+  SuppliersTbl.FilePathFull := frmSettings.pApplicationDB; //Directory where all .dbf files will be stored
+  SuppliersTbl.TableName := cstrSuppliersTableName; // note: is the .dbf really required?
+
+end;// function TfrmSuppliersTable.CreateSuppliersTable
 
 //========================================================================================
 //          PROPERTY ROUTINES
@@ -116,7 +131,7 @@ end;// procedure TfrmSuppliersTable.FormCreate
 //========================================================================================
 procedure TfrmSuppliersTable.FormShow(Sender: TObject);
 begin
-  showmessage(frmSettings.pApplicationDB);
+  showmessage('Path = ' + frmSettings.pApplicationDB);
 end;// procedure TfrmSuppliersTable.FormShow
 
 //========================================================================================
