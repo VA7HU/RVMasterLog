@@ -90,6 +90,22 @@ begin
   SuppliersTbl := TDbf.Create(nil);
   SuppliersTbl.FilePathFull := frmSettings.pApplicationDB; //Directory where all .dbf files will be stored
   SuppliersTbl.TableName := cstrSuppliersTableName; // note: is the .dbf really required?
+  SuppliersTbl.TableLevel := 7; //Visual dBase 7
+
+  With SuppliersTbl.FieldDefs do begin
+    Add('Id', ftAutoInc, 0, True); //Autoincrement field called Id
+    Add('Name', ftString, 80, True); //80 character string field called Name
+  End;
+
+  SuppliersTbl.CreateTable;
+
+  SuppliersTbl.Exclusive := True;
+  SuppliersTbl.Open;
+
+  SuppliersTbl.AddIndex('custid', 'Id', [ixPrimary, ixUnique]);
+  SuppliersTbl.AddIndex('custname','Name', [ixCaseInsensitive]);
+  SuppliersTbl.Close;
+
 
 end;// function TfrmSuppliersTable.CreateSuppliersTable
 
