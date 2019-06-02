@@ -21,7 +21,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 1 May 2019
+// Date : 2 Jun 2019
 //
 //========================================================================================
 
@@ -73,11 +73,32 @@ var
   vstrTUserDir : string;
 begin
 
+  // Set the correct version of the SQLite files
+
+  if not FileExists('sqlite3.def') then
+  begin
+    {$ifdef CPU32}
+    showmessage('32 Bit');
+    CopyFile('sqlite3.def32', 'sqlite3.def');
+    CopyFile('sqlite3.dll32', 'sqlite3.dll');
+    {$endif}
+  end;
+
+  if not FileExists('sqlite3.dll') then
+  begin
+   {$ifdef CPU64}
+   showmessage('64 Bit');
+   CopyFile('sqlite3.def64', 'sqlite3.def');
+   CopyFile('sqlite3.dll64', 'sqlite3.dll');
+   {$endif}
+  end;
+
   // If the UserDirectories do not exist, there are only two possibilities:
   //
   //   1. This is an initial installation and they have not been created yet; or,
   //
   //   2. they have somehow disappeared.
+  end;
 
   If not frmSettings.UserDataDirectoriesExist then
   begin
@@ -92,7 +113,6 @@ begin
   begin
     dlgHURegistration.RequestRegistrationKey;
     dlgHURegistration.SHowModal;
-showmessage('Registration Complete');
   end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe'
 
 showmessage('Init Complete');
