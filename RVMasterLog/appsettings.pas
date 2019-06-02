@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 29 May 2019
+// Date : 1 Jun 2019
 //
 //========================================================================================
 
@@ -262,9 +262,9 @@ begin
     Main.TerminateApp;
   end;// if not CreateDir(pLogbooksDirectory)
 
-  // CREATE COMMON DATABASES
+  // CREATE COMMON DATABASE Directory
 
-    // CREATE APPLICATION Database and Tables
+{    // CREATE APPLICATION Database and Tables
     pApplicationDB := pUserDirectory + '\' + cstrApplicationDBName;
     if not CreateDir(pApplicationDB)then
     begin
@@ -273,8 +273,7 @@ begin
       Main.TerminateApp;
     end;// if not CreateDir(pApplicationDB)
 
-    frmSuppliersTable.CreateSuppliersTable;
-
+    frmSuppliersTable.CreateSuppliersTable;   }
 
   Result := True;
 

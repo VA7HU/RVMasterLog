@@ -273,7 +273,7 @@ begin
       Main.TerminateApp;
     end;// if not CreateDir(pApplicationDB)
 
-    CreateSuppliersTable;
+    frmSuppliersTable.CreateSuppliersTable;
 
 
   Result := True;

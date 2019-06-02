@@ -1,0 +1,106 @@
+object Form1: TForm1
+  Left = 345
+  Height = 266
+  Top = 127
+  Width = 527
+  Caption = 'GuitarClub 01'
+  ClientHeight = 266
+  ClientWidth = 527
+  OnShow = FormShow
+  LCLVersion = '1.8.4.0'
+  object DBNavigator1: TDBNavigator
+    Left = 13
+    Height = 25
+    Top = 14
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = dsMembers
+    Options = []
+    TabOrder = 0
+  end
+  object gridMembers: TDBGrid
+    Left = 13
+    Height = 174
+    Top = 50
+    Width = 498
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Lastname'
+        Width = 120
+        FieldName = 'Lastname'
+      end    
+      item
+        Title.Caption = 'Firstname'
+        Width = 120
+        FieldName = 'Firstname'
+      end    
+      item
+        Title.Caption = 'ID'
+        Width = 50
+        FieldName = 'ID'
+      end>
+    DataSource = dsMembers
+    TabOrder = 1
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'guitarclub.db'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    left = 94
+    top = 116
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = SQLite3Connection1
+    left = 226
+    top = 116
+  end
+  object queryMembers: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <    
+      item
+        Name = 'Lastname'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'Firstname'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'ID'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from members order by upper(lastname), upper(firstname)'
+    )
+    Options = [sqoKeepOpenOnCommit, sqoAutoApplyUpdates, sqoAutoCommit]
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 338
+    top = 116
+  end
+  object dsMembers: TDataSource
+    DataSet = queryMembers
+    left = 424
+    top = 116
+  end
+end
