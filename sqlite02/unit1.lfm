@@ -1,0 +1,216 @@
+object Form1: TForm1
+  Left = 345
+  Height = 449
+  Top = 127
+  Width = 485
+  Caption = 'GuitarClub 02'
+  ClientHeight = 449
+  ClientWidth = 485
+  OnClose = FormClose
+  OnShow = FormShow
+  LCLVersion = '1.8.4.0'
+  object DBNavigator1: TDBNavigator
+    Left = 13
+    Height = 25
+    Top = 14
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = dsMembers
+    Options = []
+    TabOrder = 0
+  end
+  object gridMembers: TDBGrid
+    Left = 13
+    Height = 168
+    Top = 50
+    Width = 456
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Lastname'
+        Width = 120
+        FieldName = 'Lastname'
+      end    
+      item
+        Title.Caption = 'Firstname'
+        Width = 120
+        FieldName = 'Firstname'
+      end    
+      item
+        Title.Caption = 'ID'
+        Width = 50
+        FieldName = 'ID'
+      end>
+    DataSource = dsMembers
+    Scrollbars = ssVertical
+    TabOrder = 1
+  end
+  object gridGuitars: TDBGrid
+    Left = 13
+    Height = 146
+    Top = 277
+    Width = 456
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Brand'
+        Width = 110
+        FieldName = 'Brand'
+      end    
+      item
+        Title.Caption = 'Model'
+        Width = 120
+        FieldName = 'Model'
+      end    
+      item
+        Title.Caption = 'Year'
+        Width = 40
+        FieldName = 'Year'
+      end    
+      item
+        Title.Caption = 'Kind'
+        Width = 40
+        FieldName = 'Kind'
+      end    
+      item
+        Title.Caption = 'MemberID'
+        Width = 70
+        FieldName = 'MemberID'
+      end>
+    DataSource = dsGuitars
+    Scrollbars = ssVertical
+    TabOrder = 2
+  end
+  object DBNavigator2: TDBNavigator
+    Left = 13
+    Height = 25
+    Top = 241
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = dsGuitars
+    Options = []
+    TabOrder = 3
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'guitarclub.db'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    left = 67
+    top = 116
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = SQLite3Connection1
+    left = 178
+    top = 116
+  end
+  object queryMembers: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <    
+      item
+        Name = 'Lastname'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'Firstname'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'ID'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from members'
+    )
+    Options = [sqoKeepOpenOnCommit, sqoAutoApplyUpdates, sqoAutoCommit]
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 293
+    top = 116
+  end
+  object dsMembers: TDataSource
+    DataSet = queryMembers
+    left = 391
+    top = 116
+  end
+  object dsGuitars: TDataSource
+    DataSet = queryGuitars
+    left = 302
+    top = 320
+  end
+  object queryGuitars: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'Brand'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'Model'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'Year'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'Kind'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'MemberID'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'ID'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from guitars'
+    )
+    Params = <>
+    UpdateMode = upWhereAll
+    DataSource = dsMembers
+    left = 197
+    top = 320
+  end
+end

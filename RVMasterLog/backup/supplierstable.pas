@@ -15,15 +15,15 @@ unit SuppliersTable;
 //
 // Ver. : 1.0.0
 //
-// Date : 29 May 2019
+// Date : 2 Jun 2019
 //
 //========================================================================================
 
 interface
 
 uses
-  Classes, FileUtil, SysUtils, sqlite3conn, sqldb, Forms, Controls,
-  Graphics, Dialogs, Buttons, DBCtrls;
+  Classes, FileUtil, SysUtils, sqlite3conn, sqldb, db, Forms, Controls,
+  Graphics, Dialogs, Buttons, DBCtrls, DBGrids;
   // Application Units
   // HULib Units
 
@@ -46,9 +46,12 @@ type
     bbtNew: TBitBtn;
     bbtEdit: TBitBtn;
     bbtDelete: TBitBtn;
+    DataSource1: TDataSource;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
+    DBGrid1: TDBGrid;
     SQLite3Connection1: TSQLite3Connection;
+    SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -120,15 +123,25 @@ end;// procedure TfrmSuppliersTable.FormClose
 //========================================================================================
 procedure TfrmSuppliersTable.FormCreate(Sender: TObject);
 begin
- //   CreateSuppliersTable;
+
 end;// procedure TfrmSuppliersTable.FormCreate
 
 //========================================================================================
 procedure TfrmSuppliersTable.FormShow(Sender: TObject);
 begin
 
-    //  showmessage('Path = ' + frmSettings.pApplicationDB);
-//  SQLite3Connection1.Open;
+  SQLite3Connection1.Connected := False;
+  SQLTransaction1.Active := False;
+  SQLQuery1.Active := False;
+
+  SQLite3Connection1.DatabaseName := './USerData/SuppliersDB.sl3';
+  SQLQuery1.Options := [sqoKeepOpenOnCommit,sqoAutoApplyUpdates,sqoAutoCommit];
+  SQLQuery1.SQL.Text := 'select * from SuppliersTable order by ID';
+  SQLQuery1.Transaction := SQLTransaction1;
+
+  SQLite3Connection1.Open;
+  SQLTransaction1.Active := True;
+  SQLQuery1.Open;
 
 end;// procedure TfrmSuppliersTable.FormShow
 
