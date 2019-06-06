@@ -76,10 +76,10 @@ object frmSuppliersTable: TfrmSuppliersTable
     TabOrder = 6
   end
   object DBGrid1: TDBGrid
-    Left = 212
+    Left = 216
     Height = 160
-    Top = 104
-    Width = 500
+    Top = 96
+    Width = 417
     Color = clWindow
     Columns = <    
       item
@@ -98,7 +98,10 @@ object frmSuppliersTable: TfrmSuppliersTable
       end    
       item
         Title.Caption = 'Address 2'
-        FieldName = 'Address 2'
+        FieldName = 'Address2'
+      end    
+      item
+        Title.Caption = 'Title'
       end>
     DataSource = DataSource1
     TabOrder = 7
@@ -119,7 +122,11 @@ object frmSuppliersTable: TfrmSuppliersTable
     top = 32
   end
   object SQLQuery1: TSQLQuery
-    FieldDefs = <>
+    FieldDefs = <    
+      item
+        Name = 'SQLQuery1SQLDB1'
+        DataType = ftUnknown
+      end>
     Params = <>
     left = 344
     top = 40

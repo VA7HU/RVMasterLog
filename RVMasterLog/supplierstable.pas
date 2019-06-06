@@ -49,7 +49,6 @@ type
     DataSource1: TDataSource;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
-    DBGrid1: TDBGrid;
     SQLite3Connection1: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
@@ -134,7 +133,7 @@ begin
   SQLTransaction1.Active := False;
   SQLQuery1.Active := False;
 
-  SQLite3Connection1.DatabaseName := './USerData/SuppliersDB.sl3';
+  SQLite3Connection1.DatabaseName := 'SuppliersDB.sl3';
   SQLQuery1.Options := [sqoKeepOpenOnCommit,sqoAutoApplyUpdates,sqoAutoCommit];
   SQLQuery1.SQL.Text := 'select * from SuppliersTable order by ID';
   SQLQuery1.Transaction := SQLTransaction1;

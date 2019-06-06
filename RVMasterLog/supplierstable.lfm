@@ -75,34 +75,6 @@ object frmSuppliersTable: TfrmSuppliersTable
     MaxLength = 0
     TabOrder = 6
   end
-  object DBGrid1: TDBGrid
-    Left = 216
-    Height = 160
-    Top = 96
-    Width = 417
-    Color = clWindow
-    Columns = <    
-      item
-        Title.Caption = 'ID'
-        Width = 30
-        FieldName = 'ID'
-      end    
-      item
-        Title.Caption = 'SupplierName'
-        Width = 85
-        FieldName = 'SupplierName'
-      end    
-      item
-        Title.Caption = 'Address1'
-        FieldName = 'Address1'
-      end    
-      item
-        Title.Caption = 'Address 2'
-        FieldName = 'Address 2'
-      end>
-    DataSource = DataSource1
-    TabOrder = 7
-  end
   object SQLite3Connection1: TSQLite3Connection
     Connected = False
     LoginPrompt = False
@@ -119,7 +91,11 @@ object frmSuppliersTable: TfrmSuppliersTable
     top = 32
   end
   object SQLQuery1: TSQLQuery
-    FieldDefs = <>
+    FieldDefs = <    
+      item
+        Name = 'SQLQuery1SQLDB1'
+        DataType = ftUnknown
+      end>
     Params = <>
     left = 344
     top = 40
