@@ -15,7 +15,7 @@ unit SuppliersTable;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Jun 2019
+// Date : 7 Jun 2019
 //
 //========================================================================================
 
@@ -49,7 +49,8 @@ type
     DataSource1: TDataSource;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
-    SQLite3Connection1: TSQLite3Connection;
+    DBGrid1: TDBGrid;
+    SupplierDBConnection: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -76,6 +77,8 @@ uses
 //          PRIVATE CONSTANTS
 //========================================================================================
 const
+
+  cstrSuppliersDatabaseName = 'SuppliersDB.sl3';
   cstrSuppliersTableName = 'Suppliers.Tbl';
 
 //========================================================================================
@@ -129,16 +132,23 @@ end;// procedure TfrmSuppliersTable.FormCreate
 procedure TfrmSuppliersTable.FormShow(Sender: TObject);
 begin
 
-  SQLite3Connection1.Connected := False;
+  SupplierDBConnection.DatabaseName := cstrSuppliersDatabaseName;
+  SupplierDBConnection.Transaction := SQLTransaction1;
+  SupplierDBConnection.Connected := False;
+
   SQLTransaction1.Active := False;
+
+  SQLQuery1.DataBase := SupplierDBConnection;
   SQLQuery1.Active := False;
 
-  SQLite3Connection1.DatabaseName := 'SuppliersDB.sl3';
-  SQLQuery1.Options := [sqoKeepOpenOnCommit,sqoAutoApplyUpdates,sqoAutoCommit];
-  SQLQuery1.SQL.Text := 'select * from SuppliersTable order by ID';
+  DataSource1.DataSet := SQLQuery1;
+
+  DBGrid1.DataSource := DataSource1;
+
+  SQLQuery1.SQL.Text := 'select * from SuppliersTable';
   SQLQuery1.Transaction := SQLTransaction1;
 
-  SQLite3Connection1.Open;
+  SupplierDBConnection.Open;
   SQLTransaction1.Active := True;
   SQLQuery1.Open;
 

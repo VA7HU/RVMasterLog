@@ -77,19 +77,18 @@ object frmSuppliersTable: TfrmSuppliersTable
   end
   object DBGrid1: TDBGrid
     Left = 216
-    Height = 160
-    Top = 96
-    Width = 417
+    Height = 100
+    Top = 120
+    Width = 400
     Color = clWindow
     Columns = <    
       item
         Title.Caption = 'ID'
-        Width = 30
         FieldName = 'ID'
       end    
       item
         Title.Caption = 'SupplierName'
-        Width = 85
+        Width = 100
         FieldName = 'SupplierName'
       end    
       item
@@ -97,19 +96,14 @@ object frmSuppliersTable: TfrmSuppliersTable
         FieldName = 'Address1'
       end    
       item
-        Title.Caption = 'Address 2'
+        Title.Caption = 'Address2'
         FieldName = 'Address2'
-      end    
-      item
-        Title.Caption = 'Title'
       end>
-    DataSource = DataSource1
     TabOrder = 7
   end
-  object SQLite3Connection1: TSQLite3Connection
+  object SupplierDBConnection: TSQLite3Connection
     Connected = False
     LoginPrompt = False
-    DatabaseName = 'C:\Users\Hew\Documents\Programming\Programming Projects\Lazarus\RVMasterLog Development\Working Copy\RVMasterLog\ApplicationDB.sl3'
     KeepConnection = False
     Transaction = SQLTransaction1
     left = 72
@@ -117,7 +111,7 @@ object frmSuppliersTable: TfrmSuppliersTable
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
-    Database = SQLite3Connection1
+    Database = SupplierDBConnection
     left = 232
     top = 32
   end
@@ -129,11 +123,10 @@ object frmSuppliersTable: TfrmSuppliersTable
       end>
     Params = <>
     left = 344
-    top = 40
+    top = 32
   end
   object DataSource1: TDataSource
-    DataSet = SQLQuery1
-    left = 456
-    top = 40
+    left = 439
+    top = 32
   end
 end
