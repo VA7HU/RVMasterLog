@@ -23,7 +23,7 @@ interface
 
 uses
   Classes, FileUtil, SysUtils, sqlite3conn, sqldb, db, Forms, Controls,
-  Graphics, Dialogs, Buttons, DBCtrls, DBGrids;
+  Graphics, Dialogs, Buttons, DBCtrls, DBGrids, StdCtrls, ComCtrls;
   // Application Units
   // HULib Units
 
@@ -43,13 +43,22 @@ type
   TfrmSuppliersTable = class(TForm)
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
-    bbtNew: TBitBtn;
-    bbtEdit: TBitBtn;
-    bbtDelete: TBitBtn;
     DataSource1: TDataSource;
-    DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
+    dbeAddress1: TDBEdit;
+    dbeAddress2: TDBEdit;
+    dbeCity: TDBEdit;
+    dbePostalCode: TDBEdit;
+    dbeProvState: TDBEdit;
+    dbeID: TDBEdit;
     DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    StatusBar1: TStatusBar;
     SupplierDBConnection: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
