@@ -15,7 +15,7 @@ unit SuppliersTable;
 //
 // Ver. : 1.0.0
 //
-// Date : 7 Jun 2019
+// Date : 8 Jun 2019
 //
 //========================================================================================
 
@@ -23,7 +23,7 @@ interface
 
 uses
   Classes, FileUtil, SysUtils, sqlite3conn, sqldb, db, Forms, Controls,
-  Graphics, Dialogs, Buttons, DBCtrls, DBGrids, StdCtrls, ComCtrls;
+  Graphics, Dialogs, Buttons, DBCtrls, DBGrids, StdCtrls, ComCtrls, ExtCtrls;
   // Application Units
   // HULib Units
 
@@ -43,11 +43,20 @@ type
   TfrmSuppliersTable = class(TForm)
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
-    ContactsTableQuery: TSQLQuery;
-    ContactsTableDataSource: TDataSource;
-    dbgContactsTable: TDBGrid;
+    dbeC1Name: TDBEdit;
+    dbeGenDept: TDBEdit;
+    dbeGenName: TDBEdit;
+    dbeGenName2: TDBEdit;
+    dbeGenName3: TDBEdit;
+    dbeGenEmail: TDBEdit;
+    dbeGenPhone1: TDBEdit;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    pnlContacts: TPanel;
     SupplierTableDataSource: TDataSource;
-    dbcContacts: TDBComboBox;
     dbeAddress1: TDBEdit;
     dbeAddress2: TDBEdit;
     dbeCity: TDBEdit;
@@ -66,6 +75,7 @@ type
     SupplierDBConnection: TSQLite3Connection;
     SupplierTableQuery: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
+    procedure dbeGenEmailChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -121,6 +131,10 @@ const
 //========================================================================================
 //          CONTROL ROUTINES
 //========================================================================================
+procedure TfrmSuppliersTable.dbeGenEmailChange(Sender: TObject);
+begin
+  Hint:=dbeGenEmail.Text;
+end;
 
 //========================================================================================
 //          FILE ROUTINES
@@ -167,22 +181,9 @@ begin
   SQLTransaction1.Active := True;
   SupplierTableQuery.Open;
 
-  //  Contacts Table
-
-  ContactsTableQuery.DataBase := SupplierDBConnection;
-  ContactsTableQuery.Active := False;
-
-  ContactsTableDataSource.DataSet := ContactsTableQuery;
-
-  dbgContactsTable.DataSource := ContactsTableDataSource;
-
-  ContactsTableQuery.SQL.Text := 'select * from ContactsTable';
-  ContactsTableQuery.Transaction := SQLTransaction1;
-
   SupplierDBConnection.Open;
   SQLTransaction1.Active := True;
   SupplierTableQuery.Open;
-  ContactsTableQuery.Open;
 
 end;// procedure TfrmSuppliersTable.FormShow
 
