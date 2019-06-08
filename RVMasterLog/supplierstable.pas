@@ -43,14 +43,18 @@ type
   TfrmSuppliersTable = class(TForm)
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
-    DataSource1: TDataSource;
+    ContactsTableQuery: TSQLQuery;
+    ContactsTableDataSource: TDataSource;
+    dbgContactsTable: TDBGrid;
+    SupplierTableDataSource: TDataSource;
+    dbcContacts: TDBComboBox;
     dbeAddress1: TDBEdit;
     dbeAddress2: TDBEdit;
     dbeCity: TDBEdit;
     dbePostalCode: TDBEdit;
     dbeProvState: TDBEdit;
     dbeID: TDBEdit;
-    DBGrid1: TDBGrid;
+    dbgSuppliersTable: TDBGrid;
     DBNavigator1: TDBNavigator;
     Label1: TLabel;
     Label2: TLabel;
@@ -60,7 +64,7 @@ type
     Label6: TLabel;
     StatusBar1: TStatusBar;
     SupplierDBConnection: TSQLite3Connection;
-    SQLQuery1: TSQLQuery;
+    SupplierTableQuery: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -147,19 +151,38 @@ begin
 
   SQLTransaction1.Active := False;
 
-  SQLQuery1.DataBase := SupplierDBConnection;
-  SQLQuery1.Active := False;
+  //  Supplier Table
 
-  DataSource1.DataSet := SQLQuery1;
+  SupplierTableQuery.DataBase := SupplierDBConnection;
+  SupplierTableQuery.Active := False;
 
-  DBGrid1.DataSource := DataSource1;
+  SupplierTableDataSource.DataSet := SupplierTableQuery;
 
-  SQLQuery1.SQL.Text := 'select * from SuppliersTable';
-  SQLQuery1.Transaction := SQLTransaction1;
+  dbgSuppliersTable.DataSource := SupplierTableDataSource;
+
+  SupplierTableQuery.SQL.Text := 'select * from SuppliersTable';
+  SupplierTableQuery.Transaction := SQLTransaction1;
 
   SupplierDBConnection.Open;
   SQLTransaction1.Active := True;
-  SQLQuery1.Open;
+  SupplierTableQuery.Open;
+
+  //  Contacts Table
+
+  ContactsTableQuery.DataBase := SupplierDBConnection;
+  ContactsTableQuery.Active := False;
+
+  ContactsTableDataSource.DataSet := ContactsTableQuery;
+
+  dbgContactsTable.DataSource := ContactsTableDataSource;
+
+  ContactsTableQuery.SQL.Text := 'select * from ContactsTable';
+  ContactsTableQuery.Transaction := SQLTransaction1;
+
+  SupplierDBConnection.Open;
+  SQLTransaction1.Active := True;
+  SupplierTableQuery.Open;
+  ContactsTableQuery.Open;
 
 end;// procedure TfrmSuppliersTable.FormShow
 

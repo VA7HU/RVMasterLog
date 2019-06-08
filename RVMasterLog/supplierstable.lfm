@@ -1,11 +1,11 @@
 object frmSuppliersTable: TfrmSuppliersTable
-  Left = 316
+  Left = 278
   Height = 484
-  Top = 119
-  Width = 696
+  Top = 143
+  Width = 729
   Caption = 'frmSuppliersTable'
   ClientHeight = 484
-  ClientWidth = 696
+  ClientWidth = 729
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -38,13 +38,13 @@ object frmSuppliersTable: TfrmSuppliersTable
     Top = 136
     Width = 40
     DataField = 'ID'
-    DataSource = DataSource1
+    DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
     TabOrder = 2
   end
-  object DBGrid1: TDBGrid
-    Left = 168
+  object dbgSuppliersTable: TDBGrid
+    Left = 24
     Height = 100
     Top = 16
     Width = 336
@@ -81,7 +81,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     Top = 168
     Width = 80
     DataField = 'Address1'
-    DataSource = DataSource1
+    DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
     TabOrder = 4
@@ -100,7 +100,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     ChildSizing.ControlsPerLine = 100
     ClientHeight = 25
     ClientWidth = 241
-    DataSource = DataSource1
+    DataSource = SupplierTableDataSource
     Options = []
     TabOrder = 5
   end
@@ -118,7 +118,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     Top = 200
     Width = 80
     DataField = 'Address2'
-    DataSource = DataSource1
+    DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
     TabOrder = 6
@@ -127,7 +127,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     Left = 0
     Height = 23
     Top = 461
-    Width = 696
+    Width = 729
     Panels = <>
   end
   object Label4: TLabel
@@ -144,7 +144,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     Top = 240
     Width = 80
     DataField = 'City'
-    DataSource = DataSource1
+    DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
     TabOrder = 8
@@ -163,7 +163,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     Top = 272
     Width = 80
     DataField = 'ProvState'
-    DataSource = DataSource1
+    DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
     TabOrder = 9
@@ -182,10 +182,39 @@ object frmSuppliersTable: TfrmSuppliersTable
     Top = 304
     Width = 80
     DataField = 'PostalCode'
-    DataSource = DataSource1
+    DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
     TabOrder = 10
+  end
+  object dbcContacts: TDBComboBox
+    Left = 281
+    Height = 23
+    Top = 178
+    Width = 100
+    DataSource = SupplierTableDataSource
+    ItemHeight = 15
+    MaxLength = 0
+    TabOrder = 11
+  end
+  object dbgContactsTable: TDBGrid
+    Left = 392
+    Height = 100
+    Top = 16
+    Width = 200
+    Color = clWindow
+    Columns = <    
+      item
+        Alignment = taLeftJustify
+        Title.Alignment = taCenter
+        Title.Caption = 'Name'
+        FieldName = 'Name'
+      end    
+      item
+        Title.Caption = 'Dept'
+        FieldName = 'Dept'
+      end>
+    TabOrder = 12
   end
   object SupplierDBConnection: TSQLite3Connection
     Connected = False
@@ -201,7 +230,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     left = 648
     top = 256
   end
-  object SQLQuery1: TSQLQuery
+  object SupplierTableQuery: TSQLQuery
     FieldDefs = <    
       item
         Name = 'SQLQuery1SQLDB1'
@@ -211,8 +240,18 @@ object frmSuppliersTable: TfrmSuppliersTable
     left = 528
     top = 320
   end
-  object DataSource1: TDataSource
+  object SupplierTableDataSource: TDataSource
     left = 648
     top = 320
+  end
+  object ContactsTableQuery: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    left = 528
+    top = 384
+  end
+  object ContactsTableDataSource: TDataSource
+    left = 648
+    top = 384
   end
 end
