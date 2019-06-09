@@ -308,6 +308,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     object dbeGenEmail: TDBEdit
       Left = 24
       Height = 23
+      Hint = 'Test Hint'
       Top = 168
       Width = 100
       DataField = 'GenEmail'
@@ -317,7 +318,6 @@ object frmSuppliersTable: TfrmSuppliersTable
       ParentShowHint = False
       ShowHint = True
       TabOrder = 6
-      OnChange = dbeGenEmailChange
     end
   end
   object SupplierDBConnection: TSQLite3Connection

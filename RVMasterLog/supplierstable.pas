@@ -75,7 +75,7 @@ type
     SupplierDBConnection: TSQLite3Connection;
     SupplierTableQuery: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
-    procedure dbeGenEmailChange(Sender: TObject);
+//    procedure dbeGenEmailChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -131,10 +131,10 @@ const
 //========================================================================================
 //          CONTROL ROUTINES
 //========================================================================================
-procedure TfrmSuppliersTable.dbeGenEmailChange(Sender: TObject);
+{procedure TfrmSuppliersTable.dbeGenEmailChange(Sender: TObject);
 begin
-  Hint:=dbeGenEmail.Text;
-end;// procedure TfrmSuppliersTable.dbeGenEmailChange
+ // Hint:=dbeGenEmail.Text;
+end;// procedure TfrmSuppliersTable.dbeGenEmailChange }
 
 //========================================================================================
 //          FILE ROUTINES
@@ -153,11 +153,15 @@ end;// procedure TfrmSuppliersTable.FormClose
 procedure TfrmSuppliersTable.FormCreate(Sender: TObject);
 begin
 
+  //dbeGenEmail.Hint := dbeGenEmail.Text;
+
 end;// procedure TfrmSuppliersTable.FormCreate
 
 //========================================================================================
 procedure TfrmSuppliersTable.FormShow(Sender: TObject);
 begin
+
+ // dbeGenEmail.Hint := dbeGenEmail.Text;
 
   SupplierDBConnection.DatabaseName := cstrSuppliersDatabaseName;
   SupplierDBConnection.Transaction := SQLTransaction1;
