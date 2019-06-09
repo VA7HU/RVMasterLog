@@ -1,19 +1,20 @@
 object frmSuppliersTable: TfrmSuppliersTable
-  Left = 198
-  Height = 484
-  Top = 116
-  Width = 951
+  Left = 158
+  Height = 433
+  Top = 118
+  Width = 805
+  BorderStyle = bsDialog
   Caption = 'frmSuppliersTable'
-  ClientHeight = 484
-  ClientWidth = 951
+  ClientHeight = 433
+  ClientWidth = 805
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '2.0.0.4'
   object BitBtn1: TBitBtn
-    Left = 280
+    Left = 600
     Height = 30
-    Top = 424
+    Top = 376
     Width = 75
     Default = True
     DefaultCaption = True
@@ -22,9 +23,9 @@ object frmSuppliersTable: TfrmSuppliersTable
     TabOrder = 0
   end
   object BitBtn2: TBitBtn
-    Left = 376
+    Left = 701
     Height = 30
-    Top = 424
+    Top = 376
     Width = 75
     Cancel = True
     DefaultCaption = True
@@ -41,7 +42,10 @@ object frmSuppliersTable: TfrmSuppliersTable
     DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 2
+    OnChange = dbeIDChange
   end
   object dbgSuppliersTable: TDBGrid
     Left = 256
@@ -84,12 +88,15 @@ object frmSuppliersTable: TfrmSuppliersTable
     DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 4
+    OnChange = dbeAddress1Change
   end
   object DBNavigator1: TDBNavigator
-    Left = 16
+    Left = 152
     Height = 25
-    Top = 424
+    Top = 368
     Width = 241
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -121,13 +128,16 @@ object frmSuppliersTable: TfrmSuppliersTable
     DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 6
+    OnChange = dbeAddress2Change
   end
   object StatusBar1: TStatusBar
     Left = 0
     Height = 23
-    Top = 461
-    Width = 951
+    Top = 410
+    Width = 805
     Panels = <>
   end
   object Label4: TLabel
@@ -147,7 +157,10 @@ object frmSuppliersTable: TfrmSuppliersTable
     DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 8
+    OnChange = dbeCityChange
   end
   object Label5: TLabel
     Left = 24
@@ -166,7 +179,10 @@ object frmSuppliersTable: TfrmSuppliersTable
     DataSource = SupplierTableDataSource
     CharCase = ecNormal
     MaxLength = 0
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 9
+    OnChange = dbeProvStateChange
   end
   object Label6: TLabel
     Left = 20
@@ -186,15 +202,16 @@ object frmSuppliersTable: TfrmSuppliersTable
     CharCase = ecNormal
     MaxLength = 0
     TabOrder = 10
+    OnChange = dbePostalCodeChange
   end
   object pnlContacts: TPanel
     Left = 291
     Height = 218
     Top = 136
-    Width = 573
+    Width = 485
     BevelInner = bvLowered
     ClientHeight = 218
-    ClientWidth = 573
+    ClientWidth = 485
     TabOrder = 11
     object Label7: TLabel
       Left = 14
@@ -224,9 +241,12 @@ object frmSuppliersTable: TfrmSuppliersTable
       DataSource = SupplierTableDataSource
       CharCase = ecNormal
       MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 0
+      OnChange = dbeC1NameChange
     end
-    object dbeGenName2: TDBEdit
+    object dbeC2Name: TDBEdit
       Left = 248
       Height = 23
       Top = 72
@@ -235,9 +255,12 @@ object frmSuppliersTable: TfrmSuppliersTable
       DataSource = SupplierTableDataSource
       CharCase = ecNormal
       MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 1
+      OnChange = dbeC2NameChange
     end
-    object dbeGenName3: TDBEdit
+    object dbeC3Name: TDBEdit
       Left = 360
       Height = 23
       Top = 72
@@ -246,7 +269,10 @@ object frmSuppliersTable: TfrmSuppliersTable
       DataSource = SupplierTableDataSource
       CharCase = ecNormal
       MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 2
+      OnChange = dbeC3NameChange
     end
     object Label9: TLabel
       Left = 136
@@ -260,8 +286,8 @@ object frmSuppliersTable: TfrmSuppliersTable
       Left = 232
       Height = 15
       Top = 48
-      Width = 47
-      Caption = 'Contac 2'
+      Width = 51
+      Caption = 'Contact 2'
       ParentColor = False
     end
     object Label11: TLabel
@@ -281,7 +307,10 @@ object frmSuppliersTable: TfrmSuppliersTable
       DataSource = SupplierTableDataSource
       CharCase = ecNormal
       MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 3
+      OnChange = dbeGenNameChange
     end
     object dbeGenDept: TDBEdit
       Left = 24
@@ -292,9 +321,12 @@ object frmSuppliersTable: TfrmSuppliersTable
       DataSource = SupplierTableDataSource
       CharCase = ecNormal
       MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 4
+      OnChange = dbeGenDeptChange
     end
-    object dbeGenPhone1: TDBEdit
+    object dbeGenPhone: TDBEdit
       Left = 24
       Height = 23
       Top = 136
@@ -303,12 +335,14 @@ object frmSuppliersTable: TfrmSuppliersTable
       DataSource = SupplierTableDataSource
       CharCase = ecNormal
       MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 5
+      OnChange = dbeGenPhoneChange
     end
     object dbeGenEmail: TDBEdit
       Left = 24
       Height = 23
-      Hint = 'Test'
       Top = 168
       Width = 100
       DataField = 'GenEmail'
@@ -318,6 +352,133 @@ object frmSuppliersTable: TfrmSuppliersTable
       ParentShowHint = False
       ShowHint = True
       TabOrder = 6
+      OnChange = dbeGenEmailChange
+    end
+    object dbeC1Dept: TDBEdit
+      Left = 136
+      Height = 23
+      Top = 104
+      Width = 100
+      DataField = 'C1Dept'
+      DataSource = SupplierTableDataSource
+      CharCase = ecNormal
+      MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 7
+      OnChange = dbeC1DeptChange
+    end
+    object dbeC1Phone: TDBEdit
+      Left = 136
+      Height = 23
+      Top = 136
+      Width = 100
+      DataField = 'C1Phone'
+      DataSource = SupplierTableDataSource
+      CharCase = ecNormal
+      MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 8
+      OnChange = dbeC1PhoneChange
+    end
+    object dbeC1Email: TDBEdit
+      Left = 136
+      Height = 23
+      Top = 168
+      Width = 100
+      DataField = 'C1Name'
+      DataSource = SupplierTableDataSource
+      CharCase = ecNormal
+      MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 9
+      OnChange = dbeC1EmailChange
+    end
+    object dbeC2Dept: TDBEdit
+      Left = 248
+      Height = 23
+      Top = 104
+      Width = 100
+      DataField = 'C2Dept'
+      DataSource = SupplierTableDataSource
+      CharCase = ecNormal
+      MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 10
+      OnChange = dbeC2DeptChange
+    end
+    object dbeC2Phone: TDBEdit
+      Left = 248
+      Height = 23
+      Top = 136
+      Width = 100
+      DataField = 'C2Phone'
+      DataSource = SupplierTableDataSource
+      CharCase = ecNormal
+      MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 11
+      OnChange = dbeC2PhoneChange
+    end
+    object dbeC2Email: TDBEdit
+      Left = 248
+      Height = 23
+      Top = 168
+      Width = 100
+      DataField = 'C2Email'
+      DataSource = SupplierTableDataSource
+      CharCase = ecNormal
+      MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 12
+      OnChange = dbeC2EmailChange
+    end
+    object dbeC3Dept: TDBEdit
+      Left = 360
+      Height = 23
+      Top = 104
+      Width = 100
+      DataField = 'C3Dept'
+      DataSource = SupplierTableDataSource
+      CharCase = ecNormal
+      MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 13
+      OnChange = dbeC3DeptChange
+    end
+    object dbeC3Phone: TDBEdit
+      Left = 360
+      Height = 23
+      Top = 136
+      Width = 100
+      DataField = 'C3Phone'
+      DataSource = SupplierTableDataSource
+      CharCase = ecNormal
+      MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 14
+      OnChange = dbeC3PhoneChange
+    end
+    object dbeC3Email: TDBEdit
+      Left = 360
+      Height = 23
+      Top = 168
+      Width = 100
+      DataField = 'C3Email'
+      DataSource = SupplierTableDataSource
+      CharCase = ecNormal
+      MaxLength = 0
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 15
+      OnChange = dbeC3EmailChange
     end
   end
   object SupplierDBConnection: TSQLite3Connection
@@ -325,14 +486,14 @@ object frmSuppliersTable: TfrmSuppliersTable
     LoginPrompt = False
     KeepConnection = False
     Transaction = SQLTransaction1
-    left = 56
-    top = 368
+    left = 88
+    top = 16
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
     Database = SupplierDBConnection
-    left = 184
-    top = 368
+    left = 88
+    top = 72
   end
   object SupplierTableQuery: TSQLQuery
     FieldDefs = <    
@@ -341,11 +502,11 @@ object frmSuppliersTable: TfrmSuppliersTable
         DataType = ftUnknown
       end>
     Params = <>
-    left = 296
-    top = 368
+    left = 672
+    top = 16
   end
   object SupplierTableDataSource: TDataSource
-    left = 424
-    top = 368
+    left = 672
+    top = 80
   end
 end
