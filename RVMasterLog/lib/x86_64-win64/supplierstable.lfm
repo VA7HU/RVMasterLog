@@ -1,5 +1,5 @@
 object frmSuppliersTable: TfrmSuppliersTable
-  Left = 158
+  Left = 169
   Height = 433
   Top = 118
   Width = 805
@@ -15,7 +15,7 @@ object frmSuppliersTable: TfrmSuppliersTable
   object BitBtn1: TBitBtn
     Left = 600
     Height = 30
-    Top = 376
+    Top = 368
     Width = 75
     Default = True
     DefaultCaption = True
@@ -24,9 +24,9 @@ object frmSuppliersTable: TfrmSuppliersTable
     TabOrder = 0
   end
   object BitBtn2: TBitBtn
-    Left = 701
+    Left = 696
     Height = 30
-    Top = 376
+    Top = 368
     Width = 75
     Cancel = True
     DefaultCaption = True
@@ -35,13 +35,15 @@ object frmSuppliersTable: TfrmSuppliersTable
     TabOrder = 1
   end
   object dbeID: TDBEdit
-    Left = 112
+    Left = 96
     Height = 23
-    Top = 136
+    Top = 96
     Width = 40
     DataField = 'ID'
     DataSource = SupplierTableDataSource
+    ReadOnly = True
     CharCase = ecNormal
+    Color = 13290239
     MaxLength = 0
     ParentShowHint = False
     ShowHint = True
@@ -65,15 +67,15 @@ object frmSuppliersTable: TfrmSuppliersTable
     TabOrder = 3
   end
   object Label1: TLabel
-    Left = 24
+    Left = 16
     Height = 15
-    Top = 144
+    Top = 100
     Width = 66
     Caption = 'Supplier ID : '
     ParentColor = False
   end
   object Label2: TLabel
-    Left = 24
+    Left = 16
     Height = 15
     Top = 172
     Width = 60
@@ -81,13 +83,14 @@ object frmSuppliersTable: TfrmSuppliersTable
     ParentColor = False
   end
   object dbeAddress1: TDBEdit
-    Left = 112
+    Left = 96
     Height = 23
     Top = 168
     Width = 160
     DataField = 'Address1'
     DataSource = SupplierTableDataSource
     CharCase = ecNormal
+    Color = clInfoBk
     MaxLength = 0
     ParentShowHint = False
     ShowHint = True
@@ -95,9 +98,9 @@ object frmSuppliersTable: TfrmSuppliersTable
     OnChange = dbeAddress1Change
   end
   object DBNavigator1: TDBNavigator
-    Left = 152
+    Left = 256
     Height = 25
-    Top = 368
+    Top = 373
     Width = 241
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -110,20 +113,23 @@ object frmSuppliersTable: TfrmSuppliersTable
     ClientWidth = 241
     DataSource = SupplierTableDataSource
     Options = []
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 5
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]
   end
   object Label3: TLabel
-    Left = 24
+    Left = 16
     Height = 15
-    Top = 202
+    Top = 207
     Width = 60
     Caption = 'Address 2 : '
     ParentColor = False
   end
   object dbeAddress2: TDBEdit
-    Left = 112
+    Left = 96
     Height = 23
-    Top = 200
+    Top = 203
     Width = 160
     DataField = 'Address2'
     DataSource = SupplierTableDataSource
@@ -142,21 +148,22 @@ object frmSuppliersTable: TfrmSuppliersTable
     Panels = <>
   end
   object Label4: TLabel
-    Left = 24
+    Left = 16
     Height = 15
-    Top = 240
+    Top = 244
     Width = 30
     Caption = 'City : '
     ParentColor = False
   end
   object dbeCity: TDBEdit
-    Left = 112
+    Left = 96
     Height = 23
-    Top = 232
+    Top = 240
     Width = 125
     DataField = 'City'
     DataSource = SupplierTableDataSource
     CharCase = ecNormal
+    Color = clInfoBk
     MaxLength = 0
     ParentShowHint = False
     ShowHint = True
@@ -164,21 +171,22 @@ object frmSuppliersTable: TfrmSuppliersTable
     OnChange = dbeCityChange
   end
   object Label5: TLabel
-    Left = 24
+    Left = 16
     Height = 15
-    Top = 272
+    Top = 284
     Width = 64
     Caption = 'Prov/State : '
     ParentColor = False
   end
   object dbeProvState: TDBEdit
-    Left = 112
+    Left = 96
     Height = 23
-    Top = 264
+    Top = 280
     Width = 125
     DataField = 'ProvState'
     DataSource = SupplierTableDataSource
     CharCase = ecNormal
+    Color = clInfoBk
     MaxLength = 0
     ParentShowHint = False
     ShowHint = True
@@ -186,21 +194,22 @@ object frmSuppliersTable: TfrmSuppliersTable
     OnChange = dbeProvStateChange
   end
   object Label6: TLabel
-    Left = 20
+    Left = 16
     Height = 15
-    Top = 296
+    Top = 324
     Width = 72
     Caption = 'Postal Code : '
     ParentColor = False
   end
   object dbePostalCode: TDBEdit
-    Left = 112
+    Left = 96
     Height = 23
-    Top = 296
+    Top = 320
     Width = 80
     DataField = 'PostalCode'
     DataSource = SupplierTableDataSource
     CharCase = ecNormal
+    Color = clInfoBk
     MaxLength = 0
     TabOrder = 10
     OnChange = dbePostalCodeChange
@@ -482,18 +491,41 @@ object frmSuppliersTable: TfrmSuppliersTable
       OnChange = dbeC3EmailChange
     end
   end
+  object dbeSupplierName: TDBEdit
+    Left = 96
+    Height = 23
+    Top = 132
+    Width = 80
+    DataField = 'SupplierName'
+    DataSource = SupplierTableDataSource
+    CharCase = ecNormal
+    Color = clInfoBk
+    MaxLength = 0
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 12
+    OnChange = dbeSupplierNameChange
+  end
+  object Label12: TLabel
+    Left = 16
+    Height = 15
+    Top = 136
+    Width = 41
+    Caption = 'Name : '
+    ParentColor = False
+  end
   object SupplierDBConnection: TSQLite3Connection
     Connected = False
     LoginPrompt = False
     KeepConnection = False
     Transaction = SQLTransaction1
-    left = 88
+    left = 624
     top = 16
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
     Database = SupplierDBConnection
-    left = 88
+    left = 624
     top = 72
   end
   object SupplierTableQuery: TSQLQuery
@@ -503,11 +535,11 @@ object frmSuppliersTable: TfrmSuppliersTable
         DataType = ftUnknown
       end>
     Params = <>
-    left = 672
+    left = 736
     top = 16
   end
   object SupplierTableDataSource: TDataSource
-    left = 672
-    top = 80
+    left = 736
+    top = 72
   end
 end

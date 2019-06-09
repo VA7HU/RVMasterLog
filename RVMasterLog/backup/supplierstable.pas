@@ -50,6 +50,7 @@ type
     dbeC3Dept: TDBEdit;
     dbeC3Email: TDBEdit;
     dbeC3Phone: TDBEdit;
+    dbeSupplierName: TDBEdit;
     dbeGenDept: TDBEdit;
     dbeGenName: TDBEdit;
     dbeC2Name: TDBEdit;
@@ -61,6 +62,7 @@ type
     dbeGenPhone: TDBEdit;
     Label10: TLabel;
     Label11: TLabel;
+    Label12: TLabel;
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
@@ -106,6 +108,7 @@ type
     procedure dbeIDChange(Sender: TObject);
     procedure dbePostalCodeChange(Sender: TObject);
     procedure dbeProvStateChange(Sender: TObject);
+    procedure dbeSupplierNameChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -292,6 +295,12 @@ begin
 end;// procedure TfrmSuppliersTable.dbePostalCodeChange
 
 //========================================================================================
+procedure TfrmSuppliersTable.dbeSupplierNameChange(Sender: TObject);
+begin
+  dbeSupplierName.Hint := '   ' + dbeSupplierName.Text + '   ';
+end;// procedure TfrmSuppliersTable.dbeSupplierNameChange
+
+//========================================================================================
 //          FILE ROUTINES
 //========================================================================================
 
@@ -301,6 +310,10 @@ end;// procedure TfrmSuppliersTable.dbePostalCodeChange
 procedure TfrmSuppliersTable.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
+
+  SupplierTableQuery.Close;
+  SQLTransaction1.Active := False;
+  SupplierDBConnection.Close;
 
 end;// procedure TfrmSuppliersTable.FormClose
 
@@ -336,9 +349,9 @@ begin
   SQLTransaction1.Active := True;
   SupplierTableQuery.Open;
 
-  SupplierDBConnection.Open;
+{  SupplierDBConnection.Open;
   SQLTransaction1.Active := True;
-  SupplierTableQuery.Open;
+  SupplierTableQuery.Open;  }
 
 end;// procedure TfrmSuppliersTable.FormShow
 
