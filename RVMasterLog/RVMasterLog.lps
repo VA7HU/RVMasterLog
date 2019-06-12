@@ -34,7 +34,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="9"/>
         <CursorPos X="16" Y="20"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
@@ -62,9 +62,10 @@
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUConstants"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="44" Y="7"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="17" Y="17"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
@@ -80,9 +81,11 @@
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUValidations"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="13" Y="17"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="361"/>
+        <CursorPos Y="376"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HUNagScreen\hunagscreen.lfm"/>
@@ -91,7 +94,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="125"/>
+        <UsageCount Value="129"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit8>
       <Unit9>
@@ -104,7 +107,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="61"/>
         <CursorPos X="48" Y="119"/>
-        <UsageCount Value="125"/>
+        <UsageCount Value="129"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit9>
@@ -115,7 +118,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="125"/>
+        <UsageCount Value="129"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit10>
       <Unit11>
@@ -126,9 +129,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HURegistration"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="293"/>
-        <CursorPos Y="313"/>
-        <UsageCount Value="125"/>
+        <TopLine Value="418"/>
+        <CursorPos X="35" Y="426"/>
+        <UsageCount Value="129"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit11>
@@ -142,7 +145,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="69"/>
         <CursorPos Y="64"/>
-        <UsageCount Value="171"/>
+        <UsageCount Value="175"/>
       </Unit12>
       <Unit13>
         <Filename Value="provtable.pas"/>
@@ -153,7 +156,7 @@
         <UnitName Value="ProvTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="17"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="91"/>
       </Unit13>
       <Unit14>
         <Filename Value="manufacturerstable.pas"/>
@@ -165,7 +168,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="202"/>
         <CursorPos Y="222"/>
-        <UsageCount Value="88"/>
+        <UsageCount Value="92"/>
       </Unit14>
       <Unit15>
         <Filename Value="logbook.pas"/>
@@ -174,10 +177,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Logbook"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="76"/>
         <CursorPos X="35" Y="87"/>
-        <UsageCount Value="64"/>
+        <UsageCount Value="68"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit15>
@@ -190,8 +193,9 @@
         <UnitName Value="SuppliersTable"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <CursorPos X="13" Y="18"/>
-        <UsageCount Value="54"/>
+        <TopLine Value="352"/>
+        <CursorPos X="25" Y="365"/>
+        <UsageCount Value="58"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit16>
@@ -578,123 +582,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="163" Column="6" TopLine="142"/>
+        <Caret Line="271" TopLine="256"/>
       </Position1>
       <Position2>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="164" Column="6" TopLine="143"/>
+        <Caret Line="168" Column="3" TopLine="166"/>
       </Position2>
       <Position3>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="165" Column="6" TopLine="144"/>
+        <Caret Line="174" Column="3" TopLine="167"/>
       </Position3>
       <Position4>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="166" Column="6" TopLine="145"/>
+        <Caret Line="246" Column="3" TopLine="244"/>
       </Position4>
       <Position5>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="167" Column="6" TopLine="146"/>
+        <Caret Line="292" Column="3" TopLine="290"/>
       </Position5>
       <Position6>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="168" Column="6" TopLine="147"/>
+        <Caret Line="249" Column="55" TopLine="229"/>
       </Position6>
       <Position7>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="206" TopLine="193"/>
+        <Caret Line="291" Column="46" TopLine="270"/>
       </Position7>
       <Position8>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="182" Column="3" TopLine="180"/>
+        <Caret Line="289" Column="49" TopLine="276"/>
       </Position8>
       <Position9>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="178" Column="3" TopLine="176"/>
+        <Caret Line="293" TopLine="275"/>
       </Position9>
       <Position10>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="194" Column="3" TopLine="177"/>
+        <Caret Line="310" Column="3" TopLine="307"/>
       </Position10>
       <Position11>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="189" TopLine="165"/>
+        <Caret Line="317" Column="3" TopLine="314"/>
       </Position11>
       <Position12>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="208" TopLine="195"/>
+        <Caret Line="299" Column="50" TopLine="284"/>
       </Position12>
       <Position13>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="210" Column="3" TopLine="196"/>
+        <Caret Line="320" TopLine="299"/>
       </Position13>
       <Position14>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="206" Column="3" TopLine="197"/>
+        <Caret Line="18" Column="13"/>
       </Position14>
       <Position15>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="222" Column="3" TopLine="198"/>
+        <Caret Line="14" Column="46" TopLine="6"/>
       </Position15>
       <Position16>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="223" Column="40" TopLine="206"/>
+        <Caret Line="337" TopLine="315"/>
       </Position16>
       <Position17>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="264" TopLine="239"/>
+        <Caret Line="324" Column="11" TopLine="312"/>
       </Position17>
       <Position18>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="271" TopLine="256"/>
+        <Caret Line="338" Column="4" TopLine="323"/>
       </Position18>
       <Position19>
-        <Filename Value="supplierstable.pas"/>
-        <Caret Line="168" Column="3" TopLine="166"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
+        <Caret Line="87" Column="29" TopLine="69"/>
       </Position19>
       <Position20>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="174" Column="3" TopLine="167"/>
+        <Caret Line="15" Column="28"/>
       </Position20>
       <Position21>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="246" Column="3" TopLine="244"/>
+        <Caret Line="343" TopLine="328"/>
       </Position21>
       <Position22>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="292" Column="3" TopLine="290"/>
+        <Caret Line="348" TopLine="329"/>
       </Position22>
       <Position23>
-        <Filename Value="supplierstable.pas"/>
-        <Caret Line="249" Column="55" TopLine="229"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
+        <Caret Line="237" TopLine="224"/>
       </Position23>
       <Position24>
-        <Filename Value="supplierstable.pas"/>
-        <Caret Line="291" Column="46" TopLine="270"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
+        <Caret Line="114" TopLine="97"/>
       </Position24>
       <Position25>
-        <Filename Value="supplierstable.pas"/>
-        <Caret Line="289" Column="49" TopLine="276"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
+        <Caret Line="117" Column="5" TopLine="103"/>
       </Position25>
       <Position26>
-        <Filename Value="supplierstable.pas"/>
-        <Caret Line="293" TopLine="275"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
+        <Caret Line="110" TopLine="92"/>
       </Position26>
       <Position27>
-        <Filename Value="supplierstable.pas"/>
-        <Caret Line="310" Column="3" TopLine="307"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
+        <Caret Line="33" Column="15" TopLine="20"/>
       </Position27>
       <Position28>
-        <Filename Value="supplierstable.pas"/>
-        <Caret Line="317" Column="3" TopLine="314"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
+        <Caret Line="140" TopLine="109"/>
       </Position28>
       <Position29>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="299" Column="50" TopLine="284"/>
+        <Caret Line="361" TopLine="343"/>
       </Position29>
       <Position30>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="320" TopLine="299"/>
+        <Caret Line="362" Column="81" TopLine="348"/>
       </Position30>
     </JumpHistory>
     <RunParams>

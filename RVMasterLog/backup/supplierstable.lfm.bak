@@ -96,6 +96,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     ShowHint = True
     TabOrder = 4
     OnChange = dbeAddress1Change
+    OnKeyPress = dbeAddress1KeyPress
   end
   object DBNavigator1: TDBNavigator
     Left = 256
@@ -140,6 +141,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     ShowHint = True
     TabOrder = 6
     OnChange = dbeAddress2Change
+    OnKeyPress = dbeAddress2KeyPress
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -170,6 +172,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     ShowHint = True
     TabOrder = 8
     OnChange = dbeCityChange
+    OnKeyPress = dbeCityKeyPress
   end
   object Label5: TLabel
     Left = 16
@@ -193,6 +196,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     ShowHint = True
     TabOrder = 9
     OnChange = dbeProvStateChange
+    OnKeyPress = dbeProvStateKeyPress
   end
   object Label6: TLabel
     Left = 16
@@ -214,6 +218,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     MaxLength = 0
     TabOrder = 10
     OnChange = dbePostalCodeChange
+    OnKeyPress = dbePostalCodeKeyPress
   end
   object pnlContacts: TPanel
     Left = 291
@@ -506,6 +511,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     ShowHint = True
     TabOrder = 12
     OnChange = dbeSupplierNameChange
+    OnKeyPress = dbeSupplierNameKeyPress
   end
   object Label12: TLabel
     Left = 16
