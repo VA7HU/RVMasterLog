@@ -15,7 +15,7 @@ unit SuppliersTable;
 //
 // Ver. : 1.0.0
 //
-// Date : 9 Jun 2019
+// Date : 10 Jun 2019
 //
 //========================================================================================
 
@@ -109,6 +109,8 @@ type
     procedure dbePostalCodeChange(Sender: TObject);
     procedure dbeProvStateChange(Sender: TObject);
     procedure dbeSupplierNameChange(Sender: TObject);
+    procedure DBNavigator1BeforeAction(Sender: TObject; Button: TDBNavButtonType
+      );
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -164,6 +166,11 @@ const
 //========================================================================================
 //          CONTROL ROUTINES
 //========================================================================================
+
+//==========
+// dbEdit Routines
+//==========
+
 procedure TfrmSuppliersTable.dbeAddress1Change(Sender: TObject);
 begin
   dbeAddress1.Hint := '   ' + dbeAddress1.Text + '   ';
@@ -299,6 +306,22 @@ procedure TfrmSuppliersTable.dbeSupplierNameChange(Sender: TObject);
 begin
   dbeSupplierName.Hint := '   ' + dbeSupplierName.Text + '   ';
 end;// procedure TfrmSuppliersTable.dbeSupplierNameChange
+
+//==========
+// dbNavigator Routines
+//==========
+procedure TfrmSuppliersTable.DBNavigator1BeforeAction(Sender: TObject;
+  Button: TDBNavButtonType);
+begin
+
+  if Button = nbRefresh then
+  begin
+    SupplierTableQuery.Close;
+    SupplierTableQuery.Open;
+    Abort;
+  end;// if Button = nbRefresh
+
+end;// procedure TfrmSuppliersTable.DBNavigator1BeforeAction
 
 //========================================================================================
 //          FILE ROUTINES

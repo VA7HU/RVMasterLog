@@ -102,6 +102,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     Height = 25
     Top = 373
     Width = 241
+    BeforeAction = DBNavigator1BeforeAction
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
     ChildSizing.EnlargeVertical = crsScaleChilds

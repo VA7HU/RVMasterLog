@@ -102,6 +102,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     Height = 25
     Top = 373
     Width = 241
+    BeforeAction = DBNavigator1BeforeAction
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
     ChildSizing.EnlargeVertical = crsScaleChilds
@@ -116,7 +117,7 @@ object frmSuppliersTable: TfrmSuppliersTable
     ParentShowHint = False
     ShowHint = True
     TabOrder = 5
-    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]
   end
   object Label3: TLabel
     Left = 16
