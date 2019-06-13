@@ -64,7 +64,7 @@
         <UnitName Value="HUConstants"/>
         <EditorIndex Value="7"/>
         <TopLine Value="31"/>
-        <CursorPos X="9" Y="47"/>
+        <CursorPos X="24" Y="40"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -83,8 +83,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="HUValidations"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="233"/>
-        <CursorPos X="10" Y="30"/>
+        <TopLine Value="245"/>
+        <CursorPos X="15" Y="257"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit7>
@@ -95,7 +95,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="132"/>
+        <UsageCount Value="135"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit8>
       <Unit9>
@@ -108,7 +108,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="61"/>
         <CursorPos X="48" Y="119"/>
-        <UsageCount Value="132"/>
+        <UsageCount Value="135"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit9>
@@ -119,7 +119,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="132"/>
+        <UsageCount Value="135"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit10>
       <Unit11>
@@ -132,7 +132,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="418"/>
         <CursorPos X="35" Y="426"/>
-        <UsageCount Value="132"/>
+        <UsageCount Value="135"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit11>
@@ -146,7 +146,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="69"/>
         <CursorPos Y="64"/>
-        <UsageCount Value="178"/>
+        <UsageCount Value="181"/>
       </Unit12>
       <Unit13>
         <Filename Value="provtable.pas"/>
@@ -157,7 +157,7 @@
         <UnitName Value="ProvTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="17"/>
-        <UsageCount Value="94"/>
+        <UsageCount Value="97"/>
       </Unit13>
       <Unit14>
         <Filename Value="manufacturerstable.pas"/>
@@ -169,7 +169,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="202"/>
         <CursorPos Y="222"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="98"/>
       </Unit14>
       <Unit15>
         <Filename Value="logbook.pas"/>
@@ -181,7 +181,7 @@
         <EditorIndex Value="8"/>
         <TopLine Value="76"/>
         <CursorPos X="35" Y="87"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="74"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit15>
@@ -194,9 +194,9 @@
         <UnitName Value="SuppliersTable"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="445"/>
-        <CursorPos Y="462"/>
-        <UsageCount Value="61"/>
+        <TopLine Value="19"/>
+        <CursorPos Y="13"/>
+        <UsageCount Value="64"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit16>
@@ -208,7 +208,7 @@
         <UnitName Value="SuppliersDB"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3"/>
-        <UsageCount Value="199"/>
+        <UsageCount Value="198"/>
       </Unit17>
       <Unit18>
         <Filename Value="suppliersdb.lfm"/>
@@ -216,7 +216,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="25"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit18>
       <Unit19>
@@ -228,7 +228,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="122"/>
         <CursorPos X="41" Y="138"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="41"/>
       </Unit19>
       <Unit20>
         <Filename Value="logbookstable.pas"/>
@@ -239,7 +239,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="14"/>
         <CursorPos X="17" Y="17"/>
-        <UsageCount Value="68"/>
+        <UsageCount Value="67"/>
       </Unit20>
       <Unit21>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
@@ -250,7 +250,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="40"/>
         <CursorPos Y="171"/>
-        <UsageCount Value="167"/>
+        <UsageCount Value="166"/>
       </Unit21>
       <Unit22>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.lfm"/>
@@ -258,7 +258,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="54"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit22>
       <Unit23>
@@ -270,7 +270,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="101"/>
         <CursorPos X="15" Y="116"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="41"/>
       </Unit23>
       <Unit24>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Forms\HUNagScreen Development\HUNagScreen\hunagscreen.lfm"/>
@@ -278,7 +278,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="61"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit24>
       <Unit25>
@@ -290,7 +290,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="54"/>
         <CursorPos Y="76"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="61"/>
       </Unit25>
       <Unit26>
         <Filename Value="hugeodb.pas"/>
@@ -301,7 +301,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="164"/>
         <CursorPos X="21" Y="178"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="26"/>
       </Unit26>
       <Unit27>
         <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
@@ -309,7 +309,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="28"/>
         <CursorPos X="9" Y="39"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="32"/>
       </Unit27>
       <Unit28>
         <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
@@ -317,7 +317,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="88"/>
         <CursorPos X="24" Y="93"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="32"/>
       </Unit28>
       <Unit29>
         <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DirDialogs\HUDirNameEntry\hudirnameentry.pas"/>
@@ -328,7 +328,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="120"/>
         <CursorPos X="24" Y="132"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="14"/>
       </Unit29>
       <Unit30>
         <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
@@ -336,7 +336,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="23"/>
         <CursorPos Y="32"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="13"/>
       </Unit30>
       <Unit31>
         <Filename Value="logbooks.pas"/>
@@ -345,7 +345,7 @@
         <UnitName Value="NewLogbook"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="8"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit31>
       <Unit32>
         <Filename Value="..\..\..\HULibraries Development\Working Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
@@ -353,7 +353,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit32>
       <Unit33>
         <Filename Value="..\..\..\HULibraries Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
@@ -361,7 +361,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit33>
       <Unit34>
         <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUCountryDB Development\HUCountryDB\hucountrydb.lfm"/>
@@ -369,7 +369,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="20"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit34>
       <Unit35>
@@ -381,7 +381,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="89"/>
         <CursorPos X="19" Y="103"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="20"/>
       </Unit35>
       <Unit36>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Forms\HURegister Development\HURegister1\huregister1.lfm"/>
@@ -389,7 +389,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="38"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit36>
       <Unit37>
@@ -399,7 +399,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="38"/>
       </Unit37>
       <Unit38>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Databases\HUDB1 Development\HUDB1.sl3"/>
@@ -407,7 +407,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="34"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit38>
       <Unit39>
@@ -415,14 +415,14 @@
         <UnitName Value="HUConstants"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="15" Y="15"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="32"/>
       </Unit39>
       <Unit40>
         <Filename Value="..\..\..\Common Folders\humessageboxes.pas"/>
         <UnitName Value="HUMessageBoxes"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="29"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="12"/>
       </Unit40>
       <Unit41>
         <Filename Value="humessageboxes.pas"/>
@@ -430,7 +430,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="55"/>
         <CursorPos X="26" Y="62"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="33"/>
       </Unit41>
       <Unit42>
         <Filename Value="huconstants.pas"/>
@@ -438,7 +438,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="57"/>
         <CursorPos X="24" Y="76"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit42>
       <Unit43>
         <Filename Value="C:\lazarus\lcl\dialogs.pp"/>
@@ -446,7 +446,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="686"/>
         <CursorPos X="11" Y="696"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
       </Unit43>
       <Unit44>
         <Filename Value="humesssageboxes.pas"/>
@@ -454,7 +454,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="21"/>
         <CursorPos Y="29"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit44>
       <Unit45>
         <Filename Value="C:\lazarus\lcl\forms.pp"/>
@@ -462,14 +462,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1838"/>
         <CursorPos X="3" Y="1848"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit45>
       <Unit46>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\packages\fcl-db\src\sqldb\sqldb.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3631"/>
         <CursorPos X="25" Y="296"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="4"/>
       </Unit46>
       <Unit47>
         <Filename Value="C:\lazarus\lcl\dbctrls.pp"/>
@@ -477,7 +477,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1166"/>
         <CursorPos X="3" Y="1177"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit47>
       <Unit48>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Forms\HUAppSetup Development\appsetup.lfm"/>
@@ -485,7 +485,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit48>
       <Unit49>
@@ -497,7 +497,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="20"/>
         <CursorPos X="15" Y="31"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
       </Unit49>
       <Unit50>
         <Filename Value="..\..\..\HULibs Development\Workiing Copy\Lazarus Libraries\Dialogs\DB Dialogs\HUdlgCountryDB\hudlgcountrydb.lfm"/>
@@ -505,7 +505,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit50>
       <Unit51>
@@ -514,7 +514,7 @@
         <UnitName Value="HUCountryDB"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="6"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit51>
       <Unit52>
         <Filename Value="Newlogbook.lfm"/>
@@ -522,7 +522,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit52>
       <Unit53>
@@ -530,28 +530,28 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2060"/>
         <CursorPos Y="2071"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit53>
       <Unit54>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\inc\objpash.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="179"/>
         <CursorPos X="23" Y="194"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit54>
       <Unit55>
         <Filename Value="C:\lazarus\lcl\buttons.pp"/>
         <UnitName Value="Buttons"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="3"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit55>
       <Unit56>
         <Filename Value="C:\lazarus\components\lazutils\fileutil.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="334"/>
         <CursorPos Y="345"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit56>
       <Unit57>
         <Filename Value="huregister1.pas"/>
@@ -560,7 +560,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HURegister1"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="13"/>
       </Unit57>
       <Unit58>
         <Filename Value="hucommondatadb.pas"/>
@@ -569,7 +569,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="75"/>
         <CursorPos X="27" Y="95"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="14"/>
       </Unit58>
       <Unit59>
         <Filename Value="C:\lazarus\components\lazutils\laz2_dom.pas"/>
@@ -577,129 +577,129 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1939"/>
         <CursorPos X="14" Y="1952"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit59>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="371" Column="25" TopLine="358"/>
+        <Caret Line="387" Column="91" TopLine="371"/>
       </Position1>
       <Position2>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="362" Column="91" TopLine="355"/>
+        <Caret Line="390" Column="3" TopLine="384"/>
       </Position2>
       <Position3>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="18" Column="52" TopLine="360"/>
+        <Caret Line="398" TopLine="377"/>
       </Position3>
       <Position4>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
-        <Caret Line="355" Column="35" TopLine="355"/>
+        <Filename Value="supplierstable.pas"/>
+        <Caret Line="405" TopLine="389"/>
       </Position4>
       <Position5>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="120" Column="67" TopLine="111"/>
+        <Caret Line="410" Column="19" TopLine="401"/>
       </Position5>
       <Position6>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="379" Column="82" TopLine="366"/>
+        <Caret Line="416" Column="20" TopLine="396"/>
       </Position6>
       <Position7>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="382" Column="56" TopLine="364"/>
+        <Caret Line="414" Column="30" TopLine="408"/>
       </Position7>
       <Position8>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="306" Column="14" TopLine="293"/>
+        <Caret Line="420" TopLine="406"/>
       </Position8>
       <Position9>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="313" TopLine="313"/>
+        <Caret Line="418" Column="19" TopLine="396"/>
       </Position9>
       <Position10>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
-        <Caret Line="372" Column="13" TopLine="360"/>
+        <Filename Value="supplierstable.pas"/>
+        <Caret Line="429" Column="9" TopLine="414"/>
       </Position10>
       <Position11>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
-        <Caret Line="374" Column="24" TopLine="363"/>
+        <Filename Value="supplierstable.pas"/>
+        <Caret Line="433" TopLine="419"/>
       </Position11>
       <Position12>
-        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
-        <Caret Line="373" Column="21" TopLine="362"/>
+        <Filename Value="supplierstable.pas"/>
+        <Caret Line="438" Column="19" TopLine="421"/>
       </Position12>
       <Position13>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="392" Column="19" TopLine="373"/>
+        <Caret Line="445" Column="20" TopLine="433"/>
       </Position13>
       <Position14>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="387" Column="91" TopLine="371"/>
+        <Caret Line="450" Column="16" TopLine="431"/>
       </Position14>
       <Position15>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="390" Column="3" TopLine="384"/>
+        <Caret Line="272" Column="3" TopLine="272"/>
       </Position15>
       <Position16>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="398" TopLine="377"/>
+        <Caret Line="456" TopLine="441"/>
       </Position16>
       <Position17>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="405" TopLine="389"/>
+        <Caret Line="459" Column="20" TopLine="447"/>
       </Position17>
       <Position18>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="410" Column="19" TopLine="401"/>
+        <Caret Line="462" TopLine="445"/>
       </Position18>
       <Position19>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="416" Column="20" TopLine="396"/>
+        <Caret Line="464" TopLine="447"/>
       </Position19>
       <Position20>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="414" Column="30" TopLine="408"/>
+        <Caret Line="463" TopLine="446"/>
       </Position20>
       <Position21>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="420" TopLine="406"/>
+        <Caret Line="469" TopLine="452"/>
       </Position21>
       <Position22>
-        <Filename Value="supplierstable.pas"/>
-        <Caret Line="418" Column="19" TopLine="396"/>
+        <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUValidations Development\huvalidations.pas"/>
+        <Caret Line="257" Column="29" TopLine="256"/>
       </Position22>
       <Position23>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="429" Column="9" TopLine="414"/>
+        <Caret Line="502" Column="17" TopLine="489"/>
       </Position23>
       <Position24>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="433" TopLine="419"/>
+        <Caret Line="527" Column="58" TopLine="515"/>
       </Position24>
       <Position25>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="438" Column="19" TopLine="421"/>
+        <Caret Line="184" Column="12" TopLine="171"/>
       </Position25>
       <Position26>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="445" Column="20" TopLine="433"/>
+        <Caret Line="316" Column="19" TopLine="319"/>
       </Position26>
       <Position27>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="450" Column="16" TopLine="431"/>
+        <Caret Line="317" Column="19" TopLine="132"/>
       </Position27>
       <Position28>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="272" Column="3" TopLine="272"/>
+        <Caret Line="316" Column="19" TopLine="291"/>
       </Position28>
       <Position29>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="456" TopLine="441"/>
+        <Caret Line="317" Column="19" TopLine="292"/>
       </Position29>
       <Position30>
         <Filename Value="supplierstable.pas"/>
-        <Caret Line="459" Column="20" TopLine="447"/>
+        <Caret Line="346" TopLine="322"/>
       </Position30>
     </JumpHistory>
     <RunParams>

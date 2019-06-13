@@ -10,8 +10,7 @@ unit SuppliersTable;
 //
 // Called By : AppSettings : frmSettings.CreateUserDataDirectories
 //
-// Calls : AppSettings : frmAppSettings.pApplicationDB
-//         HUValidations : VaildAddressCharacter
+// Calls : HUValidations : VaildAddressCharacter
 //                         ValidAlphaCharacter
 //                         ValidNameCharacter
 //                         ValidCityCharacter
@@ -31,6 +30,7 @@ interface
 uses
   Classes, FileUtil, SysUtils, sqlite3conn, sqldb, db, Forms, Controls,
   Graphics, Dialogs, Buttons, DBCtrls, DBGrids, StdCtrls, ComCtrls, ExtCtrls,
+  Menus,
   // Application Units
   // HULib Units
   HUValidations;
@@ -48,8 +48,8 @@ type
   { TfrmSuppliersTable }
 
   TfrmSuppliersTable = class(TForm)
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
+    bbtOk: TBitBtn;
+    bbtCancel: TBitBtn;
     dbeC1Name: TDBEdit;
     dbeC1Dept: TDBEdit;
     dbeC1Phone: TDBEdit;
@@ -93,6 +93,8 @@ type
     SupplierDBConnection: TSQLite3Connection;
     SupplierTableQuery: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
+    procedure bbtOkClick(Sender: TObject);
+    procedure bbtCancelClick(Sender: TObject);
     procedure dbeAddress1Change(Sender: TObject);
     procedure dbeAddress1KeyPress(Sender: TObject; var Key: char);
     procedure dbeAddress2Change(Sender: TObject);
@@ -174,6 +176,147 @@ const
 //          PRIVATE ROUTINES
 //========================================================================================
 
+//==================
+//  Field Validation
+//==================
+
+function ValidRecord : Boolean;
+begin
+  Result := False;
+end;// function ValidRecord : Boolean;
+
+//========================================================================================
+function ValidSupplierName : Boolean;
+begin
+  Result := False;
+end;// function ValidSupplierName : Boolean;
+
+//========================================================================================
+function ValidAddress1 : Boolean;
+begin
+  Result := False;
+end;// function ValidAddress1 : Boolean;
+
+//========================================================================================
+function ValidAddress2 : Boolean;
+begin
+  Result := False;
+end;// function ValidAddress2 : Boolean;
+
+//========================================================================================
+function ValidCity : Boolean;
+begin
+  Result := False;
+end;// function ValidCity : Boolean;
+
+//========================================================================================
+function ValidProvState : Boolean;
+begin
+  Result := False;
+end;// function ValidProvState : Boolean;
+
+//========================================================================================
+function ValidPostalCode : Boolean;
+begin
+  Result := False;
+end;// function ValidPostalCode : Boolean;
+
+//========================================================================================
+function ValidGenName : Boolean;
+begin
+  Result := False;
+end;// function ValidGenName : Boolean;
+
+//========================================================================================
+function ValidGenDept : Boolean;
+begin
+  Result := False;
+end;// function ValidGenDept : Boolean;
+
+//========================================================================================
+function ValidGenPhone : Boolean;
+begin
+  Result := False;
+end;// function ValidGenPhone : Boolean;
+
+//========================================================================================
+function ValidGenEmail : Boolean;
+begin
+  Result := False;
+end;// function ValidGenEmail : Boolean;
+
+//========================================================================================
+function ValidC1Name : Boolean;
+begin
+  Result := False;
+end;// function ValidC1Name : Boolean;
+
+//========================================================================================
+function ValidC1Dept : Boolean;
+begin
+  Result := False;
+end;// function ValidC1Dept : Boolean;
+
+//========================================================================================
+function ValidC1Phone : Boolean;
+begin
+  Result := False;
+end;// function ValidC1Phone : Boolean;
+
+//========================================================================================
+function ValidC1Email : Boolean;
+begin
+  Result := False;
+end;// function ValidC1Email : Boolean;
+
+//========================================================================================
+function ValidC2Name : Boolean;
+begin
+  Result := False;
+end;// function ValidC2Name : Boolean;
+
+//========================================================================================
+function ValidC2Dept : Boolean;
+begin
+  Result := False;
+end;// function ValidC2Dept : Boolean;
+
+//========================================================================================
+function ValidC2Phone : Boolean;
+begin
+  Result := False;
+end;// function ValidC2Phone : Boolean;
+
+//========================================================================================
+function ValidC2Email : Boolean;
+begin
+  Result := False;
+end;// function ValidC2Email : Boolean;
+
+//========================================================================================
+function ValidC3Name : Boolean;
+begin
+  Result := False;
+end;// function ValidC3Name : Boolean;
+
+//========================================================================================
+function ValidC3Dept : Boolean;
+begin
+  Result := False;
+end;// function ValidC3Dept : Boolean;
+
+//========================================================================================
+function ValidC3Phone : Boolean;
+begin
+  Result := False;
+end;// function ValidC3Phone : Boolean;
+
+//========================================================================================
+function ValidC3Email : Boolean;
+begin
+  Result := False;
+end;// function ValidC3Email : Boolean;
+
 //========================================================================================
 //          PUBLIC ROUTINES
 //========================================================================================
@@ -189,6 +332,17 @@ const
 //========================================================================================
 //          COMMAND BUTTON ROUTINES
 //========================================================================================
+procedure TfrmSuppliersTable.bbtCancelClick(Sender: TObject);
+begin
+
+end;// procedure TfrmSuppliersTable.BitBtn2Click
+
+//========================================================================================
+procedure TfrmSuppliersTable.bbtOkClick(Sender: TObject);
+begin
+
+end;// procedure TfrmSuppliersTable.BitBtn1Click
+
 
 //========================================================================================
 //          CONTROL ROUTINES
@@ -473,19 +627,6 @@ begin
   Key := ValidPostalCodeCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbePostalCodeKeyPress
 
-//----------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
 //========================================================================================
 
 //==========
@@ -496,8 +637,27 @@ procedure TfrmSuppliersTable.DBNavigator1BeforeAction(Sender: TObject;
   Button: TDBNavButtonType);
 begin
 
+  if Button = nbPost then
+  begin
+
+    showmessage('Post');
+
+    // Validate Name, Address1, City, Prov.State, Postal Code.
+    // If any field is invalid we retun to edit or cancel
+    if not ValidREcord then
+      Abort;
+
+  end;// if Button = nbPost
+
+  if Button = nbCancel then
+  begin
+    showmessage('Cancel');
+    Abort;
+  end;// if Button = nbCancel
+
   if Button = nbRefresh then
   begin
+    showmessage('Cancel');
     SupplierTableQuery.Close;
     SupplierTableQuery.Open;
     Abort;
@@ -517,7 +677,6 @@ procedure TfrmSuppliersTable.FormClose(Sender: TObject;
 begin
 
   SupplierTableQuery.Close;
-  SQLTransaction1.Active := False;
   SupplierDBConnection.Close;
 
 end;// procedure TfrmSuppliersTable.FormClose
@@ -554,15 +713,9 @@ begin
   SQLTransaction1.Active := True;
   SupplierTableQuery.Open;
 
-{  SupplierDBConnection.Open;
-  SQLTransaction1.Active := True;
-  SupplierTableQuery.Open;  }
-
 end;// procedure TfrmSuppliersTable.FormShow
 
 //========================================================================================
-
-
 end. // unit SuppliersTable
 
 

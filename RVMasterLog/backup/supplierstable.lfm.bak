@@ -1,37 +1,39 @@
 object frmSuppliersTable: TfrmSuppliersTable
-  Left = 148
-  Height = 433
-  Top = 71
+  Left = 271
+  Height = 447
+  Top = 157
   Width = 805
   BorderIcons = [biHelp]
   BorderStyle = bsDialog
   Caption = 'frmSuppliersTable'
-  ClientHeight = 433
+  ClientHeight = 447
   ClientWidth = 805
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '2.0.0.4'
-  object BitBtn1: TBitBtn
-    Left = 600
-    Height = 30
-    Top = 368
-    Width = 75
+  object bbtOk: TBitBtn
+    Left = 568
+    Height = 35
+    Top = 367
+    Width = 90
     Default = True
     DefaultCaption = True
     Kind = bkOK
     ModalResult = 1
+    OnClick = bbtOkClick
     TabOrder = 0
   end
-  object BitBtn2: TBitBtn
-    Left = 696
-    Height = 30
-    Top = 368
-    Width = 75
+  object bbtCancel: TBitBtn
+    Left = 672
+    Height = 35
+    Top = 367
+    Width = 90
     Cancel = True
     DefaultCaption = True
     Kind = bkCancel
     ModalResult = 2
+    OnClick = bbtCancelClick
     TabOrder = 1
   end
   object dbeID: TDBEdit
@@ -64,6 +66,7 @@ object frmSuppliersTable: TfrmSuppliersTable
         Width = 300
         FieldName = 'SupplierName'
       end>
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
     TabOrder = 3
   end
   object Label1: TLabel
@@ -99,10 +102,10 @@ object frmSuppliersTable: TfrmSuppliersTable
     OnKeyPress = dbeAddress1KeyPress
   end
   object DBNavigator1: TDBNavigator
-    Left = 256
-    Height = 25
-    Top = 373
-    Width = 241
+    Left = 112
+    Height = 34
+    Top = 369
+    Width = 321
     BeforeAction = DBNavigator1BeforeAction
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -111,8 +114,8 @@ object frmSuppliersTable: TfrmSuppliersTable
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 100
-    ClientHeight = 25
-    ClientWidth = 241
+    ClientHeight = 34
+    ClientWidth = 321
     DataSource = SupplierTableDataSource
     Options = []
     ParentShowHint = False
@@ -146,9 +149,18 @@ object frmSuppliersTable: TfrmSuppliersTable
   object StatusBar1: TStatusBar
     Left = 0
     Height = 23
-    Top = 410
+    Top = 424
     Width = 805
-    Panels = <>
+    Panels = <    
+      item
+        Text = '12 Jun 2019'
+        Width = 75
+      end    
+      item
+        Text = 'Supplier 1 of 5'
+        Width = 50
+      end>
+    SimplePanel = False
   end
   object Label4: TLabel
     Left = 16
