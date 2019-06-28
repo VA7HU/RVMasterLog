@@ -73,6 +73,7 @@ var
   vstrTUserDir : string;
 begin
 
+
   // Set the correct version of the SQLite files
 
   if not FileExists('sqlite3.def') then

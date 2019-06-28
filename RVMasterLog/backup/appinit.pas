@@ -73,6 +73,9 @@ var
   vstrTUserDir : string;
 begin
 
+
+  showmessage(getuserDir);
+
   // Set the correct version of the SQLite files
 
   if not FileExists('sqlite3.def') then
@@ -98,7 +101,6 @@ begin
   //   1. This is an initial installation and they have not been created yet; or,
   //
   //   2. they have somehow disappeared.
-  end;
 
   If not frmSettings.UserDataDirectoriesExist then
   begin

@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 29 May 2019
+// Date : 28 Jun 2019
 //
 //========================================================================================
 
@@ -39,6 +39,7 @@ type
     bbtCancel: TBitBtn;
     bbtOk: TBitBtn;
     edtBackupsDirectory: TEdit;
+    edtAppDataDirectory: TEdit;
     edtLogbooksDirectory: TEdit;
     edtSettingsDirectory: TEdit;
     edtApplicationDirectory: TEdit;
@@ -47,6 +48,7 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    Label6: TLabel;
     pcSettings: TPageControl;
     pgDirectories: TTabSheet;
     procedure bbtCancelClick(Sender: TObject);
@@ -65,7 +67,7 @@ type
     fSettingsDirectory : string;
     fLogbooksDirectory : string;
     fBackupsDirectory : string;
-    fApplicationDB : string;
+    fAppDataDirectory : string;
     fOwnerFirstName : string;
     fOwnerLastName : string;
     fOwnerCallsign : string;
@@ -85,8 +87,8 @@ type
     procedure SetLogbooksDirectory(Dir : string);
     function GetBackupsDirectory : string;
     procedure SetBackupsDirectory(Dir : string);
-    function GetApplicationDB : string;
-    procedure SetApplicationDB(DB : string);
+    function GetAppDataDirectory : string;
+    procedure SetAppDataDirectory(Dir : string);
     function GetOwnerFirstName : string;
     procedure SetOwnerFirstName (FirstName : string);
     function GetOwnerLastName : string;
@@ -107,7 +109,7 @@ type
     property pSettingsDirectory : string read GetSettingsDirectory write SetSettingsDirectory;
     property pLogbooksDirectory : string read GetLogbooksDirectory write SetLogbooksDirectory;
     property pBackupsDirectory : string read GetBackupsDirectory write SetBackupsDirectory;
-    property pApplicationDB : string read GetApplicationDB write SetApplicationDB;
+    property pAppDataDirectory : string read GetAppDataDirectory write SetAppDataDirectory;
     property pOwnerFirstName : string read GetOwnerFirstName write SetOwnerFirstName;
     property pOwnerLastName : string read GetOwnerLastName write SetOwnerLastName;
     property pOwnerCallsign : string read GetOwnerCallsign write SetOwnerCallsign;
@@ -125,6 +127,11 @@ type
   //          PUBLIC CONSTANTS
   //========================================================================================
 const
+
+  //==========
+  //  SQLite
+  //==========
+  cstrSQLiteLibraryName = 'sqlite3.dll';
 
   //==========
   //  MESSAGES
@@ -184,6 +191,7 @@ const
   cstrSettingsDirectoryName = 'Settings';
   cstrLogbooksDirectoryName = 'Logbooks';
   cstrBackupsDirectoryName = 'Backups';
+  cstrAppDataDirectoryName = 'App Data';
   cstrUserDirectoryPath = 'AppData\Roaming\RVMasterLog';
 
 //========================================================================================
@@ -262,19 +270,16 @@ begin
     Main.TerminateApp;
   end;// if not CreateDir(pLogbooksDirectory)
 
-  // CREATE COMMON DATABASES
-
     // CREATE APPLICATION Database and Tables
-    pApplicationDB := pUserDirectory + '\' + cstrApplicationDBName;
-    if not CreateDir(pApplicationDB)then
-    begin
-      showmessage('APPLICATIONDB FAILED');
-      Result := False;
-      Main.TerminateApp;
-    end;// if not CreateDir(pApplicationDB)
+  pAppDataDirectory := pUserDirectory + '\' + cstrAppDataDirectoryName;
+  if not CreateDir(pAppDataDirectory)then
+  begin
+    showmessage('APPDATADIRECTORY FAILED');
+    Result := False;
+    Main.TerminateApp;
+  end;// if not CreateDir(pAppDataDirectory)
 
-    frmSuppliersTable.CreateSuppliersTable;
-
+//    frmSuppliersTable.CreateSuppliersTable;
 
   Result := True;
 
@@ -371,16 +376,16 @@ begin
 end;// procedure TfrmSettings.SetBackupsDirectory
 
 //========================================================================================
-function TfrmSettings.GetApplicationDB: string;
+function TfrmSettings.GetAppDataDirectory: string;
 begin
-   Result := fApplicationDB;
-end;// procedure TfrmSettings.GetApplicationDB
+   Result := fAppDataDirectory;
+end;// procedure TfrmSettings.GetAppDataDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetApplicationDB(DB: string);
+procedure TfrmSettings.SetAppDataDirectory(Dir: string);
 begin
-    fApplicationDB := DB;
-end;// procedure TfrmSettings.SetApplicationDB
+    fAppDataDirectory := Dir;
+end;// procedure TfrmSettings.SetAppDataDirectory
 
 //========================================================================================
 function TfrmSettings.GetOwnerFirstName: string;
@@ -476,6 +481,8 @@ const
   cstrKeySettingsDirectory = 'Settings Directory';
   cstrKeyLogbooksDirectory = 'Logbooks Directory';
   cstrKeyBackupsDirectory = 'Backups Directory';
+  cstrKeyAppDataDirectory = 'App Data Directory';
+
   cstrRegistrationData = 'REGISTRATION DATA';
   cstrKeyOwnerFirstName = 'Owner First Name';
   cstrKeyOwnerLastName = 'Owner Last Name';
@@ -529,6 +536,12 @@ begin
   vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
                                             cstrKeyBackupsDirectory,
                                             pBackupsDirectory);
+  pBackupsDirectory := vstrTStr;
+
+    // APPLICATION DATA DIRECTORY
+  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
+                                            cstrKeyAppDataDirectory,
+                                            pAppDataDirectory);
   pBackupsDirectory := vstrTStr;
 
   // REGISTRATION DATA
@@ -588,6 +601,10 @@ begin
                                     cstrKeyBackupsDirectory,
                                     pBackupsDirectory);
 
+    ApplicationINIFile.WriteString(cstrUserDirectories,
+                                    cstrKeyAppDataDirectory,
+                                    pAppDataDirectory);
+
     // REGISTRATION DATA
 
       // Owner First Name
@@ -642,6 +659,7 @@ begin
   edtSettingsDirectory.Text:=pSettingsDirectory;
   edtLogbooksDirectory.Text:=pLogbooksDirectory;
   edtBackupsDirectory.Text := pBackupsDirectory;
+  edtAppDataDirectory.Text := pAppDataDirectory;
 
 end; // procedure TfrmAppSetup.FormShow
 

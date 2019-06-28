@@ -10,8 +10,7 @@ unit SuppliersTable;
 //
 // Called By : AppSettings : frmSettings.CreateUserDataDirectories
 //
-// Calls : AppSettings : frmAppSettings.pApplicationDB
-//         HUValidations : VaildAddressCharacter
+// Calls : HUValidations : VaildAddressCharacter
 //                         ValidAlphaCharacter
 //                         ValidNameCharacter
 //                         ValidCityCharacter
@@ -685,7 +684,7 @@ end;// procedure TfrmSuppliersTable.FormClose
 //========================================================================================
 procedure TfrmSuppliersTable.FormCreate(Sender: TObject);
 begin
-
+  SQLiteLibraryName := cstrSQLiteLibraryName;
 end;// procedure TfrmSuppliersTable.FormCreate
 
 //========================================================================================
