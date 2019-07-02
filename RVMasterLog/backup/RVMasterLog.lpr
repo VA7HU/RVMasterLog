@@ -25,9 +25,9 @@ uses
   Interfaces, Forms,   dbflaz,
   // Application Units
   AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable,
-  ProvTable, RVData, SuppliersTable,
+  ProvTable, RVData, SuppliersTable, ApplicationDB, SuppliersDB,
   // HULibraries
-  huconstants, humessageboxes, hunagscreen, huregistration, AppData;
+  huconstants, humessageboxes, hunagscreen, huregistration;
 
 {$R *.res}
 
@@ -41,7 +41,8 @@ begin
   Application.CreateForm(TfrmSuppliersTable, frmSuppliersTable);
   Application.CreateForm( TdlgHURegistration, dlgHURegistration);
   Application.CreateForm( TdlgHUNagScreen, dlgHUNagScreen);
-  Application.CreateForm(TdmAppDataDB, dmAppDataDB);
+  Application.CreateForm(TDMApplicationDB, DMApplicationDB);
+  Application.CreateForm(TdmSuppliersDB, dmSuppliersDB);
   Application.Run;
 
 end.//program RVMasterLog

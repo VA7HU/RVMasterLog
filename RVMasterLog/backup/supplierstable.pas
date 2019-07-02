@@ -21,7 +21,7 @@ unit SuppliersTable;
 //
 // Ver. : 1.0.0
 //
-// Date : 13 Jun 2019
+// Date : 2 Jul 2019
 //
 //========================================================================================
 
@@ -684,7 +684,7 @@ end;// procedure TfrmSuppliersTable.FormClose
 //========================================================================================
 procedure TfrmSuppliersTable.FormCreate(Sender: TObject);
 begin
-  SQLiteLibraryName := cstrSQLiteLibraryName;
+
 end;// procedure TfrmSuppliersTable.FormCreate
 
 //========================================================================================

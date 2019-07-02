@@ -89,8 +89,9 @@ object frmMain: TfrmMain
       Caption = '&Tools'
       object mnuToolsDBMaintenance: TMenuItem
         Caption = 'DB Maintenance'
-        object mnuToolsDBMaintenanceApplicationDB: TMenuItem
+        object mnuToolsDBMaintenanceApplicationDataDB: TMenuItem
           Caption = 'ApplicationDB'
+          OnClick = mnuToolsDBMaintenanceApplicationDataDBClick
         end
         object mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem
           Caption = 'ManufacturersDB'

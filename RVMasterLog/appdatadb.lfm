@@ -1,8 +1,0 @@
-object DMAppDataDB: TDMAppDataDB
-  OldCreateOrder = False
-  Height = 242
-  HorizontalOffset = 549
-  VerticalOffset = 127
-  Width = 289
-  PPI = 96
-end

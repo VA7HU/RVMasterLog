@@ -552,11 +552,11 @@ object frmSuppliersTable: TfrmSuppliersTable
     Connected = False
     LoginPrompt = False
     KeepConnection = False
-    Transaction = SQLTransaction1
+    Transaction = SupplierTransaction
     left = 624
     top = 16
   end
-  object SQLTransaction1: TSQLTransaction
+  object SupplierTransaction: TSQLTransaction
     Active = False
     Database = SupplierDBConnection
     left = 624

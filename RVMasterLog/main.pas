@@ -19,7 +19,7 @@ unit Main;
 //
 // Ver. : 1.0.0
 //
-// Date : 29 May 2019
+// Date : 2 Jul 2019
 //
 //========================================================================================
 
@@ -38,7 +38,7 @@ type
   TfrmMain = class(TForm)
     mnuToolTest: TMenuItem;
     mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem;
-    mnuToolsDBMaintenanceApplicationDB: TMenuItem;
+    mnuToolsDBMaintenanceApplicationDataDB: TMenuItem;
     mnuToolsDBMaintenance: TMenuItem;
     mnuTools: TMenuItem;
     mnuLogbooksSaveLogbook: TMenuItem;
@@ -71,6 +71,7 @@ type
     procedure mnuLogbooksDeleteLogbookClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
     procedure mnuSettingsDirectoriesClick(Sender: TObject);
+    procedure mnuToolsDBMaintenanceApplicationDataDBClick(Sender: TObject);
     procedure mnuToolTestClick(Sender: TObject);
   private
 
@@ -181,6 +182,11 @@ begin
   frmSettings.ShowModal;
 end;// procedure TfrmMain.mnuSettingsDirectoriesClick
 
+procedure TfrmMain.mnuToolsDBMaintenanceApplicationDataDBClick(Sender: TObject);
+begin
+
+end;
+
 //========================================================================================
 
 //==========
@@ -188,7 +194,7 @@ end;// procedure TfrmMain.mnuSettingsDirectoriesClick
 //==========
 procedure TfrmMain.mnuToolTestClick(Sender: TObject);
 begin
-  frmSuppliersTable.ShowModal;
+  showmessage('DB Test Menu');
 end;// procedure TfrmMain.mnuToolTestClick
 
 //========================================================================================

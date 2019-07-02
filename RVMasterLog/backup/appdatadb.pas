@@ -4,7 +4,7 @@ unit AppDataDB;
 
 //========================================================================================
 //
-// Unit : AppData.pas
+// Unit : AppDataDB.pas
 //
 // Description :
 //
@@ -14,31 +14,42 @@ unit AppDataDB;
 //
 // Ver. : 1.0.0
 //
-// Date : 28 Jun 2019
+// Date : 2 Jul 2019
 //
+//========================================================================================
+
+
+
+interface
+
+uses
+  Classes, SysUtils, sqlite3conn;
+
+type
+
+  { TdmAppDataDB }
+
+  TdmAppDataDB = class(TDataModule)
+    SQLite3Connection1: TSQLite3Connection;
+    procedure DataModuleCreate(Sender: TObject);
+    procedure DataModuleDestroy(Sender: TObject);
+  private
+
+  public
+
+  end;
+
+const
+  cstrAppDBDatabaseName = 'Name';
+
+//========================================================================================
+//          PUBLIC CONSTANTS
 //========================================================================================
 
 
 //========================================================================================
 //          PUBLIC VARIABLES
 //========================================================================================
-
-//========================================================================================
-//          PUBLIC CONSTANTS
-//========================================================================================
-
-interface
-
-uses
-  Classes, SysUtils;
-
-type
-  TdmAppDataDB = class(TDataModule)
-  private
-
-  public
-
-  end;
 
 var
   dmAppDataDB: TdmAppDataDB;
@@ -91,6 +102,20 @@ implementation
 //          FILE ROUTINES
 //========================================================================================
 
+
 //========================================================================================
-end.// unit AppData
+
+procedure TdmAppDataDB.DataModuleCreate(Sender: TObject);
+begin
+
+  AppDataDBConnection.DatabaseName := cstrAppDBDatabaseName;
+
+end;
+
+procedure TdmAppDataDB.DataModuleDestroy(Sender: TObject);
+begin
+
+end;
+
+end.// unit AppDataDB
 

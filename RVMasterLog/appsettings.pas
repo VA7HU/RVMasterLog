@@ -135,7 +135,7 @@ const
   //==========
   //  SQLite
   //==========
-  cstrSQLiteLibraryName = 'sqlite3';
+  cstrSQLiteBaseLibraryName = 'sqlite3';
 
   //==========
   //  MESSAGES
@@ -656,7 +656,7 @@ end;// procedure TfrmSettings.WriteSettingsINIFile
 procedure TfrmSettings.FormCreate(Sender: TObject);
 begin
 
-  pSQLiteLibraryName := cstrSQLiteLibraryName;
+  pSQLiteLibraryName := cstrSQLiteBaseLibraryName;
   pAppName := cstrAppName;
   pApplicationDirectory := GetCurrentDir;
   pSystemUserDirectory := GetUserDir;

@@ -34,7 +34,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="18">
+    <Units Count="19">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -139,13 +139,20 @@
         <UnitName Value="HURegistration"/>
       </Unit16>
       <Unit17>
-        <Filename Value="appdatadb.pas"/>
+        <Filename Value="applicationdb.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="DMAppDataDB"/>
+        <ComponentName Value="DMApplicationDB"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <UnitName Value="AppDataDB"/>
+        <UnitName Value="ApplicationDB"/>
       </Unit17>
+      <Unit18>
+        <Filename Value="suppliersdb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmSuppliersDB"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="SuppliersDB"/>
+      </Unit18>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

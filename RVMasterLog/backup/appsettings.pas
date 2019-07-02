@@ -135,7 +135,7 @@ const
   //==========
   //  SQLite
   //==========
-  cstrSQLiteLibraryName = 'sqlite3.dll';
+  cstrSQLiteBaseLibraryName = 'sqlite3';
 
   //==========
   //  MESSAGES
