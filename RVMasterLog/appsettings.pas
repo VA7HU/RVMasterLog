@@ -6,7 +6,7 @@ unit AppSettings;
 //
 // Unit : AppSettings.pas
 //
-// Description :
+// Description :   Add "  SQLiteLibraryName := cstrSQLiteLibraryName;   "
 //
 // Called By :  AppInit : Initialize
 //              Main  : TfrmMain.mnuSettingsDIrectoriesClick
@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 28 Jun 2019
+// Date : 02 Jul 2019
 //
 //========================================================================================
 
@@ -68,6 +68,7 @@ type
     fLogbooksDirectory : string;
     fBackupsDirectory : string;
     fAppDataDirectory : string;
+    fSQLiteLibraryName : string;
     fOwnerFirstName : string;
     fOwnerLastName : string;
     fOwnerCallsign : string;
@@ -89,6 +90,8 @@ type
     procedure SetBackupsDirectory(Dir : string);
     function GetAppDataDirectory : string;
     procedure SetAppDataDirectory(Dir : string);
+    function GetSQLiteLibraryName : string;
+    procedure SetSQLiteLibraryName(LibName : string);
     function GetOwnerFirstName : string;
     procedure SetOwnerFirstName (FirstName : string);
     function GetOwnerLastName : string;
@@ -110,6 +113,7 @@ type
     property pLogbooksDirectory : string read GetLogbooksDirectory write SetLogbooksDirectory;
     property pBackupsDirectory : string read GetBackupsDirectory write SetBackupsDirectory;
     property pAppDataDirectory : string read GetAppDataDirectory write SetAppDataDirectory;
+    property pSQLiteLibraryName : string read GetSQLiteLibraryName write SetSQLiteLibraryName;
     property pOwnerFirstName : string read GetOwnerFirstName write SetOwnerFirstName;
     property pOwnerLastName : string read GetOwnerLastName write SetOwnerLastName;
     property pOwnerCallsign : string read GetOwnerCallsign write SetOwnerCallsign;
@@ -131,7 +135,7 @@ const
   //==========
   //  SQLite
   //==========
-  cstrSQLiteLibraryName = 'sqlite3.dll';
+  cstrSQLiteLibraryName = 'sqlite3';
 
   //==========
   //  MESSAGES
@@ -210,14 +214,12 @@ begin
   begin
 
     if HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound) = mrYes then
-    begin
 
-      HUInformationMsgOK('imCreateUserDirs', imCreateUserDirs);
+{      HUInformationMsgOK('imCreateUserDirs', imCreateUserDirs);
 
-      if not CreateUserDataDirectories then
+      if not CreateUserDataDirectories then  }
         Result := False;
 
-    end;// if HUErrorMsgYN(' No User Directory', 'Create One ?') = mrYes
 
   end;// if UserDataDirectoriesExist(pUserDirectory)
 
@@ -386,6 +388,18 @@ procedure TfrmSettings.SetAppDataDirectory(Dir: string);
 begin
     fAppDataDirectory := Dir;
 end;// procedure TfrmSettings.SetAppDataDirectory
+
+//========================================================================================
+function TfrmSettings.GetSQLiteLibraryName: string;
+begin
+   Result := fSQLiteLibraryName;
+end;// procedure TfrmSettings.GetSQLiteLibraryName
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetSQLiteLibraryName(LibName: string);
+begin
+    fSQLiteLibraryName := LibName;
+end;// procedure TfrmSettings.SetSQLiteLibraryName
 
 //========================================================================================
 function TfrmSettings.GetOwnerFirstName: string;
@@ -642,6 +656,7 @@ end;// procedure TfrmSettings.WriteSettingsINIFile
 procedure TfrmSettings.FormCreate(Sender: TObject);
 begin
 
+  pSQLiteLibraryName := cstrSQLiteLibraryName;
   pAppName := cstrAppName;
   pApplicationDirectory := GetCurrentDir;
   pSystemUserDirectory := GetUserDir;

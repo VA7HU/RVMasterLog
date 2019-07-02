@@ -139,11 +139,12 @@
         <UnitName Value="HURegistration"/>
       </Unit16>
       <Unit17>
-        <Filename Value="appdata.pas"/>
+        <Filename Value="appdatadb.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="DMAppDataDB"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <UnitName Value="AppData"/>
+        <UnitName Value="AppDataDB"/>
       </Unit17>
     </Units>
   </ProjectOptions>

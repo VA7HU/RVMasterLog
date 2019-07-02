@@ -10,7 +10,8 @@ unit AppInit;
 //
 // Called By TfrmMain.FormShow:
 //
-// Calls :  AppSettings : iniFileExists
+// Calls :  frmSettings : GetSQLiteLibraryName
+//                        iniFileExists
 //                        ReadSettinsINIFile
 //                        pApplicationDirectory
 //          HUConstants
@@ -21,7 +22,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Jun 2019
+// Date : 2 Jul 2019
 //
 //========================================================================================
 
@@ -70,29 +71,32 @@ uses
 //========================================================================================
 function Initialize : Boolean;
 var
+  vstrTSqDefName : string;
+  vstrTSqDllName : string;
   vstrTUserDir : string;
 begin
 
 
   // Set the correct version of the SQLite files
+  vstrTSqDefName := frmSettings.pSQLiteLibraryName + '.def';
+  vstrTSqDllName := frmSettings.pSQLiteLibraryName + '.dll';
 
-  if not FileExists('sqlite3.def') then
+  if not FileExists(vstrTSqDefName) then
   begin
+
     {$ifdef CPU32}
     showmessage('32 Bit');
-    CopyFile('sqlite3.def32', 'sqlite3.def');
-    CopyFile('sqlite3.dll32', 'sqlite3.dll');
+    CopyFile('sqlite3.def32', vstrTSqDefName);
+    CopyFile('sqlite3.dll32', vstrTSqDllName);
     {$endif}
-  end;
 
-  if not FileExists('sqlite3.dll') then
-  begin
-   {$ifdef CPU64}
-   showmessage('64 Bit');
-   CopyFile('sqlite3.def64', 'sqlite3.def');
-   CopyFile('sqlite3.dll64', 'sqlite3.dll');
-   {$endif}
-  end;
+    {$ifdef CPU64}
+    showmessage('64 Bit');
+    CopyFile('sqlite3.def64', vstrTSqDefName);
+    CopyFile('sqlite3.dll64', vstrTSqDllName);
+    {$endif}
+
+  end;// if not FileExists('sqlite3.def')
 
   // If the UserDirectories do not exist, there are only two possibilities:
   //

@@ -142,6 +142,7 @@
         <Filename Value="appdatadb.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="DMAppDataDB"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="AppDataDB"/>
       </Unit17>
