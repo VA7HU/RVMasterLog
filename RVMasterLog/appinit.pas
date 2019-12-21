@@ -22,7 +22,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Jul 2019
+// Date : 21 Dec 2019
 //
 //========================================================================================
 
@@ -31,9 +31,9 @@ interface
 uses
   Classes, Controls, Dialogs, FileUtil, SysUtils,
   // Application Units
-  AppSettings,
+  AppSettings{,
   // HULib Units
-  HUConstants, HUMessageBoxes, HUNagScreen, HURegistration;
+  HUConstants, HUMessageBoxes, HUNagScreen, HURegistration};
 
 function Initialize : Boolean;
 
@@ -106,18 +106,18 @@ begin
 
   If not frmSettings.UserDataDirectoriesExist then
   begin
-    HUErrorMsgOK ('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
+//    HUErrorMsgOK ('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
     Main.TerminateApp;
   end;// if not frmSettings.UserDataDIrectoriesExist
 
   frmSettings.ReadSettingsINIFile;
 
-  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
+{  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
   if dlgHUNagScreen.ShowModal = mrYes then
   begin
     dlgHURegistration.RequestRegistrationKey;
     dlgHURegistration.SHowModal;
-  end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe'
+  end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe' }
 
 showmessage('Init Complete');
 

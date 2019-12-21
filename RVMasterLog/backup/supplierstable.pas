@@ -21,7 +21,7 @@ unit SuppliersTable;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Jul 2019
+// Date : 21 Dec 2019
 //
 //========================================================================================
 
@@ -30,10 +30,10 @@ interface
 uses
   Classes, FileUtil, SysUtils, sqlite3conn, sqldb, db, Forms, Controls,
   Graphics, Dialogs, Buttons, DBCtrls, DBGrids, StdCtrls, ComCtrls, ExtCtrls,
-  Menus,
+  Menus;
   // Application Units
   // HULib Units
-  HUValidations;
+  //HUValidations;
 
 //========================================================================================
 //          PUBLIC VARIABLES
@@ -92,7 +92,7 @@ type
     StatusBar1: TStatusBar;
     SupplierDBConnection: TSQLite3Connection;
     SupplierTableQuery: TSQLQuery;
-    SQLTransaction1: TSQLTransaction;
+    SupplierTransaction: TSQLTransaction;
     procedure bbtOkClick(Sender: TObject);
     procedure bbtCancelClick(Sender: TObject);
     procedure dbeAddress1Change(Sender: TObject);
@@ -692,10 +692,10 @@ procedure TfrmSuppliersTable.FormShow(Sender: TObject);
 begin
 
   SupplierDBConnection.DatabaseName := cstrSuppliersDatabaseName;
-  SupplierDBConnection.Transaction := SQLTransaction1;
+  SupplierDBConnection.Transaction := SupplierTransaction;
   SupplierDBConnection.Connected := False;
 
-  SQLTransaction1.Active := False;
+  SupplierTransaction.Active := False;
 
   //  Supplier Table
 
@@ -707,10 +707,10 @@ begin
   dbgSuppliersTable.DataSource := SupplierTableDataSource;
 
   SupplierTableQuery.SQL.Text := 'select * from SuppliersTable';
-  SupplierTableQuery.Transaction := SQLTransaction1;
+  SupplierTableQuery.Transaction := SupplierTransaction;
 
   SupplierDBConnection.Open;
-  SQLTransaction1.Active := True;
+  SupplierTransaction.Active := True;
   SupplierTableQuery.Open;
 
 end;// procedure TfrmSuppliersTable.FormShow

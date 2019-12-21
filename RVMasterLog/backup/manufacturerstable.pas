@@ -219,8 +219,6 @@ procedure TfrmManufacturersTable.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
 
-    SQLite3Connection1.Connected := False;
-
 end;// procedure TfrmManufacturersTable.FormClose
 
 //========================================================================================

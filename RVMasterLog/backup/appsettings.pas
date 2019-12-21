@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 02 Jul 2019
+// Date : 21 Dec 2019
 //
 //========================================================================================
 
@@ -27,9 +27,9 @@ uses
   Buttons, Classes, ComCtrls, Controls, Dialogs, FileUtil, Forms, Graphics, INIFiles,
   StdCtrls, SysUtils, Types,
   //App Units
-  SuppliersTable,
+  SuppliersTable{,
   // HULib units
-  HUConstants, HUMessageBoxes;
+  HUConstants, HUMessageBoxes};
 
 type
 
@@ -143,13 +143,14 @@ const
 
     // Error MEssages
 
-       erNoDataDirectoriesFound = '       MAJOR ERROR' +
+{       erNoDataDirectoriesFound = '       MAJOR ERROR' +
                                   K_CR +
                                    K_CR +
                                    'No Data Directories found.' +
                                    K_CR +
                                    K_CR +
-                                   'Is this an Initial installation ?';
+                                   'Is this an Initial installation ?'; }
+
 
        erCreateUserDataDirFailed = 'Failure Creating User Data Directory';
 
@@ -161,9 +162,9 @@ const
 
       imCreateUserDirs = 'Creating User Directories';
 
-      imNoINIFile = '   The .INI file Does Not Exist.'
+    {  imNoINIFile = '   The .INI file Does Not Exist.'
                   + K_CR
-                  + ' Is this an Initial installation ?';
+                  + ' Is this an Initial installation ?'; }
 
 
   //==========
@@ -213,11 +214,12 @@ begin
   if not DirectoryExists(pUserDirectory) then
   begin
 
-    if HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound) = mrYes then
 
-{      HUInformationMsgOK('imCreateUserDirs', imCreateUserDirs);
+{    if HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound) = mrYes then
 
-      if not CreateUserDataDirectories then  }
+      HUInformationMsgOK('imCreateUserDirs', imCreateUserDirs); }
+
+      if not CreateUserDataDirectories then
         Result := False;
 
 
@@ -236,7 +238,7 @@ begin
 
   if not CreateDir(pUserDirectory) then
   begin
-    HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
+//    HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
     Result := False;
     Main.TerminateApp;
   end;// if not CreateDir(pUserDirectory)
@@ -656,7 +658,7 @@ end;// procedure TfrmSettings.WriteSettingsINIFile
 procedure TfrmSettings.FormCreate(Sender: TObject);
 begin
 
-  pSQLiteLibraryName := cstrSQLiteLibraryName;
+  pSQLiteLibraryName := cstrSQLiteBaseLibraryName;
   pAppName := cstrAppName;
   pApplicationDirectory := GetCurrentDir;
   pSystemUserDirectory := GetUserDir;

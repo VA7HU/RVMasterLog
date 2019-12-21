@@ -21,7 +21,7 @@ unit SuppliersTable;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Jul 2019
+// Date : 21 Dec 2019
 //
 //========================================================================================
 
@@ -30,10 +30,10 @@ interface
 uses
   Classes, FileUtil, SysUtils, sqlite3conn, sqldb, db, Forms, Controls,
   Graphics, Dialogs, Buttons, DBCtrls, DBGrids, StdCtrls, ComCtrls, ExtCtrls,
-  Menus,
+  Menus;
   // Application Units
   // HULib Units
-  HUValidations;
+  //HUValidations;
 
 //========================================================================================
 //          PUBLIC VARIABLES
@@ -501,130 +501,130 @@ end;// procedure TfrmSuppliersTable.dbeSupplierNameChange
 
 procedure TfrmSuppliersTable.dbeSupplierNameKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidNameCharacter(Key);
+//  Key := ValidNameCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeSupplierNameKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeAddress1KeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidAddressCharacter(Key);
+//  Key := ValidAddressCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeAddress1KeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeAddress2KeyPress(Sender: TObject; var Key: char
   );
 begin
-  Key := ValidAddressCharacter(Key);
+//  Key := ValidAddressCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeAddress2KeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeCityKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidCityCharacter(Key);
+//  Key := ValidCityCharacter(Key);
 end;
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeGenDeptKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidAlphaCharacter(Key);
+//  Key := ValidAlphaCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeGenDeptKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeGenEmailKeyPress(Sender: TObject; var Key: char
   );
 begin
-  Key := ValidEmailCharacter(Key);
+//  Key := ValidEmailCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeGenEmailKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeGenNameKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidNameCharacter(Key);
+//  Key := ValidNameCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeGenNameKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeGenPhoneKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidPhoneCharacter(Key);
+//  Key := ValidPhoneCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeGenPhoneKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC1DeptKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidAlphaCharacter(Key);
+//  Key := ValidAlphaCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC1DeptKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC1EmailKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidEmailCharacter(Key);
+//  Key := ValidEmailCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC1EmailKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC1NameKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidNameCharacter(Key);
+//  Key := ValidNameCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC1NameKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC1PhoneKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidPhoneCharacter(Key);
+//  Key := ValidPhoneCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC1PhoneKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC2DeptKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidAlphaCharacter(Key);
+//  Key := ValidAlphaCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC2DeptKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC2EmailKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidEmailCharacter(Key);
+//  Key := ValidEmailCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC2EmailKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC2NameKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidNameCharacter(Key);
+//  Key := ValidNameCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC2NameKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC2PhoneKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidPhoneCharacter(Key);
+//  Key := ValidPhoneCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC2PhoneKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC3DeptKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidAlphaCharacter(Key);
+//  Key := ValidAlphaCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC3DeptKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC3EmailKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidEmailCharacter(Key);
+//  Key := ValidEmailCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC3DeptKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeC3PhoneKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidPhoneCharacter(Key);
+//  Key := ValidPhoneCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeC3PhoneKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbeProvStateKeyPress(Sender: TObject; var Key: char);
 begin
-  Key := ValidProvStateCharacter(Key);
+//  Key := ValidProvStateCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbeProvStateKeyPress
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSuppliersTable.dbePostalCodeKeyPress(Sender: TObject;
   var Key: char);
 begin
-  Key := ValidPostalCodeCharacter(Key);
+//  Key := ValidPostalCodeCharacter(Key);
 end;// procedure TfrmSuppliersTable.dbePostalCodeKeyPress
 
 //========================================================================================

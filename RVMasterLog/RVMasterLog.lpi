@@ -150,6 +150,7 @@
         <Filename Value="suppliersdb.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="dmSuppliersDB"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="SuppliersDB"/>
       </Unit18>

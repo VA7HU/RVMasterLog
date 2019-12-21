@@ -15,7 +15,7 @@ unit ManufacturersTable;
 //
 // Ver. : 1.0.0
 //
-// Date : 24 Apr 2019
+// Date : 21 Dec 2019
 //
 //========================================================================================
 
@@ -25,7 +25,7 @@ uses
   Classes, SysUtils, FileUtil, Forms,
   Controls, Graphics, Dialogs, DbCtrls, Buttons, ExtCtrls, StdCtrls, DBGrids,
   //
-  AppSettings, HUMessageBoxes;
+  AppSettings{, HUMessageBoxes};
 
 type
 
