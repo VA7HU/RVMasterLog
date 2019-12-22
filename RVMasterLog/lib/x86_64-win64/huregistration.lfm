@@ -21,7 +21,7 @@ object dlgHURegistration: TdlgHURegistration
     Default = True
     Enabled = False
     Kind = bkOK
-    ModalResult = 1
+    ModalResult = 11
     OnClick = bbtRegisterClick
     TabOrder = 2
   end

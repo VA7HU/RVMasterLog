@@ -27,7 +27,7 @@ uses
   AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable,
   ProvTable, RVData, SuppliersTable, ApplicationDB, SuppliersDB,
   // HULibraries
-  HUConstants, humessageboxes, HUNagscreen, HURegistration;
+  HUConstants, HUMessageBoxes, HUValidations, HUNagscreen, HURegistration;
 
 {$R *.res}
 

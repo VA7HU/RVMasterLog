@@ -31,9 +31,9 @@ interface
 uses
   Classes, Controls, Dialogs, FileUtil, SysUtils,
   // Application Units
-  AppSettings{,
+  AppSettings,
   // HULib Units
-  HUConstants, HUMessageBoxes, HUNagScreen, HURegistration};
+  HUConstants, HUMessageBoxes, HUNagScreen, HURegistration;
 
 function Initialize : Boolean;
 
@@ -70,33 +70,7 @@ uses
 //          PUBLIC ROUTINES
 //========================================================================================
 function Initialize : Boolean;
-var
-  vstrTSqDefName : string;
-  vstrTSqDllName : string;
-  vstrTUserDir : string;
 begin
-
-
-  // Set the correct version of the SQLite files
-  vstrTSqDefName := frmSettings.pSQLiteLibraryName + '.def';
-  vstrTSqDllName := frmSettings.pSQLiteLibraryName + '.dll';
-
-  if not FileExists(vstrTSqDefName) then
-  begin
-
-    {$ifdef CPU32}
-    showmessage('32 Bit');
-    CopyFile('sqlite3.def32', vstrTSqDefName);
-    CopyFile('sqlite3.dll32', vstrTSqDllName);
-    {$endif}
-
-    {$ifdef CPU64}
-    showmessage('64 Bit');
-    CopyFile('sqlite3.def64', vstrTSqDefName);
-    CopyFile('sqlite3.dll64', vstrTSqDllName);
-    {$endif}
-
-  end;// if not FileExists('sqlite3.def')
 
   // If the UserDirectories do not exist, there are only two possibilities:
   //
@@ -106,18 +80,18 @@ begin
 
   If not frmSettings.UserDataDirectoriesExist then
   begin
-//    HUErrorMsgOK ('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
+    HUErrorMsgOK ('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
     Main.TerminateApp;
   end;// if not frmSettings.UserDataDIrectoriesExist
 
   frmSettings.ReadSettingsINIFile;
 
-{  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
+  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
   if dlgHUNagScreen.ShowModal = mrYes then
   begin
     dlgHURegistration.RequestRegistrationKey;
-    dlgHURegistration.SHowModal;
-  end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe' }
+    dlgHURegistration.ShowModal;
+  end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe'
 
 showmessage('Init Complete');
 
