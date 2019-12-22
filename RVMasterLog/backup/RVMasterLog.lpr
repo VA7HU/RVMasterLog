@@ -22,12 +22,12 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Interfaces, Forms,   dbflaz,
+  Interfaces, Forms, dbflaz,
   // Application Units
   AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable,
-  ProvTable, RVData, SuppliersTable, ApplicationDB, SuppliersDB{,
+  ProvTable, RVData, SuppliersTable, ApplicationDB, SuppliersDB,
   // HULibraries
-  huconstants, humessageboxes, hunagscreen, huregistration};
+  HUConstants, humessageboxes, HUNagscreen, HURegistration;
 
 {$R *.res}
 

@@ -31,9 +31,9 @@ interface
 uses
   Classes, Controls, Dialogs, FileUtil, SysUtils,
   // Application Units
-  AppSettings{,
+  AppSettings,
   // HULib Units
-  HUConstants, HUMessageBoxes, HUNagScreen, HURegistration};
+  HUConstants, HUMessageBoxes, HUNagScreen, HURegistration;
 
 function Initialize : Boolean;
 

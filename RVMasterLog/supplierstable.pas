@@ -30,10 +30,10 @@ interface
 uses
   Classes, FileUtil, SysUtils, sqlite3conn, sqldb, db, Forms, Controls,
   Graphics, Dialogs, Buttons, DBCtrls, DBGrids, StdCtrls, ComCtrls, ExtCtrls,
-  Menus;
+  Menus,
   // Application Units
   // HULib Units
-  //HUValidations;
+  HUValidations;
 
 //========================================================================================
 //          PUBLIC VARIABLES

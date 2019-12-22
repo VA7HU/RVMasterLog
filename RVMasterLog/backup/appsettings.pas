@@ -249,7 +249,7 @@ begin
   if not CreateDir(pSettingsDirectory)then
   begin
     showmessage('SETTINGS DIRECTORY FAILED');
-    HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
+//    HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
     Result := False;
     Main.TerminateApp;
   end;// if not CreateDir(pSettingsDirectory)

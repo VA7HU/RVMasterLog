@@ -112,12 +112,12 @@ begin
 
   frmSettings.ReadSettingsINIFile;
 
-  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
+{  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
   if dlgHUNagScreen.ShowModal = mrYes then
   begin
     dlgHURegistration.RequestRegistrationKey;
     dlgHURegistration.SHowModal;
-  end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe'
+  end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe' }
 
 showmessage('Init Complete');
 

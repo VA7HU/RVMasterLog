@@ -27,9 +27,9 @@ uses
   Buttons, Classes, ComCtrls, Controls, Dialogs, FileUtil, Forms, Graphics, INIFiles,
   StdCtrls, SysUtils, Types,
   //App Units
-  SuppliersTable{,
+  SuppliersTable,
   // HULib units
-  HUConstants, HUMessageBoxes};
+  HUConstants, HUMessageBoxes;
 
 type
 
