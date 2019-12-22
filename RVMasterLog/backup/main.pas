@@ -19,7 +19,7 @@ unit Main;
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Jul 2019
+// Date : 22 Dec 2019
 //
 //========================================================================================
 
@@ -28,24 +28,18 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls,
-  //
-  AppFinal, AppInit, AppSettings, Logbook, RVData, SuppliersTable;
+  // Application Units
+  AppFinal, AppInit, AppSettings, Logbook, RVData, SuppliersTable
+  // HULibrary Units
+  ;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
-    mnuToolTest: TMenuItem;
-    mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem;
-    mnuToolsDBMaintenanceApplicationDataDB: TMenuItem;
-    mnuToolsDBMaintenance: TMenuItem;
-    mnuTools: TMenuItem;
     mnuLogbooksSaveLogbook: TMenuItem;
-    mnuSettingsCommonHUCountryDB: TMenuItem;
-    mnuSettingsDatabasesCommon: TMenuItem;
-    mnuSettingsDatabases: TMenuItem;
-    mnuSettingsDIrectories: TMenuItem;
+    mnuSettingsApplicationDatabase: TMenuItem;
     mnuSettings: TMenuItem;
     muLogbooksSep2: TMenuItem;
     mnuLogbooksPrint: TMenuItem;
@@ -70,8 +64,7 @@ type
     procedure mnuLogbooksPrinterSetupClick(Sender: TObject);
     procedure mnuLogbooksDeleteLogbookClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
-    procedure mnuSettingsDirectoriesClick(Sender: TObject);
-    procedure mnuToolsDBMaintenanceApplicationDataDBClick(Sender: TObject);
+    procedure mnuSettingsApplicationDatabaseClick(Sender: TObject);
     procedure mnuToolTestClick(Sender: TObject);
   private
 
@@ -149,7 +142,6 @@ end;// procedure TfrmMain.mnuLogbooksSaveClick
 procedure TfrmMain.mnuLogbooksDeleteLogbookClick(Sender: TObject);
 begin
  showmessage('Delete Logbook');
-// frmLogbook.DeleteLogbook;
 end;// procedure TfrmMain.mnuLogbooksDeleteClick
 
 //----------------------------------------------------------------------------------------
@@ -177,25 +169,10 @@ end;// procedure TfrmMain.mnuFileExitClick
 // mnuSettingsClick
 //==========
 
-procedure TfrmMain.mnuSettingsDirectoriesClick(Sender: TObject);
+procedure TfrmMain.mnuSettingsApplicationDatabaseClick(Sender: TObject);
 begin
   frmSettings.ShowModal;
-end;// procedure TfrmMain.mnuSettingsDirectoriesClick
-
-procedure TfrmMain.mnuToolsDBMaintenanceApplicationDataDBClick(Sender: TObject);
-begin
-
-end;
-
-//========================================================================================
-
-//==========
-// mnuToolsClick
-//==========
-procedure TfrmMain.mnuToolTestClick(Sender: TObject);
-begin
-  showmessage('DB Test Menu';
-end;// procedure TfrmMain.mnuToolTestClick
+end;// procedure TfrmMain.mnuSettingsApplicationDatabaseClick
 
 //========================================================================================
 //          COMMAND BUTTON ROUTINES

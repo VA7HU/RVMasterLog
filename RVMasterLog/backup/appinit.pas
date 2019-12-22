@@ -22,7 +22,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 21 Dec 2019
+// Date : 22 Dec 2019
 //
 //========================================================================================
 
@@ -72,7 +72,27 @@ uses
 function Initialize : Boolean;
 begin
 
-  // If the UserDirectories do not exist, there are only two possibilities:
+  // If the SettingsDB does not exists we treat it like a New Installation
+
+  if not FileExists(frmSettings.pAppDatabaseName) then
+    if not frmSettings.CreateApplicationDataBase then
+    begin
+      showmessage('Failure');
+      TerminateApp;
+  end;// if not frmSettings.CreateApplicationDataBase
+
+  frmSettings.LoadApplicationDatabase;
+
+  if dlgHUNagScreen.ShowModal = mrOK then
+  begin
+    // Check for Registration
+    if dlgHURegistration.pRegKey = K_SP then
+      dlgHURegistration.ShowModal;
+  end;// if dlgHUNagScreen.ShowModal = mrOK
+
+
+
+{  // If the UserDirectories do not exist, there are only two possibilities:
   //
   //   1. This is an initial installation and they have not been created yet; or,
   //
@@ -84,14 +104,14 @@ begin
     Main.TerminateApp;
   end;// if not frmSettings.UserDataDIrectoriesExist
 
-  frmSettings.ReadSettingsINIFile;
+//  frmSettings.ReadSettingsINIFile;
 
-  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
+//  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
   if dlgHUNagScreen.ShowModal = mrYes then
   begin
     dlgHURegistration.RequestRegistrationKey;
     dlgHURegistration.ShowModal;
-  end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe'
+  end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe' }
 
 showmessage('Init Complete');
 

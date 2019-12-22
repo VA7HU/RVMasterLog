@@ -24,8 +24,10 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms,
   Controls, Graphics, Dialogs, DbCtrls, Buttons, ExtCtrls, StdCtrls, DBGrids,
-  //
-  AppSettings, HUMessageBoxes;
+  // Application Units
+  AppSettings,
+  // HULibrary Units
+  HUMessageBoxes;
 
 type
 

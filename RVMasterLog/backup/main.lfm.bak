@@ -71,35 +71,9 @@ object frmMain: TfrmMain
     end
     object mnuSettings: TMenuItem
       Caption = '&Settings'
-      object mnuSettingsDIrectories: TMenuItem
-        Caption = 'Directories'
-        OnClick = mnuSettingsDIrectoriesClick
-      end
-      object mnuSettingsDatabases: TMenuItem
-        Caption = 'Databases'
-        object mnuSettingsDatabasesCommon: TMenuItem
-          Caption = 'Common '
-          object mnuSettingsCommonHUCountryDB: TMenuItem
-            Caption = 'HUCountryDB'
-          end
-        end
-      end
-    end
-    object mnuTools: TMenuItem
-      Caption = '&Tools'
-      object mnuToolsDBMaintenance: TMenuItem
-        Caption = 'DB Maintenance'
-        object mnuToolsDBMaintenanceApplicationDataDB: TMenuItem
-          Caption = 'ApplicationDB'
-          OnClick = mnuToolsDBMaintenanceApplicationDataDBClick
-        end
-        object mnuMainToolsDBMaintenanceManufacturersDB: TMenuItem
-          Caption = 'ManufacturersDB'
-        end
-      end
-      object mnuToolTest: TMenuItem
-        Caption = 'Test'
-        OnClick = mnuToolTestClick
+      object mnuSettingsApplicationDatabase: TMenuItem
+        Caption = 'Application Database'
+        OnClick = mnuSettingsApplicationDatabaseClick
       end
     end
   end

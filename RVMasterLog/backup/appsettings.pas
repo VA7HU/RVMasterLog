@@ -6,7 +6,7 @@ unit AppSettings;
 //
 // Unit : AppSettings.pas
 //
-// Description :   Add "  SQLiteLibraryName := cstrSQLiteLibraryName;   "
+// Description :
 //
 // Called By :  AppInit : Initialize
 //              Main  : TfrmMain.mnuSettingsDIrectoriesClick
@@ -17,19 +17,19 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 21 Dec 2019
+// Date : 22 Dec 2019
 //
 //========================================================================================
 
 interface
 
 uses
-  Buttons, Classes, ComCtrls, Controls, Dialogs, FileUtil, Forms, Graphics, INIFiles,
-  StdCtrls, SysUtils, Types,
+  Buttons, Classes, ComCtrls, Controls, Dialogs, FileUtil, Forms, Graphics,
+  INIFiles, sqlite3conn, sqldb, db, StdCtrls, DBGrids, DBCtrls, Grids, SysUtils,
+  Types, windirs, STRUtils,
   //App Units
-  SuppliersTable{,
-  // HULib units
-  HUConstants, HUMessageBoxes};
+  // HULibrary units
+  HUConstants, HUMessageBoxes, HURegistration;
 
 type
 
@@ -38,6 +38,12 @@ type
   TfrmSettings = class(TForm)
     bbtCancel: TBitBtn;
     bbtOk: TBitBtn;
+    cbxpAppInitialSettingsPage: TComboBox;
+    DBTableDataSource: TDataSource;
+    DBTableQuery: TSQLQuery;
+    dsRegistrationSettingsTable: TDataSource;
+    dsApplicationSettingsTable: TDataSource;
+    dbeFirstName: TDBEdit;
     edtBackupsDirectory: TEdit;
     edtAppDataDirectory: TEdit;
     edtLogbooksDirectory: TEdit;
@@ -51,131 +57,122 @@ type
     Label6: TLabel;
     pcSettings: TPageControl;
     pgDirectories: TTabSheet;
+    pgSettingsDB: TTabSheet;
+    DBConnection: TSQLite3Connection;
+    sqlqApplicationSettingsTable: TSQLQuery;
+    sqlqRegistrationSettingsTable: TSQLQuery;
+    DBTransaction: TSQLTransaction;
+    pgApplicationSettings: TTabSheet;
+    pgRegistrationSettings: TTabSheet;
+    StatusBar1: TStatusBar;
+    strgrdApplicationSettings: TStringGrid;
+    strgrdRegistrationSettings: TStringGrid;
     procedure bbtCancelClick(Sender: TObject);
     procedure bbtOkClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure pgDirectoriesContextPopup(Sender: TObject; MousePos: TPoint;
-              var Handled: Boolean);
+    function CreateApplicationDataBase: boolean;
+    function LoadApplicationDatabase: boolean;
+    procedure SaveApplicationDataBase;
 
   private
-    fApplicationDirectory : string;
-    fAppName : string;
-    fSystemUserDirectory : string;
-    fUserDirectory : string;
-    fSettingsDirectory : string;
-    fLogbooksDirectory : string;
-    fBackupsDirectory : string;
+      // Application Elements
+    fAppVersion : string;
+    fAppFullFilePathName : string;
+    fAppFilePath : string;
+    fAppFullFileName : string;
+    fAppFileName : string;
+    fAppFileExt : string;
+    fAppUserDirectory : string;
     fAppDataDirectory : string;
-    fSQLiteLibraryName : string;
-    fOwnerFirstName : string;
-    fOwnerLastName : string;
-    fOwnerCallsign : string;
-    fOwnerEmailAddress : string;
-    fOwnerID : string;
-    function GetApplicationDirectory : string;
-    procedure SetApplicationDirectory(Dir : string);
-    function GetAppName : string;
-    procedure SetAppName(AppName : string);
-    function GetSystemUserDirectory : string;
-    procedure SetSystemUserDirectory(Dir : string);
-    function GetUserDirectory : string;
-    procedure SetUserDirectory(Dir : string);
-    function GetSettingsDirectory : string;
-    procedure SetSettingsDirectory(Dir : string);
-    function GetLogbooksDirectory : string;
-    procedure SetLogbooksDirectory(Dir : string);
-    function GetBackupsDirectory : string;
-    procedure SetBackupsDirectory(Dir : string);
+    fAppSettingsDirectory : string;
+    fAppLogbooksDirectory : string;
+    fAppBackupsDirectory : string;
+    fAppSettingsInitialPageName : string;
+    fAppSettingsInitialPageNum : string;
+    fAppDatabaseName : string;
+
+    function GetAppVersion : string;
+    procedure SetAppVersion(Version : string);
+    function GetAppFullFilePathName : string;
+    procedure SetAppFullFilePathName(PathName : string);
+    function GetAppFilePath : string;
+    procedure SetAppFilePath(Path : string);
+    function GetAppFullFileName : string;
+    procedure SetAppFullFileName(FName : string);
+    function GetAppFileName : string;
+    procedure SetAppFileName(FName : string);
+    function GetAppFileExt : string;
+    function GetAppUserDirectory : string;
+    procedure SetAppUserDirectory(Dir : string);
     function GetAppDataDirectory : string;
     procedure SetAppDataDirectory(Dir : string);
-    function GetSQLiteLibraryName : string;
-    procedure SetSQLiteLibraryName(LibName : string);
-    function GetOwnerFirstName : string;
-    procedure SetOwnerFirstName (FirstName : string);
-    function GetOwnerLastName : string;
-    procedure SetOwnerLastName (LastName : string);
-    function GetOwnerCallsign : string;
-    procedure SetOwnerCallsign (Callsign : string);
-    function GetOwnerEmailAddress : string;
-    procedure SetOwnerEmailAddress (EmailAddress : string);
-    function GetOwnerID : string;
-    procedure SetOwnerID (OwnerID : string);
+    function GetAppSettingsDirectory : string;
+    procedure SetAppSettingsDirectory(Dir : string);
+    function GetAppLogbooksDirectory : string;
+    procedure SetAppLogbooksDirectory(Dir : string);
+    function GetAppBackupsDirectory : string;
+    procedure SetAppBackupsDirectory(Dir : string);
+    function GetAppSettingsInitialPageName : string;
+    procedure SetAppSettingsInitialPageName(PageName : string);
+    function GetAppSettingsInitialPageNum : string;
+    procedure SetAppSettingsInitialPageNum(PageNum : string);
+    function GetAppDatabaseName : string;
+    procedure SetAppDatabaseName(DBName : string);
 
   public
+    //====================================================================================
+    // The following Properties are in fact constants that once initialized will not be
+    // changed during program execution.
+    //====================================================================================
+    property pAppVersion : string
+                           read GetAppVersion
+                           write SetAppVersion;
+    property pAppFullFilePathName : string
+                                    read GetAppFullFilePathName
+                                    write SetAppFullFilePathName;
+    property pAppFilePath : string read GetAppFilePath
+                                   write SetAppFilePath;
+    property pAppFullFileName : string
+                                read GetAppFullFileName
+                                write SetAppFullFileName;
+    property pAppFileName : string
+                            read GetAppFileName
+                            write SetAppFileName;
+    property pAppFileExt : string
+                           read GetAppFileExt;
+    property pAppUserDirectory : string
+                                 read GetAppUserDirectory
+                                 write SetAppUserDirectory;
+    property pAppDataDirectory : string
+                                 read GetAppDataDirectory
+                                 write SetAppDataDirectory;
+    property pAppSettingsDirectory : string
+                                  read GetAppSettingsDirectory
+                                  write SetAppSettingsDirectory;
+    property pAppLogbooksDirectory : string
+                                  read GetAppLogbooksDirectory
+                                  write SetAppLogbooksDirectory;
+    property pAppBackupsDirectory : string
+                                 read GetAppBackupsDirectory
+                                 write SetAppBackupsDirectory;
+    property pAppDatabaseName : string
+                                 read GetAppDatabaseName
+                                 write SetAppDatabaseName;
 
-    property pApplicationDirectory : string read GetApplicationDirectory write SetApplicationDirectory;
-    property pAppName : string read GetAppName write SetAppName;
-    property pSystemUserDirectory : string read GetSystemUserDirectory write SetSystemUserDirectory;
-    property pUserDirectory : string read GetUserDirectory write SetUserDirectory;
-    property pSettingsDirectory : string read GetSettingsDirectory write SetSettingsDirectory;
-    property pLogbooksDirectory : string read GetLogbooksDirectory write SetLogbooksDirectory;
-    property pBackupsDirectory : string read GetBackupsDirectory write SetBackupsDirectory;
-    property pAppDataDirectory : string read GetAppDataDirectory write SetAppDataDirectory;
-    property pSQLiteLibraryName : string read GetSQLiteLibraryName write SetSQLiteLibraryName;
-    property pOwnerFirstName : string read GetOwnerFirstName write SetOwnerFirstName;
-    property pOwnerLastName : string read GetOwnerLastName write SetOwnerLastName;
-    property pOwnerCallsign : string read GetOwnerCallsign write SetOwnerCallsign;
-    property pOwnerEmailAddress : string read GetOwnerEmailAddress write SetOwnerEmailAddress;
-    property pOwnerID : string read GetOwnerID write SetOwnerID;
-
-    function UserDataDirectoriesExist : Boolean;
-    procedure ReadSettingsINIFile;
-    procedure WriteSettingsINIFile;
-    function CreateUserDataDirectories : Boolean;
+    //====================================================================================
+    // The following Properties are in fact variables that once initialized may be
+    // changed during program execution and are saved in the AppSettings database.
+    //====================================================================================
+    property pAppSettingsInitialPageName : string
+                                  read GetAppSettingsInitialPageName
+                                 write SetAppSettingsInitialPageName;
+    property pAppSettingsInitialPageNum : string
+                                  read GetAppSettingsInitialPageNum
+                                 write SetAppSettingsInitialPageNum;
 
   end;// TfrmSettings
-
-  //========================================================================================
-  //          PUBLIC CONSTANTS
-  //========================================================================================
-const
-
-  //==========
-  //  SQLite
-  //==========
-  cstrSQLiteBaseLibraryName = 'sqlite3';
-
-  //==========
-  //  MESSAGES
-  //==========
-
-    // Error MEssages
-
-{       erNoDataDirectoriesFound = '       MAJOR ERROR' +
-                                  K_CR +
-                                   K_CR +
-                                   'No Data Directories found.' +
-                                   K_CR +
-                                   K_CR +
-                                   'Is this an Initial installation ?'; }
-
-
-       erCreateUserDataDirFailed = 'Failure Creating User Data Directory';
-
-       erCreateUserSettingsDirFailed = 'Failure Creating User Settings Directory';
-
-       erCreateUserDirsFailed = 'Failure Creating User Directories';
-
-    // Information Messages
-
-      imCreateUserDirs = 'Creating User Directories';
-
-    {  imNoINIFile = '   The .INI file Does Not Exist.'
-                  + K_CR
-                  + ' Is this an Initial installation ?'; }
-
-
-  //==========
-  // DATA ELEMENTS
-  //==========
-
-    cstrApplicationDBName = 'ApplicationDB';
-
-  //========================================================================================
-  //          PUBLIC VARIABLES
-  //========================================================================================
 
 var
   frmSettings: TfrmSettings;
@@ -184,206 +181,449 @@ implementation
 
 {$R *.lfm}
 
-uses
-  Main;
-
 //========================================================================================
 //          PRIVATE CONSTANTS
 //========================================================================================
 const
 
-  cstrAppName = 'RVMasterLog';
+  // Directories
+  cstrAppFullFileName = 'RVMasterLog.exe';
   cstrSettingsDirectoryName = 'Settings';
   cstrLogbooksDirectoryName = 'Logbooks';
   cstrBackupsDirectoryName = 'Backups';
-  cstrAppDataDirectoryName = 'App Data';
-  cstrUserDirectoryPath = 'AppData\Roaming\RVMasterLog';
+  cstrAppDataDirectoryName = 'AppData';
+
+  // Databases
+  cstrApplicationDBName = 'RVMApplicationDB.sl3';
+  cstrApplicationSettingsTableName = 'ApplicationSettingsTable';
+
+  // Properties
+  cstrpAppSettingsInitialPageName = 'pAppSettingsInitialPageName';
+  cstrpAppSettingsInitialPageNum = 'pAppSettingsInitialPageNum';
+
+  // frmSettings
+  straryPageNames : array[0..3] of string = ('Directories', 'Application Settings',
+                                            'Registration Settings', 'SettingsDB');
 
 //========================================================================================
 //          PRIVATE VARIABLES
 //========================================================================================
+var
+  vintAppSettingsInitialDirectory : integer;
 
 //========================================================================================
 //          PRIVATE ROUTINES
 //========================================================================================
-function TfrmSettings.UserDataDirectoriesExist : Boolean;
-begin
-
-  Result := True;
-
-  if not DirectoryExists(pUserDirectory) then
-  begin
-
-
-{    if HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound) = mrYes then
-
-      HUInformationMsgOK('imCreateUserDirs', imCreateUserDirs); }
-
-      if not CreateUserDataDirectories then
-        Result := False;
-
-
-  end;// if UserDataDirectoriesExist(pUserDirectory)
-
-end;// function TfrmAppSetupApplicationDirectoryp.UserFIlesExist
-
-//========================================================================================
-function TfrmSettings.CreateUserDataDirectories : Boolean;
-var
-  VStr : string;
-begin
-
-    // CREATE USER DATA DIRECTORY
-  pUserDirectory := frmSettings.pSystemUserDirectory + cstrUserDirectoryPath;
-
-  if not CreateDir(pUserDirectory) then
-  begin
-//    HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
-    Result := False;
-    Main.TerminateApp;
-  end;// if not CreateDir(pUserDirectory)
-
-    // CREATE SETTINGS DIRECTORY
-  pSettingsDirectory := pUserDirectory + '\' + cstrSettingsDirectoryName;
-
-  if not CreateDir(pSettingsDirectory)then
-  begin
-    showmessage('SETTINGS DIRECTORY FAILED');
-//    HUErrorMsgYN('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
-    Result := False;
-    Main.TerminateApp;
-  end;// if not CreateDir(pSettingsDirectory)
-
-    // CREATE BACKUPS DIRECTORY
-  pBackupsDirectory := pUserDirectory + '\' + cstrBackupsDirectoryName;
-
-  if not CreateDir(pBackupsDirectory)then
-  begin
-    showmessage('BACKUP DIRECTORY FAILED');
-    Result := False;
-    Main.TerminateApp;
-  end;// if not CreateDir(pBackupsDirectory)
-
-  // CREATE LOGBOOKS DIRECTORY
-  pLogbooksDirectory := pUserDirectory + '\' + cstrLogbooksDirectoryName;
-
-  if not CreateDir(pLogbooksDirectory)then
-  begin
-    showmessage('LOGBOOKS DIRECTORY FAILED');
-    Result := False;
-    Main.TerminateApp;
-  end;// if not CreateDir(pLogbooksDirectory)
-
-    // CREATE APPLICATION Database and Tables
-  pAppDataDirectory := pUserDirectory + '\' + cstrAppDataDirectoryName;
-  if not CreateDir(pAppDataDirectory)then
-  begin
-    showmessage('APPDATADIRECTORY FAILED');
-    Result := False;
-    Main.TerminateApp;
-  end;// if not CreateDir(pAppDataDirectory)
-
-//    frmSuppliersTable.CreateSuppliersTable;
-
-  Result := True;
-
-end;// function CreateUserDataDirectories
 
 //========================================================================================
 //          PUBLIC ROUTINES
 //========================================================================================
+function TfrmSettings.CreateApplicationDataBase: Boolean;
+var
+  vstrTstr : String;
+begin
+
+showmessage('Creating ApplicationDataBase');
+
+  DBConnection.Close; // Ensure any connection is closed when we start
+
+  Result := True;
+
+    //========================================
+    // Create the Default database and tables
+    //========================================
+  try
+
+    //=========================
+    //  Create the Database
+    //=========================
+    DBConnection.Open;
+    DBTransaction.Active := true;
+
+    //========================================
+    // Create the "ApplicationSettingsTable"
+    //========================================
+
+// showmessage('Create ApplicationSettingsTable');
+
+    DBConnection.ExecuteDirect('CREATE TABLE "ApplicationSettingsTable"('+
+                                     ' "Property" String PRIMARY KEY,'+
+                                     ' "Value" String );');
+
+// showmessage('Create ApplicationSettingsIndex');
+
+    // Creating an index based upon Property in the ApplicationSettingsTable
+    DBConnection.ExecuteDirect('CREATE UNIQUE INDEX ' +
+                                     ' "ApplicationSettingsTable_Property_idx"' +
+                                     ' ON "ApplicationSettingsTable"( "Property" );');
+
+    //========================================
+    // Create the "RegistrationSettingsTable"
+    //========================================
+
+// showmessage('Create RegistrationSettingsTable');
+
+    DBConnection.ExecuteDirect('CREATE TABLE "RegistrationSettingsTable"('+
+                                     ' "Property" String PRIMARY KEY,'+
+                                     ' "Value" String );');
+
+// showmessage('Create RegistrationSettings Index');
+
+
+    DBConnection.ExecuteDirect('CREATE UNIQUE INDEX ' +
+                                     ' "RegistrationSettingsTable_Property_idx"' +
+                                     ' ON "RegistrationSettingsTable"( "Property" );');
+    DBTransaction.Commit;
+
+    //=========================
+    // Add the User Adaptble Property Records with Initial Default values.
+    //=============================
+
+    //================================
+    // Application Settings properties
+    //================================
+    DBConnection.ExecuteDirect('INSERT INTO ApplicationSettingsTable VALUES' +
+                                     ' ("pAppSettingsInitialPageName", "Application Settings")');
+    DBConnection.ExecuteDirect('INSERT INTO ApplicationSettingsTable VALUES' +
+                                    ' ("pAppSettingsInitialPageNum", "1")');
+    //==========================
+    // HURegistration properties
+    //==========================
+    DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                                     ' ("pRegFirstName", " ")');
+    DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                                     ' ("pRegLastName", " ")');
+    DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                                     ' ("pRegEMailaddress", " ")');
+    DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                                     ' ("pRegCallsign", " ")');
+    DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                                     ' ("pRegKey", " ")');
+    DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                                     ' ("pRegUserID", " ")');
+
+    //  Additional records go here
+
+    //=========================
+    // Commit the additions
+    //=========================
+
+    DBTransaction.Commit;
+
+    except
+      ShowMessage('Unable to Create new Database');
+      Result := False;
+  end;// Try to Create the Default database and tables
+
+  //=======================
+  //  Database Created
+  //=======================
+
+  DBTransaction.Active := False;
+  DBConnection.Close;
+
+  showmessage('Settings DataBase Created');
+
+end;// function TfrmSettings.CreateSettingsDataBase
+
+//========================================================================================
+function TfrmSettings.LoadApplicationDatabase : boolean;
+var
+  vstrTStr : string;
+  vintRecNr : integer;
+
+begin
+
+  showmessage('LoadApplicationDatabase');
+
+  Result := True;
+
+  try {LoadApplicationDatabase}
+
+//*****    showmessage('Opening DBConnection');
+
+    if not DBConnection.Connected then
+      DBConnection.Open;
+
+//    showmessage('DBConnection Open');
+
+    if not DBConnection.Connected then
+    begin
+      showmessage('Error connecting to the Database. Aborting data loading');
+      Result := False;
+      Exit;
+    end;// if not DBConnection.Connected
+
+    //================================================
+    // Load the Application Settings Table properties
+    //================================================
+    sqlqApplicationSettingsTable.SQL.Text :=
+      'select ' +
+      '  e.Property, ' +
+      '  e.Value ' +
+      'from ApplicationSettingsTable e';
+
+    DBTransaction.StartTransaction;
+
+//    showmessage('DBTransaction.StartTransaction');
+
+    sqlqApplicationSettingsTable.Open;
+
+//    showmessage('sqlqApplicationSettingsTable.Open');
+
+    // Get pAppSettingsInitialPageName
+//    showmessage('Record = ' + (IntToStr(sqlqApplicationSettingsTable.RecNo   )));
+//    showmessage('Data - ' +
+//                        sqlqApplicationSettingsTable.Fields[0].AsString +
+//                          '  -  ' +
+//                          sqlqApplicationSettingsTable.Fields[1].AsString);
+    pAppSettingsInitialPageName := sqlqApplicationSettingsTable.Fields[1].AsString;
+//    showmessage('pAppSettingsInitialPageName = ' + pAppSettingsInitialPageName);
+
+    // Get pAppSettingsInitialPageNum
+    sqlqApplicationSettingsTable.NEXT;
+
+//    showmessage('Record = ' + (IntToStr(sqlqApplicationSettingsTable.RecNo   )));
+//    showmessage('Data - ' +
+//                          sqlqApplicationSettingsTable.Fields[0].AsString +
+//                          '  -  ' +
+//                          sqlqApplicationSettingsTable.Fields[1].AsString);
+    pAppSettingsInitialPageNum := sqlqApplicationSettingsTable.Fields[1].AsString;
+//    showmessage('pAppSettingsInitialPageNum = ' + pAppSettingsInitialPageNum);
+
+    //================================================
+    // Application Settings Table properties  Loaded
+    //================================================
+//    showmessage('ApplicationSettingsTable.EOF');
+    sqlqApplicationSettingsTable.Close;
+
+
+    //================================================
+    // Load the Registration Table properties
+    //================================================
+    sqlqRegistrationSettingsTable.SQL.Text :=
+      'select ' +
+      '  e.Property, ' +
+      '  e.Value ' +
+      'from RegistrationSettingsTable e';
+
+//    showmessage(sqlqRegistrationSettingsTable.SQL.Text);
+
+    sqlqRegistrationSettingsTable.Open;
+
+//    showmessage('sqlqRegistrationSettingsTable Open');
+
+    // Get pRegFirstName
+//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
+//    showmessage('Data - ' +
+//                 sqlqRegistrationSettingsTable.Fields[0].AsString +
+//                 '  -  ' +
+//                 sqlqRegistrationSettingsTable.Fields[1].AsString);
+    dlgHURegistration.pRegFirstName := sqlqRegistrationSettingsTable.Fields[1].AsString;
+//    showmessage('pRegFirstName = ' + dlgHURegistration.pRegFirstName);
+
+    // Get pRegLastName
+    sqlqRegistrationSettingsTable.NEXT;
+
+//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
+//    showmessage('Data - ' +
+//                sqlqRegistrationSettingsTable.Fields[0].AsString +
+//                '  -  ' +
+//                sqlqRegistrationSettingsTable.Fields[1].AsString);
+    dlgHURegistration.pRegLastName := sqlqRegistrationSettingsTable.Fields[1].AsString;
+//    showmessage('pRegLastName = ' + dlgHURegistration.pRegLastName);
+
+    // Get pRegEmailAddress
+    sqlqRegistrationSettingsTable.NEXT;
+
+//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
+//    showmessage('Data - ' +
+//                sqlqRegistrationSettingsTable.Fields[0].AsString +
+//                '  -  ' +
+//                sqlqRegistrationSettingsTable.Fields[1].AsString);
+    dlgHURegistration.pRegEmailAddress := sqlqRegistrationSettingsTable.Fields[1].AsString;
+//    showmessage('pRegEmailAddress = ' + dlgHURegistration.pRegEmailAddress);
+
+     // Get pRegCallsign
+    sqlqRegistrationSettingsTable.NEXT;
+
+//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
+//    showmessage('Data - ' +
+//                sqlqRegistrationSettingsTable.Fields[0].AsString +
+//                '  -  ' +
+//                sqlqRegistrationSettingsTable.Fields[1].AsString);
+    dlgHURegistration.pRegCallsign := sqlqRegistrationSettingsTable.Fields[1].AsString;
+//    showmessage('pRegCallsign = ' + dlgHURegistration.pRegCallsign);
+
+         // Get pRegKey
+        sqlqRegistrationSettingsTable.NEXT;
+
+//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
+//    showmessage('Data - ' +
+//                sqlqRegistrationSettingsTable.Fields[0].AsString +
+//                '  -  ' +
+//                sqlqRegistrationSettingsTable.Fields[1].AsString);
+    dlgHURegistration.pRegKey := sqlqRegistrationSettingsTable.Fields[1].AsString;
+//    showmessage('pRegKey = ' + dlgHURegistration.pRegKey);
+
+        // Get pRegUserID
+    sqlqRegistrationSettingsTable.NEXT;
+
+//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
+//    showmessage('Data - ' +
+//                sqlqRegistrationSettingsTable.Fields[0].AsString +
+//                '  -  ' +
+//                sqlqRegistrationSettingsTable.Fields[1].AsString);
+    dlgHURegistration.pRegUserID := sqlqRegistrationSettingsTable.Fields[1].AsString;
+//    showmessage('pRegUserID = ' + dlgHURegistration.pRegUserID);
+
+    //================================================
+    // Registration Table properties  Loaded
+    //================================================
+    showmessage('RegistrationTable.EOF');
+    sqlqRegistrationSettingsTable.Close;
+
+  except
+
+    on D: EDatabaseError do
+    begin
+      MessageDlg('Error', 'A Database error has occured. Technical error message: ' +
+                          D.Message, mtError, [mbOK], 0);
+      Result := False;
+    end;// on D: EDatabaseEorror
+
+  end;// Try {LoadApplicationDatabase}
+
+  DBTransaction.Active := False;
+  DBConnection.Close;
+
+end;// function TfrmSettings.LoadApplicationDatabase
+
+//========================================================================================
+procedure TfrmSettings.SaveApplicationDatabase;
+var
+  vstrTStr : string;
+begin
+
+{  // Setup Database Stuff
+  // Make sure that nothing is connected or active
+  DBConnection.Connected := False;
+  DBConnection.Transaction := DBTransaction;
+  DBTransaction.Active := False;
+  DBTableQuery.Active := False;
+
+  // Prepare the components
+  DBConnection.DatabaseName := pAppDataDirectory + '\' + cstrApplicationDBName;
+  DBTableQuery.Options := [sqoKeepOpenOnCommit, sqoAutoApplyUpdates, sqoAutoCommit];
+  DBTableQuery.SQL.Text := 'select * from UserSettingsTable';
+  DBTableQuery.DataSource := DBTableDataSource;
+  DBTableQuery.Transaction := DBTransaction;
+
+  DBTableDataSource.DataSet := DBTableQuery;
+
+  DBGrid1.DataSource := DBTableDataSource;
+  DBGrid1.Columns[0].Fieldname := 'Property';
+  DBGrid1.Columns[0].Width := 50;
+
+  DBNavigator1.DataSource := DBTableDataSource;
+
+  // Connect the database and activate the SQL-queries
+  DBConnection.Connected := True;
+  DBConnection.Open;
+  DBTransaction.Active := True;
+  DBTableQuery.Open;
+
+  // Load the SettingsDB data elements
+  vstrTStr := DBTableQuery.FieldByName('Property').AsString;
+  showmessage(vstrTStr); }
+
+end;// procedure TfrmSettings.SaveSettingsDataBase
 
 //========================================================================================
 //          PROPERTY ROUTINES
 //========================================================================================
-function TfrmSettings.GetApplicationDirectory: string;
+function TfrmSettings.GetAppVersion: string;
 begin
-   Result := fApplicationDirectory;
-end;// function TfrmSettings.GetApplicationDirectory
+   Result := fAppVersion;
+end;// function TfrmSettings.GetVersion
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetApplicationDirectory(Dir: string);
+procedure TfrmSettings.SetAppVersion(Version: string);
 begin
-    fApplicationDirectory := Dir;
-end;// procedure TfrmSettings.SetApplicationDirectory
+    fAppVersion := Version;
+end;// procedure TfrmSettings.SetAppVersion
 
 //========================================================================================
-function TfrmSettings.GetAppName: string;
+function TfrmSettings.GetAppFullFilePathName: string;
 begin
-   Result := fAppName;
-end;// function TfrmSettings.GetAppName
+   Result := fAppFullFilePathName;
+end;// function TfrmSettings.GetAppFullFilePathName
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppName(AppName: string);
+procedure TfrmSettings.SetAppFullFilePathName(PathName: string);
 begin
-    fAppName := AppName;
-end;// procedure TfrmSettings.SetAppName
+    fAppFullFilePathName := PathName;
+end;// procedure TfrmSettings.SetAppFullFilePathName
 
 //========================================================================================
-function TfrmSettings.GetUserDirectory: string;
+function TfrmSettings.GetAppFilePath: string;
 begin
-   Result := fUserDirectory;
-end;// function TfrmSettings.GetUserDirectory
+   Result := fAppFilePath;
+end;// function TfrmSettings.GetAppFullFilePath
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetUserDirectory(Dir: string);
+procedure TfrmSettings.SetAppFilePath(Path: string);
 begin
-    fUserDirectory := Dir;
-end;// procedure TfrmSettings.SetUserDirectory
+    fAppFilePath := Path;
+end;// procedure TfrmSettings.SetAppFullFilePath
 
 //========================================================================================
-function TfrmSettings.GetSystemUserDirectory: string;
+function TfrmSettings.GetAppFullFileName: string;
 begin
-   Result := fSystemUserDirectory;
-end;// function TfrmSettings.GetSystemUserDirectory
+   Result := fAppFullFileName;
+end;// function TfrmSettings.GetAppFullFileNamee
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetSystemUserDirectory(Dir: string);
+procedure TfrmSettings.SetAppFullFileName(FName: string);
 begin
-    fSystemUserDirectory := Dir;
-end;// procedure TfrmSettings.SetSystemUserDirectory
+    fAppFullFileName := cstrAppFullFileName;
+end;// procedure TfrmSettings.SetAppFullFileName
 
 //========================================================================================
-function TfrmSettings.GetSettingsDirectory: string;
+function TfrmSettings.GetAppFileName: string;
 begin
-   Result := fSettingsDirectory;
-end;// procedure TfrmSettings.GetAppSettingsDirectory
+   Result := fAppFileName;
+end;// function TfrmSettings.GetAppFileNamee
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetSettingsDirectory(Dir: string);
+procedure TfrmSettings.SetAppFileName(FName: string);
 begin
-    fSettingsDirectory := Dir;
-end;// procedure TfrmSettings.SetAppSettingsDirectory
+    fAppFileName := FName;
+end;// procedure TfrmSettings.SetAppFileName
 
 //========================================================================================
-function TfrmSettings.GetLogbooksDirectory: string;
+function TfrmSettings.GetAppFileExt: string;
 begin
-   Result := fLogbooksDirectory;
-end;// procedure TfrmSettings.GetLogbooksDirectory
-
-//----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetLogbooksDirectory(Dir: string);
-begin
-    fLogbooksDirectory := Dir;
-end;// procedure TfrmSettings.SetLogbooksDirectory
+   Result := fAppFileExt;
+end;// function TfrmSettings.GetAppFileExt
 
 //========================================================================================
-function TfrmSettings.GetBackupsDirectory: string;
+function TfrmSettings.GetAppUserDirectory: string;
 begin
-   Result := fBackupsDirectory;
-end;// procedure TfrmSettings.GetBackupsDirectory
+   Result := fAppUserDirectory;
+end;// procedure TfrmSettings.GetAppUserDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetBackupsDirectory(Dir: string);
+procedure TfrmSettings.SetAppUserDirectory(Dir: string);
 begin
-    fBackupsDirectory := Dir;
-end;// procedure TfrmSettings.SetBackupsDirectory
+    fAppUserDirectory := Dir;
+end;// procedure TfrmSettings.SetAppUserDataDirectory
 
 //========================================================================================
 function TfrmSettings.GetAppDataDirectory: string;
 begin
    Result := fAppDataDirectory;
-end;// procedure TfrmSettings.GetAppDataDirectory
+end;// procedure TfrmSettings.GetAppDirectory
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSettings.SetAppDataDirectory(Dir: string);
@@ -392,76 +632,136 @@ begin
 end;// procedure TfrmSettings.SetAppDataDirectory
 
 //========================================================================================
-function TfrmSettings.GetSQLiteLibraryName: string;
+function TfrmSettings.GetAppSettingsDirectory: string;
 begin
-   Result := fSQLiteLibraryName;
-end;// procedure TfrmSettings.GetSQLiteLibraryName
+   Result := fAppSettingsDirectory;
+end;// procedure TfrmSettings.GetAppSettingsDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetSQLiteLibraryName(LibName: string);
+procedure TfrmSettings.SetAppSettingsDirectory(Dir: string);
 begin
-    fSQLiteLibraryName := LibName;
-end;// procedure TfrmSettings.SetSQLiteLibraryName
+    fAppSettingsDirectory := Dir;
+end;// procedure TfrmSettings.SetAppSettingsDirectory
 
 //========================================================================================
-function TfrmSettings.GetOwnerFirstName: string;
+function TfrmSettings.GetAppLogbooksDirectory: string;
 begin
-   Result := fOwnerFirstName;
-end;// procedure TfrmSettings.GetOwnerFirstName
+   Result := fAppLogbooksDirectory;
+end;// procedure TfrmSettings.GetAppLogbooksDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetOwnerFirstName(FirstName: string);
+procedure TfrmSettings.SetAppLogbooksDirectory(Dir: string);
 begin
-    fOwnerFirstName := FirstName;
-end;// procedure TfrmSettings.SetOwnerFirstName
+    fAppLogbooksDirectory := Dir;
+end;// procedure TfrmSettings.SeApptLogbooksDirectory
 
 //========================================================================================
-function TfrmSettings.GetOwnerLastName: string;
+function TfrmSettings.GetAppBackupsDirectory: string;
 begin
-   Result := fOwnerLastName;
-end;// procedure TfrmSettings.GetOwnerLastName
+   Result := fAppBackupsDirectory;
+end;// procedure TfrmSettings.GetAppBackupsDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetOwnerLastName(LastName: string);
+procedure TfrmSettings.SetAppBackupsDirectory(Dir: string);
 begin
-    fOwnerLastName := LastName;
-end;// procedure TfrmSettings.SetOwnerLastName
+    fAppBackupsDirectory := Dir;
+end;// procedure TfrmSettings.SetAppBackupsDirectory
 
 //========================================================================================
-function TfrmSettings.GetOwnerCallsign: string;
+function TfrmSettings.GetAppSettingsInitialPageName: string;
 begin
-   Result := fOwnerCallsign;
-end;// procedure TfrmSettings.GetOwnerCallsign
+   Result := fAppSettingsInitialPageName;
+end;// procedure TfrmSettings.GetAppSettingsInitialPageName
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetOwnerCallsign(Callsign: string);
+procedure TfrmSettings.SetAppSettingsInitialPageName(PageName: string);
 begin
-    fOwnerCallsign := Callsign;
-end;// procedure TfrmSettings.SetOwnerCallsign
+    fAppSettingsInitialPageName := PageName;
+end;// procedure TfrmSettings.SetAppSettingsInitialPageName
 
 //========================================================================================
-function TfrmSettings.GetOwnerEmailAddress: string;
+function TfrmSettings.GetAppSettingsInitialPageNum: string;
 begin
-   Result := fOwnerEmailAddress;
-end;// procedure TfrmSettings.GetOwnerEmailAddress
+   Result := fAppSettingsInitialPageNum ;
+end;// procedure TfrmSettings.GetAppSettingsInitialPageNum
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetOwnerEmailAddress(EmailAddress: string);
+procedure TfrmSettings.SetAppSettingsInitialPageNum(PageNum: string);
 begin
-    fOwnerEmailAddress := EMailAddress;
-end;// procedure TfrmSettings.SetOwnerEmailAddress
+    fAppSettingsInitialPageNum := PageNum;
+end;// procedure TfrmSettings.SetAppSettingsInitialPageNum
 
 //========================================================================================
-function TfrmSettings.GetOwnerID: string;
+function TfrmSettings.GetAppDatabaseName: string;
 begin
-   Result := fOwnerID;
-end;// procedure TfrmSettings.GetUserID
+   Result := fAppDatabaseName;
+end;// procedure TfrmSettings.GetAppDatabaseName
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetOwnerID(OwnerID: string);
+procedure TfrmSettings.SetAppDatabaseName(DBName: string);
 begin
-    fOwnerID := OwnerID;
-end;// procedure TfrmSettings.SetOwnerID
+    fAppDatabaseName := DBName;
+end;// procedure TfrmSettings.SetAppDatabaseName
+
+{//========================================================================================
+function TfrmSettings.GetAppOwnerFirstName: string;
+begin
+   Result := fAppOwnerFirstName;
+end;// procedure TfrmSettings.GetAppOwnerFirstName
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetAppOwnerFirstName(FirstName: string);
+begin
+    fAppOwnerFirstName := FirstName;
+end;// procedure TfrmSettings.SetAppOwnerFirstName
+
+//========================================================================================
+function TfrmSettings.GetAppOwnerLastName: string;
+begin
+   Result := fAppOwnerLastName;
+end;// procedure TfrmSettings.GetAppOwnerLastName
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetAppOwnerLastName(LastName: string);
+begin
+    fAppOwnerLastName := LastName;
+end;// procedure TfrmSettings.SetAppOwnerLastName
+
+//========================================================================================
+function TfrmSettings.GetAppOwnerCallsign: string;
+begin
+   Result := fAppOwnerCallsign;
+end;// procedure TfrmSettings.GetAppOwnerCallsign
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetAppOwnerCallsign(Callsign: string);
+begin
+    fAppOwnerCallsign := Callsign;
+end;// procedure TfrmSettings.SetAppOwnerCallsign
+
+//========================================================================================
+function TfrmSettings.GetAppOwnerEmailAddress: string;
+begin
+   Result := fAppOwnerEmailAddress;
+end;// procedure TfrmSettings.GetAppOwnerEmailAddress
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetAppOwnerEmailAddress(EmailAddress: string);
+begin
+    fAppOwnerEmailAddress := EMailAddress;
+end;// procedure TfrmSettings.SetAppOwnerEmailAddress
+
+//========================================================================================
+function TfrmSettings.GetAppOwnerID: string;
+begin
+   Result := fAppOwnerID;
+end;// procedure TfrmSettings.GetAppUserID
+
+//----------------------------------------------------------------------------------------
+procedure TfrmSettings.SetAppOwnerID(OwnerID: string);
+begin
+    fAppOwnerID := OwnerID;
+end;// procedure TfrmSettings.SetAppOwnerID }
 
 //========================================================================================
 //          MENU ROUTINES
@@ -485,172 +785,9 @@ end;//  procedure TfrmSettings.bbtOkClick
 //          CONTROL ROUTINES
 //========================================================================================
 
-
 //========================================================================================
 //          FILE ROUTINES
 //========================================================================================
-const
-  cstrApplicationINIFileName = 'RVMasterLog.ini';
-
-  cstrUserDirectories = 'USER DIRECTORIES';
-  cstrKeyuserDirectory = 'User Directory';
-  cstrKeySettingsDirectory = 'Settings Directory';
-  cstrKeyLogbooksDirectory = 'Logbooks Directory';
-  cstrKeyBackupsDirectory = 'Backups Directory';
-  cstrKeyAppDataDirectory = 'App Data Directory';
-
-  cstrRegistrationData = 'REGISTRATION DATA';
-  cstrKeyOwnerFirstName = 'Owner First Name';
-  cstrKeyOwnerLastName = 'Owner Last Name';
-  cstrKeyOwnerCallsign = 'Owner Callsign';
-  cstrKeyOwnerEmailAddress = 'Owner Email Address';
-  cstrKeyOwnerID = 'Owner ID';
-
-var
-  ApplicationINIFile : TINIFile;
-  ApplicationINIFileName : string;
-
-  //==============================
-  //        SettingsINIFile
-  //==============================
-
-//----------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------
-procedure TfrmSettings.ReadSettingsINIFile;
-
-var
-  vstrTStr : string;
-
-begin
-
-  showmessage('ReadSettingsINIFile');
-
-  ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
-  ApplicationINIFile := TINIFile.Create(ApplicationINIFileName);
-
-  // DIRECTORY SECTION
-
-    // USER Directory
-  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
-                                                        cstrKeyUserDirectory,
-                                                        pSystemUserDirectory);
-  pSystemUserDirectory := vstrTStr;
-
-  // SETTINGS DIRECTORY
-  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
-                                                      cstrKeySettingsDirectory,
-                                                      pSettingsDirectory);
-  pSettingsDirectory := vstrTStr;
-
-    // LOGBOOKS DIRECTORY
-  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
-                                            cstrKeyLogbooksDirectory,
-                                            pLogbooksDirectory);
-  pLogbooksDirectory := vstrTStr;
-
-    // BACKUPS DIRECTORY
-  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
-                                            cstrKeyBackupsDirectory,
-                                            pBackupsDirectory);
-  pBackupsDirectory := vstrTStr;
-
-    // APPLICATION DATA DIRECTORY
-  vstrTStr := ApplicationINIFile.ReadString(cstrUserDirectories,
-                                            cstrKeyAppDataDirectory,
-                                            pAppDataDirectory);
-  pAppDataDirectory := vstrTStr;
-
-  // REGISTRATION DATA
-
-    // Owner First Name
-  vstrTStr := ApplicationINIFile.ReadString(cstrRegistrationData,
-                                                        cstrKeyOwnerFirstName,
-                                                        pOwnerFirstName);
-
-    // Owner Last Name
-vstrTStr := ApplicationINIFile.ReadString(cstrRegistrationData,
-                                                      cstrKeyOwnerLastName,
-                                                      pOwnerLastName);
-
-    // Owner Callsign
-vstrTStr := ApplicationINIFile.ReadString(cstrRegistrationData,
-                                                    cstrKeyOwnerCallsign,
-                                                    pOwnerCallsign);
-
-    // Owner Email Address
-vstrTStr := ApplicationINIFile.ReadString(cstrRegistrationData,
-                                                cstrKeyOwnerEmailAddress,
-                                                pOwnerEmailAddress);
-
-    // OwnerID
-vstrTStr := ApplicationINIFile.ReadString(cstrRegistrationData,
-                                            cstrKeyOwnerID,
-                                            pOwnerID);
-
-  ApplicationINIFile.Free;
-
-end;// procedure TfrmSettings.ReadSettingsINIFile
-
-//----------------------------------------------------------------------------------------
-procedure TfrmSettings.WriteSettingsINIFile;
-begin
-
-    ApplicationINIFileName := pApplicationDirectory + '\' + cstrApplicationINIFileName;
-    ApplicationINIFile := TINIFile.Create(ApplicationINIFileName);
-
-    // DIRECTORY SECTION
-
-      // USER Directory
-    ApplicationINIFile.WriteString(cstrUserDirectories,
-                                   cstrKeyUserDirectory,
-                                   pUserDirectory);
-
-    ApplicationINIFile.WriteString(cstrUserDirectories,
-                                    cstrKeySettingsDirectory,
-                                    pSettingsDirectory);
-
-    ApplicationINIFile.WriteString(cstrUserDirectories,
-                                    cstrKeyLogbooksDirectory,
-                                    pLogbooksDirectory);
-
-    ApplicationINIFile.WriteString(cstrUserDirectories,
-                                    cstrKeyBackupsDirectory,
-                                    pBackupsDirectory);
-
-    ApplicationINIFile.WriteString(cstrUserDirectories,
-                                    cstrKeyAppDataDirectory,
-                                    pAppDataDirectory);
-
-    // REGISTRATION DATA
-
-      // Owner First Name
-    ApplicationINIFile.WriteString(cstrRegistrationData,
-                                   cstrKeyOwnerFirstName,
-                                   pOwnerFirstName);
-
-    // Owner Last Name
-    ApplicationINIFile.WriteString(cstrRegistrationData,
-                                   cstrKeyOwnerLastName,
-                                   pOwnerLastName);
-
-    // Owner Callsign
-    ApplicationINIFile.WriteString(cstrRegistrationData,
-                                   cstrKeyOwnerCallsign,
-                                   pOwnerCallsign);
-
-    // Owner Email Address
-    ApplicationINIFile.WriteString(cstrRegistrationData,
-                                   cstrKeyOwnerEmailAddress,
-                                   pOwnerEmailAddress);
-
-    // OwnerID
-    ApplicationINIFile.WriteString(cstrRegistrationData,
-                                   cstrKeyOwnerID,
-                                   pOwnerID);
-
-    ApplicationINIFile.Free;
-
-end;// procedure TfrmSettings.WriteSettingsINIFile
 
 //========================================================================================
 //          FORM ROUTINES
@@ -658,41 +795,118 @@ end;// procedure TfrmSettings.WriteSettingsINIFile
 procedure TfrmSettings.FormCreate(Sender: TObject);
 begin
 
-  pSQLiteLibraryName := cstrSQLiteBaseLibraryName;
-  pAppName := cstrAppName;
-  pApplicationDirectory := GetCurrentDir;
-  pSystemUserDirectory := GetUserDir;
-  pUserDirectory := frmSettings.pSystemUserDirectory + cstrUserDirectoryPath;
-  pSettingsDirectory := pUserDirectory + '\' + cstrSettingsDirectoryName;
+  //====================================================
+  // Initialize the Application Directories
+  //====================================================
 
-end;// procedure TfrmAppSetup.FormCreate
+  pAppFileName := Copy (cstrAppFullFileName, 1, 12);
+  pAppFilePath := GetCurrentDir;
+  pAppUserDirectory := (GetWindowsSpecialDir(CSIDL_PERSONAL)) + pAppFileName;
+
+    // The following directories are created by the INNO Setup Script
+    pAppSettingsDirectory := pAppUserDirectory + '\' + cstrSettingsDirectoryName;
+    pAppLogbooksDirectory := pAppUserDirectory + '\' + cstrLogbooksDirectoryName;
+    pAppBackupsDirectory := pAppUserDirectory + '\' + cstrBackupsDirectoryName;
+    pAppDataDirectory := pAppUserDirectory + '\' + cstrApPDataDirectoryName;
+    pAppDatabaseName := pAppDataDirectory + '\' + cstrApplicationDBName;
+
+  //========================================
+  // Initialize the Application Properties
+  //========================================
+
+//  pAppFileName := Copy (cstrAppFullFileName, 1, 12);
+//  pAppFilePath := GetCurrentDir;
+//  pAppUserDirectory := (GetWindowsSpecialDir(CSIDL_PERSONAL)) + pAppFileName;
+
+    // The following directories are created by the INNO Setup Script
+//    pAppSettingsDirectory := pAppUserDirectory + '\' + cstrSettingsDirectoryName;
+//    pAppLogbooksDirectory := pAppUserDirectory + '\' + cstrLogbooksDirectoryName;
+//    pAppBackupsDirectory := pAppUserDirectory + '\' + cstrBackupsDirectoryName;
+//    pAppDataDirectory := pAppUserDirectory + '\' + cstrAppDataDirectoryName;
+
+
+    //====================================================
+    // Initialize the Data Components
+    //====================================================
+    DBConnection.DatabaseName := pAppDatabaseName;
+    DBConnection.Transaction := DBTransaction;
+    sqlqApplicationSettingsTable.DataBase := DBConnection;
+    sqlqApplicationSettingsTable.DataSource := dsApplicationSettingsTable;
+    sqlqRegistrationSettingsTable.DataBase := DBConnection;
+    sqlqRegistrationSettingsTable.DataSource := dsRegistrationSettingsTable;
+
+    //====================================================
+    // Initialize the Controls
+    //====================================================
+
+    // PageControl properties
+    pgDirectories.Caption:=straryPageNames[0];
+    pgApplicationSettings.Caption:=straryPageNames[1];
+    pgRegistrationSettings.Caption:=straryPageNames[2];
+    pgSettingsDB.Caption:=straryPageNames[3];
+
+    // strgApplicationSettings properties
+    strgrdApplicationSettings.columns[0].Width := 360;
+    strgrdApplicationSettings.columns[1].Width := 150;
+
+    // strgRegistrationSettings properties
+    strgrdRegistrationSettings.columns[0].Width := 200;
+    strgrdRegistrationSettings.columns[1].Width := 150;
+
+end;// procedure TfrmSettings.FormCreate
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSettings.FormShow(Sender: TObject);
+var
+  vstrTstr : string;
+  vintTInt : Integer;
 begin
 
-  // Load current properties
-  edtApplicationDirectory.Text:= pApplicationDirectory;
-  edtSettingsDirectory.Text:=pSettingsDirectory;
-  edtLogbooksDirectory.Text:=pLogbooksDirectory;
-  edtBackupsDirectory.Text := pBackupsDirectory;
+  //=======================
+  // initialize form controls
+  //=======================
+
+  //  Directories Page
+  edtApplicationDirectory.Text:= pAppFilePath;
+  edtSettingsDirectory.Text:=pAppSettingsDirectory;
+  edtLogbooksDirectory.Text:=pAppLogbooksDirectory;
+  edtBackupsDirectory.Text := pAppBackupsDirectory;
   edtAppDataDirectory.Text := pAppDataDirectory;
 
+  //  Application Settings Page
+  cbxpAppInitialSettingsPage.Items[0] := straryPageNames[0];
+  cbxpAppInitialSettingsPage.Items[1] := straryPageNames[1];
+  cbxpAppInitialSettingsPage.Items[2] := straryPageNames[2];
+  cbxpAppInitialSettingsPage.ItemIndex := StrToInt(pAppSettingsInitialPageNum);
+
+  // strgApplicationSettings
+  strgrdApplicationSettings.Cells[0,1] := 'pAppSettingsInitialPageNum';
+  strgrdApplicationSettings.Cells[1,1] := pAppSettingsInitialPageNum;
+  strgrdApplicationSettings.Cells[0,2] := 'pAppSettingsInitialPageName';
+  strgrdApplicationSettings.Cells[1,2] := pAppSettingsInitialPageName;
+
+  // strgRegistrationSettings
+  strgrdRegistrationSettings.Cells[0,1] := 'dlgHURegistration.pRegFirstName';
+  strgrdRegistrationSettings.Cells[1,1] := dlgHURegistration.pRegFirstName;
+  strgrdRegistrationSettings.Cells[0,2] := 'dlgHURegistration.pRegLastName';
+  strgrdRegistrationSettings.Cells[1,2] := dlgHURegistration.pRegLastName;
+  strgrdRegistrationSettings.Cells[0,3] := 'dlgHURegistration.pRegEmailAddress';
+  strgrdRegistrationSettings.Cells[1,3] := dlgHURegistration.pRegEmailAddress;
+  strgrdRegistrationSettings.Cells[0,4] := 'dlgHURegistration.pRegCallsign';
+  strgrdRegistrationSettings.Cells[1,4] := dlgHURegistration.pRegCallsign;
+  strgrdRegistrationSettings.Cells[0,5] := 'dlgHURegistration.pRegKey';
+  strgrdRegistrationSettings.Cells[1,5] := dlgHURegistration.pRegKey;
+  strgrdRegistrationSettings.Cells[0,6] := 'dlgHURegistration.pRegUserID';
+  strgrdRegistrationSettings.Cells[1,6] := dlgHURegistration.pRegUserID;
+
 end; // procedure TfrmAppSetup.FormShow
-
-procedure TfrmSettings.pgDirectoriesContextPopup(Sender: TObject;
-  MousePos: TPoint; var Handled: Boolean);
-begin
-
-end;
 
 //----------------------------------------------------------------------------------------
 procedure TfrmSettings.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-
+  DBConnection.Connected := False;
 end;// procedure TfrmAppSetup.FormClose
 
 //========================================================================================
-
 end.// unit AppSettings
 

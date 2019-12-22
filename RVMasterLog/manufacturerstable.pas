@@ -15,7 +15,7 @@ unit ManufacturersTable;
 //
 // Ver. : 1.0.0
 //
-// Date : 21 Dec 2019
+// Date : 22 Dec 2019
 //
 //========================================================================================
 
@@ -167,9 +167,9 @@ procedure TfrmManufacturersTable.FormShow(Sender: TObject);
 begin
 
     // Setup all of the Database Controls
-  vstrApplicationDatabasePathName := frmSettings.pApplicationDirectory +
+{  vstrApplicationDatabasePathName := frmSettings.pApplicationDirectory +
                                  '\' +
-                                 cstrApplicationDBName;
+                                 cstrApplicationDBName;  }
 
 //  SQLite3Connection1.DatabaseName:= vstrApplicationDatabasePathName;
 //  SQLite3Connection1.Transaction := SQLTransaction1;

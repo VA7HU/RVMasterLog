@@ -72,26 +72,23 @@ uses
 function Initialize : Boolean;
 begin
 
-  // If the UserDirectories do not exist, there are only two possibilities:
-  //
-  //   1. This is an initial installation and they have not been created yet; or,
-  //
-  //   2. they have somehow disappeared.
+  // If the SettingsDB does not exists we treat it like a New Installation
 
-  If not frmSettings.UserDataDirectoriesExist then
+  if not FileExists(frmSettings.pAppDatabaseName) then
+    if not frmSettings.CreateApplicationDataBase then
+    begin
+      showmessage('Failure');
+      TerminateApp;
+  end;// if not frmSettings.CreateApplicationDataBase
+
+  frmSettings.LoadApplicationDatabase;
+
+  if dlgHUNagScreen.ShowModal = mrOK then
   begin
-    HUErrorMsgOK ('erNoDataDirectoriesFound', erNoDataDirectoriesFound);
-    Main.TerminateApp;
-  end;// if not frmSettings.UserDataDIrectoriesExist
-
-  frmSettings.ReadSettingsINIFile;
-
-  dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe';
-  if dlgHUNagScreen.ShowModal = mrYes then
-  begin
-    dlgHURegistration.RequestRegistrationKey;
-    dlgHURegistration.ShowModal;
-  end;// dlgHUNagScreen.pDlgTitle := frmSettings.pAppName + '.exe'
+    // Check for Registration
+    if dlgHURegistration.pRegKey = K_SP then
+      dlgHURegistration.ShowModal;
+  end;// if dlgHUNagScreen.ShowModal = mrOK
 
 showmessage('Init Complete');
 
