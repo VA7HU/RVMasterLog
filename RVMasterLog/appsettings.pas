@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 22 Dec 2019
+// Date : 24 Dec 2019
 //
 //========================================================================================
 
@@ -36,9 +36,7 @@ type
   { TfrmSettings }
 
   TfrmSettings = class(TForm)
-    bbtCancel: TBitBtn;
-    bbtOk: TBitBtn;
-    cbxpAppInitialSettingsPage: TComboBox;
+    bbtOkClose: TBitBtn;
     DBTableDataSource: TDataSource;
     DBTableQuery: TSQLQuery;
     dsRegistrationSettingsTable: TDataSource;
@@ -55,6 +53,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
+    Label7: TLabel;
     pcSettings: TPageControl;
     pgDirectories: TTabSheet;
     pgSettingsDB: TTabSheet;
@@ -67,8 +66,8 @@ type
     StatusBar1: TStatusBar;
     strgrdApplicationSettings: TStringGrid;
     strgrdRegistrationSettings: TStringGrid;
-    procedure bbtCancelClick(Sender: TObject);
-    procedure bbtOkClick(Sender: TObject);
+    procedure bbtCancelCloseClick(Sender: TObject);
+    procedure bbtOkCloseClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -770,13 +769,13 @@ end;// procedure TfrmSettings.SetAppOwnerID }
 //========================================================================================
 //          COMMAND BUTTON ROUTINES
 //========================================================================================
-procedure TfrmSettings.bbtCancelClick(Sender: TObject);
+procedure TfrmSettings.bbtCancelCloseClick(Sender: TObject);
 begin
 
 end;//  procedure TfrmSettings.bbtCancelClick
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.bbtOkClick(Sender: TObject);
+procedure TfrmSettings.bbtOkCloseClick(Sender: TObject);
 begin
 
 end;//  procedure TfrmSettings.bbtOkClick
@@ -810,21 +809,6 @@ begin
     pAppDataDirectory := pAppUserDirectory + '\' + cstrApPDataDirectoryName;
     pAppDatabaseName := pAppDataDirectory + '\' + cstrApplicationDBName;
 
-  //========================================
-  // Initialize the Application Properties
-  //========================================
-
-//  pAppFileName := Copy (cstrAppFullFileName, 1, 12);
-//  pAppFilePath := GetCurrentDir;
-//  pAppUserDirectory := (GetWindowsSpecialDir(CSIDL_PERSONAL)) + pAppFileName;
-
-    // The following directories are created by the INNO Setup Script
-//    pAppSettingsDirectory := pAppUserDirectory + '\' + cstrSettingsDirectoryName;
-//    pAppLogbooksDirectory := pAppUserDirectory + '\' + cstrLogbooksDirectoryName;
-//    pAppBackupsDirectory := pAppUserDirectory + '\' + cstrBackupsDirectoryName;
-//    pAppDataDirectory := pAppUserDirectory + '\' + cstrAppDataDirectoryName;
-
-
     //====================================================
     // Initialize the Data Components
     //====================================================
@@ -846,12 +830,12 @@ begin
     pgSettingsDB.Caption:=straryPageNames[3];
 
     // strgApplicationSettings properties
-    strgrdApplicationSettings.columns[0].Width := 360;
-    strgrdApplicationSettings.columns[1].Width := 150;
+    strgrdApplicationSettings.AutoFillColumns := True;
+    strgrdApplicationSettings.AutoSizeColumns;
 
     // strgRegistrationSettings properties
-    strgrdRegistrationSettings.columns[0].Width := 200;
-    strgrdRegistrationSettings.columns[1].Width := 150;
+    strgrdRegistrationSettings.AutoFillColumns := True;
+    strgrdRegistrationSettings.AutoSizeColumns;
 
 end;// procedure TfrmSettings.FormCreate
 
@@ -866,6 +850,8 @@ begin
   // initialize form controls
   //=======================
 
+  // Command Buttons
+
   //  Directories Page
   edtApplicationDirectory.Text:= pAppFilePath;
   edtSettingsDirectory.Text:=pAppSettingsDirectory;
@@ -874,10 +860,6 @@ begin
   edtAppDataDirectory.Text := pAppDataDirectory;
 
   //  Application Settings Page
-  cbxpAppInitialSettingsPage.Items[0] := straryPageNames[0];
-  cbxpAppInitialSettingsPage.Items[1] := straryPageNames[1];
-  cbxpAppInitialSettingsPage.Items[2] := straryPageNames[2];
-  cbxpAppInitialSettingsPage.ItemIndex := StrToInt(pAppSettingsInitialPageNum);
 
   // strgApplicationSettings
   strgrdApplicationSettings.Cells[0,1] := 'pAppSettingsInitialPageNum';
@@ -904,6 +886,12 @@ end;// procedure TfrmAppSetup.FormShow
 //----------------------------------------------------------------------------------------
 procedure TfrmSettings.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
+
+
+
+
+
+
   DBConnection.Connected := False;
 end;// procedure TfrmAppSetup.FormClose
 

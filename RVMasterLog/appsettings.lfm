@@ -1,69 +1,22 @@
 object frmSettings: TfrmSettings
   Left = 296
-  Height = 458
+  Height = 411
   Top = 142
-  Width = 738
+  Width = 410
   BorderIcons = []
   BorderStyle = bsDialog
   Caption = 'frmAppSettings'
-  ClientHeight = 458
-  ClientWidth = 738
+  ClientHeight = 411
+  ClientWidth = 410
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '2.0.0.4'
-  object bbtCancel: TBitBtn
-    Left = 608
+  object bbtOkClose: TBitBtn
+    Left = 304
     Height = 30
-    Top = 352
-    Width = 75
-    Cancel = True
-    Caption = '&Cancel'
-    Glyph.Data = {
-      36040000424D3604000000000000360000002800000010000000100000000100
-      20000000000000040000640000006400000000000000000000000101000B0101
-      0022010100260101002601010026010100260101002601010026010100260101
-      0026010100260101002601010026010100220101000AFFFFFF00000047610000
-      5EE8000060FF000060FF000060FF000060FF000060FF000060FF000060FF0000
-      60FF000060FF000060FF000060FF00005EE50000465BFFFFFF00000062ED1F1F
-      AEFF3636CDFF3838CEFF3838CEFF3838CEFF3838CEFF3838CEFF3838CEFF3838
-      CEFF3838CEFF3838CEFF3636CDFF1F1FACFF000061EBFFFFFF0001016CFF3A3A
-      D0FF1919C5FF1010C2FF0B0B9CFF1010C2FF1010C2FF1010C2FF1010C2FF1010
-      C2FF0B0B9CFF1010C2FF1919C5FF3A3AD0FF000067FFFFFFFF00010170FF4242
-      D4FF1717C7FF0F10A0FFEAEAEAFF0F10A0FF1616C7FF1616C7FF1616C7FF0F10
-      A0FFEAEAEAFF0F10A0FF1717C7FF4242D4FF00006BFFFFFFFF00020274FF4848
-      D8FF1515A4FFECECECFFECECECFFECECECFF1415A4FF1D1DCCFF1415A4FFECEC
-      ECFFECECECFFECECECFF1515A4FF4848D8FF00006FFFFFFFFF00020279FF4E4E
-      DDFF2626D2FF1A1AA9FFEFEFEFFFEFEFEFFFEFEFEFFF1A1AA9FFEFEFEFFFEFEF
-      EFFFEFEFEFFF1A1AA9FF2626D2FF4E4EDDFF000073FFFFFFFF0003037EFF5555
-      E1FF2E2ED8FF2D2DD8FF2020AEFFF2F2F2FFF2F2F2FFF2F2F2FFF2F2F2FFF2F2
-      F2FF2020AEFF2D2DD8FF2E2ED8FF5555E1FF000078FFFFFFFF00030382FF7777
-      EAFF4E4EE2FF4646E1FF4040E0FF2C2CB4FFF5F5F5FFF5F5F5FFF5F5F5FF2C2C
-      B4FF3F3FDFFF4646E1FF4B4BE1FF7474EAFF00007CFFFFFFFF00040487FF8282
-      EEFF6565E9FF6565E9FF4747BBFFF8F8F8FFF8F8F8FFF8F8F8FFF8F8F8FFF8F8
-      F8FF4747BBFF6565E9FF6565E9FF8282EEFF000081FFFFFFFF0004048BFF8787
-      F2FF6C6CEEFF4B4CBFFFFBFBFBFFFBFBFBFFFBFBFBFF4B4CBFFFFBFBFBFFFBFB
-      FBFFFBFBFBFF4B4CBFFF6C6CEEFF8787F2FF000085FFFFFFFF0005058FFF8C8C
-      F5FF4F50C3FFFDFDFDFFFDFDFDFFFDFDFDFF4F50C3FF7171F2FF4F50C3FFFDFD
-      FDFFFDFDFDFFFDFDFDFF4F50C3FF8C8CF5FF000089FFFFFFFF00050593FF9292
-      F9FF7777F6FF5353C6FFFFFFFFFF5353C6FF7676F6FF7676F6FF7676F6FF5353
-      C6FFFFFFFFFF5353C6FF7777F6FF9292F9FF00008DFFFFFFFF00050597FFB6B6
-      FDFF8181F9FF7C7CF9FF5757C8FF7C7CF9FF7C7CF9FF7C7CF9FF7C7CF9FF7C7C
-      F9FF5757C8FF7C7CF9FF8282F9FFB6B6FDFF000091FFFFFFFF00000093EB9292
-      ECFFDCDCFEFFDDDDFEFFDDDDFEFFDDDDFEFFDDDDFEFFDDDDFEFFDDDDFEFFDDDD
-      FEFFDDDDFEFFDDDDFEFFDBDBFEFF9090EBFF000093E8FFFFFF000000974B0000
-      97EA000097FF000097FF000097FF000097FF000097FF000097FF000097FF0000
-      97FF000097FF000097FF000097FF000097E700009745FFFFFF00
-    }
-    ModalResult = 2
-    OnClick = bbtCancelClick
-    TabOrder = 0
-  end
-  object bbtOk: TBitBtn
-    Left = 512
-    Height = 30
-    Top = 352
+    Top = 360
     Width = 75
     Caption = '&Ok'
     Glyph.Data = {
@@ -103,8 +56,8 @@ object frmSettings: TfrmSettings
       41FF278C41FF278C41FF278C41FF278C41E7278C4145FFFFFF00
     }
     ModalResult = 1
-    OnClick = bbtOkClick
-    TabOrder = 1
+    OnClick = bbtOkCloseClick
+    TabOrder = 0
   end
   object pcSettings: TPageControl
     Left = 24
@@ -113,7 +66,7 @@ object frmSettings: TfrmSettings
     Width = 688
     ActivePage = pgApplicationSettings
     TabIndex = 1
-    TabOrder = 2
+    TabOrder = 1
     object pgDirectories: TTabSheet
       Caption = 'Directories'
       ClientHeight = 300
@@ -211,41 +164,43 @@ object frmSettings: TfrmSettings
       Caption = 'Application Settings'
       ClientHeight = 300
       ClientWidth = 680
-      object cbxpAppInitialSettingsPage: TComboBox
-        Left = 32
-        Height = 23
-        Top = 48
-        Width = 131
-        ItemHeight = 15
-        TabOrder = 0
-        Text = 'cbxpAppInitialSettingsPage'
-      end
       object strgrdApplicationSettings: TStringGrid
-        Left = 200
-        Height = 120
-        Top = 24
+        Left = 8
+        Height = 256
+        Top = 32
         Width = 360
+        AutoFillColumns = True
         ColCount = 2
         Columns = <        
           item
             Alignment = taCenter
+            ReadOnly = True
             Title.Alignment = taCenter
             Title.Caption = 'Property'
-            Width = 205
+            Width = 178
           end        
           item
             Alignment = taCenter
+            ReadOnly = True
             Title.Alignment = taCenter
             Title.Caption = 'Value'
-            Width = 150
+            Width = 178
           end>
         FixedCols = 0
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing, goRowSelect, goSmoothScroll]
-        TabOrder = 1
+        TabOrder = 0
         ColWidths = (
-          205
-          150
+          178
+          178
         )
+      end
+      object Label7: TLabel
+        Left = 136
+        Height = 15
+        Top = 8
+        Width = 103
+        Caption = 'Initial Settings Page'
+        ParentColor = False
       end
     end
     object pgRegistrationSettings: TTabSheet
@@ -266,28 +221,29 @@ object frmSettings: TfrmSettings
         Left = 200
         Height = 160
         Top = 24
-        Width = 352
+        Width = 408
+        AutoFillColumns = True
         ColCount = 2
         Columns = <        
           item
             Alignment = taCenter
             Title.Alignment = taCenter
             Title.Caption = 'Property'
-            Width = 200
+            Width = 193
           end        
           item
             Alignment = taCenter
             Title.Alignment = taCenter
             Title.Caption = 'Value'
-            Width = 150
+            Width = 194
           end>
         FixedCols = 0
         Options = [goVertLine, goHorzLine, goEditing, goRowSelect, goSmoothScroll]
         RowCount = 7
         TabOrder = 1
         ColWidths = (
-          200
-          150
+          193
+          194
         )
       end
     end
@@ -298,50 +254,50 @@ object frmSettings: TfrmSettings
   object StatusBar1: TStatusBar
     Left = 0
     Height = 23
-    Top = 435
-    Width = 738
+    Top = 388
+    Width = 410
     Panels = <>
   end
   object DBTableDataSource: TDataSource
-    left = 456
+    left = 672
     top = 360
   end
   object DBConnection: TSQLite3Connection
     Connected = False
     LoginPrompt = False
     KeepConnection = False
-    left = 40
+    left = 528
     top = 360
   end
   object DBTransaction: TSQLTransaction
     Active = False
-    left = 128
+    left = 568
     top = 360
   end
   object DBTableQuery: TSQLQuery
     FieldDefs = <>
     Params = <>
-    left = 256
+    left = 616
     top = 360
   end
   object sqlqApplicationSettingsTable: TSQLQuery
     FieldDefs = <>
     Params = <>
-    left = 80
-    top = 296
+    left = 488
+    top = 288
   end
   object dsApplicationSettingsTable: TDataSource
-    left = 240
-    top = 296
+    left = 648
+    top = 288
   end
   object sqlqRegistrationSettingsTable: TSQLQuery
     FieldDefs = <>
     Params = <>
-    left = 88
-    top = 252
+    left = 480
+    top = 232
   end
   object dsRegistrationSettingsTable: TDataSource
-    left = 248
-    top = 252
+    left = 640
+    top = 232
   end
 end

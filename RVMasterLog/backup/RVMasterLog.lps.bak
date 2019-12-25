@@ -20,7 +20,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="1"/>
         <CursorPos Y="68"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
@@ -34,9 +34,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="892"/>
-        <CursorPos X="73" Y="900"/>
+        <TopLine Value="854"/>
+        <CursorPos Y="864"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -45,10 +44,10 @@
         <Filename Value="appinit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
-        <TopLine Value="77"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="92"/>
         <CursorPos X="44" Y="91"/>
         <UsageCount Value="203"/>
-        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="appfinal.pas"/>
@@ -80,7 +79,7 @@
         <UnitName Value="ProvTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="17"/>
-        <UsageCount Value="120"/>
+        <UsageCount Value="125"/>
       </Unit6>
       <Unit7>
         <Filename Value="manufacturerstable.pas"/>
@@ -91,7 +90,7 @@
         <UnitName Value="ManufacturersTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="13" Y="18"/>
-        <UsageCount Value="121"/>
+        <UsageCount Value="126"/>
       </Unit7>
       <Unit8>
         <Filename Value="logbook.pas"/>
@@ -103,7 +102,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="16"/>
         <CursorPos X="35" Y="87"/>
-        <UsageCount Value="97"/>
+        <UsageCount Value="102"/>
       </Unit8>
       <Unit9>
         <Filename Value="supplierstable.pas"/>
@@ -115,7 +114,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos X="3" Y="36"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="92"/>
       </Unit9>
       <Unit10>
         <Filename Value="applicationdb.pas"/>
@@ -127,7 +126,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="32"/>
         <CursorPos Y="121"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="44"/>
       </Unit10>
       <Unit11>
         <Filename Value="suppliersdb.pas"/>
@@ -139,7 +138,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="24"/>
         <CursorPos Y="49"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="32"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
@@ -166,7 +165,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="147"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit14>
       <Unit15>
@@ -179,7 +178,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="61"/>
         <CursorPos X="48" Y="119"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="147"/>
       </Unit15>
       <Unit16>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.lfm"/>
@@ -188,7 +187,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="147"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit16>
       <Unit17>
@@ -201,7 +200,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="287"/>
         <CursorPos X="3" Y="294"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="147"/>
       </Unit17>
       <Unit18>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUConstants Development\huconstants.pas"/>
@@ -626,103 +625,127 @@
         <UsageCount Value="8"/>
       </Unit65>
     </Units>
-    <JumpHistory Count="24" HistoryIndex="23">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="20" Column="13" TopLine="64"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="215" Column="3" TopLine="205"/>
       </Position1>
       <Position2>
-        <Filename Value="appinit.pas"/>
-        <Caret Line="89" Column="3" TopLine="79"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="221" Column="3" TopLine="200"/>
       </Position2>
       <Position3>
         <Filename Value="main.pas"/>
-        <Caret Line="197" Column="30"/>
+        <Caret Line="165" Column="31" TopLine="165"/>
       </Position3>
       <Position4>
         <Filename Value="main.pas"/>
-        <Caret Line="182" Column="3" TopLine="180"/>
+        <Caret Line="164" Column="31" TopLine="164"/>
       </Position4>
       <Position5>
         <Filename Value="main.pas"/>
-        <Caret Line="183" Column="26" TopLine="34"/>
+        <Caret Line="163" Column="31" TopLine="163"/>
       </Position5>
       <Position6>
         <Filename Value="main.pas"/>
-        <Caret Line="182" Column="26" TopLine="161"/>
+        <Caret Line="162" Column="31" TopLine="162"/>
       </Position6>
       <Position7>
         <Filename Value="main.pas"/>
-        <Caret Line="181" Column="26" TopLine="160"/>
+        <Caret Line="161" Column="31" TopLine="161"/>
       </Position7>
       <Position8>
         <Filename Value="main.pas"/>
-        <Caret Line="180" Column="26" TopLine="159"/>
+        <Caret Line="160" Column="31" TopLine="160"/>
       </Position8>
       <Position9>
-        <Filename Value="main.pas"/>
-        <Caret Line="179" Column="26" TopLine="158"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="185" TopLine="173"/>
       </Position9>
       <Position10>
         <Filename Value="main.pas"/>
-        <Caret Line="176" TopLine="165"/>
+        <Caret Line="177" TopLine="172"/>
       </Position10>
       <Position11>
-        <Filename Value="main.pas"/>
-        <Caret Line="22" Column="17" TopLine="7"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="317" Column="3" TopLine="317"/>
       </Position11>
       <Position12>
-        <Filename Value="main.pas"/>
-        <Caret Line="70" TopLine="59"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="318" Column="3" TopLine="198"/>
       </Position12>
       <Position13>
-        <Filename Value="main.pas"/>
-        <Caret Line="71" TopLine="60"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="878" Column="38" TopLine="867"/>
       </Position13>
       <Position14>
-        <Filename Value="main.pas"/>
-        <Caret Line="216" Column="3" TopLine="206"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="840" Column="5" TopLine="822"/>
       </Position14>
       <Position15>
-        <Filename Value="main.pas"/>
-        <Caret Line="215" Column="3" TopLine="205"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="839" Column="55" TopLine="829"/>
       </Position15>
       <Position16>
-        <Filename Value="main.pas"/>
-        <Caret Line="221" Column="3" TopLine="200"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="840" Column="55" TopLine="830"/>
       </Position16>
       <Position17>
-        <Filename Value="main.pas"/>
-        <Caret Line="165" Column="31" TopLine="165"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="839" Column="55" TopLine="829"/>
       </Position17>
       <Position18>
-        <Filename Value="main.pas"/>
-        <Caret Line="164" Column="31" TopLine="164"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="840" Column="55" TopLine="830"/>
       </Position18>
       <Position19>
-        <Filename Value="main.pas"/>
-        <Caret Line="163" Column="31" TopLine="163"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="798" TopLine="778"/>
       </Position19>
       <Position20>
-        <Filename Value="main.pas"/>
-        <Caret Line="162" Column="31" TopLine="162"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="797" Column="36" TopLine="789"/>
       </Position20>
       <Position21>
-        <Filename Value="main.pas"/>
-        <Caret Line="161" Column="31" TopLine="161"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="795" Column="52" TopLine="784"/>
       </Position21>
       <Position22>
-        <Filename Value="main.pas"/>
-        <Caret Line="160" Column="31" TopLine="160"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="796" Column="81" TopLine="784"/>
       </Position22>
       <Position23>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="185" TopLine="173"/>
+        <Caret Line="798" Column="85" TopLine="788"/>
       </Position23>
       <Position24>
-        <Filename Value="main.pas"/>
-        <Caret Line="177" TopLine="172"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="799" Column="3" TopLine="787"/>
       </Position24>
+      <Position25>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="798" Column="3" TopLine="786"/>
+      </Position25>
+      <Position26>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="797" Column="3" TopLine="785"/>
+      </Position26>
+      <Position27>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="796" Column="3" TopLine="784"/>
+      </Position27>
+      <Position28>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="795" Column="3" TopLine="783"/>
+      </Position28>
+      <Position29>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="788" TopLine="781"/>
+      </Position29>
+      <Position30>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="855" TopLine="846"/>
+      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
