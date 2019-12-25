@@ -4,14 +4,15 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="66">
+    <Units Count="67">
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="1"/>
         <TopLine Value="2"/>
         <CursorPos X="13" Y="17"/>
         <UsageCount Value="206"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -20,7 +21,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
-        <EditorIndex Value="1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
         <CursorPos Y="68"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
@@ -33,7 +35,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="62"/>
         <CursorPos Y="71"/>
         <UsageCount Value="203"/>
@@ -620,63 +621,71 @@
         <Filename Value="C:\lazarus\components\lazutils\laz2_dom.pas"/>
         <UnitName Value="Laz2_DOM"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="1939"/>
-        <CursorPos X="14" Y="1952"/>
-        <UsageCount Value="8"/>
+        <TopLine Value="1933"/>
+        <CursorPos X="14" Y="1944"/>
+        <UsageCount Value="10"/>
       </Unit65>
+      <Unit66>
+        <Filename Value="C:\lazarus\components\lazutils\lazfileutils.pas"/>
+        <UnitName Value="LazFileUtils"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="118"/>
+        <CursorPos X="71" Y="129"/>
+        <UsageCount Value="10"/>
+      </Unit66>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="main.pas"/>
-        <Caret Line="221" Column="3" TopLine="200"/>
+        <Caret Line="164" Column="31" TopLine="164"/>
       </Position1>
       <Position2>
         <Filename Value="main.pas"/>
-        <Caret Line="165" Column="31" TopLine="165"/>
+        <Caret Line="163" Column="31" TopLine="163"/>
       </Position2>
       <Position3>
         <Filename Value="main.pas"/>
-        <Caret Line="164" Column="31" TopLine="164"/>
+        <Caret Line="162" Column="31" TopLine="162"/>
       </Position3>
       <Position4>
         <Filename Value="main.pas"/>
-        <Caret Line="163" Column="31" TopLine="163"/>
+        <Caret Line="161" Column="31" TopLine="161"/>
       </Position4>
       <Position5>
         <Filename Value="main.pas"/>
-        <Caret Line="162" Column="31" TopLine="162"/>
+        <Caret Line="160" Column="31" TopLine="160"/>
       </Position5>
       <Position6>
-        <Filename Value="main.pas"/>
-        <Caret Line="161" Column="31" TopLine="161"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="185" TopLine="173"/>
       </Position6>
       <Position7>
         <Filename Value="main.pas"/>
-        <Caret Line="160" Column="31" TopLine="160"/>
+        <Caret Line="177" TopLine="172"/>
       </Position7>
       <Position8>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="185" TopLine="173"/>
+        <Caret Line="317" Column="3" TopLine="317"/>
       </Position8>
       <Position9>
-        <Filename Value="main.pas"/>
-        <Caret Line="177" TopLine="172"/>
+        <Filename Value="appsettings.pas"/>
+        <Caret Line="318" Column="3" TopLine="198"/>
       </Position9>
       <Position10>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="317" Column="3" TopLine="317"/>
+        <Caret Line="878" Column="38" TopLine="867"/>
       </Position10>
       <Position11>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="318" Column="3" TopLine="198"/>
+        <Caret Line="840" Column="5" TopLine="822"/>
       </Position11>
       <Position12>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="878" Column="38" TopLine="867"/>
+        <Caret Line="839" Column="55" TopLine="829"/>
       </Position12>
       <Position13>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="840" Column="5" TopLine="822"/>
+        <Caret Line="840" Column="55" TopLine="830"/>
       </Position13>
       <Position14>
         <Filename Value="appsettings.pas"/>
@@ -688,64 +697,60 @@
       </Position15>
       <Position16>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="839" Column="55" TopLine="829"/>
+        <Caret Line="798" TopLine="778"/>
       </Position16>
       <Position17>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="840" Column="55" TopLine="830"/>
+        <Caret Line="797" Column="36" TopLine="789"/>
       </Position17>
       <Position18>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="798" TopLine="778"/>
+        <Caret Line="795" Column="52" TopLine="784"/>
       </Position18>
       <Position19>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="797" Column="36" TopLine="789"/>
+        <Caret Line="796" Column="81" TopLine="784"/>
       </Position19>
       <Position20>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="795" Column="52" TopLine="784"/>
+        <Caret Line="798" Column="85" TopLine="788"/>
       </Position20>
       <Position21>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="796" Column="81" TopLine="784"/>
+        <Caret Line="799" Column="3" TopLine="787"/>
       </Position21>
       <Position22>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="798" Column="85" TopLine="788"/>
+        <Caret Line="798" Column="3" TopLine="786"/>
       </Position22>
       <Position23>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="799" Column="3" TopLine="787"/>
+        <Caret Line="797" Column="3" TopLine="785"/>
       </Position23>
       <Position24>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="798" Column="3" TopLine="786"/>
+        <Caret Line="796" Column="3" TopLine="784"/>
       </Position24>
       <Position25>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="797" Column="3" TopLine="785"/>
+        <Caret Line="795" Column="3" TopLine="783"/>
       </Position25>
       <Position26>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="796" Column="3" TopLine="784"/>
+        <Caret Line="788" TopLine="781"/>
       </Position26>
       <Position27>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="795" Column="3" TopLine="783"/>
+        <Caret Line="855" TopLine="846"/>
       </Position27>
       <Position28>
         <Filename Value="appsettings.pas"/>
-        <Caret Line="788" TopLine="781"/>
+        <Caret Line="864" TopLine="854"/>
       </Position28>
       <Position29>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="855" TopLine="846"/>
+        <Filename Value="RVMasterLog.lpr"/>
+        <Caret Line="17" Column="13" TopLine="2"/>
       </Position29>
-      <Position30>
-        <Filename Value="appsettings.pas"/>
-        <Caret Line="864" TopLine="854"/>
-      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
