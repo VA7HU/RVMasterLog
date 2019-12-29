@@ -8,11 +8,10 @@
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="2"/>
         <CursorPos X="13" Y="17"/>
         <UsageCount Value="206"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -22,7 +21,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="1"/>
         <CursorPos Y="68"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
@@ -748,8 +747,8 @@
         <Caret Line="864" TopLine="854"/>
       </Position28>
       <Position29>
-        <Filename Value="RVMasterLog.lpr"/>
-        <Caret Line="17" Column="13" TopLine="2"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="68"/>
       </Position29>
     </JumpHistory>
     <RunParams>
