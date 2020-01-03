@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 29 Dec 2019
+// Date : 3 Jan 2020
 //
 //========================================================================================
 
@@ -371,22 +371,12 @@ begin
 //    showmessage('sqlqApplicationSettingsTable.Open');
 
     // Get pAppSettingsInitialPageName
-//    showmessage('Record = ' + (IntToStr(sqlqApplicationSettingsTable.RecNo   )));
-//    showmessage('Data - ' +
-//                        sqlqApplicationSettingsTable.Fields[0].AsString +
-//                          '  -  ' +
-//                          sqlqApplicationSettingsTable.Fields[1].AsString);
+    //    showmessage('Record = ' + (IntToStr(sqlqApplicationSettingsTable.RecNo   )));
     pAppSettingsInitialPageName := sqlqApplicationSettingsTable.Fields[1].AsString;
-//    showmessage('pAppSettingsInitialPageName = ' + pAppSettingsInitialPageName);
 
     // Get pAppSettingsInitialPageNum
     sqlqApplicationSettingsTable.NEXT;
-
 //    showmessage('Record = ' + (IntToStr(sqlqApplicationSettingsTable.RecNo   )));
-//    showmessage('Data - ' +
-//                          sqlqApplicationSettingsTable.Fields[0].AsString +
-//                          '  -  ' +
-//                          sqlqApplicationSettingsTable.Fields[1].AsString);
     pAppSettingsInitialPageNum := sqlqApplicationSettingsTable.Fields[1].AsString;
 //    showmessage('pAppSettingsInitialPageNum = ' + pAppSettingsInitialPageNum);
 
@@ -406,75 +396,32 @@ begin
       '  e.Value ' +
       'from RegistrationSettingsTable e';
 
-//    showmessage(sqlqRegistrationSettingsTable.SQL.Text);
-
     sqlqRegistrationSettingsTable.Open;
-
 //    showmessage('sqlqRegistrationSettingsTable Open');
 
     // Get pRegFirstName
 //    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
-//    showmessage('Data - ' +
-//                 sqlqRegistrationSettingsTable.Fields[0].AsString +
-//                 '  -  ' +
-//                 sqlqRegistrationSettingsTable.Fields[1].AsString);
     dlgHURegistration.pRegFirstName := sqlqRegistrationSettingsTable.Fields[1].AsString;
-//    showmessage('pRegFirstName = ' + dlgHURegistration.pRegFirstName);
 
     // Get pRegLastName
     sqlqRegistrationSettingsTable.NEXT;
-
-//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
-//    showmessage('Data - ' +
-//                sqlqRegistrationSettingsTable.Fields[0].AsString +
-//                '  -  ' +
-//                sqlqRegistrationSettingsTable.Fields[1].AsString);
     dlgHURegistration.pRegLastName := sqlqRegistrationSettingsTable.Fields[1].AsString;
-//    showmessage('pRegLastName = ' + dlgHURegistration.pRegLastName);
 
     // Get pRegEmailAddress
     sqlqRegistrationSettingsTable.NEXT;
-
-//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
-//    showmessage('Data - ' +
-//                sqlqRegistrationSettingsTable.Fields[0].AsString +
-//                '  -  ' +
-//                sqlqRegistrationSettingsTable.Fields[1].AsString);
     dlgHURegistration.pRegEmailAddress := sqlqRegistrationSettingsTable.Fields[1].AsString;
-//    showmessage('pRegEmailAddress = ' + dlgHURegistration.pRegEmailAddress);
 
      // Get pRegCallsign
     sqlqRegistrationSettingsTable.NEXT;
-
-//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
-//    showmessage('Data - ' +
-//                sqlqRegistrationSettingsTable.Fields[0].AsString +
-//                '  -  ' +
-//                sqlqRegistrationSettingsTable.Fields[1].AsString);
     dlgHURegistration.pRegCallsign := sqlqRegistrationSettingsTable.Fields[1].AsString;
-//    showmessage('pRegCallsign = ' + dlgHURegistration.pRegCallsign);
 
          // Get pRegKey
-        sqlqRegistrationSettingsTable.NEXT;
-
-//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
-//    showmessage('Data - ' +
-//                sqlqRegistrationSettingsTable.Fields[0].AsString +
-//                '  -  ' +
-//                sqlqRegistrationSettingsTable.Fields[1].AsString);
+    sqlqRegistrationSettingsTable.NEXT;
     dlgHURegistration.pRegKey := sqlqRegistrationSettingsTable.Fields[1].AsString;
-//    showmessage('pRegKey = ' + dlgHURegistration.pRegKey);
 
         // Get pRegUserID
     sqlqRegistrationSettingsTable.NEXT;
-
-//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
-//    showmessage('Data - ' +
-//                sqlqRegistrationSettingsTable.Fields[0].AsString +
-//                '  -  ' +
-//                sqlqRegistrationSettingsTable.Fields[1].AsString);
     dlgHURegistration.pRegUserID := sqlqRegistrationSettingsTable.Fields[1].AsString;
-//    showmessage('pRegUserID = ' + dlgHURegistration.pRegUserID);
 
     //================================================
     // Registration Table properties  Loaded
@@ -501,14 +448,16 @@ end;// function TfrmSettings.LoadApplicationDatabase
 //========================================================================================
 function TfrmSettings.SaveApplicationDatabase : Boolean;
 var
-  vstrTStr : string;
+{  vstrTStr : string;
+  vintRecNr : integer;
+}
 begin
-
+{
   showmessage('SaveApplicationDatabase');
 
   Result := True;
 
-  try {SaveApplicationDatabase}
+  try {LoadApplicationDatabase}
 
 //*****    showmessage('Opening DBConnection');
 
@@ -525,10 +474,8 @@ begin
     end;// if not DBConnection.Connected
 
     //================================================
-    // Save the Application Settings Table properties
+    // Load the Application Settings Table properties
     //================================================
-
-    // Load the SettingsDB data elements
     sqlqApplicationSettingsTable.SQL.Text :=
       'select ' +
       '  e.Property, ' +
@@ -537,21 +484,70 @@ begin
 
     DBTransaction.StartTransaction;
 
+//    showmessage('DBTransaction.StartTransaction');
 
-{    sqlite.Append;
-     sqlite.FieldByName('Datum') := Date; // as TDateTime
-     [..]
-     sqlite.Post;
-     sqlite.ApplyUpdates;  }
+    sqlqApplicationSettingsTable.Open;
+
+//    showmessage('sqlqApplicationSettingsTable.Open');
+
+    // Get pAppSettingsInitialPageName
+    //    showmessage('Record = ' + (IntToStr(sqlqApplicationSettingsTable.RecNo   )));
+    pAppSettingsInitialPageName := sqlqApplicationSettingsTable.Fields[1].AsString;
+
+    // Get pAppSettingsInitialPageNum
+    sqlqApplicationSettingsTable.NEXT;
+//    showmessage('Record = ' + (IntToStr(sqlqApplicationSettingsTable.RecNo   )));
+    pAppSettingsInitialPageNum := sqlqApplicationSettingsTable.Fields[1].AsString;
+//    showmessage('pAppSettingsInitialPageNum = ' + pAppSettingsInitialPageNum);
+
+    //================================================
+    // Application Settings Table properties  Loaded
+    //================================================
+//    showmessage('ApplicationSettingsTable.EOF');
+    sqlqApplicationSettingsTable.Close;
 
 
-//    vstrTStr := DBTableQuery.FieldByName('Property').AsString;
-//    showmessage(vstrTStr);
+    //================================================
+    // Load the Registration Table properties
+    //================================================
+    sqlqRegistrationSettingsTable.SQL.Text :=
+      'select ' +
+      '  e.Property, ' +
+      '  e.Value ' +
+      'from RegistrationSettingsTable e';
 
- //   DBTransaction.Commit;
+    sqlqRegistrationSettingsTable.Open;
+//    showmessage('sqlqRegistrationSettingsTable Open');
 
+    // Get pRegFirstName
+//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
+    dlgHURegistration.pRegFirstName := sqlqRegistrationSettingsTable.Fields[1].AsString;
 
+    // Get pRegLastName
+    sqlqRegistrationSettingsTable.NEXT;
+    dlgHURegistration.pRegLastName := sqlqRegistrationSettingsTable.Fields[1].AsString;
 
+    // Get pRegEmailAddress
+    sqlqRegistrationSettingsTable.NEXT;
+    dlgHURegistration.pRegEmailAddress := sqlqRegistrationSettingsTable.Fields[1].AsString;
+
+     // Get pRegCallsign
+    sqlqRegistrationSettingsTable.NEXT;
+    dlgHURegistration.pRegCallsign := sqlqRegistrationSettingsTable.Fields[1].AsString;
+
+         // Get pRegKey
+    sqlqRegistrationSettingsTable.NEXT;
+    dlgHURegistration.pRegKey := sqlqRegistrationSettingsTable.Fields[1].AsString;
+
+        // Get pRegUserID
+    sqlqRegistrationSettingsTable.NEXT;
+    dlgHURegistration.pRegUserID := sqlqRegistrationSettingsTable.Fields[1].AsString;
+
+    //================================================
+    // Registration Table properties  Loaded
+    //================================================
+    showmessage('RegistrationTable.EOF');
+    sqlqRegistrationSettingsTable.Close;
 
   except
 
@@ -562,53 +558,11 @@ begin
       Result := False;
     end;// on D: EDatabaseEorror
 
-  end;// Try {SaveApplicationDatabase}
+  end;// Try {LoadApplicationDatabase}
 
-  DBTransaction.Commit;
   DBTransaction.Active := False;
   DBConnection.Close;
-
-
-
-{========================================================================
-  // Setup Database Stuff
-  // Make sure that nothing is connected or active
-  DBConnection.Connected := False;
-  DBConnection.Transaction := DBTransaction;
-  DBTransaction.Active := False;
-  DBTableQuery.Active := False;
-
-  // Prepare the components
-  DBConnection.DatabaseName := pAppDataDirectory + '\' + cstrApplicationDBName;
-  DBTableQuery.Options := [sqoKeepOpenOnCommit, sqoAutoApplyUpdates, sqoAutoCommit];
-  DBTableQuery.SQL.Text := 'select * from UserSettingsTable';
-  DBTableQuery.DataSource := DBTableDataSource;
-  DBTableQuery.Transaction := DBTransaction;
-
-  DBTableDataSource.DataSet := DBTableQuery;
-
-{  DBGrid1.DataSource := DBTableDataSource;
-  DBGrid1.Columns[0].Fieldname := 'Property';
-  DBGrid1.Columns[0].Width := 50;
-
-  DBNavigator1.DataSource := DBTableDataSource;  }
-
-  // Connect the database and activate the SQL-queries
-  DBConnection.Connected := True;
-  DBConnection.Open;
-  DBTransaction.Active := True;
-  DBTableQuery.Open;
-
-  // Load the SettingsDB data elements
-  vstrTStr := DBTableQuery.FieldByName('Property').AsString;
-  showmessage(vstrTStr);
-
-  DBTransaction.Commit;
-
-=================================================}
-
-
-
+}
 end;// function TfrmSettings.SaveSettingsDataBase
 
 //========================================================================================

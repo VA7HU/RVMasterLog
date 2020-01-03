@@ -177,21 +177,21 @@ object frmSettings: TfrmSettings
             ReadOnly = True
             Title.Alignment = taCenter
             Title.Caption = 'Property'
-            Width = 178
+            Width = 169
           end        
           item
             Alignment = taCenter
             ReadOnly = True
             Title.Alignment = taCenter
             Title.Caption = 'Value'
-            Width = 178
+            Width = 170
           end>
         FixedCols = 0
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing, goRowSelect, goSmoothScroll]
         TabOrder = 0
         ColWidths = (
-          178
-          178
+          169
+          170
         )
       end
       object Label7: TLabel
