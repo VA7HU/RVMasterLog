@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 24 Dec 2019
+// Date : 29 Dec 2019
 //
 //========================================================================================
 
@@ -73,7 +73,7 @@ type
     procedure FormShow(Sender: TObject);
     function CreateApplicationDataBase: boolean;
     function LoadApplicationDatabase: boolean;
-    procedure SaveApplicationDataBase;
+    function SaveApplicationDataBase: Boolean;
 
   private
       // Application Elements
@@ -499,12 +499,81 @@ begin
 end;// function TfrmSettings.LoadApplicationDatabase
 
 //========================================================================================
-procedure TfrmSettings.SaveApplicationDatabase;
+function TfrmSettings.SaveApplicationDatabase : Boolean;
 var
   vstrTStr : string;
 begin
 
-{  // Setup Database Stuff
+  showmessage('SaveApplicationDatabase');
+
+  Result := True;
+
+  try {SaveApplicationDatabase}
+
+//*****    showmessage('Opening DBConnection');
+
+    if not DBConnection.Connected then
+      DBConnection.Open;
+
+    showmessage('DBConnection Open');
+
+    if not DBConnection.Connected then
+    begin
+      showmessage('Error connecting to the Database. Aborting data loading');
+      Result := False;
+      Exit;
+    end;// if not DBConnection.Connected
+
+    //================================================
+    // Save the Application Settings Table properties
+    //================================================
+
+    // Load the SettingsDB data elements
+    sqlite.FieldByName('Property') := 'Test'; // as TDateTime
+
+{    sqlqApplicationSettingsTable.SQL.Text :=
+      'select ' +
+      '  e.Property, ' +
+      '  e.Value ' +
+      'from ApplicationSettingsTable e';  }
+
+//    DBTransaction.StartTransaction;
+
+
+{    sqlite.Append;
+     sqlite.FieldByName('Datum') := Date; // as TDateTime
+     [..]
+     sqlite.Post;
+     sqlite.ApplyUpdates;  }
+
+
+//    vstrTStr := DBTableQuery.FieldByName('Property').AsString;
+//    showmessage(vstrTStr);
+
+ //   DBTransaction.Commit;
+
+
+
+
+  except
+
+    on D: EDatabaseError do
+    begin
+      MessageDlg('Error', 'A Database error has occured. Technical error message: ' +
+                          D.Message, mtError, [mbOK], 0);
+      Result := False;
+    end;// on D: EDatabaseEorror
+
+  end;// Try {SaveApplicationDatabase}
+
+  DBTransaction.Commit;
+  DBTransaction.Active := False;
+  DBConnection.Close;
+
+
+
+{========================================================================
+  // Setup Database Stuff
   // Make sure that nothing is connected or active
   DBConnection.Connected := False;
   DBConnection.Transaction := DBTransaction;
@@ -520,11 +589,11 @@ begin
 
   DBTableDataSource.DataSet := DBTableQuery;
 
-  DBGrid1.DataSource := DBTableDataSource;
+{  DBGrid1.DataSource := DBTableDataSource;
   DBGrid1.Columns[0].Fieldname := 'Property';
   DBGrid1.Columns[0].Width := 50;
 
-  DBNavigator1.DataSource := DBTableDataSource;
+  DBNavigator1.DataSource := DBTableDataSource;  }
 
   // Connect the database and activate the SQL-queries
   DBConnection.Connected := True;
@@ -534,9 +603,15 @@ begin
 
   // Load the SettingsDB data elements
   vstrTStr := DBTableQuery.FieldByName('Property').AsString;
-  showmessage(vstrTStr); }
+  showmessage(vstrTStr);
 
-end;// procedure TfrmSettings.SaveSettingsDataBase
+  DBTransaction.Commit;
+
+=================================================}
+
+
+
+end;// function TfrmSettings.SaveSettingsDataBase
 
 //========================================================================================
 //          PROPERTY ROUTINES

@@ -22,7 +22,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 22 Dec 2019
+// Date : 29 Dec 2019
 //
 //========================================================================================
 
@@ -72,7 +72,8 @@ uses
 function Initialize : Boolean;
 begin
 
-  // If the SettingsDB does not exists we treat it like a New Installation
+  // If the SettingsDB does not exists we assume a New Installation and attempt
+  // to create a default one. If unable, we terminate.
 
   if not FileExists(frmSettings.pAppDatabaseName) then
     if not frmSettings.CreateApplicationDataBase then
@@ -81,7 +82,15 @@ begin
       TerminateApp;
   end;// if not frmSettings.CreateApplicationDataBase
 
-  frmSettings.LoadApplicationDatabase;
+  if frmSettings.LoadApplicationDatabase then
+  begin
+    showmessage('ApplicationDB loaded');
+  end
+  else
+  begin
+    showmessage('ApplicationDB load Failure');
+    TerminateApp;
+  end;// if not frmSettings.LoadApplicationDatabase
 
   if dlgHUNagScreen.ShowModal = mrOK then
   begin

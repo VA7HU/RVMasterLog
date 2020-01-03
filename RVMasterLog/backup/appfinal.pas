@@ -10,11 +10,11 @@ unit AppFinal;
 //
 // Called By : Main : TfrmMain.FormClose
 //
-// Calls :  AppSettings : frmSettings.WriteSettingsINIFile
+// Calls :  AppSettings : frmSettings.SaveApplicationDataBase
 //
 // Ver. : 1.0.0
 //
-// Date : 2 Nov 2018
+// Date : 29 Dec 2019
 //
 //========================================================================================
 
@@ -56,7 +56,7 @@ procedure Finalize;
 begin
 
   showmessage('Finalize');
-  frmSettings.WriteSettingsINIFile;
+  TfrmSettings.SaveApplicationDataBase;
 
 end;// procedure Finalize
 
