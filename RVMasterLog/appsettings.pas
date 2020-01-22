@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 3 Jan 2020
+// Date : 22 Jan 2020
 //
 //========================================================================================
 
@@ -76,6 +76,10 @@ type
     function SaveApplicationDataBase: Boolean;
 
   private
+    //====================================================================================
+    // The following Properties are in fact constants that once initialized will not be
+    // changed during program execution.
+    //====================================================================================
       // Application Elements
     fAppVersion : string;
     fAppFullFilePathName : string;
@@ -88,10 +92,17 @@ type
     fAppSettingsDirectory : string;
     fAppLogbooksDirectory : string;
     fAppBackupsDirectory : string;
+    fAppDatabaseName : string;
+    //====================================================================================
+    // The following Properties are in fact variables that once initialized may be
+    // changed during program execution and are saved in the AppSettings database.
+    //====================================================================================
     fAppSettingsInitialPageName : string;
     fAppSettingsInitialPageNum : string;
-    fAppDatabaseName : string;
-
+    //====================================================================================
+    // The following Properties are in fact constants that once initialized will not be
+    // changed during program execution.
+    //====================================================================================
     function GetAppVersion : string;
     procedure SetAppVersion(Version : string);
     function GetAppFullFilePathName : string;
@@ -113,12 +124,16 @@ type
     procedure SetAppLogbooksDirectory(Dir : string);
     function GetAppBackupsDirectory : string;
     procedure SetAppBackupsDirectory(Dir : string);
+    function GetAppDatabaseName : string;
+    procedure SetAppDatabaseName(DBName : string);
+    //====================================================================================
+    // The following Properties are in fact variables that once initialized may be
+    // changed during program execution and are saved in the AppSettings database.
+    //====================================================================================
     function GetAppSettingsInitialPageName : string;
     procedure SetAppSettingsInitialPageName(PageName : string);
     function GetAppSettingsInitialPageNum : string;
     procedure SetAppSettingsInitialPageNum(PageNum : string);
-    function GetAppDatabaseName : string;
-    procedure SetAppDatabaseName(DBName : string);
 
   public
     //====================================================================================
