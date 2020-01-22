@@ -77,7 +77,7 @@ type
 
   private
     //====================================================================================
-    // The following Properties are in fact constants that once initialized will not be
+    // The following Elements are in fact constants that once initialized will not be
     // changed during program execution.
     //====================================================================================
       // Application Elements
@@ -94,7 +94,7 @@ type
     fAppBackupsDirectory : string;
     fAppDatabaseName : string;
     //====================================================================================
-    // The following Properties are in fact variables that once initialized may be
+    // The following Elements are in fact variables that once initialized may be
     // changed during program execution and are saved in the AppSettings database.
     //====================================================================================
     fAppSettingsInitialPageName : string;
