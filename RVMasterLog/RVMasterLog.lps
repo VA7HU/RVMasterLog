@@ -37,8 +37,8 @@
         <UnitName Value="AppSettings"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="176"/>
-        <CursorPos X="59" Y="177"/>
+        <TopLine Value="564"/>
+        <CursorPos X="3" Y="572"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -83,7 +83,7 @@
         <UnitName Value="ProvTable"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="17"/>
-        <UsageCount Value="137"/>
+        <UsageCount Value="138"/>
       </Unit6>
       <Unit7>
         <Filename Value="manufacturerstable.pas"/>
@@ -95,7 +95,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="19"/>
         <CursorPos X="3" Y="30"/>
-        <UsageCount Value="138"/>
+        <UsageCount Value="139"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -108,7 +108,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="16"/>
         <CursorPos X="35" Y="87"/>
-        <UsageCount Value="114"/>
+        <UsageCount Value="115"/>
       </Unit8>
       <Unit9>
         <Filename Value="supplierstable.pas"/>
@@ -120,7 +120,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos X="3" Y="36"/>
-        <UsageCount Value="104"/>
+        <UsageCount Value="105"/>
       </Unit9>
       <Unit10>
         <Filename Value="applicationdb.pas"/>
@@ -132,7 +132,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="32"/>
         <CursorPos Y="121"/>
-        <UsageCount Value="56"/>
+        <UsageCount Value="57"/>
       </Unit10>
       <Unit11>
         <Filename Value="suppliersdb.pas"/>
@@ -144,7 +144,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="24"/>
         <CursorPos Y="49"/>
-        <UsageCount Value="44"/>
+        <UsageCount Value="45"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Units\HUMessageBoxes Development\humessageboxes.pas"/>
@@ -171,7 +171,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="159"/>
+        <UsageCount Value="160"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit14>
       <Unit15>
@@ -184,7 +184,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="61"/>
         <CursorPos X="48" Y="119"/>
-        <UsageCount Value="159"/>
+        <UsageCount Value="160"/>
       </Unit15>
       <Unit16>
         <Filename Value="..\..\..\HULibs Development\Working Copy\Lazarus Libraries\Dialogs\HURegistration\huregistration.lfm"/>
@@ -193,7 +193,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="159"/>
+        <UsageCount Value="160"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit16>
       <Unit17>
@@ -206,7 +206,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="140"/>
         <CursorPos X="63" Y="151"/>
-        <UsageCount Value="159"/>
+        <UsageCount Value="160"/>
         <Loaded Value="True"/>
       </Unit17>
       <Unit18>
@@ -224,7 +224,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos Y="27"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit19>
       <Unit20>

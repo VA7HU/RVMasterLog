@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 22 Jan 2020
+// Date : 23 Jan 2020
 //
 //========================================================================================
 
@@ -77,7 +77,7 @@ type
 
   private
     //====================================================================================
-    // The following Elements are in fact constants that once initialized will not be
+    // The following Elements are constants that once initialized will not be
     // changed during program execution.
     //====================================================================================
       // Application Elements
@@ -94,14 +94,14 @@ type
     fAppBackupsDirectory : string;
     fAppDatabaseName : string;
     //====================================================================================
-    // The following Elements are in fact variables that once initialized may be
+    // The following Elements are variables that once initialized may be
     // changed during program execution and are saved in the AppSettings database.
     //====================================================================================
     fAppSettingsInitialPageName : string;
     fAppSettingsInitialPageNum : string;
 
     //====================================================================================
-    // The following Properties are in fact constants that once initialized will not be
+    // The following Properties are constants that once initialized will not be
     // changed during program execution.
     //====================================================================================
     function GetAppVersion : string;
@@ -128,7 +128,7 @@ type
     function GetAppDatabaseName : string;
     procedure SetAppDatabaseName(DBName : string);
     //====================================================================================
-    // The following Properties are in fact variables that once initialized may be
+    // The following Properties are variables that once initialized may be
     // changed during program execution and are saved in the AppSettings database.
     //====================================================================================
     function GetAppSettingsInitialPageName : string;
@@ -138,7 +138,7 @@ type
 
   public
     //====================================================================================
-    // The following Properties are in fact constants that once initialized will not be
+    // The following Properties are constants that once initialized will not be
     // changed during program execution.
     //====================================================================================
     property pAppVersion : string
@@ -176,7 +176,7 @@ type
                                  read GetAppDatabaseName
                                  write SetAppDatabaseName;
     //====================================================================================
-    // The following Properties are in fact variables that once initialized may be
+    // The following Properties are variables that once initialized may be
     // changed during program execution and are saved in the AppSettings database.
     //====================================================================================
     property pAppSettingsInitialPageName : string
@@ -239,6 +239,10 @@ begin
 
 showmessage('Creating ApplicationDataBase');
 
+SaveApplicationDatabase;
+
+
+{{
   DBConnection.Close; // Ensure any connection is closed when we start
 
   Result := True;
@@ -336,6 +340,7 @@ showmessage('Creating ApplicationDataBase');
   DBTransaction.Active := False;
   DBConnection.Close;
 
+}}
   showmessage('Settings DataBase Created');
 
 end;// function TfrmSettings.CreateSettingsDataBase
@@ -462,123 +467,110 @@ end;// function TfrmSettings.LoadApplicationDatabase
 
 //========================================================================================
 function TfrmSettings.SaveApplicationDatabase : Boolean;
-{
 var
-  vstrTStr : string;
-  vintRecNr : integer;
-}
+  vstrTstr : String;
 begin
-{
-  showmessage('SaveApplicationDatabase');
+
+  showmessage('Saving ApplicationDataBase');
+
+  DBConnection.Close; // Ensure any connection is closed when we start
 
   Result := True;
 
-  try {LoadApplicationDatabase}
+    //========================================
+    // Create the Default database and tables
+    //========================================
+  try
 
-//*****    showmessage('Opening DBConnection');
+    //=========================
+    //  Create the Database
+    //=========================
+    DBConnection.Open;
+    DBTransaction.Active := true;
 
-    if not DBConnection.Connected then
-      DBConnection.Open;
+    //========================================
+    // Create the "ApplicationSettingsTable"
+    //========================================
 
-//    showmessage('DBConnection Open');
+  // showmessage('Create ApplicationSettingsTable');
 
-    if not DBConnection.Connected then
-    begin
-      showmessage('Error connecting to the Database. Aborting data loading');
-      Result := False;
-      Exit;
-    end;// if not DBConnection.Connected
+    DBConnection.ExecuteDirect('CREATE TABLE "ApplicationSettingsTable"('+
+                               ' "Property" String PRIMARY KEY,'+
+                               ' "Value" String );');
 
-    //================================================
-    // Load the Application Settings Table properties
-    //================================================
-    sqlqApplicationSettingsTable.SQL.Text :=
-      'select ' +
-      '  e.Property, ' +
-      '  e.Value ' +
-      'from ApplicationSettingsTable e';
+  // showmessage('Create ApplicationSettingsIndex');
 
-    DBTransaction.StartTransaction;
+  // Creating an index based upon Property in the ApplicationSettingsTable
+    DBConnection.ExecuteDirect('CREATE UNIQUE INDEX ' +
+                               ' "ApplicationSettingsTable_Property_idx"' +
+                                       ' ON "ApplicationSettingsTable"( "Property" );');
 
-//    showmessage('DBTransaction.StartTransaction');
+  //========================================
+  // Create the "RegistrationSettingsTable"
+  //========================================
 
-    sqlqApplicationSettingsTable.Open;
+  // showmessage('Create RegistrationSettingsTable');
 
-//    showmessage('sqlqApplicationSettingsTable.Open');
+  DBConnection.ExecuteDirect('CREATE TABLE "RegistrationSettingsTable"('+
+                             ' "Property" String PRIMARY KEY,'+
+                                       ' "Value" String );');
 
-    // Get pAppSettingsInitialPageName
-    //    showmessage('Record = ' + (IntToStr(sqlqApplicationSettingsTable.RecNo   )));
-    pAppSettingsInitialPageName := sqlqApplicationSettingsTable.Fields[1].AsString;
+  // showmessage('Create RegistrationSettings Index');
 
-    // Get pAppSettingsInitialPageNum
-    sqlqApplicationSettingsTable.NEXT;
-//    showmessage('Record = ' + (IntToStr(sqlqApplicationSettingsTable.RecNo   )));
-    pAppSettingsInitialPageNum := sqlqApplicationSettingsTable.Fields[1].AsString;
-//    showmessage('pAppSettingsInitialPageNum = ' + pAppSettingsInitialPageNum);
+  DBConnection.ExecuteDirect('CREATE UNIQUE INDEX ' +
+                             ' "RegistrationSettingsTable_Property_idx"' +
+                             ' ON "RegistrationSettingsTable"( "Property" );');
+  DBTransaction.Commit;
 
-    //================================================
-    // Application Settings Table properties  Loaded
-    //================================================
-//    showmessage('ApplicationSettingsTable.EOF');
-    sqlqApplicationSettingsTable.Close;
+  //=========================
+  // Add the User Adaptble Property Records with Initial Default values.
+  //=============================
 
+  //================================
+  // Application Settings properties
+  //================================
+  DBConnection.ExecuteDirect('INSERT INTO ApplicationSettingsTable VALUES' +
+                             ' ("pAppSettingsInitialPageName", "Application Settings")');
+  DBConnection.ExecuteDirect('INSERT INTO ApplicationSettingsTable VALUES' +
+                                      ' ("pAppSettingsInitialPageNum", "1")');
+  //==========================
+  // HURegistration properties
+  //==========================
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegFirstName", " ")');
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegLastName", " ")');
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegEMailaddress", " ")');
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegCallsign", " ")');
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegKey", " ")');
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegUserID", " ")');
 
-    //================================================
-    // Load the Registration Table properties
-    //================================================
-    sqlqRegistrationSettingsTable.SQL.Text :=
-      'select ' +
-      '  e.Property, ' +
-      '  e.Value ' +
-      'from RegistrationSettingsTable e';
+  //  Additional records go here
 
-    sqlqRegistrationSettingsTable.Open;
-//    showmessage('sqlqRegistrationSettingsTable Open');
+  //=========================
+  // Commit the additions
+  //=========================
 
-    // Get pRegFirstName
-//    showmessage('Record = ' + (IntToStr(sqlqRegistrationSettingsTable.RecNo   )));
-    dlgHURegistration.pRegFirstName := sqlqRegistrationSettingsTable.Fields[1].AsString;
-
-    // Get pRegLastName
-    sqlqRegistrationSettingsTable.NEXT;
-    dlgHURegistration.pRegLastName := sqlqRegistrationSettingsTable.Fields[1].AsString;
-
-    // Get pRegEmailAddress
-    sqlqRegistrationSettingsTable.NEXT;
-    dlgHURegistration.pRegEmailAddress := sqlqRegistrationSettingsTable.Fields[1].AsString;
-
-     // Get pRegCallsign
-    sqlqRegistrationSettingsTable.NEXT;
-    dlgHURegistration.pRegCallsign := sqlqRegistrationSettingsTable.Fields[1].AsString;
-
-         // Get pRegKey
-    sqlqRegistrationSettingsTable.NEXT;
-    dlgHURegistration.pRegKey := sqlqRegistrationSettingsTable.Fields[1].AsString;
-
-        // Get pRegUserID
-    sqlqRegistrationSettingsTable.NEXT;
-    dlgHURegistration.pRegUserID := sqlqRegistrationSettingsTable.Fields[1].AsString;
-
-    //================================================
-    // Registration Table properties  Loaded
-    //================================================
-    showmessage('RegistrationTable.EOF');
-    sqlqRegistrationSettingsTable.Close;
+  DBTransaction.Commit;
 
   except
+    ShowMessage('Unable to Create new Database');
+    Result := False;
+  end;// Try to Create the Default database and tables
 
-    on D: EDatabaseError do
-    begin
-      MessageDlg('Error', 'A Database error has occured. Technical error message: ' +
-                          D.Message, mtError, [mbOK], 0);
-      Result := False;
-    end;// on D: EDatabaseEorror
-
-  end;// Try {LoadApplicationDatabase}
+  //=======================
+  //  Database Created
+  //=======================
 
   DBTransaction.Active := False;
   DBConnection.Close;
-}
+
+  showmessage('Settings DataBase Created');
+
 end;// function TfrmSettings.SaveSettingsDataBase
 
 //========================================================================================
