@@ -93,13 +93,15 @@ type
     fAppLogbooksDirectory : string;
     fAppBackupsDirectory : string;
     fAppDatabaseName : string;
+    fMinBackupNr : string;
     //====================================================================================
     // The following Elements are variables that once initialized may be
     // changed during program execution and are saved in the AppSettings database.
     //====================================================================================
     fAppSettingsInitialPageName : string;
     fAppSettingsInitialPageNum : string;
-
+    fMaxBackupNr : string;
+    fCurrentBackupNr : string;
     //====================================================================================
     // The following Properties are constants that once initialized will not be
     // changed during program execution.
@@ -471,106 +473,105 @@ var
   vstrTstr : String;
 begin
 
-  showmessage('Creating ApplicationDataBase');
+  showmessage('Saving ApplicationDataBase');
 
-    DBConnection.Close; // Ensure any connection is closed when we start
+  DBConnection.Close; // Ensure any connection is closed when we start
 
-    Result := True;
+  Result := True;
 
-      //========================================
-      // Create the Default database and tables
-      //========================================
-    try
+    //========================================
+    // Create the Default database and tables
+    //========================================
+  try
 
-      //=========================
-      //  Create the Database
-      //=========================
-      DBConnection.Open;
-      DBTransaction.Active := true;
+    //=========================
+    //  Create the Database
+    //=========================
+    DBConnection.Open;
+    DBTransaction.Active := true;
 
-      //========================================
-      // Create the "ApplicationSettingsTable"
-      //========================================
+    //========================================
+    // Create the "ApplicationSettingsTable"
+    //========================================
 
   // showmessage('Create ApplicationSettingsTable');
 
-      DBConnection.ExecuteDirect('CREATE TABLE "ApplicationSettingsTable"('+
-                                       ' "Property" String PRIMARY KEY,'+
-                                       ' "Value" String );');
+    DBConnection.ExecuteDirect('CREATE TABLE "ApplicationSettingsTable"('+
+                               ' "Property" String PRIMARY KEY,'+
+                               ' "Value" String );');
 
   // showmessage('Create ApplicationSettingsIndex');
 
-      // Creating an index based upon Property in the ApplicationSettingsTable
-      DBConnection.ExecuteDirect('CREATE UNIQUE INDEX ' +
-                                       ' "ApplicationSettingsTable_Property_idx"' +
+  // Creating an index based upon Property in the ApplicationSettingsTable
+    DBConnection.ExecuteDirect('CREATE UNIQUE INDEX ' +
+                               ' "ApplicationSettingsTable_Property_idx"' +
                                        ' ON "ApplicationSettingsTable"( "Property" );');
 
-      //========================================
-      // Create the "RegistrationSettingsTable"
-      //========================================
+  //========================================
+  // Create the "RegistrationSettingsTable"
+  //========================================
 
   // showmessage('Create RegistrationSettingsTable');
 
-      DBConnection.ExecuteDirect('CREATE TABLE "RegistrationSettingsTable"('+
-                                       ' "Property" String PRIMARY KEY,'+
+  DBConnection.ExecuteDirect('CREATE TABLE "RegistrationSettingsTable"('+
+                             ' "Property" String PRIMARY KEY,'+
                                        ' "Value" String );');
 
   // showmessage('Create RegistrationSettings Index');
 
+  DBConnection.ExecuteDirect('CREATE UNIQUE INDEX ' +
+                             ' "RegistrationSettingsTable_Property_idx"' +
+                             ' ON "RegistrationSettingsTable"( "Property" );');
+  DBTransaction.Commit;
 
-      DBConnection.ExecuteDirect('CREATE UNIQUE INDEX ' +
-                                       ' "RegistrationSettingsTable_Property_idx"' +
-                                       ' ON "RegistrationSettingsTable"( "Property" );');
-      DBTransaction.Commit;
+  //=========================
+  // Add the User Adaptble Property Records with Initial Default values.
+  //=============================
 
-      //=========================
-      // Add the User Adaptble Property Records with Initial Default values.
-      //=============================
-
-      //================================
-      // Application Settings properties
-      //================================
-      DBConnection.ExecuteDirect('INSERT INTO ApplicationSettingsTable VALUES' +
-                                       ' ("pAppSettingsInitialPageName", "Application Settings")');
-      DBConnection.ExecuteDirect('INSERT INTO ApplicationSettingsTable VALUES' +
+  //================================
+  // Application Settings properties
+  //================================
+  DBConnection.ExecuteDirect('INSERT INTO ApplicationSettingsTable VALUES' +
+                             ' ("pAppSettingsInitialPageName", "Application Settings")');
+  DBConnection.ExecuteDirect('INSERT INTO ApplicationSettingsTable VALUES' +
                                       ' ("pAppSettingsInitialPageNum", "1")');
-      //==========================
-      // HURegistration properties
-      //==========================
-      DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
-                                       ' ("pRegFirstName", " ")');
-      DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
-                                       ' ("pRegLastName", " ")');
-      DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
-                                       ' ("pRegEMailaddress", " ")');
-      DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
-                                       ' ("pRegCallsign", " ")');
-      DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
-                                       ' ("pRegKey", " ")');
-      DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
-                                       ' ("pRegUserID", " ")');
+  //==========================
+  // HURegistration properties
+  //==========================
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegFirstName", " ")');
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegLastName", " ")');
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegEMailaddress", " ")');
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegCallsign", " ")');
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegKey", " ")');
+  DBConnection.ExecuteDirect('INSERT INTO RegistrationSettingsTable VALUES' +
+                             ' ("pRegUserID", " ")');
 
-      //  Additional records go here
+  //  Additional records go here
 
-      //=========================
-      // Commit the additions
-      //=========================
+  //=========================
+  // Commit the additions
+  //=========================
 
-      DBTransaction.Commit;
+  DBTransaction.Commit;
 
-      except
-        ShowMessage('Unable to Create new Database');
-        Result := False;
-    end;// Try to Create the Default database and tables
+  except
+    ShowMessage('Unable to Create new Database');
+    Result := False;
+  end;// Try to Create the Default database and tables
 
-    //=======================
-    //  Database Created
-    //=======================
+  //=======================
+  //  Database Created
+  //=======================
 
-    DBTransaction.Active := False;
-    DBConnection.Close;
+  DBTransaction.Active := False;
+  DBConnection.Close;
 
-    showmessage('Settings DataBase Created');
+  showmessage('Settings DataBase Created');
 
 end;// function TfrmSettings.SaveSettingsDataBase
 

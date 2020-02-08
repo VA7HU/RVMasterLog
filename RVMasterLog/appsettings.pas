@@ -93,13 +93,15 @@ type
     fAppLogbooksDirectory : string;
     fAppBackupsDirectory : string;
     fAppDatabaseName : string;
+    fMinBackupNr : string;
     //====================================================================================
     // The following Elements are variables that once initialized may be
     // changed during program execution and are saved in the AppSettings database.
     //====================================================================================
     fAppSettingsInitialPageName : string;
     fAppSettingsInitialPageNum : string;
-
+    fMaxBackupNr : string;
+    fCurrentBackupNr : string;
     //====================================================================================
     // The following Properties are constants that once initialized will not be
     // changed during program execution.

@@ -1,13 +1,13 @@
 object frmSettings: TfrmSettings
-  Left = 296
+  Left = 285
   Height = 411
-  Top = 142
-  Width = 729
+  Top = 119
+  Width = 927
   BorderIcons = []
   BorderStyle = bsDialog
   Caption = 'frmAppSettings'
   ClientHeight = 411
-  ClientWidth = 729
+  ClientWidth = 927
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -63,14 +63,14 @@ object frmSettings: TfrmSettings
     Left = 24
     Height = 328
     Top = 16
-    Width = 688
+    Width = 880
     ActivePage = pgApplicationSettings
     TabIndex = 1
     TabOrder = 1
     object pgDirectories: TTabSheet
       Caption = 'Directories'
       ClientHeight = 300
-      ClientWidth = 680
+      ClientWidth = 872
       object Label1: TLabel
         Left = 16
         Height = 15
@@ -163,11 +163,11 @@ object frmSettings: TfrmSettings
     object pgApplicationSettings: TTabSheet
       Caption = 'Application Settings'
       ClientHeight = 300
-      ClientWidth = 680
+      ClientWidth = 872
       object strgrdApplicationSettings: TStringGrid
-        Left = 8
+        Left = 496
         Height = 256
-        Top = 32
+        Top = 8
         Width = 360
         AutoFillColumns = True
         ColCount = 2
@@ -206,7 +206,7 @@ object frmSettings: TfrmSettings
     object pgRegistrationSettings: TTabSheet
       Caption = 'Registration Settings'
       ClientHeight = 300
-      ClientWidth = 680
+      ClientWidth = 872
       object dbeFirstName: TDBEdit
         Left = 69
         Height = 23
@@ -229,21 +229,21 @@ object frmSettings: TfrmSettings
             Alignment = taCenter
             Title.Alignment = taCenter
             Title.Caption = 'Property'
-            Width = 193
+            Width = 202
           end        
           item
             Alignment = taCenter
             Title.Alignment = taCenter
             Title.Caption = 'Value'
-            Width = 194
+            Width = 202
           end>
         FixedCols = 0
         Options = [goVertLine, goHorzLine, goEditing, goRowSelect, goSmoothScroll]
         RowCount = 7
         TabOrder = 1
         ColWidths = (
-          193
-          194
+          202
+          202
         )
       end
     end
@@ -255,49 +255,49 @@ object frmSettings: TfrmSettings
     Left = 0
     Height = 23
     Top = 388
-    Width = 729
+    Width = 927
     Panels = <>
   end
   object DBTableDataSource: TDataSource
-    left = 672
+    left = 184
     top = 360
   end
   object DBConnection: TSQLite3Connection
     Connected = False
     LoginPrompt = False
     KeepConnection = False
-    left = 528
+    left = 40
     top = 360
   end
   object DBTransaction: TSQLTransaction
     Active = False
-    left = 568
+    left = 80
     top = 360
   end
   object DBTableQuery: TSQLQuery
     FieldDefs = <>
     Params = <>
-    left = 616
+    left = 128
     top = 360
   end
   object sqlqApplicationSettingsTable: TSQLQuery
     FieldDefs = <>
     Params = <>
-    left = 488
-    top = 288
+    left = 632
+    top = 352
   end
   object dsApplicationSettingsTable: TDataSource
-    left = 648
-    top = 288
+    left = 792
+    top = 352
   end
   object sqlqRegistrationSettingsTable: TSQLQuery
     FieldDefs = <>
     Params = <>
-    left = 480
-    top = 232
+    left = 624
+    top = 296
   end
   object dsRegistrationSettingsTable: TDataSource
-    left = 640
-    top = 232
+    left = 784
+    top = 296
   end
 end
