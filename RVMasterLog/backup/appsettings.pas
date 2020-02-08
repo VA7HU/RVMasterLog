@@ -77,22 +77,23 @@ type
 
   private
     //====================================================================================
-    // The following Elements are constants that once initialized will not be
-    // changed during program execution.
+    // The following Elements are constant elements that once the application has been
+    // installed, will be initialised during form creation, during AppSettingsDB creation
+    // and subsequently remained unchanged in the DB.
     //====================================================================================
       // Application Elements
-    fAppVersion : string;
-    fAppFullFilePathName : string;
-    fAppFilePath : string;
-    fAppFullFileName : string;
-    fAppFileName : string;
-    fAppFileExt : string;
-    fAppUserDirectory : string;
-    fAppDataDirectory : string;
-    fAppSettingsDirectory : string;
-    fAppLogbooksDirectory : string;
-    fAppBackupsDirectory : string;
-    fAppDatabaseName : string;
+    fcAppVersion : string;
+    fcAppFullFilePathName : string;
+    fcAppFilePath : string;
+    fcAppFullFileName : string;
+    fcAppFileName : string;
+    fcAppFileExt : string;
+    fcAppUserDirectory : string;
+    fcAppDataDirectory : string;
+    fcAppSettingsDirectory : string;
+    fcAppLogbooksDirectory : string;
+    fcAppBackupsDirectory : string;
+    fcAppDatabaseName : string;
     fMinBackupNr : string;
     //====================================================================================
     // The following Elements are variables that once initialized may be
@@ -103,32 +104,32 @@ type
     fMaxBackupNr : string;
     fCurrentBackupNr : string;
     //====================================================================================
-    // The following Properties are constants that once initialized will not be
-    // changed during program execution.
+    // The following Properties are constant properties that once the application has been
+    // installed, will not be changed during program execution.
     //====================================================================================
-    function GetAppVersion : string;
-    procedure SetAppVersion(Version : string);
-    function GetAppFullFilePathName : string;
-    procedure SetAppFullFilePathName(PathName : string);
-    function GetAppFilePath : string;
-    procedure SetAppFilePath(Path : string);
-    function GetAppFullFileName : string;
-    procedure SetAppFullFileName(FName : string);
-    function GetAppFileName : string;
-    procedure SetAppFileName(FName : string);
-    function GetAppFileExt : string;
-    function GetAppUserDirectory : string;
-    procedure SetAppUserDirectory(Dir : string);
-    function GetAppDataDirectory : string;
-    procedure SetAppDataDirectory(Dir : string);
-    function GetAppSettingsDirectory : string;
-    procedure SetAppSettingsDirectory(Dir : string);
-    function GetAppLogbooksDirectory : string;
-    procedure SetAppLogbooksDirectory(Dir : string);
-    function GetAppBackupsDirectory : string;
-    procedure SetAppBackupsDirectory(Dir : string);
-    function GetAppDatabaseName : string;
-    procedure SetAppDatabaseName(DBName : string);
+    function GetcAppVersion : string;
+    procedure SetcAppVersion(Version : string);
+    function GetcAppFullFilePathName : string;
+    procedure SetcAppFullFilePathName(PathName : string);
+    function GetcAppFilePath : string;
+    procedure SetcAppFilePath(Path : string);
+    function GetcAppFullFileName : string;
+    procedure SetcAppFullFileName(FName : string);
+    function GetcAppFileName : string;
+    procedure SetcAppFileName(FName : string);
+    function GetcAppFileExt : string;
+    function GetcAppUserDirectory : string;
+    procedure SetcAppUserDirectory(Dir : string);
+    function GetcAppDataDirectory : string;
+    procedure SetcAppDataDirectory(Dir : string);
+    function GetcAppSettingsDirectory : string;
+    procedure SetcAppSettingsDirectory(Dir : string);
+    function GetcAppLogbooksDirectory : string;
+    procedure SetcAppLogbooksDirectory(Dir : string);
+    function GetcAppBackupsDirectory : string;
+    procedure SetcAppBackupsDirectory(Dir : string);
+    function GetcAppDatabaseName : string;
+    procedure SetcAppDatabaseName(DBName : string);
     //====================================================================================
     // The following Properties are variables that once initialized may be
     // changed during program execution and are saved in the AppSettings database.
@@ -143,40 +144,40 @@ type
     // The following Properties are constants that once initialized will not be
     // changed during program execution.
     //====================================================================================
-    property pAppVersion : string
-                           read GetAppVersion
-                           write SetAppVersion;
-    property pAppFullFilePathName : string
-                                    read GetAppFullFilePathName
-                                    write SetAppFullFilePathName;
-    property pAppFilePath : string read GetAppFilePath
-                                   write SetAppFilePath;
-    property pAppFullFileName : string
-                                read GetAppFullFileName
-                                write SetAppFullFileName;
-    property pAppFileName : string
-                            read GetAppFileName
-                            write SetAppFileName;
-    property pAppFileExt : string
-                           read GetAppFileExt;
-    property pAppUserDirectory : string
-                                 read GetAppUserDirectory
-                                 write SetAppUserDirectory;
-    property pAppDataDirectory : string
-                                 read GetAppDataDirectory
-                                 write SetAppDataDirectory;
-    property pAppSettingsDirectory : string
-                                  read GetAppSettingsDirectory
-                                  write SetAppSettingsDirectory;
-    property pAppLogbooksDirectory : string
-                                  read GetAppLogbooksDirectory
-                                  write SetAppLogbooksDirectory;
-    property pAppBackupsDirectory : string
-                                 read GetAppBackupsDirectory
-                                 write SetAppBackupsDirectory;
-    property pAppDatabaseName : string
-                                 read GetAppDatabaseName
-                                 write SetAppDatabaseName;
+    property pcAppVersion : string
+                           read GetcAppVersion
+                           write SetcAppVersion;
+    property pcAppFullFilePathName : string
+                                    read GetcAppFullFilePathName
+                                    write SetcAppFullFilePathName;
+    property pcAppFilePath : string read GetcAppFilePath
+                                   write SetcAppFilePath;
+    property pcAppFullFileName : string
+                                read GetcAppFullFileName
+                                write SetcAppFullFileName;
+    property pcAppFileName : string
+                            read GetcAppFileName
+                            write SetcAppFileName;
+    property pcAppFileExt : string
+                           read GetcAppFileExt;
+    property pcAppUserDirectory : string
+                                 read GetcAppUserDirectory
+                                 write SetcAppUserDirectory;
+    property pcAppDataDirectory : string
+                                 read GetcAppDataDirectory
+                                 write SetcAppDataDirectory;
+    property pcAppSettingsDirectory : string
+                                  read GetcAppSettingsDirectory
+                                  write SetcAppSettingsDirectory;
+    property pcAppLogbooksDirectory : string
+                                  read GetcAppLogbooksDirectory
+                                  write SetcAppLogbooksDirectory;
+    property pcAppBackupsDirectory : string
+                                 read GetcAppBackupsDirectory
+                                 write SetcAppBackupsDirectory;
+    property pcAppDatabaseName : string
+                                 read GetcAppDatabaseName
+                                 write SetcAppDatabaseName;
     //====================================================================================
     // The following Properties are variables that once initialized may be
     // changed during program execution and are saved in the AppSettings database.
@@ -578,130 +579,130 @@ end;// function TfrmSettings.SaveSettingsDataBase
 //========================================================================================
 //          PROPERTY ROUTINES
 //========================================================================================
-function TfrmSettings.GetAppVersion: string;
+function TfrmSettings.GetcAppVersion: string;
 begin
-   Result := fAppVersion;
-end;// function TfrmSettings.GetVersion
+   Result := fcAppVersion;
+end;// function TfrmSettings.GetVeGetcAppVersionrsion
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppVersion(Version: string);
+procedure TfrmSettings.SetcAppVersion(Version: string);
 begin
-    fAppVersion := Version;
-end;// procedure TfrmSettings.SetAppVersion
+    fcAppVersion := Version;
+end;// procedure TfrmSettings.SetcAppVersion
 
 //========================================================================================
-function TfrmSettings.GetAppFullFilePathName: string;
+function TfrmSettings.GetcAppFullFilePathName: string;
 begin
-   Result := fAppFullFilePathName;
-end;// function TfrmSettings.GetAppFullFilePathName
+   Result := fcAppFullFilePathName;
+end;// function TfrmSettings.GetcAppFullFilePathName
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppFullFilePathName(PathName: string);
+procedure TfrmSettings.SetcAppFullFilePathName(PathName: string);
 begin
-    fAppFullFilePathName := PathName;
-end;// procedure TfrmSettings.SetAppFullFilePathName
+    fcAppFullFilePathName := PathName;
+end;// procedure TfrmSettings.SetcAppFullFilePathName
 
 //========================================================================================
-function TfrmSettings.GetAppFilePath: string;
+function TfrmSettings.GetcAppFilePath: string;
 begin
-   Result := fAppFilePath;
-end;// function TfrmSettings.GetAppFullFilePath
+   Result := fcAppFilePath;
+end;// function TfrmSettings.GetcAppFullFilePath
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppFilePath(Path: string);
+procedure TfrmSettings.SetcAppFilePath(Path: string);
 begin
-    fAppFilePath := Path;
-end;// procedure TfrmSettings.SetAppFullFilePath
+    fcAppFilePath := Path;
+end;// procedure TfrmSettings.SetcAppFullFilePath
 
 //========================================================================================
-function TfrmSettings.GetAppFullFileName: string;
+function TfrmSettings.GetcAppFullFileName: string;
 begin
-   Result := fAppFullFileName;
-end;// function TfrmSettings.GetAppFullFileNamee
+   Result := fcAppFullFileName;
+end;// function TfrmSettings.GetcAppFullFileNamee
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppFullFileName(FName: string);
+procedure TfrmSettings.SetcAppFullFileName(FName: string);
 begin
-    fAppFullFileName := cstrAppFullFileName;
-end;// procedure TfrmSettings.SetAppFullFileName
+    fcAppFullFileName := cstrAppFullFileName;
+end;// procedure TfrmSettings.SetcAppFullFileName
 
 //========================================================================================
-function TfrmSettings.GetAppFileName: string;
+function TfrmSettings.GetcAppFileName: string;
 begin
-   Result := fAppFileName;
-end;// function TfrmSettings.GetAppFileNamee
+   Result := fcAppFileName;
+end;// function TfrmSettings.GetcAppFileNamee
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppFileName(FName: string);
+procedure TfrmSettings.SetcAppFileName(FName: string);
 begin
-    fAppFileName := FName;
-end;// procedure TfrmSettings.SetAppFileName
+    fcAppFileName := FName;
+end;// procedure TfrmSettings.SetcAppFileName
 
 //========================================================================================
-function TfrmSettings.GetAppFileExt: string;
+function TfrmSettings.GetcAppFileExt: string;
 begin
-   Result := fAppFileExt;
-end;// function TfrmSettings.GetAppFileExt
+   Result := fcAppFileExt;
+end;// function TfrmSettings.GetcAppFileExt
 
 //========================================================================================
-function TfrmSettings.GetAppUserDirectory: string;
+function TfrmSettings.GetcAppUserDirectory: string;
 begin
-   Result := fAppUserDirectory;
-end;// procedure TfrmSettings.GetAppUserDirectory
+   Result := fcAppUserDirectory;
+end;// procedure TfrmSettings.GetcAppUserDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppUserDirectory(Dir: string);
+procedure TfrmSettings.SetcAppUserDirectory(Dir: string);
 begin
-    fAppUserDirectory := Dir;
-end;// procedure TfrmSettings.SetAppUserDataDirectory
+    fcAppUserDirectory := Dir;
+end;// procedure TfrmSettings.SetcAppUserDataDirectory
 
 //========================================================================================
-function TfrmSettings.GetAppDataDirectory: string;
+function TfrmSettings.GetcAppDataDirectory: string;
 begin
-   Result := fAppDataDirectory;
-end;// procedure TfrmSettings.GetAppDirectory
+   Result := fcAppDataDirectory;
+end;// procedure TfrmSettings.GetcAppDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppDataDirectory(Dir: string);
+procedure TfrmSettings.SetcAppDataDirectory(Dir: string);
 begin
-    fAppDataDirectory := Dir;
-end;// procedure TfrmSettings.SetAppDataDirectory
+    fcAppDataDirectory := Dir;
+end;// procedure TfrmSettings.SetcAppDataDirectory
 
 //========================================================================================
-function TfrmSettings.GetAppSettingsDirectory: string;
+function TfrmSettings.GetcAppSettingsDirectory: string;
 begin
-   Result := fAppSettingsDirectory;
-end;// procedure TfrmSettings.GetAppSettingsDirectory
+   Result := fcAppSettingsDirectory;
+end;// procedure TfrmSettings.GetcAppSettingsDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppSettingsDirectory(Dir: string);
+procedure TfrmSettings.SetcAppSettingsDirectory(Dir: string);
 begin
-    fAppSettingsDirectory := Dir;
-end;// procedure TfrmSettings.SetAppSettingsDirectory
+    fcAppSettingsDirectory := Dir;
+end;// procedure TfrmSettings.SetcAppSettingsDirectory
 
 //========================================================================================
-function TfrmSettings.GetAppLogbooksDirectory: string;
+function TfrmSettings.GetcAppLogbooksDirectory: string;
 begin
-   Result := fAppLogbooksDirectory;
-end;// procedure TfrmSettings.GetAppLogbooksDirectory
+   Result := fcAppLogbooksDirectory;
+end;// procedure TfrmSettings.GetcAppLogbooksDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppLogbooksDirectory(Dir: string);
+procedure TfrmSettings.SetcAppLogbooksDirectory(Dir: string);
 begin
-    fAppLogbooksDirectory := Dir;
-end;// procedure TfrmSettings.SeApptLogbooksDirectory
+    fcAppLogbooksDirectory := Dir;
+end;// procedure TfrmSettings.SetcApptLogbooksDirectory
 
 //========================================================================================
-function TfrmSettings.GetAppBackupsDirectory: string;
+function TfrmSettings.GetcAppBackupsDirectory: string;
 begin
-   Result := fAppBackupsDirectory;
-end;// procedure TfrmSettings.GetAppBackupsDirectory
+   Result := fcAppBackupsDirectory;
+end;// procedure TfrmSettings.GetcAppBackupsDirectory
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppBackupsDirectory(Dir: string);
+procedure TfrmSettings.SetcAppBackupsDirectory(Dir: string);
 begin
-    fAppBackupsDirectory := Dir;
-end;// procedure TfrmSettings.SetAppBackupsDirectory
+    fcAppBackupsDirectory := Dir;
+end;// procedure TfrmSettings.SetcAppBackupsDirectory
 
 //========================================================================================
 function TfrmSettings.GetAppSettingsInitialPageName: string;
@@ -728,16 +729,16 @@ begin
 end;// procedure TfrmSettings.SetAppSettingsInitialPageNum
 
 //========================================================================================
-function TfrmSettings.GetAppDatabaseName: string;
+function TfrmSettings.GetcAppDatabaseName: string;
 begin
-   Result := fAppDatabaseName;
-end;// procedure TfrmSettings.GetAppDatabaseName
+   Result := fcAppDatabaseName;
+end;// procedure TfrmSettings.GetcAppDatabaseName
 
 //----------------------------------------------------------------------------------------
-procedure TfrmSettings.SetAppDatabaseName(DBName: string);
+procedure TfrmSettings.SetcAppDatabaseName(DBName: string);
 begin
-    fAppDatabaseName := DBName;
-end;// procedure TfrmSettings.SetAppDatabaseName
+    fcAppDatabaseName := DBName;
+end;// procedure TfrmSettings.SetcAppDatabaseName
 
 {//========================================================================================
 function TfrmSettings.GetAppOwnerFirstName: string;
@@ -832,47 +833,53 @@ procedure TfrmSettings.FormCreate(Sender: TObject);
 begin
 
   //====================================================
-  // Initialize the Application Directories
+  // constant properties that once the application has been
+  // installed, will be read from the ApplicationSettingsDB
+  // and will not be changed during program execution.
   //====================================================
 
-  pAppFileName := Copy (cstrAppFullFileName, 1, 12);
-  pAppFilePath := GetCurrentDir;
-  pAppUserDirectory := (GetWindowsSpecialDir(CSIDL_PERSONAL)) + pAppFileName;
+    //====================================================
+    // Initialize the Application Directories
+    //====================================================
+
+  pcAppFileName := Copy (cstrAppFullFileName, 1, 12);
+  pcAppFilePath := GetCurrentDir;
+  pcAppUserDirectory := (GetWindowsSpecialDir(CSIDL_PERSONAL)) + pcAppFileName;
 
     // The following directories are created by the INNO Setup Script
-    pAppSettingsDirectory := pAppUserDirectory + '\' + cstrSettingsDirectoryName;
-    pAppLogbooksDirectory := pAppUserDirectory + '\' + cstrLogbooksDirectoryName;
-    pAppBackupsDirectory := pAppUserDirectory + '\' + cstrBackupsDirectoryName;
-    pAppDataDirectory := pAppUserDirectory + '\' + cstrApPDataDirectoryName;
-    pAppDatabaseName := pAppDataDirectory + '\' + cstrApplicationDBName;
+  pcAppSettingsDirectory := pcAppUserDirectory + '\' + cstrSettingsDirectoryName;
+  pcAppLogbooksDirectory := pcAppUserDirectory + '\' + cstrLogbooksDirectoryName;
+  pcAppBackupsDirectory := pcAppUserDirectory + '\' + cstrBackupsDirectoryName;
+  pcAppDataDirectory := pcAppUserDirectory + '\' + cstrApPDataDirectoryName;
+  pcAppDatabaseName := pcAppDataDirectory + '\' + cstrApplicationDBName;
 
     //====================================================
     // Initialize the Data Components
     //====================================================
-    DBConnection.DatabaseName := pAppDatabaseName;
-    DBConnection.Transaction := DBTransaction;
-    sqlqApplicationSettingsTable.DataBase := DBConnection;
-    sqlqApplicationSettingsTable.DataSource := dsApplicationSettingsTable;
-    sqlqRegistrationSettingsTable.DataBase := DBConnection;
-    sqlqRegistrationSettingsTable.DataSource := dsRegistrationSettingsTable;
+  DBConnection.DatabaseName := pcAppDatabaseName;
+  DBConnection.Transaction := DBTransaction;
+  sqlqApplicationSettingsTable.DataBase := DBConnection;
+  sqlqApplicationSettingsTable.DataSource := dsApplicationSettingsTable;
+  sqlqRegistrationSettingsTable.DataBase := DBConnection;
+  sqlqRegistrationSettingsTable.DataSource := dsRegistrationSettingsTable;
 
     //====================================================
     // Initialize the Controls
     //====================================================
 
     // PageControl properties
-    pgDirectories.Caption:=straryPageNames[0];
-    pgApplicationSettings.Caption:=straryPageNames[1];
-    pgRegistrationSettings.Caption:=straryPageNames[2];
-    pgSettingsDB.Caption:=straryPageNames[3];
+  pgDirectories.Caption:=straryPageNames[0];
+  pgApplicationSettings.Caption:=straryPageNames[1];
+  pgRegistrationSettings.Caption:=straryPageNames[2];
+  pgSettingsDB.Caption:=straryPageNames[3];
 
     // strgApplicationSettings properties
-    strgrdApplicationSettings.AutoFillColumns := True;
-    strgrdApplicationSettings.AutoSizeColumns;
+  strgrdApplicationSettings.AutoFillColumns := True;
+  strgrdApplicationSettings.AutoSizeColumns;
 
     // strgRegistrationSettings properties
-    strgrdRegistrationSettings.AutoFillColumns := True;
-    strgrdRegistrationSettings.AutoSizeColumns;
+  strgrdRegistrationSettings.AutoFillColumns := True;
+  strgrdRegistrationSettings.AutoSizeColumns;
 
 end;// procedure TfrmSettings.FormCreate
 
@@ -890,11 +897,11 @@ begin
   // Command Buttons
 
   //  Directories Page
-  edtApplicationDirectory.Text:= pAppFilePath;
-  edtSettingsDirectory.Text:=pAppSettingsDirectory;
-  edtLogbooksDirectory.Text:=pAppLogbooksDirectory;
-  edtBackupsDirectory.Text := pAppBackupsDirectory;
-  edtAppDataDirectory.Text := pAppDataDirectory;
+  edtApplicationDirectory.Text:= pcAppFilePath;
+  edtSettingsDirectory.Text:=pcAppSettingsDirectory;
+  edtLogbooksDirectory.Text:=pcAppLogbooksDirectory;
+  edtBackupsDirectory.Text := pcAppBackupsDirectory;
+  edtAppDataDirectory.Text := pcAppDataDirectory;
 
   //  Application Settings Page
 

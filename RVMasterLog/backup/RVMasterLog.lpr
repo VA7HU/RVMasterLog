@@ -14,7 +14,7 @@ program RVMasterLog;
 //
 // Ver. : 1.0.0
 //
-// Date : 22 Jan 2020 2019
+// Date : 7 Feb 2020
 //
 //========================================================================================
 
@@ -27,8 +27,7 @@ uses
   AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable,
   ProvTable, RVData, SuppliersTable, ApplicationDB, SuppliersDB,
   // HULibraries
-  HUConstants, HUMessageBoxes, HUValidations, HUNagscreen, HURegistration,
-  unit1;
+  HUConstants, HUMessageBoxes, HUValidations, HUNagscreen, HURegistration;
 
 {$R *.res}
 

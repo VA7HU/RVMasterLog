@@ -70,7 +70,7 @@ object frmSettings: TfrmSettings
     object pgDirectories: TTabSheet
       Caption = 'Directories'
       ClientHeight = 300
-      ClientWidth = 680
+      ClientWidth = 872
       object Label1: TLabel
         Left = 16
         Height = 15
@@ -206,7 +206,7 @@ object frmSettings: TfrmSettings
     object pgRegistrationSettings: TTabSheet
       Caption = 'Registration Settings'
       ClientHeight = 300
-      ClientWidth = 680
+      ClientWidth = 872
       object dbeFirstName: TDBEdit
         Left = 69
         Height = 23
@@ -229,21 +229,21 @@ object frmSettings: TfrmSettings
             Alignment = taCenter
             Title.Alignment = taCenter
             Title.Caption = 'Property'
-            Width = 202
+            Width = 193
           end        
           item
             Alignment = taCenter
             Title.Alignment = taCenter
             Title.Caption = 'Value'
-            Width = 202
+            Width = 194
           end>
         FixedCols = 0
         Options = [goVertLine, goHorzLine, goEditing, goRowSelect, goSmoothScroll]
         RowCount = 7
         TabOrder = 1
         ColWidths = (
-          202
-          202
+          193
+          194
         )
       end
     end

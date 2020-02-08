@@ -229,21 +229,21 @@ object frmSettings: TfrmSettings
             Alignment = taCenter
             Title.Alignment = taCenter
             Title.Caption = 'Property'
-            Width = 202
+            Width = 193
           end        
           item
             Alignment = taCenter
             Title.Alignment = taCenter
             Title.Caption = 'Value'
-            Width = 202
+            Width = 194
           end>
         FixedCols = 0
         Options = [goVertLine, goHorzLine, goEditing, goRowSelect, goSmoothScroll]
         RowCount = 7
         TabOrder = 1
         ColWidths = (
-          202
-          202
+          193
+          194
         )
       end
     end

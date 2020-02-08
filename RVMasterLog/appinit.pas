@@ -22,7 +22,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 29 Dec 2019
+// Date : 8 Feb 2020
 //
 //========================================================================================
 
@@ -75,7 +75,7 @@ begin
   // If the SettingsDB does not exists we assume a New Installation and attempt
   // to create a default one. If unable, we terminate.
 
-  if not FileExists(frmSettings.pAppDatabaseName) then
+  if not FileExists(frmSettings.pcAppDatabaseName) then
     if not frmSettings.CreateApplicationDataBase then
     begin
       showmessage('Failure');
