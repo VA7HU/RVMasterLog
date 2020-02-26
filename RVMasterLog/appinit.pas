@@ -80,7 +80,7 @@ begin
     begin
       showmessage('Failure');
       TerminateApp;
-  end;// if not frmSettings.CreateApplicationDataBase
+    end;// if not frmSettings.CreateApplicationDataBase
 
   if frmSettings.LoadApplicationDatabase then
   begin

@@ -64,8 +64,8 @@ object frmSettings: TfrmSettings
     Height = 328
     Top = 16
     Width = 880
-    ActivePage = pgApplicationSettings
-    TabIndex = 1
+    ActivePage = pgDirectories
+    TabIndex = 0
     TabOrder = 1
     object pgDirectories: TTabSheet
       Caption = 'Directories'
