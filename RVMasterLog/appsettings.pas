@@ -17,7 +17,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 25 Feb 2020
+// Date : 26 Feb 2020
 //
 //========================================================================================
 
@@ -242,10 +242,10 @@ begin
 
 showmessage('Creating ApplicationDataBase');
 
-SaveApplicationDatabase;
+//SaveApplicationDatabase;
 
 
-{{
+
   DBConnection.Close; // Ensure any connection is closed when we start
 
   Result := True;
@@ -343,7 +343,7 @@ SaveApplicationDatabase;
   DBTransaction.Active := False;
   DBConnection.Close;
 
-}}
+
   showmessage('Settings DataBase Created');
 
 end;// function TfrmSettings.CreateSettingsDataBase

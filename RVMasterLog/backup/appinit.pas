@@ -22,7 +22,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 8 Feb 2020
+// Date : 26 Feb 2020
 //
 //========================================================================================
 
@@ -76,11 +76,29 @@ begin
   // to create a default one. If unable, we terminate.
 
   if not FileExists(frmSettings.pcAppDatabaseName) then
+  begin
+
+showmessage('No Database Found');
+
+showmessage('Delete Old Directory Structure');
+
+    if DirectoryExists(frmSettings.pcAppUserDirectory) then
+      DeleteDirectory(frmSettings.pcAppUserDirectory, False);
+
+showmessage('Creating New Directory  Structure');
+
+    CreateDir( frmSettings.pcAppUserDirectory );
+    CreateDir( frmSettings.pcAppDataDirectory );
+    CreateDir( frmSettings.pcAppSettingsDirectory );
+    CreateDir( frmSettings.pcAppLogbooksDirectory );
+
     if not frmSettings.CreateApplicationDataBase then
     begin
       showmessage('Failure');
       TerminateApp;
-  end;// if not frmSettings.CreateApplicationDataBase
+    end;// if not frmSettings.CreateApplicationDataBase
+
+  end;// if not FileExists(frmSettings.pcAppDatabaseName)
 
   if frmSettings.LoadApplicationDatabase then
   begin

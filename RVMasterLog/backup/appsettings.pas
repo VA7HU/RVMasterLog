@@ -242,10 +242,10 @@ begin
 
 showmessage('Creating ApplicationDataBase');
 
-SaveApplicationDatabase;
+//SaveApplicationDatabase;
 
 
-{{
+
   DBConnection.Close; // Ensure any connection is closed when we start
 
   Result := True;
@@ -343,7 +343,7 @@ SaveApplicationDatabase;
   DBTransaction.Active := False;
   DBConnection.Close;
 
-}}
+
   showmessage('Settings DataBase Created');
 
 end;// function TfrmSettings.CreateSettingsDataBase
