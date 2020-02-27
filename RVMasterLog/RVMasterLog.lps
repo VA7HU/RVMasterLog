@@ -8,9 +8,11 @@
       <Unit0>
         <Filename Value="RVMasterLog.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
         <CursorPos X="13" Y="17"/>
         <UsageCount Value="206"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -19,7 +21,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="171"/>
         <CursorPos X="3" Y="173"/>
         <UsageCount Value="206"/>
@@ -33,7 +35,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AppSettings"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="838"/>
         <CursorPos X="24" Y="852"/>
         <UsageCount Value="203"/>
@@ -44,9 +46,8 @@
         <Filename Value="appinit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppInit"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="81"/>
-        <CursorPos X="49" Y="94"/>
+        <TopLine Value="8"/>
+        <CursorPos X="70" Y="89"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -54,7 +55,7 @@
         <Filename Value="appfinal.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppFinal"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="48"/>
         <CursorPos X="3" Y="59"/>
         <UsageCount Value="201"/>
