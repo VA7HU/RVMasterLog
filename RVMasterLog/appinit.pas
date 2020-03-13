@@ -22,7 +22,7 @@ unit AppInit;
 //
 // Ver. : 1.0.0
 //
-// Date : 26 Feb 2020
+// Date : 28 Feb 2020
 //
 //========================================================================================
 
@@ -72,26 +72,57 @@ uses
 function Initialize : Boolean;
 begin
 
-  // If the SettingsDB does not exists we assume a New Installation and attempt
-  // to create a default one. If unable, we terminate.
+  // If the ApplicationDatabase does not exist we assume a New Installation and attempt
+  // to create a default ApplicationDatabase.
 
   if not FileExists(frmSettings.pcAppDatabaseName) then
   begin
 
-showmessage('No Database Found');
+showmessage('No Applcation Database Found.');
 
-showmessage('Delete Old Directory Structure');
+showmessage('Deleting Old Directory Structure');
 
     if DirectoryExists(frmSettings.pcAppUserDirectory) then
       DeleteDirectory(frmSettings.pcAppUserDirectory, False);
 
-showmessage('Creating New Directory  Structure');
+showmessage('Creating New Directory Structure');
 
-    CreateDir( frmSettings.pcAppUserDirectory );
-    CreateDir( frmSettings.pcAppDataDirectory );
-    CreateDir( frmSettings.pcAppSettingsDirectory );
-    CreateDir( frmSettings.pcAppLogbooksDirectory );
-    CreateDir( frmSettings.pcAppBackupsDirectory );
+showmessage('Creating default User Directory');
+
+    if not CreateDir( frmSettings.pcAppUserDirectory ) then
+    begin
+      showmessage('Unable to create default User Directory');
+      TerminateApp;
+    end;// if not CreateDir( frmSettings.pcAppUserDirectory )
+
+    if not CreateDir( frmSettings.pcAppDataDirectory ) then
+    begin
+      showmessage('Unable to create default AppData Directory');
+      TerminateApp;
+    end;// if not CreateDir( frmSettings.pcAppDataDirectory )
+
+    if not CreateDir( frmSettings.pcAppSettingsDirectory ) then
+    begin
+      showmessage('Unable to create default AppSettings Directory');
+      TerminateApp;
+    end;// if not CreateDir( frmSettings.pcAppSettingsDirectory )
+
+    if not CreateDir( frmSettings.pcAppLogbooksDirectory ) then
+    begin
+      showmessage('Unable to create default AppLogbooks Directory');
+      TerminateApp;
+    end;// if not CreateDir( frmSettings.pcAppLogbooksDirectory )
+
+    if not CreateDir( frmSettings.pcAppBackupsDirectory ) then
+    begin
+      showmessage('Unable to create default AppBackups Directory');
+      TerminateApp;
+    end;// if not CreateDir( frmSettings.pcAppBackupsDirectory )
+
+//    CreateDir( frmSettings.pcAppDataDirectory );
+//    CreateDir( frmSettings.pcAppSettingsDirectory );
+//    CreateDir( frmSettings.pcAppLogbooksDirectory );
+//    CreateDir( frmSettings.pcAppBackupsDirectory );
 
     if not frmSettings.CreateApplicationDataBase then
     begin

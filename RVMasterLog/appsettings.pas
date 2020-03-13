@@ -6,10 +6,13 @@ unit AppSettings;
 //
 // Unit : AppSettings.pas
 //
-// Description :
+// Description : This module provides all Initial Application Directory sructure Setup
+//               functionality including RVMasterLog Application Database creation,
+//               Initial Application Installaetion and all Application DataBase Table
+//               functions.
 //
 // Called By :  AppInit : Initialize
-//              Main  : TfrmMain.mnuSettingsDIrectoriesClick
+//              Main  : TfrmMain.mnuSettingDIrectoriesClick
 //                      TfrmMain.mnuSettingsDatabasesClick
 //              SuppliersTable : frmSuppliersTable.CreateSuppliersTable
 //
@@ -17,7 +20,7 @@ unit AppSettings;
 //
 // Ver. : 1.0.0
 //
-// Date : 26 Feb 2020
+// Date : 27 Feb 2020
 //
 //========================================================================================
 
@@ -236,17 +239,18 @@ var
 //          PUBLIC ROUTINES
 //========================================================================================
 function TfrmSettings.CreateApplicationDataBase: Boolean;
+
+  // This function createa a new Default ApplicationDataBase for both an Initial
+  // installation or to replace an active Application Database after a backup database
+  // has been created and saved.
+
 var
   vstrTstr : String;
 begin
 
-showmessage('Creating ApplicationDataBase');
+//*** showmessage('Creating Default ApplicationDataBase');
 
-//SaveApplicationDatabase;
-
-
-
-  DBConnection.Close; // Ensure any connection is closed when we start
+  DBConnection.Close; // Ensure the AppDatabase Connection is closed
 
   Result := True;
 
@@ -265,13 +269,13 @@ showmessage('Creating ApplicationDataBase');
     // Create the "ApplicationSettingsTable"
     //========================================
 
-// showmessage('Create ApplicationSettingsTable');
+//*** showmessage('Create ApplicationSettingsTable');
 
     DBConnection.ExecuteDirect('CREATE TABLE "ApplicationSettingsTable"('+
                                      ' "Property" String PRIMARY KEY,'+
                                      ' "Value" String );');
 
-// showmessage('Create ApplicationSettingsIndex');
+//*** showmessage('Create ApplicationSettingsIndex');
 
     // Creating an index based upon Property in the ApplicationSettingsTable
     DBConnection.ExecuteDirect('CREATE UNIQUE INDEX ' +
@@ -282,13 +286,13 @@ showmessage('Creating ApplicationDataBase');
     // Create the "RegistrationSettingsTable"
     //========================================
 
-// showmessage('Create RegistrationSettingsTable');
+//*** showmessage('Create RegistrationSettingsTable');
 
     DBConnection.ExecuteDirect('CREATE TABLE "RegistrationSettingsTable"('+
                                      ' "Property" String PRIMARY KEY,'+
                                      ' "Value" String );');
 
-// showmessage('Create RegistrationSettings Index');
+//*** showmessage('Create RegistrationSettings Index');
 
 
     DBConnection.ExecuteDirect('CREATE UNIQUE INDEX ' +
@@ -343,8 +347,7 @@ showmessage('Creating ApplicationDataBase');
   DBTransaction.Active := False;
   DBConnection.Close;
 
-
-  showmessage('Settings DataBase Created');
+//***  showmessage('Settings DataBase Created');
 
 end;// function TfrmSettings.CreateSettingsDataBase
 

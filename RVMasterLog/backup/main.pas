@@ -65,7 +65,6 @@ type
     procedure mnuLogbooksDeleteLogbookClick(Sender: TObject);
     procedure mnuLogbooksSaveClick(Sender: TObject);
     procedure mnuSettingsApplicationDatabaseClick(Sender: TObject);
-    procedure mnuToolTestClick(Sender: TObject);
   private
 
   public
