@@ -14,7 +14,7 @@ unit AppFinal;
 //
 // Ver. : 1.0.0
 //
-// Date : 29 Dec 2019
+// Date : 19 Mar 2020
 //
 //========================================================================================
 
@@ -56,7 +56,7 @@ procedure Finalize;
 begin
 
   showmessage('Finalize');
-  frmSettings.SaveApplicationDataBase;
+//  frmSettings.SaveApplicationDataBase;
 
 end;// procedure Finalize
 

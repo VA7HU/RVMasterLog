@@ -27,7 +27,8 @@ uses
   AppFinal, AppInit, AppSettings, Logbook, Main, ManufacturersTable,
   ProvTable, RVData, SuppliersTable, ApplicationDB, SuppliersDB,
   // HULibraries
-  HUConstants, HUMessageBoxes, HUValidations, HUNagscreen, HURegistration;
+  HUConstants, HUMessageBoxes, HUValidations, HUNagscreen, HURegistration,
+  HUSplashScreen;
 
 {$R *.res}
 
@@ -43,6 +44,7 @@ begin
   Application.CreateForm( TdlgHUNagScreen, dlgHUNagScreen);
   Application.CreateForm(TdmApplicationDB, dmApplicationDB);
   Application.CreateForm(TdmSuppliersDB, dmSuppliersDB);
+  Application.CreateForm( TdlgHUSplashScreen, dlgHUSplashScreen);
   Application.Run;
 
 end.//program RVMasterLog

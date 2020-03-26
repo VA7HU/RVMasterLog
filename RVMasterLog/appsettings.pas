@@ -934,12 +934,8 @@ end;// procedure TfrmAppSetup.FormShow
 procedure TfrmSettings.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
 
+  //DBConnection.Connected := False;
 
-
-
-
-
-  DBConnection.Connected := False;
 end;// procedure TfrmAppSetup.FormClose
 
 //========================================================================================

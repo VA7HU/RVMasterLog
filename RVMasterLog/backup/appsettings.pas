@@ -347,7 +347,7 @@ begin
   DBTransaction.Active := False;
   DBConnection.Close;
 
-  showmessage('Settings DataBase Created');
+//***  showmessage('Settings DataBase Created');
 
 end;// function TfrmSettings.CreateSettingsDataBase
 

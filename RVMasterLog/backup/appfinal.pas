@@ -56,7 +56,7 @@ procedure Finalize;
 begin
 
   showmessage('Finalize');
-  TfrmSettings.SaveApplicationDataBase;
+  frmSettings.SaveApplicationDataBase;
 
 end;// procedure Finalize
 
